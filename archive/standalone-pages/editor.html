@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State v. Benjamin Allen — Evidence Editor</title>
+    <link rel="stylesheet" href="shared/styles.css">
+<style>
+        body {
+            background:
+                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
+                linear-gradient(180deg, #131617 0%, #101314 100%);
+            color: #eef3f4;
+        }
+        .carousel-nav-wrapper { display: none !important; }
+        .editor-wrap { padding: 30px 40px; }
+        .editor-header { margin-bottom: 28px; }
+        .editor-header h1 { font-size: 1.6rem; margin: 0 0 6px; color: #f3f7f7; }
+        .editor-header p { color: #c2cccd; margin: 0; font-size: 0.9rem; }
+        .table-select-row { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+        .table-select-row label { color: #9fc8cf; font-size: 0.85rem; white-space: nowrap; }
+        select { padding: 8px 12px; background: rgba(23,27,28,0.88); color: #e5e7eb; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; font-size: 0.9rem; max-width: 340px; width: 100%; }
+        input, textarea { width: 100%; padding: 8px 10px; margin-top: 4px; margin-bottom: 12px; background: rgba(23,27,28,0.88); color: #e5e7eb; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; box-sizing: border-box; font-size: 0.88rem; }
+        input:disabled { opacity: 0.45; cursor: not-allowed; }
+        .form-actions { display: flex; gap: 12px; align-items: center; margin-top: 8px; }
+        button.save-btn { padding: 10px 24px; background: #5d98a2; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+        button.save-btn:hover { background: #4e8791; }
+        button.delete-btn { padding: 10px 24px; background: #8d4d53; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+        button.delete-btn:hover { background: #7b4046; }
+        .grid-container { display: grid; grid-template-columns: 280px 1fr; gap: 18px; }
+        .sidebar { background: rgba(18,22,23,0.92); padding: 16px; border-radius: 8px; max-height: 72vh; overflow-y: auto; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.34); display: flex; flex-direction: column; }
+        .sidebar-search { width: 100%; padding: 7px 10px; background: rgba(30,35,36,0.9); color: #e5e7eb; border: 1px solid rgba(255,255,255,0.12); border-radius: 5px; font-size: 0.82rem; box-sizing: border-box; margin-bottom: 10px; }
+        .sidebar-search::placeholder { color: #5a7073; }
+        #sidebarItems { overflow-y: auto; flex: 1; }
+        .sidebar-count { font-size: 0.75rem; color: #8fa4a7; margin-bottom: 10px; }
+        .editor-pane { background: rgba(18,22,23,0.92); padding: 28px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.34); }
+        .list-item { padding: 7px 10px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem; color: #cbd5e1; border-radius: 4px; }
+        .list-item:hover { background: rgba(23,27,28,0.88); }
+        .list-item.active { background: rgba(93,152,162,0.24); color: #fff; }
+        .field-label { font-size: 0.78rem; color: #9fc8cf; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
+        .field-hint { font-size: 0.72rem; color: #8b999c; margin-bottom: 4px; }
+        .meta-bar { display: flex; gap: 18px; background: rgba(10,14,15,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 5px; padding: 8px 14px; margin-bottom: 18px; font-size: 0.74rem; color: #6a8589; flex-wrap: wrap; }
+        .meta-bar span { display: flex; gap: 5px; align-items: center; }
+        .meta-bar strong { color: #8fa4a7; font-weight: 600; }
+        .char-counter { font-size: 0.69rem; color: #5a7073; text-align: right; margin-top: -10px; margin-bottom: 8px; }
+        .char-counter.warn { color: #c4874a; }
+        .field-dirty input, .field-dirty textarea, .field-dirty select { border-color: rgba(93,152,162,0.45) !important; }
+        .field-invalid input, .field-invalid textarea { border-color: rgba(224,100,100,0.6) !important; }
+        .validation-hint { font-size: 0.71rem; margin-top: -10px; margin-bottom: 8px; display: none; }
+        .validation-hint.error { color: #e06464; }
+        .validation-hint.ok { color: #4daf82; }
+        .validation-hint.warn { color: #c4874a; }
+        .required-star { color: #e06464; margin-left: 2px; font-weight: bold; }
+        .view-record-link { margin-left: auto; font-size: 0.78rem; color: #5d98a2; text-decoration: none; padding: 3px 10px; border: 1px solid rgba(93,152,162,0.3); border-radius: 4px; white-space: nowrap; }
+        .view-record-link:hover { background: rgba(93,152,162,0.12); }
+        /* ── Link panels ────────────────────────────────────────────────────── */
+        .link-panels-wrap { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+        .link-section { border: 1px solid rgba(255,255,255,0.08); border-radius: 7px; overflow: visible; }
+        .link-section > *:first-child { border-radius: 7px 7px 0 0; overflow: hidden; }
+        .link-section > *:last-child  { border-radius: 0 0 7px 7px; overflow: hidden; }
+        .link-section-header { display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: rgba(10,14,15,0.7); }
+        .link-section-title { font-size: 0.78rem; color: #9fc8cf; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; flex: 1; }
+        .link-section-count { font-size: 0.72rem; color: #5a7073; background: rgba(255,255,255,0.05); padding: 2px 7px; border-radius: 10px; }
+        .link-rows { background: rgba(14,18,19,0.5); }
+        .link-row { display: flex; align-items: center; gap: 10px; padding: 6px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .link-row:last-child { border-bottom: none; }
+        .link-slug { font-family: monospace; color: #7fc8d4; min-width: 170px; max-width: 170px; font-size: 0.78rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .link-title { color: #cbd5e1; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.80rem; }
+        .link-dir-badge { font-size: 0.65rem; color: #5a7073; padding: 1px 5px; border: 1px solid rgba(255,255,255,0.06); border-radius: 3px; flex-shrink: 0; }
+        .link-relation-badge { font-size: 0.7rem; background: rgba(93,152,162,0.14); color: #9fc8cf; padding: 2px 8px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
+        .link-remove-btn { background: transparent; border: 1px solid rgba(255,255,255,0.07); color: #8d4d53; cursor: pointer; border-radius: 3px; width: 22px; height: 22px; line-height: 1; font-size: 0.85rem; flex-shrink: 0; transition: background 0.15s; }
+        .link-remove-btn:hover { background: rgba(141,77,83,0.22); }
+        .link-empty { padding: 10px 14px; font-size: 0.8rem; color: #4a6063; font-style: italic; }
+        .link-add-row { display: flex; gap: 8px; align-items: center; padding: 8px 14px; background: rgba(12,16,17,0.5); border-top: 1px solid rgba(255,255,255,0.05); }
+        .link-add-row select { flex: 1; margin: 0; padding: 5px 8px; font-size: 0.81rem; }
+        .link-add-row .link-rel-select { flex: 0 0 150px; }
+        .link-add-btn { padding: 5px 14px; background: rgba(93,152,162,0.22); color: #9fc8cf; border: 1px solid rgba(93,152,162,0.3); border-radius: 5px; cursor: pointer; font-size: 0.81rem; white-space: nowrap; flex-shrink: 0; }
+        .link-add-btn:hover { background: rgba(93,152,162,0.38); }
+        .link-add-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+        /* ── Searchable combobox ──────────────────────────────────────────── */
+        .link-combobox { position: relative; flex: 1; min-width: 0; }
+        .link-search-input { width: 100%; box-sizing: border-box; margin: 0; padding: 5px 8px; font-size: 0.81rem; background: rgba(20,26,28,0.9); border: 1px solid rgba(255,255,255,0.12); border-radius: 5px; color: #cbd5e1; outline: none; font-family: inherit; }
+        .link-search-input:focus { border-color: rgba(93,152,162,0.5); }
+        .link-search-input.has-value { border-color: rgba(93,152,162,0.45); color: #9fc8cf; }
+        .link-search-dropdown { position: fixed; background: #0e1315; border: 1px solid rgba(93,152,162,0.28); border-radius: 6px; max-height: 230px; overflow-y: auto; z-index: 9999; box-shadow: 0 8px 24px rgba(0,0,0,0.6); width: 420px; }
+        .link-search-item { padding: 6px 10px; cursor: pointer; display: flex; gap: 10px; align-items: baseline; }
+        .link-search-item:hover, .link-search-item.si-active { background: rgba(93,152,162,0.16); }
+        .si-slug { font-family: monospace; color: #7fc8d4; flex-shrink: 0; font-size: 0.77rem; white-space: nowrap; }
+        .si-title { color: #94a3b8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.79rem; min-width: 0; }
+        .si-hl { color: #c8e6ea; }
+        .link-search-meta { padding: 5px 10px; font-size: 0.73rem; color: #3a5053; border-top: 1px solid rgba(255,255,255,0.04); }
+        /* ── Inbound (readonly) panels ────────────────────────────────────── */
+        .link-section.inbound .link-section-header { background: rgba(8,11,12,0.75); }
+        .link-section.inbound .link-section-title { color: #6a8f96; }
+        .link-section.inbound .link-section-count { opacity: 0.7; }
+        .link-inbound-tag { font-size: 0.6rem; color: #3d5f63; border: 1px solid rgba(255,255,255,0.05); border-radius: 3px; padding: 1px 5px; letter-spacing: 0.04em; text-transform: uppercase; flex-shrink: 0; }
+        /* Entity-type badges in universal combobox */
+        .etype-badge { font-size: 0.58rem; padding: 1px 5px; border-radius: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0; opacity: 0.85; }
+        .etype-fact          { background: #1a3a5c; color: #7eb8f7; }
+        .etype-quote         { background: #2c1a5c; color: #b07ef7; }
+        .etype-contradiction { background: #5c1a1a; color: #f77e7e; }
+        .etype-motion        { background: #1a4c2c; color: #7ef7a8; }
+        .etype-chronology    { background: #3d3300; color: #f7d87e; }
+        .etype-standard      { background: #1a3d3d; color: #7ef0f7; }
+        /* Universal panel looks distinct */
+        .link-section.universal { border-color: #2a3f4a; }
+        .link-section.universal .link-section-header { background: #0e2330; }
+        .link-universal-tag { font-size: 0.6rem; color: #3a7fa0; border: 1px solid rgba(58,127,160,0.3); border-radius: 3px; padding: 1px 5px; letter-spacing: 0.04em; text-transform: uppercase; flex-shrink: 0; }
+        .toast { position: fixed; bottom: 24px; right: 24px; background: #2f7a64; color: white; padding: 12px 22px; border-radius: 6px; display: none; font-size: 0.88rem; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 999; }
+        .empty-state { color: #8b999c; font-size: 0.9rem; padding: 20px 0; }
+        .error-state { color: #ffb4b4; font-size: 0.92rem; line-height: 1.6; padding: 18px 0; }
+        .error-state strong { color: #ffd4d4; display: block; margin-bottom: 6px; }
+    </style>
+
+  
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+<div class="container">
+        <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="timeline.html">Timeline</a>
+            <a class="nav-tab" href="players.html">Players</a>
+            <a class="nav-tab" href="evidence.html">Evidence</a>
+            <a class="nav-tab" href="contradictions.html">Contradictions</a>
+            <a class="nav-tab" href="misconduct.html">Misconduct</a>
+            <a class="nav-tab" href="documentspage.html">Documents</a>
+            <a class="nav-tab" href="misconductandfailure.html">Mindmaps</a>
+            <a class="nav-tab" href="case-study.html">Case Study</a>
+        </div>
+    <div class="header">
+        <h1>An Edifice of Lies</h1>
+        <h2>"Justice must satisfy the appearance of justice." — Offutt v. United States</h2>
+    </div>
+<div class="editor-wrap">
+        <div class="editor-header">
+            <h1>Evidence Database Editor</h1>
+            <p>Select a table and record to review and update. Changes write directly to evidence.db.</p>
+        </div>
+
+        <div class="table-select-row">
+            <label for="tableSelect">Table:</label>
+            <select id="tableSelect" onchange="loadTable()">
+            <option value="/api/facts">Fact Entries</option>
+            <option value="/api/quotes">Quote Entries</option>
+            <option value="/api/contradictions">Contradictions</option>
+            <option value="/api/motions">Motions</option>
+            <option value="/api/chronology">Chronology</option>
+            <option value="/api/standards">Reference Standards</option>
+        </select>
+        </div>
+
+        <div class="grid-container">
+            <div class="sidebar">
+                <div class="sidebar-count" id="sidebarCount"></div>
+                <input class="sidebar-search" id="sidebarSearch" type="text" placeholder="Search records…" oninput="filterSidebar(this.value)" />
+                <div id="sidebarItems"><p class="empty-state">Loading…</p></div>
+            </div>
+            <div class="editor-pane u-migrated-5790ffba" id="editorPane">
+                <form id="editForm" onsubmit="saveChanges(event)">
+                    <div id="formFields"></div>
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">Save Changes</button>
+                        <button type="button" class="delete-btn" onclick="deleteRecord()">Delete Record</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="toast" class="toast">Saved</div>
+
+    <script>
+        let currentData = [];
+        let currentTable = '';
+        let selectedItem = null;
+        let isDirty = false;
+
+        const fieldOptionSets = {
+            fact_entries: {
+                fact_type: [
+                    { value: 'witness_account', label: 'Witness Account' },
+                    { value: 'physical_evidence', label: 'Physical Evidence' },
+                    { value: 'forensic_or_medical', label: 'Forensic or Medical' },
+                    { value: 'timeline_or_location', label: 'Timeline or Location' },
+                    { value: 'procedural_record', label: 'Procedural Record' },
+                    { value: 'analysis_or_conclusion', label: 'Analysis or Conclusion' }
+                ],
+                status: [
+                    { value: 'asserted', label: 'Asserted' },
+                    { value: 'established', label: 'Established' },
+                    { value: 'disputed', label: 'Disputed' },
+                    { value: 'inferred', label: 'Inferred' },
+                    { value: 'open', label: 'Open' },
+                    { value: 'unresolved', label: 'Unresolved' }
+                ]
+            },
+            quote_entries: {
+                speaker: [
+                    { value: '', label: 'Unassigned' },
+                    { value: 'Benjamin Allen', label: 'Benjamin Allen' },
+                    { value: 'Lauren Deal', label: 'Lauren Deal' },
+                    { value: 'Teresa Deal', label: 'Teresa Deal' },
+                    { value: 'Detective Steve Freeman', label: 'Detective Steve Freeman' },
+                    { value: 'Officer Isaac Haines', label: 'Officer Isaac Haines' },
+                    { value: 'ADA Tiffany Bartholomew', label: 'ADA Tiffany Bartholomew' },
+                    { value: 'Attorney Jason Wunsch', label: 'Attorney Jason Wunsch' },
+                    { value: 'Attorney Freddie Cruz', label: 'Attorney Freddie Cruz' },
+                    { value: 'Judge Paul Holcombe', label: 'Judge Paul Holcombe' },
+                    { value: 'Magistrate Steven Money', label: 'Magistrate Steven Money' },
+                    { value: 'Carmen Love', label: 'Carmen Love' },
+                    { value: 'Joseph DeMarco', label: 'Joseph DeMarco' },
+                    { value: 'Steven Happel', label: 'Steven Happel' },
+                    { value: 'Kyle Grimaldi', label: 'Kyle Grimaldi' },
+                    { value: 'Corey Bredderman', label: 'Corey Bredderman' },
+                    { value: 'Tanisha Ray', label: 'Tanisha Ray' },
+                    { value: 'Wendell Ivory', label: 'Wendell Ivory' },
+                    { value: 'James Morrison', label: 'James Morrison' },
+                    { value: 'Peter West III', label: 'Peter West III' },
+                    { value: 'Peter West Sr.', label: 'Peter West Sr.' },
+                    { value: 'Joel Kelly', label: 'Joel Kelly' },
+                    { value: 'Tiffany Allen', label: 'Tiffany Allen' },
+                    { value: 'Donnie Weaver', label: 'Donnie Weaver' },
+                    { value: 'Brandon Weaver', label: 'Brandon Weaver' }
+                ]
+            },
+            contradiction_entries: {
+                severity: [
+                    { value: 'critical', label: 'Critical' },
+                    { value: 'foundational', label: 'Foundational' },
+                    { value: 'high', label: 'High' },
+                    { value: 'material', label: 'Material' },
+                    { value: 'moderate', label: 'Moderate' },
+                    { value: 'low', label: 'Low' }
+                ],
+                status: [
+                    { value: 'open', label: 'Open' },
+                    { value: 'candidate', label: 'Candidate' },
+                    { value: 'draft', label: 'Draft' },
+                    { value: 'resolved', label: 'Resolved' }
+                ],
+                significance: [
+                    { value: '', label: 'Unspecified' },
+                    { value: 'case-altering', label: 'Case-Altering' },
+                    { value: 'critical', label: 'Critical' },
+                    { value: 'high', label: 'High' },
+                    { value: 'material', label: 'Material' },
+                    { value: 'medium', label: 'Medium' },
+                    { value: 'low', label: 'Low' }
+                ]
+            },
+            motion_entries: {
+                motion_type: [
+                    { value: 'motion_to_dismiss', label: 'Motion to Dismiss' },
+                    { value: 'motion_to_suppress', label: 'Motion to Suppress' },
+                    { value: 'motion_for_discovery', label: 'Motion for Discovery' },
+                    { value: 'motion_in_limine', label: 'Motion in Limine' },
+                    { value: 'franks_motion', label: 'Franks Motion' },
+                    { value: 'brady_motion', label: 'Brady Motion' },
+                    { value: 'napue_motion', label: 'Napue Motion' },
+                    { value: 'motion_to_disqualify', label: 'Motion to Disqualify' },
+                    { value: 'motion_for_sanctions', label: 'Motion for Sanctions' }
+                ],
+                priority: [
+                    { value: 'critical', label: 'Critical' },
+                    { value: 'high', label: 'High' },
+                    { value: 'medium-high', label: 'Medium-High' },
+                    { value: 'medium', label: 'Medium' },
+                    { value: 'low', label: 'Low' }
+                ],
+                status: [
+                    { value: 'open', label: 'Open' },
+                    { value: 'candidate', label: 'Candidate' },
+                    { value: 'draft', label: 'Draft' },
+                    { value: 'resolved', label: 'Resolved' }
+                ]
+            },
+            chronology_events: {
+                date_precision: [
+                    { value: 'exact', label: 'Exact' },
+                    { value: 'approximate', label: 'Approximate' },
+                    { value: 'range', label: 'Range' },
+                    { value: 'unknown', label: 'Unknown' }
+                ]
+            },
+            reference_standards: {
+                force_level: [
+                    { value: 'mandatory', label: 'Mandatory' },
+                    { value: 'recommended_practice', label: 'Recommended Practice' },
+                    { value: 'persuasive', label: 'Persuasive' }
+                ]
+            }
+        };
+
+        const targetMap = {
+            '/api/facts': 'fact_entries',
+            '/api/quotes': 'quote_entries',
+            '/api/contradictions': 'contradiction_entries',
+            '/api/motions': 'motion_entries',
+            '/api/chronology': 'chronology_events',
+            '/api/standards': 'reference_standards'
+        };
+
+        // Fields that have a linked_facts sub-query (cross-table link tables)
+        const linkedFactsTables = new Set(['contradiction_entries','motion_entries','chronology_events','reference_standards']);
+
+        // Per-table required fields (pre-save guard + visual stars)
+        const requiredFields = {
+            fact_entries:          ['title', 'fact_type', 'status'],
+            quote_entries:         ['quote_text', 'speaker'],
+            contradiction_entries: ['title', 'severity', 'status'],
+            motion_entries:        ['title', 'motion_type', 'priority'],
+            chronology_events:     ['event_date', 'description'],
+            reference_standards:   ['title', 'force_level']
+        };
+
+        // Consuming page for each table — used by the "View on page" link
+        const tablePageMap = {
+            fact_entries:          'evidence.html',
+            quote_entries:         'evidence.html',
+            contradiction_entries: 'contradictions.html',
+            motion_entries:        'misconduct.html',
+            chronology_events:     'timeline.html',
+            reference_standards:   'judicial-duty.html'
+        };
+
+        // Lazy-loaded cache of known fact slugs (for linked_facts validation)
+        let knownFactSlugs = null;
+        async function loadFactSlugs() {
+            if (knownFactSlugs !== null) return knownFactSlugs;
+            knownFactSlugs = new Set();
+            try {
+                const r = await fetch('/api/facts', { headers: { 'Accept': 'application/json' } });
+                if (r.ok) {
+                    const data = await r.json();
+                    data.forEach(d => { if (d.slug) knownFactSlugs.add(d.slug); });
+                }
+            } catch (_) {}
+            return knownFactSlugs;
+        }
+
+        // Collect tags already in use across the currently loaded table
+        function getKnownTags() {
+            const tags = new Set();
+            currentData.forEach(item => {
+                if (item.tags) String(item.tags).split(',').map(t => t.trim()).filter(Boolean).forEach(t => tags.add(t));
+            });
+            return tags;
+        }
+
+        // ── Link panel definitions ────────────────────────────────────────────
+        const LINK_PANEL_DEFS = {
+            fact_entries: [
+                { key: 'universal', title: 'Link to Anything', universal: true },
+                // ── outbound / bilateral ─────────────────────────────────────
+                { key: 'fact_fact_links', title: 'Related Facts', linkTable: 'fact_fact_links',
+                  targetApiEndpoint: '/api/facts',
+                  relationTypes: [
+                    { value: 'corroborates',        label: 'Corroborates' },
+                    { value: 'contradicts',          label: 'Contradicts' },
+                    { value: 'refines',              label: 'Refines' },
+                    { value: 'establishes_timeline', label: 'Establishes Timeline' },
+                    { value: 'supports_inference',   label: 'Supports Inference' }
+                  ] },
+                // ── inbound (readonly) ───────────────────────────────────────
+                { key: 'quote_fact_links__rev',         title: 'Quoted In',            readonly: true, linkTable: 'quote_fact_links' },
+                { key: 'motion_fact_links__rev',        title: 'Used in Motions',       readonly: true, linkTable: 'motion_fact_links' },
+                { key: 'contradiction_fact_links__rev', title: 'In Contradictions',     readonly: true, linkTable: 'contradiction_fact_links' },
+                { key: 'chronology_fact_links__rev',    title: 'In Chronology',         readonly: true, linkTable: 'chronology_fact_links' },
+                { key: 'reference_fact_links__rev',     title: 'In Standards',          readonly: true, linkTable: 'reference_fact_links' }
+            ],
+            quote_entries: [
+                { key: 'universal', title: 'Link to Anything', universal: true },
+                { key: 'quote_fact_links', title: 'Linked Facts', linkTable: 'quote_fact_links',
+                  targetApiEndpoint: '/api/facts',
+                  relationTypes: [
+                    { value: 'demonstrates', label: 'Demonstrates' },
+                    { value: 'supports',     label: 'Supports' },
+                    { value: 'contradicts',  label: 'Contradicts' },
+                    { value: 'qualifies',    label: 'Qualifies' }
+                  ] },
+                { key: 'quote_contradiction_links', title: 'Linked Contradictions', linkTable: 'quote_contradiction_links',
+                  targetApiEndpoint: '/api/contradictions',
+                  relationTypes: [
+                    { value: 'demonstrates', label: 'Demonstrates' },
+                    { value: 'resolves',     label: 'Resolves' },
+                    { value: 'qualifies',    label: 'Qualifies' }
+                  ] },
+                { key: 'quote_motion_links', title: 'Linked Motions', linkTable: 'quote_motion_links',
+                  targetApiEndpoint: '/api/motions',
+                  relationTypes: [
+                    { value: 'supports',   label: 'Supports' },
+                    { value: 'undermines', label: 'Undermines' },
+                    { value: 'qualifies',  label: 'Qualifies' }
+                  ] }
+            ],
+            contradiction_entries: [
+                { key: 'universal', title: 'Link to Anything', universal: true },
+                // ── outbound ─────────────────────────────────────────────────
+                { key: 'contradiction_fact_links', title: 'Linked Facts', linkTable: 'contradiction_fact_links',
+                  targetApiEndpoint: '/api/facts',
+                  relationTypes: [
+                    { value: 'assertion',        label: 'Assertion' },
+                    { value: 'counter_assertion', label: 'Counter-Assertion' },
+                    { value: 'supports',          label: 'Supports' },
+                    { value: 'corroborates',      label: 'Corroborates' }
+                  ] },
+                // ── inbound (readonly) ───────────────────────────────────────
+                { key: 'quote_contradiction_links__rev',  title: 'Demonstrated by Quotes', readonly: true, linkTable: 'quote_contradiction_links' },
+                { key: 'motion_contradiction_links__rev', title: 'Challenged in Motions',  readonly: true, linkTable: 'motion_contradiction_links' }
+            ],
+            motion_entries: [
+                { key: 'universal', title: 'Link to Anything', universal: true },
+                // ── outbound ─────────────────────────────────────────────────
+                { key: 'motion_fact_links', title: 'Linked Facts', linkTable: 'motion_fact_links',
+                  targetApiEndpoint: '/api/facts',
+                  relationTypes: [
+                    { value: 'supports',            label: 'Supports' },
+                    { value: 'establishes',         label: 'Establishes' },
+                    { value: 'undermines',          label: 'Undermines' },
+                    { value: 'provides_context',    label: 'Provides Context' },
+                    { value: 'demonstrates_pattern', label: 'Demonstrates Pattern' }
+                  ] },
+                { key: 'motion_standard_links', title: 'Cited Legal Standards', linkTable: 'motion_standard_links',
+                  targetApiEndpoint: '/api/standards',
+                  relationTypes: [
+                    { value: 'cites',        label: 'Cites' },
+                    { value: 'applies',      label: 'Applies' },
+                    { value: 'distinguishes', label: 'Distinguishes' }
+                  ] },
+                { key: 'motion_contradiction_links', title: 'Linked Contradictions', linkTable: 'motion_contradiction_links',
+                  targetApiEndpoint: '/api/contradictions',
+                  relationTypes: [
+                    { value: 'challenges',  label: 'Challenges' },
+                    { value: 'founded_on',  label: 'Founded On' },
+                    { value: 'resolves',    label: 'Resolves' }
+                  ] },
+                // ── inbound (readonly) ───────────────────────────────────────
+                { key: 'quote_motion_links__rev', title: 'Supporting Quotes', readonly: true, linkTable: 'quote_motion_links' }
+            ],
+            chronology_events: [
+                { key: 'universal', title: 'Link to Anything', universal: true },
+                { key: 'chronology_fact_links', title: 'Linked Facts', linkTable: 'chronology_fact_links',
+                  targetApiEndpoint: '/api/facts',
+                  relationTypes: [
+                    { value: 'documents',   label: 'Documents' },
+                    { value: 'references',  label: 'References' },
+                    { value: 'establishes', label: 'Establishes' }
+                  ] }
+            ],
+            reference_standards: [
+                { key: 'universal', title: 'Link to Anything', universal: true },
+                // ── outbound ─────────────────────────────────────────────────
+                { key: 'reference_fact_links', title: 'Linked Facts', linkTable: 'reference_fact_links',
+                  targetApiEndpoint: '/api/facts',
+                  relationTypes: [
+                    { value: 'evaluates',   label: 'Evaluates' },
+                    { value: 'applies_to',  label: 'Applies To' },
+                    { value: 'demonstrates', label: 'Demonstrates' },
+                    { value: 'contradicts', label: 'Contradicts' }
+                  ] },
+                // ── inbound (readonly) ───────────────────────────────────────
+                { key: 'motion_standard_links__rev', title: 'Cited in Motions', readonly: true, linkTable: 'motion_standard_links' }
+            ]
+        };
+
+        // ── Slug / option cache (per API endpoint) ────────────────────────────
+        const slugCache = {};
+        let universalCache = null;
+        const tableEndpointMap = {
+            fact_entries: '/api/facts', quote_entries: '/api/quotes',
+            contradiction_entries: '/api/contradictions', motion_entries: '/api/motions',
+            chronology_events: '/api/chronology', reference_standards: '/api/standards'
+        };
+        const TYPE_TO_TABLE = {
+            fact: 'fact_entries', quote: 'quote_entries', contradiction: 'contradiction_entries',
+            motion: 'motion_entries', chronology: 'chronology_events', standard: 'reference_standards'
+        };
+
+        async function loadSlugsFor(apiEndpoint) {
+            if (slugCache[apiEndpoint]) return slugCache[apiEndpoint];
+            try {
+                const r = await fetch(apiEndpoint, { headers: { 'Accept': 'application/json' } });
+                if (r.ok) {
+                    const data = await r.json();
+                    slugCache[apiEndpoint] = data
+                        .filter(d => d.slug)
+                        .map(d => ({ slug: d.slug, title: d.title || d.slug }));
+                }
+            } catch (_) {}
+            return slugCache[apiEndpoint] || [];
+        }
+
+        // ── Link panel rendering ──────────────────────────────────────────────
+        async function loadAllEntities() {
+            if (universalCache) return universalCache;
+            try {
+                const r = await fetch('/api/search-all', { headers: { 'Accept': 'application/json' } });
+                if (r.ok) universalCache = await r.json();
+            } catch (_) {}
+            return universalCache || [];
+        }
+
+        async function loadLinksForRecord(sourceTable, sourceId, container) {
+            const panelDefs = LINK_PANEL_DEFS[sourceTable] || [];
+            if (!panelDefs.length) { container.innerHTML = ''; return; }
+
+            container.innerHTML = '<p class="empty-state u-migrated-d8c02261">Loading links…</p>';
+            let linksData = {};
+            try {
+                const r = await fetch(`/api/links?table=${encodeURIComponent(sourceTable)}&id=${encodeURIComponent(sourceId)}`);
+                if (r.ok) linksData = await r.json();
+            } catch (_) {}
+
+            container.innerHTML = '';
+            for (const def of panelDefs) {
+                if (def.universal) {
+                    const allEntities = await loadAllEntities();
+                    container.appendChild(buildPanel(def, [], allEntities, sourceTable, sourceId));
+                    continue;
+                }
+                const links = linksData[def.key] || [];
+                // Skip empty inbound panels to avoid clutter
+                if (def.readonly && !links.length) continue;
+                const slugOptions = def.readonly ? [] : await loadSlugsFor(def.targetApiEndpoint);
+                container.appendChild(buildPanel(def, links, slugOptions, sourceTable, sourceId));
+            }
+        }
+
+        // ── Searchable combobox ───────────────────────────────────────────────
+        function buildSearchCombobox(slugOptions, linkedSlugs, bilateral, onSelect) {
+            const available = slugOptions.filter(opt => !linkedSlugs.has(opt.slug) || bilateral);
+
+            const wrap = document.createElement('div');
+            wrap.className = 'link-combobox';
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'link-search-input';
+            input.placeholder = `search ${available.length} records…`;
+            input.autocomplete = 'off';
+            wrap.appendChild(input);
+
+            const dropdown = document.createElement('div');
+            dropdown.className = 'link-search-dropdown';
+            dropdown.style.display = 'none';
+            document.body.appendChild(dropdown); // appended to body so no parent clips it
+
+            let selectedSlug = '';
+            let activeIdx = -1;
+
+            function hl(text, q) {
+                if (!q || !text) return text || '';
+                const i = text.toLowerCase().indexOf(q);
+                if (i < 0) return text;
+                return text.slice(0, i) + '<span class="si-hl">' + text.slice(i, i + q.length) + '</span>' + text.slice(i + q.length);
+            }
+
+            function positionDropdown() {
+                const rect = input.getBoundingClientRect();
+                dropdown.style.top  = (rect.bottom + 4) + 'px';
+                dropdown.style.left = rect.left + 'px';
+                dropdown.style.width = Math.max(rect.width, 420) + 'px';
+            }
+
+            function renderDropdown() {
+                activeIdx = -1;
+                dropdown.innerHTML = '';
+                positionDropdown();
+                const q = input.value.trim().toLowerCase();
+                const filtered = q
+                    ? available.filter(o => o.slug.toLowerCase().includes(q) || (o.title || '').toLowerCase().includes(q) || (o.body || '').toLowerCase().includes(q))
+                    : available.slice(0, 80);
+                const shown = filtered.slice(0, 120);
+
+                if (!shown.length) {
+                    dropdown.innerHTML = '<div class="link-search-meta">No matches</div>';
+                    return;
+                }
+                shown.forEach((opt, i) => {
+                    const item = document.createElement('div');
+                    item.className = 'link-search-item';
+                    item.dataset.slug = opt.slug;
+                    item.dataset.i = i;
+                    item.innerHTML = `<span class="si-slug">${hl(opt.slug, q)}</span><span class="si-title">${hl(opt.title || '', q)}</span>${opt.type ? `<span class="etype-badge etype-${opt.type}">${opt.type}</span>` : ''}`;
+                    item.addEventListener('mousedown', e => {
+                        e.preventDefault();
+                        pickSlug(opt.slug);
+                    });
+                    dropdown.appendChild(item);
+                });
+                if (filtered.length > 120) {
+                    const meta = document.createElement('div');
+                    meta.className = 'link-search-meta';
+                    meta.textContent = `${filtered.length.toLocaleString()} matches — type more to narrow`;
+                    dropdown.appendChild(meta);
+                } else if (filtered.length > 0 && q) {
+                    const meta = document.createElement('div');
+                    meta.className = 'link-search-meta';
+                    meta.textContent = `${filtered.length} match${filtered.length !== 1 ? 'es' : ''}`;
+                    dropdown.appendChild(meta);
+                }
+            }
+
+            function pickSlug(slug) {
+                selectedSlug = slug;
+                input.value = slug;
+                input.classList.add('has-value');
+                dropdown.style.display = 'none';
+                onSelect(slug);
+            }
+
+            function clearPick() {
+                if (selectedSlug) { selectedSlug = ''; input.classList.remove('has-value'); onSelect(''); }
+            }
+
+            function moveActive(delta) {
+                const items = dropdown.querySelectorAll('.link-search-item');
+                if (!items.length) return;
+                items[activeIdx]?.classList.remove('si-active');
+                activeIdx = Math.max(0, Math.min(items.length - 1, activeIdx + delta));
+                items[activeIdx]?.classList.add('si-active');
+                items[activeIdx]?.scrollIntoView({ block: 'nearest' });
+            }
+
+            function tryAccept() {
+                const q = input.value.trim().toLowerCase();
+                if (!q) return '';
+                // exact slug match
+                const exact = available.find(opt => opt.slug.toLowerCase() === q);
+                if (exact) { pickSlug(exact.slug); return exact.slug; }
+                // sole filtered result
+                const filtered = available.filter(opt =>
+                    opt.slug.toLowerCase().includes(q) || (opt.title || '').toLowerCase().includes(q) || (opt.body || '').toLowerCase().includes(q)
+                );
+                if (filtered.length === 1) { pickSlug(filtered[0].slug); return filtered[0].slug; }
+                return '';
+            }
+
+            function shakeError() {
+                input.style.outline = '2px solid #e74c3c';
+                input.style.outlineOffset = '0';
+                input.focus();
+                setTimeout(() => { input.style.outline = ''; }, 1200);
+            }
+
+            input.addEventListener('focus', () => { positionDropdown(); renderDropdown(); dropdown.style.display = 'block'; });
+            input.addEventListener('input', () => { clearPick(); positionDropdown(); renderDropdown(); dropdown.style.display = 'block'; });
+            input.addEventListener('blur',  () => { setTimeout(() => { dropdown.style.display = 'none'; }, 160); });
+            input.addEventListener('keydown', e => {
+                if (e.key === 'ArrowDown')  { e.preventDefault(); moveActive(+1); }
+                else if (e.key === 'ArrowUp')  { e.preventDefault(); moveActive(-1); }
+                else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const it = dropdown.querySelector('.si-active');
+                    if (it) { pickSlug(it.dataset.slug); return; }
+                    // Accept first result or exact match if no item is highlighted
+                    if (!tryAccept()) shakeError();
+                } else if (e.key === 'Escape') { dropdown.style.display = 'none'; }
+            });
+
+            return { el: wrap, getValue: () => selectedSlug, tryAccept, shakeError };
+        }
+
+        function buildPanel(def, links, slugOptions, sourceTable, sourceId) {
+            const section = document.createElement('div');
+            section.className = def.readonly ? 'link-section inbound' : def.universal ? 'link-section universal' : 'link-section';
+
+            // header
+            const hdr = document.createElement('div');
+            hdr.className = 'link-section-header';
+            hdr.innerHTML = `<span class="link-section-title">${def.title}</span>
+                             ${def.readonly ? '<span class="link-inbound-tag">inbound</span>' : ''}
+                             ${def.universal ? '<span class="link-universal-tag">all tables</span>' : ''}
+                             ${def.universal ? '' : `<span class="link-section-count">${links.length} link${links.length !== 1 ? 's' : ''}</span>`}`;
+            section.appendChild(hdr);
+
+            // Universal panel: only shows the add-row, no link list
+            if (def.universal) {
+                const addRow = document.createElement('div');
+                addRow.className = 'link-add-row';
+                const allEntities = slugOptions; // already loaded as allEntities by caller
+                let selectedEntity = null;
+                const combo = buildSearchCombobox(allEntities, new Set(), false, (slug) => {
+                    selectedEntity = allEntities.find(e => e.slug === slug) || null;
+                });
+                addRow.appendChild(combo.el);
+
+                const relSel = document.createElement('select');
+                relSel.className = 'link-rel-select';
+                [{ value: 'references', label: 'References' },
+                 { value: 'corroborates', label: 'Corroborates' },
+                 { value: 'contradicts', label: 'Contradicts' },
+                 { value: 'supports', label: 'Supports' },
+                 { value: 'undermines', label: 'Undermines' },
+                 { value: 'context', label: 'Context' }
+                ].forEach(rt => {
+                    const o = document.createElement('option');
+                    o.value = rt.value; o.textContent = rt.label;
+                    relSel.appendChild(o);
+                });
+                addRow.appendChild(relSel);
+
+                const addBtn = document.createElement('button');
+                addBtn.type = 'button';
+                addBtn.className = 'link-add-btn';
+                addBtn.textContent = '+ Add';
+                addBtn.addEventListener('click', () => {
+                    let slug = combo.getValue();
+                    if (!slug) slug = combo.tryAccept();
+                    if (!slug) { combo.shakeError(); return; }
+                    // Resolve entity from slug
+                    const entity = allEntities.find(e => e.slug === slug) || selectedEntity;
+                    if (!entity || !entity.type) { alert('Could not determine entity type for: ' + slug); return; }
+                    addUniversalLink(entity.slug, entity.type, relSel.value, section, sourceTable, sourceId, addBtn);
+                });
+                addRow.appendChild(addBtn);
+                section.appendChild(addRow);
+                return section;
+            }
+
+            // skip empty inbound panels entirely
+            if (def.readonly && !links.length) return section;
+
+            // rows
+            const rowsWrap = document.createElement('div');
+            rowsWrap.className = 'link-rows';
+            if (!links.length) {
+                const em = document.createElement('div');
+                em.className = 'link-empty';
+                em.textContent = 'No links yet';
+                rowsWrap.appendChild(em);
+            } else {
+                links.forEach(link => {
+                    const row = document.createElement('div');
+                    row.className = 'link-row';
+                    const safeTitle = (link.title || '').replace(/"/g, '&quot;');
+                    row.innerHTML = `<span class="link-slug" title="${link.slug}">${link.slug}</span>
+                                     <span class="link-title" title="${safeTitle}">${link.title || link.slug}</span>
+                                     ${link.dir ? `<span class="link-dir-badge">${link.dir}</span>` : ''}
+                                     <span class="link-relation-badge">${link.relation_type}</span>
+                                     <button class="link-remove-btn" title="Remove this link">×</button>`;
+                    row.querySelector('.link-remove-btn').addEventListener('click', () => {
+                        removeLink(link.id, def, section, slugOptions, sourceTable, sourceId);
+                    });
+                    rowsWrap.appendChild(row);
+                });
+            }
+            section.appendChild(rowsWrap);
+
+            // add row — only for writable (outbound) panels
+            if (!def.readonly) {
+                const addRow = document.createElement('div');
+                addRow.className = 'link-add-row';
+
+                const linkedSlugs = new Set(links.map(l => l.slug));
+                const bilateral = def.key === 'fact_fact_links';
+                let selectedSlug = '';
+                const combo = buildSearchCombobox(slugOptions, linkedSlugs, bilateral, slug => { selectedSlug = slug; });
+                addRow.appendChild(combo.el);
+
+                const relSel = document.createElement('select');
+                relSel.className = 'link-rel-select';
+                def.relationTypes.forEach(rt => {
+                    const o = document.createElement('option');
+                    o.value = rt.value; o.textContent = rt.label;
+                    relSel.appendChild(o);
+                });
+                addRow.appendChild(relSel);
+
+                const addBtn = document.createElement('button');
+                addBtn.type = 'button';
+                addBtn.className = 'link-add-btn';
+                addBtn.textContent = '+ Add';
+                addBtn.addEventListener('click', () => {
+                    let slug = combo.getValue();
+                    if (!slug) slug = combo.tryAccept();
+                    if (!slug) { combo.shakeError(); return; }
+                    addLink(slug, relSel.value, def, section, slugOptions, sourceTable, sourceId, addBtn);
+                });
+                addRow.appendChild(addBtn);
+                section.appendChild(addRow);
+            }
+            return section;
+        }
+
+        async function addLink(targetSlug, relationType, def, sectionEl, slugOptions, sourceTable, sourceId, btn) {
+            btn.disabled = true; btn.textContent = 'Adding…';
+            try {
+                const r = await fetch('/api/link-add', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ linkTable: def.linkTable, sourceId, targetSlug, relationType })
+                });
+                if (r.ok) {
+                    await refreshPanel(sectionEl, def, slugOptions, sourceTable, sourceId);
+                    showToast('Link added');
+                } else {
+                    const err = await r.json().catch(() => ({ error: `HTTP ${r.status}` }));
+                    alert('Error adding link: ' + err.error);
+                }
+            } catch (e) { alert('Connection error: ' + e); }
+            finally { btn.disabled = false; btn.textContent = '+ Add'; }
+        }
+
+        async function addUniversalLink(targetSlug, targetType, relationType, sectionEl, sourceTable, sourceId, btn) {
+            const targetTable = TYPE_TO_TABLE[targetType];
+            if (!targetTable) { alert('Unknown entity type: ' + targetType); return; }
+            btn.disabled = true; btn.textContent = 'Adding…';
+            try {
+                const r = await fetch('/api/link-add-universal', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sourceTable, sourceId, targetTable, targetSlug, relationType })
+                });
+                if (r.ok) {
+                    // Refresh all panels since a new link may show in multiple typed panels
+                    const container = sectionEl.closest('.link-panels-wrap');
+                    if (container) {
+                        container.innerHTML = '';
+                        await loadLinksForRecord(sourceTable, sourceId, container);
+                    }
+                    showToast('Link added');
+                } else {
+                    const err = await r.json().catch(() => ({ error: `HTTP ${r.status}` }));
+                    alert('Error adding link: ' + err.error);
+                }
+            } catch (e) { alert('Connection error: ' + e); }
+            finally { btn.disabled = false; btn.textContent = '+ Add'; }
+        }
+
+        async function removeLink(linkId, def, sectionEl, slugOptions, sourceTable, sourceId) {
+            if (!window.confirm('Remove this link?')) return;
+            try {
+                const r = await fetch('/api/link-delete', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ linkTable: def.linkTable, id: linkId })
+                });
+                if (r.ok) {
+                    await refreshPanel(sectionEl, def, slugOptions, sourceTable, sourceId);
+                    showToast('Link removed');
+                } else {
+                    const err = await r.json().catch(() => ({ error: `HTTP ${r.status}` }));
+                    alert('Error removing link: ' + err.error);
+                }
+            } catch (e) { alert('Connection error: ' + e); }
+        }
+
+        async function refreshPanel(sectionEl, def, slugOptions, sourceTable, sourceId) {
+            let linksData = {};
+            try {
+                const r = await fetch(`/api/links?table=${encodeURIComponent(sourceTable)}&id=${encodeURIComponent(sourceId)}`);
+                if (r.ok) linksData = await r.json();
+            } catch (_) {}
+            const links = linksData[def.key] || [];
+            sectionEl.replaceWith(buildPanel(def, links, slugOptions, sourceTable, sourceId));
+        }
+
+        function getFieldOptions(tableName, fieldName) {
+            const tableOptions = fieldOptionSets[tableName];
+            if (!tableOptions) return null;
+            return tableOptions[fieldName] || null;
+        }
+
+        async function loadTable() {
+            const endpoint = document.getElementById('tableSelect').value;
+            currentTable = targetMap[endpoint];
+            isDirty = false;
+
+            const searchEl = document.getElementById('sidebarSearch');
+            if (searchEl) searchEl.value = '';
+
+            document.getElementById('sidebarItems').innerHTML = '<p class="empty-state">Loading…</p>';
+            document.getElementById('sidebarCount').textContent = '';
+            document.getElementById('editorPane').style.display = 'none';
+
+            try {
+                const response = await fetch(endpoint, {
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                currentData = await response.json();
+            } catch (err) {
+                currentData = [];
+                document.getElementById('sidebarItems').innerHTML = `
+                    <div class="error-state">
+                        <strong>Editor data could not be loaded.</strong>
+                        This page needs the local API server to be running so it can read <code>evidence.db</code>.<br>
+                        Try opening the site through <code>node server.js</code> and then reload this page.<br>
+                        <span class="u-migrated-d6f0a773">Details: ${String(err.message || err)}</span>
+                    </div>
+                `;
+                document.getElementById('sidebarCount').textContent = '0 records';
+                return;
+            }
+
+            const sidebar = document.getElementById('sidebarItems');
+            sidebar.innerHTML = '';
+            document.getElementById('sidebarCount').textContent = `${currentData.length} records`;
+
+            if (!currentData.length) {
+                sidebar.innerHTML = '<p class="empty-state">No records found for this table.</p>';
+                return;
+            }
+
+            currentData.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'list-item';
+                div.dataset.label = (item.slug || item.title || `#${item.id}`).toLowerCase();
+                div.textContent = item.slug || item.title || `#${item.id}`;
+                div.onclick = () => selectItem(index, div);
+                sidebar.appendChild(div);
+            });
+        }
+
+        function filterSidebar(query) {
+            const q = query.toLowerCase().trim();
+            document.querySelectorAll('#sidebarItems .list-item').forEach(el => {
+                el.style.display = (!q || el.dataset.label.includes(q)) ? '' : 'none';
+            });
+        }
+
+        function selectItem(index, element) {
+            if (isDirty) {
+                if (!window.confirm('You have unsaved changes. Discard them and select a new record?')) return;
+            }
+            isDirty = false;
+
+            document.querySelectorAll('.list-item').forEach(el => el.classList.remove('active'));
+            if (element) element.classList.add('active');
+
+            selectedItem = currentData[index];
+            const formFields = document.getElementById('formFields');
+            formFields.innerHTML = '';
+
+            // — Metadata bar —
+            const metaBar = document.createElement('div');
+            metaBar.className = 'meta-bar';
+            const metaFields = ['id', 'created_at', 'updated_at'];
+            metaFields.forEach(f => {
+                if (selectedItem[f] !== undefined && selectedItem[f] !== null) {
+                    const span = document.createElement('span');
+                    span.innerHTML = `<strong>${f.replace(/_/g,' ')}:</strong> ${selectedItem[f]}`;
+                    metaBar.appendChild(span);
+                }
+            });
+            const viewPage = tablePageMap[currentTable];
+            if (viewPage) {
+                const viewLink = document.createElement('a');
+                viewLink.className = 'view-record-link';
+                viewLink.href = viewPage;
+                viewLink.target = '_top';
+                viewLink.textContent = 'View on page →';
+                metaBar.appendChild(viewLink);
+            }
+            if (metaBar.children.length) formFields.appendChild(metaBar);
+
+            const skipFields = ['id', 'created_at', 'updated_at', 'linked_facts'];
+
+            Object.keys(selectedItem).forEach(key => {
+                if (skipFields.includes(key)) return;
+
+                const val = selectedItem[key];
+                const wrap = document.createElement('div');
+
+                const labelEl = document.createElement('div');
+                labelEl.className = 'field-label';
+                labelEl.textContent = key.replace(/_/g, ' ');
+                if ((requiredFields[currentTable] || []).includes(key)) {
+                    const star = document.createElement('span');
+                    star.className = 'required-star';
+                    star.textContent = ' *';
+                    labelEl.appendChild(star);
+                }
+
+                if (key === 'tags') {
+                    const hint = document.createElement('div');
+                    hint.className = 'field-hint';
+                    hint.textContent = 'Comma-separated tag names';
+                    wrap.appendChild(labelEl);
+                    wrap.appendChild(hint);
+                } else if (key === 'linked_facts') {
+                    const hint = document.createElement('div');
+                    hint.className = 'field-hint';
+                    hint.textContent = 'Comma-separated fact slugs';
+                    wrap.appendChild(labelEl);
+                    wrap.appendChild(hint);
+                } else {
+                    wrap.appendChild(labelEl);
+                }
+
+                let input;
+                const strVal = val !== null && val !== undefined ? String(val) : '';
+                const options = getFieldOptions(currentTable, key);
+
+                if (options) {
+                    input = document.createElement('select');
+                    options.forEach(option => {
+                        const optionEl = document.createElement('option');
+                        optionEl.value = option.value;
+                        optionEl.textContent = option.label;
+                        if (option.value === strVal) optionEl.selected = true;
+                        input.appendChild(optionEl);
+                    });
+
+                    if (strVal && !options.some(option => option.value === strVal)) {
+                        const fallback = document.createElement('option');
+                        fallback.value = strVal;
+                        fallback.textContent = `${strVal} (current)`;
+                        fallback.selected = true;
+                        input.insertBefore(fallback, input.firstChild);
+                    }
+                } else if (strVal.length > 80 || key === 'tags' || key === 'linked_facts') {
+                    input = document.createElement('textarea');
+                    input.rows = key === 'tags' || key === 'linked_facts' ? 2 : 4;
+                } else {
+                    input = document.createElement('input');
+                    input.type = 'text';
+                }
+
+                input.value = strVal;
+                input.id = `field_${key}`;
+                if (key === 'slug') input.disabled = true;
+
+                // dirty-state tracking
+                input.addEventListener('input', () => { isDirty = true; wrap.classList.add('field-dirty'); });
+                input.addEventListener('change', () => { isDirty = true; wrap.classList.add('field-dirty'); });
+
+                wrap.appendChild(input);
+
+                // character counter for textareas
+                if (input.tagName === 'TEXTAREA') {
+                    const counter = document.createElement('div');
+                    counter.className = 'char-counter';
+                    const updateCounter = () => {
+                        const len = input.value.length;
+                        counter.textContent = `${len} chars`;
+                        counter.classList.toggle('warn', len > 800);
+                    };
+                    updateCounter();
+                    input.addEventListener('input', updateCounter);
+                    wrap.appendChild(counter);
+                }
+
+                // linked_facts: verify each slug exists in fact_entries
+                if (key === 'linked_facts') {
+                    const vhint = document.createElement('div');
+                    vhint.className = 'validation-hint';
+                    wrap.appendChild(vhint);
+                    input.addEventListener('blur', async () => {
+                        const slugs = await loadFactSlugs();
+                        const vals = input.value.split(',').map(v => v.trim()).filter(Boolean);
+                        const unknown = vals.filter(v => !slugs.has(v));
+                        if (unknown.length > 0) {
+                            vhint.className = 'validation-hint error';
+                            vhint.textContent = `⚠ Unknown slug(s): ${unknown.join(', ')} — these will become orphaned references`;
+                            vhint.style.display = 'block';
+                            wrap.classList.add('field-invalid');
+                        } else if (vals.length > 0) {
+                            vhint.className = 'validation-hint ok';
+                            vhint.textContent = `✓ All ${vals.length} slug(s) verified against facts table`;
+                            vhint.style.display = 'block';
+                            wrap.classList.remove('field-invalid');
+                        } else {
+                            vhint.style.display = 'none';
+                            wrap.classList.remove('field-invalid');
+                        }
+                    });
+                }
+
+                // tags: flag values not seen elsewhere in this table (catch typos / variant spellings)
+                if (key === 'tags') {
+                    const vhint = document.createElement('div');
+                    vhint.className = 'validation-hint';
+                    wrap.appendChild(vhint);
+                    input.addEventListener('blur', () => {
+                        const known = getKnownTags();
+                        const vals = input.value.split(',').map(v => v.trim()).filter(Boolean);
+                        const novel = vals.filter(v => !known.has(v));
+                        if (novel.length > 0) {
+                            vhint.className = 'validation-hint warn';
+                            vhint.textContent = `New tag(s) not used elsewhere in this table: ${novel.join(', ')} — check for typos or variant spellings`;
+                            vhint.style.display = 'block';
+                        } else {
+                            vhint.style.display = 'none';
+                        }
+                    });
+                }
+
+                formFields.appendChild(wrap);
+            });
+
+            document.getElementById('editorPane').style.display = 'block';
+
+            // ── Link panels (async, renders below form fields) ────────────────
+            const linkPanelsWrap = document.createElement('div');
+            linkPanelsWrap.className = 'link-panels-wrap';
+            document.getElementById('formFields').appendChild(linkPanelsWrap);
+            loadLinksForRecord(currentTable, selectedItem.id, linkPanelsWrap);
+        }
+
+        async function saveChanges(e) {
+            e.preventDefault();
+            if (!selectedItem) return;
+
+            // Pre-save: warn if required fields are empty
+            const required = requiredFields[currentTable] || [];
+            const missing = required.filter(f => {
+                const el = document.getElementById(`field_${f}`);
+                return el && !el.value.trim();
+            });
+            if (missing.length > 0) {
+                const labels = missing.map(f => f.replace(/_/g, ' ')).join(', ');
+                if (!window.confirm(`Required field(s) are empty: ${labels}.\nSave anyway?`)) return;
+            }
+
+            const payloadFields = {};
+            Object.keys(selectedItem).forEach(key => {
+                if (['id', 'created_at', 'updated_at', 'slug'].includes(key)) return;
+                const el = document.getElementById(`field_${key}`);
+                if (el) payloadFields[key] = el.value;
+            });
+
+            try {
+                const response = await fetch('/api/update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ target: currentTable, id: selectedItem.id, fields: payloadFields })
+                });
+
+                if (response.ok) {
+                    isDirty = false;
+                    if (currentTable === 'fact_entries') knownFactSlugs = null; // invalidate slug cache
+                    // Invalidate slug cache for the saved table so link panels repopulate fresh
+                    const ep = tableEndpointMap[currentTable];
+                    if (ep) delete slugCache[ep];
+                    universalCache = null; // invalidate cross-table search cache
+                    showToast();
+                    const activeSlug = selectedItem.slug || selectedItem.title || `#${selectedItem.id}`;
+                    await loadTable();
+                    // Re-select the same item
+                    const newIndex = currentData.findIndex(r => (r.slug || r.title || `#${r.id}`) === activeSlug);
+                    if (newIndex >= 0) {
+                        const items = document.querySelectorAll('.list-item');
+                        selectItem(newIndex, items[newIndex]);
+                    }
+                } else {
+                    let err;
+                    try {
+                        err = await response.json();
+                    } catch (_) {
+                        err = { error: `API returned ${response.status}` };
+                    }
+                    alert('Error saving: ' + err.error);
+                }
+            } catch (err) {
+                alert('Connection error: ' + err);
+            }
+        }
+
+        async function deleteRecord() {
+            if (!selectedItem) return;
+            const label = selectedItem.slug || selectedItem.title || `#${selectedItem.id}`;
+            if (!window.confirm(`Delete ${label}? This cannot be undone.`)) return;
+
+            try {
+                const response = await fetch('/api/delete', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ target: currentTable, id: selectedItem.id })
+                });
+
+                if (response.ok) {
+                    selectedItem = null;
+                    document.getElementById('editorPane').style.display = 'none';
+                    showToast('Deleted');
+                    await loadTable();
+                } else {
+                    let err;
+                    try {
+                        err = await response.json();
+                    } catch (_) {
+                        err = { error: `API returned ${response.status}` };
+                    }
+                    alert('Error deleting: ' + err.error);
+                }
+            } catch (err) {
+                alert('Connection error: ' + err);
+            }
+        }
+
+        function showToast(message = 'Saved') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => toast.style.display = 'none', 2500);
+        }
+
+        loadTable();
+    </script>
+
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+
+
+</html>

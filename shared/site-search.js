@@ -4,6 +4,37 @@
   const indexUrl = new URL(`${siteRoot}assets/search-index.json`, window.location.href).href;
   const cssUrl = new URL(`${siteRoot}shared/site-search.css`, window.location.href).href;
 
+  function addSupplementalNavigation() {
+    const nav = document.querySelector(".nav-tabs[aria-label='Project navigation']");
+    if (!nav || nav.querySelector(".nav-dropdown")) return;
+    const pages = [
+      ["connections.html", "Connections"],
+      ["contradictions_grouped.html", "Grouped Contradictions"],
+      ["data-snapshot.html", "Data Snapshot"],
+      ["judicial-duty.html", "Judicial Duty"],
+      ["prosecutor_allowed.html", "Prosecutor Conduct"],
+      ["scene.html", "Scene Analysis"],
+      ["why-dont-we-have-this-system.html", "System Essay"]
+    ];
+    const dropdown = document.createElement("div");
+    dropdown.className = "nav-dropdown";
+    dropdown.innerHTML = `<button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">More pages</button><div class="nav-dropdown-menu" role="menu">${pages.map(([href, label]) => `<a role="menuitem" href="${href}">${label}</a>`).join("")}</div>`;
+    const button = dropdown.querySelector("button");
+    button.addEventListener("click", () => {
+      const open = dropdown.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", (event) => {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("is-open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+    nav.appendChild(dropdown);
+  }
+
+  addSupplementalNavigation();
+
   if (!document.querySelector(`link[data-site-search-css]`)) {
     const link = document.createElement("link");
     link.rel = "stylesheet";
