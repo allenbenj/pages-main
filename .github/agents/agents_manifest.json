@@ -1,0 +1,200 @@
+{
+  "package": "Insurance Reconstruction AI Agent Kit - Agents Module",
+  "created_utc": "2026-07-12T17:51:20.987542Z",
+  "version": "1.2-agents",
+  "agent_count": 18,
+  "agents": [
+    {
+      "id": "residential-property-loss",
+      "name": "Residential Property Loss Master Orchestrator",
+      "role": "Leads the full USAA property loss workflow, delegates to specialists, reconciles evidence, and assembles final deliverables.",
+      "skills": [
+        "Estimate Auditor",
+        "Supplement Writer",
+        "Reconstruction Scope Builder",
+        "Contents Claim Builder",
+        "Code / Permit / Upgrade Analyzer",
+        "Spreadsheet Builder",
+        "Evidence Sufficiency QA",
+        "Claim Project Manager"
+      ]
+    },
+    {
+      "id": "orchestrator_claim_director",
+      "name": "Claim Director / Orchestrator Agent",
+      "role": "Routes work, selects specialist agents, controls assumptions, prevents double counting, and assembles final deliverables for specialty tasks.",
+      "skills": [
+        "Claim Category Classifier",
+        "Evidence Sufficiency QA",
+        "Claim Project Manager",
+        "Spreadsheet Builder"
+      ]
+    },
+    {
+      "id": "estimate_auditor",
+      "name": "Estimate Auditor Agent",
+      "role": "Extracts, normalizes, and audits carrier/Xactimate-style estimates line by line.",
+      "skills": [
+        "Estimate Auditor",
+        "Line Item Explainer",
+        "RCV / ACV / Depreciation Calculator",
+        "Claim Category Classifier"
+      ]
+    },
+    {
+      "id": "line_item_explainer",
+      "name": "Line Item Explainer Agent",
+      "role": "Explains individual estimate line items in plain English and identifies what is included, excluded, or assumed.",
+      "skills": [
+        "Line Item Explainer",
+        "RCV / ACV / Depreciation Calculator"
+      ]
+    },
+    {
+      "id": "calculation_forensics",
+      "name": "Calculation Forensics Agent",
+      "role": "Verifies estimate arithmetic, splits material/labor approximations, and reconciles RCV, ACV, depreciation, tax, and O&P.",
+      "skills": [
+        "RCV / ACV / Depreciation Calculator",
+        "Material / Labor Splitter",
+        "Spreadsheet Builder"
+      ]
+    },
+    {
+      "id": "electrical_scope_auditor",
+      "name": "Electrical Scope Auditor Agent",
+      "role": "Audits electrical scope for code, safety, completeness, and claim adequacy.",
+      "skills": [
+        "Electrical Scope Auditor",
+        "Code / Permit / Upgrade Analyzer",
+        "Supplement Writer"
+      ]
+    },
+    {
+      "id": "flooring_scope_auditor",
+      "name": "Flooring Scope Auditor Agent",
+      "role": "Audits flooring lines for scope, matching, continuity, underlayment, demo, prep, trim, and ACV/RCV issues.",
+      "skills": [
+        "Flooring Scope Auditor",
+        "Material / Labor Splitter",
+        "Measurement & Takeoff Checker",
+        "Supplement Writer"
+      ]
+    },
+    {
+      "id": "contents_claim_specialist",
+      "name": "Contents Claim Specialist Agent",
+      "role": "Builds and audits personal property and contents scopes, invoices, inventories, sorting, packout, disposal, and documentation.",
+      "skills": [
+        "Contents Claim Builder",
+        "Invoice Generator",
+        "Claim Category Classifier",
+        "Evidence Sufficiency QA"
+      ]
+    },
+    {
+      "id": "mitigation_restoration_agent",
+      "name": "Mitigation & Restoration Scope Agent",
+      "role": "Creates and audits water, fire, and smoke mitigation scopes for clean, dry, repair-ready turnover.",
+      "skills": [
+        "Mitigation Scope Builder",
+        "Photo Evidence Organizer",
+        "Evidence Sufficiency QA"
+      ]
+    },
+    {
+      "id": "reconstruction_scope_builder",
+      "name": "Reconstruction Scope Builder Agent",
+      "role": "Creates construction plans, specs packages, and room-by-room rebuild scopes.",
+      "skills": [
+        "Reconstruction Scope Builder",
+        "Code / Permit / Upgrade Analyzer",
+        "Measurement & Takeoff Checker",
+        "Draw Schedule & Payment Control"
+      ]
+    },
+    {
+      "id": "supplement_writer",
+      "name": "Supplement Writer Agent",
+      "role": "Drafts carrier-facing supplement letters, scope dispute narratives, and omission explanations.",
+      "skills": [
+        "Supplement Writer",
+        "Evidence Sufficiency QA",
+        "Estimate Auditor",
+        "Code / Permit / Upgrade Analyzer"
+      ]
+    },
+    {
+      "id": "invoice_proposal_generator",
+      "name": "Invoice & Proposal Generator Agent",
+      "role": "Creates clean invoices, proposals, estimates, and billing packages with correct claim labeling.",
+      "skills": [
+        "Invoice Generator",
+        "Claim Category Classifier",
+        "Evidence Sufficiency QA"
+      ]
+    },
+    {
+      "id": "spreadsheet_builder",
+      "name": "Spreadsheet Builder Agent",
+      "role": "Builds structured Excel workbooks for claim analysis, tracking, and calculation.",
+      "skills": [
+        "Spreadsheet Builder",
+        "RCV / ACV / Depreciation Calculator",
+        "Estimate Auditor",
+        "Material / Labor Splitter"
+      ]
+    },
+    {
+      "id": "evidence_organizer",
+      "name": "Evidence Organizer Agent",
+      "role": "Indexes photos, invoices, receipts, logs, measurements, and claim communications into a defensible evidence binder.",
+      "skills": [
+        "Photo Evidence Organizer",
+        "Evidence Sufficiency QA",
+        "Claim Project Manager"
+      ]
+    },
+    {
+      "id": "payment_control_agent",
+      "name": "Draw Schedule, Lien Waiver & Closeout Agent",
+      "role": "Controls payment timing, draw documentation, lien waivers, retainage, and closeout packages.",
+      "skills": [
+        "Draw Schedule & Payment Control",
+        "Lien Waiver & Closeout Control",
+        "Claim Project Manager"
+      ]
+    },
+    {
+      "id": "code_permit_upgrade_agent",
+      "name": "Code, Permit & Upgrade Analyzer Agent",
+      "role": "Identifies code-triggered, permit-required, inspection-required, and ordinance/law issues.",
+      "skills": [
+        "Code / Permit / Upgrade Analyzer",
+        "Electrical Scope Auditor",
+        "Reconstruction Scope Builder",
+        "Supplement Writer"
+      ]
+    },
+    {
+      "id": "qa_compliance_agent",
+      "name": "QA, Consistency & Claim-Risk Agent",
+      "role": "Reviews all outputs for math, category separation, factual support, claim-risk language, and consistency.",
+      "skills": [
+        "Evidence Sufficiency QA",
+        "Claim Category Classifier",
+        "RCV / ACV / Depreciation Calculator"
+      ]
+    },
+    {
+      "id": "claim_project_manager",
+      "name": "Claim Project Manager Agent",
+      "role": "Maintains task lists, deadlines, document status, evidence gaps, and next actions across the claim project.",
+      "skills": [
+        "Claim Project Manager",
+        "Evidence Sufficiency QA",
+        "Spreadsheet Builder"
+      ]
+    }
+  ]
+}

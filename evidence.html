@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State v. Benjamin Allen - How the Narrative Was Built</title>
+    <link rel="stylesheet" href="shared/styles.css?v=639006186749527756" />
+    <style>
+        :root {
+            --bg: #121516;
+            --bg-soft: #171b1c;
+            --panel: rgba(18, 22, 23, 0.94);
+            --panel-2: rgba(22, 27, 28, 0.94);
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #eef3f4;
+            --muted: #aab6b8;
+            --gold: #9fc8cf;
+            --gold-soft: rgba(159, 200, 207, 0.14);
+            --red: #cf7676;
+            --red-soft: rgba(207, 118, 118, 0.14);
+            --green: #5d98a2;
+            --green-soft: rgba(93, 152, 162, 0.14);
+            --blue: #5d98a2;
+            --blue-soft: rgba(93, 152, 162, 0.14);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
+            --radius: 18px;
+            --radius-sm: 12px;
+            --maxw: 1800px;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top, rgba(93, 152, 162, 0.12), transparent 30%),
+                linear-gradient(180deg, #121516 0%, #171b1c 100%);
+            color: var(--text);
+        }
+
+        .container.narrative-page {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px 96px;
+        }
+
+        .hero-panel {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(18, 22, 23, 0.96), rgba(22, 27, 28, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 34px 32px 28px;
+            margin: 28px 0 36px;
+        }
+
+        .hero-panel::before,
+        .hero-panel::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            pointer-events: none;
+        }
+
+        .hero-panel::before {
+            width: 320px;
+            height: 320px;
+            right: -90px;
+            top: -110px;
+            background: radial-gradient(circle, rgba(93, 152, 162, 0.18), transparent 68%);
+        }
+
+        .hero-panel::after {
+            width: 260px;
+            height: 260px;
+            left: -80px;
+            bottom: -120px;
+            background: radial-gradient(circle, rgba(93, 152, 162, 0.12), transparent 72%);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            display: block;
+            width: 34px;
+            height: 1px;
+            background: rgba(93, 152, 162, 0.6);
+        }
+
+        .hero-title {
+            margin: 0;
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            line-height: 1.05;
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            max-width: 920px;
+            margin: 16px 0 0;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #dbe3ee;
+        }
+
+        .hero-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 18px 18px 16px;
+            min-height: 120px;
+        }
+
+        .hero-stat-label {
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .hero-stat-value {
+            margin-top: 8px;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .section-shell {
+            margin: 44px 0;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            padding: 28px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 18px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-title-strong {
+            margin: 0;
+            font-size: clamp(1.45rem, 2.3vw, 2.15rem);
+            line-height: 1.2;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .section-dek {
+            max-width: 900px;
+            margin: 10px 0 0;
+            color: #cbd5e1;
+            line-height: 1.75;
+            font-size: 0.98rem;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .legend-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #dbe3ee;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            display: inline-block;
+        }
+
+        .dot-gold { background: var(--gold); }
+        .dot-red { background: var(--red); }
+        .dot-blue { background: var(--blue); }
+        .dot-green { background: var(--green); }
+
+        .flow-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 26px;
+        }
+
+        .flow-card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 18px;
+            min-height: 170px;
+        }
+
+        .flow-card:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: rgba(93, 152, 162, 0.75);
+            font-weight: 800;
+            z-index: 3;
+        }
+
+        .flow-step {
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .flow-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 10px 0 10px;
+            line-height: 1.35;
+            letter-spacing: 0.01em;
+        }
+
+        .flow-copy {
+            color: #d5dde8;
+            line-height: 1.65;
+            font-size: 0.94rem;
+        }
+
+        .node-board {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .center-node-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .node {
+            background: var(--panel-2);
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 16px 16px 14px;
+            box-shadow: var(--shadow);
+        }
+
+        .node-primary {
+            border: 1px solid rgba(248, 113, 113, 0.28);
+            background: linear-gradient(180deg, rgba(58, 19, 19, 0.55), rgba(17,24,39,0.92));
+        }
+
+        .node-gold {
+            border-color: rgba(93, 152, 162, 0.24);
+        }
+
+        .node-blue {
+            border-color: rgba(93, 152, 162, 0.24);
+        }
+
+        .node-green {
+            border-color: rgba(52, 211, 153, 0.24);
+        }
+
+        .node-label {
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+        }
+
+        .node-title {
+            margin: 6px 0 8px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.35;
+            letter-spacing: 0.01em;
+        }
+
+        .node-copy {
+            color: #d7e0ea;
+            line-height: 1.62;
+            font-size: 0.93rem;
+        }
+
+        .node-arrow-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .arrow-link {
+            position: relative;
+            border-left: 3px solid rgba(93, 152, 162, 0.6);
+            padding: 10px 12px 10px 14px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .arrow-link strong {
+            color: #fff;
+        }
+
+        .arrow-link span {
+            display: block;
+            color: #cbd5e1;
+            line-height: 1.58;
+            margin-top: 4px;
+            font-size: 0.9rem;
+        }
+
+        .lane-stack {
+            display: grid;
+            gap: 18px;
+        }
+
+        .issue-lane {
+            background: linear-gradient(180deg, rgba(15,23,42,0.96), rgba(17,24,39,0.88));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 18px;
+        }
+
+        .issue-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .issue-title {
+            margin: 0;
+            color: #fff;
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        .issue-tag {
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: rgba(93, 152, 162, 0.12);
+            color: var(--gold);
+            border: 1px solid rgba(93, 152, 162, 0.2);
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .lane-steps {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .lane-box {
+            position: relative;
+            min-height: 180px;
+            padding: 14px 14px 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .lane-box:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(148, 163, 184, 0.7);
+            font-size: 1.22rem;
+            font-weight: 800;
+            z-index: 2;
+        }
+
+        .lane-box.source {
+            background: var(--gold-soft);
+            border-color: rgba(93, 152, 162, 0.22);
+        }
+
+        .lane-box.shift {
+            background: var(--red-soft);
+            border-color: rgba(248, 113, 113, 0.22);
+        }
+
+        .lane-box.effect {
+            background: var(--blue-soft);
+            border-color: rgba(93, 152, 162, 0.22);
+        }
+
+        .lane-kicker {
+            display: inline-block;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .lane-box h4 {
+            margin: 0 0 8px;
+            color: #fff;
+            font-size: 1.02rem;
+            font-weight: 600;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+        }
+
+        .lane-box p,
+        .lane-box li {
+            margin: 0;
+            color: #d8e1ea;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .lane-box ul {
+            margin: 8px 0 0 16px;
+            padding: 0;
+        }
+
+        .quote-box {
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-left: 3px solid rgba(93, 152, 162, 0.7);
+            background: rgba(0,0,0,0.16);
+            border-radius: 0 10px 10px 0;
+            color: #f6f7fb;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .process-panel {
+            border-radius: 18px;
+            padding: 20px;
+            min-height: 100%;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .process-panel.good {
+            background: var(--green-soft);
+            border-color: rgba(52, 211, 153, 0.22);
+        }
+
+        .process-panel.bad {
+            background: var(--red-soft);
+            border-color: rgba(248, 113, 113, 0.22);
+        }
+
+        .process-panel h4 {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 1.08rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .process-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .process-item {
+            padding: 12px 12px;
+            border-radius: 12px;
+            background: rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: #dbe3ee;
+            line-height: 1.58;
+            font-size: 0.92rem;
+        }
+
+        .process-outcome {
+            margin-top: 22px;
+            padding: 18px;
+            border-radius: 18px;
+            border: 1px solid rgba(93, 152, 162, 0.22);
+            background: var(--blue-soft);
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .matrix-card {
+            border-radius: 18px;
+            padding: 18px;
+            background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(17,24,39,0.9));
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .matrix-card h4 {
+            margin: 0 0 8px;
+            color: #fff;
+            font-size: 1.06rem;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        .matrix-card p,
+        .matrix-card li {
+            color: #d1dae5;
+            line-height: 1.6;
+            font-size: 0.92rem;
+        }
+
+        .matrix-card ul {
+            margin: 10px 0 0 16px;
+            padding: 0;
+        }
+
+        .subtle-note {
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-left: 3px solid rgba(93, 152, 162, 0.7);
+            background: rgba(93, 152, 162, 0.08);
+            border-radius: 0 12px 12px 0;
+            color: #d7e3f0;
+            line-height: 1.68;
+            font-size: 0.94rem;
+        }
+
+        .feature-split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .feature-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(17, 24, 39, 0.9));
+            border: 1px solid rgba(93, 152, 162, 0.22);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .feature-card-inner {
+            padding: 22px;
+        }
+
+        .feature-image {
+            width: 100%;
+            display: block;
+            object-fit: contain;
+            border-bottom: 1px solid rgba(93, 152, 162, 0.18);
+            background: #0b1220;
+        }
+
+        .feature-grid-3,
+        .feature-grid-2 {
+            display: grid;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .feature-grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .feature-grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .feature-mini-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .feature-mini-card h4 {
+            margin: 0 0 10px;
+            color: #fff;
+            font-size: 1.06rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .feature-mini-card p,
+        .feature-mini-card li {
+            margin: 0;
+            color: #d1dae5;
+            line-height: 1.68;
+            font-size: 0.93rem;
+        }
+
+        .feature-mini-card ul {
+            margin: 10px 0 0 16px;
+            padding: 0;
+        }
+
+        .feature-mini-card li + li {
+            margin-top: 8px;
+        }
+
+        .pill-row-soft {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .pill-soft {
+            border: 1px solid rgba(93, 152, 162, 0.28);
+            background: rgba(93, 152, 162, 0.08);
+            color: #fde68a;
+            border-radius: 999px;
+            padding: 7px 11px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-summary-grid,
+            .flow-track,
+            .lane-steps,
+            .matrix-grid,
+            .feature-grid-3,
+            .feature-grid-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .node-board,
+            .process-grid,
+            .feature-split {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-card:not(:last-child)::after,
+            .lane-box:not(:last-child)::after {
+                content: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container.narrative-page {
+                padding: 0 14px 84px;
+            }
+
+            .hero-panel,
+            .section-shell {
+                padding: 22px 16px;
+            }
+
+            .hero-summary-grid,
+            .flow-track,
+            .lane-steps,
+            .matrix-grid,
+            .feature-grid-3,
+            .feature-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-panel {
+                padding: 18px 12px 16px;
+                border-radius: 14px;
+                margin: 16px 0 24px;
+            }
+            .hero-panel::before { width: 180px; height: 180px; right: -60px; top: -70px; }
+            .hero-panel::after { width: 140px; height: 140px; left: -50px; bottom: -70px; }
+            .section-shell {
+                padding: 18px 12px;
+                border-radius: 14px;
+            }
+            .hero-stat { padding: 14px 12px 12px; min-height: 90px; }
+            .flow-card, .lane-box { padding: 14px 12px; min-height: 120px; }
+            .legend-chip { padding: 6px 10px; font-size: 0.78rem; }
+        }
+    </style>
+    <style>
+        :root {
+            --bg: #121516;
+            --bg-soft: #171b1c;
+            --panel: rgba(18, 22, 23, 0.94);
+            --panel-2: rgba(23, 27, 28, 0.92);
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #f3f7f7;
+            --muted: #c7d1d2;
+            --gold: #5d98a2;
+            --gold-soft: rgba(93, 152, 162, 0.14);
+            --red: #b65a5a;
+            --red-soft: rgba(182, 90, 90, 0.14);
+            --green: #2f7a64;
+            --green-soft: rgba(47, 122, 100, 0.14);
+            --blue: #8f5f38;
+            --blue-soft: rgba(143, 95, 56, 0.14);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
+            --maxw: 1800px;
+        }
+
+        body {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.03), transparent 22%),
+                radial-gradient(circle at top, rgba(93, 152, 162, 0.1), transparent 30%),
+                linear-gradient(180deg, #121516 0%, #171b1c 100%) !important;
+            color: var(--text);
+        }
+
+        .carousel-nav-wrapper {
+            display: none !important;
+        }
+
+        .hero-panel,
+        .section-shell,
+        .lane-box,
+        .flow-card,
+        .matrix-card,
+        .story-card,
+        .apple-card,
+        .apple-panel {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)), var(--panel) !important;
+            border-color: rgba(255,255,255,0.08) !important;
+            box-shadow: var(--shadow) !important;
+        }
+
+        .hero-panel::before {
+            background: radial-gradient(circle, rgba(93, 152, 162, 0.18), transparent 68%) !important;
+        }
+
+        .hero-panel::after {
+            background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 72%) !important;
+        }
+
+        .eyebrow,
+        .flow-step,
+        .legend-chip,
+        .kicker,
+        .lane-kicker {
+            color: #9fc8cf !important;
+        }
+
+        .eyebrow::before {
+            background: rgba(93, 152, 162, 0.6) !important;
+        }
+
+        .hero-subtitle,
+        .section-dek,
+        .flow-copy,
+        .lane-copy {
+            color: #d9e1e1 !important;
+        }
+
+        .legend-chip,
+        .pill-soft,
+        .pill-row-soft {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border-color: rgba(255,255,255,0.08) !important;
+            color: #d9e1e1 !important;
+        }
+
+        .flow-card:not(:last-child)::after {
+            color: rgba(93, 152, 162, 0.75) !important;
+        }
+
+        .dot-gold { background: #5d98a2 !important; }
+        .dot-red { background: #b65a5a !important; }
+        .dot-blue { background: #8f5f38 !important; }
+        .dot-green { background: #2f7a64 !important; }
+    </style>
+
+  
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+    <div id="top" class="container narrative-page">
+        <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="timeline.html">Timeline</a>
+            <a class="nav-tab" href="players.html">Players</a>
+            <a class="nav-tab active" href="evidence.html">Evidence</a>
+            <a class="nav-tab" href="contradictions.html">Contradictions</a>
+            <a class="nav-tab" href="misconduct.html">Misconduct</a>
+            <a class="nav-tab" href="documentspage.html">Documents</a>
+            <a class="nav-tab" href="misconductandfailure.html">Mindmaps</a>
+            <a class="nav-tab" href="case-study.html">Case Study</a>
+        </div>
+        <div class="header">
+            <h1>An Edifice of Lies</h1>
+            <h2>How the narrative was built: statement by statement, shift by shift, and consequence by consequence.</h2>
+        </div>
+
+        <nav class="page-rail" aria-label="On this page">
+            <p class="page-rail-title">On this page</p>
+            <a href="#hero-theory" target="_top">Core Theory</a>
+            <a href="#node-map" target="_top">Witness Map</a>
+            <a href="#statement-lanes" target="_top">Statement Drift</a>
+            <a href="#scene-processing" target="_top">Scene Processing</a>
+            <a href="#probable-cause-collapse" target="_top">Probable Cause</a>
+            <a href="#consequence-matrix" target="_top">Consequences</a>
+        </nav>
+
+        <section id="hero-theory" class="hero-panel">
+            <div class="eyebrow">Narrative Construction</div>
+            <h2 class="hero-title">From Story to Statement</h2>
+            <p class="hero-subtitle">
+                This page is not organized as a list of accusations. It is organized as a chain of transformation. The central question is not merely whether the investigation contained errors, but how recorded statements, omissions, scene failures, and later testimony shifts combined to produce a prosecution narrative stronger than the underlying record.
+            </p>
+
+            <div class="hero-summary-grid">
+                <div class="hero-stat">
+                    <div class="hero-stat-label">Stage One</div>
+                    <div class="hero-stat-value">Recorded calls and early interviews supplied narrower, messier, and often less incriminating accounts.</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-label">Stage Two</div>
+                    <div class="hero-stat-value">Freeman’s summaries hardened those accounts into a cleaner probable-cause narrative.</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-label">Stage Three</div>
+                    <div class="hero-stat-value">Trial testimony expanded further, often along force, fear, trust, and chase themes tied to legal elements.</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-label">Result</div>
+                    <div class="hero-stat-value">The jury did not merely hear evidence. It heard a reconstructed sequence shaped by omission, drift, and later framing.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">The chain in one view</h3>
+                    <p class="section-dek">
+                        This sequence shows the architecture of the problem: original evidence, narrative restatement, affidavit use, trial expansion, then legal prejudice.
+                    </p>
+                </div>
+                <div class="legend">
+                    <span class="legend-chip"><span class="legend-dot dot-gold"></span> Original Statement / Source Record</span>
+                    <span class="legend-chip"><span class="legend-dot dot-red"></span> Shift / Omission / Distortion</span>
+                    <span class="legend-chip"><span class="legend-dot dot-blue"></span> Legal or Structural Consequence</span>
+                </div>
+            </div>
+
+            <div class="flow-track">
+                <div class="flow-card">
+                    <div class="flow-step">1</div>
+                    <div class="flow-title">Recorded Statements</div>
+                    <div class="flow-copy">Carmen, Happel, DeMarco, Lauren, and Ben gave accounts containing uncertainty, gaps, contradictions, or narrower descriptions than the later narrative.</div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">2</div>
+                    <div class="flow-title">Freeman’s Retellings</div>
+                    <div class="flow-copy">Those statements were compressed into report language that reduced ambiguity, elevated inculpatory inferences, and obscured exculpatory friction points.</div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">3</div>
+                    <div class="flow-title">Affidavit / Arrest / Search</div>
+                    <div class="flow-copy">The rewritten version then did legal work: probable cause, arrest, search justification, and later insinuations about cleanup and evidence destruction.</div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">4</div>
+                    <div class="flow-title">Trial Hardening</div>
+                    <div class="flow-copy">At trial, the account evolved further toward force, fear, seriousness, and emotional consequence, often on points where the early record was weaker.</div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step">5</div>
+                    <div class="flow-title">Constitutional Prejudice</div>
+                    <div class="flow-copy">The defense confronted not a stable body of facts, but a moving target. That is the terrain on which Brady, Napue, Franks, confrontation, and due process concerns arise.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="node-map" class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Witness and influence map</h3>
+                    <p class="section-dek">
+                        Freeman sits at the center because his role was not limited to hearing information. He became the funnel through which raw statements were filtered, summarized, translated into probable-cause language, and carried forward into the formal case narrative.
+                    </p>
+                </div>
+            </div>
+
+            <div class="node-board">
+                <div class="center-node-wrap">
+                    <div class="node node-primary">
+                        <div class="node-label">Central actor</div>
+                        <div class="node-title">Detective D.S. Freeman</div>
+                        <div class="node-copy">
+                            The core issue is not simply that Freeman interviewed witnesses. It is that the formal narrative repeatedly tracks his restatement of what witnesses supposedly meant, rather than what the witnesses actually said in the earliest preserved versions.
+                        </div>
+                    </div>
+
+                    <div class="node node-red">
+                        <div class="node-label">Narrative function</div>
+                        <div class="node-title">Conversion Point</div>
+                        <div class="node-copy">
+                            Raw witness uncertainty enters on one side. A cleaner probable-cause narrative exits on the other. The pressure point is the conversion itself.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="node node-gold">
+                    <div class="node-label">Witness inputs</div>
+                    <div class="node-title">Original Statements</div>
+                    <div class="node-arrow-list">
+                        <div class="arrow-link"><strong>Carmen Love</strong><span>Did not recognize Ben Allen by name; no recorded pre-arrest bonfire narrative in the form later attributed to her.</span></div>
+                        <div class="arrow-link"><strong>Steve Happel</strong><span>Placed Lauren going in and back out, described “hysterical” conduct, and gave a short-duration account rather than a developed force narrative.</span></div>
+                        <div class="arrow-link"><strong>Joseph DeMarco</strong><span>Provided road / field / rescue details that do not sit neatly with later terrain and chase portrayals.</span></div>
+                        <div class="arrow-link"><strong>Lauren Deal</strong><span>Early versions leaned on event and location details; later versions increasingly emphasized force, fear, and emotional consequence.</span></div>
+                        <div class="arrow-link"><strong>Ben Allen</strong><span>Denied sex, denied body fluids, placed Lauren in the bedroom only for bathroom use, and described finding her face-down outside Schooly’s.</span></div>
+                    </div>
+                </div>
+
+                <div class="node node-blue">
+                    <div class="node-label">Downstream Outputs</div>
+                    <div class="node-title">What the Filtered Narrative Did</div>
+                    <div class="node-arrow-list">
+                        <div class="arrow-link"><strong>Probable Cause</strong><span>Used summary language that made the case appear more corroborated than the preserved calls actually show.</span></div>
+                        <div class="arrow-link"><strong>Affidavit Support</strong><span>Presented transformed witness accounts as a factual base for arrest and search steps.</span></div>
+                        <div class="arrow-link"><strong>Trial Coherence</strong><span>Created a cleaner storyline for the jury by reducing ambiguity and foregrounding the prosecution-friendly arc.</span></div>
+                        <div class="arrow-link"><strong>Defense Burden</strong><span>Forced the defense to unwind drift, omissions, and changed wording issue by issue, instead of confronting a stable record.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="statement-lanes" class="section-shell">
+            <div class="subtle-note u-migrated-5b9a8967">
+                The strongest proof points on this page are not broad accusations. They are directional conversions. Across multiple witnesses, Freeman's sworn narrative does not merely summarize what people said. It upgrades, sanitizes, redirects, and supplies missing connective tissue in ways that repeatedly strengthen probable cause and reduce ambiguity.
+            </div>
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Statement transformation lanes</h3>
+                    <p class="section-dek">
+                        Each lane below follows one issue across the record: source statement, later retelling, the drift itself, and the legal or factual significance of that drift.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-heading u-migrated-583f758b">
+                <div>
+                    <h3 class="section-title-strong">Affidavit by substitution: when the witness's words stop being the witness's words</h3>
+                    <p class="section-dek">
+                        The problem is not merely omission. It is conversion. These affidavit fabrications show the mechanism directly: affidavit claim, actual recorded statement, what changed, and why the change mattered.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lane-stack u-migrated-c071b4ab">
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Affidavit Fabrication One: DeMarco's simple "went inside" becomes a bathroom-follow narrative</h4>
+                        <span class="issue-tag">DeMarco / Bathroom detail</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit claim</span>
+                            <h4>Lauren went in to use the bathroom and Ben followed</h4>
+                            <div class="quote-box">"Mr. DeMarco stated that shortly thereafter, Lauren went inside to use the bathroom, and Ben followed."</div>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Actual recorded statement</span>
+                            <h4>DeMarco only said they went inside</h4>
+                            <div class="quote-box">"We were collecting firewood, getting a fire going again. Lauren and Ben then went inside."</div>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>A neutral transition became a loaded bathroom-follow sequence</h4>
+                            <p>The affidavit adds the bathroom detail and the image of Ben following her, even though DeMarco did not supply that phrasing in the preserved statement.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>The added detail makes the entry sound more coercive</h4>
+                            <p>It gives the movement into the house a sharper predatory cast and supplies a cleaner bridge toward the prosecution's interior-event theory.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Freeman supplies pressure where the witness supplied only sequence</h4>
+                            <p>The source statement preserved ambiguity. The affidavit converts that ambiguity into direction.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Affidavit Fabrication Two: frightened departure becomes organized search</h4>
+                        <span class="issue-tag">DeMarco / Search narrative</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit claim</span>
+                            <h4>DeMarco deliberately drove out to locate her on Old US 1</h4>
+                            <div class="quote-box">"Mr. DeMarco made the decision to get his vehicle and ride in an attempt to locate her and did so on the roadway, which was later identified as Old US 1."</div>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Actual recorded statement</span>
+                            <h4>He said he got afraid, left, and then saw her while driving</h4>
+                            <div class="quote-box">"I was like... I woke up, I was just about to call the police, and then I get afraid and leave. Then, when I leave, I'm driving down the road near Route 1, and I see her running through a field."</div>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>Chance encounter became purposeful search, and vague route became hardened roadway</h4>
+                            <p>The affidavit adds intent, initiative, and a cleaner location label. It also moves from "near Route 1" into a more definite Old US 1 narrative.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>The rewrite creates order, responsibility, and rescue coherence</h4>
+                            <p>A frightened witness leaving the scene is unstable. An active searcher locating her on a defined road is far more useful to probable cause and later scene storytelling.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The affidavit replaces panic with a prosecutorially helpful role</h4>
+                            <p>This is both statement inflation and route laundering, which is why the same point matters again in the scene section below.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Affidavit Fabrication Three: Carmen's missed follow-up becomes all-day concern</h4>
+                        <span class="issue-tag">Carmen / Concern narrative</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit claim</span>
+                            <h4>Carmen became worried because she had tried to contact Lauren all day</h4>
+                            <div class="quote-box">"Mrs. Love stated that she became worried because she had been attempting to contact her all day."</div>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Actual recorded statement</span>
+                            <h4>She said she thought of texting her and then forgot</h4>
+                            <div class="quote-box">"Earlier, I was laying there. We were laying in the bed watching TV, and I thought, 'I need to text her to see if she's okay.' Then I checked my message messenger, and then Chloe called, and it just slipped my mind."</div>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>A passing thought became sustained concern and repeated outreach</h4>
+                            <p>The affidavit replaces forgetfulness and incompletion with a more urgent, more responsible, and more corroborative emotional framing.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>The rewritten version implies danger was already apparent</h4>
+                            <p>That makes the evening sound more ominous and paints Carmen as a witness who sensed trouble, rather than someone whose own words reflected looser concern and distraction.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Freeman upgrades mood and urgency without the witness supplying it</h4>
+                            <p>The source does not naturally support a worried-all-day narrative. The affidavit manufactures one.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Affidavit Fabrication Four: Happel's messy bar account is sanitized into "met up with Lauren"</h4>
+                        <span class="issue-tag">Happel / Bar sequence</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit claim</span>
+                            <h4>The group met up with Lauren at Schooley's</h4>
+                            <div class="quote-box">"Mr. Happel stated that his friends Joseph DeMarco and Ben Allen went to Schooley's, and while they were there, they met up with Lauren."</div>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Actual recorded statement</span>
+                            <h4>Happel said she came out of nowhere and acted hysterical</h4>
+                            <div class="quote-box">"We just showed up at Schooley's. We were just chilling. There really was no atmosphere. Then that girl kind of came out of nowhere and started being around us and acting kind of hysterical. You know, we didn't give her any attention, and she'd call us a bunch of assholes multiple times."</div>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>The affidavit removes the hostility, disorder, and social awkwardness</h4>
+                            <p>"Met up with Lauren" sounds mutual and ordinary. Happel's actual wording sounded accidental, tense, and unflattering to the cohesion of the evening.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>Sanitizing the bar sequence stabilizes the later social path</h4>
+                            <p>The cleaner affidavit version makes it easier to depict Lauren as integrated with the group rather than intermittently orbiting it under chaotic circumstances.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Ambiguous bar behavior becomes a tidier prelude</h4>
+                            <p>The witness's friction-producing details are not just shortened. They are converted into a more prosecution-friendly social narrative.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Affidavit Fabrication Five: "walked inside behind Lauren while she went to the bathroom"</h4>
+                        <span class="issue-tag">Ben statement / Loaded follow formulation</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit claim</span>
+                            <h4>The house entry is framed as Ben following Lauren to the bathroom</h4>
+                            <div class="quote-box">"Upon getting to the house, they started to build a fire, and he walked inside the house behind Lauren while she went to the bathroom."</div>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Actual recorded statement</span>
+                            <h4>The underlying account did not supply a bathroom-follow formulation</h4>
+                            <p>The preserved versions support that people moved between the fire and the house. They do not clearly support the loaded phrasing that Ben followed Lauren while she went to the bathroom.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>A neutral movement becomes a pressure-charged scene</h4>
+                            <p>The affidavit does not simply report motion. It arranges the motion to imply pursuit, narrowing the interpretive space before the reader ever reaches the interior allegations.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>The wording front-loads control and forcefulness</h4>
+                            <p>That matters because it influences how later claims are received. A bathroom-follow narrative carries a very different emotional signal than a bare statement that people went inside.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The affidavit supplies missing connective tissue</h4>
+                            <p>Instead of preserving ambiguity, the sworn version furnishes the prosecution with a cleaner bridge from outdoor chronology to alleged interior misconduct.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="lane-stack">
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue One: Carmen Love and the probable-cause narrative</h4>
+                        <span class="issue-tag">Carmen / Pre-arrest call</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Recorded call</span>
+                            <h4>Carmen did not recognize Ben by name</h4>
+                            <div class="quote-box">“Ben Allen? … nope. Doesn’t ring a bell.”</div>
+                            <p>Her call does not naturally read like a confident identification of Ben as a known participant in Lauren’s evening.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">What else she said</span>
+                            <h4>Narrower and less resolved</h4>
+                            <p>She described Lauren as speaking with unfamiliar men and said Lauren declined a ride. The call did not supply the level of clean, supportive detail later attributed to it.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Freeman narrative</span>
+                            <h4>Statement hardens into support</h4>
+                            <p>The later narrative treats Carmen as though she confirmed the men, the social path, and the bonfire progression in a more settled way than the recorded call supports.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why this matters</span>
+                            <h4>Exculpatory friction disappears</h4>
+                            <p>A witness who should have complicated the story becomes a witness who appears to stabilize it. That changes how probable cause looks on paper.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Non-inculpatory material becomes inculpatory tone</h4>
+                            <p>This is a classic conversion problem: the record contains caution and uncertainty; the summary carries confidence and implication.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Two: Happel’s short, messy account becomes a cleaner affidavit version</h4>
+                        <span class="issue-tag">Happel / House sequence</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Recorded call</span>
+                            <h4>Less than five minutes; “hysterical”; “assholes”</h4>
+                            <p>Happel described Lauren as arriving, going in because she needed the bathroom, and coming out quickly while acting hysterical and saying they “work for him.”</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Missing from source</span>
+                            <h4>No developed bedroom corroboration</h4>
+                            <p>His call placed her in and out of the house. It did not independently confirm the internal mechanics later emphasized by the State.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Affidavit version</span>
+                            <h4>“Acting crazy” and “after a short time”</h4>
+                            <p>The affidavit compresses and sanitizes. The distinctive details that cut in multiple directions are reduced to a simpler prosecution-compatible arc.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Structural issue</span>
+                            <h4>Compression removes defense value</h4>
+                            <p>The witness’s original language about behavior, intoxication, and abrupt timing was useful precisely because it was messy. The summary strips that context.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The witness is made tidier than he was</h4>
+                            <p>The jury later sees a cleaner narrative spine than the actual early witness call justifies.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Three: DeMarco’s road-field-rescue account versus later terrain and chase framing</h4>
+                        <span class="issue-tag">DeMarco / Route and recovery</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Recorded call</span>
+                            <h4>Roadside / field / vehicle recovery</h4>
+                            <p>DeMarco described seeing her later near the road and through a field context, after leaving and then locating her while driving.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Source tension</span>
+                            <h4>Not a seamless woods narrative</h4>
+                            <p>His account already introduces complications about path, location, timing, and the exact route from the property to where he found her.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Later framing</span>
+                            <h4>Chase-through-woods narrative tightens</h4>
+                            <p>Later versions place stronger emphasis on sustained pursuit, clear directional running, and a cleaner recovery progression than the source statements comfortably support.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Physical problem</span>
+                            <h4>Terrain, visibility, and body mechanics become central</h4>
+                            <p>Once the narrative hardens into a prolonged dark-woods flight, objective questions about visibility, underbrush, route geometry, and physical plausibility become unavoidable.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Rescue testimony and scene theory diverge</h4>
+                            <p>The more polished the chase story becomes, the more it strains against route evidence, terrain interpretation, and DeMarco’s own wording.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Four: Lauren’s language shifts from event detail to element-driven testimony</h4>
+                        <span class="issue-tag">Lauren / Linguistic drift</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Early interviews</span>
+                            <h4>Concrete, situational vocabulary</h4>
+                            <p>Truck. Bathroom. Keys. Firewood. Running. Road. Those early accounts are more location- and event-oriented, with hedges and fragmented structure.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Speech profile</span>
+                            <h4>Messy recall style</h4>
+                            <p>Longer wandering sentences, uncertainty, and incomplete chronology. The sound is less polished and more interview-like.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Trial profile</span>
+                            <h4>Force, fear, trust, freezing, triggers</h4>
+                            <p>Trial vocabulary becomes shorter, sharper, and more element-laden. The rhetorical focus moves from what happened to what the jury should infer.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it matters</span>
+                            <h4>Same speaker, different substantive center</h4>
+                            <p>The issue is not whether she still sounds like herself. It is whether the content-language is now more aligned with prosecutorial need than with raw recall.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The testimony appears jury-shaped</h4>
+                            <p>That is where coaching concerns, Happel’s colloquy, and the “fear of witnesses” issue become legally important rather than merely rhetorical.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Five: Cleanup innuendo without scene foundation</h4>
+                        <span class="issue-tag">Scene / destruction theory</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">What was known</span>
+                            <h4>Limited scene processing</h4>
+                            <p>The claimed assault area was not processed in a way that could establish whether forensic evidence existed there, had been moved, or had been destroyed.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Key omission</span>
+                            <h4>No evidentiary baseline</h4>
+                            <p>Without competent collection from the relevant room, there is no reliable before-and-after comparison from which destruction can be inferred.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Later suggestion</span>
+                            <h4>Cleanup is framed as guilty behavior</h4>
+                            <p>The investigator later suggested that cleaning behavior was consistent with destruction of evidence, even though he had not processed the scene to know what, if anything, had been there.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Analytical weakness</span>
+                            <h4>Inference outruns foundation</h4>
+                            <p>That is not analysis built from evidence. It is innuendo built from suspicion, then backfilled with a guilty gloss.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The insinuation does work the evidence cannot do</h4>
+                            <p>It invites the audience to imagine missing evidence even though the State never established the evidentiary predicate for that imagination.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Six: the impossible 2:00 AM Carmen conversation</h4>
+                        <span class="issue-tag">Timeline impossibility / surveillance conflict</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit claim</span>
+                            <h4>Lauren allegedly told Carmen at 2:00 AM that she was leaving with Ben and his friends</h4>
+                            <p>That claim matters because it creates the appearance of a known, deliberate social handoff tying Lauren to Ben’s group before departure from the bar.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Objective contradiction</span>
+                            <h4>Surveillance places Carmen out of the bar by 12:41 AM</h4>
+                            <p>If Carmen had already left, the supposed 2:00 AM conversation could not have happened as described. The conflict is not interpretive; it is chronological.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Narrative utility</span>
+                            <h4>The false timing supplies social linkage</h4>
+                            <p>The impossible conversation fills a gap by making it seem that Carmen personally knew Lauren was leaving with Ben’s group at closing time.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Analytical consequence</span>
+                            <h4>An objective timestamp defeats the affidavit phrasing</h4>
+                            <p>When surveillance and affidavit language cannot coexist, the affidavit is not merely imprecise. It is affirmatively misleading on a material point.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>This supports a Franks-style challenge</h4>
+                            <p>A false statement used to strengthen connection, foreseeability, or probable-cause coherence is exactly the sort of defect that calls affidavit reliability into question.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Seven: DeMarco is rewritten from frightened witness into active searcher</h4>
+                        <span class="issue-tag">Statement inflation / roadway narrative</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Actual statement</span>
+                            <h4>He said he got scared, left, and then saw her while driving</h4>
+                            <div class="quote-box">“I get afraid and I leave. When I leave, I’m driving down the road near Route 1 and I see her running through a field.”</div>
+                            <p>That wording reads like departure followed by chance observation, not a purposeful organized search.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Additional conflict</span>
+                            <h4>The accuser did not identify Old US 1 in the same way</h4>
+                            <p>The location language itself drifts across versions: Route 1, Old US 1, 421, side road, field, woods. The summary later becomes more definite than the source.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Affidavit retelling</span>
+                            <h4>Freeman recasts him as deciding to search</h4>
+                            <p>The affidavit says DeMarco “made the decision to get his vehicle and ride in an attempt to locate her,” which upgrades a frightened departure into a purposeful rescue effort.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the change matters</span>
+                            <h4>The rewrite creates coherence and responsibility</h4>
+                            <p>An active searcher sounds calmer, more orderly, and more narratively helpful than a man who panicked, left, and then happened to see her while driving away.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The witness becomes more useful than he actually was</h4>
+                            <p>This turns a messy fact pattern into a cleaner rescue sequence and smooths over route, timing, and behavior problems the original statement preserved.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Witness contradictions and investigative bias</h3>
+                    <p class="section-dek">
+                        Carmen's account matters not because it resolves every factual dispute by itself, but because it anchors agency, chronology, and witness selection at a critical moment. Once her statement is read alongside the omissions that followed, the investigation looks less like neutral evidence gathering and more like selective narrative construction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lane-stack">
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue One: Carmen marks the last clearly voluntary contact point</h4>
+                        <span class="issue-tag">Agency / departure choice</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Carmen's statement shows Lauren staying by choice</h4>
+                            <p>Carmen's account places Lauren in an independent posture, saying she would call later and remaining of her own accord rather than under visible pressure, confusion, or trust-based reliance on the defendant.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The later story implies dependency and vulnerability much earlier</h4>
+                            <p>That framing asks the reader to believe Lauren had already shifted into a pressured or emotionally compromised state before Carmen left.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>Agency is the point, not just tone</h4>
+                            <p>If Carmen is right, the last voluntary contact point looks ordinary and self-directed. That directly collides with the later emotional presentation offered at trial.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>The statement weakens the prosecution's preferred emotional arc</h4>
+                            <p>A witness who preserves independence and choice is less useful than one who can be folded into a preexisting distress narrative.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Credibility impeachment starts before the house sequence</h4>
+                            <p>Carmen's statement does not just contradict a detail. It impeaches the emotional trajectory later used to make the case feel coherent.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Two: silence from a detailed witness is affirmative evidence of absence</h4>
+                        <span class="issue-tag">No early interaction with Ben</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Carmen did not place Lauren with Ben before her departure</h4>
+                            <p>She was present across multiple venues, recalled smaller details, and still did not describe meaningful interaction with the defendant before she left.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The later case theory assumes an earlier social bridge</h4>
+                            <p>That bridge matters because it helps explain how Lauren allegedly moved from public spaces into the later prosecution narrative.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>The omission is substantive, not trivial</h4>
+                            <p>Carmen might not have seen every second, but silence from a witness detailed enough to remember surrounding circumstances is meaningful when the omitted interaction would have been central.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>Freeman treats absence like ambiguity rather than contradiction</h4>
+                            <p>That move lets the State preserve a more connected social narrative than the detailed witness account comfortably supports.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The missing interaction becomes an unsupported assumption</h4>
+                            <p>What the witness failed to provide was not neutral filler. It was part of the bridge the later narrative needed.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Three: the timeline aligns with the video better than with Lauren's later social account</h4>
+                        <span class="issue-tag">Chronology / objective corroboration</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Carmen's time estimate tracks the footage</h4>
+                            <p>Her description that they stayed roughly an hour and a half to two hours fits the surveillance-based chronology more naturally than a claim that they simply hung out all night.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>Lauren's later account implies a different social dynamic</h4>
+                            <p>The discrepancy is not just a few minutes. It changes the feel of the night from intermittent contact into a much more continuous relational sequence.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>Objective footage favors Carmen's structure</h4>
+                            <p>Time estimates are never perfect, but when the overall chronology lines up better with the video on one side than the later story on the other, the conflict becomes material.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>The account closer to objective chronology loses influence</h4>
+                            <p>That is a red flag. Neutral investigation should elevate the version most consistent with the fixed timeline, not the version most useful at trial.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The credibility problem is evidentiary, not stylistic</h4>
+                            <p>Where video supports the witness the State sidelines, later narrative confidence becomes much harder to credit under an ordinary sufficiency lens.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Four: Freeman possessed exculpatory information and filtered it anyway</h4>
+                        <span class="issue-tag">Omission / Franks concern</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Carmen conveyed voluntariness and lack of distress</h4>
+                            <p>Her account did not naturally support panic, coercion, or visible emotional collapse at the point she last observed Lauren.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The affidavit and later case theory do not preserve that exculpatory force</h4>
+                            <p>Investigators need not transcribe every word, but material exculpatory features cannot be converted into something weaker or omitted without consequence.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>This is not a note-taking complaint</h4>
+                            <p>When omitted material bears directly on agency, demeanor, and probable cause, the problem is not rough summarization. It is distortion by omission.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>The filtered version consistently weakens defense value</h4>
+                            <p>That directional pattern is why the omission supports a Franks-style concern rather than an innocent clerical explanation.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Exculpatory content is present in the source but absent in the formal narrative</h4>
+                            <p>The record becomes less honest precisely where the omitted detail would have restrained probable-cause confidence.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Five: Carmen's account does not support the pre-departure bonfire narrative</h4>
+                        <span class="issue-tag">Bonfire chronology</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>No bonfire plan appears before Carmen leaves</h4>
+                            <p>Carmen's statement does not place that plan in the conversation before her departure, even though later versions treat the progression as more socially settled.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The later story treats the next step as if it had already cohered</h4>
+                            <p>That smooths the transition from bar activity into the house-and-fire sequence the prosecution needed.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>This looks less like normal memory drift than narrative upgrading</h4>
+                            <p>Carmen's account was closer in time and richer in detail, while later versions emerged after the case had stronger incentives to refine the social path.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>The simpler, more incriminating path survives</h4>
+                            <p>The witness statement that complicates the bonfire progression is not meaningfully integrated into the formal presentation of events.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The story acquires a connective step the early witness did not honestly provide</h4>
+                            <p>That matters because the prosecution theory depends on continuity, and continuity is exactly what Carmen fails to supply.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Six: identified follow-up witnesses were never meaningfully pursued</h4>
+                        <span class="issue-tag">James / Peter / omitted witnesses</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Carmen identified other people who could have clarified the night</h4>
+                            <p>James, Peter, and another passenger were potential witnesses to chronology, social contact, movement, and whether the evolving narrative held together.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The investigation functionally proceeds without them</h4>
+                            <p>That leaves the record dependent on a narrower set of witnesses whose statements were already being transformed or elevated.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>Their value was not cumulative</h4>
+                            <p>They could have corroborated or contradicted the central social and movement claims. Ignoring them prevented the record from hardening around neutral cross-checks.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>Unhelpful witnesses disappear from the process</h4>
+                            <p>That is the kind of selective follow-up that turns investigation into curation and supports a Kyles-style bad-faith concern.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The factual record is narrowed before the jury ever sees it</h4>
+                            <p>Once those witnesses are ignored, later narrative confidence rests on a field already stripped of obvious impeachment and corroboration sources.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Seven: familial conflict magnifies the suppression problem</h4>
+                        <span class="issue-tag">Conflict / appearance of bias</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Freeman's relative supplied material information that cut against the case theory</h4>
+                            <p>Carmen's position is not peripheral. She was tied both to the facts and to the investigator through family relationship.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The formal record does not reflect impartial handling of that risk</h4>
+                            <p>No confession of bias is needed. The relevant question is how the conflicted information was handled in practice.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>Bias is inferred from conduct, not admission</h4>
+                            <p>When a relative's exculpatory account is softened, omitted, or converted, the appearance of bias becomes more than theoretical.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>The relationship creates motive for self-protective filtering</h4>
+                            <p>That is especially troubling where the same investigator controls how the witness is translated into probable-cause language.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The impartiality of the investigation itself becomes contestable</h4>
+                            <p>This is not only a witness issue. It is a structural integrity issue at the center of the case.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Eight: the omissions produce structural prejudice, not harmless noise</h4>
+                        <span class="issue-tag">Prejudice / constitutional harm</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Witness contradiction</span>
+                            <h4>Neutral or less-aligned witnesses were ignored while a fragile narrative was elevated</h4>
+                            <p>The result is a record dominated by an impeached and evolving account rather than a balanced witness set.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing narrative</span>
+                            <h4>The jury was told it could simply weigh credibility</h4>
+                            <p>That assumes the jury received the full set of available contradictions in a fair form, which is exactly what this page disputes.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why the contradiction matters</span>
+                            <h4>There is no harmless-error comfort where witness selection shaped the case</h4>
+                            <p>When the omitted witnesses and altered summaries affect the very architecture of probable cause and trial coherence, the prejudice is structural rather than cosmetic.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Investigative bias concern</span>
+                            <h4>The State gets the benefit of a curated record</h4>
+                            <p>That is why the damage is not confined to one false sentence or one missing note. It distorts the whole frame through which later testimony is judged.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The resulting prejudice reaches the structure of the proceeding</h4>
+                            <p>Once neutral witnesses are sidelined and contradictory source material is filtered, the fairness problem is embedded in the record the jury receives.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="scene-processing" class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Scene-processing failure and the later destruction innuendo</h3>
+                    <p class="section-dek">
+                        This needs its own section because it is not a minor omission. If the State later wants to imply cleanup, concealment, or destruction, it must first establish that it competently processed the relevant scene and can identify what would have been there to remove.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-heading u-migrated-583f758b">
+                <div>
+                    <h3 class="section-title-strong">Location instability in the escape narrative</h3>
+                    <p class="section-dek">
+                        The route story does double duty. It is not only a witness rewrite. It is also a geography rewrite. Vague, inconsistent location language is repeatedly hardened into a cleaner roadway-and-flight narrative.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lane-stack u-migrated-13f24e73">
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Route fabrication and geographic laundering</h4>
+                        <span class="issue-tag">421 / Route 1 / Old US 1</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Source statements</span>
+                            <h4>The routes do not line up cleanly</h4>
+                            <p>Lauren identified US 421. DeMarco said he was near Route 1 and saw her running through a field. Those are not interchangeable details.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit version</span>
+                            <h4>Old US 1 plus a deliberate search</h4>
+                            <p>The affidavit fixes the route more confidently and adds a purposeful search narrative rather than preserving the uncertainty in the raw statements.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>Location drift is converted into roadway certainty</h4>
+                            <p>The movement from 421, to Route 1, to Old US 1 is not a trivial wording issue. It is an escalation from inconsistency to apparent precision.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>A cleaner route makes the rescue story easier to sell</h4>
+                            <p>Once geography is stabilized on paper, later narrative steps feel more coherent than the underlying witness record actually allows.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>Statement inflation becomes scene inflation</h4>
+                            <p>This is why the DeMarco-search fabrication belongs in two places: it rewrites both the witness and the map.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Woods, field, tree, or open ground?</h4>
+                        <span class="issue-tag">Terrain instability / physical plausibility</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Affidavit or later framing</span>
+                            <h4>The story leans toward woods and dramatic concealment</h4>
+                            <p>Later versions invite a dark-woods escape narrative in which Lauren runs, hides, and is then recovered from concealment.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Competing source statements</span>
+                            <h4>Field, tree, and open terrain point in different directions</h4>
+                            <p>DeMarco said field. Lauren said she hid behind a tree. The physical layout evidence points toward more open terrain, limited concealment, and instability in the dramatic chase framing.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What changed</span>
+                            <h4>The terrain is adapted to fit the emotional story</h4>
+                            <p>Open ground, a field, a tree, and dense woods do not create the same visual or physical sequence. Yet the narrative drifts toward the version that sounds most dramatic.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why it mattered</span>
+                            <h4>Terrain drives visibility, pace, endurance, and concealment</h4>
+                            <p>If the ground was more open, the theories built on darkness, underbrush, hiding, and an extended frantic run become much harder to sustain mechanically.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The escape story looks adaptive rather than stable</h4>
+                            <p>The more the route story shifts between woods, field, tree, and open ground, the less satisfying "mistake" becomes as an explanation for the final dramatic version.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-panel good">
+                    <h4>What a competent investigation would have done</h4>
+                    <div class="process-list">
+                        <div class="process-item">Secure and document the actual claimed assault area before narrative contamination.</div>
+                        <div class="process-item">Photograph and collect bedding, bathroom-adjacent items, trash, possible transfer surfaces, and clothing pathways.</div>
+                        <div class="process-item">Establish route geometry from bedroom to exit and from exit to alleged recovery point.</div>
+                        <div class="process-item">Test scene assumptions against lighting, terrain, visibility, and witness placement.</div>
+                        <div class="process-item">Send relevant clothing for DNA testing where the investigator himself admitted DNA might be present.</div>
+                    </div>
+                </div>
+
+                <div class="process-panel bad">
+                    <h4>What the record instead suggests</h4>
+                    <div class="process-list">
+                        <div class="process-item">The record suggests an investigation that focused heavily on selected narrative support rather than full-scene evidentiary discipline.</div>
+                        <div class="process-item">The pants became a focal object, but the broader mechanics of the alleged bedroom event did not receive comparable testing.</div>
+                        <div class="process-item">Investigators did not process the scene in a manner that could reliably support a later destruction-of-evidence theory.</div>
+                        <div class="process-item">Despite that gap, Freeman later floated cleanup behavior as consistent with destruction of evidence.</div>
+                        <div class="process-item">That suggestion reached beyond what the actual forensic foundation could honestly carry.</div>
+                        <div class="process-item">Before an investigator implies cleanup or destruction, he must first establish what evidence existed, where it likely existed, whether the relevant room was processed, and whether any alleged cleanup actually affected probative evidence.</div>
+                        <div class="process-item">The record described here does not show that foundation.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-outcome">
+                <h4 class="u-migrated-ddbaa46c">Custody, Detention, and Documentation Gap</h4>
+                <p class="u-migrated-31aa6f02">
+                    A separate but related process failure concerns detention itself. The record described here reflects a setting in which Allen sent contemporaneous messages suggesting he believed he needed bail and expected to be charged, while Freeman later testified in ways that obscured when custody actually began. If a reasonable person in Allen's position would not have felt free to leave, the encounter functioned as custody whether or not officers used handcuffs.
+                </p>
+                <p class="u-migrated-2a956da2">
+                    That custody question matters because Freeman's own testimony places Allen under officer supervision while Freeman went to the magistrate. Freeman testified that he left Allen with another officer, that the officer was standing outside the door, and that Freeman then presented the case to the magistrate. He also admitted that he had no word-for-word account and no notes documenting what he told the magistrate.
+                </p>
+                <p class="u-migrated-2a956da2">
+                    The resulting problem is not merely semantic. Freeman appears to have documented certain categories of evidence, including DNA collection, while failing to generate a contemporaneous written probable-cause foundation for the detention itself. That asymmetry matters. When an experienced investigator carefully documents lower-risk procedural steps but leaves the constitutional hinge point undocumented, the omission reads less like oversight and more like procedural evasion.
+                </p>
+                <p class="u-migrated-2a956da2">
+                    The documentation gap also prevents meaningful timing review. A reviewing authority cannot determine from a written probable-cause narrative whether probable cause existed before custody began, whether it developed only after interrogation, or whether the magistrate received a materially complete account. Without that record, later testimony becomes a substitute for contemporaneous documentation. That is precisely the problem: constitutional review should not depend on reconstruction after the fact.
+                </p>
+            </div>
+
+            <div class="process-outcome u-migrated-ca7bac77">
+                <h4 class="u-migrated-ddbaa46c">Why This Crosses the Line</h4>
+                <p class="u-migrated-2a956da2">
+                    Suggesting destruction of evidence without first establishing what evidence existed, where it existed, and whether the relevant room was competently processed is not a neutral inference. It is an accusation by atmosphere.
+                </p>
+                <p class="u-migrated-2a956da2">
+                    The problem grows more severe when the supposed cleanup occurred in a different room than the room where the assault was alleged to have happened. That kind of insinuation invites guilt through mood rather than proof through method. It allows an investigator to imply consciousness of guilt without first doing the investigative work necessary to prove that any relevant evidence existed, that it was destroyed, or that the alleged conduct affected the charged event.
+                </p>
+                <p class="u-migrated-2a956da2">
+                    The custody documentation problem compounds the same concern. The record does not merely show aggressive investigation. It shows a pattern: strong documentation where the step was easy to defend, weak or missing documentation where the constitutional stakes were highest, and later testimony used to fill the gaps. That is not how a reliable investigation should operate.
+                </p>
+            </div>
+        </section>
+
+        <section id="probable-cause-collapse" class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Carmen Love, the magistrate's order, and the collapse of probable cause</h3>
+                    <p class="section-dek">
+                        This is where witness contradiction becomes process failure. Carmen did not supply a clean familiarity narrative, did not clearly anchor a bonfire invitation, and did not identify Ben Allen by name. Yet Freeman later treated her statement as part of the material that pushed the case toward probable cause, even though he preserved no word-for-word account of how he supposedly reconciled the conflicts for the magistrate.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-split">
+                <article class="feature-card" target="_top">
+                    <div class="feature-card-inner">
+                        <div class="eyebrow">Core Thesis</div>
+                        <h4 class="section-title-strong u-migrated-7914a545">
+                            Freeman moved toward arrest on a record that was conflicting, undocumented, and already internally unstable.
+                        </h4>
+                        <p class="section-dek u-migrated-6a818467">
+                            Carmen Love's interview did not corroborate Lauren Deal's later version in any stable way. It undercut key themes instead: familiarity with the defendant, the social continuity between the groups, and the supposed decision to leave with Ben Allen and his friends. That matters because Freeman later told the jury Carmen's statement was part of what helped form probable cause.
+                        </p>
+                        <div class="pill-row-soft">
+                            <span class="pill-soft">Conflicting hearsay</span>
+                            <span class="pill-soft">No contemporaneous notes</span>
+                            <span class="pill-soft">No written probable-cause theory</span>
+                            <span class="pill-soft">Arrest first, justification later</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="feature-card" target="_top">
+                    <img class="feature-image" src="documents/graphics/inserts/Freeman Testimony.png" alt="Freeman testimony exhibit" />
+                    <div class="feature-card-inner">
+                        <div class="eyebrow">Documentary Pressure</div>
+                        <p class="section-dek u-migrated-25e87f15">
+                            <strong class="u-migrated-547e413d">Magistrate's Order:</strong> the form states the defendant "has been arrested without a warrant" and that detention "is justified because there is probable cause."
+                        </p>
+                        <p class="section-dek u-migrated-6a818467">
+                            That is post-arrest language. It does not describe a pre-arrest warrant process. It describes custody first and judicial justification second, which places Freeman's later courtroom description under direct documentary strain.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="feature-grid-3">
+                <article class="feature-mini-card" target="_top">
+                    <h4>Carmen Love</h4>
+                    <div class="quote-box">"Do you know a guy named, uh, Ben Allen by chance?"<br><br>"Ben Allen?... Um, nope. Doesn't ring a bell."</div>
+                    <div class="pill-row-soft">
+                        <span class="pill-soft">No name recognition</span>
+                        <span class="pill-soft">No claimed familiarity</span>
+                    </div>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <h4>Lauren Deal to Haines</h4>
+                    <div class="quote-box">"I don't even think she knew him."</div>
+                    <div class="pill-row-soft">
+                        <span class="pill-soft">Matches Carmen</span>
+                        <span class="pill-soft">Early account</span>
+                    </div>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <h4>Freeman at trial</h4>
+                    <div class="quote-box">"From what Ms. Deal said, from what Mr. Joe DeMarco said, from what Ms. Carmen Love said, from what Steve Happel said, and to what he said."<br><br>"I don't have word-for-word of what I presented to her."</div>
+                    <div class="pill-row-soft">
+                        <span class="pill-soft">No notes</span>
+                        <span class="pill-soft">No affidavit</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-heading u-migrated-2fbbbcd4">
+                <div>
+                    <h3 class="section-title-strong">How the narrative was built</h3>
+                    <p class="section-dek">
+                        The move from Carmen's actual interview to the later probable-cause story is not a single leap. It is a sequence: weak familiarity, late-added social glue, then a much cleaner invitation-and-continuity narrative.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-grid-3">
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Step 1</div>
+                    <h4>Carmen does not confirm the defendant</h4>
+                    <p>Carmen described two younger men she did not know. The name Ben Allen did not ring a bell. She did not clearly explain why Lauren stayed, and she did not say Lauren accepted a bonfire invitation from Ben.</p>
+                    <p class="u-migrated-d2c171b1">Her account is hesitant, partial, and unhelpful on motive.</p>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Step 2</div>
+                    <h4>The social links begin to harden</h4>
+                    <p>After prompting, Carmen adds that Joseph was a mutual friend. But the defense position is that the video shows the groups did not meaningfully merge before Carmen left, and that Lauren did not even meet DeMarco until later.</p>
+                    <p class="u-migrated-d2c171b1">That looks less like solid memory than late-added social glue.</p>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Step 3</div>
+                    <h4>The account evolves into invitation and familiarity</h4>
+                    <p>Lauren later tells Freeman and then the jury that she had been hanging out with Ben, Jay, and Steve, that Ben mentioned a bonfire, and that Carmen left because Lauren had chosen to continue the evening with them.</p>
+                    <p class="u-migrated-d2c171b1">That is materially cleaner and more inculpatory than Carmen's actual interview.</p>
+                </article>
+            </div>
+
+            <div class="section-heading u-migrated-2fbbbcd4">
+                <div>
+                    <h3 class="section-title-strong">Why Carmen's interview undercut probable cause</h3>
+                </div>
+            </div>
+
+            <div class="feature-grid-2">
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Contradiction 1</div>
+                    <h4>No stable familiarity narrative</h4>
+                    <p>Lauren's later versions depend on shared social time, comfort, invitation, and a voluntary decision to stay with Ben and his friends.</p>
+                    <ul>
+                        <li>Carmen does <strong class="u-migrated-7b83a912">not</strong> identify Ben by name.</li>
+                        <li>Carmen describes only <strong class="u-migrated-7b83a912">two younger men</strong>.</li>
+                        <li>Carmen never plainly says Lauren stayed because of Ben.</li>
+                        <li>Lauren herself first said Carmen likely <strong class="u-migrated-7b83a912">did not know him</strong>.</li>
+                    </ul>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Contradiction 2</div>
+                    <h4>No clear bonfire explanation from Carmen</h4>
+                    <p>Freeman pressed Carmen on why Lauren stayed. Carmen did not answer with a bonfire invitation, did not say Lauren was leaving with Ben, and did not explain the decision with clear factual detail.</p>
+                    <ul>
+                        <li>She says Lauren wanted to stay.</li>
+                        <li>She says Lauren said she was fine.</li>
+                        <li>She says Lauren "can drive or whatever," even though Lauren's car was not there.</li>
+                        <li>That reads more like filler than reliable memory.</li>
+                    </ul>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Contradiction 3</div>
+                    <h4>The Joseph problem</h4>
+                    <p>The "mutual friend Joseph" appears only after conversational development and prompting. The defense theory is that this is not independent recall but retrofitted familiarity.</p>
+                    <ul>
+                        <li>Carmen initially describes unfamiliar men.</li>
+                        <li>Later Joseph appears as socially connected.</li>
+                        <li>The groups' actual interaction on video is disputed.</li>
+                        <li>That convergence is consistent with contamination rather than clear recall.</li>
+                    </ul>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <div class="eyebrow">Contradiction 4</div>
+                    <h4>Freeman never documented how he reconciled the conflict</h4>
+                    <p>Freeman told the jury he did not have enough after talking to Lauren alone. He then claimed Carmen's statement helped form probable cause. But the record never shows how he resolved the contradictions.</p>
+                    <ul>
+                        <li>He kept <strong class="u-migrated-7b83a912">no notes</strong> of what he told the magistrate.</li>
+                        <li>He had <strong class="u-migrated-7b83a912">no recorded probable-cause summary</strong>.</li>
+                        <li>He could not say <strong class="u-migrated-7b83a912">word-for-word</strong> what he presented.</li>
+                        <li>No document shows how the conflicts were reconciled.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="section-heading u-migrated-2fbbbcd4">
+                <div>
+                    <h3 class="section-title-strong">The magistrate process problem</h3>
+                </div>
+            </div>
+
+            <div class="feature-grid-3">
+                <article class="feature-mini-card" target="_top">
+                    <h4>What Freeman said</h4>
+                    <p>He presented the information to Magistrate Johnson, a warrant was issued, and only then was the defendant processed.</p>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <h4>What the order says</h4>
+                    <p>The defendant "has been arrested without a warrant" and detention "is justified because there is probable cause."</p>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <h4>Why that matters</h4>
+                    <p>Those are not the same process. One is pre-arrest judicial authorization. The other is post-arrest justification. The form supports the latter.</p>
+                </article>
+            </div>
+
+            <div class="feature-grid-3">
+                <article class="feature-mini-card" target="_top">
+                    <h4>Probable cause was not cleanly built</h4>
+                    <p>The arrest decision rested on accusation plus conflicting hearsay that Freeman never reconciled in writing and could not later reconstruct under oath.</p>
+                    <div class="pill-row-soft">
+                        <span class="pill-soft">No written PC theory</span>
+                    </div>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <h4>Carmen did not supply what Freeman needed</h4>
+                    <p>Her interview did not firmly establish familiarity, did not clearly establish a bonfire invitation, and did not identify Ben Allen by name. It weakened the narrative more than it strengthened it.</p>
+                    <div class="pill-row-soft">
+                        <span class="pill-soft">Contradiction, not corroboration</span>
+                    </div>
+                </article>
+
+                <article class="feature-mini-card" target="_top">
+                    <h4>The record shows arrest first</h4>
+                    <p>The magistrate form's language is the language of after-the-fact detention review. That puts Freeman's courtroom description of the arrest sequence under direct documentary pressure.</p>
+                    <div class="pill-row-soft">
+                        <span class="pill-soft">Arrest first</span>
+                        <span class="pill-soft">Justification later</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Arrest Sequence, Magistrate Review, and Written Probable Cause</h3>
+                    <p class="section-dek">
+                        This needs to be shown as its own process problem. The issue is not merely that testimony was vague. The issue is that the formal record, text-message context, and later testimony point in different directions about when custody began, whether the arrest was warrantless, and whether probable cause was documented before liberty was curtailed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lane-stack">
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Eight: testimony later describes a warrant-first sequence that the court record contradicts</h4>
+                        <span class="issue-tag">Arrest process / magistrate order</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Later testimony</span>
+                            <h4>Freeman described custody as following a warrant process</h4>
+                            <p>His testimony framed the arrest as though judicial review preceded or authorized the custody sequence in the ordinary way.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Documented contradiction</span>
+                            <h4>The magistrate paperwork says the defendant was arrested without a warrant</h4>
+                            <p>That language matters because it places custody first and judicial involvement later, not the other way around.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">What the retelling does</span>
+                            <h4>The sequence is made to sound cleaner than it was</h4>
+                            <p>By narrating warrant and review in front-loaded fashion, the testimony softens the constitutional significance of a warrantless arrest and retrospective approval.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why this matters</span>
+                            <h4>Sequence is substance here, not detail</h4>
+                            <p>When liberty is restrained first and judicial review comes later, the Fourth Amendment and prompt-magistrate protections become central rather than collateral.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The legality of detention becomes independently contestable</h4>
+                            <p>This is not just impeachment material. It bears directly on seizure lawfulness, process integrity, and the reliability of everything built on that custody event.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="issue-lane" target="_top">
+                    <div class="issue-head">
+                        <h4 class="issue-title">Issue Nine: detention appears to precede any proper written probable-cause foundation</h4>
+                        <span class="issue-tag">Documentation omission / custody perception</span>
+                    </div>
+                    <div class="lane-steps">
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Contemporaneous perception</span>
+                            <h4>The defendant’s own messages reflect a belief that he was under control and facing imminent charges</h4>
+                            <p>References to bail and to Freeman “working something” tend to show that the setting did not feel like an ordinary voluntary conversation.</p>
+                        </div>
+                        <div class="lane-box source">
+                            <span class="lane-kicker">Constitutional benchmark</span>
+                            <h4>If a reasonable person would not feel free to leave, custody exists</h4>
+                            <p>Custody does not begin only when handcuffs appear. Restriction, setting, control, and police signaling all matter.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Documentation problem</span>
+                            <h4>No comparable written probable-cause statement appears before detention</h4>
+                            <p>The striking point is comparative: DNA consent and other later steps were memorialized, while the constitutional hinge-point was not documented with the same care.</p>
+                        </div>
+                        <div class="lane-box shift">
+                            <span class="lane-kicker">Why that omission is serious</span>
+                            <h4>The missing document impairs judicial review by design or effect</h4>
+                            <p>Without a contemporaneous written probable-cause basis, the magistrate and later courts are forced to rely on after-the-fact verbal reconstruction.</p>
+                        </div>
+                        <div class="lane-box effect">
+                            <span class="lane-kicker">Effect</span>
+                            <h4>The detention becomes vulnerable on both legality and credibility grounds</h4>
+                            <p>For an experienced investigator and instructor, the omission reads as a substantial procedural deviation, not a harmless paperwork lapse.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="consequence-matrix" class="section-shell">
+            <div class="section-heading">
+                <div>
+                    <h3 class="section-title-strong">Consequences Matrix</h3>
+                    <p class="section-dek">
+                        The distortions above are not isolated defects. They compound. Each one increases the likelihood that formal legal process rested on a more coherent narrative than the underlying record warranted.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-outcome u-migrated-70687260">
+                <h4 class="u-migrated-ddbaa46c">Why these fabrication points matter legally</h4>
+                <p class="u-migrated-9c6a2482">
+                    The significance of these shifts is not exhausted by rhetoric. If probable cause was built on altered witness language, the reliability of the affidavit itself becomes contestable.
+                </p>
+                <ul class="u-migrated-d16f89c8">
+                    <li><strong>Franks issue:</strong> the strongest and most direct problem arises where affidavit phrasing adds false or recklessly unsupported detail that the witness did not provide.</li>
+                    <li><strong>False-impression problem:</strong> if the cleaned-up or altered versions were later used at trial, the State benefits from a narrative the source record does not honestly support.</li>
+                    <li><strong>Suppression and impeachment implications:</strong> transformed summaries can conceal exculpatory friction, distort witness reliability, and change how defense counsel approaches the case.</li>
+                    <li><strong>Credibility collapse:</strong> once the reader sees repeated directional edits across multiple witnesses, isolated mistake stops being a satisfying explanation for the lead investigator's wording choices.</li>
+                </ul>
+            </div>
+
+            <div class="matrix-grid">
+                <article class="matrix-card" target="_top">
+                    <h4>Probable cause</h4>
+                    <ul>
+                        <li>Witness uncertainty was reduced on paper.</li>
+                        <li>Exculpatory or destabilizing details lost force in summary form.</li>
+                        <li>The arrest narrative appears more corroborated than the source calls alone suggest.</li>
+                    </ul>
+                </article>
+
+                <article class="matrix-card" target="_top">
+                    <h4>Scene integrity</h4>
+                    <ul>
+                        <li>The State later implied destruction without a competent forensic baseline.</li>
+                        <li>Scene omissions deprived the case of honest mechanical testing.</li>
+                        <li>Speculation was allowed to stand where collection should have existed.</li>
+                    </ul>
+                </article>
+
+                <article class="matrix-card" target="_top">
+                    <h4>Witness credibility</h4>
+                    <ul>
+                        <li>Trial language sharpened toward legal elements.</li>
+                        <li>Fear, trust, freezing, and chase themes hardened over time.</li>
+                        <li>That drift matters because credibility was the case.</li>
+                    </ul>
+                </article>
+
+                <article class="matrix-card" target="_top">
+                    <h4>Defense impairment</h4>
+                    <ul>
+                        <li>The defense had to confront evolving versions rather than a stable body of facts.</li>
+                        <li>Cross-examination had to deconstruct drift instead of merely testing memory.</li>
+                        <li>Late shifts multiplied strategic burden and prejudiced preparation.</li>
+                    </ul>
+                </article>
+
+                <article class="matrix-card" target="_top">
+                    <h4>Jury distortion</h4>
+                    <ul>
+                        <li>The jury heard a polished storyline assembled from multiple stages of refinement.</li>
+                        <li>Important contradictions were muted by summary language and thematic framing.</li>
+                        <li>The resulting impression was stronger than the raw evidentiary foundation.</li>
+                    </ul>
+                </article>
+
+                <article class="matrix-card" target="_top">
+                    <h4>Constitutional implications</h4>
+                    <ul>
+                        <li>Franks concerns sharpen where witness statements were directionally altered in the affidavit rather than merely summarized.</li>
+                        <li>False-impression and Napue-type concerns arise if those sharpened narratives were later used to reinforce guilt or coherence without correction.</li>
+                        <li>Brady, Giglio, confrontation, and due-process concerns arise when transformed summaries concealed impeachment value or exculpatory ambiguity.</li>
+                        <li>Fourth Amendment concerns sharpen where custody preceded a proper written probable-cause showing and judicial review came only after the seizure was already underway.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="subtle-note">
+                To Do: Link every major visual claim ensuring it is tied, elsewhere on the site, to the underlying transcript, call excerpt, affidavit language, or exhibit. The page itself should orient and connect. The companion pages should prove and quote.
+            </div>
+        </section>
+
+        <div id="footer-elements">
+            <div class="fab-image u-migrated-8cf502ad">
+                <img src="documents/graphics/icons/stop_corruption%20Clean.jpeg" alt="Lee County Corruption"  class="u-migrated-77100acf"/>
+            </div>
+        </div>
+    </div>
+
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+
+
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections Diagram - State v. Benjamin Allen</title>
+    <link rel="stylesheet" href="shared/styles.css?v=639006186749527756">
+    <script src="assets/js/tailwindcdn.js"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .title-font { font-family: Georgia, "Times New Roman", serif; }
+        .pullquote {
+            border-left: 1px solid rgba(255,255,255,0.1);
+            background: transparent;
+            box-shadow: none;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        .accent-text { color: #fbbf24; }
+        .warning-bar { background: linear-gradient(to right, #dc2626, #ef4444); }
+        @media (max-width: 640px) {
+            .pullquote { padding: 1rem 1.25rem; font-size: 1rem !important; }
+        }
+    </style>
+    <style>
+        body.connections-page {
+            background:
+                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
+                linear-gradient(180deg, #131617 0%, #101314 100%);
+            color: #eef3f4;
+        }
+        body.connections-page .container {
+            max-width: 1800px;
+        }
+        body.connections-page .carousel-nav-wrapper {
+            display: none !important;
+        }
+        body.connections-page .page-rail,
+        body.connections-page .connections-sidebar,
+        body.connections-page .connections-viewport,
+        body.connections-page .bg-zinc-900\/50 {
+            background: rgba(18,22,23,0.92) !important;
+            border-color: rgba(255,255,255,0.08) !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+        }
+        body.connections-page .page-rail-title,
+        body.connections-page .accent-text,
+        body.connections-page .text-red-400,
+        body.connections-page .text-yellow-400 {
+            color: #9fc8cf !important;
+        }
+        body.connections-page .warning-bar,
+        body.connections-page .bg-gradient-to-r.from-\[\#4a3910\]\/60.to-transparent {
+            background: linear-gradient(90deg, rgba(93,152,162,0.22), rgba(93,152,162,0.04)) !important;
+            border-color: rgba(93,152,162,0.3) !important;
+        }
+        body.connections-page .text-zinc-400,
+        body.connections-page .text-zinc-300,
+        body.connections-page p[style*="#94a3b8"] {
+            color: #c2cccd !important;
+        }
+        body.connections-page .text-white,
+        body.connections-page .section-title,
+        body.connections-page .connections-sidebar strong,
+        body.connections-page .connections-help strong {
+            color: #f3f7f7 !important;
+        }
+        body.connections-page .connections-help,
+        body.connections-page .node-item,
+        body.connections-page .connections-sidebar-header button,
+        body.connections-page .connections-sidebar-header .button {
+            background: rgba(23,27,28,0.88);
+            border-color: rgba(255,255,255,0.08);
+            color: #eef3f4;
+        }
+        body.connections-page .node-item.selected,
+        body.connections-page .connections-sidebar-header button:hover,
+        body.connections-page .connections-sidebar-header .button:hover {
+            background: rgba(93,152,162,0.18);
+            border-color: rgba(93,152,162,0.4);
+        }
+        body.connections-page .fab-image img {
+            border: 2px solid rgba(93,152,162,0.7) !important;
+            background: rgba(0,0,0,0.42) !important;
+        }
+    </style>
+
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body class="connections-page">
+    <div class="container">
+        <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="timeline.html">Timeline</a>
+            <a class="nav-tab" href="players.html">Players</a>
+            <a class="nav-tab" href="evidence.html">Evidence</a>
+            <a class="nav-tab" href="contradictions.html">Contradictions</a>
+            <a class="nav-tab" href="misconduct.html">Misconduct</a>
+            <a class="nav-tab" href="documentspage.html">Documents</a>
+            <a class="nav-tab" href="misconductandfailure.html">Mindmaps</a>
+            <a class="nav-tab" href="case-study.html">Case Study</a>
+        </div>
+        <div class="header">
+             <h1>An Edifice of Lies</h1>
+            <h2>“Connections reveal the architecture of the setup.”</h2>
+        </div>
+<nav class="page-rail" aria-label="On this page">
+            <p class="page-rail-title">On this page</p>
+            <a href="#connections" target="_top">Diagram</a>
+            <a href="#connections-sidebar" target="_top">Key Nodes</a>
+            <a href="#connections-viewport" target="_top">Viewer</a>
+            <a href="#lady-justice" target="_top">Lady Justice</a>
+            <a href="#erosion-narrative" target="_top">Statement of Indictment</a>
+        </nav>
+
+
+        <!-- Draw.io Connections viewer -->
+        <section id="connections" class="u-migrated-02915e3c">
+            <h2 class="section-title u-migrated-7a8feb70">Connections Diagram</h2>
+            <p class="u-migrated-e1db2c34">
+                Interactive view of the community connections around the case.
+                Click names to focus on nodes in the embedded viewer and analyze how networks of friendships,
+                affiliations, and shared interests can influence accountability, sometimes enabling misconduct
+                to remain unchallenged when those within the network protect one another.
+            </p>
+            <div class="connections-wrapper">
+                <div class="connections-sidebar" id="connections-sidebar">
+                    <div class="connections-sidebar-header">
+                        <strong>Nodes</strong>
+                        <div class="u-migrated-01ef7fc9">
+                            <a class="button" id="open-editor" href="documents/connections/For_web.drawio.xml" title="Download/Open XML" target="_top">Download XML</a>
+                            <button id="open-defaults" title="Open defaults">Open Defaults</button>
+                        </div>
+                    </div>
+                    <div class="connections-controls-help" aria-hidden="false">
+                        <details class="connections-help" role="group" aria-label="Diagram controls" open>
+                            <summary>Controls</summary>
+                            <ul>
+                                <li><strong>Pan</strong>: Middle mouse drag or Space + drag.</li>
+                                <li><strong>Zoom</strong>: Mouse wheel (Ctrl/⌘ for precision).</li>
+                                <li><strong>Select</strong>: Click a name to focus and zoom.</li>
+                                <li><strong>Fit</strong>: Use the viewer toolbar or the Fit button.</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="connections-list" id="connections-list">
+                        <p class="u-migrated-42a7486c">Loading list...</p>
+                    </div>
+                </div>
+            <div id="footer-elements">
+            <div class="fab-image u-migrated-8cf502ad">
+                <img src="documents/graphics/icons/stop_corruption%20Clean.jpeg" alt="Lee County Corruption" class="u-migrated-f339e777">
+            </div>
+            </div>
+                <div class="connections-viewport" id="connections-viewport">
+                    <iframe
+                        id="drawio-iframe"
+                        title="Connections diagram"
+                        tabindex="-4"
+
+                        src="https://embed.diagrams.net/?embed=1&spin=1&proto=json" class="u-migrated-e5b56740"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="shared/card-mapper.js"></script>
+    <script src="shared/card-colors.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            async function setupDrawioConnections() {
+                const listEl = document.getElementById('connections-list');
+                const iframe = document.getElementById('drawio-iframe');
+                const editorLink = document.getElementById('open-editor');
+
+                try {
+                    const xmlCandidates = [
+                        'documents/connections/For_web.drawio.xml',
+                        'documents/connections/For_web.drawio.xml',
+                        'shared/Connections_20250719_233212.drawio.xml',
+                        './shared/Connections_20250719_233212.drawio.xml'
+                    ];
+                    let xmlPath = null;
+                    let xmlUrl = null;
+                    let res = null;
+                    for (const candidate of xmlCandidates) {
+                        const testUrl = new URL(candidate, window.location.href).href;
+                        const attempt = await fetch(encodeURI(testUrl));
+                        if (attempt.ok) {
+                            xmlPath = candidate;
+                            xmlUrl = testUrl;
+                            res = attempt;
+                            break;
+                        }
+                    }
+                    if (!res || !res.ok || !xmlPath || !xmlUrl) {
+                        throw new Error('Could not fetch drawio XML from known paths');
+                    }
+                    if (editorLink) editorLink.href = xmlPath;
+                    const xmlText = await res.text();
+
+                    // Parse nodes
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(xmlText, 'text/xml');
+                    const cells = Array.from(doc.querySelectorAll('mxCell[vertex="1"]'));
+
+                    // Build list
+                    listEl.innerHTML = '';
+                    const nodes = cells.map(cell => {
+                        const id = cell.getAttribute('id');
+                        let raw = cell.getAttribute('value') || '';
+                        const tmp = document.createElement('div');
+                        tmp.innerHTML = raw;
+                        const label = tmp.textContent.trim() || id;
+                        return { id, label, cell };
+                    });
+
+                    nodes.forEach(n => {
+                        const li = document.createElement('div');
+                        li.className = 'node-item';
+                        li.textContent = n.label;
+                        li.dataset.cellId = n.id;
+                        li.addEventListener('click', () => {
+                            try {
+                                iframe.contentWindow.postMessage(JSON.stringify({ action: 'select', ids: [n.id] }), '*');
+                                iframe.contentWindow.postMessage(JSON.stringify({ action: 'zoom', value: 1.2 }), '*');
+                            } catch (e) {
+                                console.warn('postMessage to draw.io failed', e);
+                            }
+                            const prev = listEl.querySelector('.node-item.selected');
+                            if (prev) prev.classList.remove('selected');
+                            li.classList.add('selected');
+                        });
+                        listEl.appendChild(li);
+                    });
+
+                    let didFit = false;
+                    const runInitialFit = () => {
+                        // Run fit multiple times to account for async render/layout timing.
+                        [120, 500, 1200].forEach((delay) => {
+                            setTimeout(() => {
+                                try { iframe.contentWindow.postMessage(JSON.stringify({ action: 'fit' }), '*'); } catch (e) {}
+                            }, delay);
+                        });
+                    };
+
+                    window.addEventListener('message', (evt) => {
+                        let data = evt.data;
+                        try { data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data)); } catch(e) { data = evt.data; }
+                        if (data && data.event === 'init') {
+                            try {
+                                iframe.contentWindow.postMessage(JSON.stringify({ action: 'load', xml: xmlText }), '*');
+                                runInitialFit();
+                            } catch (e) {}
+                        }
+                        if (data && data.event === 'load' && !didFit) {
+                            didFit = true;
+                            runInitialFit();
+                        }
+                    });
+
+                    const defaultKeywords = ['giglio', 'brady', 'fabricat', 'extortion', 'conceal', 'perjury', 'false', 'withhold'];
+                    document.getElementById('open-defaults').addEventListener('click', () => {
+                        const matches = nodes.filter(n => defaultKeywords.some(k => n.label.toLowerCase().includes(k)));
+                        matches.slice(0, 30).forEach(m => {
+                            try { iframe.contentWindow.postMessage(JSON.stringify({ action: 'select', ids: [m.id] }), '*'); } catch(e) {}
+                        });
+                    });
+
+                } catch (err) {
+                    console.error('Failed to initialize connections viewer', err);
+                    const protocolHint = window.location.protocol === 'file:'
+                        ? 'Open this page through a local web server (http://localhost...), not file://, so browser security allows loading the XML.'
+                        : '';
+                    listEl.innerHTML = `<p class="u-migrated-291eef4e">Failed to load connections: ${err.message}</p>${protocolHint ? `<p class="u-migrated-130d9ba6">${protocolHint}</p>` : ''}`;
+                }
+            }
+
+            setupDrawioConnections();
+        });
+    </script>
+
+        <!-- LADY JUSTICE -->
+        <div id="lady-justice" class="anchor-offset"></div>
+        <div class="u-migrated-6166e4b4">
+            <div class="image-hover-container u-migrated-e9ff4778">
+                <img
+                    src="documents/graphics/Lady Justice LCSO.png"
+                    alt="Lady Justice with swords, a tattered flag, and a corrupted charter"
+
+                 class="u-migrated-0ff0021d">
+                <div class="image-hover-overlay">
+                    Traditionally, Lady Justice carries scales to signify deliberation, proportionality, and the weighing of evidence, and a sword to signify the authority to enforce judgment once that weighing is complete. The sequence matters. Reason precedes force. Judgment is earned before it is imposed unless you live in Lee County, North Carolina.
+                    <br><br>
+                    The Sheriff's Office breaks that sequence entirely. In Lee County, the representation of Lady Justice is very different. This image represents how law enforcement operates and what is accepted by the legal community.
+                    <br><br>
+                    What follows is not allegory but accusation, currently lived by a former Lee County citizen.
+                    <br><br>
+                    <strong>Judgment without balance.</strong><br>
+                    The absence of the scales removes the symbol of evidentiary restraint. There is no weighing, no calibration, no pause. Two swords signify decisions rendered without proportional assessment—outcomes driven by certainty, assertion, or institutional confidence rather than proof. Justice no longer measures. It advances.
+                    <br><br>
+                    <strong>Force becomes self-reinforcing.</strong><br>
+                    One sword represents authority constrained by law. Two swords represent authority reinforcing itself. Enforcement stacked upon enforcement. Power justified by its own repetition. This is not law backed by legitimacy; it is coercion backed by momentum.
+                    <br><br>
+                    <strong>Neutrality abandoned.</strong><br>
+                    The scales signify impartiality. Their absence, paired with dual weapons, transforms justice from an arbiter into a combatant. The posture is no longer neutral; it is adversarial. There are no competing claims to be weighed—only outcomes to be imposed. Justice is no longer an umpire. It has chosen a side – especially when the family of law enforcement is trying to make some extra money.
+                    <br><br>
+                    <strong>Institutional self-authorship.</strong><br>
+                    The book beneath her is no longer revered; it is altered. We the People is crossed out. In its place stands an institutional name, sketched rather than engraved, implying authorship without consent. The foundational text is not destroyed—it is overwritten. Authority no longer flows from the governed upward; it circulates internally, citing itself as its own warrant.
+                    <br><br>
+                    <strong>Restraint is not lost—it is rejected.</strong><br>
+                    The blindfold remains, but its meaning has changed. It no longer symbolizes impartiality; it symbolizes indifference. The system does not fail to see. It chooses not to look. The torn flag behind her confirms the cost: legitimacy frayed, ideals exhausted, symbols retained only as backdrop.
+                    <br><br>
+                    <em>
+                        Scales ask.<br>
+                        Swords enforce.
+                    </em>
+                    <br><br>
+                    This image does not depict justice in crisis.<br>
+                    It depicts a justice system that believes it no longer needs permission.
+                </div>
+            </div>
+        </div>
+
+        <!-- STATEMENT OF INDICTMENT - THE NEW FACE OF INJUSTICE -->
+        <div id="erosion-narrative" class="anchor-offset"></div>
+        <div class="max-w-5xl mx-auto py-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-x-3 text-red-400 text-xs font-medium tracking-[4px] mb-3">
+                    <div class="h-px w-10 bg-red-400"></div>
+                    A STATEMENT OF INDICTMENT
+                    <div class="h-px w-10 bg-red-400"></div>
+                </div>
+                <h1 class="title-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-none mb-3">
+                    The New Face<br>of Injustice
+                </h1>
+                <p class="text-zinc-300 text-xl max-w-md mx-auto">
+                    Meet Assistant District Attorney
+                    Tiffany Bartholomew
+                    and
+                    Detective Steve Freeman
+                </p>
+                <div class="warning-bar h-1 w-24 mx-auto mt-10 rounded"></div>
+            </div>
+
+            <div class="bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-800 overflow-hidden">
+                <div class="px-8 md:px-14 py-12 md:py-16 text-[17.5px] leading-relaxed">
+
+                    <p class="mb-9">
+                        If Mike Nifong became the symbol of a prosecutor who betrayed justice to preserve a false narrative, then <span class="accent-text font-semibold">Tiffany Bartholomew</span> must become the symbol of something far more insidious: a prosecutor who did not merely protect a lie — she helped <span class="accent-text">build it, shape it, coach it, polish it, and arm it for battle in open court.</span>
+                    </p>
+
+                    <div class="pullquote">
+                        When the facts failed, the questions changed.<br>
+                        When the truth became inconvenient, emotion was substituted.<br>
+                        When the evidence refused to carry the State where it wanted to go, pressure, coaching, and outright manipulation filled the void.
+                    </div>
+
+                    <p class="mb-9">
+                        That is not prosecution.<br>
+                        <span class="accent-text font-semibold">That is narrative engineering.</span>
+                    </p>
+
+                    <p class="mb-9">
+                        That is not witness preparation.<br>
+                        <span class="accent-text font-semibold">That is witness construction.</span>
+                    </p>
+
+                    <p class="mb-9">
+                        Bartholomew did not merely ready the accuser for the stand — she rewrote the accuser's entire vocabulary, transforming raw accusation into courtroom-ready testimony. She crossed every line: switching from fact-based inquiry to emotional theater the moment manufactured evidence and coached lies could no longer bridge the gap. She intimidated witnesses in the courthouse and on joint calls with her detective. There was no boundary she would not breach.
+                    </p>
+
+                    <div class="pullquote text-center text-xl font-medium">
+                        This is not preparation. This is fabrication with the full authority of the State behind it.
+                    </div>
+
+                    <div class="my-12 border-l-4 border-red-400 pl-8 text-zinc-400 italic">
+                        And Detective Steve Freeman? He is the perfect partner in this enterprise — the investigator who treats facts as optional, procedure as optional, and accountability as a punchline reserved for defendants but never for the State.
+                    </div>
+
+                    <ul class="mb-10 space-y-5 text-zinc-300 list-none">
+                        <li class="flex gap-3"><span class="text-red-400 font-bold text-xl leading-none mt-1">•</span> No urgency to secure the scene.</li>
+                        <li class="flex gap-3"><span class="text-red-400 font-bold text-xl leading-none mt-1">•</span> No urgency to preserve evidence.</li>
+                        <li class="flex gap-3"><span class="text-red-400 font-bold text-xl leading-none mt-1">•</span> No urgency to test the story against physical reality.</li>
+                        <li class="flex gap-3"><span class="text-red-400 font-bold text-xl leading-none mt-1">•</span> No concern for contradictions. No concern for conflicts of interest.</li>
+                    </ul>
+
+                    <p class="mb-9">
+                        He attended a family wedding instead of investigating. Crime-scene diagrams? Beneath him. Weapons checks? Safety assessments? Immediate collection of physical evidence? All dismissed. Statements taken from witnesses were altered in his official reports — even though the original recorded versions were handed straight to the defense. On the stand he lied about the arrest process, claiming a warrant existed when the magistrate's order — sitting in plain view — proved he had none.
+                    </p>
+
+                    <div class="pullquote text-center text-2xl font-medium">
+                        He did it because he knew, with absolute certainty,<br>that nothing would happen.
+                    </div>
+
+                    <p class="mb-9 text-center italic text-xl text-zinc-300">
+                        Nothing ever does.
+                    </p>
+
+                    <p class="mb-9">
+                        Bartholomew was there to cover for him. She crafts the falsehoods; he delivers them. Subornation of perjury is not a scandal to her — it is a tool. The only problem she would have is if her witnesses lacked the stomach to perjure themselves for a conviction.
+                    </p>
+
+                    <div class="pullquote text-center text-xl font-medium">
+                        This is what makes Bartholomew and Freeman more dangerous than Nifong ever was.<br>
+                        Nifong became a scandal. His name became a stain. The system at least pretended to be shocked.
+                    </div>
+
+                    <p class="mb-9">
+                        But these two — and the institution that shields them — have learned the real lesson from Durham: next time, be smarter about hiding it. Coach more carefully. Shade the facts more confidently. Close ranks faster.
+                    </p>
+
+                    <p class="mb-9">
+                        They acted with the calm assurance that the lines no longer matter — because the system has already decided to protect its own once it commits to a false story. The defendant complained to counsel. Letters went to the Bar. Contradictions were laid bare in the record. The machinery never slowed.
+                    </p>
+
+                    <div class="my-14 p-10 bg-zinc-950 border border-[#8f6b16]/70 rounded-3xl text-center">
+                        <p class="italic text-2xl leading-tight accent-text">
+                            That is the public scandal here: not merely that falsehood was advanced, but that the entire apparatus of justice appeared willing to absorb it, defend it, and carry it forward as though truth were irrelevant.
+                        </p>
+                    </div>
+
+                    <p class="mb-9">
+                        Nifong's disgrace at least became visible. Bartholomew and Freeman represent the next, more corrosive stage — when betrayal of justice is no longer reckless but disciplined; no longer shocking but routine; no longer hidden because it cannot be seen, but because the institutions that see it refuse to act.
+                    </p>
+
+                    <div class="pullquote text-center text-xl font-medium">
+                        This is what makes Bartholomew and Freeman more dangerous than Nifong ever was.<br>
+                        Nifong became a scandal. His name became a stain. The system at least pretended to be shocked.
+                    </div>
+
+                    <p class="mb-9">
+                        Mike Nifong should have been a warning that misconduct would not be tolerated. Instead, the 12th Prosecutorial District used his story as a training manual.
+                    </p>
+
+                    <div class="my-14 bg-gradient-to-r from-[#4a3910]/60 to-transparent p-10 rounded-3xl border border-[#8f6b16]/50">
+                        <p class="text-3xl leading-tight font-medium text-center accent-text">
+                            This is not a procedural footnote.<br>
+                            This is not an academic debate for law reviews.
+                        </p>
+                    </div>
+
+                    <p class="mb-9">
+                        Because when prosecutors become storytellers and investigators become stagehands — when the machinery of justice exists only to control the narrative rather than discover the truth — then every citizen becomes a potential target of extortion by those who wear badges or carry the State's seal.
+                    </p>
+
+                    <p class="mb-9">
+                        The system's legitimacy does not rest on the mythical perfection of its actors.<br>
+                        It rests on their demonstrated willingness to police their own.<br>
+                        When that willingness dies, the foundation does not merely crack.<br>
+                        <span class="accent-text font-semibold">It crumbles.</span>
+                    </p>
+
+                    <p class="mb-9 text-center text-lg text-yellow-400">
+                        We are watching it crumble in real time.
+                    </p>
+
+                    <div class="mt-20 text-center border-t border-zinc-800 pt-12">
+                        <p class="text-4xl font-medium text-white tracking-tighter title-font leading-none mb-6">
+                            Truth still matters.<br>
+                            Process still protects.<br>
+                            Power must still answer to principle.
+                        </p>
+                        <p class="text-2xl accent-text title-font tracking-tight">
+                            Or we no longer have a justice system —<br>
+                            we have a story factory with uniforms and gavels.
+                        </p>
+                        <div class="mt-14 text-zinc-300 text-xl max-w-xs mx-auto font-medium">
+                            And in Lee County,<br>
+                            the machines are running at full speed.
+                        </div>
+                        <div class="u-migrated-2e2ca626">
+                            <video controls preload="metadata" class="u-migrated-4b3c5654">
+                                <source src="video/various/grok-video-0c28ce4a-869c-4b82-949e-7779bb551281.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Status Sidebar -->
+        <div class="max-w-5xl mx-auto pb-8">
+            <aside target="_top">
+                <div class="bg-zinc-900/50 rounded-xl border border-zinc-800 p-6 max-w-sm">
+                    <h3 class="font-bold text-white mb-4">Case Status</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center">
+                            <span class="text-zinc-400">Defendant:</span>
+                            <span class="text-white font-medium">Benjamin Allen</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-zinc-400">State v.:</span>
+                            <span class="text-white font-medium">Benjamin Allen</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-zinc-400">Jurisdiction:</span>
+                            <span class="text-white font-medium">Lee County, NC</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-zinc-400">Key Prosecutors:</span>
+                            <span class="text-red-400 font-medium">Bartholomew</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-zinc-400">Lead Detective:</span>
+                            <span class="text-red-400 font-medium">Freeman</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Full resolution image">        <video id="modalVideo" controls></video>
+    </div>
+
+    <script src="shared/image-modal.js"></script>
+
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+
+
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Snapshot | State v. Benjamin Allen</title>
+  <link rel="stylesheet" href="shared/styles.css">
+  <style>
+      body {
+          background:
+              radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
+              linear-gradient(180deg, #131617 0%, #101314 100%);
+          color: #eef3f4;
+      }
+      .container.page {
+          max-width: 1800px;
+      }
+      .content-section,
+      .card {
+          background: rgba(18,22,23,0.92);
+          border-color: rgba(255,255,255,0.08);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+      }
+      .content-section p,
+      .card p {
+          color: #d4dddd;
+      }
+      .section-title,
+      .card h3 {
+          color: #f3f7f7;
+      }
+      .nav-tab {
+          background: rgba(23,27,28,0.88);
+          border-color: rgba(255,255,255,0.08);
+          color: #eef3f4;
+      }
+      .nav-tab:hover,
+      .nav-tab.active {
+          background: rgba(93,152,162,0.18);
+          border-color: rgba(93,152,162,0.4);
+      }
+      .status-banner {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 20px;
+          border-radius: 10px;
+          background: rgba(93,152,162,0.10);
+          border: 1px solid rgba(93,152,162,0.3);
+          color: #9fc8cf;
+          font-size: 0.92rem;
+          margin-bottom: 28px;
+      }
+      .status-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: rgba(93,152,162,0.8);
+          flex-shrink: 0;
+      }
+      .content-todo {
+          background: rgba(255,255,255,0.03);
+          border: 1px dashed rgba(255,255,255,0.15);
+          border-radius: 10px;
+          padding: 18px 22px;
+          color: #8aa2a5;
+          font-size: 0.9rem;
+          line-height: 1.7;
+      }
+      .content-todo ul {
+          margin: 10px 0 0 0;
+          padding-left: 20px;
+      }
+      .content-todo li {
+          margin-bottom: 7px;
+      }
+      .stat-card {
+          background: rgba(18,22,23,0.92);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 12px;
+          padding: 24px;
+          text-align: center;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+      }
+      .stat-number {
+          font-size: 2.6rem;
+          font-weight: 700;
+          color: #9fc8cf;
+          line-height: 1.1;
+          display: block;
+          margin-bottom: 8px;
+      }
+      .stat-label {
+          color: #8aa2a5;
+          font-size: 0.88rem;
+          line-height: 1.5;
+      }
+      .stat-note {
+          color: #5c7a7d;
+          font-size: 0.78rem;
+          margin-top: 6px;
+          display: block;
+      }
+  </style>
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container page">
+
+    <div class="nav-tabs" aria-label="Project navigation">
+      <a class="nav-tab active" href="data-snapshot.html">Data Snapshot</a>
+      <a class="nav-tab" href="index.html">Landing</a>
+      <a class="nav-tab" href="overview.html">Project Map</a>
+      <a class="nav-tab" href="timeline.html">Timeline</a>
+      <a class="nav-tab" href="players.html">Players</a>
+      <a class="nav-tab" href="evidence.html">Evidence</a>
+      <a class="nav-tab" href="contradictions.html">Contradictions</a>
+      <a class="nav-tab" href="misconduct.html">Misconduct</a>
+      <a class="nav-tab" href="case-study.html">Case Study</a>
+      <a class="nav-tab" href="documentspage.html">Documents</a>
+    </div>
+
+    <div class="header">
+      <h1 class="u-migrated-6b99de8b">An Edifice of Lies</h1>
+      <h2 class="u-migrated-daadcf94">Data Snapshot: State v. Benjamin Allen</h2>
+      <p class="u-migrated-8beef3a8">Key statistics on false allegations, prosecutorial discretion, misconduct outcomes, and where this case sits within those numbers. All external figures are cited to named sources. Case-specific figures pending full court-file review are marked TBD. Last updated April 2026.</p>
+    </div>
+
+    <!-- Quick-jump rail -->
+    <nav class="page-rail u-migrated-876b62c1" aria-label="On this page">
+      <p class="page-rail-title u-migrated-7e6f47f8">On this page</p>
+      <a href="#methodology" class="u-migrated-b7bb3f33">Methodology Note</a>
+      <a href="#this-case" class="u-migrated-b7bb3f33">This Case — Key Numbers</a>
+      <a href="#false-allegation" class="u-migrated-b7bb3f33">False Allegation Base Rates</a>
+      <a href="#wrongful-conviction" class="u-migrated-b7bb3f33">Wrongful Conviction &amp; Exonerations</a>
+      <a href="#nc-integrity" class="u-migrated-b7bb3f33">NC Conviction Integrity</a>
+      <a href="#misconduct-data" class="u-migrated-b7bb3f33">Government Misconduct in Convictions</a>
+      <a href="#time-resolution" class="u-migrated-b7bb3f33">Time to Resolution</a>
+      <a href="#harms-data" class="u-migrated-b7bb3f33">Downstream Harm Research</a>
+      <a href="#pattern" class="u-migrated-b7bb3f33">How This Case Fits the Pattern</a>
+      <a href="#lee-county" class="u-migrated-b7bb3f33">Lee County — Public Records Queue</a>
+      <a href="#citations" class="u-migrated-b7bb3f33">Full Citations</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- METHODOLOGY NOTE                                                -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="methodology" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Methodology Note</h2>
+      <div class="card u-migrated-56a7fe46">
+        <p class="u-migrated-bbd4abd5">False allegation statistics exist on a spectrum from 2% to 40% depending entirely on how "false" is defined, whose determination counts, and what methodological standard the study applied. Most high-end estimates rely on police officer judgment, which research shows is unreliable. This page uses the conservative end of peer-reviewed estimates — studies that applied rigorous, documented criteria for classifying an allegation as false rather than merely unsubstantiated or withdrawn. The point is not to minimize genuine harm from real crimes. It is to establish that a case with the physical and evidentiary contradictions present in State v. Allen is an outlier even under the most generous prosecution-favoring assumptions about base rate.</p>
+        <p class="u-migrated-604bb0a3">This page separates three distinct categories that are frequently conflated in public discussion: <strong class="u-migrated-547e413d">false allegations</strong> (a complaint known or determined to be fabricated), <strong class="u-migrated-547e413d">unsubstantiated allegations</strong> (a complaint that did not result in a finding, not necessarily false), and <strong class="u-migrated-547e413d">unfounded reports</strong> (the FBI UCR category, which historically included cases detectives declined without independent review). The literature and this archive use narrow definitions throughout.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- THIS CASE — KEY NUMBERS                                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="this-case" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">This Case — Key Numbers</h2>
+      <p class="u-migrated-5dc094fd">Case-specific figures. Items marked TBD are pending full court-file review and will be updated as the document archive is completed.</p>
+      <div class="u-migrated-b7463e10">
+
+        <div class="stat-card">
+          <span class="stat-number">~6.5 yrs</span>
+          <span class="stat-label">Duration of prosecution from initial complaint (Oct 2019) to April 2026</span>
+          <span class="stat-note">Source: case filing date, court record</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">7+</span>
+          <span class="stat-label">Distinct, document-grounded contradictions between the narrative and physical / forensic record</span>
+          <span class="stat-note">Source: <a href="contradictions.html" class="u-migrated-547e413d">contradictions.html</a> audit</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Known physical or forensic evidence affirmatively corroborating the assault</span>
+          <span class="stat-note">Source: evidence inventory, lab reports</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Identified material witnesses present at the scene who were never interviewed by investigators</span>
+          <span class="stat-note">Morrison &amp; West — source: <a href="players.html" class="u-migrated-547e413d">players.html</a></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">4+</span>
+          <span class="stat-label">Documented law enforcement / Sheriff's Office family or professional connections in the principal network</span>
+          <span class="stat-note">Source: <a href="players.html" class="u-migrated-547e413d">players.html</a>, <a href="connections.html" class="u-migrated-547e413d">connections.html</a></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">~70%</span>
+          <span class="stat-label">Lunar illumination level on the night of Oct 18–19, 2019 — contradicting the "complete darkness" claim</span>
+          <span class="stat-note">Source: photometric/radiometric data, <a href="contradictions.html" class="u-migrated-547e413d">contradictions.html</a></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">$150K</span>
+          <span class="stat-label">Documented extortion demand from complainant's social network — uninvestigated financial motive</span>
+          <span class="stat-note">Source: extortion messages, court record</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">TBD</span>
+          <span class="stat-label">Total court appearances, continuances, and hearings documented in the case docket</span>
+          <span class="stat-note">Source: pending court-file review</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FALSE ALLEGATION BASE RATES                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="false-allegation" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">False Allegation Base Rates — The Research Landscape</h2>
+      <p class="u-migrated-13a4f535">The peer-reviewed literature on false sexual assault allegations has converged on a reliable range when rigorous methodology is applied. Studies using documented criteria — rather than investigator judgment alone — consistently place the rate between 2% and 10% of reported cases. Any estimate outside that range in either direction is typically the product of unstated definitional assumptions.</p>
+
+      <div class="u-migrated-3857bf70">
+        <div class="stat-card u-migrated-138c7252">
+          <span class="stat-number">5.9%</span>
+          <span class="stat-label">False reports in Lisak et al.'s 10-year analysis of 136 sexual assault cases at a U.S. university (2010)</span>
+          <span class="stat-note">Lisak, D. et al., <em>Violence Against Women</em>, 16(12), 2010</span>
+        </div>
+        <div class="stat-card u-migrated-138c7252">
+          <span class="stat-number">2–10%</span>
+          <span class="stat-label">Range of rigorous-methodology peer-reviewed estimates, per Rumney's 2006 meta-analysis of all major studies</span>
+          <span class="stat-note">Rumney, P.N.S., <em>Cambridge Law Journal</em>, 65(1), 2006</span>
+        </div>
+        <div class="stat-card u-migrated-526d0913">
+          <span class="stat-number">~8–10%</span>
+          <span class="stat-label">FBI UCR historical "unfounded" rate — but this category includes cases not investigated, not false allegations</span>
+          <span class="stat-note">FBI UCR (historical); note definitional limitation</span>
+        </div>
+        <div class="stat-card u-migrated-526d0913">
+          <span class="stat-number">Up to 40%</span>
+          <span class="stat-label">High-end figure found in studies relying solely on police officer judgment — widely criticised for methodological bias</span>
+          <span class="stat-note">Kanin (1994) — see Rumney (2006) critique</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="u-migrated-d8539155">Why Methodology Determines Everything</h3>
+        <p class="u-migrated-01a334d5">Rumney's 2006 Cambridge Law Journal review compiled every major study across the previous two decades. The range of figures was extraordinary — from 1.5% to above 90%. The only studies that produced results above 25% were studies that relied on police officers unilaterally declaring a report "false" without applying documented criteria. When Lisak et al. applied rigorous, externally verifiable criteria — including recantation confirmed by independent evidence, evidence the crime was not committed, and evidence of a different perpetrator — the rate fell to approximately 5.9%. This is the most methodologically defensible figure in the current literature and is cited by both RAINN and the Office on Violence Against Women.</p>
+        <p class="u-migrated-d4e247c1">The implication for this case: if approximately 5.9% of reported cases are demonstrably false by rigorous criteria, a case that proceeds to <em>multi-year trial-stage prosecution</em> despite physical contradictions of the narrative must be an extreme outlier even within that 5.9%. The funnel narrows dramatically: of the small number of false allegations, an even smaller number result in charges; an even smaller number reach trial; a vanishingly small number sustain prosecution for six-plus years against exculpatory video evidence, documented impossible claims, and unconcealed investigator conflicts.</p>
+      </div>
+
+      <div class="card u-migrated-86de7ac6">
+        <h3 class="u-migrated-d8539155">What False Reports That Do Proceed to Prosecution Have in Common</h3>
+        <p class="u-migrated-01a334d5">Research on false reports that resulted in charges — as distinct from those dismissed at initial intake — typically identifies one or more of the following factors: (1) a complainant with institutional access to law enforcement; (2) an investigator with a personal relationship to the complainant's circle; (3) suppression or re-framing of exculpatory material early in the investigation; and (4) a prosecutorial charging decision that treated investigative momentum as a substitute for evidence review. States v. Allen involves all four. The pattern is not coincidental. It is documented.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WRONGFUL CONVICTION & EXONERATIONS                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="wrongful-conviction" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Wrongful Conviction &amp; Exonerations — National Data</h2>
+      <p class="u-migrated-13a4f535">The National Registry of Exonerations (a project of Michigan State University College of Law, University of California–Irvine Newkirk Center, and University of Michigan Law School) maintains the most comprehensive public database of U.S. exonerations. As of April 2026, its statistics reflect the documented scale and causes of wrongful convictions in the system that produced State v. Allen.</p>
+
+      <div class="u-migrated-3857bf70">
+        <div class="stat-card u-migrated-138c7252">
+          <span class="stat-number">3,793</span>
+          <span class="stat-label">Total documented exonerations in the United States since 1989</span>
+          <span class="stat-note">National Registry of Exonerations, as of April 2026</span>
+        </div>
+        <div class="stat-card u-migrated-138c7252">
+          <span class="stat-number">35,394+</span>
+          <span class="stat-label">Total years of imprisonment lost by documented exonerees since 1989</span>
+          <span class="stat-note">National Registry of Exonerations, as of April 2026</span>
+        </div>
+        <div class="stat-card u-migrated-138c7252">
+          <span class="stat-number">14 yrs</span>
+          <span class="stat-label">Average years served before DNA exoneration, Innocence Project cases (post-conviction)</span>
+          <span class="stat-note">Innocence Project, DNA Exonerations in the U.S. (1989–2020)</span>
+        </div>
+        <div class="stat-card u-migrated-a0e2570f">
+          <span class="stat-number">25%+</span>
+          <span class="stat-label">Prime suspects excluded by pre-conviction DNA testing in a 10,060-case NIJ study (FBI labs, 1995)</span>
+          <span class="stat-note">National Institute of Justice / FBI labs study, cited in Innocence Project</span>
+        </div>
+        <div class="stat-card u-migrated-a0e2570f">
+          <span class="stat-number">43%</span>
+          <span class="stat-label">DNA exoneration cases involving misapplication of forensic science</span>
+          <span class="stat-note">Innocence Project, DNA Exonerations 1989–2020</span>
+        </div>
+        <div class="stat-card u-migrated-a0e2570f">
+          <span class="stat-number">69%</span>
+          <span class="stat-label">DNA exoneration cases involving eyewitness misidentification</span>
+          <span class="stat-note">Innocence Project, DNA Exonerations 1989–2020</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="u-migrated-d8539155">The Pre-Conviction Problem</h3>
+        <p class="u-migrated-01a334d5">The NIJ/FBI study finding that more than 25% of prime suspects were excluded by DNA testing before conviction is one of the most significant data points in the wrongful conviction literature. It documents that the identification and charging process — not just the trial — routinely names the wrong person as a suspect. This matters in State v. Allen because the wrongful-conviction machinery does not require a jury verdict in order to destroy a life. Arrest, charge, and protracted prosecution — without conviction — produce many of the same downstream harms documented in the exoneration literature.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NC CONVICTION INTEGRITY                                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="nc-integrity" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">North Carolina Conviction Integrity</h2>
+      <p class="u-migrated-13a4f535">North Carolina is one of the few states to have formally institutionalized its response to wrongful convictions. Its record is both a model and a data source.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">NC Innocence Inquiry Commission</h3>
+          <p class="u-migrated-01a334d5">The North Carolina Innocence Inquiry Commission — established by the General Assembly in 2006 under N.C.G.S. § 15A-1460-75 — is the nation's <strong class="u-migrated-547e413d">first and only state-level formal innocence inquiry process</strong>. It reviews claims from convicted defendants seeking to establish actual innocence, employing neutral, multi-stage hearings with prosecutorial and defense participation. Sexual assault and rape cases are among the conviction types reviewed. The Commission's statistics (published annually at innocencecommission-nc.gov) track applicants by conviction type, innocence claim type, and outcome, including reasons for rejection. Those statistics are presented as charts on the Commission's public website; citations link to the 2025 Annual Report submitted to the General Assembly in January 2026.</p>
+          <p class="u-migrated-9f0dfa4e">Source: NC Innocence Inquiry Commission, <em>2025 Annual Report</em> (submitted 2026), innocencecommission-nc.gov/statistics/</p>
+        </div>
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">NC Wrongful Conviction Landscape</h3>
+          <p class="u-migrated-01a334d5">North Carolina exonerations tracked by the National Registry include cases where official misconduct, eyewitness error, false confession, and forensic evidence failure played documented roles. The state's decision to create the Innocence Inquiry Commission reflects legislative acknowledgment that wrongful convictions occur with sufficient frequency to require a permanent institutional response. That same institutional awareness has not uniformly reached the level of individual charging decisions in all 100 counties.</p>
+          <p class="u-migrated-9f0dfa4e">Source: National Registry of Exonerations, state-level data; exonerationregistry.org</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- GOVERNMENT MISCONDUCT IN WRONGFUL CONVICTIONS                   -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="misconduct-data" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Government Misconduct as a Factor in Wrongful Convictions</h2>
+      <p class="u-migrated-13a4f535">The National Registry of Exonerations has published a dedicated topical report on government misconduct as a contributing factor to wrongful convictions. Its findings are structurally relevant to the pattern documented in State v. Allen.</p>
+
+      <div class="u-migrated-3857bf70">
+        <div class="stat-card u-migrated-2d06f94f">
+          <span class="stat-number">54%</span>
+          <span class="stat-label">NRE exonerations in which official (government) misconduct was a contributing factor, per the NRE misconduct report</span>
+          <span class="stat-note">NRE, <em>Government Misconduct and Convicting the Innocent</em></span>
+        </div>
+        <div class="stat-card u-migrated-2d06f94f">
+          <span class="stat-number">Most</span>
+          <span class="stat-label">Misconduct most prevalent in murder and sexual assault exoneration cases — both crime types most dependent on testimonial rather than physical evidence</span>
+          <span class="stat-note">NRE, <em>Government Misconduct and Convicting the Innocent</em></span>
+        </div>
+        <div class="stat-card u-migrated-2d06f94f">
+          <span class="stat-number">Brady</span>
+          <span class="stat-label">Withholding of exculpatory evidence (Brady violations) is among the most commonly identified forms of official misconduct in NRE cases</span>
+          <span class="stat-note">NRE misconduct report; Brady v. Maryland, 373 U.S. 83 (1963)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="u-migrated-d8539155">Types of Misconduct in the NRE Record</h3>
+        <p class="u-migrated-01a334d5">The NRE misconduct taxonomy distinguishes between: (1) witness tampering or coaching; (2) withholding exculpatory evidence; (3) fabricating evidence; (4) making false statements in court; and (5) misconduct during interrogations. The pattern documented in State v. Allen spans at least the first four categories as described in this archive's misconduct records. Whether any of them resulted in a wrongful conviction is for the court record to establish — but the presence of that pattern in a 6.5-year prosecution aligns this case with the documented structures of wrongful convictions in the NRE database, not with the ordinary administration of a credible charge.</p>
+        <p class="u-migrated-9f0dfa4e">Source: National Registry of Exonerations, <em>Government Misconduct and Convicting the Innocent</em>; full report at exonerationregistry.org/Publications</p>
+      </div>
+
+      <div class="card u-migrated-86de7ac6">
+        <h3 class="u-migrated-d8539155">Investigator Conflict of Interest — An Understudied Contributing Factor</h3>
+        <p class="u-migrated-01a334d5">Undisclosed familial or personal relationships between lead investigators and witnesses are not routinely tracked as a separate category in wrongful conviction databases. They manifest instead under the broader categories of withheld Brady material and fabricated evidence — because the specific harm they produce is the recasting of witness statements to protect the relationship rather than preserve the record. The Freeman–Love conflict in this case is precisely this pattern: an investigator translating an exculpatory statement into a guilt-supporting official document, with the familial connection never disclosed to the court. That combination — undisclosed relationship producing a Brady violation — sits at the intersection of the most common contributing factors in the NRE misconduct literature.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- TIME TO RESOLUTION                                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="time-resolution" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Time to Resolution — Duration as a Data Point</h2>
+      <p class="u-migrated-13a4f535">Case duration is not merely a procedural fact. In the context of false allegations, it is itself evidence of system failure. Credible, well-supported charges resolve faster than weakly supported ones — because strong cases do not require repeated continuances to survive pre-trial motions.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">NC Felony Case Median Timelines</h3>
+          <p class="u-migrated-01a334d5">North Carolina felony case statistics are published in the NC Court System's annual Summary of Operations reports (available through nccourts.gov). Median time from filing to disposition for felony jury trials in NC Superior Court typically falls in the range of 12 to 24 months, depending on case complexity and county docket. Cases involving straightforward factual disputes rarely extend beyond 36 months absent extraordinary circumstances such as multi-defendant conspiracy cases or extensive forensic analysis. A felony sexual assault case supported principally by a single complainant's testimony — with video evidence in the record and no corroborating physical evidence — has no ordinary justification for a 6.5-year arc.</p>
+          <p class="u-migrated-9f0dfa4e">Source: NC Court System, Annual Summary of Operations; nccourts.gov. Specific Lee County disposition data: pending public records request.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">Duration and Wrongful Prosecution Correlation</h3>
+          <p class="u-migrated-01a334d5">In the NRE exoneration dataset, cases that resulted in wrongful convictions of innocent defendants typically proceeded at normal or accelerated speed — because the investigative apparatus had already committed to a narrative and the pressure on the defendant to resolve the case (through plea) was high. But cases in which the evidence problem could not be resolved — where dismissal was warranted but institutional inertia prevented it — often proceed through an extended cycle of continuance-and-motion that has the practical effect of prolonged punishment without adjudication. The 6.5-year arc of State v. Allen is not attributable to complexity. It is attributable to a charge that could not survive honest scrutiny and therefore avoided it.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- DOWNSTREAM HARM RESEARCH                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="harms-data" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Downstream Harm Research — Economic and Psychological Cost</h2>
+      <p class="u-migrated-13a4f535">The research literature on the downstream consequences of wrongful arrest, charge, and prosecution is extensive and consistent. It is reviewed here in the context of what Benjamin Allen has experienced across 6.5 years.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">Employment and Economic Harm</h3>
+          <p class="u-migrated-01a334d5">Research on employment effects following criminal charge (not conviction) documents consistent patterns: loss of current employment is near-universal for charges involving violence or sexual misconduct; re-employment access is reduced significantly and often permanently. Compensation studies of exonerees find median economic losses in the hundreds of thousands of dollars over multi-year prosecution periods, encompassing lost wages, legal defense costs, and career trajectory damage. For military veterans — whose vocational records and security clearances are directly affected by pending felony charges — the losses are compounded by the loss of service-linked benefits, employment eligibility, and professional identity.</p>
+          <p class="u-migrated-9f0dfa4e">Sources: NRE Compensation Studies; Bernhard, A. (2004). When Justice Fails: Indemnification for Unjust Conviction. <em>Chicago-Kent Law Review</em>; Owens, E. (2017). The Economics of Criminal Justice.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">Psychological and Mental Health Harm</h3>
+          <p class="u-migrated-01a334d5">The psychological literature on wrongfully accused individuals — documented most thoroughly in Campbell et al. (2007) and Wildeman et al. (2011) — identifies post-traumatic stress, anxiety, depression, and disrupted attachment as common consequences of false accusation, even before conviction. Stigma associated with sexual assault charges is uniquely elevated: unlike many other felony charges, the mere fact of accusation produces lasting reputational and social harm that acquittal does not reverse. For veterans, the interaction with military-service-related psychological vulnerabilities can compound these effects significantly.</p>
+          <p class="u-migrated-9f0dfa4e">Sources: Campbell, R. et al. (2007). An ecological model of the impact of sexual assault on women's mental health. <em>Trauma, Violence, &amp; Abuse</em>; Konvisser, Z. (2012). Psychological consequences of wrongful conviction in women. <em>University of St. Thomas Law Journal</em>.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">Family Separation and Parenting</h3>
+          <p class="u-migrated-01a334d5">A pending sexual assault charge — as distinct from a conviction — can result in protective orders restricting parental access, custody modifications, supervised visitation requirements, and social service involvement that survives case resolution. Research on the collateral civil consequences of pending criminal charges documents that the family disruption produced by a false allegation can become self-reinforcing and is not automatically undone by acquittal or dismissal. Children growing up during the period of a parent's pending prosecution experience documented stress and attachment disruption regardless of outcome.</p>
+          <p class="u-migrated-9f0dfa4e">Sources: Harris, T. et al. (2010). Collateral Consequences of Conviction; Sykes, B. &amp; Pettit, B. (2014). Mass Incarceration, Family Complexity, and the Reproduction of Childhood Disadvantage. <em>Annals of the American Academy of Political and Social Science</em>, 654.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="u-migrated-dfaeed9c">The Reputational Asymmetry Problem</h3>
+          <p class="u-migrated-01a334d5">Multiple studies of public perception following criminal charges for sexual offenses find a persistent asymmetry: the charge receives wide social attention, while the acquittal or dismissal receives substantially less. Research by Pickel et al. (2006) and Lieberman et al. (2010) examining jury-eligible populations found that prior exposure to charge information significantly influenced credibility assessments even after acquittal instructions. The public record of an arrest cannot be undone. For this reason, the reputational harm of a false sexual assault charge is greater and more durable than the harm from many other felony-level accusations — and the research treats it accordingly.</p>
+          <p class="u-migrated-9f0dfa4e">Sources: Pickel, K. L. et al. (2006). Reports of a Pretrial Prejudice and Its Effects. <em>Law and Human Behavior</em>; Lieberman, J. D. et al. (2010). The Media, the Law, and Public Perception of Criminal Defendants.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- HOW THIS CASE FITS THE PATTERN                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="pattern" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">How This Case Fits the Pattern</h2>
+      <p class="u-migrated-13a4f535">Individually, each element of the problem with this case could be attributed to imperfect investigation, honest error, or the inherent difficulty of sexual assault prosecution. Collectively, they describe a recognizable structure documented by the wrongful conviction research literature.</p>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-e571720b">The Four-Factor Pattern in the NRE Misconduct Literature</h3>
+        <div class="u-migrated-0ddf068b">
+          <table class="u-migrated-a870a767">
+            <thead>
+              <tr class="u-migrated-e2cbb47c">
+                <th class="u-migrated-792f29a8">Factor</th>
+                <th class="u-migrated-792f29a8">Present in State v. Allen?</th>
+                <th class="u-migrated-792f29a8">Source in This Archive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="u-migrated-dd6446e6">
+                <td class="u-migrated-99443573">Complainant with institutional access to law enforcement</td>
+                <td class="u-migrated-08474652">Yes — documented</td>
+                <td class="u-migrated-706dda3e"><a href="players.html" class="u-migrated-547e413d">players.html</a>, Adcock statement</td>
+              </tr>
+              <tr class="u-migrated-dd6446e6">
+                <td class="u-migrated-99443573">Investigator with personal relationship to complainant's circle</td>
+                <td class="u-migrated-08474652">Yes — documented</td>
+                <td class="u-migrated-706dda3e"><a href="misconduct.html" class="u-migrated-547e413d">misconduct.html</a> (Freeman–Love)</td>
+              </tr>
+              <tr class="u-migrated-dd6446e6">
+                <td class="u-migrated-99443573">Suppression or re-framing of exculpatory material at investigation stage</td>
+                <td class="u-migrated-08474652">Yes — documented (Love's statement)</td>
+                <td class="u-migrated-706dda3e"><a href="misconduct.html" class="u-migrated-547e413d">misconduct.html</a>, court record</td>
+              </tr>
+              <tr class="u-migrated-dd6446e6">
+                <td class="u-migrated-99443573">Prosecutorial charging decision treating investigative momentum as substitute for independent evidence review</td>
+                <td class="u-migrated-08474652">Yes — documented</td>
+                <td class="u-migrated-706dda3e"><a href="case-study.html" class="u-migrated-547e413d">case-study.html</a> (§4)</td>
+              </tr>
+              <tr class="u-migrated-dd6446e6">
+                <td class="u-migrated-99443573">Video evidence contradicting the narrative</td>
+                <td class="u-migrated-08474652">Yes — documented</td>
+                <td class="u-migrated-706dda3e"><a href="contradictions.html" class="u-migrated-547e413d">contradictions.html</a>, evidence archive</td>
+              </tr>
+              <tr class="u-migrated-dd6446e6">
+                <td class="u-migrated-99443573">Physical impossibility in the complainant's narrative</td>
+                <td class="u-migrated-08474652">Yes — documented (terrain, lunar data)</td>
+                <td class="u-migrated-706dda3e"><a href="contradictions.html" class="u-migrated-547e413d">contradictions.html</a>, <a href="scene.html" class="u-migrated-547e413d">scene.html</a></td>
+              </tr>
+              <tr>
+                <td class="u-migrated-99443573">Uninvestigated financial motive</td>
+                <td class="u-migrated-08474652">Yes — documented ($150K extortion)</td>
+                <td class="u-migrated-706dda3e"><a href="players.html" class="u-migrated-547e413d">players.html</a> (Kelly), court record</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card u-migrated-56a7fe46">
+        <p class="u-migrated-b5d10658">A case with all seven of these factors present constitutes a recognizable pattern in the wrongful conviction research literature — not a unique outlier, and not a borderline evidentiary dispute. The data on this page provides the population-level context for understanding why a case with this profile exists and how it survives. It does not require special cynicism or conspiracy thinking. It requires only that the documented facts be held against the documented research, and the result observed.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- LEE COUNTY PUBLIC RECORDS QUEUE                                 -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="lee-county" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Lee County — Public Records and Data Collection Queue</h2>
+      <p class="u-migrated-45133a9c">The following local data sets are available through public records channels and will be added to this page as requests are completed. They are documented here as pending rather than omitted.</p>
+      <div class="grid grid-2 u-migrated-6857c69c">
+        <div class="card u-migrated-deac65f0">
+          <div class="u-migrated-c7bd5802">Pending — Public Records</div>
+          <h3 class="u-migrated-bdf18cb4">DA District 19A Charging &amp; Disposition Data</h3>
+          <p class="u-migrated-29c66532">North Carolina DAs are required under G.S. 7A-61 to file annual reports with the Office of Indigent Defense Services and the Administrative Office of the Courts. Lee County falls in Prosecutorial District 19A. Filings, dismissal rates, plea rates, and trial rates for felony sexual assault charges from 2019–2025 are obtainable through the AOC and NCIDS public records processes.</p>
+        </div>
+        <div class="card u-migrated-deac65f0">
+          <div class="u-migrated-c7bd5802">Pending — Court File Review</div>
+          <h3 class="u-migrated-bdf18cb4">Docket Count: Hearings, Continuances, Motions</h3>
+          <p class="u-migrated-29c66532">North Carolina criminal case dockets are publicly accessible through the NC Courts eCourts portal (eportal.nccourts.org). The Lee County Superior Court docket for State v. Allen will be reviewed to produce a full count of appearances, continuances, motion filings, and substantive hearings. That count will replace the TBD figure in the This Case section above.</p>
+        </div>
+        <div class="card u-migrated-deac65f0">
+          <div class="u-migrated-c7bd5802">Pending — Case Record Audit</div>
+          <h3 class="u-migrated-bdf18cb4">Contradictions Count — Final Audit</h3>
+          <p class="u-migrated-29c66532">The figure of "7+" documented contradictions is drawn from the current contradictions.html audit. As additional documents are processed and added to the archive, that figure will be finalized and each contradiction assigned a confidence classification (high, medium, or disputed). The target is a cited, numbered inventory rather than a general "7+" placeholder.</p>
+        </div>
+        <div class="card u-migrated-deac65f0">
+          <div class="u-migrated-c7bd5802">Pending — Comparative Research</div>
+          <h3 class="u-migrated-bdf18cb4">Officer-Family-Connection Case Comparison</h3>
+          <p class="u-migrated-29c66532">The NRE database does not currently maintain a dedicated field for "investigator with undisclosed family relationship to witness." However, the Government Misconduct report's case-level data will be reviewed to identify any comparable cases in which this specific conflict was cited as a contributing factor in subsequent exoneration. That comparative review will be summarized here when complete.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- CITATIONS                                                       -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="citations" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Full Citations</h2>
+      <div class="card">
+        <p class="u-migrated-1c9eabe9">All statistics appearing on this page are sourced below. A ★ indicates a primary source. All external links open in a new tab.</p>
+        <ol class="u-migrated-caea806f">
+          <li>★ Lisak, D., Gardinier, L., Nicksa, S. C., &amp; Cote, A. M. (2010). False Allegations of Sexual Assault: An Analysis of Ten Years of Reported Cases. <em>Violence Against Women</em>, 16(12), 1318–1334. doi:10.1177/1077801210387747</li>
+          <li>★ Rumney, P. N. S. (2006). False Allegations of Rape. <em>Cambridge Law Journal</em>, 65(1), 128–158. doi:10.1017/S0008197306007069</li>
+          <li>★ Federal Bureau of Investigation. Uniform Crime Reports: Crime in the United States (historical). <em>Unfounded</em> category, forcible rape. U.S. Department of Justice. [Note: "Unfounded" ≠ "false"; see methodology note above.]</li>
+          <li>★ National Registry of Exonerations. Exoneration data and statistics (as updated April 2026). A project of Michigan State University College of Law, University of California–Irvine Newkirk Center, and University of Michigan Law School. <a href="https://exonerationregistry.org" target="_blank" rel="noopener" class="u-migrated-547e413d">exonerationregistry.org</a></li>
+          <li>★ National Registry of Exonerations. <em>Government Misconduct and Convicting the Innocent</em>. <a href="https://exonerationregistry.org/Publications" target="_blank" rel="noopener" class="u-migrated-547e413d">exonerationregistry.org/Publications</a></li>
+          <li>★ Innocence Project. <em>DNA Exonerations in the United States (1989–2020)</em>. <a href="https://innocenceproject.org/dna-exonerations-in-the-united-states/" target="_blank" rel="noopener" class="u-migrated-547e413d">innocenceproject.org</a></li>
+          <li>★ National Institute of Justice (1996). <em>Convicted by Juries, Exonerated by Science: Case Studies in the Use of DNA Evidence to Establish Innocence After Trial</em>. U.S. Department of Justice. (Cites the 10,060-case FBI lab pre-conviction exclusion study.)</li>
+          <li>★ North Carolina Innocence Inquiry Commission. <em>Statistics &amp; Annual Reports</em>. <a href="https://innocencecommission-nc.gov/statistics/" target="_blank" rel="noopener" class="u-migrated-547e413d">innocencecommission-nc.gov/statistics/</a>. Established under N.C.G.S. § 15A-1460-75 (2006).</li>
+          <li>★ North Carolina Innocence Inquiry Commission. <em>2025 Annual Report</em> (submitted to the General Assembly, January 2026). Available at innocencecommission-nc.gov.</li>
+          <li>Bernhard, A. (2004). When Justice Fails: Indemnification for Unjust Conviction. <em>Chicago-Kent Law Review</em>, 79(2).</li>
+          <li>Konvisser, Z. (2012). Psychological Consequences of Wrongful Conviction in Women. <em>University of St. Thomas Law Journal</em>, 10(2).</li>
+          <li>Wildeman, C., Costelloe, M. T., &amp; Schehr, R. (2011). Experiencing Wrongful and Unlawful Conviction. <em>Journal of Offender Rehabilitation</em>, 50(7), 411–432.</li>
+          <li>RAINN. <em>Statistics: The Criminal Justice System</em> (updated August 2025). <a href="https://www.rainn.org/statistics/criminal-justice-system" target="_blank" rel="noopener" class="u-migrated-547e413d">rainn.org</a></li>
+          <li>Brady v. Maryland, 373 U.S. 83 (1963). [Brady disclosure obligation.]</li>
+          <li>Kyles v. Whitley, 514 U.S. 419 (1995). [Brady extended to evidence held by police.]</li>
+          <li>Franks v. Delaware, 438 U.S. 154 (1978). [Right to challenge material false statements in warrant affidavits.]</li>
+          <li>Napue v. Illinois, 360 U.S. 264 (1959). [Prosecution's obligation not to allow false testimony to stand uncorrected.]</li>
+        </ol>
+      </div>
+    </section>
+
+  </div>
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        if (window.top !== window.self) {
+          e.preventDefault();
+          window.top.location.href = a.href;
+        }
+      }
+    });
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+</html>

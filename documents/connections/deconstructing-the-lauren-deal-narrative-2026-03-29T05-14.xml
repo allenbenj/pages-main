@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mindmap title="Deconstructing the Lauren Deal Narrative" created="2026-03-29T05:14:13.637Z" algorithm="corrected-x-level">
+  <node id="node_0" text="Deconstructing the Lauren Deal Narrative" level="0">
+    <node id="node_1" text="Environmental Contradictions" level="1">
+      <node id="node_6" text="Lunar Illumination" level="2">
+        <node id="node_17" text="70% Illumination (Gibbous Phase)" level="3">
+        </node>
+        <node id="node_18" text="Sufficient for navigation without artificial light" level="3">
+        </node>
+        <node id="node_19" text="Visual orientation exceeding 50 feet" level="3">
+        </node>
+      </node>
+      <node id="node_7" text="The &apos;Darkness&apos; Narrative" level="2">
+        <node id="node_20" text="Claimed &apos;complete darkness&apos; to excuse disorientation" level="3">
+        </node>
+        <node id="node_21" text="Darkness vanishes for vehicle/driver recognition" level="3">
+        </node>
+        <node id="node_22" text="Selective sensory activation" level="3">
+        </node>
+      </node>
+    </node>
+    <node id="node_2" text="Geographic Impossibilities" level="1">
+      <node id="node_8" text="Terrain Discrepancies" level="2">
+        <node id="node_23" text="Actual: Large, flat, open airfield" level="3">
+        </node>
+        <node id="node_24" text="Claimed: Woods, brush, and briar bushes" level="3">
+        </node>
+        <node id="node_25" text="Absence of dense undergrowth" level="3">
+        </node>
+      </node>
+      <node id="node_9" text="Directional Errors" level="2">
+        <node id="node_26" text="Route 421 claimed (10 miles away)" level="3">
+        </node>
+        <node id="node_27" text="Path away from Route 1 leads to airfield, not road" level="3">
+        </node>
+        <node id="node_28" text="Inconsistent route to reach pickup point" level="3">
+        </node>
+      </node>
+    </node>
+    <node id="node_3" text="Witness &amp; Testimony Conflicts" level="1">
+      <node id="node_10" text="Identification vs. Concealment" level="2">
+        <node id="node_29" text="Distinguished car vs. truck silhouette" level="3">
+        </node>
+        <node id="node_30" text="Identified specific driver (Joseph)" level="3">
+        </node>
+        <node id="node_31" text="Mutual visibility and eye contact" level="3">
+        </node>
+      </node>
+      <node id="node_11" text="DeMarco Interview" level="2">
+        <node id="node_32" text="Claimed seeing her from the road near Route 1" level="3">
+        </node>
+        <node id="node_33" text="Contradicts hiding/concealment claims" level="3">
+        </node>
+      </node>
+    </node>
+    <node id="node_4" text="Physiological Implausibility" level="1">
+      <node id="node_12" text="Physical Condition" level="2">
+        <node id="node_34" text="BMI of 31.9 (Obesity)" level="3">
+        </node>
+        <node id="node_35" text="Impaired by alcohol consumption" level="3">
+        </node>
+        <node id="node_36" text="History of smoking and lack of activity" level="3">
+        </node>
+      </node>
+      <node id="node_13" text="Performance Claims" level="2">
+        <node id="node_37" text="Allegedly outran fit soldiers" level="3">
+        </node>
+        <node id="node_38" text="Sustained run on uneven terrain" level="3">
+        </node>
+        <node id="node_39" text="Stumbling and poor balance shown on video" level="3">
+        </node>
+      </node>
+    </node>
+    <node id="node_5" text="Investigative Failures" level="1">
+      <node id="node_14" text="Ignored narrative drift" level="2">
+      </node>
+      <node id="node_15" text="Unchecked behavior toggling (hiding vs. waving)" level="2">
+      </node>
+      <node id="node_16" text="Conscious narrative management by prosecution" level="2">
+      </node>
+    </node>
+  </node>
+</mindmap>

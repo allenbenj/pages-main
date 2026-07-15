@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Map | State v. Benjamin Allen</title>
+  <link rel="stylesheet" href="shared/styles.css">
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
+        linear-gradient(180deg, #111415 0%, #0d1011 100%);
+      color: #eef3f4;
+    }
+
+    .container.page {
+      max-width: 1880px;
+    }
+
+    /* Shared card base */
+    .hero,
+    .content-section,
+    .route-card,
+    .matrix-card,
+    .index-card,
+    .summary-card {
+      background: rgba(18,22,23,0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+    }
+
+    .hero {
+      border-radius: 24px;
+      padding: 34px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      color: #f5fbfb;
+    }
+
+    .hero > p {
+      max-width: 960px;
+      color: #d2dcdc;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .content-section {
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .content-section > p {
+      color: #d4dddd;
+      margin-bottom: 20px;
+    }
+
+    /* Hero actions / quick links */
+    .hero-actions,
+    .quick-links,
+    .node-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-actions { margin-top: 22px; }
+    .quick-links  { margin-top: 4px; }
+    .node-links   { margin-top: 14px; }
+
+    .hero-actions a,
+    .quick-links a,
+    .node-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      color: #eef3f4;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .hero-actions a:hover,
+    .quick-links a:hover,
+    .node-links a:hover {
+      transform: translateY(-1px);
+      background: rgba(93,152,162,0.16);
+      border-color: rgba(93,152,162,0.4);
+    }
+
+    .hero-actions a.primary {
+      background: rgba(93,152,162,0.18);
+      border-color: rgba(93,152,162,0.45);
+    }
+
+    .node-links a {
+      min-height: 36px;
+      padding: 8px 12px;
+      font-size: 0.94rem;
+    }
+
+    /* Section title */
+    .section-title {
+      color: #f5fbfb;
+      margin: 0 0 14px;
+    }
+
+    /* View switcher tabs */
+    .view-switcher {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      background: rgba(18,22,23,0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      padding: 6px;
+      width: fit-content;
+    }
+
+    .view-tab {
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: #9aacac;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.16s ease, color 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .view-tab:hover {
+      color: #eef3f4;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .view-tab.active {
+      background: rgba(93,152,162,0.22);
+      color: #f0f8f8;
+      border: 1px solid rgba(93,152,162,0.35);
+    }
+
+    .view-panel { display: none; }
+    .view-panel.active { display: contents; }
+
+    /* Summary stats grid */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .summary-card {
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: #f5fbfb;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .summary-card p { color: #d4dddd; }
+
+    .summary-card code,
+    .matrix-card code {
+      display: inline-block;
+      color: #9fc8cf;
+      font-size: 0.78rem;
+      font-family: "Manrope", system-ui, sans-serif;
+      background: rgba(93,152,162,0.1);
+      border: 1px solid rgba(93,152,162,0.22);
+      border-radius: 999px;
+      padding: 2px 10px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Visual map */
+    .visual-map {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr) 320px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .visual-column {
+      display: grid;
+      gap: 16px;
+    }
+
+    .visual-column.center {
+      padding-top: 84px;
+    }
+
+    .column-label {
+      color: #9fc8cf;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      margin: 0 0 2px;
+    }
+
+    .map-node {
+      position: relative;
+      border-radius: 22px;
+      padding: 18px 18px 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)), rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .map-node.hub {
+      background: linear-gradient(180deg, rgba(93,152,162,0.16), rgba(93,152,162,0.07)), rgba(255,255,255,0.02);
+      border-color: rgba(93,152,162,0.32);
+      box-shadow: 0 16px 44px rgba(0,0,0,0.22);
+    }
+
+    .map-node h3 {
+      margin: 0 0 8px;
+      color: #f5fbfb;
+      font-size: 1.02rem;
+    }
+
+    .map-node p {
+      margin: 0;
+      color: #d4dddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .map-node code {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #9fc8cf;
+      font-size: 0.76rem;
+      font-family: "Manrope", system-ui, sans-serif;
+      background: rgba(93,152,162,0.1);
+      border: 1px solid rgba(93,152,162,0.22);
+      border-radius: 999px;
+      padding: 3px 10px;
+      letter-spacing: 0.04em;
+    }
+
+    .map-connector {
+      position: relative;
+      min-height: 94px;
+      margin: 2px 0;
+    }
+
+    .map-connector::before,
+    .map-connector::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .map-connector::before {
+      left: 18px;
+      right: 18px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(121,185,194,0.72), rgba(121,185,194,0.25));
+    }
+
+    .map-connector::after {
+      right: 10px;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 10px solid rgba(121,185,194,0.8);
+    }
+
+    .map-connector.vertical::before {
+      left: 50%;
+      right: auto;
+      top: 14px;
+      bottom: 14px;
+      width: 2px;
+      height: auto;
+      transform: none;
+      background: linear-gradient(180deg, rgba(121,185,194,0.75), rgba(121,185,194,0.25));
+    }
+
+    .map-connector.vertical::after {
+      top: auto;
+      bottom: 8px;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 10px solid rgba(121,185,194,0.8);
+      border-bottom: none;
+    }
+
+    .visual-map-note {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #bfc9c9;
+      font-size: 0.95rem;
+    }
+
+    /* Matrix grid */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .matrix-card {
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .matrix-card h3 {
+      color: #f5fbfb;
+      margin: 0 0 8px;
+    }
+
+    .matrix-card > p { color: #d4dddd; margin-bottom: 0; }
+
+    /* Route cards */
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .route-card {
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .route-kicker {
+      color: #9fc8cf;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+
+    .route-card h3 {
+      margin: 0 0 10px;
+      color: #f6fbfb;
+      font-size: 1.25rem;
+    }
+
+    .route-card p,
+    .route-card li {
+      color: #d2dcdc;
+    }
+
+    .route-card ul {
+      margin: 12px 0 18px;
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+
+    .route-card a { color: #f6fbfb; }
+
+    /* Page index cards */
+    .page-index-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .index-card {
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .index-card h3 {
+      color: #f5fbfb;
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+    }
+
+    .page-index-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-index-list li {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .page-index-list li:last-child { border-bottom: none; }
+
+    .page-index-list a {
+      display: block;
+      color: #d4dddd;
+      text-decoration: none;
+      padding: 8px 0;
+      transition: color 0.16s ease;
+    }
+
+    .page-index-list a:hover { color: #9fc8cf; }
+
+    @media (max-width: 1100px) {
+      .visual-map {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-column.center {
+        padding-top: 0;
+      }
+
+      .map-connector {
+        min-height: 34px;
+      }
+
+      .map-connector::before {
+        left: 50%;
+        right: auto;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        height: auto;
+        transform: none;
+        background: linear-gradient(180deg, rgba(121,185,194,0.75), rgba(121,185,194,0.25));
+      }
+
+      .map-connector::after {
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 10px solid rgba(121,185,194,0.8);
+        border-bottom: none;
+      }
+    }
+  </style>
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container page">
+
+    <div class="nav-tabs" aria-label="Project navigation">
+      <a class="nav-tab" href="index.html">Landing</a>
+      <a class="nav-tab active" href="overview.html">Site Map</a>
+      <a class="nav-tab" href="timeline.html">Timeline</a>
+      <a class="nav-tab" href="players.html">Players</a>
+      <a class="nav-tab" href="evidence.html">Evidence</a>
+      <a class="nav-tab" href="contradictions.html">Contradictions</a>
+      <a class="nav-tab" href="misconduct.html">Misconduct</a>
+      <a class="nav-tab" href="documentspage.html">Documents</a>
+      <a class="nav-tab" href="misconductandfailure.html">Mindmaps</a>
+      <a class="nav-tab" href="case-study.html">Case Study</a>
+    </div>
+
+    <section class="hero">
+      <h1>Site Map</h1>
+      <p>
+        Orientation hub for the case archive. Use the tabs below to switch between three views:
+        the section-by-section project map, a clean page index, and the visual connectivity diagram.
+      </p>
+      <div class="hero-actions">
+        <a class="primary" href="index.html">Back to landing</a>
+        <a href="timeline.html">Start with the timeline</a>
+        <a href="evidence.html">Review evidence record</a>
+        <a href="documentspage.html">Open document archive</a>
+        <a href="network_analysis/index.html">Network analysis app</a>
+      </div>
+    </section>
+
+    <nav class="view-switcher" aria-label="Site map views">
+      <button class="view-tab active" data-panel="map">Project Map</button>
+      <button class="view-tab" data-panel="index">Page Index</button>
+      <button class="view-tab" data-panel="diagram">Link Diagram</button>
+    </nav>
+
+    <!-- ======== PANEL: Project Map ======== -->
+    <div class="view-panel active" id="panel-map">
+
+      <section class="content-section">
+        <h2 class="section-title">How To Move Through The Record</h2>
+        <div class="quick-links">
+          <a href="players.html">1. Key Players</a>
+          <a href="timeline.html">2. Timeline</a>
+          <a href="scene.html">3. Scene</a>
+          <a href="evidence.html">4. Evidence</a>
+          <a href="contradictions.html">5. Contradictions</a>
+          <a href="misconduct.html">6. Misconduct</a>
+          <a href="documentspage.html">7. Documents</a>
+          <a href="misconductandfailure.html">8. Mindmaps</a>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="section-title">Section Index</h2>
+        <div class="route-grid">
+          <article class="route-card">
+            <div class="route-kicker">Orientation</div>
+            <h3>Landing Page</h3>
+            <p>The presentation layer for the project. Use it for high-level framing, graphics, and quick entry into the strongest sections.</p>
+            <ul>
+              <li>Best for first-time visitors</li>
+              <li>Visual entry point into the record</li>
+            </ul>
+            <a href="index.html">Open landing page</a>
+          </article>
+
+          <article class="route-card">
+            <div class="route-kicker">Sequence</div>
+            <h3>Timeline and Scene</h3>
+            <p>Use these pages together to test whether the account can physically and chronologically hold together.</p>
+            <ul>
+              <li><a href="timeline.html">Timeline</a></li>
+              <li><a href="scene.html">Scene reconstruction</a></li>
+            </ul>
+          </article>
+
+          <article class="route-card">
+            <div class="route-kicker">People</div>
+            <h3>Key Players and Connections</h3>
+            <p>Read these before diving into conflict or misconduct issues so the names and relationships are clear.</p>
+            <ul>
+              <li><a href="players.html">Key players</a></li>
+              <li><a href="connections.html">Connections map</a></li>
+            </ul>
+          </article>
+
+          <article class="route-card">
+            <div class="route-kicker">Record Review</div>
+            <h3>Evidence and Contradictions</h3>
+            <p>These pages are the main review track for exhibits, inconsistencies, and claim testing.</p>
+            <ul>
+              <li><a href="evidence.html">Evidence record</a></li>
+              <li><a href="contradictions.html">Contradictions</a></li>
+              <li><a href="contradictions_grouped.html">List of lies</a></li>
+            </ul>
+          </article>
+
+          <article class="route-card">
+            <div class="route-kicker">Accountability</div>
+            <h3>Misconduct and Standards</h3>
+            <p>Use these sections after the base record is familiar. They address investigative conduct, prosecution, judicial duty, and system design.</p>
+            <ul>
+              <li><a href="misconduct.html">Misconduct findings</a></li>
+              <li><a href="prosecutor_allowed.html">Prosecutor review</a></li>
+              <li><a href="judicial-duty.html">Judicial duty</a></li>
+              <li><a href="why-dont-we-have-this-system.html">Why don't we have this system?</a></li>
+            </ul>
+          </article>
+
+          <article class="route-card">
+            <div class="route-kicker">Source Material</div>
+            <h3>Documents and Mindmaps</h3>
+            <p>Open the source archive when you need the filings and exhibits directly, and use the mindmaps for a compressed structural view.</p>
+            <ul>
+              <li><a href="documentspage.html">Document archive</a></li>
+              <li><a href="misconductandfailure.html">Mindmaps</a></li>
+              <li><a href="editor.html">Evidence editor</a></li>
+            </ul>
+          </article>
+
+          <article class="route-card">
+            <div class="route-kicker">Analysis</div>
+            <h3>Featured and Comparative Pages</h3>
+            <p>Synthesis pages that apply the record to specific questions about what happened and what was permitted.</p>
+            <ul>
+              <li><a href="case-study.html">Case study</a></li>
+              <li><a href="data-snapshot.html">Data snapshot</a></li>
+              <li><a href="network_analysis/index.html">Network analysis app</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+    </div><!-- /panel-map -->
+
+    <!-- ======== PANEL: Page Index ======== -->
+    <div class="view-panel" id="panel-index">
+
+      <section class="content-section">
+        <h2 class="section-title">Project Page Index</h2>
+        <p>Every active page in the site sorted by category. Click any link to open that page directly.</p>
+        <div class="page-index-grid">
+          <div class="index-card">
+            <h3>Starting Points</h3>
+            <ul class="page-index-list">
+              <li><a href="index.html">Landing page</a></li>
+              <li><a href="overview.html">Site map (this page)</a></li>
+            </ul>
+          </div>
+          <div class="index-card">
+            <h3>Core Record</h3>
+            <ul class="page-index-list">
+              <li><a href="timeline.html">Timeline</a></li>
+              <li><a href="players.html">Key players</a></li>
+              <li><a href="connections.html">Connections</a></li>
+              <li><a href="scene.html">Scene reconstruction</a></li>
+            </ul>
+          </div>
+          <div class="index-card">
+            <h3>Evidence Trail</h3>
+            <ul class="page-index-list">
+              <li><a href="evidence.html">Evidence record</a></li>
+              <li><a href="contradictions.html">Contradictions</a></li>
+              <li><a href="contradictions_grouped.html">List of lies</a></li>
+              <li><a href="documentspage.html">Document archive</a></li>
+            </ul>
+          </div>
+          <div class="index-card">
+            <h3>Analysis</h3>
+            <ul class="page-index-list">
+              <li><a href="misconduct.html">Misconduct</a></li>
+              <li><a href="misconductandfailure.html">Mindmaps</a></li>
+              <li><a href="prosecutor_allowed.html">Prosecutor review</a></li>
+              <li><a href="judicial-duty.html">Judicial duty</a></li>
+              <li><a href="why-dont-we-have-this-system.html">Why don't we have this system?</a></li>
+            </ul>
+          </div>
+          <div class="index-card">
+            <h3>Featured Pages</h3>
+            <ul class="page-index-list">
+              <li><a href="case-study.html">Case study</a></li>
+              <li><a href="data-snapshot.html">Data snapshot</a></li>
+            </ul>
+          </div>
+          <div class="index-card">
+            <h3>Tools</h3>
+            <ul class="page-index-list">
+              <li><a href="editor.html">Evidence editor</a></li>
+              <li><a href="network_analysis/index.html">Network analysis app</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /panel-index -->
+
+    <!-- ======== PANEL: Link Diagram ======== -->
+    <div class="view-panel" id="panel-diagram">
+
+      <div class="summary-grid" aria-label="Site map summary">
+        <article class="summary-card">
+          <strong>21</strong>
+          <p>Output HTML pages in the live site map.</p>
+        </article>
+        <article class="summary-card">
+          <strong>21</strong>
+          <p>Pages reachable from the landing flow.</p>
+        </article>
+        <article class="summary-card">
+          <strong>0</strong>
+          <p>Orphaned pages in the audited output set.</p>
+        </article>
+        <article class="summary-card">
+          <strong>3 hubs</strong>
+          <p><code>index.html</code>, <code>overview.html</code>, and <code>page-index.html</code> expose the full archive map.</p>
+        </article>
+      </div>
+
+      <section class="content-section">
+        <h2 class="section-title">Visual Site Map</h2>
+        <p>The visual map below groups the archive into a few clear lanes: entry points, record review, and analysis/tools. It keeps the overall access structure visible without showing every repeated navigation edge.</p>
+        <div class="visual-map" role="img" aria-label="Simplified visual site map showing entry pages, core record pages, and analysis or tool pages">
+          <div class="visual-column">
+            <p class="column-label">Entry Points</p>
+            <article class="map-node hub">
+              <code>Main hub</code>
+              <h3>Landing</h3>
+              <p><a href="index.html">index.html</a> is the front door and the broadest launch point into the archive.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node hub">
+              <code>Navigation hub</code>
+              <h3>Site Map</h3>
+              <p><a href="overview.html">overview.html</a> organizes the archive into map, index, and diagram views.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Support pages</code>
+              <h3>Index + Diagram</h3>
+              <p><a href="page-index.html">page-index.html</a> and <a href="link-diagram.html">link-diagram.html</a> now point back into this unified map.</p>
+            </article>
+          </div>
+
+          <div class="visual-column center">
+            <p class="column-label">Core Record</p>
+            <div class="map-connector" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Sequence</code>
+              <h3>Timeline and Scene</h3>
+              <p><a href="timeline.html">timeline.html</a> and <a href="scene.html">scene.html</a> establish chronology and physical layout.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>People</code>
+              <h3>Players and Connections</h3>
+              <p><a href="players.html">players.html</a> and <a href="connections.html">connections.html</a> keep names, roles, and relationships in view.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Record review</code>
+              <h3>Evidence and Contradictions</h3>
+              <p><a href="evidence.html">evidence.html</a>, <a href="contradictions.html">contradictions.html</a>, and <a href="contradictions_grouped.html">contradictions_grouped.html</a> carry the main claim-testing work.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Source archive</code>
+              <h3>Documents</h3>
+              <p><a href="documentspage.html">documentspage.html</a> anchors the filing and exhibit trail behind the analysis pages.</p>
+            </article>
+          </div>
+
+          <div class="visual-column">
+            <p class="column-label">Analysis and Tools</p>
+            <article class="map-node">
+              <code>Conduct review</code>
+              <h3>Misconduct and Prosecutor Review</h3>
+              <p><a href="misconduct.html">misconduct.html</a> and <a href="prosecutor_allowed.html">prosecutor_allowed.html</a> focus on what was permitted and how oversight failed.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Standards</code>
+              <h3>Judicial Duty and System Design</h3>
+              <p><a href="judicial-duty.html">judicial-duty.html</a> and <a href="why-dont-we-have-this-system.html">why-dont-we-have-this-system.html</a> frame the broader legal and systemic questions.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Compressed views</code>
+              <h3>Mindmaps and Featured Pages</h3>
+              <p><a href="misconductandfailure.html">misconductandfailure.html</a>, <a href="case-study.html">case-study.html</a>, and <a href="data-snapshot.html">data-snapshot.html</a> provide synthesis and supporting interpretation.</p>
+            </article>
+            <div class="map-connector vertical" aria-hidden="true"></div>
+            <article class="map-node">
+              <code>Tools</code>
+              <h3>Editor and Network Analysis</h3>
+              <p><a href="editor.html">editor.html</a> and <a href="network_analysis/index.html">network_analysis/index.html</a> expose the project’s working tools.</p>
+            </article>
+          </div>
+        </div>
+        <p class="visual-map-note">Reading left to right mirrors the intended flow: enter through the hubs, move through the record, then branch into accountability, synthesis, and tools.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 class="section-title">Direct Link Matrix</h2>
+        <p>Each card lists the direct output-page links found on that page.</p>
+        <div class="matrix-grid">
+          <article class="matrix-card">
+            <h3>index.html</h3>
+            <p><code>Landing hub</code></p>
+            <div class="node-links">
+              <a href="overview.html">site map</a>
+              <a href="timeline.html">timeline</a>
+              <a href="players.html">players</a>
+              <a href="connections.html">connections</a>
+              <a href="scene.html">scene</a>
+              <a href="evidence.html">evidence</a>
+              <a href="contradictions.html">contradictions</a>
+              <a href="contradictions_grouped.html">list of lies</a>
+              <a href="misconduct.html">misconduct</a>
+              <a href="documentspage.html">documents</a>
+              <a href="editor.html">editor</a>
+              <a href="case-study.html">case study</a>
+              <a href="prosecutor_allowed.html">prosecutor review</a>
+              <a href="why-dont-we-have-this-system.html">system page</a>
+              <a href="data-snapshot.html">data snapshot</a>
+            </div>
+          </article>
+
+          <article class="matrix-card">
+            <h3>overview.html</h3>
+            <p><code>Site map hub</code></p>
+            <div class="node-links">
+              <a href="index.html">landing</a>
+              <a href="timeline.html">timeline</a>
+              <a href="players.html">players</a>
+              <a href="connections.html">connections</a>
+              <a href="scene.html">scene</a>
+              <a href="evidence.html">evidence</a>
+              <a href="contradictions.html">contradictions</a>
+              <a href="contradictions_grouped.html">list of lies</a>
+              <a href="misconduct.html">misconduct</a>
+              <a href="prosecutor_allowed.html">prosecutor review</a>
+              <a href="judicial-duty.html">judicial duty</a>
+              <a href="why-dont-we-have-this-system.html">system page</a>
+              <a href="documentspage.html">documents</a>
+              <a href="misconductandfailure.html">mindmaps</a>
+              <a href="editor.html">editor</a>
+              <a href="network_analysis/index.html">network analysis</a>
+            </div>
+          </article>
+
+          <article class="matrix-card">
+            <h3>Core record pages</h3>
+            <p><code>Shared nav keeps these mutually accessible</code></p>
+            <div class="node-links">
+              <a href="timeline.html">timeline</a>
+              <a href="players.html">players</a>
+              <a href="scene.html">scene</a>
+              <a href="evidence.html">evidence</a>
+              <a href="contradictions.html">contradictions</a>
+              <a href="documentspage.html">documents</a>
+              <a href="misconduct.html">misconduct</a>
+              <a href="case-study.html">case study</a>
+            </div>
+          </article>
+
+          <article class="matrix-card">
+            <h3>Special cross-links</h3>
+            <p><code>Extra direct connections outside the shared nav</code></p>
+            <div class="node-links">
+              <a href="connections.html">players &#x2192; connections</a>
+              <a href="contradictions_grouped.html">overview &#x2192; list of lies</a>
+              <a href="prosecutor_allowed.html">overview &#x2192; prosecutor review</a>
+              <a href="judicial-duty.html">overview &#x2192; judicial duty</a>
+              <a href="why-dont-we-have-this-system.html">judicial duty &#x2194; system page</a>
+              <a href="data-snapshot.html">case study &#x2194; data snapshot</a>
+              <a href="scene.html">case study &#x2192; scene</a>
+              <a href="connections.html">data snapshot &#x2192; connections</a>
+            </div>
+          </article>
+
+          <article class="matrix-card">
+            <h3>Network analysis app</h3>
+            <p><code>Linked from the site map</code></p>
+            <div class="node-links">
+              <a href="network_analysis/index.html">open app</a>
+              <a href="overview.html">from overview</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div><!-- /panel-diagram -->
+
+  </div><!-- /container -->
+
+  <script>
+    (function () {
+      var PANELS = { map: 'panel-map', index: 'panel-index', diagram: 'panel-diagram' };
+
+      function activate(key) {
+        document.querySelectorAll('.view-tab').forEach(function (btn) {
+          btn.classList.toggle('active', btn.dataset.panel === key);
+        });
+        Object.keys(PANELS).forEach(function (k) {
+          var el = document.getElementById(PANELS[k]);
+          if (el) el.classList.toggle('active', k === key);
+        });
+      }
+
+      function panelFromHash() {
+        var h = location.hash;
+        if (h === '#page-index') return 'index';
+        if (h === '#link-diagram') return 'diagram';
+        return 'map';
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        activate(panelFromHash());
+
+        document.querySelector('.view-switcher').addEventListener('click', function (e) {
+          var btn = e.target.closest('.view-tab');
+          if (!btn) return;
+          activate(btn.dataset.panel);
+        });
+
+        document.body.addEventListener('click', function (e) {
+          var a = e.target.closest('a');
+          if (!a || !a.href) return;
+          var href = a.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+          e.preventDefault();
+          e.stopPropagation();
+          window.top.location.href = a.href;
+        }, true);
+      });
+    })();
+  </script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+</html>

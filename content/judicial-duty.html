@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judicial Duty and Courtroom Fairness | State v. Benjamin Allen</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+  
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+    <div class="container page">
+        <div class="header">
+            <h1>An Edifice of Lies</h1>
+            <h2>The judge is the last institutional safeguard when the parties stop protecting fairness.</h2>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">Judicial Duty and Courtroom Fairness</h2>
+            <p>The courtroom is not supposed to be a passive stage where one side manufactures advantage while the other side absorbs the damage. A trial judge has an affirmative responsibility to manage the room, enforce fairness, and prevent the proceeding from becoming an instrument of pressure instead of a search for truth.</p>
+            <p>In a case like State v. Benjamin Allen, that responsibility matters because the challenge is not confined to one disputed fact. The record raises questions about contradictions, charging decisions, evidentiary framing, and whether the process itself was allowed to drift away from neutrality. Once that happens, judicial management is no longer procedural housekeeping. It becomes the difference between a fair hearing and an institution ratifying its own failures.</p>
+            <p>The point of this section is to frame that responsibility clearly: to protect the jury from distortion, to restrain unfair prejudice, to force the parties back toward the actual record, and to preserve the legitimacy of the courtroom when the surrounding system appears unwilling to do so on its own.</p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Core Responsibilities</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Control the proceeding</h3>
+                    <p>Keep argument, evidence, and witness presentation anchored to the record rather than theater, intimidation, or narrative drift.</p>
+                </div>
+                <div class="card">
+                    <h3>Protect neutrality</h3>
+                    <p>Prevent one-sided advantage created by improper aggravation, unsupported insinuation, or selective treatment of contradictory evidence.</p>
+                </div>
+                <div class="card">
+                    <h3>Guard the jury</h3>
+                    <p>Ensure the jury receives a fair record instead of a managed impression shaped by omission, confusion, or institutional credibility alone.</p>
+                </div>
+                <div class="card">
+                    <h3>Correct process failure</h3>
+                    <p>When the investigation or charging process shows signs of misconduct, the court has a duty to confront it rather than normalize it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Related Project Pages</h2>
+            <div class="nav-tabs">
+                <a class="nav-tab" href="../prosecutor_allowed.html" target="_top">Prosecutor Review</a>
+                <a class="nav-tab" href="../misconduct.html" target="_top">Misconduct</a>
+                <a class="nav-tab" href="../contradictions.html" target="_top">Contradictions</a>
+                <a class="nav-tab" href="../documentspage.html" target="_top">Documents</a>
+                <a class="nav-tab" href="why-dont-we-have-this-system.html" target="_top">Why Don't We Have This System?</a>
+            </div>
+        </section>
+    </div>
+
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+  <script src="../shared/site-search.js" defer></script>
+</body>
+
+
+</html>

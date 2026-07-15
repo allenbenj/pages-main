@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Wrongful Accusation | State v. Benjamin Allen</title>
+  <link rel="stylesheet" href="shared/styles.css">
+  <style>
+      body {
+          background:
+              radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
+              linear-gradient(180deg, #131617 0%, #101314 100%);
+          color: #eef3f4;
+      }
+      .container.page {
+          max-width: 1800px;
+      }
+      .content-section,
+      .card {
+          background: rgba(18,22,23,0.92);
+          border-color: rgba(255,255,255,0.08);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+      }
+      .content-section p,
+      .card p {
+          color: #d4dddd;
+      }
+      .section-title,
+      .card h3 {
+          color: #f3f7f7;
+      }
+      .nav-tab {
+          background: rgba(23,27,28,0.88);
+          border-color: rgba(255,255,255,0.08);
+          color: #eef3f4;
+      }
+      .nav-tab:hover,
+      .nav-tab.active {
+          background: rgba(93,152,162,0.18);
+          border-color: rgba(93,152,162,0.4);
+      }
+      .status-banner {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 20px;
+          border-radius: 10px;
+          background: rgba(93,152,162,0.10);
+          border: 1px solid rgba(93,152,162,0.3);
+          color: #9fc8cf;
+          font-size: 0.92rem;
+          margin-bottom: 28px;
+      }
+      .status-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: rgba(93,152,162,0.8);
+          flex-shrink: 0;
+      }
+      .content-todo {
+          background: rgba(255,255,255,0.03);
+          border: 1px dashed rgba(255,255,255,0.15);
+          border-radius: 10px;
+          padding: 18px 22px;
+          color: #8aa2a5;
+          font-size: 0.9rem;
+          line-height: 1.7;
+      }
+      .content-todo ul {
+          margin: 10px 0 0 0;
+          padding-left: 20px;
+      }
+      .content-todo li {
+          margin-bottom: 7px;
+      }
+  </style>
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .disproof-card { transition: background 0.25s ease, box-shadow 0.25s ease; cursor: pointer; }
+    .disproof-card .reality-state { display: none; }
+    .disproof-card.show-reality .testimony-state { display: none; }
+    .disproof-card.show-reality .reality-state { display: block; }
+    .cs-chart-wrap { position: relative; width: 100%; height: 300px; }
+  </style>
+</head>
+<body>
+  <div class="container page">
+
+    <div class="nav-tabs" aria-label="Project navigation">
+      <a class="nav-tab active" href="case-study.html">Case Study</a>
+      <a class="nav-tab" href="index.html">Landing</a>
+      <a class="nav-tab" href="overview.html">Project Map</a>
+      <a class="nav-tab" href="timeline.html">Timeline</a>
+      <a class="nav-tab" href="players.html">Players</a>
+      <a class="nav-tab" href="evidence.html">Evidence</a>
+      <a class="nav-tab" href="contradictions.html">Contradictions</a>
+      <a class="nav-tab" href="misconduct.html">Misconduct</a>
+      <a class="nav-tab" href="documentspage.html">Documents</a>
+    </div>
+
+    <div class="header">
+      <h1 class="u-migrated-6b99de8b">An Edifice of Lies</h1>
+      <h2 class="u-migrated-daadcf94">Case Study: State v. Benjamin Allen</h2>
+      <p class="u-migrated-8beef3a8">A military veteran and father was accused of sexual assault in Lee County, North Carolina in October 2019. The prosecution that followed lasted more than six years. This page documents who the principals were, what the record actually shows, and how the case continued in the face of evidence that contradicted the charge at every structural level.</p>
+    </div>
+
+    <!-- Violations Analysis Summary -->
+    <div class="u-migrated-3857bf70">
+      <div class="card u-migrated-0c8a6f8f">
+        <div class="u-migrated-03d4ca88">&#9888;</div>
+        <div class="u-migrated-a7a5f095">104</div>
+        <div class="u-migrated-55e99b3f">Distinct Violations</div>
+      </div>
+      <div class="card u-migrated-3135602d">
+        <div class="u-migrated-03d4ca88">&#10004;</div>
+        <div class="u-migrated-8edfd47a">12&#8209;0</div>
+        <div class="u-migrated-55e99b3f">Unanimous Acquittal</div>
+        <div class="u-migrated-29bf7222">First-Degree Forcible Rape</div>
+      </div>
+      <div class="card u-migrated-0c8a6f8f">
+        <div class="u-migrated-03d4ca88">&#9201;</div>
+        <div class="u-migrated-153e37d9">38 Min</div>
+        <div class="u-migrated-55e99b3f">Available Window</div>
+        <div class="u-migrated-2cd151b9">vs. 48 min required</div>
+      </div>
+      <div class="card u-migrated-0c8a6f8f">
+        <div class="u-migrated-03d4ca88">&#128194;</div>
+        <div class="u-migrated-153e37d9">37</div>
+        <div class="u-migrated-55e99b3f">State Continuances</div>
+        <div class="u-migrated-29bf7222">Attrition Strategy</div>
+      </div>
+    </div>
+
+    <!-- Quick-jump rail -->
+    <nav class="page-rail u-migrated-876b62c1" aria-label="On this page">
+      <p class="page-rail-title u-migrated-7e6f47f8">On this page</p>
+      <a href="#timeline-impossibility" class="u-migrated-a767a94b">&#10140; Timeline of Impossibility</a>
+      <a href="#digital-disproof" class="u-migrated-a767a94b">&#10140; Digital Disproof</a>
+      <a href="#forensic-disproof" class="u-migrated-a767a94b">&#10140; Forensic Analysis</a>
+      <div class="u-migrated-8d35f8b8"></div>
+      <a href="#principals" class="u-migrated-b7bb3f33">1. The Principals</a>
+      <a href="#complaint" class="u-migrated-b7bb3f33">2. The Initial Complaint</a>
+      <a href="#investigation" class="u-migrated-b7bb3f33">3. The Investigation Record</a>
+      <a href="#charging" class="u-migrated-b7bb3f33">4. The Charging Decision</a>
+      <a href="#pressure" class="u-migrated-b7bb3f33">5. Pressure Dynamics</a>
+      <a href="#contradicted" class="u-migrated-b7bb3f33">6. Evidence Against the Narrative</a>
+      <a href="#arc" class="u-migrated-b7bb3f33">7. The Arc of Prosecution</a>
+      <a href="#harms" class="u-migrated-b7bb3f33">8. Downstream Harms</a>
+      <a href="#baserates" class="u-migrated-b7bb3f33">9. Comparison to Base Rates</a>
+      <a href="#constructed" class="u-migrated-b7bb3f33">10. The Constructed Defendant</a>
+      <a href="#sources" class="u-migrated-b7bb3f33">Related Sources</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- TIMELINE OF IMPOSSIBILITY                                       -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="timeline-impossibility" class="content-section">
+      <h2 class="section-title u-migrated-b0e9cc31">Timeline of Impossibility</h2>
+      <p class="u-migrated-d593da4e">The departure from Schooly's bar was marked by a fundamental contradiction between witness testimony and the objective surveillance record. Lauren Deal's sworn testimony portrayed the departure as a coordinated group event designed to establish the State's &ldquo;position of trust&rdquo; theory. The video evidence shows otherwise: they did not leave together. That single fact renders this portion of her testimony highly suspect, and the problems compound from there across every time anchor that follows.</p>
+
+      <!-- TWO-COL: NARRATIVE + TRANSCRIPT -->
+      <div class="grid grid-2 u-migrated-ce2ba133">
+        <div class="u-migrated-c7da9158">
+          <div class="card u-migrated-22fa8ea1">
+            <div class="u-migrated-bd44e41e">State&rsquo;s Theory</div>
+            <p class="u-migrated-0ea59cb1">Group of four (Deal, Allen, DeMarco, Happel) remained together at closing and departed together in Allen's white truck. Deal was comfortably familiar with the vehicle and the group. The departure served as the foundation for the &ldquo;position of trust&rdquo; aggravator.</p>
+          </div>
+          <div class="card u-migrated-d3377d2b">
+            <div class="u-migrated-bb0d6f5d">Video Reality</div>
+            <p class="u-migrated-0ea59cb1">The surveillance footage shows they did <strong class="u-migrated-2eeb22cf">not</strong> leave together &mdash; departures occurred at separate times. Because Deal left the bar independently, the alleged joint-departure conversation about DeMarco driving and whose truck it was could not have taken place as described. Carmen Love also confirmed to Detective Freeman that the evening did not unfold the way Deal described to law enforcement.</p>
+          </div>
+        </div>
+
+        <!-- PROSECUTION TRANSCRIPT -->
+        <div class="card u-migrated-7b491235">
+          <div class="u-migrated-fe7bcaa0">&#x2696; Prosecution Exchange &mdash; Trial Transcript</div>
+          <div class="u-migrated-e12feb99">
+            <div>
+              <span class="u-migrated-b8ae5730">MS. BARTHOLOMEW:</span>
+              <p class="u-migrated-82165e6a">&ldquo;Did you ever fall down while you were at Schooly&rsquo;s? And when it became time to leave with Ben, Joseph, and Steve, what type of vehicle did you guys get into?&rdquo;</p>
+            </div>
+            <div>
+              <span class="u-migrated-8e823ebd">LAUREN DEAL:</span>
+              <p class="u-migrated-82165e6a">&ldquo;A white lifted truck.&rdquo;</p>
+            </div>
+            <div>
+              <span class="u-migrated-b8ae5730">MS. BARTHOLOMEW:</span>
+              <p class="u-migrated-82165e6a">&ldquo;How do you know it was Ben&rsquo;s truck?&rdquo;</p>
+            </div>
+            <div>
+              <span class="u-migrated-8e823ebd">LAUREN DEAL:</span>
+              <p class="u-migrated-82165e6a">&ldquo;I had seen it before, and he made the comment on the way out that Jay was going to drive his truck because he was the least intoxicated of all of us.&rdquo;</p>
+            </div>
+          </div>
+          <div class="u-migrated-e2f33e4f">
+            <p class="u-migrated-d808926b">The truck was stock &mdash; not lifted. The &ldquo;prior familiarity&rdquo; claim is inconsistent with a timeline showing no meaningful contact for years. The designated-driver arrangement was Allen&rsquo;s, made before Deal arrived; he did not describe DeMarco as &ldquo;least intoxicated.&rdquo; Because the video shows Deal leaving separately, the alleged conversation at the point of joint departure could not have occurred as described.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIME ANCHORS -->
+      <div class="card u-migrated-caa785ec">
+        <div class="u-migrated-b8a9663d">&#9200; Video-Confirmed &amp; Documented Time Anchors</div>
+        <div class="u-migrated-e60a66b2">
+          <div class="u-migrated-30d52f46">
+            <div class="u-migrated-e6bc7744">~2:00 AM</div>
+            <div class="u-migrated-10e89431">Bar closes; lights on. Deal testified the group was together at this point.</div>
+          </div>
+          <div class="u-migrated-30d52f46">
+            <div class="u-migrated-e6bc7744">2:04 AM</div>
+            <div class="u-migrated-10e89431">DeMarco seen on video retrieving sandals at Schooly&rsquo;s (objective video anchor).</div>
+          </div>
+          <div class="u-migrated-30d52f46">
+            <div class="u-migrated-e6bc7744">2:25&ndash;2:35 AM</div>
+            <div class="u-migrated-10e89431">Group estimated to arrive at Allen&rsquo;s residence, based on ~15-minute drive time.</div>
+          </div>
+          <div class="u-migrated-30d52f46">
+            <div class="u-migrated-e6bc7744">~2:40 AM</div>
+            <div class="u-migrated-10e89431">Estimated exit &mdash; if Happel&rsquo;s &ldquo;less than five minutes&rdquo; window is accepted at face value.</div>
+          </div>
+          <div class="u-migrated-bfa7ed1e">
+            <div class="u-migrated-fcee4fa3">3:42 AM</div>
+            <div class="u-migrated-10e89431">Deal arrives at CCH &mdash; State&rsquo;s Exhibit 1 Video (objective anchor).</div>
+          </div>
+          <div class="u-migrated-bfa7ed1e">
+            <div class="u-migrated-fcee4fa3">5:23 AM</div>
+            <div class="u-migrated-10e89431">Chapel Hill intake paperwork. Teresa Deal testified the drive took approximately 45 minutes.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HAPPEL 5-MIN + ESCAPE NARRATIVE -->
+      <div class="grid grid-2 u-migrated-ce2ba133">
+        <div class="card u-migrated-59ab0acb">
+          <div class="u-migrated-02e45c2d">The Five-Minute Impossibility</div>
+          <p class="u-migrated-0652cbec">Happel placed the <strong class="u-migrated-2eeb22cf">entire period from entry to exit at less than five minutes</strong>. Within that window, the State&rsquo;s account requires all of the following to have occurred:</p>
+          <ol class="u-migrated-2abe9abc">
+            <li>Entering the house and unlocking the door</li>
+            <li>Using the bathroom</li>
+            <li>Redressing after bathroom use</li>
+            <li>An alleged push onto a 36-inch-high bed</li>
+            <li>A one-handed overhead restraint of a resisting adult</li>
+            <li>Removal of clothing from two adults</li>
+            <li>The assault itself</li>
+            <li>Escape from the residence</li>
+          </ol>
+          <div class="u-migrated-76cbc039">
+            <span class="u-migrated-d5f2f1c8">That sequence is not merely tight. It is facially implausible.</span>
+          </div>
+        </div>
+
+        <div class="card u-migrated-59ab0acb">
+          <div class="u-migrated-02e45c2d">The Escape Narrative &mdash; Terrain &amp; Light</div>
+          <div class="u-migrated-e12feb99">
+            <div class="u-migrated-aa69ca26">
+              <div class="u-migrated-19469143">Claimed</div>
+              <p class="u-migrated-4b6eb9ff">Ran hysterical through dense woods in pitch-black darkness for nearly an hour, sustaining cuts from briars. No pants, no shoes. Screamed that Allen was &ldquo;the devil&rdquo; and that Happel and DeMarco &ldquo;work for him.&rdquo;</p>
+            </div>
+            <div class="u-migrated-e71ab758">
+              <div class="u-migrated-13175338">Contradicted by the Record</div>
+              <ul class="u-migrated-626b3837">
+                <li>The route she identified leads onto an <strong class="u-migrated-2eeb22cf">open airfield</strong>, not dense forest.</li>
+                <li>No briars exist along that path; her cuts do not resemble briar injuries.</li>
+                <li>Astronomical data: approximately <strong class="u-migrated-2eeb22cf">70% lunar illumination</strong> that night &mdash; directly contradicts the claim she could not see her hand in front of her face.</li>
+                <li>DeMarco said he saw her <em>running through a field</em>. Deal said she was <em>hiding behind a tree</em>. The witnesses contradict each other as to her location.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- THREE GAP CALLOUTS -->
+      <div class="u-migrated-13f24e73">
+        <div class="u-migrated-c5be4931">&#9888; Unaccounted Time: Three Irreconcilable Gaps</div>
+        <div class="grid grid-3 u-migrated-34d1e8e8">
+          <div class="card u-migrated-f8cdf63c">
+            <div class="u-migrated-c8ce958e">Gap 1 &mdash; Exit to CCH</div>
+            <div class="u-migrated-140e10b8">&sim;62 min</div>
+            <p class="u-migrated-ce70d73e">From &sim;2:40 AM exit to 3:42 AM CCH arrival. DeMarco and Happel claimed they searched <strong class="u-migrated-2eeb22cf">only five minutes</strong>
+              before DeMarco drove off. Where were Deal and DeMarco for the remaining hour? Her visible impairment, her obesity, lack of physical fitness, and lack of footwear make a prolonged solo run implausible.</p>
+          </div>
+          <div class="card u-migrated-f8cdf63c">
+            <div class="u-migrated-c8ce958e">Gap 2 &mdash; CCH to Chapel Hill</div>
+            <div class="u-migrated-140e10b8">&sim;56 min unaccounted</div>
+            <p class="u-migrated-ce70d73e">CCH arrival 3:42 AM. Chapel Hill intake 5:23 AM. Teresa Deal testified the drive took &sim;45 minutes &mdash; accounting for 45 of 101 elapsed minutes. The remaining <strong class="u-migrated-2eeb22cf">56 minutes at CCH</strong> are unexplained. No CCH report to law enforcement has been produced, as would be required in a sexual-assault case.</p>
+          </div>
+          <div class="card u-migrated-f8cdf63c">
+            <div class="u-migrated-c8ce958e">Gap 3 &mdash; The Girlfriend Problem</div>
+            <div class="u-migrated-140e10b8">45+ min round trip</div>
+            <p class="u-migrated-ce70d73e">DeMarco called his girlfriend, who lived in Fayetteville. Deal was later wearing sweatpants the girlfriend brought to CCH. The drive from Fayetteville alone takes <strong class="u-migrated-2eeb22cf">at least 45 minutes</strong>. The claim that they arrived at CCH and immediately turned around for Chapel Hill cannot be true.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSITION OF TRUST COLLAPSE -->
+      <div class="card u-migrated-dc9f344f">
+        <div class="u-migrated-fe7bcaa0">State&rsquo;s &ldquo;Position of Trust&rdquo; Theory vs. Surveillance Record</div>
+        <div class="grid grid-3 u-migrated-34d1e8e8">
+          <div class="u-migrated-ad927c8a">
+            <div class="u-migrated-82e2d908">State&rsquo;s Claim</div>
+            <p class="u-migrated-5e036242">Allen occupied a position of trust he exploited to lure Deal &mdash; evidenced by her knowing his truck from prior occasions, greeting him with a hug, and trusting him with her keys.</p>
+          </div>
+          <div class="u-migrated-ad927c8a">
+            <div class="u-migrated-82e2d908">Implied Warrant</div>
+            <p class="u-migrated-5e036242">A woman who hands over her keys and joins a familiar male friend&rsquo;s group for a social gathering acts under an umbrella of established trust that can constitute a statutory aggravator.</p>
+          </div>
+          <div class="u-migrated-02ce7b20">
+            <div class="u-migrated-d5fea8e0">Video Disproof</div>
+            <ul class="u-migrated-60f05b4b">
+              <li>Allen <strong class="u-migrated-2eeb22cf">refused the keys</strong>; Deal handed them to DeMarco &mdash; a man she had never met.</li>
+              <li>Deal&rsquo;s friends left earlier. She eventually left the bar <strong class="u-migrated-2eeb22cf">alone</strong> after multiple failed attempts to get Allen&rsquo;s attention.</li>
+              <li>It was not a smooth group departure. The State needed that cohesion because it was the social glue for the &ldquo;lure&rdquo; theory.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYNTHESIS -->
+      <div class="card u-migrated-82b23fab">
+        <div class="u-migrated-c14f8750">Pattern: Narrative Manufacture</div>
+        <p class="u-migrated-2cf678f1">The account of who remained at the bar, who left with whom, how the truck was identified, why DeMarco drove, how intoxicated Deal was, and what happened after leaving the residence all contain serious conflicts with video, timelines, terrain, or common sense. None of this appears ambiguous. Much of it is directly testable.</p>
+        <p class="u-migrated-2cf678f1">The content of Deal&rsquo;s testimony at trial diverged sharply from her earlier statements. The later testimony became cleaner, more element-driven, and more useful to the prosecution. That pattern does not look like natural memory development. When the polished version directly conflicts with objective video evidence, the problem is no longer mere inconsistency &mdash; it becomes evidence of <strong class="u-migrated-2eeb22cf">narrative manufacture</strong>.</p>
+        <p class="u-migrated-b54c431f">Freeman was told by Carmen Love that the evening did not unfold the way Deal described to law enforcement. Rather than preserving those contradictions, he altered the official narrative in a way that buried them instead.</p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- DIGITAL DISPROOF: BAR SURVEILLANCE                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="digital-disproof" class="content-section">
+      <h2 class="section-title u-migrated-b0e9cc31">Digital Disproof: The Bar Surveillance</h2>
+      <p class="u-migrated-d593da4e">The State's "Position of Trust" aggravator was built entirely on sworn testimony about a friendly social evening. Objective surveillance video from Schooly's refutes each key claim. Tap any card to reveal what the footage actually shows.</p>
+      <div class="u-migrated-8947de6f">
+
+        <div class="disproof-card card u-migrated-22a26743" onclick="this.classList.toggle('show-reality')">
+          <div class="testimony-state u-migrated-f28118d1">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-ecf97187">Sworn Testimony</span>
+              <span class="u-migrated-e440fc10">&#128483;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">&ldquo;Initial Hug&rdquo;</h4>
+            <p class="u-migrated-d19d96a7">&ldquo;I ran up and hugged him.&rdquo;</p>
+            <div class="u-migrated-af47d493">Tap to reveal video reality &#8635;</div>
+          </div>
+          <div class="reality-state u-migrated-55aac5f3">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-bc7dbb4d">Objective Reality</span>
+              <span class="u-migrated-18fcf0c2">&#128249;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">Avoidance</h4>
+            <p class="u-migrated-9c2573a1">No hug occurred upon arrival. Deal is clearly seen avoiding Allen's proximity on the footage.</p>
+            <div class="u-migrated-23351385">
+              <span class="u-migrated-d1fa70be">Perjury</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="disproof-card card u-migrated-22a26743" onclick="this.classList.toggle('show-reality')">
+          <div class="testimony-state u-migrated-f28118d1">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-ecf97187">Sworn Testimony</span>
+              <span class="u-migrated-e440fc10">&#128483;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">&ldquo;Group Drinking&rdquo;</h4>
+            <p class="u-migrated-d19d96a7">&ldquo;We sat and drank for hours as a group with Carmen and Peter.&rdquo;</p>
+            <div class="u-migrated-af47d493">Tap to reveal video reality &#8635;</div>
+          </div>
+          <div class="reality-state u-migrated-55aac5f3">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-bc7dbb4d">Objective Reality</span>
+              <span class="u-migrated-18fcf0c2">&#128249;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">Timeline Fraud</h4>
+            <p class="u-migrated-9c2573a1">Peter West left at 11:32 PM; Carmen Love left at 12:41 AM. Deal did not interact with Allen until after Carmen Love left at 12:41 a.m.</p>
+            <div class="u-migrated-23351385">
+              <span class="u-migrated-d1fa70be">Timeline Fabrication</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="disproof-card card u-migrated-22a26743" onclick="this.classList.toggle('show-reality')">
+          <div class="testimony-state u-migrated-f28118d1">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-ecf97187">Sworn Testimony</span>
+              <span class="u-migrated-e440fc10">&#128483;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">&ldquo;The Key Transfer&rdquo;</h4>
+            <p class="u-migrated-d19d96a7">&ldquo;I threw him my keys because I trusted him.&rdquo;</p>
+            <div class="u-migrated-af47d493">Tap to reveal video reality &#8635;</div>
+          </div>
+          <div class="reality-state u-migrated-55aac5f3">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-bc7dbb4d">Objective Reality</span>
+              <span class="u-migrated-18fcf0c2">&#128249;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">Refusal</h4>
+            <p class="u-migrated-9c2573a1">Allen explicitly refused the keys. Deal subsequently handed them to Joseph DeMarco instead.</p>
+            <div class="u-migrated-23351385">
+              <span class="u-migrated-d1fa70be">Rebuttal of Trust Aggravator</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="disproof-card card u-migrated-22a26743" onclick="this.classList.toggle('show-reality')">
+          <div class="testimony-state u-migrated-f28118d1">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-ecf97187">Freeman Affidavit</span>
+              <span class="u-migrated-e440fc10">&#128196;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">The 2:00 AM Conversation</h4>
+            <p class="u-migrated-d19d96a7">Freeman swore Deal told Carmen Love at 2:00 AM she was leaving with Allen.</p>
+            <div class="u-migrated-af47d493">Tap to reveal video reality &#8635;</div>
+          </div>
+          <div class="reality-state u-migrated-55aac5f3">
+            <div class="u-migrated-8f42c5fc">
+              <span class="u-migrated-bc7dbb4d">Objective Reality</span>
+              <span class="u-migrated-18fcf0c2">&#128249;</span>
+            </div>
+            <h4 class="u-migrated-7fd195df">Impossible</h4>
+            <p class="u-migrated-9c2573a1">Security footage confirms Carmen Love exited Schooly's at exactly 12:41:25 AM &#8212; over an hour before the claimed conversation.</p>
+            <div class="u-migrated-23351385">
+              <span class="u-migrated-d1fa70be">Franks Violation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FORENSIC & ANATOMICAL DISPROOF                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="forensic-disproof" class="content-section">
+      <h2 class="section-title u-migrated-b0e9cc31">Forensic &amp; Anatomical Disproof</h2>
+      <p class="u-migrated-d593da4e">The ADA's representations during plea negotiations were directly contradicted by actual laboratory and medical records. The alleged assault mechanics are additionally excluded by the defendant's documented physical impairments.</p>
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card">
+          <h3 class="u-migrated-5eb65524">
+            <span class="u-migrated-3c2f86d0">&#129516;</span> The DNA Misrepresentation
+          </h3>
+          <div class="u-migrated-f22e0e67">
+            <div class="u-migrated-ee338b0e">
+              <div class="u-migrated-014bd871"></div>
+              <div class="u-migrated-66313720">The ADA's Representation</div>
+              <p class="u-migrated-0958533e">During plea talks, ADA Bartholomew stated: "We found your sperm and DNA on her."</p>
+            </div>
+            <div class="u-migrated-7ffdf1d1">
+              <div class="u-migrated-405a4742"></div>
+              <div class="u-migrated-66313720">SBI Report (05/11/2020)</div>
+              <p class="u-migrated-849c78f1">&ldquo;No spermatozoa present.&rdquo;</p>
+            </div>
+            <div class="u-migrated-4a65ebc2">
+              <div class="u-migrated-35acf662"></div>
+              <div class="u-migrated-66313720">Y-STR Reality</div>
+              <p class="u-migrated-0958533e">The lab found a non-individualizing profile matching 1 in 518 Caucasian males, including all paternal relatives. The sample was subsequently consumed without defense notice.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="u-migrated-5eb65524">
+            <span class="u-migrated-3c2f86d0">&#129658;</span> SANE &amp; Biomechanical Analysis
+          </h3>
+          <div class="u-migrated-96a70a8c">
+            <div class="u-migrated-a4b16e9f">
+              <span class="u-migrated-38e27cae">0</span>
+              <span class="u-migrated-c3081882">FLACC Pain Score</span>
+            </div>
+            <div class="u-migrated-a4b16e9f">
+              <span class="u-migrated-38e27cae">None</span>
+              <span class="u-migrated-c3081882">Genital Trauma / Bruising</span>
+            </div>
+          </div>
+          <div class="u-migrated-c505fd02">
+            <div class="u-migrated-aec8eeec">The Anatomical Fantasy</div>
+            <p class="u-migrated-6c148286">
+              <strong class="u-migrated-2eeb22cf">The Claim:</strong> Defendant held both wrists above her head with one hand while simultaneously removing fitted leggings from a 200lb adult.
+            </p>
+            <p class="u-migrated-0958533e">
+              <strong class="u-migrated-2eeb22cf">The Reality:</strong> Allen sustained a 2005 fracture resulting in <strong class="u-migrated-547e413d">zero grip strength</strong> in his left hand. Geometrically, a body positioned for penetration physically blocks the downward removal path of pants.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 1. THE PRINCIPALS                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="principals" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">1. The Principals</h2>
+      <p class="u-migrated-4a2f182f">The people at the center of this case did not meet as strangers. Several relationships existed before the accusation was made, and those pre-existing connections shaped who was investigated, who was interviewed, and who was protected.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card u-migrated-c1f0ca9c">
+          <div class="u-migrated-46013915">Defendant</div>
+          <h3 class="u-migrated-bdf18cb4">Benjamin Allen</h3>
+          <p class="u-migrated-01a334d5">A military veteran and father living in Lee County. He had no prior relationship with Lauren Deal beyond a brief social connection through his ex-wife. He was present at Schooly's bar on the night in question. He lost employment, housing stability, access to family, and years of his life to a prosecution built on a record that consistently contradicted the charge. He is assessed in this archive as innocent of the allegation.</p><br><br><br><br>
+        </div>
+
+        <div class="card u-migrated-3ad5633e">
+          <div class="u-migrated-46013915">Accuser</div>
+          <h3 class="u-migrated-bdf18cb4">Lauren Deal</h3>
+          <p class="u-migrated-01a334d5">The primary complainant. Her initial police statements diverged materially from her trial testimony. Multiple claimed facts—running through pitch-black woods, hiding behind trees, fleeing through briars—are physically inconsistent with the documented terrain, the recorded lunar conditions (approximately 70% illumination), and the scene's layout. Her testimony evolved in ways that tracked prosecutorial framing rather than prior statements. She claimed connection to Allen through his ex-wife. Her social circle includes Joel Kelly, whose daughter was her best friend and who was connected to a $150,000 extortion demand.</p>
+        </div>
+
+        <div class="card u-migrated-1fe393b5">
+          <div class="u-migrated-46013915">Lead Investigator</div>
+          <h3 class="u-migrated-bdf18cb4">Detective Steve Freeman</h3>
+          <p class="u-migrated-01a334d5">Assigned as lead detective. Freeman had a familial relationship with Carmen Love—a key witness who accompanied Deal to the bar that night. This conflict was not disclosed to the court. Freeman later recast Love's initial recorded statement (which was exculpatory and did not name Allen) into a guilt-supporting document. His chronology of case assignment places him as involved before the factual predicate for escalation had been developed—a structural impossibility inconsistent with initial officer Haines's own account. He is accused of perjury, evidence fabrication, and suppression of exculpatory material.</p>
+        </div>
+
+        <div class="card u-migrated-018adbab">
+          <div class="u-migrated-46013915">Lead Prosecutor</div>
+          <h3 class="u-migrated-bdf18cb4">ADA Tiffany Bartholomew</h3>
+          <p class="u-migrated-01a334d5">The Assistant District Attorney who prosecuted the case. Accused of witness coaching, evidence misrepresentation, violation of judicial instructions on conditional admission of evidence (N.C. R. Evid. 104(b)), withholding the balance of exhibits under the rule of completeness (N.C. R. Evid. 106), and constructing a "position of trust" aggravating factor that is unsupported by the objective record. Deal's speech register and substantive framing shifted materially between law enforcement interviews and trial—changes aligned with Bartholomew's litigation strategy.</p><br>
+        </div>
+
+        <div class="card u-migrated-b517b79e">
+          <div class="u-migrated-46013915">Key Witness / Freeman's Relative</div>
+          <h3 class="u-migrated-bdf18cb4">Carmen Love</h3>
+          <p class="u-migrated-01a334d5">Deal's cousin. Present at the bar that night with Deal. Her initial recorded statement to Freeman—her relative—did not identify Allen by name and contradicted the narrative later advanced in the investigation. Freeman claimed to have used that statement to establish probable cause, despite its exculpatory content. Love's later testimony shifted toward the prosecution's account. The two uninterviewed witnesses at the scene—James Morrison (Love's boyfriend) and Peter West III—were never called, which means every account from within that evening's group was filtered through people with undisclosed connections to the investigator.</p>
+        </div>
+
+        <div class="card u-migrated-8da98674">
+          <div class="u-migrated-46013915">Third Party — Financial Motive</div>
+          <h3 class="u-migrated-bdf18cb4">Joel Kelly</h3>
+          <p class="u-migrated-01a334d5">Connected to a $150,000 extortion demand directed at Allen. Kelly's daughter was Deal's best friend. Deal's other best friend worked for Kelly. He was embedded in the same social network as Deal and shared overlapping connections with individuals who had reason to fabricate or amplify the allegation. The extortion contact preceded the formal complaint, establishing a financial motive that was not adequately explored in the investigation.</p>
+        </div>
+
+        <div class="card u-migrated-7fee63fc">
+          <div class="u-migrated-46013915">Personal Antagonist</div>
+          <h3 class="u-migrated-bdf18cb4">Jolynda Adcock</h3>
+          <p class="u-migrated-01a334d5">Demonstrated long-standing personal animosity toward Allen. Exploited Allen's ex-wife's documented mental illness. Stated explicitly that "it didn't matter whether Mr. Allen was innocent" due to the Sheriff's Department connections available to the complainant's circle. That statement is one of the most direct documentary records in this archive of how the structural environment around the case was understood by those within it.</p>
+        </div>
+
+        <div class="card u-migrated-672b2d21">
+          <div class="u-migrated-46013915">Missing Witnesses</div>
+          <h3 class="u-migrated-bdf18cb4">James Morrison &amp; Peter West III</h3>
+          <p class="u-migrated-01a334d5">Both were present at Schooly's bar on the night in question. Neither was interviewed by investigators. Morrison was Carmen Love's boyfriend, placing him within her direct social circle—and therefore within Freeman's undisclosed network. West's father worked at the Sheriff's Office and signed Allen's release from jail. Their unrecorded observations of Deal's behavior, apparent intoxication, and movements that evening would have been directly material to the credibility of the complaint. Their absence from the investigative record is not explained.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 2. THE INITIAL COMPLAINT                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="complaint" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">2. The Initial Complaint: What Was Alleged, When, and to Whom</h2>
+
+      <p class="u-migrated-45133a9c">The complaint arose from events at Schooly's bar in Lee County, North Carolina in the early hours of October 19, 2019, and the hours that followed. The sequence below is drawn from the documentary record, testimony, and video evidence now available in this archive.</p>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-e571720b">The Bar — Evening of October 18 into October 19, 2019</h3>
+        <p class="u-migrated-01a334d5">Lauren Deal and her group arrived at Goodfellas at approximately 6:30 PM on October 18, 2019, and at Schooly's at approximately 9:30 PM. Benjamin Allen and his group arrived at Schooly's at approximately 12:08 AM on October 19. Video from the bar is part of this archive. That video shows Deal's group and Allen's group present simultaneously. It also shows specific interactions — including Deal initiating contact with Allen, attempting to introduce him to others, and following him after he walked away — that directly contradict key elements of the later complaint.</p>
+      </div>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-e571720b">The Allegation</h3>
+        <p class="u-migrated-01a334d5">Deal alleged that Allen sexually assaulted her after she accompanied him from the bar. She alleged she escaped by running in pitch-black darkness through woods and briars, hid behind trees, and was eventually spotted from the road by Joe DeMarco, who picked her up. She described the environment as having "complete darkness" while simultaneously identifying vehicle types, recognizing DeMarco by sight, and maintaining eye contact with him as she made the decision to approach his vehicle.</p>
+      </div>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-e571720b">First Report — Officer Isaac Haines</h3>
+        <p class="u-migrated-01a334d5">Officer Haines conducted the first institutional interview with Deal. He testified that his role was preliminary fact-finding to determine whether the matter warranted a detective assignment. This framing creates a timing problem: Freeman testified that he had already been notified about a sexual assault allegation before the Haines interview was complete, suggesting the matter was escalated to detective-level investigation before the threshold predicate had been established. Haines himself described the investigative mission as one of proving Allen guilty, not determining whether the allegation was credible. Haines was subsequently promoted to Detective following this case.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 3. THE INVESTIGATION RECORD                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="investigation" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">3. The Investigation Record: What Was Collected vs. What Was Ignored</h2>
+
+      <p class="u-migrated-d593da4e">An investigation's integrity is measured not only by what it found but by what it chose not to look for. The omissions in this record are not minor. They are structural — the materials most likely to undermine the complaint are precisely the materials that were handled selectively or not at all.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card u-migrated-32cdf311">
+          <div class="u-migrated-39a064ba">Collected</div>
+          <h3 class="u-migrated-dfaeed9c">Bar Video Footage</h3>
+          <p class="u-migrated-01a334d5">Video from Schooly's was collected. That footage documents Deal's behavior and interactions during the evening, including moments of Deal initiating contact with Allen — contradicting her later characterization of events — and showing Carmen Love and James Morrison departing together without having spoken to Allen or his friends, directly undermining the social context claimed in the investigation's narrative.</p><br><br>
+        </div>
+
+        <div class="card u-migrated-58a6c438">
+          <div class="u-migrated-39a064ba">Not Collected / Not Used</div>
+          <h3 class="u-migrated-dfaeed9c">Statements from Material Witnesses</h3>
+          <p class="u-migrated-01a334d5">James Morrison and Peter West III — both present at the bar and part of Deal's extended social group — were never interviewed. Morrison was Carmen Love's boyfriend. West's father was a Sheriff's Office employee who signed Allen's jail release. No explanation is provided in the record for why two identified witnesses who were present for the relevant events were never contacted.</p><br><br>
+        </div>
+
+        <div class="card u-migrated-58a6c438">
+          <div class="u-migrated-39a064ba">Distorted</div>
+          <h3 class="u-migrated-dfaeed9c">Carmen Love's Initial Statement</h3>
+          <p class="u-migrated-01a334d5">Love's first recorded statement to Freeman — her own family member — did not identify Allen by name and did not supply the incriminating detail later attributed to it. Freeman subsequently recast that statement in official documents. Because the original recording exists and is accessible to the defense, the alteration is directly comparable and provable. Freeman claimed to have used Love's statement as a basis for probable cause even though its actual content did not support that use.</p>
+        </div>
+
+        <div class="card u-migrated-58a6c438">
+          <div class="u-migrated-39a064ba">Uninvestigated</div>
+          <h3 class="u-migrated-dfaeed9c">The $150,000 Extortion Demand</h3>
+          <p class="u-migrated-01a334d5">A $150,000 extortion demand connected to Joel Kelly preceded or accompanied the formal accusation. Kelly's daughter was Deal's best friend; Deal's other best friend worked for Kelly. The financial motive and social architecture of the extortion were not adequately explored by the investigation — a gap that would be highly relevant in any credibility assessment of the complainant's motive.</p><br><br>
+        </div>
+
+        <div class="card u-migrated-58a6c438">
+          <div class="u-migrated-39a064ba">Manufactured</div>
+          <h3 class="u-migrated-dfaeed9c">Evidence Destruction Innuendo</h3>
+          <p class="u-migrated-01a334d5">Freeman later suggested that cleanup behavior at Allen's residence was consistent with evidence destruction — without having processed the scene in any manner that would establish what evidence had existed there, where it had been located, or whether anything had been removed. The insinuation extended to a different room from the one where the assault was allegedly committed. This is the investigative equivalent of creating a negative implication from the absence of something the investigation never actually looked for.</p>
+        </div>
+
+        <div class="card u-migrated-7481ea6b">
+          <div class="u-migrated-39a064ba">Chronological Defect</div>
+          <h3 class="u-migrated-dfaeed9c">The Assignment Timing Problem</h3>
+          <p class="u-migrated-01a334d5">The testimonial record indicates that Freeman was already aware of and involved in the case before Haines's preliminary interview was complete. If Haines's stated role was to determine whether a detective was needed, then Freeman's prior notification is a structural impossibility unless the escalation decision had been made before any factual basis for it existed. This creates a <em>Franks v. Delaware</em> concern: the chronology underlying the probable cause affidavit may be materially false.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 4. THE CHARGING DECISION                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="charging" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">4. The Charging Decision</h2>
+
+      <p class="u-migrated-45133a9c">A charging decision carries legal and moral weight. It requires a genuine assessment of whether the available evidence, taken at its strongest, could support a conviction before a fair finder of fact. The materials in this archive raise serious questions about whether that assessment was ever honestly conducted in this case.</p>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-d8539155">What Existed at the Time of Charging</h3>
+        <ul class="u-migrated-c57a542c">
+          <li>A complainant whose account included physical impossibilities contradicted by terrain, lighting conditions, and recorded video.</li>
+          <li>Bar video showing Deal initiating contact with Allen, tracking him after he walked away, and voluntarily accompanying his group.</li>
+          <li>An initial witness statement (Carmen Love) that was exculpatory in its original form.</li>
+          <li>An investigator with an undisclosed familial relationship to a key witness.</li>
+          <li>Two identified material witnesses who had never been interviewed.</li>
+          <li>An unexplained extortion demand in the same social circle as the complainant.</li>
+          <li>A chronological impossibility in the escalation timeline that should have triggered review of the probable cause affidavit but no probable cause affidavit exist even after almost seven years.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="u-migrated-d8539155">What the Decision Required</h3>
+        <p class="u-migrated-01a334d5">The decision to charge over these materials required either that the prosecutor had not reviewed them, had reviewed them and concluded they were immaterial, or had reviewed them and concluded that conviction was achievable regardless of what they showed. The subsequent conduct of the prosecution — including the handling of Exhibit 4, the aggravating-factor construction, and witness coaching indicators — points toward the third possibility.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 5. PRESSURE DYNAMICS                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="pressure" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">5. Pressure Dynamics: Family Connections to Law Enforcement and Local DA Relationships</h2>
+
+      <p class="u-migrated-d593da4e">The structural environment surrounding this case was not neutral. The record documents a set of relationships between the complainant's social circle and law enforcement personnel that, taken together, explain how a case with this evidentiary profile was treated as credible, why certain witnesses disappeared from the record, and how the language attributed to insiders ("it didn't matter whether Mr. Allen was innocent") reflects something more than personal bias.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card u-migrated-1fe393b5">
+          <h3 class="u-migrated-dfaeed9c">Freeman ↔ Carmen Love</h3>
+          <p class="u-migrated-01a334d5">The lead investigator had a familial relationship with the key witness whose initial statement was exculpatory. Love's statement was recast rather than preserved. This conflict was not disclosed. Under basic due process principles, an investigator with a family relationship to a witness cannot be treated as neutral when the question is whether that witness's account corroborates or undermines the charge.</p>
+        </div>
+
+        <div class="card u-migrated-1fe393b5">
+          <h3 class="u-migrated-dfaeed9c">Freeman ↔ James Morrison</h3>
+          <p class="u-migrated-01a334d5">Morrison was Love's boyfriend — and therefore connected to Freeman through Love. He was present at the bar and his non-interview is not explained. The failure to interview him is consistent with the broader pattern: every uncontrolled witness who could have provided an independent account of Deal's behavior that evening was excluded from the record.</p>
+        </div>
+
+        <div class="card u-migrated-1fe393b5">
+          <h3 class="u-migrated-dfaeed9c">Peter West III ↔ Sheriff's Office</h3>
+          <p class="u-migrated-01a334d5">West was present at the bar. His father worked at the Sheriff's Office and personally signed Allen's jail release. West was never interviewed. The combination of his institutional proximity and his absence from the investigation creates a structural inference that the investigation's scope was managed — not by the evidence — but by the social and professional networks within it.</p>
+        </div>
+
+        <div class="card u-migrated-3ad5633e">
+          <h3 class="u-migrated-dfaeed9c">Jolynda Adcock's Statement</h3>
+          <p class="u-migrated-01a334d5">Adcock's documented statement — "it didn't matter whether Mr. Allen was innocent" — is not merely an expression of personal hostility. It is a statement about perceived institutional power. It reflects the understanding, within the complainant's extended circle, that the Sheriff's Department relationships available to them were sufficient to make the outcome of the case independent of its factual merits.</p>
+        </div>
+
+        <div class="card u-migrated-018adbab">
+          <h3 class="u-migrated-dfaeed9c">Haines's Promotion</h3>
+          <p class="u-migrated-01a334d5">Officer Haines, the initial responding officer who described the investigative mission as proving Allen guilty rather than determining the truth of the allegation, was subsequently promoted to Detective. Whatever the formal basis for that promotion, its timing within the institutional record of this case is documented here.</p><br><br>
+        </div>
+
+        <div class="card u-migrated-73ec0dc1">
+          <h3 class="u-migrated-dfaeed9c">The Extortion Network</h3>
+          <p class="u-migrated-01a334d5">The $150,000 extortion demand, connected to Joel Kelly, whose daughter was Deal's best friend and whose employee was Deal's other best friend, was generated before or alongside the formal complaint. The failure to investigate this network as a source of motive — and the failure to trace its relationship to the timing and substance of the allegation — is a fundamental investigative omission.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 6. EVIDENCE THAT CONTRADICTED THE NARRATIVE                    -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="contradicted" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">6. Evidence That Contradicted the Narrative — and How It Was Handled</h2>
+
+      <p class="u-migrated-d593da4e">The complaint's narrative is not merely weak at its edges. The core of it — the flight, the darkness, the geography — collapses under basic scrutiny. The following contradictions are documented in the record and cross-referenced in <a href="contradictions.html" class="u-migrated-547e413d">contradictions.html</a>.</p>
+
+      <div class="card u-migrated-7a785d3b">
+        <h3 class="u-migrated-d8539155">The Darkness Claim vs. the Lunar Record</h3>
+        <p class="u-migrated-01a334d5">Deal described running in "complete darkness." Photometric and radiometric data confirm approximately 70% lunar illumination (Waxing/Waning Gibbous) on the night in question. At this illumination level, a person with normal vision can detect large objects at distances exceeding 50 feet, recognize body silhouettes and movement, and navigate open terrain without artificial light. Deal simultaneously claimed "complete darkness" while identifying that an approaching vehicle was not Allen's large truck, recognizing DeMarco as the driver, establishing eye contact with him, and making a deliberate decision to approach. The word "darkness" is invoked selectively: it appears to explain disorientation and disappears when recognition, identification, and volitional conduct need to be established.</p>
+      </div>
+
+      <div class="card u-migrated-7a785d3b">
+        <h3 class="u-migrated-d8539155">The Geographic Impossibility</h3>
+        <p class="u-migrated-01a334d5">Deal claimed to have run through woods and briars in the direction away from the house before reaching a road near Route 1. The direction she described leads to a large, flat, open airfield — not woods, not briars, not concealed terrain. There is no dense undergrowth in that direction. The airfield is open and visible. To reach the road near Route 1, she would have had to reverse course and run back toward the house. The investigation did not engage with this geographic contradiction. The terrain has been documented in the scene archive at <a href="scene.html" class="u-migrated-547e413d">scene.html</a>.</p>
+      </div>
+
+      <div class="card u-migrated-7a785d3b">
+        <h3 class="u-migrated-d8539155">The Video Record vs. the Social Context Claimed</h3>
+        <p class="u-migrated-01a334d5">Bar video shows Carmen Love and James Morrison departing Schooly's at approximately 12:41 AM — without having spoken to Allen or his group. Deal's account implied a different social context within the bar. The video shows Deal initiating contact with Allen, attempting to introduce him to others, and following him after he walked away. The video does not show a reluctant or passive witness. It shows voluntary engagement. That footage is timestamped and available in the archive.</p>
+      </div>
+
+      <div class="card u-migrated-7a785d3b">
+        <h3 class="u-migrated-d8539155">DeMarco's Statement vs. Deal's Trial Testimony</h3>
+        <p class="u-migrated-01a334d5">Joe DeMarco told Freeman he saw Deal "running through a field near Route 1" while driving. Deal's trial testimony described running through pitch-black woods in a different direction. These accounts are not in minor tension — they describe different physical scenarios in different locations under different conditions. DeMarco's account was inaccurate from the beginning as he was afraid of getting accused of something by Deal so he went along with making up a story. His account was changed in Freeman's search warrant affidavit and retellings. Deal's trial account does not align with the geography and lighting conditions.</p>
+      </div>
+
+      <div class="card u-migrated-7a785d3b">
+        <h3 class="u-migrated-d8539155">Exhibit 4: The Facebook Messages</h3>
+        <p class="u-migrated-01a334d5">Facebook messages identified as Exhibit 4 were presented without device metadata, custodial proof, or foundation sufficient to resolve attribution — particularly where later screenshots identified a different user of the same phone. The court conditionally admitted the exhibit subject to the State's obligation to link it to a prior conversation that would provide context. That condition was not meaningfully satisfied. Only the first screenshot was emphasized; subsequent screenshots identifying another phone user were withheld from the jury's view, in apparent violation of N.C. R. Evid. 106.</p>
+      </div>
+
+      <div class="card u-migrated-e9962331">
+        <h3 class="u-migrated-d8539155">How Contradictory Evidence Was Handled</h3>
+        <p class="u-migrated-01a334d5">The documentary record reflects a consistent pattern: evidence that undermined the narrative was either ignored (Morrison, West), recast (Love's initial statement), managed selectively (Exhibit 4's full screenshot sequence), or met with insinuation rather than proof (the cleanup/destruction-of-evidence narrative). The pattern is too consistent to be explained by inadvertence. Each handling decision was in a direction that favored conviction.</p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 7. ARC OF THE PROSECUTION                                       -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="arc" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">7. The Arc of the 6+ Year Prosecution</h2>
+
+      <p class="u-migrated-45133a9c">The prosecution of Benjamin Allen extended more than six years from the date of the alleged offense in October 2019. That duration is not simply a product of court congestion or procedural complexity. It reflects a sequence of decisions that prolonged exposure to prosecution for a defendant whose record contained, from the outset, materials that should have triggered review.</p>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-d8539155">Initial Arrest and Charge</h3>
+        <p class="u-migrated-01a334d5">Allen was arrested and charged with sexual assault following the investigation led by Detective Freeman. The arrest took place despite the evidentiary defects described in this record: an uninvestigated extortion demand, an exculpatory witness statement that had been recast, two uninterviewed material witnesses, and a probable cause chronology that did not hold together.</p>
+      </div>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-d8539155">Continuances and Delay</h3>
+        <p class="u-migrated-01a334d5">The case proceeded through hearings, continuances, and pretrial motions over an extended period. Each continuance that moved the trial date further into the future extended Allen's period of legal jeopardy — with consequences for employment, housing, family access, and health documented in the downstream harms section below. The full docket record is available in the document archive.</p>
+      </div>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-d8539155">Motions Practice</h3>
+        <p class="u-migrated-01a334d5">Pretrial motions raised issues including Brady violations, the chronological defect in the probable cause affidavit (implicating <em>Franks v. Delaware</em>), and evidentiary handling failures. The Exhibit 4 conditional admission ruling, in which the court required the State to link the exhibit to a prior conversation before relying on it, is a documented instance of the court placing conditions on the prosecution's evidence presentation — conditions the State then did not satisfy.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="u-migrated-d8539155">Narrative Evolution as a Prosecution Tool</h3>
+        <p class="u-migrated-01a334d5">Across the arc of the case, Deal's testimony evolved. The "position of trust" aggravating factor developed over time in ways inconsistent with the earliest statements and with the video record of Deal's behavior at the bar. That evolution — from a social encounter at a bar where Deal initiated contact, to a story in which Allen held a position of trust over Deal — required the original record to be progressively buried rather than resolved. The more the narrative evolved, the weaker its connection to the documented facts became.</p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 8. DOWNSTREAM HARMS                                             -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="harms" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">8. Downstream Harms</h2>
+
+      <p class="u-migrated-d593da4e">A prosecution does not exist only in courtrooms. It exists in every part of a person's life from the day of arrest forward. The following categories of harm document what a false accusation that proceeds for more than six years actually costs — not as a hypothetical, but as a record of documented consequence.</p>
+
+      <div class="grid grid-2 u-migrated-6857c69c">
+
+        <div class="card">
+          <div class="u-migrated-39a064ba">Employment</div>
+          <h3 class="u-migrated-dfaeed9c">Career Destruction</h3>
+          <p class="u-migrated-01a334d5">Allen lost employment as a direct consequence of the accusation and the protracted prosecution. Military service and the vocational record built before the accusation were effectively severed. Re-employment becomes structurally difficult for a defendant whose status remains unresolved across years of hearings and continuances.</p><br>
+        </div>
+
+        <div class="card">
+          <div class="u-migrated-39a064ba">Housing</div>
+          <h3 class="u-migrated-dfaeed9c">Housing Instability</h3>
+          <p class="u-migrated-01a334d5">Loss of employment and the financial burden of legal defense across more than six years produces housing instability. A defendant cannot plan housing, financing, or community stability when their legal status remains unresolved—with each continuance extending the period of uncertainty.</p><br><br>
+        </div>
+
+        <div class="card">
+          <div class="u-migrated-39a064ba">Family</div>
+          <h3 class="u-migrated-dfaeed9c">Separation from Family</h3>
+          <p class="u-migrated-01a334d5">Allen is a father. An accusation of this nature and duration does not only restrict the accused's freedom — it disrupts parental access, creates conditions for protective orders, and forces children to grow up with a parent under prosecution. That harm is not reversible by acquittal.</p><br><br>
+        </div>
+
+        <div class="card">
+          <div class="u-migrated-39a064ba">Finances</div>
+          <h3 class="u-migrated-dfaeed9c">Legal and Financial Cost</h3>
+          <p class="u-migrated-01a334d5">Defending a felony-level sexual assault case over six or more years — through motions, hearings, trial preparation, and any appellate proceedings — produces a financial cost that exceeds the resources of most individuals. That cost is borne entirely by the defendant while the State prosecutes with public resources.</p><br><br>
+        </div>
+
+        <div class="card">
+          <div class="u-migrated-39a064ba">Health</div>
+          <h3 class="u-migrated-dfaeed9c">Physical and Psychological Toll</h3>
+          <p class="u-migrated-01a334d5">Six years of pending felony prosecution — with its associated uncertainty, financial stress, social stigma, family disruption, and public record — produces documented psychological harm. For a military veteran who has already navigated service-related stress, the compounding effect of a fabricated accusation and institutional pursuit is not a marginal addition to a normal life. It is a consuming structural experience.</p>
+        </div>
+
+        <div class="card">
+          <div class="u-migrated-39a064ba">Reputation</div>
+          <h3 class="u-migrated-dfaeed9c">The Public Record Problem</h3>
+          <p class="u-migrated-01a334d5">An arrest and charge for sexual assault creates a public record. That record exists independent of outcome. Where the prosecution is false — built on a recast witness statement, uninvestigated exculpatory evidence, and a complainant whose account is physically impossible — the reputational harm is not a byproduct of a fair system. It is a harm produced by the system's failure.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 9. COMPARISON TO BASE RATES                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="baserates" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">9. Comparison to Base Rates</h2>
+
+      <p class="u-migrated-45133a9c">The question of how rare it is for a case with this evidentiary profile to proceed this far is not an idle one. Base rate data on false accusation rates, prosecution rates conditional on evidence quality, and case duration data provide the population-level context against which this record should be evaluated.</p>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-d8539155">The Evidence Profile of This Case</h3>
+        <ul class="u-migrated-c57a542c">
+          <li>Bar video directly contradicting the complainant's account of the social interaction.</li>
+          <li>Documented physical impossibilities in the escape narrative (terrain, lighting, direction).</li>
+          <li>An exculpatory witness statement that was altered rather than preserved.</li>
+          <li>Two identified material witnesses who were never interviewed.</li>
+          <li>An undisclosed conflict of interest in the lead investigator.</li>
+          <li>A financial motive (extortion) that was not investigated.</li>
+          <li>A probable cause chronology that contained a structural impossibility.</li>
+          <li>A prosecution's evidence handling that violated multiple evidentiary rules.</li>
+        </ul>
+      </div>
+
+      <div class="card u-migrated-905d8b3d">
+        <h3 class="u-migrated-d8539155">What Base Rates Suggest</h3>
+        <p class="u-migrated-01a334d5">Research on sexual assault prosecution — including work by the National Registry of Exonerations and academic studies of prosecutorial screening — consistently finds that cases with exculpatory video evidence, physical impossibilities in the complainant's narrative, and undisclosed investigator conflicts rarely proceed past initial screening where those materials are meaningfully engaged. Cases in which those materials are present but suppressed, recast, or ignored present a different pattern: the materials that should have stopped the case become invisible to the decision-makers downstream, and the case proceeds on the momentum of the charge rather than the merits of the record.</p>
+        <p class="u-migrated-d4e247c1">A 6+ year prosecution in the face of this evidentiary profile is an outlier. It is not explained by case complexity. It is explained by the structural dynamics documented in this archive: investigator conflicts, selective witness handling, and a complaint embedded in a network with direct access to law enforcement.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="u-migrated-d8539155">The Research Context</h3>
+        <p class="u-migrated-01a334d5">False allegation rates in sexual assault cases are contested in the academic literature, with credible estimates ranging from approximately 2% to 10% of reported cases depending on methodology. What is less contested is that the subset of false allegations that result in charges, trial, and multi-year prosecution represent a small fraction of even those cases. For a case with documented exculpatory video, physical geography inconsistencies, an uninvestigated financial motive, and an investigator conflict to reach trial — and proceed past trial — places this matter in the extreme tail of that already-small population. The <a href="data-snapshot.html" class="u-migrated-547e413d">data snapshot page</a> provides additional context on these figures.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- 10. THE CONSTRUCTED DEFENDANT                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="constructed" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">10. The Falsely Accused as a Constructed Defendant vs. the Record as the Actual Story</h2>
+
+      <p class="u-migrated-45133a9c">The version of Benjamin Allen presented by the prosecution is a construction. It is assembled from recast witness statements, selectively admitted exhibits, a narrative of darkness and predation that does not survive contact with the actual conditions of the night, and an aggravating factor that hardened over years of testimony evolution rather than appearing in the original record. That constructed version is not the record. The record tells a different story.</p>
+
+      <div class="card u-migrated-7311f2cb">
+        <h3 class="u-migrated-d8539155">The Constructed Version</h3>
+        <ul class="u-migrated-c57a542c">
+          <li>A predator who approached Deal at a bar, held a position of trust over her, and assaulted her when she was vulnerable.</li>
+          <li>A flight in complete darkness, through woods and briars, by a frightened woman escaping an assailant.</li>
+          <li>A scene from which evidence was destroyed rather than preserved.</li>
+          <li>Witnesses who confirmed the complainant's account and supported the investigation's findings.</li>
+          <li>A prosecution that responded proportionately to a credible, supported allegation.</li>
+        </ul>
+      </div>
+
+      <div class="card u-migrated-7a785d3b">
+        <h3 class="u-migrated-d8539155">What the Record Actually Shows</h3>
+        <ul class="u-migrated-c57a542c">
+          <li>Deal initiated contact with Allen at the bar, followed him after he walked away, and voluntarily accompanied his group — all visible on video.</li>
+          <li>The escape narrative describes terrain that does not exist in the direction Deal claimed to have run.</li>
+          <li>The night had approximately 70% lunar illumination, making the "complete darkness" claim scientifically unsupported.</li>
+          <li>The lead investigator had an undisclosed familial relationship with the key witness whose initial statement was exculpatory and was then recast.</li>
+          <li>Two material witnesses who could have corroborated or undermined the account were never interviewed.</li>
+          <li>A $150,000 extortion demand from Deal's social circle preceded the formal allegation and was not investigated.</li>
+          <li>The prosecution's signature exhibit was conditionally admitted subject to a foundation requirement the State did not satisfy.</li>
+          <li>The aggravating factor that elevated the charge evolved over years of testimonial development rather than appearing in the original record.</li>
+        </ul>
+      </div>
+
+      <div class="card u-migrated-56a7fe46">
+        <p class="u-migrated-b5d10658">The record does not tell the story of a guilty man who was processed by a just system. It tells the story of a man who was constructed as guilty — through selective handling of evidence, institutional conflicts, and narrative evolution — in a system that was oriented from the outset toward conviction rather than truth. The purpose of this archive is to make the actual record visible, so that the construction can be seen for what it is.</p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- RELATED SOURCES                                                 -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="sources" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Related Sources in This Archive</h2>
+      <p class="u-migrated-78389fb0">Each page below contains source material cross-referenced in this case study. Start with the timeline and players pages if you are new to the record; move to contradictions and misconduct for the deeper analysis.</p>
+      <div class="grid grid-2 u-migrated-f6ce4d1e">
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="timeline.html" class="u-migrated-547e413d">Timeline</a></h3><p class="u-migrated-0a92ad0d">Chronological record of events, filings, and decisions from October 2019 onward.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="evidence.html" class="u-migrated-547e413d">Evidence</a></h3><p class="u-migrated-0a92ad0d">Physical and documentary evidence inventory with source linking and analysis.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="contradictions.html" class="u-migrated-547e413d">Contradictions</a></h3><p class="u-migrated-0a92ad0d">Documented inconsistencies across statements, forensic data, and physical facts. Includes the lunar illumination analysis and geographic impossibility record.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="misconduct.html" class="u-migrated-547e413d">Misconduct &amp; Failures</a></h3><p class="u-migrated-0a92ad0d">Investigative and prosecutorial conduct issues, organized by type and legal standard violated.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="players.html" class="u-migrated-547e413d">Key Players</a></h3><p class="u-migrated-0a92ad0d">Roles, relationships, institutional affiliations, and conflict-of-interest map for all principals.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="scene.html" class="u-migrated-547e413d">Scene Reconstruction</a></h3><p class="u-migrated-0a92ad0d">Geographic and physical documentation of the terrain that undermines the escape narrative.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="documentspage.html" class="u-migrated-547e413d">Document Archive</a></h3><p class="u-migrated-0a92ad0d">Full set of court filings, lab reports, investigative records, and source materials.</p></div>
+        <div class="card"><h3 class="u-migrated-71ad087a"><a href="data-snapshot.html" class="u-migrated-547e413d">Data Snapshot</a></h3><p class="u-migrated-0a92ad0d">Key statistics on false allegations and prosecutorial base rates contextualizing this case.</p></div>
+      </div>
+    </section>
+
+  </div>
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        if (window.top !== window.self) {
+          e.preventDefault();
+          window.top.location.href = a.href;
+        }
+      }
+    });
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+</html>

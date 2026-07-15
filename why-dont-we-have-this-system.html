@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Don't We Have This System? | State v. Benjamin Allen</title>
+  <link rel="stylesheet" href="shared/styles.css">
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
+        linear-gradient(180deg, #131617 0%, #101314 100%);
+      color: #eef3f4;
+    }
+
+    .container.page {
+      max-width: 1800px;
+    }
+
+    .hero-grid,
+    .content-section,
+    .statement-card,
+    .visual-card,
+    .impact-band {
+      background: rgba(18,22,23,0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.95fr);
+      gap: 24px;
+      padding: 28px;
+      margin-bottom: 28px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: #9fc8cf;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      display: block;
+      background: rgba(93,152,162,0.6);
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      color: #f6fbfb;
+    }
+
+    .hero-copy p,
+    .statement-card p,
+    .visual-card p,
+    .impact-band p,
+    .content-section p,
+    .content-section li {
+      color: #d2dcdc;
+      line-height: 1.8;
+    }
+
+    .hero-actions,
+    .utility-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .hero-actions a,
+    .utility-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #f4f8f8;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .hero-actions a:hover,
+    .utility-links a:hover {
+      transform: translateY(-1px);
+      background: rgba(93,152,162,0.16);
+      border-color: rgba(93,152,162,0.4);
+    }
+
+    .hero-actions a.primary {
+      background: rgba(93,152,162,0.18);
+      border-color: rgba(93,152,162,0.45);
+    }
+
+    .hero-visual {
+      overflow: hidden;
+      border-radius: 20px;
+      min-height: 100%;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .section-title {
+      display: block;
+      text-align: left;
+      background: transparent;
+      padding: 0;
+      margin-bottom: 14px;
+      color: #f6fbfb;
+    }
+
+    .statement-grid,
+    .visual-grid,
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .statement-card,
+    .visual-card,
+    .impact-band {
+      padding: 22px;
+    }
+
+    .statement-kicker {
+      color: #9fc8cf;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.74rem;
+      margin-bottom: 10px;
+    }
+
+    .statement-card h3,
+    .visual-card h3,
+    .impact-band h3 {
+      margin: 0 0 12px;
+      color: #f6fbfb;
+      font-size: 1.2rem;
+    }
+
+    .visual-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: zoom-in;
+    }
+
+    .pull-quote {
+      margin: 0;
+      padding: 28px;
+      border-left: 4px solid rgba(93,152,162,0.72);
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: #e9f0f0;
+      background: rgba(255,255,255,0.02);
+      border-radius: 18px;
+    }
+
+    .impact-band {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-band::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(93,152,162,0.95), rgba(255,255,255,0.08));
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .gallery a {
+      display: block;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container page">
+        <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="timeline.html">Timeline</a>
+            <a class="nav-tab" href="players.html">Players</a>
+            <a class="nav-tab" href="evidence.html">Evidence</a>
+            <a class="nav-tab" href="contradictions.html">Contradictions</a>
+            <a class="nav-tab" href="misconduct.html">Misconduct</a>
+            <a class="nav-tab" href="documentspage.html">Documents</a>
+            <a class="nav-tab" href="misconductandfailure.html">Mindmaps</a>
+            <a class="nav-tab" href="case-study.html">Case Study</a>
+        </div>
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">A Better Standard</div>
+        <h1>Why Don’t We Have This System?</h1>
+        <p>
+          A just system must do two things at once: shield those who are truly in danger and prevent an accusation from becoming punishment before a single fact has been tested.
+          That is not controversial. That is the absolute minimum.
+        </p>
+        <p>
+          Yet our system too often charges in only one direction. An allegation alone becomes a weapon of immediate leverage. Homes are stripped away.
+          Children are turned into bargaining chips. Reputations are demolished. Jobs vanish. Debt piles up like chains. The accused is forced to fight for survival
+          long before the truth is allowed to speak.
+        </p>
+        <p>
+          By the time facts finally matter, the damage is already catastrophic and often irreversible.
+        </p>
+        <div class="hero-actions">
+          <a class="primary" href="document-unavailable.html">Source PDF unavailable</a>
+          <a href="overview.html">Project map</a>
+          <a href="misconduct.html">Why this matters here</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="documents/graphics/Why not this system/wdwhts14.png" alt="From Victim to Accused title image" data-modal-image="documents/graphics/Why not this system/wdwhts14.png">
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">The Strongest Point</h2>
+      <blockquote class="pull-quote">
+        The central danger is not merely a false accusation. It is the cold, mechanical conversion of an unproven claim into immediate punishment through process alone.
+        Once that line is crossed, due process ceases to be a living protection. It is reduced to a hollow ritual, something the accused is grudgingly allowed to invoke
+        only after liberty has been seized, housing demolished, family shattered into bargaining chips, money drained to the last dollar, and reputation publicly executed for all to see.
+        The verdict comes later. The sentence has already been served.
+      </blockquote>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What A Real System Would Protect</h2>
+      <div class="statement-grid">
+        <article class="statement-card">
+          <div class="statement-kicker">Principle 1</div>
+          <h3>Emergency action should not become permanent leverage</h3>
+          <p>
+            A functioning system can move quickly in a real emergency without letting temporary measures become automatic punishment.
+            Urgency is not an excuse for vagueness, and caution is not a license to abandon proof.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Principle 2</div>
+          <h3>The accused should not be destroyed before a hearing</h3>
+          <p>
+            If the consequences are severe, the review must be fast, meaningful, and adversarial. A hearing that comes after the life damage is done is not a safeguard.
+            It is a ritual performed too late.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Principle 3</div>
+          <h3>Falsehood must carry real risk</h3>
+          <p>
+            When fabrication, exaggeration, omission, and strategic accusation produce immediate rewards and almost no penalty, the system builds its own abuse incentives.
+            That is not compassion. That is moral hazard.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Why People Should Care</h2>
+      <div class="impact-grid">
+        <article class="impact-band">
+          <h3>Because accusation can remove home, children, and stability overnight</h3>
+          <p>
+            Because an accusation can strip away home, children, and every anchor of stability in a single night before a single fact has been tested.
+            The strongest visuals in the source material make the point brutally plain: the real penalty lands first. Your job and future prospects are stripped away.
+            Parenting time is severed. Money hemorrhages into lawyers, day-to-day survival, and crushing support orders. Every court date, every hearing, every attempt
+            at recovery is forever shaped by that first irreversible blow.
+          </p>
+        </article>
+        <article class="impact-band">
+          <h3>Because the damage multiplies across systems</h3>
+          <p>
+            Because the damage does not stay in one courtroom. It metastasizes. This is a nightmare, a constitutional failure, a financial annihilation,
+            and a social execution all at once. Once the allegation crosses those systems, the accused is not fighting a single proceeding.
+            They are watching their entire life collapse in real time, layer upon layer of institutional weight pressing down before any defense can even begin.
+          </p>
+        </article>
+        <article class="impact-band">
+          <h3>Because “we can sort it out later” is a lie</h3>
+          <p>
+            Because “we can sort it out later” is a lie sold to the public with a straight face. Later almost always arrives after the house is gone,
+            after the child’s daily baseline has been rewritten, after the debt has become inescapable, after the isolation has calcified,
+            after the job has evaporated and the reputation has been burned in public view. A remedy delivered after the destruction is not justice.
+            It is a polite autopsy performed on a life that was already dead.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">The Clearest Proofs</h2>
+      <div class="visual-grid">
+        <article class="visual-card">
+          <img src="documents/graphics/Why not this system/wdwhts8.png" alt="Standard due process versus asymmetric process graphic" data-modal-image="documents/graphics/Why not this system/wdwhts8.png">
+          <h3>Punishment before proof</h3>
+          <p>
+            This is the cleanest visual in the set: on one side, an ordinary process with investigation, adversarial testing, and sanction after proof;
+            on the other, an asymmetric system where the sanction lands first and the hearing comes later.
+          </p>
+        </article>
+        <article class="visual-card">
+          <img src="documents/graphics/Why not this system/wdwhts6.png" alt="Wrongful accusation inflicts compounding collateral damage" data-modal-image="documents/graphics/Why not this system/wdwhts6.png">
+          <h3>Collateral damage is not collateral</h3>
+          <p>
+            The image lays out the layers of harm directly: housing, parenting, police records, disarmament, debt, job loss, social stigma, and psychological collapse.
+            These are not secondary side effects. They are the lived punishment.
+          </p>
+        </article>
+        <article class="visual-card">
+          <img src="documents/graphics/Why not this system/wdwhts2.png" alt="Asymmetric risk and nonexistent remedies create moral hazard" data-modal-image="documents/graphics/Why not this system/wdwhts2.png">
+          <h3>Asymmetry creates incentive</h3>
+          <p>
+            When one side gets immediate leverage and the other gets immediate ruin, while meaningful remedies barely exist, the system is telling everyone exactly how to use it.
+            That is why false or exaggerated accusations become structurally tempting.
+          </p>
+        </article>
+        <article class="visual-card">
+          <img src="documents/graphics/Why not this system/wdwhts10.png" alt="Constitutional and economic harms graphic" data-modal-image="documents/graphics/Why not this system/wdwhts10.png">
+          <h3>Rights and livelihood fall together</h3>
+          <p>
+            This image works because it shows the overlap clearly: due process, family integrity, liberty, money, work, and home do not fail separately.
+            They fail together when the system accepts leverage first and scrutiny later.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What A Better System Would Do</h2>
+      <div class="statement-grid">
+        <article class="statement-card">
+          <div class="statement-kicker">Reform</div>
+          <h3>Require real factual detail</h3>
+          <p>
+            Major restrictions should not rest on broad, conclusory language. If the state is going to interfere with housing, parenting, liberty, or livelihood,
+            the facts offered should be specific enough to test.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Reform</div>
+          <h3>Move the hearing forward, not backward</h3>
+          <p>
+            When severe interim consequences are imposed, adversarial review should happen quickly enough to matter in real life, not only on paper.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Reform</div>
+          <h3>Make fabrication expensive</h3>
+          <p>
+            A system that never meaningfully punishes falsehood guarantees more falsehood. Perjury, material omission, forged evidence, and strategic accusation
+            should carry consequences that are real, visible, and timely.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">The Worst Part</h2>
+      <blockquote class="pull-quote">
+        The worst part is the complete and permanent absence of any testable probable cause documentation, even six years later.
+        There exists only a single magistrate’s order: a skeletal, one-sentence declaration that “sufficient proof existed for an arrest.”
+        No facts. No affidavits. No witness statements. No rationale. Nothing that could ever be subjected to adversarial scrutiny.
+      </blockquote>
+      <div class="statement-grid u-migrated-6840f0a6">
+        <article class="statement-card">
+          <div class="statement-kicker">Six Years</div>
+          <h3>An entire life was dismantled without a testable foundation</h3>
+          <p>
+            Six years. Six years of a life dismantled: home lost, relationships fractured under relentless stress, children crying through disrupted nights,
+            finances driven into ruin, career erased, and reputation publicly executed, all triggered by an allegation that remains forever shielded from examination.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Construction</div>
+          <h3>The narrative was built, not discovered</h3>
+          <p>
+            The very person tasked with investigating the claim instead helped construct a false narrative to protect its glaring weaknesses.
+            An undisclosed familial conflict turned a preliminary fact-gathering exercise into a prejudicial exercise in insinuation rather than fair investigation.
+            The aggravator was built, not discovered. Freeman’s timeline reveals the matter had already been escalated before the work was even complete.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Escalation</div>
+          <h3>The state kept strengthening what it never properly grounded</h3>
+          <p>
+            Evidence was admitted without device metadata, custodial proof, or any foundational showing that could resolve basic questions of attribution.
+            Witness statements evolved materially between law-enforcement interviews and trial testimony. Social familiarity was strategically reframed into a more legally potent theory.
+            Aggravating exposure increased immediately after the defendant refused a plea, exactly as he had been warned it would.
+          </p>
+        </article>
+        <article class="statement-card">
+          <div class="statement-kicker">Bottom Line</div>
+          <h3>Due process exists on paper and disappears on contact</h3>
+          <p>
+            Material witnesses went uninterviewed. Exculpatory inconsistencies were not preserved with candor. Exhibits were framed more forcefully than the underlying record supported.
+            The defense was forced to answer a moving target while the state suppressed or distorted weakening material. The accused is condemned to fight in perpetual darkness while
+            the system that issued the order simply moves on, unaccountable and unexamined. This is not due process. This is due process reduced to a procedural ghost.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">The Recurring Failure Pattern</h2>
+      <p>
+        The remaining source graphics widen the argument from one broken proceeding to a repeatable institutional design failure.
+        They show family court as a multiplier, constitutional injury treated as collateral, weak or nonexistent remedies after the damage is done,
+        and emergency protective structures that can be weaponized faster than they can ever be meaningfully tested.
+      </p>
+      <div class="gallery">
+        <a href="documents/graphics/Why not this system/wdwhts1.png"><img src="documents/graphics/Why not this system/wdwhts1.png" alt="Mature legal system graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts3.png"><img src="documents/graphics/Why not this system/wdwhts3.png" alt="Reforms graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts4.png"><img src="documents/graphics/Why not this system/wdwhts4.png" alt="Weak remedies graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts5.png"><img src="documents/graphics/Why not this system/wdwhts5.png" alt="Mental health and isolation graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts9.png"><img src="documents/graphics/Why not this system/wdwhts9.png" alt="Constitutional values graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts11.png"><img src="documents/graphics/Why not this system/wdwhts11.png" alt="Family court and support multipliers graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts12.png"><img src="documents/graphics/Why not this system/wdwhts12.png" alt="Protective order practice graphic"></a>
+        <a href="documents/graphics/Why not this system/wdwhts13.png"><img src="documents/graphics/Why not this system/wdwhts13.png" alt="Protections and injustice graphic"></a>
+      </div>
+      <div class="utility-links">
+        <a href="document-unavailable.html">Source PDF unavailable</a>
+        <a href="documentspage.html">Document archive</a>
+        <a href="judicial-duty.html">Judicial duty</a>
+        <a href="misconduct.html">Misconduct</a>
+      </div>
+    </section>
+  </div>
+
+  <div id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img id="modalImage" src="" alt="Full resolution image">
+    <video id="modalVideo" controls></video>
+  </div>
+  <script src="shared/image-modal.js"></script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+</html>

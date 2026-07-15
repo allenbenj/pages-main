@@ -1,0 +1,576 @@
+{
+  "generated_at": "2026-07-15T19:34:32.727472+00:00",
+  "source_root": "D:\\Web_Page\\pages-main",
+  "non_destructive": true,
+  "public_directories": [
+    "assets",
+    "audio",
+    "content",
+    "documents",
+    "shared",
+    "video"
+  ],
+  "built_public_directories": {
+    "network_analysis": "network_analysis/dist"
+  },
+  "public_root_files": [
+    "shell.js"
+  ],
+  "artifact": {
+    "file_count": 560,
+    "total_bytes": 1105763378,
+    "budget_bytes": 943718400,
+    "over_budget_bytes": 162044978
+  },
+  "missing_targets": [
+    {
+      "source": "documentspage.html",
+      "target": "documents/research/reports/Family_Reunification_Report_Allen_20260201_194836.pdf",
+      "resolved_target": "documents/research/reports/Family_Reunification_Report_Allen_20260201_194836.pdf",
+      "reason": "missing"
+    },
+    {
+      "source": "why-dont-we-have-this-system.html",
+      "target": "documents/research/Why%20dont%20we%20have%20this%20system.pdf",
+      "resolved_target": "documents/research/Why dont we have this system.pdf",
+      "reason": "missing"
+    },
+    {
+      "source": "why-dont-we-have-this-system.html",
+      "target": "documents/research/Why%20dont%20we%20have%20this%20system.pdf",
+      "resolved_target": "documents/research/Why dont we have this system.pdf",
+      "reason": "missing"
+    },
+    {
+      "source": "content/documentspage.html",
+      "target": "../documents/research/reports/Family_Reunification_Report_Allen_20260201_194836.pdf",
+      "resolved_target": "content/../documents/research/reports/Family_Reunification_Report_Allen_20260201_194836.pdf",
+      "reason": "missing"
+    },
+    {
+      "source": "content/documentspage_test.html",
+      "target": "../documents/research/reports/Family_Reunification_Report_Allen_20260201_194836.pdf",
+      "resolved_target": "content/../documents/research/reports/Family_Reunification_Report_Allen_20260201_194836.pdf",
+      "reason": "missing"
+    },
+    {
+      "source": "content/why-dont-we-have-this-system.html",
+      "target": "../documents/research/Why%20dont%20we%20have%20this%20system.pdf",
+      "resolved_target": "content/../documents/research/Why dont we have this system.pdf",
+      "reason": "missing"
+    }
+  ],
+  "content_variants": [
+    {
+      "content_path": "content/connections.html",
+      "root_counterpart": "connections.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/contradictions.html",
+      "root_counterpart": "contradictions.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/contradictions_grouped.html",
+      "root_counterpart": "contradictions_grouped.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/diagram-fallback.html",
+      "root_counterpart": null,
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/documentspage.html",
+      "root_counterpart": "documentspage.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/documentspage_test.html",
+      "root_counterpart": null,
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/editor.html",
+      "root_counterpart": "editor.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/evidence.html",
+      "root_counterpart": "evidence.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/false-allegation-framework.html",
+      "root_counterpart": "false-allegation-framework.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/index.html",
+      "root_counterpart": "index.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/judicial-duty.html",
+      "root_counterpart": "judicial-duty.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/misconduct.html",
+      "root_counterpart": "misconduct.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/misconductandfailure.html",
+      "root_counterpart": "misconductandfailure.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/players.html",
+      "root_counterpart": "players.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/prosecutor_allowed.html",
+      "root_counterpart": "prosecutor_allowed.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/scene.html",
+      "root_counterpart": "scene.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/timeline.html",
+      "root_counterpart": "timeline.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/why-dont-we-have-this-system.html",
+      "root_counterpart": "why-dont-we-have-this-system.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    }
+  ],
+  "exact_duplicates": [
+    {
+      "sha256": "597f120e393cdc4a20eb3c6ad374e39dec9e8837933a28ec9dc72bf8d32dd330",
+      "file_size_bytes": 26941444,
+      "count": 5,
+      "recoverable_bytes_after_review": 107765776,
+      "paths": [
+        "documents/graphics/house_area/0000-00-00 - Analysis - Detective Freeman Misconduct.png",
+        "documents/graphics/house_area/Analysis_Detective_Freeman_Misconduct.png",
+        "documents/graphics/house_area/Analysis_Detective_Freeman_Misconduct[1].png",
+        "documents/graphics/house_area/Detective_Freeman_Misconduct_Analysis 6_20260201_195113.png",
+        "documents/graphics/house_area/Detective_Steve_Freeman_Misconduct_Report_04_10_2025 6.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "37c72d916ffa868d3a8d89fcbf281677e11cdedd5daf0a828e11d7da264a5cd5",
+      "file_size_bytes": 8276627,
+      "count": 2,
+      "recoverable_bytes_after_review": 8276627,
+      "paths": [
+        "video/long_view/Where are the briars.mp4",
+        "video/various/grok-video-b7a5a75b-d98f-407f-932a-71db6a7d107b.mp4"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "10151795dc3061f4a40e692a33666e5e989e873f95fbbbd1f13cbef252327a3f",
+      "file_size_bytes": 4024867,
+      "count": 2,
+      "recoverable_bytes_after_review": 4024867,
+      "paths": [
+        "documents/Exhibits/Media/Images/property_overview.png",
+        "documents/graphics/house_area/property_overview.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "a43430ef37bd14958d026b0a0872a639c7a12c35bf90f56fc1e02832465a3328",
+      "file_size_bytes": 2331509,
+      "count": 2,
+      "recoverable_bytes_after_review": 2331509,
+      "paths": [
+        "documents/Exhibits/Media/Images/overview_of_house_compressed.png",
+        "documents/graphics/house_area/overview_of_house_compressed.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "3c9d30c2f655a42b49db5aba7dc085e1b455bfd5695eb21054fd6b5ebffa7285",
+      "file_size_bytes": 2231653,
+      "count": 2,
+      "recoverable_bytes_after_review": 2231653,
+      "paths": [
+        "documents/graphics/people/Freeman_Misconduct_Investigation_Report 18.png",
+        "documents/graphics/people/Review And Commentary Of Steve Freeman 18.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "1f395219ff0eaa3961b68de208b903c0335cbe2b8fc31b6cfcb097b34f4800ee",
+      "file_size_bytes": 786678,
+      "count": 3,
+      "recoverable_bytes_after_review": 1573356,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 16 - Copy.png",
+        "documents/court_files/Steve_Freeman_Misconduct_Report_1 12.png",
+        "documents/court_files/sheriffs office/Search warrant based on lie16.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "2cc3d7521cc4168a3bacc8327d131c2cd8b0e21bbfe6bf5fe7c358ee2ff5ca95",
+      "file_size_bytes": 1552298,
+      "count": 2,
+      "recoverable_bytes_after_review": 1552298,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 21 - Copy.png",
+        "documents/court_files/Review and Commentary of Steve Freeman 21 - Copy.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "7e1c0bf8bb5f262c56f89762f0625771ad812db8090766222c8d3461805e7274",
+      "file_size_bytes": 1534234,
+      "count": 2,
+      "recoverable_bytes_after_review": 1534234,
+      "paths": [
+        "documents/graphics/inserts/Peter_West_Leaves_Alone.png",
+        "documents/graphics/inserts/fabrication_carmen_james_leave.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "e43782fc8b92e18b37cd25765165de74aac6eb7d67837f0be61e38c114b50106",
+      "file_size_bytes": 1532179,
+      "count": 2,
+      "recoverable_bytes_after_review": 1532179,
+      "paths": [
+        "documents/Exhibits/Media/Photos/Carmen Love Facebook Post about  Christmas.png",
+        "documents/Exhibits/Media/Photos/Carmen Love Facebook Post about that Christmas.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "1f50a3384c7c0a37f720340ec2b584755c1634cf2851ae380322c2f339a43a3e",
+      "file_size_bytes": 1497589,
+      "count": 2,
+      "recoverable_bytes_after_review": 1497589,
+      "paths": [
+        "documents/court_files/bond_1.png",
+        "documents/court_files/intake/Helped Tiffany steal 3k from him.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "cff4cdf225b13c5465cde46da41050ed793c8637db89283efc577654e5510fa1",
+      "file_size_bytes": 971343,
+      "count": 2,
+      "recoverable_bytes_after_review": 971343,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 17 - Copy.png",
+        "documents/court_files/Steve_Freeman_Corruption_Report 17.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "e8ab0d77c2e88a9e76c3242599ce929e3bf6a13161d59854205c17beca760b3c",
+      "file_size_bytes": 303470,
+      "count": 3,
+      "recoverable_bytes_after_review": 606940,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 15 - Copy.png",
+        "documents/court_files/Steve_Freeman_Corruption_Report 15 - Copy.png",
+        "documents/court_files/Steve_Freeman_Corruption_Report 15_20260201_192155.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "832ac387721e56d7460a958a44e3f54640a568aa79f24370c9e6a2e12bfe39c3",
+      "file_size_bytes": 603010,
+      "count": 2,
+      "recoverable_bytes_after_review": 603010,
+      "paths": [
+        "documents/court_files/Screenshot 2025-08-30 124143.png",
+        "documents/court_files/sheriffs office/Screenshot 2025-08-30 124143.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "d29c24b411c73235382caf88b58d67848fdd646e38c49af7060d42f66cf49760",
+      "file_size_bytes": 297257,
+      "count": 3,
+      "recoverable_bytes_after_review": 594514,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 12 - Copy.png",
+        "documents/court_files/Steve_Freeman_Corruption_Report 12 - Copy.png",
+        "documents/court_files/Steve_Freeman_Corruption_Report 12.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "43c2abe6a8f9db3047502b42958d4f39cc0d1d612fd0fde2e4ebcc246f46e15e",
+      "file_size_bytes": 539801,
+      "count": 2,
+      "recoverable_bytes_after_review": 539801,
+      "paths": [
+        "documents/court_files/Screenshot 2025-09-02 062725.png",
+        "documents/court_files/sheriffs office/Screenshot 2025-09-02 062725.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "d0d5aea2e97b8b5efc386159418af26297936598dc736fe05b1b46fd5f5610e7",
+      "file_size_bytes": 315033,
+      "count": 2,
+      "recoverable_bytes_after_review": 315033,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 22 - Copy.png",
+        "documents/court_files/Review and Commentary of Steve Freeman 22 - Copy.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "c7088e75aca1487acfb376a2b5f9cdacac19fe974e4847a9b761e15b9dd34292",
+      "file_size_bytes": 273794,
+      "count": 2,
+      "recoverable_bytes_after_review": 273794,
+      "paths": [
+        "documents/court_files/Freeman_Misconduct_Investigation_Report 20 - Copy.png",
+        "documents/court_files/Steve_Freeman_Misconduct_Report_1 13.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "9fa1801904f22bda960abacdc11481ba1360a4d5a8df8475320534f321263113",
+      "file_size_bytes": 236049,
+      "count": 2,
+      "recoverable_bytes_after_review": 236049,
+      "paths": [
+        "documents/court_files/Review And Commentary Of Steve Freeman 11 - Copy.png",
+        "documents/court_files/Steve_Freeman_Corruption_Report 11 - Copy.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "541948a6dcc97ff3e3aacc867f0495c76bd5b92b1ddb10890a5a14dc7a0aa9b5",
+      "file_size_bytes": 235345,
+      "count": 2,
+      "recoverable_bytes_after_review": 235345,
+      "paths": [
+        "documents/court_files/lab/screenshot_2024-04-21_052358_(1).png",
+        "documents/court_files/screenshot_2024-04-21_052358_(1).png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "7a04ec63cec1a7f1400ba5e9ed8785e1cebb5763db46458f9880640fa49fa895",
+      "file_size_bytes": 232124,
+      "count": 2,
+      "recoverable_bytes_after_review": 232124,
+      "paths": [
+        "documents/court_files/Screenshot 2025-08-30 124002.png",
+        "documents/court_files/sheriffs office/Screenshot 2025-08-30 124002.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "49d98504bd3eb233a1a3ba3965951230e2f5f02ae3af682c469d13f496bdb179",
+      "file_size_bytes": 223889,
+      "count": 2,
+      "recoverable_bytes_after_review": 223889,
+      "paths": [
+        "documents/court_files/document.png",
+        "documents/court_files/intake/peter west father.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "c354a6c49b800915e4fd1e708a6a4bbec500458af0fbb8f63b7db4d4c28944cc",
+      "file_size_bytes": 223302,
+      "count": 2,
+      "recoverable_bytes_after_review": 223302,
+      "paths": [
+        "documents/court_files/No_sperm.png",
+        "documents/court_files/lab/No_sperm.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "42b88914e9ba1ead34fd6d2f4fb5ef8502593675608e9f94d390a6b4c7a54e39",
+      "file_size_bytes": 216096,
+      "count": 2,
+      "recoverable_bytes_after_review": 216096,
+      "paths": [
+        "audio/Lauren_Interview_Defendant_Spoke_Bathroom.mp3",
+        "audio/Lauren_Interview_First_Told_Gonna_Watch.mp3"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "3ed6abfcc1a6adb78051441430d7186b9e7ddfbeec78f9060bb82ca8a40fcca6",
+      "file_size_bytes": 208609,
+      "count": 2,
+      "recoverable_bytes_after_review": 208609,
+      "paths": [
+        "documents/court_files/lab/screenshot_2024-04-28_042541_(1).png",
+        "documents/court_files/screenshot_2024-04-28_042541_(1).png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "320bde651fe6883a748ec4171b151cd1fe2df46e87c205488a50290899809f27",
+      "file_size_bytes": 162932,
+      "count": 2,
+      "recoverable_bytes_after_review": 162932,
+      "paths": [
+        "documents/court_files/first_dna_none.png",
+        "documents/court_files/lab/first_dna_none.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "c1264aad6417112490350aa5afb5a6d302b9563f11389a919a3434b56a26afc0",
+      "file_size_bytes": 151032,
+      "count": 2,
+      "recoverable_bytes_after_review": 151032,
+      "paths": [
+        "documents/court_files/Charlie_DeVore_ADA_Misconduct_Claim 2.png",
+        "documents/court_files/intake/Deal internal injuries and no alcohol.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "4c71b850233a523bce599037baef2830d06c93c1e87781ed110c5f22ff79043f",
+      "file_size_bytes": 144055,
+      "count": 2,
+      "recoverable_bytes_after_review": 144055,
+      "paths": [
+        "documents/court_files/Charlie_DeVore_ADA_Misconduct_Claim 3.png",
+        "documents/court_files/intake/Intake_alcohol_Allen.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "46ca7deac68fdc0eab494ac7db299978c8466c32a751db2a76c061f51d1978e8",
+      "file_size_bytes": 138165,
+      "count": 2,
+      "recoverable_bytes_after_review": 138165,
+      "paths": [
+        "documents/court_files/Screenshot 2025-04-11 183147.png",
+        "documents/court_files/lab/Screenshot 2025-04-11 183147.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "569e663c07cc649ffb1847358fa6b7a846469c0aaeba26ef6a9b306e076cca22",
+      "file_size_bytes": 128270,
+      "count": 2,
+      "recoverable_bytes_after_review": 128270,
+      "paths": [
+        "documents/court_files/lab/screenshot_2024-04-28_041640_(1).png",
+        "documents/court_files/screenshot_2024-04-28_041640_(1).png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "cc7c860a6ec1388bb7ebdede556a8690e380732b1c5a7f4c1790fb80b14e91b3",
+      "file_size_bytes": 127246,
+      "count": 2,
+      "recoverable_bytes_after_review": 127246,
+      "paths": [
+        "documents/court_files/Screenshot 2025-04-11 183459.png",
+        "documents/court_files/lab/Screenshot 2025-04-11 183459.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "31493cac7fa77a41fe5e9647916289c189d068728fd0fa3be1d204ea267891bf",
+      "file_size_bytes": 112591,
+      "count": 2,
+      "recoverable_bytes_after_review": 112591,
+      "paths": [
+        "documents/court_files/Screenshot 2025-04-11 183316.png",
+        "documents/court_files/lab/Screenshot 2025-04-11 183316.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "c7320ecb7df40f82deaaa9a769eea1bebba2ea89928a65c6c84e7bb57962cbef",
+      "file_size_bytes": 22611,
+      "count": 3,
+      "recoverable_bytes_after_review": 45222,
+      "paths": [
+        "documents/court_files/ADA_submission need confirmation.png",
+        "documents/court_files/ADA_submission.png",
+        "documents/court_files/lab/ADA_submission need confirmation.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "00dc73f026377696f6c5ebe208b7b44373fcbf958c10b14b7492fd0b76e26779",
+      "file_size_bytes": 21236,
+      "count": 2,
+      "recoverable_bytes_after_review": 21236,
+      "paths": [
+        "documents/court_files/Review and Commentary of Steve Freeman 2 - Copy.png",
+        "documents/court_files/Review and Commentary of Steve Freeman 2_20260201_192139 - Copy.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "aaee0b63916e4b2327fc48d130884d60771f20364196646a72037f464ab3f5bd",
+      "file_size_bytes": 18024,
+      "count": 2,
+      "recoverable_bytes_after_review": 18024,
+      "paths": [
+        "documents/court_files/Review And Commentary Of Steve Freeman 6 - Copy.png",
+        "documents/court_files/Steve_Freeman_Misconduct_Report_1.png"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "a399b680771dab25ac83eccc0dea7411b59bca7d582bc2921f7b091caa4b80fe",
+      "file_size_bytes": 17420,
+      "count": 2,
+      "recoverable_bytes_after_review": 17420,
+      "paths": [
+        "documents/Exhibits/Media/Photos/Steve Freeman and Wife.png",
+        "documents/graphics/people/Freeman and Ex-Wife at Thanksgiving - Carmen Love taking Photo - Facebook.png"
+      ],
+      "recommended_action": "manual_review_only"
+    }
+  ],
+  "exact_duplicate_recoverable_bytes": 138866130,
+  "do_not_auto_delete": [
+    "legal records",
+    "evidence images",
+    "audio",
+    "video",
+    "PDFs",
+    "source code"
+  ]
+}

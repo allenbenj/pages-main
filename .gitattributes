@@ -1,0 +1,31 @@
+# Normalize line endings: store LF in the repo, check out natively on each OS
+* text=auto
+
+# Force LF for all text source / markup files
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.sh    text eol=lf
+*.py    text eol=lf
+*.bat   text eol=crlf
+
+# Treat binary files as binary (no EOL conversion)
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.avif  binary
+*.webp  binary
+*.ico   binary
+*.pdf   binary
+*.mp3   binary
+*.mp4   binary
+*.wav   binary
+*.woff  binary
+*.woff2 binary
+*.eot   binary
+*.ttf   binary
+*.otf   binary

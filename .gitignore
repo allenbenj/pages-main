@@ -1,0 +1,38 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local evidence workspace
+.local/
+.agents/
+.codex/
+.grok/
+.kilocode/
+.venv/
+
+# Node dependencies
+node_modules/
+network_analysis/node_modules/
+network_analysis/dist/
+
+# Local AI tool state must never live under GitHub metadata.
+.github/.copilot/
+.github/.cursor/
+.github/.grok/
+.github/.kilo/

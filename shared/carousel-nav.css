@@ -1,0 +1,385 @@
+/* Orbital Navigation Carousel - deprecated and intentionally hidden site-wide */
+.carousel-nav-wrapper {
+    display: none !important;
+}
+
+/* Orbital Navigation Carousel - Items orbit smoothly around logo */
+.carousel-nav-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    height: 750px;
+    margin: 40px auto;
+    overflow: visible;
+    perspective: 1200px;
+}
+
+/* Central Logo with ambient glow */
+.carousel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow:
+        0 0 60px rgba(120, 193, 201, 0.32),
+        0 0 120px rgba(120, 193, 201, 0.18),
+        inset 0 0 60px rgba(0, 0, 0, 0.3);
+    animation: logoBreath 5s ease-in-out infinite;
+}
+
+@keyframes logoBreath {
+    0%,
+    100% {
+        box-shadow:
+            0 0 60px rgba(120, 193, 201, 0.32),
+            0 0 120px rgba(120, 193, 201, 0.18);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        box-shadow:
+            0 0 80px rgba(120, 193, 201, 0.45),
+            0 0 160px rgba(120, 193, 201, 0.24);
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+}
+
+/* Orbital track - the invisible path items follow */
+.carousel-orbital-track {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/* The items container that rotates */
+.carousel-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Individual orbital item */
+.orbital-item {
+    position: absolute;
+    width: 200px;
+    transform-origin: center center;
+    /* Positioned with custom properties set by JS */
+    left: var(--x, 0px);
+    top: var(--y, 0px);
+    transform: translate(-50%, -50%) scale(var(--scale, 0.7));
+    opacity: var(--opacity, 0.4);
+    z-index: var(--z, 1);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+    pointer-events: auto;
+}
+
+/* Nav button styling */
+.orbital-nav-link {
+    display: block;
+    padding: 16px 24px;
+    background: linear-gradient(145deg, rgba(26, 31, 32, 0.95) 0%, rgba(17, 21, 22, 0.98) 100%);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: #e5e7eb;
+    text-decoration: none;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    border: 2px solid rgba(120, 193, 201, 0.32);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.orbital-nav-link:hover {
+    background: linear-gradient(145deg, #5d98a2 0%, #78c1c9 100%);
+    border-color: #9ad7dd;
+    color: #f6fbfc;
+    box-shadow:
+        0 12px 48px rgba(120, 193, 201, 0.28),
+        0 0 30px rgba(120, 193, 201, 0.2);
+    transform: scale(1.1);
+}
+
+/* Current page item - the page user is viewing */
+.orbital-item.current-page .orbital-nav-link {
+    background: linear-gradient(145deg, #5d98a2 0%, #78c1c9 100%);
+    border-color: #9ad7dd;
+    color: #f6fbfc;
+    box-shadow:
+        0 16px 56px rgba(120, 193, 201, 0.36),
+        0 0 40px rgba(120, 193, 201, 0.24);
+}
+
+/* Adjacent items - slightly enhanced visibility */
+.orbital-item.adjacent .orbital-nav-link {
+    border-color: rgba(120, 193, 201, 0.46);
+}
+
+/* Hover zones for rotation control - clean, minimal */
+.hover-zone {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 200px;
+    z-index: 25;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: transparent;
+    /* Ensure generous touch target on mobile */
+    min-width: 48px;
+}
+
+.hover-zone:hover {
+    opacity: 1;
+}
+
+/* Always show and enlarge tap zones on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .hover-zone {
+        opacity: 0.65;
+        width: 52px;
+        height: 160px;
+        background: rgba(120, 193, 201, 0.08);
+        border-radius: 10px;
+    }
+    .hover-zone:active {
+        opacity: 1;
+        background: rgba(120, 193, 201, 0.18);
+    }
+}
+
+.hover-left {
+    left: 20px;
+}
+
+.hover-right {
+    right: 20px;
+}
+
+.hover-arrow {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #78c1c9;
+    text-shadow: 0 0 20px rgba(120, 193, 201, 0.4);
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Dot indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 400px;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(120, 193, 201, 0.25);
+    border: 2px solid rgba(120, 193, 201, 0.55);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator:hover {
+    background: rgba(120, 193, 201, 0.5);
+    transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+    background: #78c1c9;
+    transform: scale(1.5);
+    box-shadow: 0 0 16px rgba(120, 193, 201, 0.6);
+}
+
+/* Decorative orbital rings */
+.orbital-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(120, 193, 201, 0.15);
+    pointer-events: none;
+}
+
+.orbital-ring.ring-1 {
+    width: 500px;
+    height: 500px;
+    animation: ringPulse 8s ease-in-out infinite;
+}
+
+.orbital-ring.ring-2 {
+    width: 650px;
+    height: 650px;
+    animation: ringPulse 8s ease-in-out infinite 2s;
+}
+
+.orbital-ring.ring-3 {
+    width: 800px;
+    height: 800px;
+    animation: ringPulse 8s ease-in-out infinite 4s;
+}
+
+@keyframes ringPulse {
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .carousel-nav-wrapper {
+        height: 680px;
+    }
+    .carousel-center {
+        width: 320px;
+        height: 320px;
+    }
+    .orbital-item {
+        width: 180px;
+    }
+    .orbital-nav-link {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .carousel-nav-wrapper {
+        height: 620px;
+    }
+    .carousel-center {
+        width: 280px;
+        height: 280px;
+    }
+    .orbital-item {
+        width: 160px;
+    }
+    .orbital-nav-link {
+        padding: 12px 16px;
+        font-size: 0.8rem;
+    }
+    .orbital-ring.ring-3 {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-nav-wrapper {
+        height: 550px;
+        overflow: hidden;
+        margin: 24px auto;
+    }
+    .carousel-center {
+        width: 220px;
+        height: 220px;
+    }
+    .orbital-item {
+        width: 140px;
+    }
+    .orbital-nav-link {
+        padding: 10px 14px;
+        font-size: 0.75rem;
+        letter-spacing: 0.03em;
+    }
+    .orbital-ring.ring-2,
+    .orbital-ring.ring-3 {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-nav-wrapper {
+        height: 420px;
+        margin: 20px auto;
+    }
+    .carousel-center {
+        width: 150px;
+        height: 150px;
+    }
+    .orbital-item {
+        width: 100px;
+    }
+    .orbital-nav-link {
+        padding: 7px 8px;
+        font-size: 0.58rem;
+        letter-spacing: 0.01em;
+        border-width: 1.5px;
+    }
+    .carousel-indicators {
+        bottom: 12px;
+        gap: 7px;
+        max-width: 280px;
+    }
+    .carousel-indicator {
+        width: 8px;
+        height: 8px;
+    }
+    .hover-zone {
+        width: 44px;
+        height: 120px;
+    }
+    .hover-arrow {
+        font-size: 2rem;
+    }
+    .hover-left {
+        left: 4px;
+    }
+    .hover-right {
+        right: 4px;
+    }
+}
+
+/* Very small phones (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 360px) {
+    .carousel-nav-wrapper {
+        height: 370px;
+        margin: 14px auto;
+    }
+    .carousel-center {
+        width: 120px;
+        height: 120px;
+    }
+    .orbital-item {
+        width: 88px;
+    }
+    .orbital-nav-link {
+        padding: 6px 6px;
+        font-size: 0.52rem;
+    }
+}
