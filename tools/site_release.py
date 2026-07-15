@@ -22,6 +22,7 @@ REFERENCE_RE = re.compile(
     re.IGNORECASE,
 )
 SCRIPT_BODY_RE = re.compile(r"(<script\b[^>]*>).*?(</script\s*>)", re.IGNORECASE | re.DOTALL)
+IMAGE_TAG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 SKIPPED_SCHEMES = ("data:", "http:", "https:", "javascript:", "mailto:", "tel:", "//")
 # Preserve the public URL while producing a web-optimized delivery copy in the
 # disposable release artifact. The original evidence file remains untouched.
@@ -42,6 +43,30 @@ def transcode_delivery_video(path: Path) -> None:
         temporary.unlink(missing_ok=True)
         return
     temporary.replace(path)
+
+
+def add_image_delivery_hints(root: Path) -> None:
+    """Make below-the-fold images non-blocking in the disposable artifact."""
+    for page in root.rglob("*.html"):
+        text = page.read_text(encoding="utf-8")
+        image_count = 0
+
+        def rewrite(match: re.Match[str]) -> str:
+            nonlocal image_count
+            tag = match.group(0)
+            hints = ""
+            if not re.search(r"\bdecoding\s*=", tag, re.IGNORECASE):
+                hints += ' decoding="async"'
+            if not re.search(r"\bloading\s*=", tag, re.IGNORECASE) and image_count > 0:
+                hints += ' loading="lazy" fetchpriority="low"'
+            image_count += 1
+            if not hints:
+                return tag
+            return f"{tag[:-2]}{hints}/>" if tag.endswith("/>") else f"{tag[:-1]}{hints}>"
+
+        updated = IMAGE_TAG_RE.sub(rewrite, text)
+        if updated != text:
+            page.write_text(updated, encoding="utf-8")
 
 def stage_site(source: Path, output: Path) -> None:
     if output.exists():
@@ -69,6 +94,7 @@ def stage_site(source: Path, output: Path) -> None:
         if not delivery_file.is_file():
             raise FileNotFoundError(f"Configured delivery video is missing: {delivery_file}")
         transcode_delivery_video(delivery_file)
+    add_image_delivery_hints(output)
     (output / ".nojekyll").touch()
 
 def iter_files(root: Path):
