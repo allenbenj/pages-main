@@ -45,6 +45,25 @@
     }
     .hero_back {
       overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 55vh;
+      min-height: 22rem;
+    }
+    .hero_front {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-overlay {
+      display: flex;
+      flex-direction: column;
+      color: var(--_colors---text-color--text-on-overlay);
+    }
+    /* override Webflow grid placement so hero stacks instead of overlays */
+    #w-node-d7b20830-3881-6085-8a19-0de1f259c28b-51cb9c8e.w-node-f341100a-c68b-eb7c-0218-9b7a60e649ed-e51ccb9d,
+    #w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e.w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d {
+      grid-area: auto;
+      align-self: auto;
     }
     .hero-quote-smoke {
       position: absolute;
@@ -160,6 +179,49 @@
         filter: none;
         transform: none;
       }
+    }
+    .hero-factors {
+      list-style: none;
+      margin: 0 0 1.2rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .hero-content {
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-content .subheading {
+      margin-top: 0.6rem;
+      margin-bottom: 1.6rem;
+    }
+    .hero-factor_item {
+      position: relative;
+      padding-left: 1.5rem;
+      color: rgba(255, 248, 235, 0.88);
+      font-size: clamp(0.88rem, 1.2vw, 0.98rem);
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+    }
+    .hero-factor_item::before {
+      content: "•";
+      position: absolute;
+      left: 0.15rem;
+      color: rgba(224, 179, 74, 0.72);
+      font-weight: 700;
+      font-size: 1.1em;
+      line-height: 1.4;
+    }
+    .hero-context {
+      margin: 0 0 1.4rem;
+      color: rgba(255, 251, 245, 0.78);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.88rem, 1.1vw, 0.96rem);
+      font-style: italic;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
     }
     .guiding-principle {
       max-width: 54rem;
@@ -297,31 +359,37 @@
     </div>
   </div>
 
-  <header class="section is-full-screen">
+  <header class="section">
     <div class="hero-overlay">
-      <div id="w-node-d7b20830-3881-6085-8a19-0de1f259c28b-51cb9c8e" class="hero_front w-node-f341100a-c68b-eb7c-0218-9b7a60e649ed-e51ccb9d">
-        <div class="container position_relative padding-bottom_large z-index_2">
-          <div class="header is-2-col">
-            <div class="grid-item-manual"><h1 class="heading_hero margin-bottom_none">Clarity in the case</h1></div>
-            <div id="w-node-b44b49b5-d3e6-a05f-997e-8ac7efbac3da-51cb9c8e" class="grid-item-manual w-node-f341100a-c68b-eb7c-0218-9b7a60e649e9-e51ccb9d">
-              <div class="subheading rich-text w-richtext"><p>A precise approach to challenging false claims—and those that push the boundaries of truth.</p></div>
-              <div class="button-group">
-                <div class="ix-link-wrapper"><a href="documentspage.html" class="button w-button">Open documents</a></div>
-                <div class="ix-link-wrapper"><a href="overview.html" class="button is-secondary w-button">Project map</a></div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="overlay backdrop-filter_blur mask_fade-top_small"></div>
-      </div>
       <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" tabindex="-1" aria-hidden="true" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d">
         <img width="1024" height="1024" alt="Lady Justice illustration" src="documents/graphics/icons/InJustice.webp" loading="lazy" class="image_cover position_absolute radius_none"/>
         <div class="hero-quote-smoke">
           <p class="hero-quote-smoke_text">"What I fear most is power with impunity. I fear abuse of power, and the power to abuse." — Isabel Allende</p>
-      
         </div>
         <div class="overlay_opacity-middle mask_fade-top events_none"></div>
+      </div>
+      <div id="w-node-d7b20830-3881-6085-8a19-0de1f259c28b-51cb9c8e" class="hero_front w-node-f341100a-c68b-eb7c-0218-9b7a60e649ed-e51ccb9d">
+        <div class="container position_relative padding-bottom_large z-index_2">
+          <div class="hero-content">
+            <h1 class="heading_hero margin-bottom_none">Seven Factors</h1>
+            <div class="subheading rich-text w-richtext"><p>State v. Allen presents seven factors that are recognizable patterns in the wrongful-conviction research literature. This case is not a unique outlier and not a borderline evidentiary dispute.</p></div>
+            <ul class="hero-factors" role="list">
+              <li class="hero-factor_item">Complainant with institutional access to law enforcement</li>
+              <li class="hero-factor_item">Investigator with a personal relationship to the complainant's circle</li>
+              <li class="hero-factor_item">Suppression or re-framing of exculpatory material at the investigation stage</li>
+              <li class="hero-factor_item">Prosecutorial charging decision treating investigative momentum as a substitute for independent evidence review</li>
+              <li class="hero-factor_item">Video evidence contradicting the narrative</li>
+              <li class="hero-factor_item">Physical impossibility in the complainant's narrative</li>
+              <li class="hero-factor_item">Uninvestigated financial motive</li>
+            </ul>
+            <p class="hero-context">The information on this website provides the population-level context for understanding why a case with this profile exists and how it survives. It does not require special cynicism or conspiracy thinking. It requires only that the documented facts be held against the documented research, and the result observed.</p>
+            <div class="button-group">
+              <div class="ix-link-wrapper"><a href="documentspage.html" class="button w-button">Open documents</a></div>
+              <div class="ix-link-wrapper"><a href="overview.html" class="button is-secondary w-button">Project map</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay backdrop-filter_blur mask_fade-top_small"></div>
       </div>
     </div>
   </header>

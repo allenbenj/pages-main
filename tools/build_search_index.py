@@ -38,23 +38,12 @@ ROOT_PAGE_PATHS = [
     "page-index.html",
     "link-diagram.html",
     "false-allegation-framework.html",
-    "content/index.html",
-    "content/players.html",
-    "content/timeline.html",
-    "content/evidence.html",
-    "content/contradictions.html",
-    "content/contradictions_grouped.html",
-    "content/misconduct.html",
-    "content/misconductandfailure.html",
-    "content/documentspage.html",
-    "content/connections.html",
-    "content/scene.html",
-    "content/prosecutor_allowed.html",
-    "content/editor.html",
-    "content/judicial-duty.html",
-    "content/why-dont-we-have-this-system.html",
     "network_analysis/index.html",
 ]
+
+# Directories never indexed: content/ holds legacy variants (now redirects to
+# the canonical root pages); the rest are non-public working areas.
+EXCLUDED_DIR_PARTS = {"content", "archive", "tmp", "tools", "reports", "node_modules", ".git"}
 
 TEXT_EXTENSIONS = {".txt", ".md"}
 PAGE_EXTENSIONS = {".html", ".htm"}
@@ -165,6 +154,10 @@ def html_records(root: Path, path: Path) -> tuple[list[SearchRecord], list[Path]
     rel_path = path.relative_to(root).as_posix()
     html = path.read_text(encoding="utf-8", errors="ignore")
     soup = BeautifulSoup(html, "html.parser")
+
+    # Skip pure meta-refresh redirect stubs; their targets are indexed directly.
+    if soup.find("meta", attrs={"http-equiv": re.compile(r"^\s*refresh\s*$", re.I)}):
+        return [], []
 
     for tag in soup(["script", "style", "noscript", "template"]):
         tag.decompose()
@@ -328,7 +321,7 @@ def records_for_path(root: Path, path: Path) -> tuple[list[SearchRecord], list[P
         return pdf_records(root, path), []
     if suffix in TEXT_EXTENSIONS:
         return text_file_records(root, path), []
-    if suffix in {".json", ".csv", ".xml", ".js", ".css"}:
+    if suffix in {".json", ".csv", ".xml"}:
         return binary_asset_record(root, path, "document"), []
     if suffix in MEDIA_EXTENSIONS:
         return binary_asset_record(root, path, "media"), []
@@ -353,6 +346,12 @@ def discover_paths(root: Path) -> list[Path]:
             continue
         seen.add(current)
         if not str(current).startswith(str(root.resolve())):
+            continue
+        try:
+            rel_parts = current.relative_to(root.resolve()).parts
+        except ValueError:
+            continue
+        if any(part in EXCLUDED_DIR_PARTS for part in rel_parts):
             continue
         if current.is_dir():
             continue

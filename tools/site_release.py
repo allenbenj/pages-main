@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit
 
 PUBLIC_DIRECTORIES = ("assets", "audio", "content", "documents", "shared", "video")
 BUILT_PUBLIC_DIRECTORIES = {"network_analysis": "network_analysis/dist"}
-PUBLIC_ROOT_FILES = ("shell.js",)
+PUBLIC_ROOT_FILES: tuple[str, ...] = ()
 MAX_ARTIFACT_BYTES = 900 * 1024 * 1024
 FORBIDDEN_PATH_PARTS = {".agents", ".codex", ".github", ".grok", ".copilot", ".cursor", ".kilo", ".git", "node_modules"}
 REFERENCE_RE = re.compile(

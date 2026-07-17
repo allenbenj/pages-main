@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-07-17T14:30:05.857026+00:00",
+  "source_root": "D:\\Kimi\\Web_Page\\pages-main",
+  "non_destructive": true,
+  "public_directories": [
+    "assets",
+    "audio",
+    "content",
+    "documents",
+    "shared",
+    "video"
+  ],
+  "built_public_directories": {
+    "network_analysis": "network_analysis/dist"
+  },
+  "public_root_files": [],
+  "artifact": {
+    "file_count": 530,
+    "total_bytes": 828128642,
+    "budget_bytes": 943718400,
+    "over_budget_bytes": 0
+  },
+  "missing_targets": [],
+  "content_variants": [
+    {
+      "content_path": "content/connections.html",
+      "root_counterpart": "connections.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/contradictions.html",
+      "root_counterpart": "contradictions.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/contradictions_grouped.html",
+      "root_counterpart": "contradictions_grouped.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/diagram-fallback.html",
+      "root_counterpart": null,
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/documentspage.html",
+      "root_counterpart": "documentspage.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/documentspage_test.html",
+      "root_counterpart": null,
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/editor.html",
+      "root_counterpart": "editor.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/evidence.html",
+      "root_counterpart": "evidence.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/false-allegation-framework.html",
+      "root_counterpart": "false-allegation-framework.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/index.html",
+      "root_counterpart": "index.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/judicial-duty.html",
+      "root_counterpart": "judicial-duty.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/misconduct.html",
+      "root_counterpart": "misconduct.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/misconductandfailure.html",
+      "root_counterpart": "misconductandfailure.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/players.html",
+      "root_counterpart": "players.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/prosecutor_allowed.html",
+      "root_counterpart": "prosecutor_allowed.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/scene.html",
+      "root_counterpart": "scene.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/timeline.html",
+      "root_counterpart": "timeline.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    },
+    {
+      "content_path": "content/why-dont-we-have-this-system.html",
+      "root_counterpart": "why-dont-we-have-this-system.html",
+      "review_status": "manual_publish_decision_required",
+      "exact_duplicate_of_root": false
+    }
+  ],
+  "exact_duplicates": [
+    {
+      "sha256": "13aab8d4982aed06bb858f99007361935064e7fb810a234e65c504e070444e33",
+      "file_size_bytes": 478,
+      "count": 2,
+      "recoverable_bytes_after_review": 478,
+      "paths": [
+        "content/documentspage.html",
+        "content/documentspage_test.html"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "5d8b7a91e23ed20c3112705f3c56dc3f9e091983b0d277bdfddab9a376e6ad91",
+      "file_size_bytes": 472,
+      "count": 2,
+      "recoverable_bytes_after_review": 472,
+      "paths": [
+        "content/connections.html",
+        "content/diagram-fallback.html"
+      ],
+      "recommended_action": "manual_review_only"
+    },
+    {
+      "sha256": "2f47a275ec112aaed8beebe0e89cf365407645320eb6e87accbccbded4c9ba8c",
+      "file_size_bytes": 454,
+      "count": 2,
+      "recoverable_bytes_after_review": 454,
+      "paths": [
+        "content/false-allegation-framework.html",
+        "content/index.html"
+      ],
+      "recommended_action": "manual_review_only"
+    }
+  ],
+  "exact_duplicate_recoverable_bytes": 1404,
+  "do_not_auto_delete": [
+    "legal records",
+    "evidence images",
+    "audio",
+    "video",
+    "PDFs",
+    "source code"
+  ]
+}
