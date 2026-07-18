@@ -234,21 +234,47 @@ If a task changes page titles, sections, or media, also run
 
 ## P2 — Engineering hygiene
 
-* [ ] **P2-1 · Media budget discipline**
+* [x] 2026-07-18 · **P2-1 · Media budget discipline**
   Artifact is \~828 MB against the 900 MB release budget (\~8% headroom). Route any
   new video through the existing transcode path (`VIDEO_TRANSCODES` in
   `tools/site_release.py`, `tools/optimize_raster_delivery.py`); masters live in
   `archive/evidence-masters/`, never raw adds to `video/`.
 
-* [ ] **P2-2 · Monitor search-index growth**
+  * Progress 2026-07-18: baseline refreshed via
+    `python tools/build_release_review.py --root . --output reports/release-review-2026-07-18.json`
+    — artifact 835.3 MB (543 files) against the 943.7 MB (900 MiB) budget,
+    \~108 MB headroom, `missing_targets: 0`, `over_budget_bytes: 0`. Link audit
+    re-run after the P1-6 rename: 0 broken internal links from any touched
+    page (the 103 broken links reported are pre-existing, mostly unpublished
+    source references). Standing discipline stays in force for future media
+    adds; local `stage`/`validate` remains ffmpeg-blocked, CI is the release
+    gate.
+
+* [x] 2026-07-18 · **P2-2 · Monitor search-index growth**
   `assets/search-index.json` is \~660 KB (loaded on demand — acceptable today).
   Regenerate after content changes; if it passes \~1 MB, consider trimming fields
   or splitting per section.
 
-* [ ] **P2-3 · Evaluate landing vendor-JS reduction**
+  * Progress 2026-07-18: rebuilt after the P1-6 rename — 649 KB (733 records,
+    231 indexed files; kinds: 520 page / 116 media / 95 image / 2 document).
+    Well under the \~1 MB action threshold; no field trimming needed. Keep
+    regenerating after every content/title/media change.
+
+* [x] 2026-07-18 · **P2-3 · Evaluate landing vendor-JS reduction**
   `index.html` defers \~720 KB of jQuery + Webflow runtime + GSAP + ScrollTrigger.
   Audit what's actually used; replace with vanilla JS where feasible. Low urgency —
   landing-only and deferred.
+
+  * Progress 2026-07-18: audit done. `ScrollTrigger.min.js` (44 KB) removed —
+    nothing on the landing instantiates it (no `data-w-id` hooks, no call
+    sites). `gsap.min.js` (73 KB) must STAY: `webflow-main.js` calls
+    `window.gsap.matchMedia` / `gsap.utils` during init even with zero
+    interaction elements — removing it throws
+    `TypeError: Cannot read properties of undefined (reading 'matchMedia')`
+    (A/B-verified headless with console capture; gsap-only config is clean).
+    jQuery + Webflow runtime also stay (nav dropdowns/mega-nav need them).
+    Net saving: 44 KB deferred; further reduction requires replacing the
+    Webflow runtime outright — not worth it for a single landing page.
 
 ***
 

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Categorized list of the false claims presented in State v. Benjamin Allen, grouped by theme.">
+  <meta property="og:title" content="State v. Benjamin Allen - Catch All">
+  <meta property="og:description" content="Categorized list of the false claims presented in State v. Benjamin Allen, grouped by theme.">
+  <meta property="og:type" content="website">
+    <title>State v. Benjamin Allen - Catch All</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+    <style>
+        body {
+            color: var(--light);
+        }
+        .carousel-nav-wrapper {
+            display: none !important;
+        }
+        .page-rail-title,
+        h3[style*="#d4af37"] {
+            color: var(--accent-text) !important;
+        }
+        video {
+            border-color: rgba(255,255,255,0.14) !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.34) !important;
+        }
+    </style>
+  
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+</head>
+<body>
+    <div id="top" class="container u-migrated-63a9e9be">
+        <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="timeline.html">Timeline</a>
+            <a class="nav-tab" href="players.html">Players</a>
+            <a class="nav-tab" href="evidence.html">Evidence</a>
+            <a class="nav-tab" href="contradictions.html">Contradictions</a>
+            <a class="nav-tab" href="misconduct.html">Misconduct</a>
+            <a class="nav-tab" href="documentspage.html">Documents</a>
+            <a class="nav-tab" href="misconductandfailure.html">Mindmaps</a>
+            <a class="nav-tab" href="case-study.html">Case Study</a>
+        </div>
+        <div class="header">
+             <h1>An Edifice of Lies</h1>
+            <h2>“The phrase ‘in the interest of justice’ is prosecutor-speak for ‘in the interest of my clearance rate.’”</h2>
+        </div>
+<nav class="page-rail" aria-label="On this page">
+            <p class="page-rail-title">On this page</p>
+            <a href="#grouped-video" target="_top">Video 1</a>
+            <a href="#grouped-video-2" target="_top">Video 2</a>
+            <a href="#top" target="_top">Back to Top</a>
+        </nav>
+
+
+        <main class="page u-migrated-14e1612c">
+            <section id="grouped-video" class="u-migrated-785c4dea">
+                <div class="u-migrated-29ee1862">
+                    <h3 class="u-migrated-a83c61e7">Lies In Lee County</h3>
+                    <video controls preload="metadata" class="u-migrated-41dc949e">
+                        <source src="video/various/Lies%20In%20Lee%20County%2020250719%20234514(1).mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div id="grouped-video-2" class="u-migrated-8302caf7">
+                    <h3 class="u-migrated-a83c61e7">Changing Stories Create Concern</h3>
+                    <video controls preload="metadata" class="u-migrated-41dc949e">
+                        <source src="video/long_view/Changing%20Stories%20Compressed.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+
+    <!-- Image Modal -->
+    <div id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img loading="lazy" decoding="async" id="modalImage" src="" alt="Full resolution image">        <video id="modalVideo" controls></video>
+    </div>
+
+    <script src="shared/image-modal.js"></script>
+    
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+
+
+</html>

@@ -47,7 +47,7 @@ Key facts:
     └── instructions/         # (empty)
 ```
 
-Notable root pages: `index.html` (landing), `overview.html` (site map hub — `page-index.html`, `link-diagram.html`, and `editor.html` are meta-refresh redirects into it), `timeline.html`, `players.html`, `connections.html`, `scene.html`, `evidence.html`, `contradictions.html`, `catch-all.html`, `misconduct.html`, `misconductandfailure.html` (mindmaps), `documentspage.html`, `prosecutor_allowed.html`, `judicial-duty.html`, `why-dont-we-have-this-system.html`, `case-study.html`, `data-snapshot.html`. `false-allegation-framework.html` redirects to `index.html`. `document-unavailable.html` is the fallback for unpublished source PDFs.
+Notable root pages: `index.html` (landing), `overview.html` (site map hub — `page-index.html`, `link-diagram.html`, and `editor.html` are meta-refresh redirects into it), `timeline.html`, `players.html`, `connections.html`, `scene.html`, `evidence.html`, `contradictions.html`, `general-videos.html`, `misconduct.html`, `misconductandfailure.html` (mindmaps), `documentspage.html`, `prosecutor_allowed.html`, `judicial-duty.html`, `why-dont-we-have-this-system.html`, `case-study.html`, `data-snapshot.html`. `false-allegation-framework.html` redirects to `index.html`. `document-unavailable.html` is the fallback for unpublished source PDFs.
 
 ## Technology Stack
 

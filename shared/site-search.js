@@ -9,7 +9,7 @@
     if (!nav || nav.querySelector(".nav-dropdown")) return;
     const pages = [
       ["connections.html", "Connections"],
-      ["catch-all.html", "Catch All"],
+      ["general-videos.html", "General Videos"],
       ["data-snapshot.html", "Data Snapshot"],
       ["judicial-duty.html", "Judicial Duty"],
       ["prosecutor_allowed.html", "Prosecutor Conduct"],

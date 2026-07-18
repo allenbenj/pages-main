@@ -73,8 +73,6 @@
             background: rgba(0,0,0,0.42) !important;
         }
         /* Editorial typography (P1-1): serif narrative, upright, left-aligned */
-        #contradictions-overview > p,
-        #contradictions-overview li,
         .apple-card p,
         .apple-card li {
             font-family: var(--font-serif);
@@ -82,6 +80,13 @@
             text-align: left;
             font-size: 1.05rem;
             line-height: 1.75;
+        }
+        /* Overview lead + bullet list stay centered (utility classes) */
+        #contradictions-overview > p,
+        #contradictions-overview > ul > li {
+            font-family: var(--font-serif);
+            font-style: normal;
+            text-align: center;
         }
         .apple-card > p.u-migrated-04d2dfee,
         .apple-card > p.u-migrated-a1cd073c,

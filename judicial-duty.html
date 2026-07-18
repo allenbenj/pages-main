@@ -4,9 +4,9 @@
   <base target="_top">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Judicial duty and courtroom fairness examined in the context of State v. Benjamin Allen.">
+  <meta name="description" content="Judicial duty, courtroom fairness, institutional familiarity, and strategic calendaring examined in State v. Benjamin Allen.">
   <meta property="og:title" content="Judicial Duty and Courtroom Fairness | State v. Benjamin Allen">
-  <meta property="og:description" content="Judicial duty and courtroom fairness examined in the context of State v. Benjamin Allen.">
+  <meta property="og:description" content="Judicial duty, courtroom fairness, institutional familiarity, and strategic calendaring examined in State v. Benjamin Allen.">
   <meta property="og:type" content="website">
     <title>Judicial Duty and Courtroom Fairness | State v. Benjamin Allen</title>
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
@@ -658,6 +658,110 @@
         .jd-asym-panel.prosecution li::before { background: rgba(201,91,91,0.5); }
         .jd-asym-panel.defense li::before { background: rgba(91,141,165,0.5); }
 
+        /* ── CHECKLIST / EVIDENCE REQUIRED ── */
+        .jd-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .jd-checklist li {
+            position: relative;
+            padding: 10px 0 10px 28px;
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--jd-text);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .jd-checklist li:last-child { border-bottom: none; }
+        .jd-checklist li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid rgba(201,168,76,0.55);
+            border-radius: 3px;
+            background: rgba(201,168,76,0.08);
+        }
+        .jd-alt-card {
+            background: var(--jd-surface-raised);
+            border: 1px solid var(--jd-border);
+            border-radius: var(--jd-radius);
+            padding: 20px 22px;
+            margin-bottom: 12px;
+        }
+        .jd-alt-card h4 {
+            margin: 0 0 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--jd-heading);
+        }
+        .jd-alt-card .jd-alt-claim {
+            margin: 0 0 10px;
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--jd-text-muted);
+        }
+        .jd-alt-card .jd-alt-response {
+            margin: 0;
+            padding: 12px 14px;
+            border-left: 3px solid var(--jd-gold);
+            background: rgba(201,168,76,0.06);
+            border-radius: 0 var(--jd-radius-sm) var(--jd-radius-sm) 0;
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--jd-text);
+        }
+        .jd-alt-card .jd-alt-response strong {
+            color: var(--jd-gold-text);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .jd-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0 8px;
+        }
+        .jd-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+        }
+        .jd-tag.gold {
+            color: var(--jd-gold-text);
+            background: var(--jd-gold-dim);
+            border-color: rgba(201,168,76,0.25);
+        }
+        .jd-tag.red {
+            color: var(--jd-red-text);
+            background: var(--jd-red-dim);
+            border-color: rgba(201,91,91,0.25);
+        }
+        .jd-tag.blue {
+            color: var(--jd-blue-text);
+            background: var(--jd-blue-dim);
+            border-color: rgba(91,141,165,0.25);
+        }
+        .jd-tag.teal {
+            color: #7eb8c0;
+            background: var(--jd-teal-dim);
+            border-color: rgba(93,152,162,0.25);
+        }
+
         /* ── APPLE CARD OVERRIDE ── */
         .apple-card {
             background: var(--jd-surface-raised) !important;
@@ -736,7 +840,7 @@
             </div>
             <h2>Judicial Duty &amp; Courtroom Fairness</h2>
             <p class="jd-hero-sub">
-                When a prosecutor coaches a witness in the courthouse lobby and the judge's only response is to ask if the witness will still tell the truth — the system has already failed. This page examines what the court was obligated to do, what it did instead, and why the distinction matters.
+                When a prosecutor coaches a witness in the courthouse lobby and the judge's only response is to ask if the witness will still tell the truth — the system has already failed. This page examines what the court was obligated to do, what it did instead, and whether institutional familiarity and calendaring power made that outcome predictable.
             </p>
         </div>
 
@@ -755,8 +859,8 @@
                 <div class="jd-stat-label">Jury Acquittal on the Primary Charge</div>
             </div>
             <div class="jd-stat-item accent-teal">
-                <div class="jd-stat-num teal">4</div>
-                <div class="jd-stat-label">Remedies Available &amp; Required — All Ignored</div>
+                <div class="jd-stat-num teal">3</div>
+                <div class="jd-stat-label">Motive · Opportunity · Benefit — Still Unresolved</div>
             </div>
         </div>
 
@@ -1346,6 +1450,14 @@
                         <div class="jd-bb-rule">N.C. R. Evid. 403</div>
                         <p>Exclusion of relevant evidence on grounds of prejudice, confusion, or waste of time. Even marginally relevant evidence must be excluded if probative value is substantially outweighed by danger of unfair prejudice.</p>
                     </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">N.C. Gen. Stat. § 7A-49.4</div>
+                        <p>Superior-court criminal calendaring. The district attorney calendars cases, proposes trial dates, publishes the trial calendar, announces the intended order of call, and consults on new dates for cases not reached — the statutory opportunity structure for strategic calendaring analysis.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">N.C. Code of Judicial Conduct</div>
+                        <p>A judge should disqualify when impartiality may reasonably be questioned, and should initiate appropriate disciplinary measures for a lawyer’s unprofessional conduct when the judge becomes aware of it.</p>
+                    </div>
                 </div>
             </div>
 
@@ -1355,6 +1467,495 @@
                 </blockquote>
                 <span class="jd-pullquote-attr">— Summary of Judicial Failures</span>
             </div>
+        </section>
+
+        <!-- ═══════════ INSTITUTIONAL FAMILIARITY & STRATEGIC CALENDARING ═══════════ -->
+        <section class="content-section">
+            <h2 class="section-title">Institutional Familiarity, Strategic Calendaring &amp; Asymmetric Trial Management</h2>
+            <p>The record surrounding the prosecution of Benjamin Scott Allen supports a legitimate inquiry into whether Assistant District Attorney Tiffany Bartholomew used the prosecution’s calendaring influence to obtain a trial setting before Judge Paul A. Holcombe because she expected favorable discretionary treatment.</p>
+
+            <div class="jd-tag-row">
+                <span class="jd-tag gold">Motive</span>
+                <span class="jd-tag blue">Opportunity</span>
+                <span class="jd-tag teal">Apparent Benefit</span>
+                <span class="jd-tag red">Not Yet Conclusive Proof</span>
+            </div>
+
+            <div class="jd-pullquote">
+                <blockquote>
+                    The strongest defensible conclusion is not that judge shopping has already been conclusively proved. It is that the record supplies evidence of motive, opportunity, and benefit, making strategic calendaring a reasonable theory that should be tested against the complete calendar, continuance, assignment, and communication records.
+                </blockquote>
+                <span class="jd-pullquote-attr">— Framing the Inquiry</span>
+            </div>
+
+            <p>The existing evidence does not conclusively prove an agreement between Bartholomew and Holcombe, an improper personal relationship, or the intentional selection of Holcombe by name. It does, however, establish or support the following:</p>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #c9a84c;">
+                    <h3>Institutional Setting</h3>
+                    <ul style="color: var(--jd-text); padding-left: 1.25rem; margin: 0;">
+                        <li>Bartholomew and Holcombe were experienced participants in the same regional criminal-justice system by the time of Allen’s trial.</li>
+                        <li>North Carolina law gave the District Attorney’s Office substantial control over the scheduling and ordering of superior-court criminal cases.</li>
+                        <li>The Allen prosecution was continued repeatedly over several years, creating multiple opportunities for strategic selection of the week or judicial session in which the case would finally be tried.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #c95b5b;">
+                    <h3>What Happened at Trial</h3>
+                    <ul style="color: var(--jd-text); padding-left: 1.25rem; margin: 0;">
+                        <li>Holcombe repeatedly resolved disputed issues in ways that preserved the State’s case and minimized the consequences of prosecutorial irregularities.</li>
+                        <li>When a State witness testified under oath that he heard Bartholomew apparently coach the complaining witness to add a claim of fear, Holcombe did not investigate whether Bartholomew had attempted to alter the complaining witness’s account.</li>
+                        <li>Instead, Holcombe reframed the issue as whether the reporting witness, Steven Happel, could still testify truthfully and resumed the trial immediately.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #5b8da5;">
+                    <h3>Disclosure &amp; Record Gaps</h3>
+                    <ul style="color: var(--jd-text); padding-left: 1.25rem; margin: 0;">
+                        <li>Critical medical records were reportedly produced only on the day of trial, yet the prosecution was permitted to proceed.</li>
+                        <li>Other potentially favorable or impeaching information—including the relationship between Detective Steve Freeman and State witness Carmen Love—apparently never reached the defense record.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #5d98a2;">
+                    <h3>Asymmetry Already Documented</h3>
+                    <p>The trial court’s evidentiary rulings displayed a recurring asymmetry: flexibility when the prosecution encountered evidentiary problems and rigid technical enforcement when the defense sought broader context. That pattern is developed above; it is the benefit half of the calendaring inquiry.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Necessary Correction: The Juvenile-Justice Relationship</h2>
+            <p>The proposition that Holcombe and Bartholomew jointly managed Juvenile Crime Prevention Council programs in Johnston, Harnett, and Lee counties is <strong>not presently established</strong> by the public record. That correction strengthens the analysis by preventing the judge-shopping theory from depending on a factual assertion that has not yet been documented.</p>
+
+            <div class="jd-asymmetry">
+                <div class="jd-asym-panel defense">
+                    <h4><span class="jd-asym-dot"></span> Holcombe — Documented Position</h4>
+                    <ul>
+                        <li>Elected district court judge in 2008; appointed chief district court judge for Judicial District 11 (Johnston, Harnett, and Lee) effective January 1, 2021.</li>
+                        <li>Former assistant district attorney in North Carolina before taking the bench.</li>
+                        <li>Elected to the superior court in 2022.</li>
+                        <li>As chief district court judge: scheduled district-court sessions, assigned district judges, and supervised magistrates.</li>
+                    </ul>
+                </div>
+                <div class="jd-asym-divider">and</div>
+                <div class="jd-asym-panel prosecution">
+                    <h4><span class="jd-asym-dot"></span> Bartholomew — Documented Position</h4>
+                    <ul>
+                        <li>Assistant district attorney in Moore County beginning in 2009, specializing in sexual-assault, domestic-violence, and child-abuse prosecutions.</li>
+                        <li>Appointed district court judge for Moore and Hoke counties in 2019.</li>
+                        <li>A 2017 report states the Moore County Board of Commissioners reappointed her to the Moore County Juvenile Crime Prevention Council.</li>
+                        <li>Documented JCPC service was in <strong>Moore County</strong> — not Holcombe’s Judicial District 11.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="jd-benchbook">
+                <h3>
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    What the JCPC Structure Actually Establishes
+                </h3>
+                <div class="jd-benchbook-grid">
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">Statutory Membership</div>
+                        <p>County JCPC membership should include the district attorney or designee, and the chief district court judge or a designated judge — plus law-enforcement, juvenile-court, social-services, mental-health, education, business, nonprofit, and community representatives.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">What Councils Do</div>
+                        <p>JCPCs assess local juvenile needs, identify service gaps, help allocate funding, evaluate programs, and seek appropriate treatment and intermediate dispositional options.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">What Structure Alone Does Not Prove</div>
+                        <p>Without council rosters, minutes, attendance records, committee assignments, or grant documents, the structure does not establish that Holcombe and Bartholomew personally worked together on Teen Court, restitution, Project Catch, counseling, detention screening, or any other identified program.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">Accurate Narrow Point</div>
+                        <p>They were not strangers in entirely separate professional worlds. Both had long careers in prosecution and in juvenile or special-victim matters, and each held institutional roles that often required interaction among judges, prosecutors, law enforcement, court counselors, and community programs. The precise nature and duration of their direct professional relationship must be established through records rather than assumed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">The Relevant Professional Relationship</h2>
+            <p>The meaningful relationship for purposes of Allen’s trial is not necessarily a private friendship or shared JCPC membership. It is the combination of institutional familiarity; repeated professional contact; prosecutorial reliance on a judge’s discretionary rulings; the District Attorney’s Office’s calendaring authority; and a history of courtroom decisions that consistently permitted the State to preserve its preferred narrative.</p>
+
+            <p>Prior professional familiarity between a judge and prosecutor is common and, standing alone, does not establish bias. A court system could not operate if every judge were disqualified whenever the judge had previously worked with an attorney appearing before the court. The significance changes when familiarity is combined with evidence that:</p>
+
+            <div class="jd-flow">
+                <div class="jd-flow-step">
+                    <div class="jd-flow-num red">1</div>
+                    <h4>Calendaring Leverage</h4>
+                    <p>The prosecutor had some ability to influence when the case would be tried, and the case was repeatedly continued until a particular judge was presiding.</p>
+                </div>
+                <div class="jd-flow-step">
+                    <div class="jd-flow-num amber">2</div>
+                    <h4>One-Way Latitude</h4>
+                    <p>The judge repeatedly excused or minimized irregularities benefiting the prosecutor, while similar latitude was not extended to the defense.</p>
+                </div>
+                <div class="jd-flow-step">
+                    <div class="jd-flow-num blue">3</div>
+                    <h4>Containment</h4>
+                    <p>Serious allegations concerning the prosecutor’s own conduct were contained rather than investigated.</p>
+                </div>
+            </div>
+
+            <div class="jd-pullquote red">
+                <blockquote>
+                    The question is not whether Holcombe and Bartholomew merely knew one another. The question is whether their professional familiarity contributed to a courtroom dynamic in which Bartholomew’s assertions were accorded presumptive trust, while defense objections were met with skepticism.
+                </blockquote>
+                <span class="jd-pullquote-attr">— The Real Inquiry</span>
+            </div>
+
+            <p>Under the North Carolina Code of Judicial Conduct, a judge should disqualify himself or herself when the judge’s impartiality may reasonably be questioned. The Code also instructs judges to initiate appropriate disciplinary measures for a lawyer’s unprofessional conduct when the judge becomes aware of it.</p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Happel Reframed: What the Court Chose Not to Ask</h2>
+            <p>The Happel incident is developed in full above. For the calendaring analysis, its significance is narrower and sharper: it placed a sworn allegation of apparent prosecutorial coaching directly before the court — and the court converted that allegation into a limited inquiry about whether the reporting witness remained available.</p>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #60a5fa;">
+                    <h3>Happel Was the State’s Next Witness</h3>
+                    <p>The transcript begins with the court asking who the State’s next witness was, and Bartholomew answering: “Steven Happel, Your Honor.” He was not formally identified at that moment as a defense witness. Bartholomew called him the State’s next witness, apparently out of order to accommodate his schedule.</p>
+                    <p style="margin-top: 10px;">Calling him as a State witness does not eliminate the possibility that the prosecution considered him dangerous or uncooperative. A prosecutor may call a known eyewitness because the witness cannot be omitted credibly, because the defense will call him anyway, or because presenting him first allows the State to control the initial examination.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid #fbbf24;">
+                    <h3>Irregular Subpoena Circumstances</h3>
+                    <p>Happel lived in Huntsville, Alabama, and worked as an FBI contractor. He testified that he received an emailed subpoena on the Thursday before he was expected to appear the following Monday, and that the subpoena contained an alias or incorrect version of his name.</p>
+                    <p style="margin-top: 10px;">When asked how he managed to attend on such short notice: <em>“I told my work that I didn’t have a choice and I didn’t want to risk my clearance or getting in trouble.”</em> That statement shows perceived legal and professional pressure — and raises questions about why a known eyewitness in a years-old prosecution was handled as an emergency immediately before testimony.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--light); margin: 24px 0 14px;">The Wording That Matters</h3>
+            <p>Happel testified under oath that, while waiting in the courthouse lobby, he overheard Bartholomew speaking with Deal and others associated with her:</p>
+
+            <div class="jd-pullquote red">
+                <blockquote>
+                    “I heard Ms. Bartholomew tell the victim that she should have said that the victim was afraid of the witnesses, which is me and Joseph DeMarco.”
+                </blockquote>
+                <span class="jd-pullquote-attr">— Steven Happel, Under Oath</span>
+            </div>
+
+            <p>Happel did not report hearing Bartholomew ask whether Deal had been afraid, whether Deal had omitted something, why Deal had acted in a particular manner, or whether Deal wanted to clarify a prior answer. He reported a <strong>directive</strong> concerning what Deal “should have said.” That wording reasonably supports an inference that Bartholomew identified an answer she believed would strengthen the State’s account and told Deal that she should have supplied it.</p>
+
+            <div class="apple-card u-migrated-424943c0" style="border-left: 4px solid #fb2424; margin-top: 20px;">
+                <h3 class="u-migrated-8f56b1fd">Procedural Containment</h3>
+                <p>Holcombe concluded: <em>“I’m satisfied this witness is prepared to tell the truth, the whole truth and nothing but the truth.”</em> That conclusion addressed Happel’s reliability. It did not address the alleged conduct of Bartholomew or the possible alteration of Deal’s account.</p>
+                <p style="margin-top: 12px;">The reasonably expected questions — Did Bartholomew make the statement? What did she mean? Had Deal previously claimed to fear Happel or DeMarco? Was Bartholomew attempting to supply a new explanation? Did she intend to elicit the new “fear” narrative? Were other witnesses present? Did surveillance preserve the conversation? — were never asked or answered.</p>
+                <p style="margin-top: 12px;"><strong>The court ensured that the State’s witness remained available and that the trial could continue, while leaving the allegation against the prosecutor unresolved.</strong></p>
+            </div>
+
+            <h3 style="color: var(--light); margin: 24px 0 14px;">Connection to DeMarco</h3>
+            <p>The alleged treatment of Happel also supplies a framework for examining DeMarco’s evolving account. The theory is not merely that two witnesses remembered events differently. It is that the State may have applied different pressures depending on whether a witness accepted the State’s narrative:</p>
+            <ul style="color: var(--jd-text); padding-left: 1.5rem;">
+                <li>Happel allegedly resisted being told that Allen was guilty.</li>
+                <li>Happel later overheard the prosecutor suggesting that Deal should characterize him as someone she feared.</li>
+                <li>DeMarco’s account allegedly remained somewhat consistent with Deal’s account but shifted sufficiently toward the prosecution’s theory to obtain Freeman’s approval rather than suspicion or prosecution.</li>
+                <li>Freeman praised DeMarco in his reports once DeMarco accepted enough of the proposed narrative, changing a self-reported fear-based exit into a noble search-and-rescue event.</li>
+            </ul>
+            <p>The chronology would permit an inference of a pressure-and-reward system: resistance produced suspicion, intimidation, or attempted discrediting; partial accommodation produced approval and protection.</p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">The Larger Pattern Feeding the Calendaring Theory</h2>
+            <p>The Happel event becomes more probative when considered with the treatment of other disputed matters already developed on this page — Exhibit 4, hearsay latitude, illustrative photos, and the plea misrepresentation. Several additional strands complete the pattern.</p>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #fb2424;">
+                    <h3>Medical Records on the Day of Trial</h3>
+                    <p>Critical medical records were not provided to the defense until the day of trial and were reportedly located in another judge’s box. Same-day production deprived the defense of a meaningful opportunity to review the records with an expert, compare them with the State’s prior representations, investigate inconsistencies, prepare cross-examination, determine whether additional records existed, revise trial strategy, and evaluate the accuracy of the prosecution’s assertions concerning injury or forensic evidence.</p>
+                    <p style="margin-top: 10px;">A disclosure is not meaningfully timely merely because it occurs before the evidence is formally introduced. N.C. RPC 3.8 requires a prosecutor, after reasonably diligent inquiry, to make timely disclosure of evidence required by law. The judicial issue includes what Holcombe did after learning of the lateness, whether he identified the cause, and whether the defense received an effective remedy.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid #fbbf24;">
+                    <h3>Comparison: The Abraham Prosecution</h3>
+                    <p>In the later prosecution of Daniel Abraham, defense attorney William Pruden alleged that Bartholomew withheld video evidence that “exonerates the Defendant” until the day of trial and produced it only after being compelled. Abraham was acquitted of the felony charge, and the misdemeanor charge was dismissed.</p>
+                    <p style="margin-top: 10px;">The Abraham allegation does not, by itself, prove intentional misconduct in Allen. It is relevant because it presents a substantially similar disclosure structure involving the same prosecutor: materially favorable evidence; prolonged State possession or control; production at trial; judicial compulsion; and no publicly identifiable accountability directed at the prosecutor. The recurrence makes it less satisfactory to dismiss the Allen disclosure as an isolated administrative mistake.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid #60a5fa;">
+                    <h3>Freeman–Carmen Love Relationship</h3>
+                    <p>The defense apparently was not informed that Detective Freeman had a family relationship with State witness Carmen Love — material to Freeman’s assessment of her credibility, the rigor of his interviews, informal communications, possible bias or loyalty, decisions to omit or reconcile portions of her account, and the independence of the investigation.</p>
+                    <p style="margin-top: 10px;">Freeman testified that his conversation with Carmen Love was part of his presentation to the magistrate even though her statements contradicted many critical elements of Lauren Deal’s law-enforcement interview. Carmen did not appear at trial once she realized there was video that proved she was not telling the truth. The omission supports one of three inferences: Freeman failed to disclose the relationship; Bartholomew knew and failed to disclose it; or Bartholomew failed to conduct a reasonably diligent inquiry. None reflects a fully transparent prosecution.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid #5d98a2;">
+                    <h3>False Plea Premise Treated as Nonprejudicial</h3>
+                    <p>Misconduct by Bartholomew was acknowledged before Holcombe in chambers: a plea offer had been based on false information. Holcombe found no prejudice because the defense was given a DNA expert — an expert who was unable to testify because the prosecution overshot the time, requiring the expert to return home to another state for scheduled medical treatment.</p>
+                    <p style="margin-top: 10px;">That resembles the Happel inquiry: Happel still said he would testify truthfully, so the trial continued; Allen did not accept the allegedly false plea offer, so the court found no prejudice. In each instance, the court focused on whether the misconduct successfully achieved its apparent objective rather than whether the conduct itself threatened the integrity of the process.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Opportunity: Strategic Calendaring Under G.S. 7A-49.4</h2>
+            <p>North Carolina law gives district attorneys substantial authority over superior-court criminal calendars. Under <strong>G.S. 7A-49.4</strong>:</p>
+
+            <div class="jd-benchbook">
+                <h3>
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    District Attorney Calendar Authority
+                </h3>
+                <div class="jd-benchbook-grid">
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">Calendaring</div>
+                        <p>Criminal cases are calendared by the district attorney; the district attorney proposes trial dates and publishes the trial calendar.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">Order of Trial</div>
+                        <p>The calendar lists cases in the anticipated order of trial; the district attorney announces the intended order for calling cases.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">Multiple Sessions</div>
+                        <p>Separate calendars may be issued when multiple sessions are operating.</p>
+                    </div>
+                    <div class="jd-benchbook-item">
+                        <div class="jd-bb-rule">Cases Not Reached</div>
+                        <p>The district attorney consults with the parties concerning new dates for cases that are not reached.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>The presiding judge retains authority over deviations, continuances, and the actual call of cases. Thus, the prosecutor cannot simply appoint a judge. But the prosecutor may have the practical ability to influence:</p>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #c9a84c;">
+                    <h3>Practical Influence Levers</h3>
+                    <ul style="color: var(--jd-text); padding-left: 1.25rem; margin: 0;">
+                        <li>the session in which a case is listed;</li>
+                        <li>whether the State announces ready;</li>
+                        <li>the order in which cases are called;</li>
+                        <li>whether another case consumes the session;</li>
+                        <li>the date proposed after a continuance;</li>
+                        <li>which concurrent calendar receives the case; and</li>
+                        <li>whether the case is reached while a known judge is presiding.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #c95b5b;">
+                    <h3>Why Continuances Matter</h3>
+                    <p>This is the mechanism through which indirect judge shopping could occur. The large number of continuances in Allen’s case matters because every reset potentially created another selection point.</p>
+                    <p style="margin-top: 10px;"><strong>The total number alone is not proof.</strong> The necessary analysis is whether the State’s conduct varied depending on the assigned judge.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Motive and Expected Benefit Under Holcombe</h2>
+            <p>A viable judge-shopping theory requires more than opportunity. It requires a plausible reason to prefer a particular judge. The existing trial record identifies several potential benefits Bartholomew received from having Holcombe preside:</p>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #fb2424;">
+                    <h3>Obstacles Resolved for the State</h3>
+                    <ul style="color: var(--jd-text); padding-left: 1.25rem; margin: 0;">
+                        <li>Critical medical records were located in the judge’s inbox on the day of trial without terminating the prosecution.</li>
+                        <li>A disputed partial message exhibit could be admitted through a judicially constructed authentication and completeness rationale.</li>
+                        <li>The State could present broad contextual and emotional evidence with no event- or fact-driven testimony, while defense questioning was more narrowly confined.</li>
+                        <li>The undisclosed Freeman–Love relationship did not generate a trial-level inquiry — and is still not disclosed even after the trial.</li>
+                        <li>A false factual premise in plea negotiations could be treated as nonprejudicial because the defense was assigned an expert.</li>
+                        <li>A threat could be made and followed through on if the plea wasn’t accepted.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #fbbf24;">
+                    <h3>Allegations Contained</h3>
+                    <ul style="color: var(--jd-text); padding-left: 1.25rem; margin: 0;">
+                        <li>A sworn report of apparent witness coaching was reduced to whether Happel remained capable of testifying.</li>
+                        <li>Bartholomew was not questioned under oath or otherwise required to explain her reported statement to Deal.</li>
+                        <li>The complaining witness was not questioned about whether she had been supplied with a new “fear” narrative.</li>
+                        <li>The trial resumed immediately, preserving the State’s case and avoiding interruption, recusal, replacement of the prosecutor, or disciplinary referral.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="jd-pullquote">
+                <blockquote>
+                    The benefit was not necessarily that Holcombe would guarantee a conviction. The jury ultimately did not return the complete result sought by the State. The benefit was that procedural and evidentiary obstacles were repeatedly resolved, allowing the prosecution to continue presenting its theory without any factual basis or foundation in reality.
+                </blockquote>
+                <span class="jd-pullquote-attr">— What “Benefit” Means Here</span>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">The Judge-Shopping Inference</h2>
+            <p>The analysis must distinguish what the record supports from what it has not yet established.</p>
+
+            <div class="jd-asymmetry">
+                <div class="jd-asym-panel prosecution">
+                    <h4><span class="jd-asym-dot"></span> Facts Supporting the Inference</h4>
+                    <ul>
+                        <li>an unusually prolonged prosecution;</li>
+                        <li>repeated continuances;</li>
+                        <li>prosecutorial authority over the trial calendar;</li>
+                        <li>knowledge of judicial assignments;</li>
+                        <li>a judge with whom the prosecutor had established professional familiarity;</li>
+                        <li>repeated favorable discretionary rulings;</li>
+                        <li>minimal consequences for late disclosure;</li>
+                        <li>containment of allegations concerning the prosecutor herself; and</li>
+                        <li>differing levels of scrutiny applied to prosecution and defense conduct.</li>
+                    </ul>
+                </div>
+                <div class="jd-asym-divider">vs</div>
+                <div class="jd-asym-panel defense">
+                    <h4><span class="jd-asym-dot"></span> Facts Not Yet Established</h4>
+                    <ul>
+                        <li>Bartholomew requested Holcombe by name;</li>
+                        <li>Bartholomew caused a continuance because a different judge was assigned;</li>
+                        <li>she announced ready only when Holcombe was scheduled;</li>
+                        <li>she transferred the case between sessions to reach Holcombe;</li>
+                        <li>she communicated privately with Holcombe concerning assignment of the case;</li>
+                        <li>Holcombe agreed to accept the case for Bartholomew;</li>
+                        <li>they jointly administered the same JCPC programs; or</li>
+                        <li>Holcombe made rulings because of loyalty to Bartholomew rather than his understanding of the law.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="jd-pullquote red">
+                <blockquote>
+                    The record presents evidence supporting an inference of strategic calendaring or apparent judge shopping, but calendar and assignment records are required to determine whether the prosecutor actually manipulated the case’s setting to obtain Judge Holcombe.
+                </blockquote>
+                <span class="jd-pullquote-attr">— Most Accurate Characterization</span>
+            </div>
+
+            <p>The professional relationship is relevant primarily as evidence of familiarity and expected treatment, not as independent proof of collusion. Those distinctions are recognized and made explicit here.</p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Alternative Explanations</h2>
+            <p>A credible analysis must address the principal counterarguments.</p>
+
+            <div class="jd-alt-card">
+                <h4>1. Ordinary professional familiarity</h4>
+                <p class="jd-alt-claim">Judges and prosecutors in the same region routinely know and work with one another. Familiarity does not establish bias.</p>
+                <p class="jd-alt-response"><strong>Response</strong> Correct. The argument depends on the cumulative pattern of calendaring opportunity, favorable discretionary rulings, and failure to investigate prosecutorial conduct — not familiarity alone.</p>
+            </div>
+            <div class="jd-alt-card">
+                <h4>2. Legitimate continuances</h4>
+                <p class="jd-alt-claim">Some continuances may have resulted from defense requests, unavailable witnesses, pandemic disruption, counsel changes, congested calendars, or case complexity.</p>
+                <p class="jd-alt-response"><strong>Response</strong> Each continuance must be attributed accurately. Judge shopping cannot be inferred from continuances requested by the defense or required by circumstances outside the prosecutor’s control. The ADA did not provide discovery on time, forcing the defense to request a continuation until it could be provided.</p>
+            </div>
+            <div class="jd-alt-card">
+                <h4>3. Broad evidentiary discretion</h4>
+                <p class="jd-alt-claim">Trial judges receive substantial deference in authentication, completeness, witness examination, and trial-management decisions.</p>
+                <p class="jd-alt-response"><strong>Response</strong> The issue is cumulative asymmetry. Even individually permissible rulings can create a fairness concern when judicial discretion repeatedly cures State deficiencies while strictly limiting the defense.</p>
+            </div>
+            <div class="jd-alt-card">
+                <h4>4. Happel was allowed to testify</h4>
+                <p class="jd-alt-claim">Holcombe did not prevent Happel from testifying. He placed Happel under oath, made a record, and confirmed that Happel would testify truthfully.</p>
+                <p class="jd-alt-response"><strong>Response</strong> That addresses witness availability but not the reported coaching of Deal. Permitting Happel to testify did not resolve whether Bartholomew had attempted to change another witness’s account.</p>
+            </div>
+            <div class="jd-alt-card">
+                <h4>5. Bartholomew called Happel herself</h4>
+                <p class="jd-alt-claim">Because Happel was identified as the State’s next witness, the transcript may contradict the proposition that Bartholomew sought to suppress him entirely.</p>
+                <p class="jd-alt-response"><strong>Response</strong> The transcript does weaken any categorical claim that she refused to call him. It does not resolve whether she called him reluctantly, attempted to control or pressure him, or tried to discredit him after realizing that his account would not support the State. It actually supports the attempt to discredit him immediately once Deal found out that he went to sleep at the Defendant’s house that evening.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Evidence Required to Test the Theory</h2>
+            <p>The following records would materially strengthen or defeat the judge-shopping inference:</p>
+
+            <div class="grid grid-2">
+                <div class="card" style="border-left: 4px solid #c9a84c;">
+                    <h3>Calendaring and Assignments</h3>
+                    <ul class="jd-checklist">
+                        <li>every superior-court master calendar during the case;</li>
+                        <li>every weekly judicial assignment;</li>
+                        <li>every published trial calendar listing Allen;</li>
+                        <li>the order in which Allen was listed;</li>
+                        <li>records of concurrent sessions;</li>
+                        <li>dates when Bartholomew announced ready or not ready;</li>
+                        <li>dates when other prosecutors controlled the case;</li>
+                        <li>dates when Holcombe, Gilchrist, or other judges were assigned;</li>
+                        <li>calendar-call recordings or minutes; and</li>
+                        <li>the local criminal case docketing plan.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #5b8da5;">
+                    <h3>Continuances</h3>
+                    <ul class="jd-checklist">
+                        <li>every continuance motion;</li>
+                        <li>the requesting party;</li>
+                        <li>the stated reason;</li>
+                        <li>the ruling judge;</li>
+                        <li>any objection;</li>
+                        <li>the next proposed date;</li>
+                        <li>whether the assigned judge changed; and</li>
+                        <li>whether the State’s readiness position changed with the assignment.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #c95b5b;">
+                    <h3>Communications</h3>
+                    <ul class="jd-checklist">
+                        <li>emails among the District Attorney’s Office, clerk, trial court administrator, and judicial staff;</li>
+                        <li>communications concerning assignment to a particular session;</li>
+                        <li>communications about the medical records located in another judge’s box;</li>
+                        <li>witness-list discussions concerning Happel;</li>
+                        <li>communications concerning his subpoena;</li>
+                        <li>Bartholomew’s communications with Deal, Freeman, Carmen, and DeMarco; and</li>
+                        <li>records of the earlier joint telephone call with Happel.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left: 4px solid #5d98a2;">
+                    <h3>Juvenile-Justice Relationship</h3>
+                    <ul class="jd-checklist">
+                        <li>Johnston, Harnett, Lee, and Moore JCPC rosters;</li>
+                        <li>meeting minutes;</li>
+                        <li>committee assignments;</li>
+                        <li>attendance records;</li>
+                        <li>monitoring reports;</li>
+                        <li>grant-review documents;</li>
+                        <li>conflict disclosures; and</li>
+                        <li>correspondence naming Holcombe or Bartholomew.</li>
+                    </ul>
+                    <p style="margin-top: 12px; font-size: 0.88rem; color: var(--jd-text-muted);">Those records would determine whether there was any direct institutional collaboration beyond their general professional roles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Final Assessment: Motive, Opportunity, Benefit</h2>
+            <p>The negative impact on the defense is cumulative. No single continuance proves judge shopping. No single evidentiary ruling proves bias. No prior professional contact proves collusion. No single late disclosure conclusively proves intentional suppression.</p>
+            <p>But the law does not require the public to view every incident in isolation. The Allen record presents a repeated directional pattern:</p>
+
+            <div class="jd-vignette">
+                <div class="jd-vignette-icon red">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="jd-vignette-body">
+                    <h4>The Directional Pattern</h4>
+                    <p>Critical information arrives late; undisclosed relationships remain outside the defense record; disputed prosecution evidence is admitted through flexible reasoning; defense questioning is narrowly controlled; plea negotiations were based on inaccurate information and accompanied by a threat that was followed through on; an eyewitness reports pressure from the prosecutor and investigator; the same eyewitness hears the prosecutor tell the complaining witness what she “should have said”; the judge investigates whether the eyewitness will remain cooperative and truthful, but not whether the prosecutor attempted to alter the complaining witness’s story; and the prosecution continues without a meaningful institutional response from either the court or the North Carolina Bar.</p>
+                </div>
+            </div>
+
+            <div class="jd-flow">
+                <div class="jd-flow-step">
+                    <div class="jd-flow-num red">1</div>
+                    <h4>Motive</h4>
+                    <p>That pattern supplies a rational motive for Bartholomew to prefer Holcombe’s courtroom.</p>
+                </div>
+                <div class="jd-flow-step">
+                    <div class="jd-flow-num amber">2</div>
+                    <h4>Opportunity</h4>
+                    <p>North Carolina’s calendaring structure supplied the opportunity.</p>
+                </div>
+                <div class="jd-flow-step">
+                    <div class="jd-flow-num blue">3</div>
+                    <h4>Apparent Benefit</h4>
+                    <p>Holcombe’s rulings and trial-management decisions supplied the apparent benefit.</p>
+                </div>
+            </div>
+
+            <p>What remains missing is evidence connecting those three elements to a deliberate calendaring decision.</p>
+
+            <div class="apple-card u-migrated-424943c0" style="border-left: 4px solid #fb2424;">
+                <h3 class="u-migrated-8f56b1fd">What the Record Does — and Does Not — Establish</h3>
+                <p>The available evidence does not yet conclusively prove that Tiffany Bartholomew selected Paul Holcombe to preside over the Allen trial. It does establish a nonfrivolous basis to investigate strategic calendaring. Bartholomew operated within a system that gave the District Attorney’s Office substantial control over trial settings; the case was repeatedly continued; and Holcombe subsequently managed significant prosecution irregularities in ways that preserved the State’s case.</p>
+                <p style="margin-top: 12px;">Most notably, when a State witness testified under oath that Bartholomew told the complaining witness what she “should have said,” Holcombe did not investigate the prosecutor or the alleged coaching. He determined only that the reporting witness remained willing to testify truthfully and immediately continued the trial. Considered alongside same-day medical-record disclosure, disputed evidentiary rulings, the undisclosed Freeman–Love relationship, and the court’s asymmetrical treatment of prosecution and defense deficiencies, the circumstances reasonably raise the question whether Bartholomew maneuvered the case toward a judicial forum in which she expected accommodation rather than accountability.</p>
+            </div>
+
+            <div class="jd-pullquote">
+                <blockquote>
+                    The central inquiry is not whether Holcombe and Bartholomew once served together on a particular juvenile council. The current public record does not establish that. The central inquiry is: Who controlled each decision that ultimately placed the Allen case before Holcombe, what other judges were assigned when the case was continued or not reached, and did Bartholomew’s readiness and calendaring decisions change depending on who was scheduled to preside?
+                </blockquote>
+                <span class="jd-pullquote-attr">— Until the Records Are Produced</span>
+            </div>
+
+            <p>Until those records are produced, judge shopping remains an unresolved but evidence-supported inference — not a baseless accusation and not yet a conclusively proved fact.</p>
         </section>
 
         <section class="content-section">
@@ -1377,6 +1978,14 @@
                     <h3>4. Record Preservation &amp; Transparency</h3>
                     <p>Preserve the Happel colloquy transcript, linguistic analysis, Exhibit 4 foundation hearings, and DeMarco recordings as part of the official record. The Lee County Clerk and AOC should publish a complete index of all complaints, investigations, and disciplinary actions related to this case.</p>
                 </div>
+                <div class="card" style="border-left: 4px solid #c9a84c;">
+                    <h3>5. Calendaring &amp; Assignment Disclosure</h3>
+                    <p>Produce the complete superior-court master calendars, weekly judicial assignments, published trial calendars listing Allen, continuance motions with requesting party and stated reason, State readiness announcements, and communications concerning session assignment. Without those records, the strategic-calendaring inference cannot be confirmed or defeated.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid #5d98a2;">
+                    <h3>6. Relationship &amp; JCPC Records</h3>
+                    <p>Produce Johnston, Harnett, Lee, and Moore JCPC rosters, minutes, attendance, committee assignments, and conflict disclosures naming Holcombe or Bartholomew — not to assume collaboration, but to establish or eliminate any direct institutional collaboration beyond general professional roles.</p>
+                </div>
             </div>
         </section>
 
@@ -1386,7 +1995,8 @@
             <div class="apple-card u-migrated-424943c0" style="border-left: 4px solid #fb2424;">
                 <p>The Happel incident is not a story about what happened during a trial. It is a story about what the system permitted to happen and then chose to ignore. A witness came forward under oath. He reported that the prosecutor had tried to shape his testimony and the complainant's testimony. The court heard him, thanked him, and sent him to the stand. The State Bar was introduced to the prosecutor's file and did nothing. The system worked exactly as designed: it protected the process from disruption, and it protected the prosecutor from accountability.</p>
                 <p>The defendant was acquitted of the primary charge — a testament to the jury's ability to see through manufactured testimony. But acquittal is not justice. Justice requires a clean process, uncoached witnesses, properly authenticated evidence, honest prosecutors, and officers of the court held to the standards they impose on everyone else. None of those things happened here.</p>
-                <p>The Happel incident remains in the record as a documented coaching attempt with no consequence. Exhibit 4 was admitted without the State satisfying the court's own condition. DeMarco's statement was distorted. The ADA lied about sperm evidence and called it a misunderstanding. The system protected the process from disruption. It protected the prosecutor from accountability.</p>
+                <p>The Happel incident remains in the record as a documented coaching attempt with no consequence. Exhibit 4 was admitted without the State satisfying the court's own condition. DeMarco's statement was distorted. The ADA lied about sperm evidence and called it a misunderstanding. Critical medical records arrived on the day of trial. An undisclosed investigator–witness relationship never reached the defense record. And the question whether the case was maneuvered toward a judicial forum that would accommodate those irregularities — rather than investigate them — remains unanswered only because the calendaring and assignment records have not been produced.</p>
+                <p>Judge shopping is not yet a conclusively proved fact. It is also not a baseless accusation. Motive, opportunity, and apparent benefit are already in the record. What is missing is the paper trail that would connect them to a deliberate calendaring decision.</p>
                 <p style="font-size: 1.15rem; font-weight: 600; color: var(--light); text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(251,36,36,0.3);">It left the defendant to wonder whether justice is anything more than a word we use to describe the outcome when the machinery of the state decides to stop grinding.</p>
             </div>
         </section>
