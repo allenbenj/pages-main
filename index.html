@@ -179,6 +179,13 @@
         filter: none;
         transform: none;
       }
+      /* P1-5: every remaining animation/transition on the landing page goes instant */
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
     .hero-factors {
       list-style: none;

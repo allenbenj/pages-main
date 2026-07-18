@@ -75,11 +75,29 @@ If a task changes page titles, sections, or media, also run
     `?v=` bumped to `…759` on all 17 shared pages; verified with headless
     screenshots.
 
-* [ ] **P1-2 · Un-card the chrome**
+* [x] 2026-07-17 · **P1-2 · Un-card the chrome**
   * Reserve bordered/radius/shadow cards for actual evidence records.
 
   * `nav-tabs` becomes a flat bar; section pages use ruled 1 px dividers + spacing
     instead of nested cards (notably `overview.html`, `players.html`).
+
+  * Progress 2026-07-17: shipped site-wide. `nav-tabs` in `shared/styles.css` is
+    now a flat ruled bar — text links, hairline bottom rule, active tab in
+    `--gold-text` with a 2 px gold underline (pill container, backdrop blur, and
+    hover lift retired; the "More pages" dropdown inherits the flat tab and its
+    menu keeps its floating panel). Shared `.content-section` is now a ruled
+    band (no box, 1 px top rule, horizontal padding 0) and `.header` is a flat
+    epigraph — this removed the card-inside-card pattern on every section page
+    in one move. `overview.html`: hero, content sections, route/index/matrix/
+    summary cards all flattened to ruled blocks (map-nodes keep boxes — diagram
+    vocabulary), and the view switcher matches the flat nav tabs. `players.html`:
+    relationships section (fact lists + five stacked image blocks) un-carded
+    into ruled blocks; person dossiers keep their category-coded cards as
+    records. Cache-buster `?v=` bumped to `…761` on all 17 pages; verified with
+    headless screenshots of overview, players (full height), timeline, evidence,
+    and case-study. Remaining: the floating `.page-rail` "On this page" panel is
+    still carded (pages override it inline with `!important` — flatten together
+    with the P1-3 nav/button unification).
 
 * [ ] **P1-3 · Unify landing ↔ inner-page design tokens**
   * Map the Webflow landing's colors, type scale, and buttons onto the `:root`
