@@ -118,7 +118,7 @@ If a task changes page titles, sections, or media, also run
     `#d4b85c`. Remaining: one nav appearance and one button style shared by
     `index.html` and the shared pages.
 
-* [ ] **P1-4 · Dossier identity system** (extends the timeline's FALSE-stamp language)
+* [x] 2026-07-17 · **P1-4 · Dossier identity system** (extends the timeline's FALSE-stamp language)
   * Folio numbers per section (e.g. `§ 04 — Contradictions`).
 
   * Exhibit IDs on documents/video/audio; black timecode pills (mono, tabular
@@ -145,13 +145,46 @@ If a task changes page titles, sections, or media, also run
     `.section-title` in `shared/styles.css` renders Cormorant titles with the
     60px gradient underline (centered default, `.is-left` variant added; pilot
     applied on `overview.html`). The old pill-badge title treatment is retired.
-    Remaining: folio numbers, exhibit IDs / timecode pills, ruled card headers,
-    grayscale evidence treatment.
+    Rollout complete 2026-07-18: (1) Folio numbers — `.section-title::before`
+    renders a per-page CSS-counter kicker (`§ 01`, `§ 02` …) in gold JetBrains
+    Mono above every Cormorant title. (2) Timecode pills — WATCH VIDEO buttons
+    on `timeline.html` are now black mono pills prefixed with the gold exhibit
+    letter (`EX·A` … `EX·Q`); the letters are the owner's existing filename
+    codes, baked into `documents/data/timeline.json` as `data-exhibit`
+    attributes via the sync pipeline (render + verify green). (3) Ruled
+    annotation headers — `.card` / `.apple-card` / `.timeline-event` etc. lose
+    their border boxes (tinted sheets remain) and card headers plus
+    `.event-time` get a 1 px ruled underline; the JS-painted category left edge
+    is preserved as the per-theme accent. (4) Grayscale evidence — photographic
+    images render `grayscale(1)` so the red FALSE stamp is the lone chromatic
+    verdict; annotated inserts, mindmaps, and icons/stamps keep color, and the
+    zoom modal always opens full fidelity. Documents/audio keep their existing
+    descriptive filenames and mono tags (no invented ID registry). Cache-buster
+    `?v=` bumped to `…763` on all 17 pages; verified with headless screenshots
+    of timeline, players, contradictions, and documentspage.
 
-* [ ] **P1-5 · Honor `prefers-reduced-motion`**
+* [x] 2026-07-17 · **P1-5 · Honor `prefers-reduced-motion`**
   * Gate the smoke-quote animation and any scroll/hover transitions behind
     `@media (prefers-reduced-motion: no-preference)` (index.html inline CSS and
     `shared/styles.css`).
+
+  * Progress 2026-07-18: shipped. The smoke quote on `index.html` already had a
+    `reduce` block (static quote at 85 % opacity, no blur) — extended that block
+    so every landing-page animation/transition also collapses. Added one global
+    `@media (prefers-reduced-motion: reduce)` override at the end of
+    `shared/styles.css` covering all shared pages: `animation-duration` /
+    `transition-duration` → 0.01 ms (keeps `transitionend`/`animationend`
+    firing for JS listeners), `animation-iteration-count: 1`,
+    `scroll-behavior: auto`, and the `.content-section` `fadeIn` explicitly
+    removed. Used the single reduce-override form rather than wrapping each
+    rule in `no-preference` queries — one block covers every current and future
+    rule. Verified with `--force-prefers-reduced-motion` headless captures:
+    landing quote renders static and readable, shared pages intact. (Headless
+    Chrome defaults to `reduce`, so the animated path can't be A/B-tested in
+    headless — but those base animation rules are untouched.) Bonus finding:
+    `gsap.min.js` + `ScrollTrigger.min.js` load on `index.html` but are never
+    called — dead weight, candidate for removal under a future cleanup task.
+    Cache-buster `?v=` bumped to `…762` on all 17 pages.
 
 * [ ] **P1-6 · Rename `contradictions\_grouped.html`** (owner note: the name does
   not work for that page)

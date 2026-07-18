@@ -5233,3 +5233,74 @@ a, button, .nav-tab, .orbital-nav-link, .hover-zone {
         animation: none !important;
     }
 }
+
+
+/* ===== P1-4 · Dossier identity system ===== */
+
+/* Folio numbers on section titles: per-page mono gold kicker above the Cormorant title */
+body { counter-reset: folio; }
+.section-title { counter-increment: folio; }
+.section-title::before {
+    content: "§ " counter(folio, decimal-leading-zero);
+    display: block;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--gold-text);
+    margin-bottom: 10px;
+}
+
+/* WATCH VIDEO buttons: black timecode pill carrying the gold exhibit letter */
+body.timeline-page .video-btn {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    font-size: 0.72rem;
+    background: #090b0c;
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #e8eeee;
+}
+body.timeline-page .video-btn::before {
+    content: "EX·" attr(data-exhibit);
+    color: var(--gold-text);
+    font-weight: 600;
+}
+body.timeline-page .video-btn:hover,
+body.timeline-page .video-btn:focus-visible {
+    transform: none;
+    background: #101314;
+    border-color: rgba(212,184,92,0.45);
+}
+
+/* Records read as dossier sheets: tinted background, ruled annotation header, no
+   border box. The left edge stays free for the category accent that
+   card-colors.js paints inline per record. */
+.card, .apple-card, .evidence-card, .action-card, .stat-card, .timeline-event {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+.card .card-title, .card h3,
+.card .person-header,
+.apple-card > h2, .apple-card > h3,
+.evidence-card > h3, .action-card > h3, .stat-card > h3,
+.timeline-event .event-time {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+.card .person-header { margin-bottom: 12px; }
+
+/* Photographic evidence goes grayscale so the red FALSE stamp is the lone
+   chromatic verdict. Annotated inserts, mindmaps, and icons/stamps keep color;
+   the zoom modal (#modalImage is not targeted) always shows full fidelity. */
+img[data-modal-image]:not(.liar-stamp):not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
+.apple-img:not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
+[data-modal-image]:not([data-modal-image*="inserts"]):not([data-modal-image*="mindmaps"]):not([data-modal-image*="icons"]) img {
+    filter: grayscale(1);
+}
