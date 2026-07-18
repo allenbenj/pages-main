@@ -582,9 +582,12 @@ body.timeline-page .timeline-event.right.standalone {
 }
 
 body.timeline-page .event-time {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
     color: #9fc8cf;
     font-size: 0.82rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
@@ -1309,7 +1312,7 @@ body.timeline-page .fab-fixed img {
     main.page { display: block; }
 }
 .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.pill { font-size: 0.7rem; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); opacity: 0.8; }
+.pill { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; font-size: 0.68rem; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); opacity: 0.8; }
 
 /* Horizontal Misconduct Mindmap */
 .mindmap-wrapper {
@@ -1584,6 +1587,12 @@ body.timeline-page .fab-fixed img {
 }
 
 .card-filter-chip {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    font-size: 0.78rem;
     min-height: 36px;
     padding: 8px 12px;
     border-radius: 999px;

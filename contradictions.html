@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
+    <link rel="stylesheet" href="shared/styles.css?v=639006186749527759">
 <style>
         body {
             color: var(--light);
@@ -76,6 +76,25 @@
         #floating-image-contradictions img {
             border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
+        }
+        /* Editorial typography (P1-1): serif narrative, upright, left-aligned */
+        #contradictions-overview > p,
+        #contradictions-overview li,
+        .apple-card p,
+        .apple-card li {
+            font-family: var(--font-serif);
+            font-style: normal;
+            text-align: left;
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+        .apple-card > p.u-migrated-04d2dfee,
+        .apple-card > p.u-migrated-a1cd073c,
+        section#false-story-diagram > p.u-migrated-e1db2c34 {
+            font-family: var(--font-body);
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
     </style>
 

@@ -47,7 +47,7 @@ If a task changes page titles, sections, or media, also run
 
 ## P1 — Design system upgrades
 
-* [ ] **P1-1 · Three-role typography system**
+* [x] 2026-07-17 · **P1-1 · Three-role typography system**
   * Sans (Manrope) — UI and body, as now.
 
   * Display (Cormorant Garamond, adopted from `judicial-duty.html`) — page H1s and
@@ -65,9 +65,15 @@ If a task changes page titles, sections, or media, also run
     `-body` / `-serif` / `-mono`) and `.t-display` / `.t-serif` / `.t-mono`
     utilities in `shared/styles.css`; Manrope, Cormorant Garamond, and JetBrains
     Mono now actually load on all 16 shared pages (Manrope was referenced but
-    never loaded before). `.section-title` uses Cormorant site-wide. Remaining:
-    apply `.t-serif` to testimony/quote blocks (start with the centered italics
-    on `contradictions.html`) and `.t-mono` to timestamps, exhibit IDs, tag pills.
+    never loaded before). `.section-title` uses Cormorant site-wide.
+    Rollout complete 2026-07-17: `contradictions.html` narrative and testimony
+    now render upright Georgia serif, left-aligned, 1.05 rem / 1.75 (the old
+    centered blocks are gone; subtitle hints stay centered sans); timeline
+    `.event-time` stamps and the `.pill` / `.card-filter-chip` tags on
+    `documentspage.html` render JetBrains Mono, uppercase, tabular numerals —
+    all mapped CSS-side, so the JSON sources were untouched. Cache-buster
+    `?v=` bumped to `…759` on all 17 shared pages; verified with headless
+    screenshots.
 
 * [ ] **P1-2 · Un-card the chrome**
   * Reserve bordered/radius/shadow cards for actual evidence records.
