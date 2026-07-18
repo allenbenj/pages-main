@@ -12,7 +12,7 @@ If a task changes page titles, sections, or media, also run
 
 ## P0 — Fix soon
 
-* [ ] **P0-1 · Neutralize weak alt text on `timeline.html`**
+* [x] 2026-07-17 · **P0-1 · Neutralize weak alt text on `timeline.html`**
   29 of 32 images currently read `alt="LIAR"` or `alt="Placeholder image"`.
   * Evidence stills → neutral description, e.g. `alt="Still from Exhibit C video, 12:41 AM"`.
 
@@ -22,7 +22,7 @@ If a task changes page titles, sections, or media, also run
     then `python tools/sync_timeline_events.py render` and `... verify`. Do not hand-edit
     the event container in the page.
 
-* [ ] **P0-2 · Remove meaningless hover motion**
+* [x] 2026-07-17 · **P0-2 · Remove meaningless hover motion**
   * Delete `.header:hover { transform: translateY(-4px) ... }` and `.u-hover-scale`
     from `shared/styles.css`; audit inline page CSS for similar lift/scale hovers.
 
@@ -30,7 +30,7 @@ If a task changes page titles, sections, or media, also run
 
   * **Workflow:** bump the `?v=` cache-buster on `shared/styles.css` links across pages.
 
-* [ ] **P0-3 · Consolidate navigation**
+* [x] 2026-07-17 · **P0-3 · Consolidate navigation**
   * One primary nav (`nav-tabs`) + the "ON THIS PAGE" TOC panel. Remove the duplicate
     breadcrumb pill rows on `players.html` and `documentspage.html` (check other pages
     for the same pattern).
@@ -38,7 +38,7 @@ If a task changes page titles, sections, or media, also run
   * If tabs are added/renamed: edit `NAV_TABS` in `tools/sync_nav.py`, run the script,
     and update the `overview.html` hub — never hand-edit nav blocks.
 
-* [ ] **P0-4 · Replace Tailwind CDN runtime on `connections.html`**
+* [x] 2026-07-17 · **P0-4 · Replace Tailwind CDN runtime on `connections.html`**
   `assets/js/tailwindcdn.js` is a 407 KB JIT compiler shipped to production.
   * Replace with a small prebuilt CSS file containing only the utilities the page uses
     (Tailwind CLI one-off build or hand-extracted classes); delete the script tag.

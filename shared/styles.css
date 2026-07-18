@@ -1,14 +1,21 @@
 /* State v. Benjamin Allen - Shared Styles */
 
 :root {
-    --primary: #141718;
-    --secondary: #191d1e;
-    --accent: #5d98a2;
+    /* Neutrals — unified with the landing token system (P1-3) */
+    --primary: #15191a;
+    --secondary: #2b3233;
+    --light: #dae4e5;
+    --dark: #111415;
+    /* Accent — deep teal for fills; light teal for text/icons on dark */
+    --accent: #2c5a61;
+    --accent-hover: #3f818b;
+    --accent-text: #a6ced2;
+    /* Gold — the law: ornaments, citations, section-title rule */
+    --gold: #c9a84c;
+    --gold-text: #d4b85c;
     --success: #2f7a64;
     --warning: #8f5f38;
-    --light: #f3f7f7;
-    --dark: #111415;
-    --border: rgba(255,255,255,0.08);
+    --border: rgba(218,228,229,0.10);
     /* Category Colors */
     --cat-conflict: #b65a5a;
     --cat-contradict: #b65a5a;
@@ -17,9 +24,14 @@
     --cat-investigative: #8f5f38;
     --cat-success: #2f7a64;
     /* Card background shorthand */
-    --card-bg: rgba(18,22,23,0.94);
-    --card-gradient: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-    --card-border: rgba(255,255,255,0.08);
+    --card-bg: rgba(21,25,26,0.94);
+    --card-gradient: linear-gradient(180deg, rgba(218,228,229,0.03), rgba(218,228,229,0.015));
+    --card-border: rgba(218,228,229,0.10);
+    /* Typography roles (P1-1) */
+    --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-body: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
 }
 
 * {
@@ -29,11 +41,11 @@
 }
 
 body {
-    font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     background:
-        linear-gradient(180deg, rgba(255,255,255,0.03), transparent 20%),
-        radial-gradient(circle at top, rgba(120,193,201,0.08), transparent 28%),
-        linear-gradient(180deg, #121516, #171b1c);
+        linear-gradient(180deg, rgba(218,228,229,0.03), transparent 20%),
+        radial-gradient(circle at top, rgba(44,90,97,0.16), transparent 30%),
+        linear-gradient(180deg, var(--primary), var(--dark));
     color: var(--light);
     line-height: 1.6;
     overflow-x: hidden;
@@ -42,14 +54,6 @@ body {
 img {
     max-width: 100%;
     height: auto;
-}
-
-.u-hover-scale {
-    transition: transform 0.2s ease;
-}
-
-.u-hover-scale:hover {
-    transform: scale(1.02);
 }
 
 .container {
@@ -69,11 +73,6 @@ img {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.header:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.55);
 }
 
 .header h1 {
