@@ -839,13 +839,13 @@ function GraphEditor() {
     setHistoryIndex((prev) => Math.min(prev + 1, 23));
   }, [historyIndex]);
 
-  const refreshFromDb = useCallback(async () => {
+  const refreshFromSnapshot = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/network-analysis', { cache: 'no-store' });
+      const response = await fetch('./data/network-analysis.json', { cache: 'no-store' });
       if (!response.ok) {
-        throw new Error(`Request failed with ${response.status}`);
+        throw new Error(`Reviewed data snapshot unavailable (${response.status})`);
       }
 
       const data = (await response.json()) as GraphPayload;
@@ -870,8 +870,8 @@ function GraphEditor() {
   }, [fitView, setEdges, setNodes, syncSelectedState]);
 
   useEffect(() => {
-    refreshFromDb();
-  }, [refreshFromDb]);
+    refreshFromSnapshot();
+  }, [refreshFromSnapshot]);
 
   useEffect(() => {
     if (!activeResizer) return;
@@ -1732,10 +1732,10 @@ function GraphEditor() {
           </button>
 
           <button
-            onClick={refreshFromDb}
+            onClick={refreshFromSnapshot}
             className="px-3 text-xs h-8 border border-slate-700 hover:border-cyan-400 rounded-2xl flex items-center gap-x-1.5 hover:bg-slate-900"
           >
-            <RefreshCw className="w-3.5 h-3.5" /> REFRESH DB
+            <RefreshCw className="w-3.5 h-3.5" /> RELOAD SNAPSHOT
           </button>
 
           <button
@@ -1907,7 +1907,7 @@ function GraphEditor() {
 
           <div className="flex-1 overflow-auto p-3 space-y-1 text-sm" onDragOver={onDragOver}>
             {loading && (
-              <div className="p-6 text-center text-slate-500 text-sm">Loading graph data from evidence.db…</div>
+              <div className="p-6 text-center text-slate-500 text-sm">Loading reviewed network snapshot…</div>
             )}
 
             {!loading && error && (
@@ -1954,7 +1954,7 @@ function GraphEditor() {
 
           <div className="p-3 border-t border-slate-800 text-xs text-slate-500 flex items-center justify-between">
             <div>{filteredSources.length} visible sources</div>
-            <button onClick={refreshFromDb} className="underline hover:text-slate-300">Refresh</button>
+            <button onClick={refreshFromSnapshot} className="underline hover:text-slate-300">Refresh</button>
           </div>
         </div>
 
@@ -2487,10 +2487,10 @@ function GraphEditor() {
       <div className="h-9 bg-slate-950 border-t border-slate-800 text-xs text-slate-400 flex items-center px-4 justify-between font-mono">
         <div className="flex items-center gap-x-5">
           <div>{nodes.length} NODES • {edges.length} EDGES</div>
-          <div>{summary?.entityCount || 0} DB ENTITIES • {summary?.relationshipCount || 0} DB LINKS</div>
+          <div>{summary?.entityCount || 0} REVIEWED ENTITIES • {summary?.relationshipCount || 0} REVIEWED LINKS</div>
         </div>
 
-        <div>Run the root server for `/api/network-analysis`, then use Vite or a built single-file app for the UI</div>
+        <div>Reviewed static snapshot • update locally, review, then publish with the site build</div>
 
         <div className="flex gap-x-4">
           <span>CTRL+Z UNDO</span>

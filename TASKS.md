@@ -61,6 +61,14 @@ If a task changes page titles, sections, or media, also run
 
   * Implement as utility classes in `shared/styles.css`; bump `?v=`.
 
+  * Progress 2026-07-17: foundation shipped — font tokens (`--font-display` /
+    `-body` / `-serif` / `-mono`) and `.t-display` / `.t-serif` / `.t-mono`
+    utilities in `shared/styles.css`; Manrope, Cormorant Garamond, and JetBrains
+    Mono now actually load on all 16 shared pages (Manrope was referenced but
+    never loaded before). `.section-title` uses Cormorant site-wide. Remaining:
+    apply `.t-serif` to testimony/quote blocks (start with the centered italics
+    on `contradictions.html`) and `.t-mono` to timestamps, exhibit IDs, tag pills.
+
 * [ ] **P1-2 · Un-card the chrome**
   * Reserve bordered/radius/shadow cards for actual evidence records.
 
@@ -78,6 +86,13 @@ If a task changes page titles, sections, or media, also run
   * Gold unification: standardize on `#c9a84c` (ornament) / `#d4b85c` (small text
     on dark) from `judicial-duty.html`; the landing's `#e2b75a` retires.
     Semantic color map: gold = the law, teal = the record, red = the verdict.
+
+  * Progress 2026-07-17: `:root` in `shared/styles.css` now carries the landing
+    values (`#15191a` / `#2b3233` backgrounds, `#dae4e5` text, `#2c5a61` accent
+    plus new `--accent-hover` / `--accent-text`, tint-based `--border` /
+    `--card-*`); `--gold` / `--gold-text` added and `#e2b75a` retired to
+    `#d4b85c`. Remaining: one nav appearance and one button style shared by
+    `index.html` and the shared pages.
 
 * [ ] **P1-4 · Dossier identity system** (extends the timeline's FALSE-stamp language)
   * Folio numbers per section (e.g. `§ 04 — Contradictions`).
@@ -101,6 +116,13 @@ If a task changes page titles, sections, or media, also run
 
   * Touches `shared/styles.css` plus data-driven pages via their JSON sources
     (`timeline.json`, `contradictions.json`) — render + verify after editing.
+
+  * Progress 2026-07-17: the gold section-title rule now ships site-wide —
+    `.section-title` in `shared/styles.css` renders Cormorant titles with the
+    60px gradient underline (centered default, `.is-left` variant added; pilot
+    applied on `overview.html`). The old pill-badge title treatment is retired.
+    Remaining: folio numbers, exhibit IDs / timecode pills, ruled card headers,
+    grayscale evidence treatment.
 
 * [ ] **P1-5 · Honor `prefers-reduced-motion`**
   * Gate the smoke-quote animation and any scroll/hover transitions behind

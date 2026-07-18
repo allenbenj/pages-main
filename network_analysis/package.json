@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prebuild": "node scripts/build-network-snapshot.mjs",
+    "snapshot:capture": "node scripts/capture-network-snapshot.mjs"
   },
   "dependencies": {
     "clsx": "2.1.1",
