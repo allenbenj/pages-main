@@ -5,6 +5,7 @@
     --primary: #15191a;
     --secondary: #2b3233;
     --light: #dae4e5;
+    --text-muted: rgba(218,228,229,0.60);
     --dark: #111415;
     /* Accent — deep teal for fills; light teal for text/icons on dark */
     --accent: #2c5a61;

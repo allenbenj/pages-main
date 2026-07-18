@@ -15,10 +15,7 @@
   <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
   <style>
     body {
-      background:
-        radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
-        linear-gradient(180deg, #111415 0%, #0d1011 100%);
-      color: #eef3f4;
+      color: var(--light);
     }
 
     .container.page {
@@ -32,8 +29,8 @@
     .matrix-card,
     .index-card,
     .summary-card {
-      background: rgba(18,22,23,0.92);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       box-shadow: 0 20px 60px rgba(0,0,0,0.34);
     }
 
@@ -48,12 +45,12 @@
       font-size: clamp(2rem, 5vw, 4rem);
       line-height: 0.95;
       letter-spacing: -0.05em;
-      color: #f5fbfb;
+      color: var(--light);
     }
 
     .hero > p {
       max-width: 960px;
-      color: #d2dcdc;
+      color: var(--text-muted);
       font-size: 1.02rem;
       line-height: 1.8;
       margin-bottom: 0;
@@ -66,7 +63,7 @@
     }
 
     .content-section > p {
-      color: #d4dddd;
+      color: var(--text-muted);
       margin-bottom: 20px;
     }
 
@@ -92,9 +89,9 @@
       min-height: 44px;
       padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid var(--border);
       background: rgba(255,255,255,0.03);
-      color: #eef3f4;
+      color: var(--light);
       text-decoration: none;
       transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
@@ -103,13 +100,13 @@
     .quick-links a:hover,
     .node-links a:hover {
       transform: translateY(-1px);
-      background: rgba(93,152,162,0.16);
-      border-color: rgba(93,152,162,0.4);
+      background: rgba(44,90,97,0.16);
+      border-color: rgba(166,206,210,0.4);
     }
 
     .hero-actions a.primary {
-      background: rgba(93,152,162,0.18);
-      border-color: rgba(93,152,162,0.45);
+      background: rgba(44,90,97,0.18);
+      border-color: rgba(166,206,210,0.45);
     }
 
     .node-links a {
@@ -120,7 +117,7 @@
 
     /* Section title */
     .section-title {
-      color: #f5fbfb;
+      color: var(--light);
       margin: 0 0 14px;
     }
 
@@ -129,8 +126,8 @@
       display: flex;
       gap: 8px;
       margin-bottom: 24px;
-      background: rgba(18,22,23,0.92);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       border-radius: 999px;
       padding: 6px;
       width: fit-content;
@@ -151,14 +148,14 @@
     }
 
     .view-tab:hover {
-      color: #eef3f4;
+      color: var(--light);
       background: rgba(255,255,255,0.06);
     }
 
     .view-tab.active {
-      background: rgba(93,152,162,0.22);
+      background: rgba(44,90,97,0.22);
       color: #f0f8f8;
-      border: 1px solid rgba(93,152,162,0.35);
+      border: 1px solid rgba(166,206,210,0.35);
     }
 
     .view-panel { display: none; }
@@ -179,21 +176,21 @@
 
     .summary-card strong {
       display: block;
-      color: #f5fbfb;
+      color: var(--light);
       font-size: 2rem;
       margin-bottom: 6px;
     }
 
-    .summary-card p { color: #d4dddd; }
+    .summary-card p { color: var(--text-muted); }
 
     .summary-card code,
     .matrix-card code {
       display: inline-block;
-      color: #9fc8cf;
+      color: var(--accent-text);
       font-size: 0.78rem;
       font-family: "Manrope", system-ui, sans-serif;
-      background: rgba(93,152,162,0.1);
-      border: 1px solid rgba(93,152,162,0.22);
+      background: rgba(44,90,97,0.1);
+      border: 1px solid rgba(166,206,210,0.22);
       border-radius: 999px;
       padding: 2px 10px;
       letter-spacing: 0.04em;
@@ -217,7 +214,7 @@
     }
 
     .column-label {
-      color: #9fc8cf;
+      color: var(--accent-text);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-size: 0.75rem;
@@ -229,24 +226,24 @@
       border-radius: 22px;
       padding: 18px 18px 16px;
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)), rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
     }
 
     .map-node.hub {
-      background: linear-gradient(180deg, rgba(93,152,162,0.16), rgba(93,152,162,0.07)), rgba(255,255,255,0.02);
-      border-color: rgba(93,152,162,0.32);
+      background: linear-gradient(180deg, rgba(44,90,97,0.16), rgba(44,90,97,0.07)), rgba(255,255,255,0.02);
+      border-color: rgba(166,206,210,0.32);
       box-shadow: 0 16px 44px rgba(0,0,0,0.22);
     }
 
     .map-node h3 {
       margin: 0 0 8px;
-      color: #f5fbfb;
+      color: var(--light);
       font-size: 1.02rem;
     }
 
     .map-node p {
       margin: 0;
-      color: #d4dddd;
+      color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
     }
@@ -254,11 +251,11 @@
     .map-node code {
       display: inline-block;
       margin-bottom: 10px;
-      color: #9fc8cf;
+      color: var(--accent-text);
       font-size: 0.76rem;
       font-family: "Manrope", system-ui, sans-serif;
-      background: rgba(93,152,162,0.1);
-      border: 1px solid rgba(93,152,162,0.22);
+      background: rgba(44,90,97,0.1);
+      border: 1px solid rgba(166,206,210,0.22);
       border-radius: 999px;
       padding: 3px 10px;
       letter-spacing: 0.04em;
@@ -320,8 +317,8 @@
     .visual-map-note {
       margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #bfc9c9;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
       font-size: 0.95rem;
     }
 
@@ -338,11 +335,11 @@
     }
 
     .matrix-card h3 {
-      color: #f5fbfb;
+      color: var(--light);
       margin: 0 0 8px;
     }
 
-    .matrix-card > p { color: #d4dddd; margin-bottom: 0; }
+    .matrix-card > p { color: var(--text-muted); margin-bottom: 0; }
 
     /* Route cards */
     .route-grid {
@@ -357,7 +354,7 @@
     }
 
     .route-kicker {
-      color: #9fc8cf;
+      color: var(--accent-text);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-size: 0.78rem;
@@ -366,13 +363,13 @@
 
     .route-card h3 {
       margin: 0 0 10px;
-      color: #f6fbfb;
+      color: var(--light);
       font-size: 1.25rem;
     }
 
     .route-card p,
     .route-card li {
-      color: #d2dcdc;
+      color: var(--text-muted);
     }
 
     .route-card ul {
@@ -381,7 +378,7 @@
       line-height: 1.8;
     }
 
-    .route-card a { color: #f6fbfb; }
+    .route-card a { color: var(--light); }
 
     /* Page index cards */
     .page-index-grid {
@@ -396,7 +393,7 @@
     }
 
     .index-card h3 {
-      color: #f5fbfb;
+      color: var(--light);
       margin: 0 0 14px;
       font-size: 1.05rem;
     }
@@ -415,13 +412,13 @@
 
     .page-index-list a {
       display: block;
-      color: #d4dddd;
+      color: var(--text-muted);
       text-decoration: none;
       padding: 8px 0;
       transition: color 0.16s ease;
     }
 
-    .page-index-list a:hover { color: #9fc8cf; }
+    .page-index-list a:hover { color: var(--accent-text); }
 
     @media (max-width: 1100px) {
       .visual-map {

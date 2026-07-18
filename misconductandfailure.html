@@ -15,51 +15,48 @@
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
 <style>
         body.mindmap-page {
-            background:
-                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
-                linear-gradient(180deg, #131617 0%, #101314 100%);
-            color: #eef3f4;
+            color: var(--light);
         }
         .carousel-nav-wrapper {
             display: none !important;
         }
         .page-rail {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .page-rail-title,
         p[style*="#d4af37"],
         .context-card-link strong {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         .mindmap-section {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34) !important;
         }
         .mindmap-intro,
         .context-node,
         .context-card-link,
         .zoom-level {
-            color: #d4dddd !important;
+            color: var(--text-muted) !important;
         }
         .mindmap-controls button {
             background: rgba(23,27,28,0.88) !important;
-            border-color: rgba(255,255,255,0.08) !important;
-            color: #eef3f4 !important;
+            border-color: var(--border) !important;
+            color: var(--light) !important;
         }
         .mindmap-controls button:hover {
-            background: rgba(93,152,162,0.18) !important;
-            border-color: rgba(93,152,162,0.4) !important;
+            background: rgba(44,90,97,0.18) !important;
+            border-color: rgba(166,206,210,0.4) !important;
         }
         .mindmap-wrapper,
         .mindmap-context {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
         }
         #floating-image-mindmaps img {
-            border: 2px solid rgba(93,152,162,0.7) !important;
+            border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
         }
     </style>
@@ -205,7 +202,7 @@
             padding: 32px 24px 36px;
             background: radial-gradient(130% 120% at 10% 0%, rgba(24,40,67,0.95) 0%, rgba(12,18,31,0.96) 58%, rgba(8,12,21,0.98) 100%);
             border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--border);
             box-shadow: 0 20px 45px rgba(0,0,0,0.58), inset 0 1px 0 rgba(255,255,255,0.06);
         }
 

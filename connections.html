@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
     <link rel="stylesheet" href="assets/css/connections-tailwind.css">
     <style>
-        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-        .title-font { font-family: Georgia, "Times New Roman", serif; }
+        body { font-family: var(--font-body); }
+        .title-font { font-family: var(--font-display); }
         .pullquote {
-            border-left: 1px solid rgba(255,255,255,0.1);
+            border-left: 1px solid var(--border);
             background: transparent;
             box-shadow: none;
             padding: 1.5rem 2rem;
@@ -33,10 +33,7 @@
     </style>
     <style>
         body.connections-page {
-            background:
-                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
-                linear-gradient(180deg, #131617 0%, #101314 100%);
-            color: #eef3f4;
+            color: var(--light);
         }
         body.connections-page .container {
             max-width: 1800px;
@@ -48,20 +45,20 @@
         body.connections-page .connections-sidebar,
         body.connections-page .connections-viewport,
         body.connections-page .bg-zinc-900\/50 {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         body.connections-page .page-rail-title,
         body.connections-page .accent-text,
         body.connections-page .text-red-400,
         body.connections-page .text-yellow-400 {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         body.connections-page .warning-bar,
         body.connections-page .bg-gradient-to-r.from-\[\#4a3910\]\/60.to-transparent {
-            background: linear-gradient(90deg, rgba(93,152,162,0.22), rgba(93,152,162,0.04)) !important;
-            border-color: rgba(93,152,162,0.3) !important;
+            background: linear-gradient(90deg, rgba(44,90,97,0.22), rgba(44,90,97,0.04)) !important;
+            border-color: rgba(166,206,210,0.3) !important;
         }
         body.connections-page .text-zinc-400,
         body.connections-page .text-zinc-300,
@@ -72,24 +69,24 @@
         body.connections-page .section-title,
         body.connections-page .connections-sidebar strong,
         body.connections-page .connections-help strong {
-            color: #f3f7f7 !important;
+            color: var(--light) !important;
         }
         body.connections-page .connections-help,
         body.connections-page .node-item,
         body.connections-page .connections-sidebar-header button,
         body.connections-page .connections-sidebar-header .button {
             background: rgba(23,27,28,0.88);
-            border-color: rgba(255,255,255,0.08);
-            color: #eef3f4;
+            border-color: var(--border);
+            color: var(--light);
         }
         body.connections-page .node-item.selected,
         body.connections-page .connections-sidebar-header button:hover,
         body.connections-page .connections-sidebar-header .button:hover {
-            background: rgba(93,152,162,0.18);
-            border-color: rgba(93,152,162,0.4);
+            background: rgba(44,90,97,0.18);
+            border-color: rgba(166,206,210,0.4);
         }
         body.connections-page .fab-image img {
-            border: 2px solid rgba(93,152,162,0.7) !important;
+            border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
         }
     </style>
@@ -186,6 +183,42 @@
                 const editorLink = document.getElementById('open-editor');
 
                 try {
+                    // Handshake state — the message listener must be attached BEFORE any
+                    // await, otherwise the embed's 'init' event can arrive while the XML
+                    // is still downloading/parsing and the load is never posted.
+                    let xmlText = null;
+                    let embedReady = false;
+                    let loadSent = false;
+                    let didFit = false;
+                    const runInitialFit = () => {
+                        // Run fit multiple times to account for async render/layout timing.
+                        [120, 500, 1200].forEach((delay) => {
+                            setTimeout(() => {
+                                try { iframe.contentWindow.postMessage(JSON.stringify({ action: 'fit' }), '*'); } catch (e) {}
+                            }, delay);
+                        });
+                    };
+                    const postLoad = () => {
+                        if (!xmlText || !embedReady || loadSent) return;
+                        loadSent = true;
+                        try {
+                            iframe.contentWindow.postMessage(JSON.stringify({ action: 'load', xml: xmlText }), '*');
+                        } catch (e) {}
+                        runInitialFit();
+                    };
+                    window.addEventListener('message', (evt) => {
+                        let data = evt.data;
+                        try { data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data)); } catch(e) { data = evt.data; }
+                        if (data && data.event === 'init') {
+                            embedReady = true;
+                            postLoad();
+                        }
+                        if (data && data.event === 'load' && !didFit) {
+                            didFit = true;
+                            runInitialFit();
+                        }
+                    });
+
                     const xmlCandidates = [
                         'documents/connections/For_web.drawio.xml',
                         'documents/connections/For_web.drawio.xml',
@@ -209,7 +242,7 @@
                         throw new Error('Could not fetch drawio XML from known paths');
                     }
                     if (editorLink) editorLink.href = xmlPath;
-                    const xmlText = await res.text();
+                    xmlText = await res.text();
 
                     // Parse nodes
                     const parser = new DOMParser();
@@ -246,30 +279,9 @@
                         listEl.appendChild(li);
                     });
 
-                    let didFit = false;
-                    const runInitialFit = () => {
-                        // Run fit multiple times to account for async render/layout timing.
-                        [120, 500, 1200].forEach((delay) => {
-                            setTimeout(() => {
-                                try { iframe.contentWindow.postMessage(JSON.stringify({ action: 'fit' }), '*'); } catch (e) {}
-                            }, delay);
-                        });
-                    };
-
-                    window.addEventListener('message', (evt) => {
-                        let data = evt.data;
-                        try { data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data)); } catch(e) { data = evt.data; }
-                        if (data && data.event === 'init') {
-                            try {
-                                iframe.contentWindow.postMessage(JSON.stringify({ action: 'load', xml: xmlText }), '*');
-                                runInitialFit();
-                            } catch (e) {}
-                        }
-                        if (data && data.event === 'load' && !didFit) {
-                            didFit = true;
-                            runInitialFit();
-                        }
-                    });
+                    // If the embed finished initializing while the XML was in flight,
+                    // the handshake completes now; otherwise the 'init' listener does it.
+                    postLoad();
 
                     const defaultKeywords = ['giglio', 'brady', 'fabricat', 'extortion', 'conceal', 'perjury', 'false', 'withhold'];
                     document.getElementById('open-defaults').addEventListener('click', () => {

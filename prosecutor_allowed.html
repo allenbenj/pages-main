@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
     <style>
         body {
-            background:
-                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
-                linear-gradient(180deg, #131617 0%, #101314 100%);
-            color: #eef3f4;
+            color: var(--light);
         }
         body .container {
             max-width: 1800px;
@@ -27,27 +24,27 @@
             display: none !important;
         }
         .page-rail {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .page-rail-title,
         h3[style*="#fbbf24"],
         h4[style*="#fbbf24"],
         p[style*="#fbbf24"] {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         .section-title,
         .apple-card h3,
         .card h3,
         h3[style*="text-align: center"] {
-            color: #f3f7f7 !important;
+            color: var(--light) !important;
         }
         .apple-card,
         .card,
         .comparison-table {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .apple-card,
@@ -56,15 +53,15 @@
         .comparison-table td,
         .comparison-table th,
         .card p {
-            color: #d4dddd !important;
+            color: var(--text-muted) !important;
         }
         [style*="border-left: 4px solid #fbbf24"],
         [style*="border-left: 4px solid #60a5fa"],
         [style*="border-left: 4px solid #fb2424"] {
-            border-left-color: #5d98a2 !important;
+            border-left-color: var(--accent-text) !important;
         }
         .fab-image img {
-            border: 2px solid rgba(93,152,162,0.7) !important;
+            border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
         }
     </style>

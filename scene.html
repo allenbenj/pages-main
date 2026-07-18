@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
     <style>
         body {
-            background:
-                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
-                linear-gradient(180deg, #131617 0%, #101314 100%);
-            color: #eef3f4;
+            color: var(--light);
         }
         body .container {
             max-width: 1800px;
@@ -27,24 +24,24 @@
             display: none !important;
         }
         .page-rail {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .page-rail-title,
         strong[style*="#d4af37"],
         .card-label {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         .section-title,
         h2,
         h3[style*="color: var(--light)"] {
-            color: #f3f7f7 !important;
+            color: var(--light) !important;
         }
         .card,
         .apple-card {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34) !important;
         }
         .card,
@@ -52,24 +49,24 @@
         .apple-card,
         .apple-card *:not(strong),
         p[style*="opacity:0.85"] {
-            color: #d4dddd !important;
+            color: var(--text-muted) !important;
         }
         [style*="border: 3px solid #d4af37"] {
-            border-color: rgba(93,152,162,0.32) !important;
+            border-color: rgba(166,206,210,0.32) !important;
         }
         [style*="rgba(212,175,55,0.1)"] {
-            background: rgba(93,152,162,0.12) !important;
+            background: rgba(44,90,97,0.12) !important;
         }
         [style*="color: #d4af37"],
         [style*="color: #fbbf24"] {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         [style*="border-left: 4px solid #22c55e"],
         [style*="border-left: 4px solid #dc2626"] {
-            border-left-color: rgba(93,152,162,0.4) !important;
+            border-left-color: rgba(166,206,210,0.4) !important;
         }
         .fab-image img {
-            border: 2px solid rgba(93,152,162,0.7) !important;
+            border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
         }
     </style>

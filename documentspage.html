@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
     <style>
         body.doc-hub {
-            background:
-                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 35%),
-                linear-gradient(180deg, #131617 0%, #101314 100%);
-            color: #eef3f4;
+            color: var(--light);
         }
         body.doc-hub .container {
             max-width: 1800px;
@@ -32,8 +29,8 @@
         body.doc-hub .project-search-results,
         body.doc-hub .card,
         body.doc-hub .matrix-card {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         body.doc-hub .page-rail-title,
@@ -41,14 +38,14 @@
         body.doc-hub .case-glance-label,
         body.doc-hub .project-search-status,
         body.doc-hub .card-search-label {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         body.doc-hub .section-title,
         body.doc-hub .case-glance-value,
         body.doc-hub .card-title,
         body.doc-hub .matrix-card h3,
         body.doc-hub .project-search-results strong {
-            color: #f3f7f7 !important;
+            color: var(--light) !important;
         }
         body.doc-hub .card-body,
         body.doc-hub .card-body p,
@@ -59,34 +56,34 @@
         body.doc-hub label,
         body.doc-hub select,
         body.doc-hub input {
-            color: #d4dddd !important;
+            color: var(--text-muted) !important;
         }
         body.doc-hub .card-filter-chip,
         body.doc-hub .matrix-link,
         body.doc-hub .card-sort-select,
         body.doc-hub .card-search-input {
             background: rgba(23,27,28,0.88) !important;
-            border-color: rgba(255,255,255,0.08) !important;
-            color: #eef3f4 !important;
+            border-color: var(--border) !important;
+            color: var(--light) !important;
         }
         body.doc-hub .card-filter-chip.is-active,
         body.doc-hub .card-filter-chip:hover,
         body.doc-hub .matrix-link:hover {
-            background: rgba(93,152,162,0.18) !important;
-            border-color: rgba(93,152,162,0.4) !important;
-            color: #f3f7f7 !important;
+            background: rgba(44,90,97,0.18) !important;
+            border-color: rgba(166,206,210,0.4) !important;
+            color: var(--light) !important;
         }
         body.doc-hub [style*="border-left: 3px solid var(--accent)"] {
-            border-left-color: #5d98a2 !important;
+            border-left-color: var(--accent-text) !important;
             background: rgba(23,27,28,0.9) !important;
         }
         body.doc-hub .pill {
-            background: rgba(93,152,162,0.12) !important;
+            background: rgba(44,90,97,0.12) !important;
             color: #d9edef !important;
-            border-color: rgba(93,152,162,0.25) !important;
+            border-color: rgba(166,206,210,0.25) !important;
         }
         body.doc-hub .fab-image img {
-            border: 2px solid rgba(93,152,162,0.7) !important;
+            border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
         }
     </style>
@@ -1546,23 +1543,23 @@ If this person made a mistake over such a simple thing as reading a document tha
             <section id="evidence-inventory" class="content-section" aria-labelledby="evidenceInventoryHeading">
                 <style scoped>
                     #evidence-inventory .ei-stats { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0 18px; }
-                    #evidence-inventory .ei-stat { background: rgba(93,152,162,0.12); border: 1px solid rgba(93,152,162,0.28); border-radius: 12px; padding: 10px 14px; font-size: 0.9rem; color: #d9edef; }
-                    #evidence-inventory .ei-stat strong { color: #f3f7f7; font-size: 1.05rem; margin-right: 6px; }
+                    #evidence-inventory .ei-stat { background: rgba(44,90,97,0.12); border: 1px solid rgba(166,206,210,0.28); border-radius: 12px; padding: 10px 14px; font-size: 0.9rem; color: #d9edef; }
+                    #evidence-inventory .ei-stat strong { color: var(--light); font-size: 1.05rem; margin-right: 6px; }
                     #evidence-inventory .ei-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
-                    #evidence-inventory .ei-search { flex: 1 1 240px; min-height: 40px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: #eef3f4; }
-                    #evidence-inventory .ei-chip { min-height: 36px; padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); color: #eef3f4; cursor: pointer; }
-                    #evidence-inventory .ei-chip.is-active { background: rgba(93,152,162,0.18); border-color: rgba(93,152,162,0.45); }
-                    #evidence-inventory .ei-select { min-height: 40px; padding: 6px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #161b1c; color: #eef3f4; }
-                    #evidence-inventory .ei-meta { color: #9fc8cf; font-size: 0.88rem; margin: 0 0 10px; }
-                    #evidence-inventory .ei-table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; }
+                    #evidence-inventory .ei-search { flex: 1 1 240px; min-height: 40px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: var(--light); }
+                    #evidence-inventory .ei-chip { min-height: 36px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--light); cursor: pointer; }
+                    #evidence-inventory .ei-chip.is-active { background: rgba(44,90,97,0.18); border-color: rgba(166,206,210,0.45); }
+                    #evidence-inventory .ei-select { min-height: 40px; padding: 6px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #161b1c; color: var(--light); }
+                    #evidence-inventory .ei-meta { color: var(--accent-text); font-size: 0.88rem; margin: 0 0 10px; }
+                    #evidence-inventory .ei-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; }
                     #evidence-inventory table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
                     #evidence-inventory th, #evidence-inventory td { text-align: left; padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
-                    #evidence-inventory th { color: #9fc8cf; font-weight: 600; position: sticky; top: 0; background: #141919; }
-                    #evidence-inventory td.ei-title { color: #eef3f4; }
+                    #evidence-inventory th { color: var(--accent-text); font-weight: 600; position: sticky; top: 0; background: #141919; }
+                    #evidence-inventory td.ei-title { color: var(--light); }
                     #evidence-inventory td.ei-dim { color: #b7c4c5; white-space: nowrap; }
                     #evidence-inventory td.ei-hash { color: #77878a; font-family: ui-monospace, monospace; font-size: 0.78rem; }
-                    #evidence-inventory a.ei-open { color: #9fc8cf; white-space: nowrap; }
-                    #evidence-inventory .ei-status { color: #d4dddd; padding: 12px 4px; }
+                    #evidence-inventory a.ei-open { color: var(--accent-text); white-space: nowrap; }
+                    #evidence-inventory .ei-status { color: var(--text-muted); padding: 12px 4px; }
                 </style>
                 <h2 id="evidenceInventoryHeading" class="section-title">Evidence File Inventory</h2>
                 <p class="section-subtitle">Every evidence file shipped with this site, rendered from <code>documents/data/evidence-export.json</code> — a machine-generated, verified inventory. Each file carries its SHA-256 integrity hash.</p>

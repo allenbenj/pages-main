@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         /* ═══════════════════════════════════════════
            JUDICIAL DUTY — Professional Design System
@@ -26,8 +26,8 @@
             --jd-border: rgba(255,255,255,0.07);
             --jd-border-strong: rgba(255,255,255,0.10);
             --jd-text: #d4dddf;
-            --jd-text-muted: #8899a0;
-            --jd-heading: #eef3f4;
+            --jd-text-muted: var(--text-muted);
+            --jd-heading: var(--light);
             --jd-gold: #c9a84c;
             --jd-gold-dim: rgba(201,168,76,0.18);
             --jd-gold-text: #d4b85c;
@@ -47,13 +47,13 @@
             --jd-radius-lg: 22px;
             --jd-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-body: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             --font-mono: 'JetBrains Mono', 'Consolas', monospace;
         }
 
         body {
             background:
-                radial-gradient(ellipse at 50% 0%, rgba(93,152,162,0.10), transparent 50%),
+                radial-gradient(ellipse at 50% 0%, rgba(44,90,97,0.10), transparent 50%),
                 linear-gradient(180deg, #0d1114 0%, #0a0e10 100%);
             color: var(--jd-text);
             font-family: var(--font-body);
@@ -147,9 +147,9 @@
         }
         .nav-tab:hover,
         .nav-tab.active {
-            background: rgba(93,152,162,0.14);
-            border-color: rgba(93,152,162,0.35);
-            color: #eef3f4;
+            background: rgba(44,90,97,0.14);
+            border-color: rgba(166,206,210,0.35);
+            color: var(--light);
         }
 
         /* ── HERO ── */
@@ -157,7 +157,7 @@
             position: relative;
             overflow: hidden;
             background:
-                radial-gradient(ellipse at 80% 20%, rgba(93,152,162,0.10), transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(44,90,97,0.10), transparent 50%),
                 radial-gradient(ellipse at 20% 80%, rgba(201,91,91,0.06), transparent 50%),
                 var(--jd-surface);
             border: 1px solid var(--jd-border-strong);
@@ -863,7 +863,7 @@
                 <span class="jd-pullquote-attr">— The Structural Imbalance</span>
             </div>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">The Practical Consequences</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">The Practical Consequences</h3>
             <div class="jd-flow">
                 <div class="jd-flow-step">
                     <div class="jd-flow-num red">1</div>
@@ -1009,7 +1009,7 @@
                 <span class="jd-pullquote-attr">— Procedural Error Analysis</span>
             </div>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">Why the Objection Was Valid — And Why the Ruling Failed</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">Why the Objection Was Valid — And Why the Ruling Failed</h3>
 
             <div class="jd-vignette">
                 <div class="jd-vignette-icon red">
@@ -1051,7 +1051,7 @@
                 </div>
             </div>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">What Should Have Happened</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">What Should Have Happened</h3>
 
             <div class="jd-transcript" style="border-color: rgba(91,141,165,0.18);">
                 <div class="jd-transcript-header" style="background: rgba(91,141,165,0.04); border-bottom-color: rgba(91,141,165,0.12);">
@@ -1189,10 +1189,10 @@
                 <span class="jd-pullquote-attr">— Judicial Endorsement of Disputed Evidence</span>
             </div>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">The Rule of Completeness Violation</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">The Rule of Completeness Violation</h3>
             <p>The State offered only the first page of the Facebook exchange. Later pages identified another user of the phone and undermined the attribution the State was attempting to prove. Under <strong>N.C. R. Evid. 106</strong>, the defense was entitled to have the complete context admitted contemporaneously — not as a separate defense exhibit offered later. The judge recognized this problem yet placed the burden of completeness on the defense, allowing the State to create the initial narrative and requiring the defense to undo it after the jury had already heard the prosecution's version.</p>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">Why This Matters: The Cumulative Harm</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">Why This Matters: The Cumulative Harm</h3>
             <p>The prejudice from Exhibit 4 was not confined to the words in the messages. The ruling affected the jury's perception of the entire trial. The jurors saw the defense raise a specific, fact-based objection; the judge reject the defense's position; the judge describe the State's evidence as reliable; the prosecutor proceed beyond the stated limitation; and no judicial correction when the required foundation failed to materialize. <strong>The implicit message was powerful: the State's evidence was trustworthy, the defense's objections lacked merit, and the prosecutor had the court's approval.</strong></p>
 
             <div class="grid grid-2">
@@ -1225,7 +1225,7 @@
                 <span class="jd-pullquote-attr">— The "Misunderstanding" Defense</span>
             </div>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">The Prosecutor's Credentials — Why "Misunderstanding" Is Not Credible</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">The Prosecutor's Credentials — Why "Misunderstanding" Is Not Credible</h3>
 
             <div class="jd-benchbook">
                 <h3>
@@ -1259,11 +1259,11 @@
                 <span class="jd-pullquote-attr">— Analysis of the "Misunderstanding" Claim</span>
             </div>
 
-            <h3 style="color: #f3f7f7; margin: 24px 0 14px;">The Connective Tissue</h3>
+            <h3 style="color: var(--light); margin: 24px 0 14px;">The Connective Tissue</h3>
             <p>The lie during plea negotiations is directly tied to the Happel coaching incident and the Exhibit 4 authentication failure. All three events reflect the same prosecutorial disposition: to use the tools of the courtroom — witness testimony, electronic evidence, forensic claims — in ways that the record does not support, and to rely on procedural leniency when those tools are challenged. The "misunderstanding" explanation is the connective tissue: it reveals a prosecutor who expects to be forgiven for overreach because the system is designed to protect her from consequences.</p>
 
             <!-- ═══════ CONSEQUENCE FLOW ═══════ -->
-            <h3 style="color: #f3f7f7; margin: 28px 0 14px;">The Chain of Misrepresentation</h3>
+            <h3 style="color: var(--light); margin: 28px 0 14px;">The Chain of Misrepresentation</h3>
             <div class="jd-flow">
                 <div class="jd-flow-step">
                     <div class="jd-flow-num red">1</div>
@@ -1289,7 +1289,7 @@
             <div class="apple-card u-migrated-424943c0">
                 <h3 class="u-migrated-8f56b1fd">The Linguistic Shift</h3>
                 <p>Forensic linguistic analysis comparing Deal's 2019 statements to her 2023 trial testimony reveals cosine similarity collapsing from <strong>1.0</strong> to <strong>0.28</strong>. The shift is directional:</p>
-                <ul style="color: #d4dddd; padding-left: 1.5rem;">
+                <ul style="color: var(--text-muted); padding-left: 1.5rem;">
                     <li>She began claiming she <strong>"froze"</strong> — a term absent from her 2019 interviews.</li>
                     <li>She began invoking <strong>"fear of witnesses"</strong> — precisely what Bartholomew was heard coaching.</li>
                     <li>Her vocabulary shifted from concrete ("truck," "bathroom," "keys") to legalistic ("force," "fear," "trust," "freezing," "triggers").</li>
@@ -1387,7 +1387,7 @@
                 <p>The Happel incident is not a story about what happened during a trial. It is a story about what the system permitted to happen and then chose to ignore. A witness came forward under oath. He reported that the prosecutor had tried to shape his testimony and the complainant's testimony. The court heard him, thanked him, and sent him to the stand. The State Bar was introduced to the prosecutor's file and did nothing. The system worked exactly as designed: it protected the process from disruption, and it protected the prosecutor from accountability.</p>
                 <p>The defendant was acquitted of the primary charge — a testament to the jury's ability to see through manufactured testimony. But acquittal is not justice. Justice requires a clean process, uncoached witnesses, properly authenticated evidence, honest prosecutors, and officers of the court held to the standards they impose on everyone else. None of those things happened here.</p>
                 <p>The Happel incident remains in the record as a documented coaching attempt with no consequence. Exhibit 4 was admitted without the State satisfying the court's own condition. DeMarco's statement was distorted. The ADA lied about sperm evidence and called it a misunderstanding. The system protected the process from disruption. It protected the prosecutor from accountability.</p>
-                <p style="font-size: 1.15rem; font-weight: 600; color: #f3f7f7; text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(251,36,36,0.3);">It left the defendant to wonder whether justice is anything more than a word we use to describe the outcome when the machinery of the state decides to stop grinding.</p>
+                <p style="font-size: 1.15rem; font-weight: 600; color: var(--light); text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(251,36,36,0.3);">It left the defendant to wonder whether justice is anything more than a word we use to describe the outcome when the machinery of the state decides to stop grinding.</p>
             </div>
         </section>
 

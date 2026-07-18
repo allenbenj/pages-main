@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="shared/styles.css?v=639006186749527758">
 <style>
         body {
-            background:
-                radial-gradient(circle at top, rgba(93,152,162,0.14), transparent 34%),
-                linear-gradient(180deg, #131617 0%, #101314 100%);
-            color: #eef3f4;
+            color: var(--light);
         }
         body .container {
             max-width: 1800px;
@@ -27,8 +24,8 @@
             display: none !important;
         }
         .page-rail {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .page-rail-title,
@@ -36,20 +33,20 @@
         p[style*="#fbbf24"],
         h3[style*="#fbbf24"],
         strong[style*="#d4af37"] {
-            color: #9fc8cf !important;
+            color: var(--accent-text) !important;
         }
         .section-title,
         .apple-card h2,
         .apple-card h3,
         h2[style*="text-align: center"] {
-            color: #f3f7f7 !important;
+            color: var(--light) !important;
         }
         .apple-card,
         figure[style*="background: rgba(15, 23, 42, 0.72)"],
         .connections-sidebar,
         .connections-viewport {
-            background: rgba(18,22,23,0.92) !important;
-            border-color: rgba(255,255,255,0.08) !important;
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .apple-card p,
@@ -62,22 +59,22 @@
         .connections-list p,
         .connections-help,
         .connections-help li {
-            color: #d4dddd !important;
+            color: var(--text-muted) !important;
         }
         [style*="border-left: 4px solid #60a5fa"],
         [style*="border-left: 4px solid #fbbf24"] {
-            border-left-color: #5d98a2 !important;
+            border-left-color: var(--accent-text) !important;
         }
         [style*="rgba(212,175,55,0.1)"] {
-            background: rgba(93,152,162,0.12) !important;
+            background: rgba(44,90,97,0.12) !important;
         }
         .node-item.selected,
         .button:hover {
-            background: rgba(93,152,162,0.18) !important;
-            border-color: rgba(93,152,162,0.4) !important;
+            background: rgba(44,90,97,0.18) !important;
+            border-color: rgba(166,206,210,0.4) !important;
         }
         #floating-image-contradictions img {
-            border: 2px solid rgba(93,152,162,0.7) !important;
+            border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
         }
     </style>
@@ -357,7 +354,7 @@
             <div class="connections-sidebar-header">
                 <strong>Nodes</strong>
                 <div class="u-migrated-06307df0">
-                    <a class="button" id="false-story-open-editor" href="documents/connections/False%20Story.drawio.xml" title="Download/Open XML" target="_top">Download XML</a>
+                    <a class="button" id="false-story-open-editor" href="documents/connections/False%20Story.web.drawio.xml" title="Download/Open web XML" target="_top">Download XML</a>
                     <a class="button u-migrated-17dc7330" href="documents/graphics/house_area/False%20Story.webp" title="View diagram image" target="_top">View Image</a>
                 </div>
             </div>
@@ -407,11 +404,76 @@
             return;
         }
 
+        // diagrams.net sends its `init` event only once. Register this listener
+        // before fetching the XML, otherwise a fast iframe can finish loading
+        // before the fetch completes and leave the diagram blank.
+        let viewerReady = false;
+        let xmlText = null;
+        let didLoadDiagram = false;
+        let didFit = false;
+
+        const runInitialFit = () => {
+            [120, 500, 1200].forEach((delay) => {
+                setTimeout(() => {
+                    try {
+                        iframe.contentWindow.postMessage(JSON.stringify({ action: 'fit' }), 'https://embed.diagrams.net');
+                    } catch (error) {}
+                }, delay);
+            });
+        };
+
+        const loadDiagram = () => {
+            if (!viewerReady || !xmlText || didLoadDiagram) return;
+            didLoadDiagram = true;
+            iframe.contentWindow.postMessage(JSON.stringify({ action: 'load', xml: xmlText }), 'https://embed.diagrams.net');
+        };
+
+        window.addEventListener('message', (event) => {
+            if (event.origin !== 'https://embed.diagrams.net' || event.source !== iframe.contentWindow) return;
+
+            let data = event.data;
+            try {
+                data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data));
+            } catch (error) {
+                return;
+            }
+
+            if (data && data.event === 'init') {
+                viewerReady = true;
+                loadDiagram();
+            }
+
+            if (data && data.event === 'load' && !didFit) {
+                didFit = true;
+                runInitialFit();
+            }
+        });
+
+        const showImageFallback = (message) => {
+            const viewport = iframe.closest('.connections-viewport') || iframe.parentElement;
+            if (viewport) {
+                viewport.innerHTML = `
+                    <figure class="false-story-fallback" style="margin:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;box-sizing:border-box;">
+                        <img
+                            loading="lazy"
+                            decoding="async"
+                            src="documents/graphics/house_area/False%20Story.webp"
+                            alt="False Story diagram"
+                            data-modal-image="documents/graphics/house_area/False Story.webp"
+                            style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:8px;">
+                        <figcaption style="color:#cbd5e1;font-size:0.9rem;text-align:center;">${message}</figcaption>
+                    </figure>
+                `;
+            }
+            listEl.innerHTML = `<p class="u-migrated-291eef4e">${message}</p><p class="u-migrated-130d9ba6">Showing the static diagram image instead.</p>`;
+        };
+
         try {
+            // Prefer the compressed web export (~3 MB) over the full archive (~35 MB).
             const drawioCandidates = [
+                'documents/connections/False Story.web.drawio.xml',
+                'documents/connections/False%20Story.web.drawio.xml',
                 'documents/connections/False Story.drawio.xml',
-                'documents/connections/False Story.drawio.xml',
-                'documents/connections/False%20Story.drawio.xml',
                 'documents/connections/False%20Story.drawio.xml'
             ];
             let filePath = null;
@@ -419,7 +481,7 @@
 
             for (const candidate of drawioCandidates) {
                 const testUrl = new URL(candidate, window.location.href).href;
-                const attempt = await fetch(testUrl);
+                const attempt = await fetch(encodeURI(testUrl));
                 if (attempt.ok) {
                     filePath = candidate;
                     response = attempt;
@@ -435,9 +497,17 @@
                 editorLink.href = filePath;
             }
 
-            const xmlText = await response.text();
+            xmlText = await response.text();
+            if (!xmlText || xmlText.length < 100) {
+                throw new Error('False Story draw.io XML was empty');
+            }
+
             const parser = new DOMParser();
             const doc = parser.parseFromString(xmlText, 'text/xml');
+            if (doc.querySelector('parsererror')) {
+                throw new Error('False Story draw.io XML could not be parsed');
+            }
+
             const cells = Array.from(doc.querySelectorAll('mxCell[vertex="1"]'));
 
             listEl.innerHTML = '';
@@ -462,8 +532,8 @@
                     item.dataset.cellId = node.id;
                     item.addEventListener('click', () => {
                         try {
-                            iframe.contentWindow.postMessage(JSON.stringify({ action: 'select', ids: [node.id] }), '*');
-                            iframe.contentWindow.postMessage(JSON.stringify({ action: 'zoom', value: 1.2 }), '*');
+                            iframe.contentWindow.postMessage(JSON.stringify({ action: 'select', ids: [node.id] }), 'https://embed.diagrams.net');
+                            iframe.contentWindow.postMessage(JSON.stringify({ action: 'zoom', value: 1.2 }), 'https://embed.diagrams.net');
                         } catch (error) {
                             console.warn('postMessage to draw.io failed', error);
                         }
@@ -476,43 +546,20 @@
                 });
             }
 
-            let didFit = false;
-            const runInitialFit = () => {
-                [120, 500, 1200].forEach((delay) => {
-                    setTimeout(() => {
-                        try {
-                            iframe.contentWindow.postMessage(JSON.stringify({ action: 'fit' }), '*');
-                        } catch (error) {}
-                    }, delay);
-                });
-            };
+            loadDiagram();
 
-            window.addEventListener('message', (event) => {
-                let data = event.data;
-                try {
-                    data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data));
-                } catch (error) {
-                    data = event.data;
+            // If diagrams.net never finishes loading a large embed, fall back to the static image.
+            setTimeout(() => {
+                if (!didFit) {
+                    showImageFallback('Interactive viewer timed out. Static diagram is shown below.');
                 }
-
-                if (data && data.event === 'init') {
-                    try {
-                        iframe.contentWindow.postMessage(JSON.stringify({ action: 'load', xml: xmlText }), '*');
-                        runInitialFit();
-                    } catch (error) {}
-                }
-
-                if (data && data.event === 'load' && !didFit) {
-                    didFit = true;
-                    runInitialFit();
-                }
-            });
+            }, 20000);
         } catch (error) {
             console.error('Failed to initialize False Story viewer', error);
             const protocolHint = window.location.protocol === 'file:'
                 ? 'Open this page through a local web server so the local XML file can be loaded from the project archive.'
-                : '';
-            listEl.innerHTML = `<p class="u-migrated-291eef4e">Failed to load False Story diagram: ${error.message}</p>${protocolHint ? `<p class="u-migrated-130d9ba6">${protocolHint}</p>` : ''}`;
+                : error.message;
+            showImageFallback(`Failed to load interactive False Story diagram: ${protocolHint}`);
         }
     });
 
