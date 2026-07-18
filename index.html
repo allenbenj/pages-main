@@ -250,6 +250,233 @@
       letter-spacing: 0.01em;
       overflow-wrap: anywhere;
     }
+    /*
+      Corruption of Justice poster is a true 1:1 square (2304x2304).
+      Use aspect-ratio sizing (not vh + object-fit:cover) so every browser
+      and viewport shows the same full composition — only the scale changes.
+    */
+    .section.record-blackout,
+    .section.corruption-bleed {
+      background-color: #000 !important;
+      background-image: none !important;
+    }
+    .corruption-bleed {
+      position: relative;
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .corruption-bleed_frame {
+      position: relative;
+      /* Same square crop everywhere; ~40% larger than prior 56rem/92vh cap */
+      width: min(100vw, 129vh, 78.4rem);
+      aspect-ratio: 1 / 1;
+      height: auto;
+      max-width: 100%;
+      overflow: hidden;
+      flex: 0 0 auto;
+      background: #000;
+    }
+    .corruption-bleed_image {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none !important;
+      margin: 0;
+      /* contain + matching 1:1 frame = full poster, identical crop on all screens */
+      object-fit: contain;
+      object-position: center center;
+      border: 0;
+      border-radius: 0;
+      cursor: zoom-in;
+      filter: saturate(1.05) contrast(1.04);
+      /* Lighter edge fade — more of the poster stays solid */
+      -webkit-mask-image: radial-gradient(
+        ellipse 100% 100% at 50% 50%,
+        #000 72%,
+        rgba(0, 0, 0, 0.95) 84%,
+        rgba(0, 0, 0, 0.55) 94%,
+        transparent 100%
+      );
+      mask-image: radial-gradient(
+        ellipse 100% 100% at 50% 50%,
+        #000 72%,
+        rgba(0, 0, 0, 0.95) 84%,
+        rgba(0, 0, 0, 0.55) 94%,
+        transparent 100%
+      );
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+    .corruption-bleed_frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        linear-gradient(to right, rgba(0, 0, 0, 0.72) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.72) 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.72) 100%),
+        radial-gradient(ellipse 90% 90% at 50% 50%, transparent 68%, rgba(0, 0, 0, 0.35) 100%);
+    }
+    /* Quote hotspots: invisible hit areas; only the hovered quote enlarges */
+    .corruption-quote {
+      position: absolute;
+      z-index: 3;
+      margin: 0;
+      padding: 0.45rem 0.55rem;
+      border: 0;
+      background: transparent;
+      color: transparent;
+      text-align: left;
+      cursor: zoom-in;
+      transform: scale(1);
+      transform-origin: center center;
+      transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
+      -webkit-tap-highlight-color: transparent;
+      overflow: visible;
+    }
+    .corruption-quote_body {
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .corruption-quote_text {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.72rem, 1.25vw, 0.95rem);
+      font-style: italic;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      color: #f2eee6;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
+    }
+    .corruption-quote_cite {
+      display: block;
+      margin-top: 0.45rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.58rem, 1vw, 0.75rem);
+      font-style: normal;
+      color: #e2b75a;
+      line-height: 1.3;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.95);
+    }
+    /* Left column */
+    .corruption-quote.is-l1 { top: 11%; left: 1.5%; width: 27%; height: 12%; transform-origin: top left; }
+    .corruption-quote.is-l2 { top: 28%; left: 1.5%; width: 27%; height: 15%; transform-origin: left center; }
+    .corruption-quote.is-l3 { top: 48%; left: 1.5%; width: 27%; height: 14%; transform-origin: left center; }
+    .corruption-quote.is-l4 { top: 68%; left: 1.5%; width: 27%; height: 16%; transform-origin: bottom left; }
+    /* Right column */
+    .corruption-quote.is-r1 { top: 14%; right: 1.5%; width: 24%; height: 10%; transform-origin: top right; }
+    .corruption-quote.is-r2 { top: 30%; right: 1.5%; width: 25%; height: 13%; transform-origin: right center; }
+    .corruption-quote.is-r3 { top: 50%; right: 1.5%; width: 25%; height: 13%; transform-origin: right center; }
+    .corruption-quote.is-r4 { top: 70%; right: 1.5%; width: 25%; height: 14%; transform-origin: bottom right; }
+    /* Center column */
+    .corruption-quote.is-c1 { top: 8.5%; left: 31%; width: 38%; height: 14%; transform-origin: top center; }
+    .corruption-quote.is-c2 { bottom: 4%; left: 28%; width: 44%; height: 12%; transform-origin: bottom center; }
+    .corruption-quote:hover,
+    .corruption-quote:focus-visible {
+      z-index: 6;
+      transform: scale(1.22);
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
+      color: #fff;
+      outline: none;
+      border-radius: 0.45rem;
+      height: auto !important;
+      min-height: 0;
+    }
+    .corruption-quote:hover .corruption-quote_body,
+    .corruption-quote:focus-visible .corruption-quote_body {
+      opacity: 1;
+    }
+    .corruption-quote:hover .corruption-quote_text,
+    .corruption-quote:focus-visible .corruption-quote_text {
+      font-size: clamp(0.82rem, 1.45vw, 1.08rem);
+    }
+    .corruption-quote:hover .corruption-quote_cite,
+    .corruption-quote:focus-visible .corruption-quote_cite {
+      font-size: clamp(0.64rem, 1.1vw, 0.84rem);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .corruption-quote,
+      .corruption-quote_body {
+        transition: none;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .corruption-bleed_frame {
+        width: min(100vw, 129vh, 100%);
+      }
+      .corruption-quote {
+        padding: 0.3rem 0.35rem;
+      }
+      .corruption-quote:hover,
+      .corruption-quote:focus-visible {
+        transform: scale(1.1);
+      }
+    }
+    /* Full-size image modal (landing page only needs these rules) */
+    #imageModal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+    }
+    #imageModal .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      color: #fff;
+      font-size: 44px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000;
+      min-width: 48px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    #imageModal .modal-close:hover { color: #e2b75a; }
+    #imageModal img {
+      max-width: 95vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    }
+    #imageModal video {
+      max-width: 95vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+      display: none;
+    }
   </style>
   <script type="text/javascript">
     !function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart" in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
@@ -394,24 +621,80 @@
     </div>
   </header>
 
-  <section class="section is-secondary">
-    <div class="container">
-      <div class="w-layout-grid grid_3-col tablet-1-col-1-2 gap-large">
-        <div class="header margin-bottom_none">
-          <h2 class="heading_primary">Built around the record</h2>
-          <p class="subheading">A guided entry point into the core materials</p>
-        </div>
-        <div id="w-node-_70accbda-0aee-7e7a-1b88-d22ae52d5c7e-e52d5c76" class="grid-item-manual w-node-f341100a-c68b-eb7c-0218-9b7a60e64a17-e51ccb9d">
-          <div class="w-layout-grid grid_3-col gap-xsmall">
-            <a href="players.html" class="card ratio_1x1 on-secondary record-gallery-card" title="Key Players"><div class="w-layout-vflex card_body is-center"><img src="documents/graphics/products/Crime%20Board.jpg" alt="Crime board collage" loading="lazy" decoding="async" fetchpriority="low" class="record-gallery-image"/></div></a>
-            <a href="connections.html" class="card ratio_1x1 record-gallery-card" title="Key Players & Relationships"><div class="w-layout-vflex card_body is-center"><img src="documents/graphics/products/FAmily.jpg" alt="Family and relationship graphic" loading="lazy" decoding="async" fetchpriority="low" class="record-gallery-image"/></div></a>
-            <a href="misconduct.html" class="card ratio_1x1 record-gallery-card" title="Misconduct & Oversight Failures"><div class="w-layout-vflex card_body is-center"><img src="documents/graphics/products/Oversite.jpg" alt="Oversight and review graphic" loading="lazy" decoding="async" fetchpriority="low" class="record-gallery-image"/></div></a>
-            <a href="why-dont-we-have-this-system.html" class="card ratio_1x1 record-gallery-card" title="Why Don't We Have This System?"><div class="w-layout-vflex card_body is-center"><img src="documents/mindmaps/Info_BrokenSystem.png" alt="Broken system information graphic" loading="lazy" decoding="async" fetchpriority="low" class="record-gallery-image"/></div></a>
-            <a href="scene.html" class="card ratio_1x1 record-gallery-card" title="Scene Reconstruction"><div class="w-layout-vflex card_body is-center"><img src="documents/graphics/house_area/overview_of_house_compressed.png" alt="House and airfield map" loading="lazy" decoding="async" fetchpriority="low" class="record-gallery-image"/></div></a>
-            <a href="contradictions.html" class="card ratio_1x1 record-gallery-card" title="Contradictions Analysis"><div class="w-layout-vflex card_body is-center"><img src="documents/graphics/house_area/Good%20overview.png" alt="Overview of the house area" loading="lazy" decoding="async" fetchpriority="low" class="record-gallery-image"/></div></a>
-          </div>
-        </div>
-      </div>
+
+
+  
+  <section class="section is-secondary corruption-bleed" aria-label="Corruption of Justice">
+    <div class="corruption-bleed_frame">
+      <img
+        src="documents/graphics/Corruption%20of%20Justice.webp"
+        alt="Corruption of Justice — click to view full size"
+        loading="lazy"
+        decoding="async"
+        data-modal-image="documents/graphics/Corruption of Justice.webp"
+        class="corruption-bleed_image"
+        title="Click to view original size"
+      />
+      <blockquote class="corruption-quote is-l1" tabindex="0" aria-label="Quote by Justice Sonia Sotomayor">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"We must not pretend that the countless people who are routinely targeted by police are isolated. They are the canaries in the coal mine whose deaths, civil and literal, warn us that no one can breathe in this atmosphere… Until their voices matter too, our justice system will continue to be anything but."</span>
+          <cite class="corruption-quote_cite">— Justice Sonia Sotomayor, Dissenting Opinion in Utah v. Strieff (2016)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-l2" tabindex="0" aria-label="Quote by Justice Harry Blackmun">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"The requirement that a warrant not issue 'but upon probable cause, supported by Oath or affirmation,' would be reduced to a nullity if a police officer was able to use deliberately falsified allegations to demonstrate probable cause, and, having misled the magistrate, then was able to remain confident that the ploy was worthwhile."</span>
+          <cite class="corruption-quote_cite">— Justice Harry Blackmun, Majority Opinion in Franks v. Delaware (1978)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-l3" tabindex="0" aria-label="Quote by Judge Bruce Selya">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"If any concept is fundamental to our American system of justice, it is that those charged with upholding the law are prohibited from deliberately fabricating evidence and framing individuals for crimes they did not commit… Actions taken in contravention of this prohibition necessarily violate due process."</span>
+          <cite class="corruption-quote_cite">— Judge Bruce Selya, Limone v. Condon (1st Cir. 2004)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-l4" tabindex="0" aria-label="Quote by Justice Louis D. Brandeis">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"Crime is contagious. If the Government becomes a lawbreaker, it breeds contempt for law; it invites every man to become a law unto himself; it invites anarchy. To declare that in the administration of the criminal law the end justifies the means—to declare that the Government may commit crimes in order to secure the conviction of a private criminal—would bring terrible retribution."</span>
+          <cite class="corruption-quote_cite">— Justice Louis D. Brandeis, Dissenting Opinion in Olmstead v. United States (1928)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-r1" tabindex="0" aria-label="Quote by Charles de Montesquieu">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"There is no crueler tyranny than that which is perpetuated under the shield of law and in the name of justice."</span>
+          <cite class="corruption-quote_cite">— Charles de Montesquieu, The Spirit of the Laws (1748)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-r2" tabindex="0" aria-label="Quote by Justice William Brennan">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"The true danger inherent in this type of police misconduct is that it subverts the factfinding process itself… The system's ability to objectively evaluate the evidence is fatally compromised when those charged with gathering it actively manipulate the outcome."</span>
+          <cite class="corruption-quote_cite">— Justice William Brennan, Dissenting in Colorado v. Connelly (1986)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-r3" tabindex="0" aria-label="Quote by Justice Tom C. Clark">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"The ignoble shortcut to conviction left open to the State tends to destroy the entire system of constitutional restraints on which the liberties of the people rest… Nothing can destroy a government more quickly than its failure to observe its own laws, or worse, its disregard of the charter of its own existence."</span>
+          <cite class="corruption-quote_cite">— Justice Tom C. Clark, Majority Opinion in Mapp v. Ohio (1961)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-r4" tabindex="0" aria-label="Quote by Justice Robert H. Jackson">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"The prosecutor has more control over life, liberty, and reputation than any other person in America. His discretion is tremendous… While the prosecutor at his best is one of the most beneficent forces in our society, when he acts from malice or other base motives, he is one of the worst."</span>
+          <cite class="corruption-quote_cite">— Justice Robert H. Jackson, The Federal Prosecutor (1940)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-c1" tabindex="0" aria-label="Quote by Justice George Sutherland">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"The United States Attorney is the representative not of an ordinary party to a controversy, but of a sovereignty whose obligation to govern impartially is as compelling as its obligation to govern at all; and whose interest, therefore, in a criminal prosecution is not that it shall win a case, but that justice shall be done… It is as much his duty to refrain from improper methods calculated to produce a wrongful conviction as it is to use every legitimate means to bring about a just one."</span>
+          <cite class="corruption-quote_cite">— Justice George Sutherland, Majority Opinion in Berger v. United States (1935)</cite>
+        </span>
+      </blockquote>
+      <blockquote class="corruption-quote is-c2" tabindex="0" aria-label="Quote by Chief Justice Earl Warren">
+        <span class="corruption-quote_body">
+          <span class="corruption-quote_text">"The principle that a State may not knowingly use false evidence, including false testimony, to obtain a tainted conviction, implicit in any concept of ordered liberty, does not cease to apply merely because the false testimony goes only to the credibility of the witness. The jury's estimate of the truthfulness and reliability of a given witness may well be determinative of guilt or innocence, and it is upon such subtle factors as the possible interest of the witness in testifying falsely that a defendant's life or liberty may depend."</span>
+          <cite class="corruption-quote_cite">— Chief Justice Earl Warren, Majority Opinion in Napue v. Illinois (1959)</cite>
+        </span>
+      </blockquote>
     </div>
   </section>
 
@@ -420,34 +703,17 @@
   <section class="section is-secondary">
     <div class="container">
       <div class="header is-align-center">
-        <img
-          src="documents/graphics/Freeman%20Corruption.jpg"
-          alt="Freeman Corruption"
-          loading="lazy"
-          decoding="async"
-          data-modal-image="documents/graphics/Freeman%20Corruption.jpg"
-          style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;border-radius:0.5rem;"
-        />
-      </div>
-    </div>
-  </section>
-
-  
-
-  <section class="section is-secondary">
-    <div class="container">
-      <div class="header is-align-center">
-        <div class="eyebrow">Research, analysis, and case studies</div>
+        <div class="eyebrow">Research, Analysis, and Case Studies</div>
         <h2 class="heading_primary">Evidence. Insight. Accountability.</h2>
-        <div class="rich-text subheading w-richtext"><p>Concise updates on systemic failures and reform.</p></div>
+        <div class="rich-text subheading w-richtext"><p>Concise updates on systemic failures and hope for accountability and reform.</p></div>
       </div>
       <div class="w-layout-grid grid_3-col gap-medium">
-        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="assets/images/case-study.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case study: wrongful accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
-        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="assets/images/investigative-breakdown.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
+        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="assets/images/case-study.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case Study: Wrongful Accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
+        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="assets/images/investigative-breakdown.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative Breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
         <div class="ix-link-wrapper"><a href="prosecutor_allowed.html" class="content-block-link w-inline-block"><div id="w-node-b3c8fbea-0f17-c1d7-4d80-d640361590e6-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b3f-e51ccb9d"><img width="1216" height="832" alt="image of digital legal document on mobile device" src="assets/images/expert-commentary.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Commentary on ADA Corruption</h3><p class="margin-bottom_none">Legal perspectives on recent developments.</p></a></div>
-        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="assets/images/policy-review.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
-        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="assets/images/data-snapshot.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
-        <div class="ix-link-wrapper"><a href="documentspage.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img width="1216" height="832" alt="image of university campus" src="assets/images/resource-spotlight.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource spotlight</h3><p class="margin-bottom_none">Recommended reading for legal professionals.</p></a></div>
+        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="assets/images/policy-review.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy Review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
+        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="assets/images/data-snapshot.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data Snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
+        <div class="ix-link-wrapper"><a href="judicial-duty.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img width="1216" height="832" alt="image of university campus" src="assets/images/resource-spotlight.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource Spotlight</h3><p class="margin-bottom_none">Read as a warning - legal professionals who may go to Lee County NC to practice.</p></a></div>
       </div>
     </div>
   </section>
@@ -529,11 +795,18 @@
     </div>
   </footer>
 
+  <div id="imageModal">
+    <span class="modal-close" role="button" tabindex="0" aria-label="Close full-size image">&times;</span>
+    <img id="modalImage" src="" alt="Full resolution image"/>
+    <video id="modalVideo" controls></video>
+  </div>
+
   <script src="assets/js/jquery.js" type="text/javascript" defer></script>
   <script src="assets/js/webflow-schunk.js" type="text/javascript" defer></script>
   <script src="assets/js/webflow-main.js" type="text/javascript" defer></script>
   <script src="assets/js/gsap.min.js" type="text/javascript" defer></script>
   <script src="assets/js/ScrollTrigger.min.js" type="text/javascript" defer></script>
+  <script src="shared/image-modal.js" defer></script>
   <script src="shared/site-search.js" defer></script>
 </body>
 </html>
