@@ -960,7 +960,7 @@ body.timeline-page .fab-fixed img {
     border-radius: 14px;
     border: 1px solid rgba(255,255,255,0.12);
     box-shadow: 0 4px 14px rgba(0,0,0,0.55);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
     cursor: pointer;
 }
 
@@ -5292,9 +5292,21 @@ body.timeline-page .video-btn:focus-visible {
 
 /* Photographic evidence goes grayscale so the red FALSE stamp is the lone
    chromatic verdict. Annotated inserts, mindmaps, and icons/stamps keep color;
-   the zoom modal (#modalImage is not targeted) always shows full fidelity. */
+   the zoom modal (#modalImage is not targeted) always shows full fidelity.
+   Hover restores full color on grayscale evidence images. */
 img[data-modal-image]:not(.liar-stamp):not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
 .apple-img:not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
 [data-modal-image]:not([data-modal-image*="inserts"]):not([data-modal-image*="mindmaps"]):not([data-modal-image*="icons"]) img {
     filter: grayscale(1);
+    transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+img[data-modal-image]:not(.liar-stamp):not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]):hover,
+.apple-img:not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]):hover,
+[data-modal-image]:not([data-modal-image*="inserts"]):not([data-modal-image*="mindmaps"]):not([data-modal-image*="icons"]):hover img,
+a:hover img[data-modal-image]:not(.liar-stamp):not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
+a:hover .apple-img:not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
+figure:hover img[data-modal-image]:not(.liar-stamp):not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]),
+figure:hover .apple-img:not([src*="inserts"]):not([src*="mindmaps"]):not([src*="icons"]) {
+    filter: none;
 }

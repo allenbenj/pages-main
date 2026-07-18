@@ -200,7 +200,7 @@ If a task changes page titles, sections, or media, also run
     called — dead weight, candidate for removal under a future cleanup task.
     Cache-buster `?v=` bumped to `…762` on all 17 pages.
 
-* [ ] **P1-6 · Rename `contradictions\_grouped.html`** (owner note: the name does
+* [x] 2026-07-18 · **P1-6 · Rename `contradictions\_grouped.html`** (owner note: the name does
   not work for that page)
   * The page has three conflicting identities: filename `contradictions\_grouped.html`,
     its own `<title>` says **"Catch All"**, and links to it say **"List of lies"**.
@@ -216,6 +216,19 @@ If a task changes page titles, sections, or media, also run
     so old links keep working.
 
   * Rebuild `assets/search-index.json`, then stage + validate.
+
+  * Progress 2026-07-18: renamed to `catch-all.html` (filename now matches the
+    page's own `<title>` "Catch All"); meta-refresh stub written at
+    `contradictions_grouped.html` and the legacy `content/` stub repointed.
+    overview.html updated in all five spots (route card, page-index card,
+    project-map prose, link matrix ×2 — link text now "Catch all" /
+    "catch-all.html"); documentspage project-search array, `shared/site-search.js`
+    supplemental nav, `tools/build_search_index.py`, `tools/audit_links.py`,
+    `README.md`, and `AGENTS.md` updated. Search index rebuilt: 3 records for
+    `catch-all.html`, 0 for the old name (649 KB). Dead `shell.js` /
+    `shared/shell.js` leftovers (unreferenced by any page) still mention the
+    old name — flagged for a future dead-code cleanup. Verified the stub
+    redirects to the renamed page via headless screenshot.
 
 ***
 
