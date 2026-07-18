@@ -494,6 +494,45 @@
   <style class="force-hide-webflow">
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
+  <style>
+    /* P1-3 · unified quiet button + flat gold-underline nav (mirrors shared/styles.css) */
+    .button {
+      border-radius: 8px !important;
+      background-color: rgba(44,90,97,0.14) !important;
+      background-image: none !important;
+      border: 1px solid rgba(166,206,210,0.35) !important;
+      box-shadow: none !important;
+      color: #dae4e5 !important;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease !important;
+    }
+    .button:hover,
+    .button:active {
+      background-color: rgba(44,90,97,0.24) !important;
+      border-color: rgba(166,206,210,0.55) !important;
+      box-shadow: none !important;
+      color: #dae4e5 !important;
+    }
+    .nav_container {
+      border-bottom: 1px solid rgba(218,228,229,0.10);
+    }
+    .nav_link {
+      border-bottom: 2px solid transparent;
+      border-radius: 0 !important;
+      color: rgba(218,228,229,0.75) !important;
+      transition: color .2s ease, border-color .2s ease !important;
+    }
+    .nav_link:hover {
+      background-color: transparent !important;
+      color: #dae4e5 !important;
+      border-bottom-color: rgba(201,168,76,0.55);
+    }
+    .nav_link.w--current,
+    .nav_link.w--open {
+      background-color: transparent !important;
+      color: #d4b85c !important;
+      border-bottom-color: #c9a84c;
+    }
+  </style>
 </head>
 <body>
   <div class="nav">

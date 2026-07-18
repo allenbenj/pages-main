@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=639006186749527763">
+    <link rel="stylesheet" href="shared/styles.css?v=639006186749527764">
     <style>
         body {
             color: var(--light);
@@ -22,11 +22,6 @@
         }
         .carousel-nav-wrapper {
             display: none !important;
-        }
-        .page-rail {
-            background: var(--card-bg) !important;
-            border-color: var(--border) !important;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
         .page-rail-title,
         strong[style*="#d4af37"],
@@ -68,6 +63,25 @@
         .fab-image img {
             border: 2px solid rgba(166,206,210,0.7) !important;
             background: rgba(0,0,0,0.42) !important;
+        }
+        .apple-image-grid:has(.bed-push-img) {
+            display: flex;
+            justify-content: center;
+            grid-template-columns: none;
+        }
+        .bed-push-img,
+        img.bed-push-img.apple-img {
+            /* 75% of the prior 2.5× size (~1.875× a single 3-col cell) */
+            width: min(100%, 64.9rem) !important;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+        }
+        .bed-push-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 22px 56px rgba(0, 0, 0, 0.62);
         }
     </style>
 
@@ -334,9 +348,7 @@
                 </div>
 
                 <div class="apple-image-grid">
-                    <img loading="lazy" decoding="async" src="documents/graphics/products/push1.png" class="apple-img u-migrated-170b4b0b" alt="Push Diagram 1" data-modal-image="documents/graphics/products/push1.png">
-                    <img loading="lazy" decoding="async" src="documents/graphics/products/push2.png" class="apple-img u-migrated-170b4b0b" alt="Push Diagram 2" data-modal-image="documents/graphics/products/push2.png">
-                    <img loading="lazy" decoding="async" src="documents/graphics/products/push3.png" class="apple-img u-migrated-170b4b0b" alt="Push Diagram 3" data-modal-image="documents/graphics/products/push3.png">
+                    <img loading="lazy" decoding="async" src="documents/graphics/products/bed_push.webp" class="apple-img bed-push-img u-migrated-170b4b0b" alt="Bed push geometry exhibit" data-modal-image="documents/graphics/products/bed_push.webp">
                 </div>
             </div>
         </div>

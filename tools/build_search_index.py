@@ -23,7 +23,7 @@ ROOT_PAGE_PATHS = [
     "players.html",
     "evidence.html",
     "contradictions.html",
-    "contradictions_grouped.html",
+    "catch-all.html",
     "misconduct.html",
     "misconductandfailure.html",
     "documentspage.html",

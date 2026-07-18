@@ -1460,42 +1460,47 @@ body.timeline-page .fab-fixed img {
     right: 20px;
     z-index: 85;
     width: 190px;
-    padding: 14px;
-    border-radius: 14px;
-    background: rgba(10,10,16,0.92);
-    border: 1px solid rgba(212,175,55,0.25);
-    box-shadow: 0 12px 34px rgba(0,0,0,0.55);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .page-rail-title {
-    margin: 0 0 10px;
+    margin: 0 0 6px;
     font-size: 0.76rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #f0d57f;
+    color: var(--accent-text);
     font-weight: 700;
 }
 
 .page-rail a {
     display: block;
-    margin: 6px 0;
-    padding: 7px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.08);
-    color: var(--light);
+    margin: 0;
+    padding: 8px 2px;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    color: var(--text-muted);
     text-decoration: none;
     font-size: 0.82rem;
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .page-rail a:hover,
 .page-rail a:focus-visible {
-    transform: translateX(-3px);
-    background: rgba(212,175,55,0.16);
-    border-color: rgba(212,175,55,0.4);
+    color: var(--accent-text);
+    border-top-color: rgba(166,206,210,0.35);
     outline: none;
+}
+
+/* P1-3 · reserve a right gutter so the flattened (transparent) page-rail never overlaps content */
+@media (min-width: 981px) {
+    body:has(.page-rail) .container,
+    body:has(.page-rail) .header {
+        padding-right: 230px;
+    }
 }
 
 .evidence-strength {
@@ -2255,42 +2260,31 @@ body.doc-hub .card-actions {
     margin-top: 12px;
 }
 
-body.doc-hub .card-action-link {
+/* P1-3 · one quiet button everywhere: teal tint, hairline accent border, no shadow/transform */
+body.doc-hub .card-action-link,
+.button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 7px 10px;
-    border-radius: 999px;
+    padding: 8px 14px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     letter-spacing: 0.01em;
     font-weight: 600;
-    border: 1px solid transparent;
+    color: var(--light);
+    background: rgba(44,90,97,0.14);
+    border: 1px solid rgba(166,206,210,0.35);
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-body.doc-hub .card-action-link.action-document {
-    background: rgba(59,130,246,0.18);
-    border-color: rgba(96,165,250,0.5);
-    color: #bfdbfe;
-}
-
-body.doc-hub .card-action-link.action-document:hover,
-body.doc-hub .card-action-link.action-document:focus-visible {
-    background: rgba(59,130,246,0.26);
-    color: #dbeafe;
-}
-
-body.doc-hub .card-action-link.action-video {
-    background: rgba(16,185,129,0.16);
-    border-color: rgba(16,185,129,0.45);
-    color: #a7f3d0;
-}
-
-body.doc-hub .card-action-link.action-video:hover,
-body.doc-hub .card-action-link.action-video:focus-visible {
-    background: rgba(16,185,129,0.24);
-    color: #d1fae5;
+body.doc-hub .card-action-link:hover,
+body.doc-hub .card-action-link:focus-visible,
+.button:hover,
+.button:focus-visible {
+    background: rgba(44,90,97,0.24);
+    border-color: rgba(166,206,210,0.55);
+    color: var(--light);
 }
 
 body.doc-hub .card-focus-target {

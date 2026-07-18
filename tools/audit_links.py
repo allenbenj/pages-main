@@ -74,7 +74,7 @@ SITE_ROOT_FILENAMES = {
     "players.html",
     "evidence.html",
     "contradictions.html",
-    "contradictions_grouped.html",
+    "catch-all.html",
     "misconduct.html",
     "misconductandfailure.html",
     "documentspage.html",

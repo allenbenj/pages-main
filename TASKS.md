@@ -99,7 +99,7 @@ If a task changes page titles, sections, or media, also run
     still carded (pages override it inline with `!important` — flatten together
     with the P1-3 nav/button unification).
 
-* [ ] **P1-3 · Unify landing ↔ inner-page design tokens**
+* [x] 2026-07-18 · **P1-3 · Unify landing ↔ inner-page design tokens**
   * Map the Webflow landing's colors, type scale, and buttons onto the `:root`
     custom properties in `shared/styles.css`; one nav appearance and one button
     style across `index.html` and the shared pages. Landing values are the more
@@ -117,6 +117,20 @@ If a task changes page titles, sections, or media, also run
     `--card-*`); `--gold` / `--gold-text` added and `#e2b75a` retired to
     `#d4b85c`. Remaining: one nav appearance and one button style shared by
     `index.html` and the shared pages.
+
+  * Progress 2026-07-18: one quiet button everywhere — teal-tint fill
+    `rgba(44,90,97,0.14)`, hairline `--accent-text` border, 8px radius, no
+    shadow or transform — mapped onto `.button` (contradictions/connections)
+    and `.card-action-link` (documents hub; green/blue kind-split retired);
+    overview hero/quick/node links matched; landing `.button` and `.nav_link`
+    restyled via an inline block in `index.html` (flat text links, gold
+    underline on hover/current, hairline under `.nav_container`). `.page-rail`
+    flattened site-wide (transparent, hairline-separated links; the eight
+    pages' `!important` card overrides removed) and a 230px right gutter
+    (`body:has(.page-rail)` ≥981px) keeps the transparent rail from
+    overlapping content. Cache-buster bumped to `…764` on all 17 pages;
+    verified with headless screenshots of index, contradictions, and
+    documentspage.
 
 * [x] 2026-07-17 · **P1-4 · Dossier identity system** (extends the timeline's FALSE-stamp language)
   * Folio numbers per section (e.g. `§ 04 — Contradictions`).
