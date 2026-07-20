@@ -89,6 +89,11 @@ img {
     color: #d7dedf;
     font-weight: 400;
     margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 42ch;
+    text-align: center;
+    text-wrap: balance;
 }
 
 /* Navigation */
@@ -1495,11 +1500,20 @@ body.timeline-page .fab-fixed img {
     outline: none;
 }
 
-/* P1-3 · reserve a right gutter so the flattened (transparent) page-rail never overlaps content */
+/* P1-3 · reserve a right gutter so the flattened (transparent) page-rail never
+   overlaps content. Apply only to .container — .header lives inside .container
+   on every page, so padding .header too double-shifted the epigraph left.
+
+   The rail gutter still makes the content box asymmetric (20px left / 230px right),
+   so plain text-align:center on .header lands left of true center. Expand the
+   header back across the extra 210px so the epigraph centers on the full column. */
 @media (min-width: 981px) {
-    body:has(.page-rail) .container,
-    body:has(.page-rail) .header {
+    body:has(.page-rail) .container {
         padding-right: 230px;
+    }
+
+    body:has(.page-rail) .header {
+        margin-right: -210px; /* 230px rail gutter − 20px base padding */
     }
 }
 
