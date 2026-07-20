@@ -230,6 +230,14 @@ If a task changes page titles, sections, or media, also run
     old name — flagged for a future dead-code cleanup. Verified the stub
     redirects to the renamed page via headless screenshot.
 
+  * Update 2026-07-20: the page was later renamed again to `general-videos.html`,
+    turning `catch-all.html` into a second stub. The whole root stub strategy was
+    then retired — `catch-all.html`, `contradictions_grouped.html`, `editor.html`,
+    `page-index.html`, `link-diagram.html`, and `false-allegation-framework.html`
+    were all removed and every inbound link retargeted (see P2-4). The dead
+    `shell.js` / `shared/shell.js` leftovers flagged above were fixed in the same
+    pass. Only the legacy `content/` stubs still redirect.
+
 ***
 
 ## P2 — Engineering hygiene
@@ -250,6 +258,10 @@ If a task changes page titles, sections, or media, also run
     adds; local `stage`/`validate` remains ffmpeg-blocked, CI is the release
     gate.
 
+  * Update 2026-07-20: ffmpeg blocker resolved — a system ffmpeg was found on
+    the machine (Chocolatey shim) and local `stage` + `validate` now run
+    end-to-end; used for the P2-4 cleanup (541 files, ~772 MB, 0 errors).
+
 * [x] 2026-07-18 · **P2-2 · Monitor search-index growth**
   `assets/search-index.json` is \~660 KB (loaded on demand — acceptable today).
   Regenerate after content changes; if it passes \~1 MB, consider trimming fields
@@ -259,6 +271,10 @@ If a task changes page titles, sections, or media, also run
     231 indexed files; kinds: 520 page / 116 media / 95 image / 2 document).
     Well under the \~1 MB action threshold; no field trimming needed. Keep
     regenerating after every content/title/media change.
+
+  * Update 2026-07-20: rebuilt after the P2-4 stub removal — 573 page records
+    (the six deleted stubs and their references dropped out); still well under
+    the \~1 MB threshold.
 
 * [x] 2026-07-18 · **P2-3 · Evaluate landing vendor-JS reduction**
   `index.html` defers \~720 KB of jQuery + Webflow runtime + GSAP + ScrollTrigger.
@@ -275,6 +291,30 @@ If a task changes page titles, sections, or media, also run
     jQuery + Webflow runtime also stay (nav dropdowns/mega-nav need them).
     Net saving: 44 KB deferred; further reduction requires replacing the
     Webflow runtime outright — not worth it for a single landing page.
+
+* [x] 2026-07-20 · **P2-4 · Remove the legacy root redirect stubs**
+  The six root meta-refresh stubs had no inbound links worth keeping (or
+  duplicated a real destination), so they were deleted outright rather than
+  maintained:
+  * Removed: `catch-all.html` and `contradictions_grouped.html` (both forwarded
+    to `general-videos.html`), `editor.html` and `page-index.html` (→
+    `overview.html#page-index`), `link-diagram.html` (→
+    `overview.html#link-diagram`), `false-allegation-framework.html` (→
+    `index.html`). Root page count: 24 → 18, all real destinations.
+
+  * Retargeted every remaining reference: `overview.html` (route card, map
+    node, matrix rows, summary stat, mislabeled `catch-all.html` link text),
+    `content/editor.html` (now redirects straight to
+    `../overview.html#page-index`; the other `content/` stubs already targeted
+    final pages), `shared/shell.js`, `shared/site-nav.js`, dead root
+    `shell.js`, known-page lists in `tools/audit_links.py` and
+    `tools/build_search_index.py`, and the `AGENTS.md` page inventory.
+
+  * Verified: search index rebuilt; `stage` + `validate` green (541 files,
+    ~772 MB, 0 errors); deep `audit_links.py` run shows 0 real broken links in
+    deployable files (the only flags were minified-JS false positives in
+    `network_analysis/dist/`). Old root URLs (e.g. `/page-index.html`) now 404
+    by design; legacy `content/` URLs still redirect.
 
 ***
 

@@ -31,13 +31,9 @@ ROOT_PAGE_PATHS = [
     "case-study.html",
     "scene.html",
     "prosecutor_allowed.html",
-    "editor.html",
     "judicial-duty.html",
     "why-dont-we-have-this-system.html",
     "data-snapshot.html",
-    "page-index.html",
-    "link-diagram.html",
-    "false-allegation-framework.html",
     "network_analysis/index.html",
 ]
 

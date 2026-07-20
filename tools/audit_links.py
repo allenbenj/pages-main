@@ -82,12 +82,8 @@ SITE_ROOT_FILENAMES = {
     "case-study.html",
     "scene.html",
     "prosecutor_allowed.html",
-    "editor.html",
     "judicial-duty.html",
     "why-dont-we-have-this-system.html",
-    "page-index.html",
-    "link-diagram.html",
-    "false-allegation-framework.html",
 }
 
 IGNORE_DIRS = {

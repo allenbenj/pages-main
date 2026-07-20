@@ -103,7 +103,7 @@
                             <div class="paragraph_small text-color_secondary">Mapped inconsistencies in the record.</div>
                           </div>
                         </a></li>
-                        <li><a href="contradictions_grouped.html" class="mega-nav_link-item w-inline-block">
+                        <li><a href="general-videos.html" class="mega-nav_link-item w-inline-block">
                           <div class="content-block">
                             <div><strong>Lies Grouped</strong></div>
                             <div class="paragraph_small text-color_secondary">Contradictions by theme and category.</div>
@@ -246,7 +246,7 @@
       <ul role="list" class="w-list-unstyled">
         <li><h3 class="heading_xxsmall text-color_secondary">Analysis</h3></li>
         <li><a href="contradictions.html"         class="footer_link on-inverse w-inline-block"><div>Contradictions</div></a></li>
-        <li><a href="contradictions_grouped.html"  class="footer_link on-inverse w-inline-block"><div>Lies Grouped</div></a></li>
+        <li><a href="general-videos.html"  class="footer_link on-inverse w-inline-block"><div>Lies Grouped</div></a></li>
         <li><a href="misconduct.html"              class="footer_link on-inverse w-inline-block"><div>Misconduct</div></a></li>
         <li><a href="misconductandfailure.html"    class="footer_link on-inverse w-inline-block"><div>Misconduct &amp; Failure</div></a></li>
         <li><a href="prosecutor_allowed.html"      class="footer_link on-inverse w-inline-block"><div>Prosecutor Conduct</div></a></li>
@@ -257,7 +257,7 @@
         <li><h3 class="heading_xxsmall text-color_secondary">Documents</h3></li>
         <li><a href="documentspage.html" class="footer_link on-inverse w-inline-block"><div>Source Documents</div></a></li>
         <li><a href="connections.html"   class="footer_link on-inverse w-inline-block"><div>Connections Map</div></a></li>
-        <li><a href="editor.html"        class="footer_link on-inverse w-inline-block"><div>DB Editor</div></a></li>
+        <li><a href="overview.html#page-index" class="footer_link on-inverse w-inline-block"><div>DB Editor</div></a></li>
       </ul>
 
       <!-- Contact column -->
@@ -269,7 +269,7 @@
           </a>
         </li>
         <li>
-          <a href="false-allegation-framework.html" class="footer_link on-inverse w-inline-block">
+          <a href="index.html" class="footer_link on-inverse w-inline-block">
             <div>Framework landing</div>
           </a>
         </li>

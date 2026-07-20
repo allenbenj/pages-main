@@ -11,7 +11,7 @@
     ['documentspage.html', 'Documents'],
     ['players.html', 'Players'],
     ['case-study.html', 'Case Study'],
-    ['page-index.html', 'Page Index']
+    ['overview.html#page-index', 'Page Index']
   ];
 
   const path = window.location.pathname.split('/').pop() || 'index.html';

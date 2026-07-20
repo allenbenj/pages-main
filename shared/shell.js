@@ -8,13 +8,13 @@
     { key: "misconduct", label: "Misconduct", href: "misconduct.html" },
     { key: "contradictions", label: "Contradictions", href: "contradictions.html" },
     { key: "scene", label: "Scene Reconstruction", href: "scene.html" },
-    { key: "lies", label: "List of Lies", href: "contradictions_grouped.html" },
+    { key: "lies", label: "List of Lies", href: "general-videos.html" },
     { key: "mindmaps", label: "Mindmaps", href: "misconductandfailure.html" },
     { key: "documents", label: "Document Archive", href: "documentspage.html" },
     { key: "prosecutor", label: "Prosecutor Review", href: "prosecutor_allowed.html" },
     { key: "judicial-duty", label: "Judicial Duty", href: "judicial-duty.html" },
     { key: "system-paper", label: "Why Don't We Have This System?", href: "why-dont-we-have-this-system.html" },
-    { key: "editor", label: "Record Editor", href: "editor.html" }
+    { key: "editor", label: "Record Editor", href: "overview.html#page-index" }
   ];
 
   const body = document.body;
