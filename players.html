@@ -48,6 +48,72 @@
       font-weight: 700;
       color: #f0d071;
     }
+
+    /* Named-person cards: consistent layout, no spacer hacks */
+    .person-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+      align-items: stretch;
+    }
+    .person-grid > .person-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 22px;
+      gap: 0;
+    }
+    .person-grid > .person-card .card-label {
+      margin-bottom: 10px !important;
+    }
+    .person-grid > .person-card .person-header {
+      margin-bottom: 14px;
+    }
+    .person-grid > .person-card .person-heading h4 {
+      margin: 0 0 4px 0;
+      line-height: 1.25;
+    }
+    .person-grid > .person-card .person-role {
+      margin: 0;
+      font-weight: 600;
+      color: #60a5fa;
+      font-size: 0.95em;
+    }
+    .person-grid > .person-card .person-body {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .person-grid > .person-card .person-body p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+    .person-grid > .person-card .person-tags {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .person-grid > .person-card .person-tags > span {
+      margin: 0 !important;
+    }
+    .person-grid > .person-media {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+    }
+    .person-grid > .person-media img {
+      display: block;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
   </style>
   
   <style class="force-hide-webflow">
@@ -93,168 +159,170 @@
             <h2 id="players-overview" class="section-title u-migrated-7a8feb70">Key Players & Roles</h2>
             <h3 class="u-migrated-7a8feb70">The people at the center of this case did not meet as strangers. Several relationships existed before the accusation was made, and those pre-existing connections shaped <span class="status-investigated">who was investigated</span>, <span class="status-interviewed">who was interviewed</span>, and <span class="status-protected">who was protected</span>.</h3>
             
-            <div class="u-migrated-1c50cbfb">
+            <div class="person-grid">
                 <div class="card person-card">
                     <div class="card-label">Defendant</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Benjamin Allen</h4>
-                            <p class="u-migrated-c96caad7">Defendant</p>
+                            <p class="person-role">Defendant</p>
                         </div>
                     </div>
-                    <br>
-                    <p> A military veteran and father living in Lee County. <br><br>He had no prior relationship with Lauren Deal beyond a brief social connection through his ex-wife. <br><br>He was present at Schooly’s bar on the night in question. <br><br>He lost employment, housing stability, access to family, and years of his life to a prosecution built on a record that consistently contradicted the charge. <br><br>He refused the extortion attempt.  <br><br> He refused the ADA's plea deal that came with a threat. <br><br>This man is the real victim in this case.</p>
-                    <br><br><br><br><br><br>
-                    <div class="u-migrated-4bb90035">
+                    <div class="person-body">
+                        <p>A military veteran and father living in Lee County.</p>
+                        <p>He had no prior relationship with Lauren Deal beyond a brief social connection through his ex-wife.</p>
+                        <p>He was present at Schooly’s bar on the night in question.</p>
+                        <p>He lost employment, housing stability, access to family, and years of his life to a prosecution built on a record that consistently contradicted the charge.</p>
+                        <p>He refused the extortion attempt. He refused the ADA’s plea deal that came with a threat.</p>
+                        <p>This man is the real victim in this case.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-ad9d3117">Innocent</span>
                     </div>
                 </div>
 
-                
                 <div class="card person-card">
                     <div class="card-label">Accuser</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Lauren Deal</h4>
-                            <p class="u-migrated-c96caad7">Accuser</p>
+                            <p class="person-role">Accuser</p>
                         </div>
                     </div>
-                    <br>
-                    <p>The primary complainant. <br><br>Her initial police statements diverged materially from her trial testimony. <br><br>Multiple claimed facts—running through pitch-black woods, hiding behind trees, fleeing through briars—are physically inconsistent with the documented terrain, the recorded lunar conditions (approximately 70% illumination), and the scene’s layout. <br><br>Her testimony evolved in ways that tracked prosecutorial framing rather than prior statements. She claimed a connection to Allen through his ex-wife. <br><br>Her social circle includes Joel Kelly, whose daughter was her best friend. Joel Kelly sent the extortion messages. ($150,000 extortion demand to make the case “go away”) <div class="u-migrated-4bb90035">
-                       <br><br><br><br>4<span class="u-migrated-ea9aa855">Fabrication For Money</span>
+                    <div class="person-body">
+                        <p>The primary complainant.</p>
+                        <p>Her initial police statements diverged materially from her trial testimony.</p>
+                        <p>Multiple claimed facts—running through pitch-black woods, hiding behind trees, fleeing through briars—are physically inconsistent with the documented terrain, the recorded lunar conditions (approximately 70% illumination), and the scene’s layout.</p>
+                        <p>Her testimony evolved in ways that tracked prosecutorial framing rather than prior statements. She claimed a connection to Allen through his ex-wife.</p>
+                        <p>Her social circle includes Joel Kelly, whose daughter was her best friend. Joel Kelly sent the extortion messages ($150,000 demand to make the case “go away”).</p>
+                    </div>
+                    <div class="person-tags">
+                        <span class="u-migrated-ea9aa855">Fabrication For Money</span>
                     </div>
                 </div>
 
-                
                 <div class="card person-card">
                     <div class="card-label">Investigator</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Detective Steve Freeman</h4>
-                            <p class="u-migrated-c96caad7">Lead Investigator</p>
+                            <p class="person-role">Lead Investigator</p>
                         </div>
                     </div>
-                    <p>Perjury & Fabrication - Altered witness statements in official documents, contradicting recorded conversations available to the defense.<br><br>
-
-False Probable Cause - Recast Carmen Love’s initial exculpatory statement into one supporting probable cause, directly contradicting witness LD’s account.<br><br>
-
-Suppression of Evidence - Withheld Love’s original recorded statement, which was favorable to the defense.<br><br>
-
-Undisclosed Conflict of Interest - Failed to disclose a familial relationship with Love, a key witness who accompanied Deal to the bar that night.<br><br>
-
-Impossible Case Chronology - Assigned himself to the case before the factual basis for escalation existed, contradicting Officer Haines’s own timeline./p><br><br>
-                    <br><br>
-                    <div class="u-migrated-4bb90035">
+                    <div class="person-body">
+                        <p><strong>Perjury &amp; Fabrication</strong> — Altered witness statements in official documents, contradicting recorded conversations available to the defense.</p>
+                        <p><strong>False Probable Cause</strong> — Recast Carmen Love’s initial exculpatory statement into one supporting probable cause, directly contradicting witness LD’s account.</p>
+                        <p><strong>Suppression of Evidence</strong> — Withheld Love’s original recorded statement, which was favorable to the defense.</p>
+                        <p><strong>Undisclosed Conflict of Interest</strong> — Failed to disclose a familial relationship with Love, a key witness who accompanied Deal to the bar that night.</p>
+                        <p><strong>Impossible Case Chronology</strong> — Assigned himself to the case before the factual basis for escalation existed, contradicting Officer Haines’s own timeline.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-84ff5b03">Conflict of Interest</span>
                         <span class="u-migrated-84ff5b03">Evidence Suppression</span>
                     </div>
                 </div>
 
-                
                 <div class="card person-card">
                     <div class="card-label">Prosecutor</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">ADA Tiffany Bartholomew</h4>
-                            <p class="u-migrated-c96caad7">Lead Prosecutor</p>
+                            <p class="person-role">Lead Prosecutor</p>
                         </div>
                     </div>
-                    
-                    <br>
-                    <p>The Assistant District Attorney who prosecuted the case. <br><br>
-Accused of witness coaching, misrepresenting evidence, violating judicial instructions on the conditional admission of evidence (N.C. R. Evid. 104(b)), withholding the balance of exhibits under the rule of completeness (N.C. R. Evid. 106), and constructing an unsupported "position of trust" aggravating factor. <br><br>
-<br><br>
-Deal’s speech register and substantive framing shifted materially between law-enforcement interviews and trial—changes that aligned with Bartholomew’s litigation strategy. 
-<br><br>
-Known for underhanded tactics and for receiving special treatment in Lee County Courtrooms. 
-<br><br>
-   <br><br><br>
-                    <div class="u-migrated-4bb90035">
+                    <div class="person-body">
+                        <p>The Assistant District Attorney who prosecuted the case.</p>
+                        <p>Accused of witness coaching, misrepresenting evidence, violating judicial instructions on the conditional admission of evidence (N.C. R. Evid. 104(b)), withholding the balance of exhibits under the rule of completeness (N.C. R. Evid. 106), and constructing an unsupported “position of trust” aggravating factor.</p>
+                        <p>Deal’s speech register and substantive framing shifted materially between law-enforcement interviews and trial—changes that aligned with Bartholomew’s litigation strategy.</p>
+                        <p>Known for underhanded tactics and for receiving special treatment in Lee County courtrooms.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-d9c2ed61">Witness Coaching</span>
                         <span class="u-migrated-d9c2ed61">Evidence Fabrication</span>
                     </div>
                 </div>
-                
-               <div class="card person-card">
+
+                <div class="card person-card">
                     <div class="card-label">Key Witness</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Carmen Love</h4>
-                            <p class="u-migrated-c96caad7">Key Witness / Freeman's Relative</p>
+                            <p class="person-role">Key Witness / Freeman’s Relative</p>
                         </div>
                     </div>
-                    
-                    <p>Deal's cousin. <br><br>
-Present at the bar that night with Deal. <br><br>
- Her initial recorded statement to Freeman—her relative—did not identify Allen by name and contradicted the narrative later advanced in the investigation. <br><br>
- Freeman claimed to have used that interview to establish probable cause, despite its exculpatory content. <br><br>
-Love's later interviews matched or even exceeded the narrative engineering of the prosecution’s account. <br><br>
-The two uninterviewed witnesses at the scene—James Morrison (Love's boyfriend) and Peter West III (Father works in the Lee County Sheriff’s office)—were never called, which means every account from within that evening’s group was filtered through people with undisclosed connections to the investigator.
-div class="u-migrated-4bb90035">
-<br><br><br>
+                    <div class="person-body">
+                        <p>Deal’s cousin. Present at the bar that night with Deal.</p>
+                        <p>Her initial recorded statement to Freeman—her relative—did not identify Allen by name and contradicted the narrative later advanced in the investigation.</p>
+                        <p>Freeman claimed to have used that interview to establish probable cause, despite its exculpatory content.</p>
+                        <p>Love’s later interviews matched or even exceeded the narrative engineering of the prosecution’s account.</p>
+                        <p>The two uninterviewed witnesses at the scene—James Morrison (Love’s boyfriend) and Peter West III (father works in the Lee County Sheriff’s Office)—were never called, which means every account from within that evening’s group was filtered through people with undisclosed connections to the investigator.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-ad9d3117">Suppressed Evidence</span>
                     </div>
                 </div>
-                
+
                 <div class="card person-card">
                     <div class="card-label">Initial Officer</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Officer Isaac Haines</h4>
-                            <p class="u-migrated-c96caad7">Initial Responding Officer</p>
+                            <p class="person-role">Initial Responding Officer</p>
                         </div>
                     </div>
-                   
-                    <p>Conducted first interview with Lauren Deal. Testified his role was fact-finding to determine if the case warranted a detective assignment, creating a timeline contradiction since Freeman testified he had already been notified about a sexual assault allegation before the interview with Deal had even begun. Stated the role of himself and Freeman as: "to prove that he (Allen) is guilty". Got promoted to Detective after this case.</p>
+                    <div class="person-body">
+                        <p>Conducted the first interview with Lauren Deal.</p>
+                        <p>Testified his role was fact-finding to determine if the case warranted a detective assignment, creating a timeline contradiction since Freeman testified he had already been notified about a sexual assault allegation before the interview with Deal had even begun.</p>
+                        <p>Stated the role of himself and Freeman as: “to prove that he (Allen) is guilty.”</p>
+                        <p>Got promoted to Detective after this case.</p>
+                    </div>
                 </div>
-                
+
                 <div class="card person-card">
                     <div class="card-label">Witness</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Joseph DeMarco</h4>
-                            <p class="u-migrated-c96caad7">Eyewitness</p>
+                            <p class="person-role">Eyewitness</p>
                         </div>
                     </div>
-                    <p>Present at Schooly's bar and at Allen's residence. Picked up Deal after the alleged incident. Fear and intimidation initially led him to lie about events, such as picking Deal up on the road. They both had different stories about that event. His later (missing statement) contradicts Deal's trial narrative on multiple points.</p>
-                <br>
-                <br>
+                    <div class="person-body">
+                        <p>Present at Schooly’s bar and at Allen’s residence. Picked up Deal after the alleged incident.</p>
+                        <p>Fear and intimidation initially led him to lie about events, such as picking Deal up on the road. They both had different stories about that event.</p>
+                        <p>His later (missing) statement contradicts Deal’s trial narrative on multiple points.</p>
+                    </div>
                 </div>
 
-                
                 <div class="card person-card">
                     <div class="card-label">Witness</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Steven Happel</h4>
-                            <p class="u-migrated-c96caad7">Eyewitness</p>
+                            <p class="person-role">Eyewitness</p>
                         </div>
                     </div>
-                    <p>Present at the bar and residence. Testimony provides an alternative timeline and contradicts Deal's claims about physical contact and behavior. His testimony matches what is on video
-                        , unlike Deal's.</p>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                    <div class="person-body">
+                        <p>Present at the bar and residence.</p>
+                        <p>Testimony provides an alternative timeline and contradicts Deal’s claims about physical contact and behavior.</p>
+                        <p>His testimony matches what is on video, unlike Deal’s.</p>
+                    </div>
                 </div>
 
-                
                 <div class="card person-card">
                     <div class="card-label">Third Party</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Joel Kelly</h4>
-                            <p class="u-migrated-c96caad7">Third Party with Financial Motive</p>
+                            <p class="person-role">Third Party with Financial Motive</p>
                         </div>
                     </div>
-                   
-                    <br>
-                    <p>Connected to $150,000 extortion demand. Daughter is best friends with accuser. Accuser's other best friend worked for him. Part of the same social circle as the accuser.</p>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="u-migrated-4bb90035">
+                    <div class="person-body">
+                        <p>Sent the $150,000 extortion demand in text messages to Allen.</p>
+                        <p>Kelly’s daughter was one of Deal’s best friends. Another of Deal’s best friends, Pamella Kells, worked for Joel Kelly.</p>
+                        <p>He was embedded in the same social network as Deal and shared overlapping connections with individuals who had reason to fabricate or amplify the allegation.</p>
+                        <p>The extortion contact preceded the formal complaint, establishing a financial motive that the investigation did not adequately explore.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-8a4e68e5">Extortion Attempt</span>
                     </div>
                 </div>
@@ -263,42 +331,47 @@ div class="u-migrated-4bb90035">
                     <div class="card-label">Missing Witnesses</div>
                     <div class="person-header">
                         <div class="person-heading">
-                            <h4 class="person-name-trigger u-migrated-acb15a86">James Morrison & Peter West</h4>
-                            <p class="u-migrated-c96caad7">Missing Witnesses</p>
+                            <h4 class="person-name-trigger u-migrated-acb15a86">James Morrison &amp; Peter West</h4>
+                            <p class="person-role">Missing Witnesses</p>
                         </div>
                     </div>
-                    <p>Present at the bar with Carmen Love. Never interviewed by investigators despite being identified as material witnesses to the timeline and Lauren's behavior before departure. Morrison was dating Love while Peter West's father worked at the sheriff’s office. West's father signed Allen’s release from jail.</p>
-                    <div class="u-migrated-4bb90035">
+                    <div class="person-body">
+                        <p>Both were present at Schooly’s bar on the night in question. Neither was interviewed by investigators.</p>
+                        <p>Morrison was Carmen Love’s boyfriend, placing him within her direct social circle—and therefore within Freeman’s undisclosed network.</p>
+                        <p>West’s father works at the Sheriff’s Office and signed Allen’s release from jail.</p>
+                        <p>Their unrecorded observations of Deal’s behavior, apparent intoxication, and movements that evening would have been directly material to the credibility of the complaint.</p>
+                        <p>Their absence from the investigative record is not explained.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-84ff5b03">Witness Suppression</span>
                     </div>
                 </div>
 
-                
                 <div class="card person-card">
                     <div class="card-label">Antagonist</div>
                     <div class="person-header">
                         <div class="person-heading">
                             <h4 class="person-name-trigger u-migrated-acb15a86">Jolynda Adcock</h4>
+                            <p class="person-role">Personal Antagonist</p>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                    <p class="u-migrated-c96caad7">Personal Antagonist</p>
-                    <br>
-                    <p>Shown long-standing animosity toward Allen. Exploited Allen's ex-wife's mental illness. Stated "it didn't matter whether Mr. Allen was innocent" due to Sheriff's Department connections.</p>
-                    <br>
-                    <br>
-                    <div class="u-migrated-4bb90035">
+                    <div class="person-body">
+                        <p>Demonstrated long-standing personal animosity toward Allen.</p>
+                        <p>Sexually exploited Allen’s ex-wife’s documented mental illness.</p>
+                        <p>Stated explicitly that “it didn’t matter whether Mr. Allen was innocent” due to the Sheriff’s Department connections available to the complainant’s circle.</p>
+                        <p>That statement is one of the most direct documentary records in this archive of how the structural environment around the case was understood by those within it.</p>
+                        <p>The implausible and changing stories are explained in one line.</p>
+                    </div>
+                    <div class="person-tags">
                         <span class="u-migrated-ea9aa855">Law Enforcement Manipulation</span>
                     </div>
                 </div>
 
-                <!-- Shakedown Image -->
-                <div class="u-migrated-016e8930">
-                    <a href="documents/graphics/Shakedown.png" >
-                        <img loading="lazy" decoding="async" src="documents/graphics/Shakedown.png" 
-                             alt="Shakedown" 
-                             class="u-migrated-b86ce3ea">
+                <div class="person-media">
+                    <a href="documents/graphics/Shakedown.png">
+                        <img loading="lazy" decoding="async" src="documents/graphics/Shakedown.png"
+                             alt="Shakedown"
+                             data-modal-image="documents/graphics/Shakedown.png">
                     </a>
                 </div>
             </div>
