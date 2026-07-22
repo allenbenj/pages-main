@@ -100,6 +100,16 @@ This is a documentation project. If you identify errors or have additional evide
 
 This work is dedicated to exposing injustice and advocating for systemic reform.
 
+## Deployment
+
+The site is published automatically to GitHub Pages via the Actions workflow (`.github/workflows/static.yml`) on every push to `main`. To verify a deployment:
+
+1. Open the **Actions** tab: `https://github.com/allenbenj/pages-main/actions`
+2. Look for the **"Deploy static content to Pages"** workflow run triggered by your push.
+3. Once it shows a green checkmark, the live site is updated at the Pages URL.
+
+A `.nojekyll` file in the repository root ensures all static assets (including those in underscore-prefixed folders) are served without Jekyll filtering.
+
 ---
 
-*"When a story requires darkness and vision to coexist, concealment and recognition to coexist, and fear and certainty to coexist, it is not describing reality. It is reality being manufactured."*
+
