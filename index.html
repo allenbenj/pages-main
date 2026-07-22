@@ -933,33 +933,7 @@
     </div>
   </section>
 
-  <!--
-    IMAGE 2 — Corruption of Justice poster (clickable → full-size modal)
-    File: documents/graphics/Corruption of Justice.webp (true 1:1, 2304×2304)
-    Markup chain:
-      section.section.is-secondary.corruption-bleed
-        → .corruption-bleed_frame   (square crop box)
-          → img.corruption-bleed_image[data-modal-image]
-          → .corruption-quote.is-l1…is-l4 / .is-r1…is-r4 / .is-c1.is-c2  (quote hotspots)
-    Click / modal:
-      - data-modal-image="documents/graphics/Corruption of Justice.webp"
-      - shared/image-modal.js binds [data-modal-image] → openImageModal → #imageModal / #modalImage
-      - cursor: zoom-in on .corruption-bleed_image
-    Size controls (inline <style> in this file <head> — NOT shared/styles.css):
-      - .corruption-bleed          → full-bleed black band (100vw, flex center)
-      - .corruption-bleed_frame    → width: min(100vw, 129vh, 78.4rem); aspect-ratio: 1/1
-                                     (@media max-width 767px: width min(100vw,129vh,100%))
-      - .corruption-bleed_image    → position absolute inset 0; object-fit: contain;
-                                     filter saturate/contrast; radial mask-image edge fade
-      - .corruption-bleed_frame::after → edge vignette gradients (pointer-events:none)
-    Quote hotspot controls (same inline <style>):
-      - .corruption-quote + .is-l1…is-c2 set top/left/right/width/height %
-      - hover/focus-visible: scale(1.22), reveal .corruption-quote_body text
-      - quotes are text overlays only; they do NOT open the modal
-    To enlarge/shrink poster → edit .corruption-bleed_frame width min(...).
-    To change edge fade → edit mask-image on .corruption-bleed_image.
-    To retarget modal source → change data-modal-image (and src if needed).
-  -->
+  
   <section class="section is-secondary corruption-bleed" aria-label="Corruption of Justice">
     <div class="corruption-bleed_frame">
       <img
