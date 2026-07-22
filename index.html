@@ -1092,24 +1092,6 @@
       </nav>
     </div>
   </footer>
-
-  <!--
-    IMAGE MODAL SHELL — full-size lightbox target for data-modal-image clicks
-    Elements:
-      #imageModal          overlay root (display:none until opened)
-      .modal-close         close control (×); also Escape / backdrop via JS
-      #modalImage          <img> filled by JS with the clicked source
-      #modalVideo          <video> used when source matches video extensions
-    CSS (duplicated inline in this file <head>; similar rules also in shared/styles.css):
-      #imageModal          fixed inset 0; z-index 9999; rgba(0,0,0,0.95)
-      #imageModal img|video  max 95vw × 90vh; object-fit: contain
-    JS: shared/image-modal.js (defer, loaded below)
-      - initImageModal on DOMContentLoaded
-      - binds click on [data-modal-image] (and data-modalImage / href fallbacks)
-      - openImageModal / closeImageModal; moves #imageModal to document.body
-      - video if src matches /\.(mp4|webm|ogg|mov)$/i else shows #modalImage
-    On this page the only modal source is the Corruption of Justice poster
-    (img.corruption-bleed_image[data-modal-image]). Hero + card thumbs do not use it.
   -->
   <div id="imageModal">
     <span class="modal-close" role="button" tabindex="0" aria-label="Close full-size image">&times;</span>
