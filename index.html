@@ -40,25 +40,71 @@
       display: block;
       width: 100%;
       height: 100%;
-      min-height: 32rem;
+      min-height: 24rem;
       object-fit: cover;
     }
-    .hero_back {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      height: 46vh;
-      min-height: 56rem;
-      max-height: 124rem;
-    }
-    .hero_front {
-      position: relative;
-      z-index: 1;
+    /*
+      Hero matches reference layout:
+      - full-bleed black stage
+      - centered 4:3 INJUSTICE panel (fills its frame without edge cropping)
+      - Isabel quote near top of panel
+      - timer overlaid on center of the INJUSTICE word
+    */
+    header.section {
+      background: #000 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      overflow: visible !important;
     }
     .hero-overlay {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: #000;
       color: var(--_colors---text-color--text-on-overlay);
+    }
+    .hero_back {
+      position: relative;
+      width: min(96vw, calc(92vh * 4 / 3), 64rem);
+      max-width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: 92vh !important;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #000;
+    }
+    /* Full 4:3 art — fill its matching frame with no crop or letterboxing */
+    .hero_back > img.image_cover,
+    .hero_back > img.position_absolute,
+    .hero-lady-justice {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      transform: scale(1.1) !important;
+      border-radius: 0 !important;
+    }
+    /* Soft side falloff into black like the reference */
+    .hero_back::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, #000 0%, transparent 12%, transparent 88%, #000 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.55) 100%);
+    }
+    .hero_front {
+      position: relative;
+      z-index: 1;
     }
     /* override Webflow grid placement so hero stacks instead of overlays */
     #w-node-d7b20830-3881-6085-8a19-0de1f259c28b-51cb9c8e.w-node-f341100a-c68b-eb7c-0218-9b7a60e649ed-e51ccb9d,
@@ -66,120 +112,44 @@
       grid-area: auto;
       align-self: auto;
     }
+    /* Quote + timer stack over the centered panel (reference composition) */
     .hero-quote-smoke {
       position: absolute;
       inset: 0;
+      z-index: 3;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 1vw;
+      justify-content: flex-start;
+      padding: 0 6%;
       pointer-events: none;
-      z-index: 2;
     }
     .hero-quote-smoke::before,
     .hero-quote-smoke::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(42px);
-      opacity: 0;
-      transform: scale(0.7);
-      animation: smoke-cloud 8s ease-out infinite;
+      content: none;
+      display: none;
     }
-    .hero-quote-smoke::before {
-      width: 21rem;
-      height: 14rem;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03) 58%, transparent 72%);
-      animation-delay: 0.35s;
-    }
-    .hero-quote-smoke::after {
-      width: 20rem;
-      height: 9rem;
-      background: radial-gradient(circle, rgba(251, 191, 36, 0.12), rgba(255, 255, 255, 0.02) 60%, transparent 78%);
-      animation-delay: 1.1s;
-    }
+    /* Isabel quote — upper band of the panel, ~above INJUSTICE */
     .hero-quote-smoke_text {
       position: relative;
-      max-width: 48rem;
-      margin: 0;
-      color: rgba(255, 255, 255, 0);
+      z-index: 4;
+      width: 100%;
+      max-width: 34rem;
+      margin: 20.5% 0 0;
+      color: rgba(235, 230, 220, 0.88) !important;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.15rem, 2.7vw, 2.4rem);
+      font-size: clamp(0.72rem, 1.55vw, 1.05rem);
       font-style: italic;
-      line-height: 1.5;
-      letter-spacing: 0.01em;
+      line-height: 1.45;
+      letter-spacing: 0.02em;
       text-align: center;
-      text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.22),
-        0 0 24px rgba(255, 255, 255, 0.18),
-        0 0 48px rgba(255, 255, 255, 0.08);
-      filter: blur(9px);
-      transform: translateY(36px) scale(0.96);
-      opacity: 0;
-      animation: smoke-quote 8s ease-out infinite;
-    }
-    @keyframes smoke-quote {
-      0% {
-        opacity: 0;
-        filter: blur(16px);
-        transform: translateY(44px) scale(0.94);
-        color: rgba(255, 255, 255, 0);
-      }
-      18% {
-        opacity: 0.92;
-        filter: blur(1.5px);
-        transform: translateY(0) scale(1);
-        color: rgba(255, 255, 255, 0.96);
-      }
-      42% {
-        opacity: 0.84;
-        filter: blur(1px);
-        transform: translateY(-4px) scale(1.01);
-        color: rgba(255, 250, 240, 0.94);
-      }
-      72% {
-        opacity: 0.2;
-        filter: blur(12px);
-        transform: translateY(-38px) scale(1.06);
-        color: rgba(255, 255, 255, 0.16);
-      }
-      100% {
-        opacity: 0;
-        filter: blur(22px);
-        transform: translateY(-64px) scale(1.1);
-        color: rgba(255, 255, 255, 0);
-      }
-    }
-    @keyframes smoke-cloud {
-      0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.72);
-      }
-      24% {
-        opacity: 0.62;
-        transform: translateY(0) scale(1);
-      }
-      58% {
-        opacity: 0.28;
-        transform: translateY(-26px) scale(1.08);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-56px) scale(1.22);
-      }
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
+      filter: none !important;
+      transform: none !important;
+      opacity: 0.92 !important;
+      animation: none !important;
     }
     @media (prefers-reduced-motion: reduce) {
-      .hero-quote-smoke::before,
-      .hero-quote-smoke::after,
-      .hero-quote-smoke_text {
-        animation: none;
-      }
-      .hero-quote-smoke_text {
-        opacity: 0.85;
-        color: rgba(255, 255, 255, 0.95);
-        filter: none;
-        transform: none;
-      }
       /* P1-5: every remaining animation/transition on the landing page goes instant */
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -287,30 +257,37 @@
       background-color: #000 !important;
       background-image: none !important;
     }
+    .section.corruption-bleed,
     .corruption-bleed {
       position: relative;
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      overflow: hidden;
-      background: #000;
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: clamp(1rem, 3vw, 2rem) !important;
+      padding-bottom: clamp(1.25rem, 3vw, 2.25rem) !important;
+      /* Webflow .section uses overflow:clip — override so nothing is edge-cropped */
+      overflow: visible !important;
+      background: #000 !important;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
+      gap: 0;
+      color: #f5f0e6 !important;
     }
     .corruption-bleed_frame {
       position: relative;
-      /* Same square crop everywhere; ~40% larger than prior 56rem/92vh cap */
-      width: min(100vw, 129vh, 78.4rem);
+      /* Smaller, clearly inset square so the full poster is visible (not edge-to-edge zoom) */
+      width: min(92vw, 70vh, 40rem);
       aspect-ratio: 1 / 1;
       height: auto;
-      max-width: 100%;
-      overflow: hidden;
+      max-width: min(92vw, 40rem);
+      max-height: 70vh;
+      overflow: visible;
       flex: 0 0 auto;
       background: #000;
+      margin: 0 auto;
     }
     .corruption-bleed_image {
       position: absolute;
@@ -320,43 +297,23 @@
       height: 100%;
       max-width: none !important;
       margin: 0;
-      /* contain + matching 1:1 frame = full poster, identical crop on all screens */
+      /* contain + 1:1 frame = entire poster visible, no zoom crop */
       object-fit: contain;
       object-position: center center;
       border: 0;
       border-radius: 0;
       cursor: zoom-in;
-      filter: saturate(1.05) contrast(1.04);
-      /* Lighter edge fade — more of the poster stays solid */
-      -webkit-mask-image: radial-gradient(
-        ellipse 100% 100% at 50% 50%,
-        #000 72%,
-        rgba(0, 0, 0, 0.95) 84%,
-        rgba(0, 0, 0, 0.55) 94%,
-        transparent 100%
-      );
-      mask-image: radial-gradient(
-        ellipse 100% 100% at 50% 50%,
-        #000 72%,
-        rgba(0, 0, 0, 0.95) 84%,
-        rgba(0, 0, 0, 0.55) 94%,
-        transparent 100%
-      );
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
+      /* No mask / vignette — show the full artwork edge-to-edge */
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      filter: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
+    /* Vignette disabled so the poster is not edge-clipped */
     .corruption-bleed_frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      background:
-        linear-gradient(to right, rgba(0, 0, 0, 0.72) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.72) 100%),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.72) 100%),
-        radial-gradient(ellipse 90% 90% at 50% 50%, transparent 68%, rgba(0, 0, 0, 0.35) 100%);
+      content: none;
+      display: none;
     }
     /* Quote hotspots: invisible hit areas; only the hovered quote enlarges */
     .corruption-quote {
@@ -446,7 +403,9 @@
     }
     @media screen and (max-width: 767px) {
       .corruption-bleed_frame {
-        width: min(100vw, 129vh, 100%);
+        width: min(94vw, 70vh, 100%);
+        max-width: 94vw;
+        max-height: 70vh;
       }
       .corruption-quote {
         padding: 0.3rem 0.35rem;
@@ -606,61 +565,125 @@
       font-style: italic;
       line-height: 1.6;
     }
-    /* Elapsed-time clock — time since arrest */
+    /*
+      Timer — centered on the INJUSTICE word (reference):
+      sits ~1–1.5in under the Isabel quote band / mid-panel.
+    */
+    .hero-quote-smoke .elapsed-clock,
     .elapsed-clock {
-      background: linear-gradient(180deg, #0b1014 0%, #090c0f 100%);
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: absolute !important;
+      left: 50% !important;
+      top: 70% !important;
+      transform: translate(-50%, -50%) !important;
+      z-index: 5;
+      width: min(88%, 28rem);
+      max-width: 28rem;
+      margin: 0 !important;
+      padding: 0.35rem 0.5rem !important;
+      background: transparent !important;
+      background-image: none !important;
+      border: 0 !important;
       text-align: center;
+      color: #f5f0e6 !important;
+      overflow: visible !important;
+      pointer-events: none;
+    }
+    .elapsed-clock_inner {
+      display: block !important;
+      visibility: visible !important;
+      width: 100%;
     }
     .elapsed-clock_eyebrow {
-      margin-bottom: 0.8rem;
-      color: #d4b85c;
-      letter-spacing: 0.22em;
+      display: block !important;
+      margin: 0 0 0.2rem;
+      color: rgba(212, 184, 92, 0.9) !important;
+      font-size: clamp(0.55rem, 1vw, 0.68rem);
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
     }
     .elapsed-clock_title {
+      display: block !important;
       margin: 0;
-      color: rgba(255, 251, 245, 0.96);
+      color: rgba(255, 248, 235, 0.95) !important;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      font-size: clamp(0.95rem, 2vw, 1.25rem);
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1.15;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
     }
     .elapsed-clock_grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: flex !important;
+      visibility: visible !important;
+      flex-wrap: nowrap;
       justify-content: center;
-      gap: clamp(1.1rem, 3.4vw, 2.6rem);
-      margin-top: 1.9rem;
+      gap: clamp(0.55rem, 1.8vw, 1.15rem);
+      margin-top: 0.55rem;
     }
     .elapsed-clock_cell {
-      display: flex;
+      display: flex !important;
       flex-direction: column;
       align-items: center;
-      min-width: 4.6rem;
+      min-width: 2.4rem;
     }
     .elapsed-clock_value {
-      color: #e8c96a;
+      display: block !important;
+      color: #e0b34a !important;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+      font-size: clamp(1.15rem, 2.8vw, 1.85rem);
       font-variant-numeric: tabular-nums;
       font-weight: 700;
-      line-height: 1.1;
-      text-shadow: 0 0 18px rgba(224, 179, 74, 0.22);
+      line-height: 1.05;
+      text-shadow: 0 0 14px rgba(224, 179, 74, 0.35), 0 2px 10px rgba(0, 0, 0, 0.95);
     }
     .elapsed-clock_label {
-      margin-top: 0.45rem;
-      color: rgba(255, 248, 235, 0.55);
-      font-size: 0.7rem;
+      display: block !important;
+      margin-top: 0.2rem;
+      color: rgba(255, 248, 235, 0.62) !important;
+      font-size: 0.52rem;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
     }
     .elapsed-clock_note {
-      margin: 1.7rem 0 0;
-      color: rgba(255, 248, 235, 0.6);
+      display: block !important;
+      margin: 0.55rem 0 0;
+      color: rgba(255, 248, 235, 0.62) !important;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(0.92rem, 1.2vw, 1.02rem);
+      font-size: clamp(0.62rem, 1vw, 0.78rem);
       font-style: italic;
-      line-height: 1.6;
+      line-height: 1.35;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+    }
+    /* Hide Webflow fade overlay so it does not wash out the panel */
+    .hero_back > .overlay_opacity-middle {
+      display: none !important;
+    }
+    @media screen and (max-width: 767px) {
+      .hero_back {
+        width: min(96vw, calc(92vh * 4 / 3), 100%);
+        max-height: 92vh !important;
+      }
+      .hero-quote-smoke_text {
+        margin-top: 17%;
+        font-size: clamp(0.68rem, 3.2vw, 0.9rem);
+        max-width: 92%;
+      }
+      .hero-quote-smoke .elapsed-clock,
+      .elapsed-clock {
+        top: 66% !important;
+        width: min(94%, 22rem);
+      }
+      .elapsed-clock_grid {
+        flex-wrap: wrap;
+        gap: 0.45rem 0.7rem;
+      }
+      .elapsed-clock_cell { min-width: 2.1rem; }
     }
   </style>
   <script type="text/javascript">
@@ -819,59 +842,48 @@
   <header class="section">
     <div class="hero-overlay">
       <!--
-        IMAGE 1 — Hero Lady Justice (decorative, NOT modal-clickable)
-        File: documents/graphics/icons/InJustice.webp
-        Markup:
-          - wrapper: .hero_back (also Webflow node ids)
-          - img classes: .image_cover .position_absolute .radius_none
-          - NO data-modal-image → does not open #imageModal
-        Size / crop controls (inline <style> in this file <head>):
-          - .hero_back { height: 46vh; min-height: 56rem; max-height: 124rem; overflow: hidden; position: relative; width: 100%; }
-          - .image_cover + .position_absolute come from Webflow CSS (assets/css/webflow-shared.css)
-            → typically position:absolute; inset fill; object-fit:cover
-        Overlay layers on top of the image (same .hero_back):
-          - .hero-quote-smoke / .hero-quote-smoke_text (animated quote; pointer-events:none)
-          - .overlay_opacity-middle.mask_fade-top.events_none (dark fade)
-        Parent layout: .hero-overlay (flex column). Grid override rules for the
-        w-node-* ids force stack instead of Webflow side-by-side placement.
-        To change hero height → edit .hero_back in the head <style> block.
+        IMAGE 1 — Hero INJUSTICE panel (decorative, NOT modal-clickable)
+        File: documents/graphics/icons/InJustice_80_percent.webp
+        Layout (inline <style> in this file <head>):
+          - .hero-overlay: full-bleed black stage, centers the panel
+          - .hero_back: 4:3 frame, width min(96vw, 92vh at 4:3, 64rem), object-fit:contain
+          - .hero-quote-smoke_text: static Isabel quote in upper band of panel
+          - .elapsed-clock: absolute, below the INJUSTICE word (~64% down)
+        NO data-modal-image → does not open #imageModal
         To swap art → change src= on this <img>.
       -->
       <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" tabindex="-1" aria-hidden="true" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d">
-        <img width="1024" height="1024" alt="Lady Justice illustration" src="documents/graphics/icons/InJustice.webp" loading="lazy" class="image_cover position_absolute radius_none"/>
+        <img width="1158" height="869" alt="Lady Justice illustration" src="documents/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice"/>
         <div class="hero-quote-smoke">
           <p class="hero-quote-smoke_text">"What I fear most is power with impunity. I fear abuse of power, and the power to abuse." — Isabel Allende</p>
+          <div class="elapsed-clock" aria-labelledby="elapsed-clock-title">
+            <div class="elapsed-clock_inner">
+              <p class="eyebrow elapsed-clock_eyebrow">And Counting</p>
+              <h2 id="elapsed-clock-title" class="elapsed-clock_title">Time Since Arrest</h2>
+              <div class="elapsed-clock_grid" id="elapsedClock">
+                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="years">&ndash;</span><span class="elapsed-clock_label">Years</span></div>
+                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="months">&ndash;</span><span class="elapsed-clock_label">Months</span></div>
+                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="days">&ndash;</span><span class="elapsed-clock_label">Days</span></div>
+                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="hours">&ndash;</span><span class="elapsed-clock_label">Hours</span></div>
+                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="minutes">&ndash;</span><span class="elapsed-clock_label">Minutes</span></div>
+                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="seconds">&ndash;</span><span class="elapsed-clock_label">Seconds</span></div>
+              </div>
+              <p class="elapsed-clock_note">Elapsed since the arrest of Benjamin Allen <br><br> October 19, 2019.</p>
+            </div>
+          </div>
         </div>
         <div class="overlay_opacity-middle mask_fade-top events_none"></div>
       </div>
     </div>
   </header>
-
-  <section class="section elapsed-clock" aria-labelledby="elapsed-clock-title">
-    <div class="container">
-      <div class="elapsed-clock_inner">
-        <p class="eyebrow elapsed-clock_eyebrow">And Counting</p>
-        <h2 id="elapsed-clock-title" class="elapsed-clock_title">Time Since Arrest</h2>
-        <div class="elapsed-clock_grid" id="elapsedClock">
-          <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="years">&ndash;</span><span class="elapsed-clock_label">Years</span></div>
-          <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="months">&ndash;</span><span class="elapsed-clock_label">Months</span></div>
-          <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="days">&ndash;</span><span class="elapsed-clock_label">Days</span></div>
-          <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="hours">&ndash;</span><span class="elapsed-clock_label">Hours</span></div>
-          <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="minutes">&ndash;</span><span class="elapsed-clock_label">Minutes</span></div>
-          <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="seconds">&ndash;</span><span class="elapsed-clock_label">Seconds</span></div>
-        </div>
-        <p class="elapsed-clock_note">Elapsed since the arrest of Benjamin Allen &mdash; counting from October 19, 2019.</p>
-      </div>
-    </div>
-  </section>
   <script>
     (function () {
-      // === SET THE ARREST DATE HERE ===
-      var ARREST_DATE = new Date(2019, 9, 19, 0, 0, 0); // Oct 19, 2019 (local time)
-      // =================================
+      var ARREST_DATE = new Date(2019, 9, 19, 0, 0, 0); // Oct 19, 2019
+      var root = document.getElementById('elapsedClock');
+      if (!root) return;
       var els = {};
       ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach(function (unit) {
-        els[unit] = document.querySelector('#elapsedClock [data-unit="' + unit + '"]');
+        els[unit] = root.querySelector('[data-unit="' + unit + '"]');
       });
       function tick() {
         var now = new Date();
@@ -889,12 +901,12 @@
           d += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
         }
         if (m < 0) { y--; m += 12; }
-        els.years.textContent = y;
-        els.months.textContent = m;
-        els.days.textContent = d;
-        els.hours.textContent = h;
-        els.minutes.textContent = mi;
-        els.seconds.textContent = s < 10 ? '0' + s : s;
+        if (els.years) els.years.textContent = y;
+        if (els.months) els.months.textContent = m;
+        if (els.days) els.days.textContent = d;
+        if (els.hours) els.hours.textContent = h;
+        if (els.minutes) els.minutes.textContent = mi;
+        if (els.seconds) els.seconds.textContent = s < 10 ? '0' + s : String(s);
       }
       tick();
       setInterval(tick, 1000);
@@ -906,7 +918,7 @@
       <article class="opening-essay_inner">
         <p class="eyebrow opening-essay_eyebrow">A Featured Essay From Nifong's Neverland - Lee County, NC <br><br> Where the rules that caught him never apply.</p>
         <h2 id="opening-essay-title" class="opening-essay_title">
-          <span class="opening-essay_title-main">Bartholomew</span>
+          <span class="opening-essay_title-main">Being Bartholomew</span>
           <span class="opening-essay_title-sub">When the Rogue Prosecutor Becomes the Institution</span>
         </h2>
         <div class="opening-essay_body">
@@ -1007,8 +1019,6 @@
       </blockquote>
     </div>
   </section>
-
-  
 
   <section class="section is-secondary">
     <div class="container">
