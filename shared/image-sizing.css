@@ -1,0 +1,46 @@
+/*
+ * Site-wide one-setting image sizing
+ *
+ * Ordinary image:
+ *   <img style="--image-size: 60rem" ...>
+ *
+ * Image with a frame/overlays:
+ *   <div data-image-frame style="--image-size: 60rem; --image-ratio: 1 / 1">
+ *     <img data-image-fill ...>
+ *   </div>
+ *
+ * Change only --image-size. The displayed image and its layout space resize together.
+ */
+
+/* Any ordinary image can use the same single size setting. */
+img[style*="--image-size"] {
+  display: block;
+  width: min(100%, var(--image-size)) !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin-inline: auto;
+}
+
+/* Framed/overlaid images reserve exactly the same space as the image. */
+[data-image-frame] {
+  position: relative;
+  width: min(var(--image-viewport-limit, 94vw), var(--image-size, 100%)) !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: var(--image-ratio, 1 / 1);
+  overflow: var(--image-overflow, visible);
+  margin-inline: auto;
+}
+
+[data-image-frame] > img[data-image-fill] {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  object-fit: var(--image-fit, contain) !important;
+  object-position: var(--image-position, center) !important;
+  transform: scale(var(--image-scale, 1)) !important;
+}
