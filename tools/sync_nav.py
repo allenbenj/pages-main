@@ -24,6 +24,7 @@ NAV_TABS: list[tuple[str, str]] = [
     ("players.html", "Players"),
     ("evidence.html", "Evidence"),
     ("contradictions.html", "Contradictions"),
+    ("New_Face.html", "New Face"),
     ("misconduct.html", "Misconduct"),
     ("documentspage.html", "Documents"),
     ("misconductandfailure.html", "Mindmaps"),
