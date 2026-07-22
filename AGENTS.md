@@ -131,7 +131,7 @@ python tools/site_release.py validate --root <staged-dir>
 
 `.github/workflows/static.yml` runs on every push to `main` (or manual dispatch):
 
-1. `npm ci && npm audit --audit-level=high && npm run build` inside `network_analysis/` (Node 22).
+1. `npm ci && npm audit --audit-level=high && npm run build` inside `network_analysis/` (Node 24).
 2. Installs `ffmpeg`.
 3. `python tools/site_release.py stage --source . --output $RUNNER_TEMP/site`.
 4. `python tools/site_release.py validate --root $RUNNER_TEMP/site`.
