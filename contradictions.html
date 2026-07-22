@@ -474,7 +474,7 @@
             if (viewport) {
                 viewport.innerHTML = `
                     <figure class="false-story-fallback" style="margin:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;box-sizing:border-box;">
-                        <img style="--image-size: auto"
+                        <img
                             loading="lazy"
                             decoding="async"
                             src="documents/graphics/house_area/False%20Story.webp"
@@ -501,7 +501,7 @@
 
             for (const candidate of drawioCandidates) {
                 const testUrl = new URL(candidate, window.location.href).href;
-                const attempt = await fetch(encodeURI(testUrl));
+                const attempt = await fetch(testUrl);
                 if (attempt.ok) {
                     filePath = candidate;
                     response = attempt;

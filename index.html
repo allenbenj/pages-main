@@ -66,15 +66,6 @@
       color: var(--_colors---text-color--text-on-overlay);
     }
     .hero_back {
-      position: relative;
-      width: min(96vw, var(--image-size, 64rem));
-      max-width: 100%;
-      aspect-ratio: var(--image-ratio, 4 / 3);
-      height: auto !important;
-      min-height: 0 !important;
-      max-height: 92vh !important;
-      margin: 0 auto;
-      overflow: hidden;
       background: #000;
     }
     /* Full 4:3 art — fill its matching frame with no crop or letterboxing */
@@ -276,27 +267,8 @@
       gap: 0;
       color: #f5f0e6 !important;
     }
-    .corruption-bleed_frame {
-  --image-size: 80rem; /* CHANGE ONLY THIS NUMBER */
-
-  position: relative;
-  width: min(94vw, var(--image-size));
-  aspect-ratio: 1 / 1;
-  height: auto;
-  overflow: visible;
-  margin: 0 auto;
-}
     .corruption-bleed_image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-    /* Vignette disabled so the poster is not edge-clipped */
-    .corruption-bleed_frame::after {
-      content: none;
-      display: none;
+      cursor: zoom-in;
     }
     /* Quote hotspots: invisible hit areas; only the hovered quote enlarges */
     .corruption-quote {
@@ -385,11 +357,6 @@
       }
     }
     @media screen and (max-width: 767px) {
-      .corruption-bleed_frame {
-        width: min(94vw, 70vh, 100%);
-        max-width: 94vw;
-        max-height: 70vh;
-      }
       .corruption-quote {
         padding: 0.3rem 0.35rem;
       }
@@ -648,10 +615,6 @@
       display: none !important;
     }
     @media screen and (max-width: 767px) {
-      .hero_back {
-        width: min(96vw, calc(92vh * 4 / 3), 100%);
-        max-height: 92vh !important;
-      }
       .hero-quote-smoke_text {
         margin-top: 17%;
         font-size: clamp(0.68rem, 3.2vw, 0.9rem);
@@ -830,7 +793,7 @@
         File: documents/graphics/icons/InJustice_80_percent.webp
         Layout (inline <style> in this file <head>):
           - .hero-overlay: full-bleed black stage, centers the panel
-          - .hero_back: 4:3 frame, width min(96vw, 92vh at 4:3, 64rem), object-fit:contain
+          - Change only --image-size on .hero_back; the image and frame resize together
           - .hero-quote-smoke_text: static Isabel quote in upper band of panel
           - .elapsed-clock: absolute, below the INJUSTICE word (~64% down)
         NO data-modal-image → does not open #imageModal
@@ -912,8 +875,8 @@
             <span class="opening-essay_placeholder-label">Fall of Nifong</span>
             <p>On April 11, 2007, North Carolina State Bar disciplinary investigators confronted Mike Nifong with the DNA lab reports he had intentionally hidden from the defense. Standing in a sterile conference room, the Duke lacrosse prosecutor watched his confident stride dissolve into panicked silence as the state's attorneys pointed to the clean genetic profiles of the players. In that quiet room, his constructed reality shattered, leaving him to face the stark certainty of his own professional ruin.</p>
           </div>
-          <p>Bartholomew operates in a far more insidious reality. She is not a rogue actor fighting the system; she is the system's bully. chosen instrument. In this arena, the court does not function as a restraining force — it acts as a rubber stamp. Law enforcement does not provide an independent check; it supplies ammunition on demand, delivering whatever narrative is required of it.</p>
-          <blockquote class="opening-essay_pull">She is not a rogue actor fighting the system; she is the system's bully, not even the.</blockquote>
+          <p>Bartholomew operates in a far more insidious reality. She is not a rogue actor fighting the system; she is the system's bully, the elected District Attorney will not even confront her.  In this arena, the court does not function as a restraining force — it acts as a rubber stamp. Law enforcement does not provide an independent check; it supplies ammunition on demand, delivering whatever narrative is required of it.</p>
+          <blockquote class="opening-essay_pull">She is not a rogue actor fighting the system; she is the system's bully, the elected District Attorney will not even confront her.</blockquote>
           <p>The machinery of justice here is not moving in concert to find the truth; it is moving in lockstep to secure a conviction. Selective investigation, tortured timelines, and shattered witness credibility are not treated as fatal flaws in the state's case. They are absorbed, normalized, and actively defended by the very institutions tasked with scrutinizing them.</p>
           <p>This is the structural trap. When a single prosecutor overreaches, the remedy is personal accountability — disbarment, censure, removal. But when the judiciary remains willfully blind and the investigative apparatus keeps feeding a poisoned narrative, that remedy disappears. The defendant is no longer just fighting the charges. They are forced to litigate the state's absolute refusal to examine its own conduct.</p>
           <blockquote class="opening-essay_pull">When the judiciary remains willfully blind, the remedy doesn't weaken. It vanishes.</blockquote>
@@ -931,7 +894,7 @@
 
   
   <section class="section is-secondary corruption-bleed" aria-label="Corruption of Justice">
-    <div class="corruption-bleed_frame" data-image-frame style="--image-size: 80rem; --image-ratio: 1 / 1">
+    <!-- Change only --image-size; the complete poster and its section resize together. --><div class="corruption-bleed_frame" data-image-frame style="--image-size: 80rem; --image-ratio: 1 / 1">
       <img
         src="documents/graphics/Corruption%20of%20Justice.webp"
         alt="Corruption of Justice — click to view full size"
@@ -1084,53 +1047,47 @@
     </div>
   </section>
 
-  <footer class="footer is-inverse">
+  <footer id="site-footer" class="footer is-inverse">
     <div class="container">
-      <nav class="grid_5-col gap-small">
-        <div id="w-node-a3136cdf-9fd0-cef1-55b3-16a52f8a7c91-b17c3d94" class="grid-item-manual w-node-_83e40f25-3baa-b9f8-ac05-5b1dec708973-ad9b63c6">
+      <nav class="grid_4-col gap-small" aria-label="Footer navigation">
+        <div class="grid-item-manual">
           <div class="flex_vertical gap-small">
             <div class="ix-link-wrapper"><a href="index.html" class="logo-link w-inline-block"><div class="nav_logo-icon"><svg width="100%" height="100%" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet"><path d="M28,0H5C2.24,0,0,2.24,0,5v23c0,2.76,2.24,5,5,5h23c2.76,0,5-2.24,5-5V5c0-2.76-2.24-5-5-5ZM29,17c-6.63,0-12,5.37-12,12h-1c0-6.63-5.37-12-12-12v-1c6.63,0,12-5.37,12-12h1c0,6.63,5.37,12,12,12v1Z" fill="currentColor"></path></svg></div><div data-brand-name="true" class="paragraph_xlarge margin-bottom_none text_all-caps">An Edifice of Lies</div></a></div>
-            <ul role="list" aria-label="Social media links" class="footer_icon-group margin_top-auto w-list-unstyled">
-              <li class="margin-bottom_none"><a href="index.html" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewBox="0 0 16 16"><path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z" fill="currentColor"></path></svg><div class="screen-reader">Facebook</div></a></li>
-              <li class="margin-bottom_none"><a href="index.html" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewBox="0 0 16 16"><path d="M8,1.441c2.136,0,2.389.009,3.233.047a4.419,4.419,0,0,1,1.485.276,2.472,2.472,0,0,1,.92.6,2.472,2.472,0,0,1,.6.92,4.419,4.419,0,0,1,.276,1.485c.038.844.047,1.1.047,3.233s-.009,2.389-.047,3.233a4.419,4.419,0,0,1-.276,1.485,2.644,2.644,0,0,1-1.518,1.518,4.419,4.419,0,0,1-1.485.276c-.844.038-1.1.047-3.233.047s-2.389-.009-3.233-.047a4.419,4.419,0,0,1-1.485-.276,2.472,2.472,0,0,1-.92-.6,2.472,2.472,0,0,1-.6-.92,4.419,4.419,0,0,1-.276-1.485c-.038-.844-.047-1.1-.047-3.233s.009-2.389.047-3.233a4.419,4.419,0,0,1,.276-1.485,2.472,2.472,0,0,1,.6-.92,2.472,2.472,0,0,1,.92-.6,4.419,4.419,0,0,1,1.485-.276c.844-.038,1.1-.047,3.233-.047M8,0C5.827,0,5.555.009,4.7.048A5.868,5.868,0,0,0,2.76.42a3.908,3.908,0,0,0-1.417.923A3.908,3.908,0,0,0,.42,2.76,5.868,5.868,0,0,0,.048,4.7C.009,5.555,0,5.827,0,8s.009,2.445.048,3.3A5.868,5.868,0,0,0,.42,13.24a3.908,3.908,0,0,0,.923,1.417,3.908,3.908,0,0,0,1.417.923,5.868,5.868,0,0,0,1.942.372C5.555,15.991,5.827,16,8,16s2.445-.009,3.3-.048a5.868,5.868,0,0,0,1.942-.372,4.094,4.094,0,0,0,2.34-2.34,5.868,5.868,0,0,0,.372-1.942c.039-.853.048-1.125.048-3.3s-.009-2.445-.048-3.3A5.868,5.868,0,0,0,15.58,2.76a3.908,3.908,0,0,0-.923-1.417A3.908,3.908,0,0,0,13.24.42,5.868,5.868,0,0,0,11.3.048C10.445.009,10.173,0,8,0Z" fill="currentColor"></path><path d="M8,3.892A4.108,4.108,0,1,0,12.108,8,4.108,4.108,0,0,0,8,3.892Zm0,6.775A2.667,2.667,0,1,1,10.667,8,2.667,2.667,0,0,1,8,10.667Z" fill="currentColor"></path><circle cx="12.27" cy="3.73" r="0.96" fill="currentColor"></circle></svg><div class="screen-reader">Instagram</div></a></li>
-              <li class="margin-bottom_none"><a href="index.html" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewBox="0 0 16 16"><path d="M12.3723 1.16992H14.6895L9.6272 6.95576L15.5825 14.829H10.9196L7.26734 10.0539L3.08837 14.829H0.769833L6.18442 8.64037L0.471436 1.16992H5.2528L8.55409 5.53451L12.3723 1.16992ZM11.5591 13.4421H12.843L4.55514 2.48399H3.17733L11.5591 13.4421Z" fill="currentColor"></path></svg><div class="screen-reader">X</div></a></li>
-              <li class="margin-bottom_none"><a href="index.html" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewBox="0 0 16 16"><path d="M15.3,0H0.7C0.3,0,0,0.3,0,0.7v14.7C0,15.7,0.3,16,0.7,16h14.7c0.4,0,0.7-0.3,0.7-0.7V0.7 C16,0.3,15.7,0,15.3,0z M4.7,13.6H2.4V6h2.4V13.6z M3.6,5C2.8,5,2.2,4.3,2.2,3.6c0-0.8,0.6-1.4,1.4-1.4c0.8,0,1.4,0.6,1.4,1.4 C4.9,4.3,4.3,5,3.6,5z M13.6,13.6h-2.4V9.9c0-0.9,0-2-1.2-2c-1.2,0-1.4,1-1.4,2v3.8H6.2V6h2.3v1h0c0.3-0.6,1.1-1.2,2.2-1.2 c2.4,0,2.8,1.6,2.8,3.6V13.6z" fill="currentColor"></path></svg><div class="screen-reader">LinkedIn</div></a></li>
-              <li class="margin-bottom_none"><a href="index.html" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewBox="0 0 16 16"><path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z" fill="currentColor"></path></svg><div class="screen-reader">YouTube</div></a></li>
-            </ul>
+            <p class="text-color_secondary margin_top-auto">A documented public record of the evidence, chronology, contradictions, and institutional failures in State v. Benjamin Allen.</p>
           </div>
         </div>
         <ul role="list" class="w-list-unstyled">
-          <li><h2 class="heading_xxsmall text-color_secondary">Overview</h2></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Overview</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Principles</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Cases</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Failures</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Contact</div></a></li>
+          <li><h2 class="heading_xxsmall text-color_secondary">Case Record</h2></li>
+          <li><a href="overview.html" class="footer_link on-inverse w-inline-block"><div>Project Map</div></a></li>
+          <li><a href="timeline.html" class="footer_link on-inverse w-inline-block"><div>Timeline</div></a></li>
+          <li><a href="players.html" class="footer_link on-inverse w-inline-block"><div>People</div></a></li>
+          <li><a href="connections.html" class="footer_link on-inverse w-inline-block"><div>Connections</div></a></li>
+          <li><a href="scene.html" class="footer_link on-inverse w-inline-block"><div>Scene</div></a></li>
         </ul>
         <ul role="list" class="w-list-unstyled">
-          <li><h2 class="heading_xxsmall text-color_secondary">Resources</h2></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Reports</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Guides</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Articles</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>FAQs</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Support</div></a></li>
+          <li><h2 class="heading_xxsmall text-color_secondary">Evidence &amp; Analysis</h2></li>
+          <li><a href="evidence.html" class="footer_link on-inverse w-inline-block"><div>Evidence</div></a></li>
+          <li><a href="contradictions.html" class="footer_link on-inverse w-inline-block"><div>Contradictions</div></a></li>
+          <li><a href="documentspage.html" class="footer_link on-inverse w-inline-block"><div>Source Documents</div></a></li>
+          <li><a href="misconduct.html" class="footer_link on-inverse w-inline-block"><div>Misconduct</div></a></li>
+          <li><a href="judicial-duty.html" class="footer_link on-inverse w-inline-block"><div>Judicial Duty</div></a></li>
         </ul>
         <ul role="list" class="w-list-unstyled">
-          <li><h2 class="heading_xxsmall text-color_secondary">Legal</h2></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Terms</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Privacy</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Policy</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Access</div></a></li>
-          <li><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Notice</div></a></li>
+          <li><h2 class="heading_xxsmall text-color_secondary">Research &amp; Context</h2></li>
+          <li><a href="case-study.html" class="footer_link on-inverse w-inline-block"><div>Case Study</div></a></li>
+          <li><a href="data-snapshot.html" class="footer_link on-inverse w-inline-block"><div>Data Snapshot</div></a></li>
+          <li><a href="why-dont-we-have-this-system.html" class="footer_link on-inverse w-inline-block"><div>Policy Review</div></a></li>
+          <li><a href="prosecutor_allowed.html" class="footer_link on-inverse w-inline-block"><div>Prosecutorial Accountability</div></a></li>
+          <li><a href="general-videos.html" class="footer_link on-inverse w-inline-block"><div>Video Archive</div></a></li>
         </ul>
       </nav>
       <div class="divider margin-top_xsmall margin-bottom_xsmall"></div>
-      <nav class="footer_bottom">
+      <nav class="footer_bottom" aria-label="Footer utilities">
         <div class="ix-link-wrapper"><div class="text-color_secondary">State v. Benjamin Allen Project - False Crime = True Corruption</div></div>
         <ul role="list" class="button-group gap-xsmall margin-top_none w-list-unstyled">
-          <li class="margin-bottom_none"><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Imprint</div></a></li>
-          <li class="margin-bottom_none"><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Cookies</div></a></li>
-          <li class="margin-bottom_none"><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Sitemap</div></a></li>
+          <li class="margin-bottom_none"><a href="overview.html" class="footer_link on-inverse w-inline-block"><div>Project Map</div></a></li>
+          <li class="margin-bottom_none"><a href="documentspage.html" class="footer_link on-inverse w-inline-block"><div>Source Documents</div></a></li>
+          <li class="margin-bottom_none"><a href="mailto:Leecountycorruptiontips@proton.me" class="footer_link on-inverse w-inline-block"><div>Confidential Contact</div></a></li>
         </ul>
       </nav>
     </div>
