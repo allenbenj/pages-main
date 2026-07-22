@@ -22,6 +22,8 @@ REFERENCE_RE = re.compile(
     re.IGNORECASE,
 )
 SCRIPT_BODY_RE = re.compile(r"(<script\b[^>]*>).*?(</script\s*>)", re.IGNORECASE | re.DOTALL)
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+CSS_COMMENT_RE = re.compile(r"/\*.*?\*/", re.DOTALL)
 IMAGE_TAG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 SKIPPED_SCHEMES = ("data:", "http:", "https:", "javascript:", "mailto:", "tel:", "//")
 # Preserve the public URL while producing a web-optimized delivery copy in the
@@ -115,7 +117,10 @@ def validate_site(root: Path) -> dict:
             errors.append(f"cannot decode text file: {page.relative_to(root).as_posix()}")
             continue
         if page.suffix.lower() == ".html":
+            text = HTML_COMMENT_RE.sub("", text)
             text = SCRIPT_BODY_RE.sub(r"\1\2", text)
+        else:
+            text = CSS_COMMENT_RE.sub("", text)
         for _, raw_target in REFERENCE_RE.findall(text):
             if "${" in raw_target or "{{" in raw_target:
                 continue
