@@ -67,9 +67,9 @@
     }
     .hero_back {
       position: relative;
-      width: min(96vw, calc(92vh * 4 / 3), 64rem);
+      width: min(96vw, var(--image-size, 64rem));
       max-width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: var(--image-ratio, 4 / 3);
       height: auto !important;
       min-height: 0 !important;
       max-height: 92vh !important;
@@ -88,7 +88,7 @@
       max-width: none !important;
       object-fit: contain !important;
       object-position: center center !important;
-      transform: scale(1.1) !important;
+      transform: scale(var(--image-scale, 1)) !important;
       border-radius: 0 !important;
     }
     /* Soft side falloff into black like the reference */
@@ -277,10 +277,10 @@
       color: #f5f0e6 !important;
     }
     .corruption-bleed_frame {
-  --corruption-size: 80rem; /* CHANGE ONLY THIS NUMBER */
+  --image-size: 80rem; /* CHANGE ONLY THIS NUMBER */
 
   position: relative;
-  width: min(94vw, var(--corruption-size));
+  width: min(94vw, var(--image-size));
   aspect-ratio: 1 / 1;
   height: auto;
   overflow: visible;
@@ -836,8 +836,8 @@
         NO data-modal-image → does not open #imageModal
         To swap art → change src= on this <img>.
       -->
-      <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" tabindex="-1" aria-hidden="true" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d">
-        <img width="1158" height="869" alt="Lady Justice illustration" src="documents/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice"/>
+      <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" tabindex="-1" aria-hidden="true" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d" data-image-frame style="--image-size: 70rem; --image-ratio: 4 / 3; --image-viewport-limit: 96vw; --image-overflow: hidden">
+        <img width="1158" height="869" alt="Lady Justice illustration" src="documents/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice" data-image-fill/>
         <div class="hero-quote-smoke">
           <p class="hero-quote-smoke_text">"What I fear most is power with impunity. I fear abuse of power, and the power to abuse." — Isabel Allende</p>
           <div class="elapsed-clock" aria-labelledby="elapsed-clock-title">
@@ -931,14 +931,14 @@
 
   
   <section class="section is-secondary corruption-bleed" aria-label="Corruption of Justice">
-    <div class="corruption-bleed_frame">
+    <div class="corruption-bleed_frame" data-image-frame style="--image-size: 80rem; --image-ratio: 1 / 1">
       <img
         src="documents/graphics/Corruption%20of%20Justice.webp"
         alt="Corruption of Justice — click to view full size"
         loading="lazy"
         decoding="async"
         data-modal-image="documents/graphics/Corruption of Justice.webp"
-        class="corruption-bleed_image"
+        class="corruption-bleed_image" data-image-fill
         title="Click to view original size"
       />
       <blockquote class="corruption-quote is-l1" tabindex="0" aria-label="Quote by Justice Sonia Sotomayor">
@@ -1036,12 +1036,12 @@
           and ensure shared/image-modal.js + #imageModal are present (they are).
       -->
       <div class="w-layout-grid grid_3-col gap-medium">
-        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="assets/images/case-study.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case Study: Wrongful Accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
-        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="assets/images/investigative-breakdown.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative Breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
-        <div class="ix-link-wrapper"><a href="prosecutor_allowed.html" class="content-block-link w-inline-block"><div id="w-node-b3c8fbea-0f17-c1d7-4d80-d640361590e6-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b3f-e51ccb9d"><img width="1216" height="832" alt="image of digital legal document on mobile device" src="assets/images/expert-commentary.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Commentary on ADA Corruption</h3><p class="margin-bottom_none">Legal perspectives on recent developments.</p></a></div>
-        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="assets/images/policy-review.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy Review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
-        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="assets/images/data-snapshot.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data Snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
-        <div class="ix-link-wrapper"><a href="judicial-duty.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img width="1216" height="832" alt="image of university campus" src="assets/images/resource-spotlight.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource Spotlight</h3><p class="margin-bottom_none">Read as a warning - legal professionals who may go to Lee County NC to practice.</p></a></div>
+        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="assets/images/case-study.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case Study: Wrongful Accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
+        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="assets/images/investigative-breakdown.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative Breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
+        <div class="ix-link-wrapper"><a href="prosecutor_allowed.html" class="content-block-link w-inline-block"><div id="w-node-b3c8fbea-0f17-c1d7-4d80-d640361590e6-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b3f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of digital legal document on mobile device" src="assets/images/expert-commentary.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Commentary on ADA Corruption</h3><p class="margin-bottom_none">Legal perspectives on recent developments.</p></a></div>
+        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="assets/images/policy-review.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy Review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
+        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="assets/images/data-snapshot.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data Snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
+        <div class="ix-link-wrapper"><a href="judicial-duty.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of university campus" src="assets/images/resource-spotlight.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource Spotlight</h3><p class="margin-bottom_none">Read as a warning - legal professionals who may go to Lee County NC to practice.</p></a></div>
       </div>
     </div>
   </section>
@@ -1126,7 +1126,7 @@
       </nav>
       <div class="divider margin-top_xsmall margin-bottom_xsmall"></div>
       <nav class="footer_bottom">
-        <div class="ix-link-wrapper"><div class="text-color_secondary">State v. Benjamin Allen Project Materials - When True Crime Becomes True Corruption</div></div>
+        <div class="ix-link-wrapper"><div class="text-color_secondary">State v. Benjamin Allen Project - False Crime = True Corruption</div></div>
         <ul role="list" class="button-group gap-xsmall margin-top_none w-list-unstyled">
           <li class="margin-bottom_none"><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Imprint</div></a></li>
           <li class="margin-bottom_none"><a href="index.html" class="footer_link on-inverse w-inline-block"><div>Cookies</div></a></li>

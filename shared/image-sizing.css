@@ -9,11 +9,12 @@
  *     <img data-image-fill ...>
  *   </div>
  *
+ * Every ordinary image starts with --image-size: auto. Replace only auto to resize it.
  * Change only --image-size. The displayed image and its layout space resize together.
  */
 
 /* Any ordinary image can use the same single size setting. */
-img[style*="--image-size"] {
+img[style*="--image-size"]:not([style*="--image-size: auto"]) {
   display: block;
   width: min(100%, var(--image-size)) !important;
   max-width: 100% !important;
