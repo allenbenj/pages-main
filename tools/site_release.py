@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit
 
 PUBLIC_DIRECTORIES = ("assets", "audio", "content", "documents", "shared", "video")
 BUILT_PUBLIC_DIRECTORIES = {"network_analysis": "network_analysis/dist"}
-PUBLIC_ROOT_FILES: tuple[str, ...] = ()
+PUBLIC_ROOT_FILES: tuple[str, ...] = (".nojekyll",)
 MAX_ARTIFACT_BYTES = 900 * 1024 * 1024
 FORBIDDEN_PATH_PARTS = {".agents", ".codex", ".github", ".grok", ".copilot", ".cursor", ".kilo", ".git", "node_modules"}
 REFERENCE_RE = re.compile(
@@ -97,7 +97,6 @@ def stage_site(source: Path, output: Path) -> None:
             raise FileNotFoundError(f"Configured delivery video is missing: {delivery_file}")
         transcode_delivery_video(delivery_file)
     add_image_delivery_hints(output)
-    (output / ".nojekyll").touch()
 
 def iter_files(root: Path):
     yield from (path for path in root.rglob("*") if path.is_file())
