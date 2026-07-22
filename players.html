@@ -115,22 +115,47 @@
       border-radius: 12px;
     }
 
-    /* Center titles and images in the bottom relationship cards */
-    .apple-card.u-migrated-8d2a8823 {
+    /* Center titles and images in the bottom relationship cards.
+       Use .grid... selectors so these beat the un-card chrome margin:0 rule. */
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 1000px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-e89830bd {
+      text-align: center;
+      width: 100%;
+    }
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-aed120d1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
       text-align: center;
     }
-    .apple-card.u-migrated-8d2a8823 .u-migrated-e89830bd {
-      text-align: center;
-    }
-    .apple-card.u-migrated-8d2a8823 .u-migrated-aed120d1 {
-      text-align: center;
-    }
-    .apple-card.u-migrated-8d2a8823 .u-migrated-64cb2393 {
-      text-align: center;
-    }
-    .apple-card.u-migrated-8d2a8823 img {
-      display: inline-block;
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-5bf284ef {
+      display: block;
+      width: fit-content;
       max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-64cb2393 {
+      text-align: center;
+      width: 100%;
+    }
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 img.u-migrated-fe557550,
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
   
@@ -433,21 +458,23 @@
                                  class="u-migrated-fe557550">
                         </div>
                     </div>
-                    <br>
                     <p class="u-migrated-64cb2393">Select image to view full resolution</p>
-                    <div class="apple-card u-migrated-8d2a8823">
+                </div>
+
+                <div class="apple-card u-migrated-8d2a8823">
                     <div class="u-migrated-e89830bd">Back the Blue - Till It Happens To You</div>
                     <div class="u-migrated-aed120d1">
                         <div data-modal-image="documents/graphics/products/Oversite.jpg" class="u-migrated-5bf284ef u-hover-scale">
                             <img loading="lazy" decoding="async" src="documents/graphics/products/Oversite.jpg"
-                                 alt="The Family Network of Deception"
+                                 alt="Back the Blue - Till It Happens To You"
                                  data-modal-image="documents/graphics/products/Oversite.jpg"
                                  class="u-migrated-fe557550">
                         </div>
                     </div>
                     <p class="u-migrated-64cb2393">Select image to view full resolution</p>
                 </div>
-                    <div class="apple-card u-migrated-8d2a8823">
+
+                <div class="apple-card u-migrated-8d2a8823">
                     <div class="u-migrated-e89830bd">Evidence Mindmap</div>
                     <div class="u-migrated-aed120d1">
                         <div data-modal-image="documents/mindmaps/evidence_mindmap.png" class="u-migrated-5bf284ef u-hover-scale">
@@ -459,7 +486,8 @@
                     </div>
                     <p class="u-migrated-64cb2393">Select image to view full resolution</p>
                 </div>
-                    <div class="apple-card u-migrated-8d2a8823">
+
+                <div class="apple-card u-migrated-8d2a8823">
                     <div class="u-migrated-e89830bd">Lauren Deal Escape Narrative</div>
                     <div class="u-migrated-aed120d1">
                         <div data-modal-image="documents/mindmaps/Lauren Deal Escape Narrative.png" class="u-migrated-5bf284ef u-hover-scale">
@@ -471,7 +499,8 @@
                     </div>
                     <p class="u-migrated-64cb2393">Select image to view full resolution</p>
                 </div>
-                    <div class="apple-card u-migrated-8d2a8823">
+
+                <div class="apple-card u-migrated-8d2a8823">
                     <div class="u-migrated-e89830bd">Broken System</div>
                     <div class="u-migrated-aed120d1">
                         <div data-modal-image="documents/mindmaps/Info_BrokenSystem.png" class="u-migrated-5bf284ef u-hover-scale">
@@ -483,7 +512,7 @@
                     </div>
                     <p class="u-migrated-64cb2393">Select image to view full resolution</p>
                 </div>
-        </div>
+            </div>
         </div>
     </div>
 <div id="floating-image-players" class="u-migrated-e4239ade">
