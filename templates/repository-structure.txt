@@ -1,0 +1,34 @@
+/
+├── index.html
+├── pages/
+│   ├── overview.html
+│   ├── timeline.html
+│   └── sources.html
+├── assets/
+│   ├── css/
+│   │   ├── main.css
+│   │   └── components.css
+│   ├── js/
+│   │   ├── main.js
+│   │   └── search.js
+│   ├── images/
+│   ├── icons/
+│   └── documents/
+├── data/
+│   └── content.json
+├── docs/
+│   ├── GITHUB_WEB_DEVELOPMENT_STANDARDS.md
+│   ├── CONTENT_STANDARDS.md
+│   ├── DESIGN_STANDARDS.md
+│   └── DEPLOYMENT.md
+├── .github/
+│   ├── copilot-instructions.md
+│   ├── instructions/
+│   ├── prompts/
+│   └── workflows/
+├── .gitignore
+├── AGENTS.md
+├── CONTRIBUTING.md
+├── README.md
+├── LICENSE
+└── 404.html
