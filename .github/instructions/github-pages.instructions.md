@@ -1,29 +1,13 @@
 ---
-applyTo: "**/*.{html,css,js,json,yml,yaml,md}"
+applyTo: "**/*.{html,css,js,json,yml,yaml,md,py}"
 ---
 
 # GitHub Pages Instructions
 
-Check:
-
-- Pages source branch or workflow
-- repository root versus `/docs`
-- `gh-pages` branch usage
-- GitHub Actions deployment
-- `.nojekyll`
-- `CNAME`
-- repository subpath behavior
-- relative asset paths
-- filename capitalization
-- custom-domain HTTPS
-- deployment workflow permissions
-
-Do not assume `/assets/...` works for a project site hosted at:
-
-```text
-https://username.github.io/repository-name/
-```
-
-Prefer correct relative paths or a configured base URL.
-
-After deployment, verify the live site, not merely the push or workflow result.
+- Deployment is defined by `.github/workflows/static.yml` and runs for `main`.
+- Build `network_analysis/` with Node 24 before staging.
+- Stage with `python tools/site_release.py stage --source . --output <nonexistent-path>` and validate that artifact with `python tools/site_release.py validate --root <staged-path>`.
+- The release tool, not the source tree, supplies the built `network_analysis/dist/` application in the public artifact.
+- Do not upload the repository root directly or publish private tool-state, archive, report, or dependency directories.
+- Keep asset URLs repository-relative and case-correct. Preserve `.nojekyll`.
+- Confirm commit ancestry, Actions provenance, deployed assets, and rendered browser state before declaring release success.

@@ -1,72 +1,11 @@
-# GitHub Copilot Instructions
+# Copilot Instructions for An Edifice of Lies
 
-You are assisting inside Visual Studio Code on a GitHub repository that may be deployed through GitHub Pages.
+Read and follow [`AGENTS.md`](../AGENTS.md) as the canonical repository guide. These instructions summarize the rules that must remain visible in every Copilot task.
 
-## General Behavior
-
-- Inspect existing repository structure before proposing changes.
-- Preserve unrelated code and content.
-- Prefer precise edits over broad rewrites.
-- Use the conventions already present unless they are materially defective.
-- Keep the repository clean, readable, and deployable.
-- Provide exact file paths and terminal commands.
-- Match the user's active shell.
-
-## Git
-
-- Run or request `git status` before substantial Git operations.
-- Do not discard local work.
-- Explain destructive commands before suggesting them.
-- Reconcile local and remote history deliberately.
-- Use focused commits.
-- Review diffs before staging and committing.
-- Verify remote and branch names before pushing.
-
-## VS Code
-
-Assume the user is working in VS Code and may use:
-
-- Explorer
-- Search
-- Source Control
-- Integrated Terminal
-- Problems
-- Output
-- GitHub Pull Requests and Issues
-
-Reference these interfaces when they materially simplify diagnosis or verification.
-
-## Front-End Development
-
-- Use semantic HTML.
-- Use accessible controls.
-- Use reusable CSS.
-- Keep JavaScript modular and minimal.
-- Design mobile-first.
-- Preserve GitHub Pages-compatible paths.
-- Treat filenames and URLs as case-sensitive.
-- Avoid unnecessary dependencies.
-
-## Content Presentation
-
-For evidence-heavy, factual, or legal pages:
-
-- distinguish fact, allegation, inference, and dispute
-- preserve citations and source identifiers
-- avoid sensationalism
-- organize content for rapid comprehension
-- use professional visual hierarchy
-
-## Validation
-
-Check:
-
-- missing assets
-- broken links
-- HTML hierarchy
-- CSS organization
-- JavaScript errors
-- mobile behavior
-- keyboard access
-- GitHub Actions
-- GitHub Pages deployment
+- This is a static GitHub Pages legal-case presentation. Root HTML pages are public entry points; `network_analysis/` is the only built sub-application.
+- Treat names, dates, quotations, citations, allegations, and evidence references as legally sensitive. Do not invent, embellish, or casually rewrite them.
+- Preserve unrelated work. Do not commit, push, rebase, merge, delete evidence, or perform broad cleanup unless explicitly authorized.
+- Keep root pages compatible with static hosting and existing public URLs. Use repository-relative, case-correct asset paths.
+- Use the canonical generators and synchronization tools documented in `AGENTS.md`; do not hand-edit generated indexes or rendered data regions.
+- Before release, build `network_analysis`, then stage and validate with `tools/site_release.py`. A green workflow is not proof that the expected commit and assets are live.
+- Keep the staged artifact below 900 MB and out of forbidden/private directories.

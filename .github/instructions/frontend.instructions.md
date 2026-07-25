@@ -4,16 +4,11 @@ applyTo: "**/*.{html,css,js,mjs,ts,tsx,jsx}"
 
 # Front-End Instructions
 
-- Build for static hosting unless the project explicitly uses a framework or server.
-- Use semantic HTML landmarks and logical heading order.
-- Use accessible buttons, links, labels, and focus states.
-- Prefer CSS custom properties and reusable classes.
-- Avoid inline styles and inline event handlers.
-- Use mobile-first responsive design.
-- Ensure long words, URLs, and evidence identifiers wrap safely.
-- Use responsive images.
-- Keep JavaScript modular, defensive, and progressively enhanced.
-- Avoid dependencies for functionality that can be implemented clearly with native browser APIs.
-- Verify relative paths under GitHub Pages project-site hosting.
-- Treat paths and filenames as case-sensitive.
-- Do not create duplicate page variants such as `final`, `new`, `copy`, or numbered replacements without a migration reason.
+- Root pages are hand-written HTML/CSS/JavaScript; do not introduce a root-site framework or build step.
+- Preserve Webflow compatibility on `index.html`, including its existing classes and badge-suppression block.
+- Page-specific inline CSS and JavaScript are allowed where that is the established local pattern. Prefer shared styles and scripts for genuinely reused behavior.
+- Preserve legal text and evidence references unless the maintainer supplies the correction.
+- Keep controls semantic, keyboard accessible, responsive, and compatible with reduced motion.
+- Use repository-relative, case-correct paths that work under the `pages-main` project-site subpath.
+- Keep the shared navigation synchronized through `tools/sync_nav.py` and refresh the search index when page titles, sections, or media change.
+- Do not create duplicate `final`, `new`, `copy`, or numbered page variants.

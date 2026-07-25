@@ -37,14 +37,14 @@ Key facts:
 ├── documents/              # Source documents, exhibits, graphics, mindmaps (OPML), data exports
 ├── network_analysis/       # React + Vite + TS graph app (see below); built to dist/ at deploy time
 ├── tools/                  # Python maintenance/release scripts (see below)
-├── archive/                # evidence-masters/ (original raster masters), logs/, source-work/,
+├── archive/                # evidence-masters/ (original raster masters), logs/, source-work/
+│                           #   (including the archived generic Copilot agent library), and
 │                           #   standalone-pages/ (archived operator-only editor.html)
 ├── reports/                # Generated JSON reports (release review, raster delivery, perf inventory)
 └── .github/
-    ├── workflows/static.yml  # GitHub Pages deploy pipeline (the only CI)
-    ├── agents/, prompts/     # Large personal library of agent/prompt definitions;
-                              #   mostly NOT specific to this project — treat as reference material
-    └── instructions/         # (empty)
+    ├── copilot-instructions.md  # Concise repository-wide Copilot guidance
+    ├── instructions/            # Path-specific front-end, Git, and Pages guidance
+    └── workflows/               # Pages deployment and pull-request validation
 ```
 
 Notable root pages: `index.html` (landing), `overview.html` (site map hub), `timeline.html`, `players.html`, `connections.html`, `scene.html`, `evidence.html`, `contradictions.html`, `general-videos.html`, `misconduct.html`, `misconductandfailure.html` (mindmaps), `documentspage.html`, `prosecutor_allowed.html`, `judicial-duty.html`, `why-dont-we-have-this-system.html`, `case-study.html`, `data-snapshot.html`. `document-unavailable.html` is the fallback for unpublished source PDFs. (The old `page-index.html` / `link-diagram.html` / `editor.html` / `false-allegation-framework.html` / `catch-all.html` / `contradictions_grouped.html` redirect stubs were removed in 2026-07; legacy `content/` URLs still redirect to the canonical pages.)
@@ -56,7 +56,7 @@ Notable root pages: `index.html` (landing), `overview.html` (site map hub), `tim
 - **Search:** client-side overlay (`shared/site-search.js`) reading the pre-generated `assets/search-index.json`.
 - **network_analysis app:** React 19, TypeScript 5.9, Vite 7, Tailwind CSS 4 (`@tailwindcss/vite`), reactflow 11 (graph canvas), zustand, lucide-react, uuid. Built with `vite-plugin-singlefile` into a single-file `dist/` with `base: './'`. Path alias `@` → `src/`. Dev server proxies `/api` to `127.0.0.1:3000`.
 - **Python tools:** Python 3.11+ (code uses `datetime.UTC` and `str | None` syntax). Third-party deps: `beautifulsoup4` and `pypdf` (used by `tools/build_search_index.py`). There is **no requirements file** — install deps manually (`pip install beautifulsoup4 pypdf`), preferably in a virtual environment (`.venv/` is gitignored). `ffmpeg` is required by the media optimization and release-transcode steps.
-- **Git conventions:** `.gitattributes` forces LF for all text files (`.bat` is CRLF) and marks media/fonts as binary. A `websource` git submodule is declared in `.gitmodules` but is not present in the working tree.
+- **Git conventions:** `.gitattributes` forces LF for all text files (`.bat` is CRLF) and marks media/fonts as binary. The repository currently has no configured submodules.
 
 ## Build, Run, and Release Commands
 
@@ -154,7 +154,7 @@ When changing the site, respect the release contract — CI fails otherwise:
 - **Media references:** images use `data-modal-image` for the modal viewer; videos live under `video/` and audio under `audio/` with spaces in filenames (URL-encode as needed in `href`/`src`). Large media is treated as evidence — do not recompress, rename, or delete source files in the repo; delivery optimization happens in the release pipeline or via the documented tools with manifests.
 - **Line endings:** LF everywhere except `.bat` (enforced by `.gitattributes`).
 - **Style:** 2-space indentation in HTML/JS, double quotes for HTML attributes, single quotes common in JS. Python tools use type hints, `pathlib`, dataclasses, and `argparse`; they print JSON progress/results to stdout. Match these existing idioms.
-- **`.kilo/`, `.codex/`, `.grok/`:** local AI-tool state; gitignored and excluded from release. `.kilo/package.json` only carries a Kilocode plugin dependency — it is not a project build. The site deploys via GitHub Pages only (a leftover Firebase experiment was cleaned up in 2026-07).
+- **AI-tool state:** `.kilo/kilo.jsonc` is tracked Kilo configuration; dependency and package-manager artifacts inside `.kilo/` are ignored by `.kilo/.gitignore`. `.codex/` and `.grok/` are gitignored local state. All dot-tool directories are excluded from the release artifact. The site deploys via GitHub Pages only (a leftover Firebase experiment was cleaned up in 2026-07).
 
 ## Testing and Verification
 

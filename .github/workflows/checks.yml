@@ -1,8 +1,7 @@
-# Deploy the staged static website to GitHub Pages.
-name: Deploy static content to Pages
+name: Validate site
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -10,31 +9,20 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  deploy:
-    name: Build and deploy site
+  validate:
+    name: Validate site
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -43,11 +31,11 @@ jobs:
           cache: npm
           cache-dependency-path: network_analysis/package-lock.json
 
-      - name: Install network-analysis dependencies
+      - name: Install dependencies
         working-directory: network_analysis
         run: npm ci
 
-      - name: Audit network-analysis dependencies
+      - name: Audit dependencies
         working-directory: network_analysis
         run: npm audit --audit-level=high
 
@@ -65,22 +53,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes ffmpeg
 
-      - name: Stage public site
+      - name: Stage site
         run: |
           python tools/site_release.py stage \
             --source . \
             --output "$RUNNER_TEMP/site"
 
-      - name: Validate staged release
+      - name: Validate staged site
         run: |
           python tools/site_release.py validate \
             --root "$RUNNER_TEMP/site"
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ runner.temp }}/site
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
