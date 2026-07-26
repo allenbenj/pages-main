@@ -65,14 +65,15 @@
 
         /* ── Section Base ── */
         .content-section {
-            background: var(--jd-surface);
-            border: 1px solid var(--jd-border);
-            border-radius: var(--jd-radius-lg);
-            padding: 40px 44px;
-            margin-bottom: 32px;
-            box-shadow: var(--jd-shadow);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: none;
+            border: 0;
+            border-top: 1px solid var(--border);
+            border-radius: 0;
+            padding: 40px 0;
+            margin-bottom: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
         }
         .content-section p {
             color: var(--jd-text);
@@ -104,6 +105,8 @@
             background: linear-gradient(90deg, transparent, var(--jd-gold), transparent);
             border-radius: 1px;
         }
+        .section-title[id] { scroll-margin-top: 24px; }
+        .page-rail-title { color: var(--accent-text) !important; }
         .section-dek {
             text-align: center;
             color: var(--jd-text-muted);
@@ -796,7 +799,7 @@
             .jd-line-num { display: none; }
             .jd-speaker { width: auto; }
             .jd-hero { padding: 36px 24px; }
-            .content-section { padding: 28px 22px; }
+            .content-section { padding: 28px 0; }
         }
         @media (max-width: 560px) {
             .jd-stat-ribbon { grid-template-columns: 1fr; }
@@ -857,8 +860,22 @@
         </div>
         <div class="header">
             <h1 class="u-migrated-6b99de8b">An Edifice of Lies</h1>
-            <h2>The judge is the last institutional safeguard when the parties stop protecting fairness.</h2>
+            <h2>"The judge is the last institutional safeguard when the parties stop protecting fairness."</h2>
         </div>
+
+        <nav class="page-rail" aria-label="On this page">
+            <p class="page-rail-title">On this page</p>
+            <a href="judicial-duty.html#judicial-overview" target="_top">Overview</a>
+            <a href="judicial-duty.html#core-responsibilities" target="_top">Core Responsibilities</a>
+            <a href="judicial-duty.html#happel-record" target="_top">Happel Record</a>
+            <a href="judicial-duty.html#court-response" target="_top">Court Response</a>
+            <a href="judicial-duty.html#pattern-beyond-happel" target="_top">Larger Pattern</a>
+            <a href="judicial-duty.html#bench-book" target="_top">Bench Book</a>
+            <a href="judicial-duty.html#strategic-calendaring" target="_top">Calendaring</a>
+            <a href="judicial-duty.html#judge-shopping" target="_top">Judge-Shopping Issue</a>
+            <a href="judicial-duty.html#required-relief" target="_top">Required Relief</a>
+            <a href="judicial-duty.html#judicial-epilogue" target="_top">Epilogue</a>
+        </nav>
 
         <!-- ═══════════ HERO BANNER ═══════════ -->
         <div class="jd-hero">
@@ -897,7 +914,7 @@
 
         <!-- ═══════════ OPENING STATEMENT ═══════════ -->
         <section class="content-section">
-            <h2 class="section-title">Judicial Duty and Courtroom Fairness</h2>
+            <h2 class="section-title" id="judicial-overview">Judicial Duty and Courtroom Fairness</h2>
             <p>The courtroom is not supposed to be a passive stage where one side manufactures advantage while the other side absorbs the damage. A trial judge has an affirmative responsibility to manage the room, enforce fairness, and prevent the proceeding from becoming an instrument of pressure instead of a search for truth.</p>
 
             <div class="jd-pullquote">
@@ -915,7 +932,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">Core Responsibilities — And Where They Failed</h2>
+            <h2 class="section-title" id="core-responsibilities">Core Responsibilities — And Where They Failed</h2>
             <p>The four responsibilities below define the minimum standard for judicial management of a criminal trial. In <em>State v. Allen</em>, each was tested — and each was left unmet.</p>
 
             <div class="jd-vignette">
@@ -1024,7 +1041,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">The Happel Colloquy: The Factual Record</h2>
+            <h2 class="section-title" id="happel-record">The Happel Colloquy: The Factual Record</h2>
             <p>Steven Happel was a <strong>State's witness</strong> — called by the prosecution, not the defense. Before trial, the prosecution attempted to pressure him not to appear. He ignored those threats and came anyway. On the morning of trial, before Happel was called to testify, defense counsel brought to the court's attention that Happel had reported an improper contact with the prosecution team. The court conducted an in-chambers colloquy, placed Happel under oath, and took the following sworn account.</p>
 
             <!-- ── Formatted Transcript Block ── -->
@@ -1227,7 +1244,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">The Court's Failure — And What Should Have Happened</h2>
+            <h2 class="section-title" id="court-response">The Court's Failure — And What Should Have Happened</h2>
             <p>The trial court's response can be summarized in three sentences: it held a colloquy, found Happel credible enough to testify, and brought the jury in. That is all. No investigation. No mistrial. No disqualification. No curative instruction. No referral to the State Bar.</p>
 
             <div class="apple-card u-migrated-424943c0" style="border-left: 4px solid #fb2424;">
@@ -1258,7 +1275,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">The Pattern Beyond Happel</h2>
+            <h2 class="section-title" id="pattern-beyond-happel">The Pattern Beyond Happel</h2>
             <p>The coaching incident was not isolated. It was one thread in a fabric of evidentiary manipulation spanning the entire prosecution.</p>
 
             <!-- ═══════ EXHIBIT 4: FULL DEEP ANALYSIS ═══════ -->
@@ -1443,7 +1460,7 @@
 
         <!-- ═══════════ BENCH BOOK: WHAT THE JUDGE SHOULD HAVE CONSULTED ═══════════ -->
         <section class="content-section">
-            <h2 class="section-title">Bench Book Reference: What the Judge Should Have Consulted</h2>
+            <h2 class="section-title" id="bench-book">Bench Book Reference: What the Judge Should Have Consulted</h2>
             <p>A trial judge confronted with alleged prosecutorial witness-coaching does not need to invent the response. The authorities below define the minimum standard. None were followed.</p>
 
             <div class="jd-benchbook">
@@ -1505,7 +1522,7 @@
 
         <!-- ═══════════ INSTITUTIONAL FAMILIARITY & STRATEGIC CALENDARING ═══════════ -->
         <section class="content-section">
-            <h2 class="section-title">Institutional Familiarity, Strategic Calendaring &amp; Asymmetric Trial Management</h2>
+            <h2 class="section-title" id="strategic-calendaring">Institutional Familiarity, Strategic Calendaring &amp; Asymmetric Trial Management</h2>
             <p>The record surrounding the prosecution of Benjamin Scott Allen supports a legitimate inquiry into whether Assistant District Attorney Tiffany Bartholomew used the prosecution’s calendaring influence to obtain a trial setting before Judge Paul A. Holcombe because she expected favorable discretionary treatment.</p>
 
             <div class="jd-tag-row">
@@ -1804,7 +1821,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">The Judge-Shopping Inference</h2>
+            <h2 class="section-title" id="judge-shopping">The Judge-Shopping Inference</h2>
             <p>The analysis must distinguish what the record supports from what it has not yet established.</p>
 
             <div class="jd-asymmetry">
@@ -1993,7 +2010,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">What Relief Is Required</h2>
+            <h2 class="section-title" id="required-relief">What Relief Is Required</h2>
 
             <div class="grid grid-2">
                 <div class="card" style="border-left: 4px solid #fb2424;">
@@ -2024,7 +2041,7 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">Epilogue</h2>
+            <h2 class="section-title" id="judicial-epilogue">Epilogue</h2>
 
             <div class="apple-card u-migrated-424943c0" style="border-left: 4px solid #fb2424;">
                 <p>The Happel incident is not a story about what happened during a trial. It is a story about what the system permitted to happen and then chose to ignore. A witness came forward under oath. He reported that the prosecutor had tried to shape his testimony and the complainant's testimony. The court heard him, thanked him, and sent him to the stand. The State Bar was introduced to the prosecutor's file and did nothing. The system worked exactly as designed: it protected the process from disruption, and it protected the prosecutor from accountability.</p>
