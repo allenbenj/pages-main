@@ -43,3 +43,9 @@ network_analysis/dist/
 .github/.cursor/
 .github/.grok/
 .github/.kilo/
+# Kimi project memory
+.kimi-memory/
+
+# Local browser verification artifacts
+.playwright-cli/
+output/

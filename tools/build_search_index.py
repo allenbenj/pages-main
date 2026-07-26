@@ -18,28 +18,31 @@ from pypdf import PdfReader
 
 ROOT_PAGE_PATHS = [
     "index.html",
-    "overview.html",
-    "timeline.html",
-    "players.html",
-    "evidence.html",
-    "contradictions.html",
-    "general-videos.html",
-    "misconduct.html",
-    "misconductandfailure.html",
-    "documentspage.html",
-    "connections.html",
-    "case-study.html",
-    "scene.html",
-    "prosecutor_allowed.html",
-    "judicial-duty.html",
-    "why-dont-we-have-this-system.html",
-    "data-snapshot.html",
+    "assets/pages/overview.html",
+    "assets/pages/timeline.html",
+    "assets/pages/players.html",
+    "assets/pages/evidence.html",
+    "assets/pages/contradictions.html",
+    "assets/pages/general-videos.html",
+    "assets/pages/misconduct.html",
+    "assets/pages/misconductandfailure.html",
+    "assets/pages/documentspage.html",
+    "assets/pages/connections.html",
+    "assets/pages/case-study.html",
+    "assets/pages/scene.html",
+    "assets/pages/prosecutor_allowed.html",
+    "assets/pages/judicial-duty.html",
+    "assets/pages/why-dont-we-have-this-system.html",
+    "assets/pages/data-snapshot.html",
+    "assets/pages/New_Face.html",
+    "assets/pages/false-story-diagram.html",
+    "assets/pages/document-unavailable.html",
     "network_analysis/index.html",
 ]
 
-# Directories never indexed: content/ holds legacy variants (now redirects to
-# the canonical root pages); the rest are non-public working areas.
-EXCLUDED_DIR_PARTS = {"content", "archive", "tmp", "tools", "reports", "node_modules", ".git"}
+# Non-public working areas are never indexed. The public content/ tree contains
+# only the consolidated content/images delivery hierarchy.
+EXCLUDED_DIR_PARTS = {"archive", "tmp", "tools", "reports", "node_modules", ".git"}
 
 TEXT_EXTENSIONS = {".txt", ".md"}
 PAGE_EXTENSIONS = {".html", ".htm"}
@@ -79,6 +82,13 @@ def is_external_link(value: str) -> bool:
     return value.startswith("//")
 
 
+def public_relative_path(root: Path, path: Path) -> str:
+    canonical_pages = (root / "assets" / "pages").resolve()
+    if path.resolve().parent == canonical_pages:
+        return path.name
+    return path.relative_to(root).as_posix()
+
+
 def local_link_target(root: Path, source: Path, value: str) -> Path | None:
     if not value or value.startswith("#") or is_external_link(value):
         return None
@@ -87,8 +97,16 @@ def local_link_target(root: Path, source: Path, value: str) -> Path | None:
         return None
     decoded = unquote(trimmed)
     if decoded.startswith("/"):
-        return (root / decoded.lstrip("/")).resolve()
-    return (source.parent / decoded).resolve()
+        candidate = (root / decoded.lstrip("/")).resolve()
+    else:
+        canonical_pages = (root / "assets" / "pages").resolve()
+        base = root if source.resolve().parent == canonical_pages else source.parent
+        candidate = (base / decoded).resolve()
+    if not candidate.exists() and candidate.parent == root.resolve() and candidate.suffix.lower() in PAGE_EXTENSIONS:
+        canonical_candidate = (root / "assets" / "pages" / candidate.name).resolve()
+        if canonical_candidate.exists():
+            return canonical_candidate
+    return candidate
 
 
 def iter_local_links(root: Path, source: Path, soup: BeautifulSoup) -> Iterable[Path]:
@@ -147,7 +165,7 @@ def make_result_url(path: str, anchor: str | None) -> str:
 
 
 def html_records(root: Path, path: Path) -> tuple[list[SearchRecord], list[Path]]:
-    rel_path = path.relative_to(root).as_posix()
+    rel_path = public_relative_path(root, path)
     html = path.read_text(encoding="utf-8", errors="ignore")
     soup = BeautifulSoup(html, "html.parser")
 
@@ -348,6 +366,10 @@ def discover_paths(root: Path) -> list[Path]:
         except ValueError:
             continue
         if any(part in EXCLUDED_DIR_PARTS for part in rel_parts):
+            continue
+        if rel_parts and rel_parts[0] == "content" and (
+            len(rel_parts) < 2 or rel_parts[1] != "images"
+        ):
             continue
         if current.is_dir():
             continue

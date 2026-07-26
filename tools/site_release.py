@@ -14,7 +14,8 @@ from urllib.parse import unquote, urlsplit
 
 PUBLIC_DIRECTORIES = ("assets", "audio", "content", "documents", "shared", "video")
 BUILT_PUBLIC_DIRECTORIES = {"network_analysis": "network_analysis/dist"}
-PUBLIC_ROOT_FILES: tuple[str, ...] = (".nojekyll",)
+PUBLIC_ROOT_FILES: tuple[str, ...] = ("index.html", ".nojekyll")
+CANONICAL_PAGES_DIRECTORY = "assets/pages"
 MAX_ARTIFACT_BYTES = 900 * 1024 * 1024
 FORBIDDEN_PATH_PARTS = {".agents", ".codex", ".github", ".grok", ".copilot", ".cursor", ".kilo", ".git", "node_modules"}
 REFERENCE_RE = re.compile(
@@ -25,6 +26,10 @@ SCRIPT_BODY_RE = re.compile(r"(<script\b[^>]*>).*?(</script\s*>)", re.IGNORECASE
 HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 CSS_COMMENT_RE = re.compile(r"/\*.*?\*/", re.DOTALL)
 IMAGE_TAG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
+SOURCE_BASE_RE = re.compile(
+    r'<base\s+href=["\']\.\./\.\./["\']\s+target=["\']_top["\']\s*>',
+    re.IGNORECASE,
+)
 SKIPPED_SCHEMES = ("data:", "http:", "https:", "javascript:", "mailto:", "tel:", "//")
 # Preserve the public URL while producing a web-optimized delivery copy in the
 # disposable release artifact. The original evidence file remains untouched.
@@ -70,22 +75,36 @@ def add_image_delivery_hints(root: Path) -> None:
         if updated != text:
             page.write_text(updated, encoding="utf-8")
 
+
+def normalize_staged_page_base(path: Path) -> None:
+    """Remove the source-tree base path after canonical pages are flattened."""
+    html = path.read_text(encoding="utf-8")
+    updated = SOURCE_BASE_RE.sub('<base target="_top">', html, count=1)
+    if updated != html:
+        path.write_text(updated, encoding="utf-8", newline="\n")
+
 def stage_site(source: Path, output: Path) -> None:
     if output.exists():
         raise ValueError(f"Output path already exists: {output}")
     output.mkdir(parents=True)
-    for page in source.glob("*.html"):
-        shutil.copy2(page, output / page.name)
     for name in PUBLIC_ROOT_FILES:
         path = source / name
         if not path.is_file():
             raise FileNotFoundError(f"Required public root file is missing: {path}")
         shutil.copy2(path, output / name)
+    canonical_pages = source / CANONICAL_PAGES_DIRECTORY
+    if not canonical_pages.is_dir():
+        raise FileNotFoundError(f"Canonical pages directory is missing: {canonical_pages}")
+    for page in sorted(canonical_pages.glob("*.html")):
+        staged_page = output / page.name
+        shutil.copy2(page, staged_page)
+        normalize_staged_page_base(staged_page)
     for name in PUBLIC_DIRECTORIES:
         path = source / name
         if not path.is_dir():
             raise FileNotFoundError(f"Required public directory is missing: {path}")
-        shutil.copytree(path, output / name)
+        ignore = shutil.ignore_patterns("pages") if name == "assets" else None
+        shutil.copytree(path, output / name, ignore=ignore)
     for destination, source_name in BUILT_PUBLIC_DIRECTORIES.items():
         path = source / source_name
         if not path.is_dir():

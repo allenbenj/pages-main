@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlsplit
 
 from site_release import (
     BUILT_PUBLIC_DIRECTORIES,
+    CANONICAL_PAGES_DIRECTORY,
     MAX_ARTIFACT_BYTES,
     PUBLIC_DIRECTORIES,
     PUBLIC_ROOT_FILES,
@@ -35,10 +36,14 @@ def sha256(path: Path) -> str:
 
 
 def public_files(root: Path) -> list[Path]:
-    files = [path for path in root.glob("*.html") if path.is_file()]
-    files.extend(root / name for name in PUBLIC_ROOT_FILES)
+    files = [root / name for name in PUBLIC_ROOT_FILES]
+    files.extend(path for path in (root / CANONICAL_PAGES_DIRECTORY).glob("*.html") if path.is_file())
     for name in PUBLIC_DIRECTORIES:
-        files.extend(path for path in (root / name).rglob("*") if path.is_file())
+        directory = root / name
+        files.extend(
+            path for path in directory.rglob("*")
+            if path.is_file() and not path.is_relative_to(root / CANONICAL_PAGES_DIRECTORY)
+        )
     for source_name in BUILT_PUBLIC_DIRECTORIES.values():
         built_root = root / source_name
         if built_root.is_dir():
@@ -50,6 +55,8 @@ def find_missing_targets(root: Path, files: list[Path]) -> list[dict[str, str]]:
     missing: list[dict[str, str]] = []
     for source in (path for path in files if path.suffix.lower() in TEXT_EXTENSIONS):
         published_source = source
+        if source.parent == root / CANONICAL_PAGES_DIRECTORY:
+            published_source = root / source.name
         for published_name, source_name in BUILT_PUBLIC_DIRECTORIES.items():
             built_root = root / source_name
             if source.is_relative_to(built_root):
@@ -84,7 +91,11 @@ def find_missing_targets(root: Path, files: list[Path]) -> list[dict[str, str]]:
                     "reason": "escapes_publish_root",
                 })
                 continue
-            if not candidate.exists():
+            canonical_candidate = root / CANONICAL_PAGES_DIRECTORY / candidate.name
+            candidate_exists = candidate.exists() or (
+                candidate.parent == root and candidate.suffix.lower() in {".html", ".htm"} and canonical_candidate.exists()
+            )
+            if not candidate_exists:
                 missing.append({
                     "source": published_source.relative_to(root).as_posix(),
                     "target": raw_target,

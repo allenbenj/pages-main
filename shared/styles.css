@@ -154,8 +154,10 @@ img {
     position: absolute;
     z-index: 100;
     top: calc(100% + 8px);
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 240px;
+    max-width: calc(100vw - 24px);
     padding: 8px;
     border: 1px solid var(--border);
     border-radius: 14px;
@@ -171,6 +173,61 @@ img {
 }
 .nav-dropdown-menu a:hover,
 .nav-dropdown-menu a:focus-visible { background: rgba(93,152,162,0.22); outline: none; }
+.nav-dropdown-menu a.active {
+    color: var(--gold-text);
+    background: rgba(212,175,55,0.1);
+}
+
+.diagram-static-preview {
+    margin: 24px 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #fff;
+}
+.diagram-static-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 78vh;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+.diagram-static-preview figcaption {
+    padding: 10px 4px 0;
+    color: #334155;
+    font-size: 0.9rem;
+    text-align: center;
+}
+.diagram-static-backup {
+    margin: 18px 0;
+}
+.diagram-static-backup > summary {
+    color: var(--gold-text);
+    cursor: pointer;
+    font-weight: 700;
+}
+.diagram-static-backup[open] > summary { margin-bottom: 10px; }
+.diagram-static-backup .diagram-static-preview { margin: 0; }
+.diagram-interactive {
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+.diagram-interactive > summary {
+    color: var(--gold-text);
+    cursor: pointer;
+    font-weight: 700;
+}
+.diagram-interactive[open] > summary { margin-bottom: 16px; }
+.diagram-viewer-status {
+    margin: 8px 0 0;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.35;
+}
+.diagram-viewer-status[data-state="ready"] { color: #86efac; }
+.diagram-viewer-status[data-state="error"] { color: #fca5a5; }
 
 /* Content Section */
 .content-section {
@@ -1273,9 +1330,9 @@ body.timeline-page .fab-fixed img {
 
 /* Sticky TOC and layout for wide view */
 @media (min-width: 1100px) {
-    main.page { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
-    .toc-card { position: sticky; top: 96px; height: fit-content; grid-column: 2; }
-    main.page > :not(.toc-card) { grid-column: 1; }
+    main.page:has(> .toc-card) { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+    main.page:has(> .toc-card) > .toc-card { position: sticky; top: 96px; height: fit-content; grid-column: 2; }
+    main.page:has(> .toc-card) > :not(.toc-card) { grid-column: 1; }
 }
 
 /* Floating action button for print / download PDF */
@@ -1500,20 +1557,13 @@ body.timeline-page .fab-fixed img {
     outline: none;
 }
 
-/* P1-3 · reserve a right gutter so the flattened (transparent) page-rail never
-   overlaps content. Apply only to .container — .header lives inside .container
-   on every page, so padding .header too double-shifted the epigraph left.
-
-   The rail gutter still makes the content box asymmetric (20px left / 230px right),
-   so plain text-align:center on .header lands left of true center. Expand the
-   header back across the extra 210px so the epigraph centers on the full column. */
-@media (min-width: 981px) {
+/* Keep the primary column on the viewport centerline. On wide screens the
+   fixed page rail gets equal left/right gutters; narrower layouts place the
+   rail back in flow instead of shifting the entire page away from center. */
+@media (min-width: 1301px) {
     body:has(.page-rail) .container {
+        padding-left: 230px;
         padding-right: 230px;
-    }
-
-    body:has(.page-rail) .header {
-        margin-right: -210px; /* 230px rail gutter − 20px base padding */
     }
 }
 
@@ -1752,13 +1802,6 @@ body.timeline-page .fab-fixed img {
 
 @media (max-width: 1300px) {
     .page-rail {
-        right: 10px;
-        width: 170px;
-    }
-}
-
-@media (max-width: 980px) {
-    .page-rail {
         position: sticky;
         top: 10px;
         right: auto;
@@ -1780,7 +1823,9 @@ body.timeline-page .fab-fixed img {
         flex: 1 1 calc(50% - 8px);
         text-align: center;
     }
+}
 
+@media (max-width: 980px) {
     .card-toolbar {
         margin-top: 10px;
     }
@@ -1941,7 +1986,7 @@ body.timeline-page .fab-fixed img {
 
 /* --- Connections Diagram Styles --- */
 .connections-page .container { max-width: min(98vw, 2200px); }
-.connections-wrapper { display: flex; gap: 16px; margin-top: 12px; height: 1240px; width: 100%; max-width: 2160px; margin-left: auto; margin-right: auto; }
+.connections-wrapper { display: flex; gap: 16px; margin-top: 12px; height: clamp(520px, 72vh, 820px); width: 100%; max-width: 2160px; margin-left: auto; margin-right: auto; }
 .connections-sidebar { width: 230px; background: #0f172a; border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; padding: 8px; overflow: auto; }
 .connections-sidebar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
 .connections-list { max-height: calc(100% - 40px); overflow: auto; padding-right: 6px; }
@@ -3961,6 +4006,25 @@ a, button, .nav-tab, .orbital-nav-link, .hover-zone {
     margin-left:auto;
     margin-right:auto;
     line-height:1.75;
+}
+
+.case-study-profile-link {
+    color:#f0cf66;
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(240, 207, 102, 0.72);
+    text-decoration-thickness:2px;
+    text-underline-offset:0.16em;
+}
+
+.case-study-profile-link:visited {
+    color:#f0cf66;
+}
+
+.case-study-profile-link:hover,
+.case-study-profile-link:focus-visible {
+    color:#ffffff;
+    text-decoration-color:#d4af37;
 }
 
 .u-migrated-8c7bcf3e {

@@ -84,6 +84,10 @@ SITE_ROOT_FILENAMES = {
     "prosecutor_allowed.html",
     "judicial-duty.html",
     "why-dont-we-have-this-system.html",
+    "data-snapshot.html",
+    "New_Face.html",
+    "false-story-diagram.html",
+    "document-unavailable.html",
 }
 
 IGNORE_DIRS = {
@@ -198,6 +202,8 @@ def classify_site_role(rel_path: str, extension: str) -> str | None:
         return None
 
     first = parts[0]
+    if len(parts) == 3 and parts[:2] == ("assets", "pages") and extension in {".html", ".htm"}:
+        return "page"
     if len(parts) == 1 and path.name in SITE_ROOT_FILENAMES:
         return "page"
     if first == "content" and extension in {".html", ".htm"}:
@@ -266,7 +272,12 @@ def candidate_paths(root: Path, source_file: Path, normalized_target: str) -> li
             if (base / "package.json").exists():
                 candidates.append((base / rel).resolve())
     else:
-        candidates.append((source_file.parent / decoded).resolve())
+        canonical_pages = (root / "assets" / "pages").resolve()
+        base = root if source_file.resolve().parent == canonical_pages else source_file.parent
+        candidates.append((base / decoded).resolve())
+        root_page = (root / decoded).resolve()
+        if root_page.parent == root.resolve() and root_page.suffix.lower() in {".html", ".htm"}:
+            candidates.append((canonical_pages / root_page.name).resolve())
         if source_file.parent.name == "shared" and not decoded.startswith((".", "#")):
             candidates.append((root / decoded).resolve())
 

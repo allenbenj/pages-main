@@ -4,7 +4,7 @@ applyTo: "**/*.{html,css,js,mjs,ts,tsx,jsx}"
 
 # Front-End Instructions
 
-- Root pages are hand-written HTML/CSS/JavaScript; do not introduce a root-site framework or build step.
+- Canonical pages under `assets/pages/` are hand-written HTML/CSS/JavaScript and stage to the artifact root; do not introduce a root-site framework or build step.
 - Preserve Webflow compatibility on `index.html`, including its existing classes and badge-suppression block.
 - Page-specific inline CSS and JavaScript are allowed where that is the established local pattern. Prefer shared styles and scripts for genuinely reused behavior.
 - Preserve legal text and evidence references unless the maintainer supplies the correction.

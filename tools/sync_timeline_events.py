@@ -27,7 +27,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-PAGE_PATH = Path("timeline.html")
+PAGE_PATH = Path("assets/pages/timeline.html")
 DATA_PATH = Path("documents/data/timeline.json")
 
 CONTAINER_RE = re.compile(r'<div class="timeline-events"[^>]*>')

@@ -236,7 +236,8 @@ If a task changes page titles, sections, or media, also run
     `page-index.html`, `link-diagram.html`, and `false-allegation-framework.html`
     were all removed and every inbound link retargeted (see P2-4). The dead
     `shell.js` / `shared/shell.js` leftovers flagged above were fixed in the same
-    pass. Only the legacy `content/` stubs still redirect.
+    pass. The legacy `content/` stubs were subsequently removed in the final
+    2026-07 content-tree consolidation.
 
 ***
 
@@ -304,9 +305,8 @@ If a task changes page titles, sections, or media, also run
 
   * Retargeted every remaining reference: `overview.html` (route card, map
     node, matrix rows, summary stat, mislabeled `catch-all.html` link text),
-    `content/editor.html` (now redirects straight to
-    `../overview.html#page-index`; the other `content/` stubs already targeted
-    final pages), `shared/shell.js`, `shared/site-nav.js`, dead root
+    the former `content/editor.html` route, `shared/shell.js`,
+    `shared/site-nav.js`, dead root
     `shell.js`, known-page lists in `tools/audit_links.py` and
     `tools/build_search_index.py`, and the `AGENTS.md` page inventory.
 
@@ -314,7 +314,8 @@ If a task changes page titles, sections, or media, also run
     ~772 MB, 0 errors); deep `audit_links.py` run shows 0 real broken links in
     deployable files (the only flags were minified-JS false positives in
     `network_analysis/dist/`). Old root URLs (e.g. `/page-index.html`) now 404
-    by design; legacy `content/` URLs still redirect.
+    by design. The remaining `content/*.html` redirects were removed during the
+    final 2026-07 content-tree consolidation; `content/` now contains images only.
 
 ***
 

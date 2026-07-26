@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<base href="../../" target="_top"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Legal analysis of the admission of State's Exhibit 4 in State v. Benjamin Allen, including authentication, conditional relevance, completeness, judicial neutrality, and the strongest preserved objections." name="description"/>
+<meta content="State v. Benjamin Allen — State's Exhibit 4" property="og:title"/>
+<meta content="How a disputed Facebook screenshot was admitted, why the foundation was deficient, and why the court's reliability statement created the strongest legal issue." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>State v. Benjamin Allen — State's Exhibit 4</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="shared/styles.css?v=20260718r" rel="stylesheet"/>
+<style>
+        body {
+            color: var(--light);
+        }
+        body .container {
+            max-width: 1800px;
+        }
+        /* Keep the epigraph optically centered even with the page-rail gutter. */
+        .header {
+            text-align: center;
+        }
+        .header h2 {
+            display: block;
+            width: 100%;
+            max-width: 42ch;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-wrap: balance;
+        }
+        .carousel-nav-wrapper {
+            display: none !important;
+        }
+        .page-rail-title,
+        h3[style*="#fbbf24"],
+        h4[style*="#fbbf24"],
+        p[style*="#fbbf24"] {
+            color: var(--accent-text) !important;
+        }
+        .section-title,
+        .apple-card h3,
+        .card h3,
+        h3[style*="text-align: center"] {
+            color: var(--light) !important;
+        }
+        .apple-card,
+        .card,
+        .comparison-table {
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+        }
+        .apple-card,
+        .apple-card p,
+        .apple-card li,
+        .comparison-table td,
+        .comparison-table th,
+        .card p {
+            color: var(--text-muted) !important;
+        }
+        [style*="border-left: 4px solid #fbbf24"],
+        [style*="border-left: 4px solid #60a5fa"],
+        [style*="border-left: 4px solid #fb2424"] {
+            border-left-color: var(--accent-text) !important;
+        }
+        .fab-image img {
+            border: 2px solid rgba(166,206,210,0.7) !important;
+            background: rgba(0,0,0,0.42) !important;
+        }
+        .testimony-card {
+            margin: 24px 0 20px;
+            padding: 22px 24px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-text);
+            border-radius: 14px;
+            background: rgba(15, 23, 42, 0.72);
+        }
+        .testimony-card .testimony-label {
+            margin: 0 0 8px;
+            color: var(--accent-text) !important;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .testimony-card h4 {
+            margin: 0 0 12px;
+            color: var(--light);
+            font-size: 1.15rem;
+        }
+        .testimony-card blockquote {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .testimony-card blockquote p {
+            margin: 0;
+            color: #e5ecee !important;
+            line-height: 1.85;
+        }
+        .testimony-card blockquote p + p {
+            margin-top: 12px;
+        }
+        .exhibit-testimony {
+            margin-top: 28px;
+            padding: 32px;
+        }
+        .exhibit-testimony h3 {
+            margin-bottom: 22px;
+        }
+        .exhibit-transcript {
+            margin: 0;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            color: #e5ecee;
+            font-family: "Manrope", sans-serif;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .record-note {
+            margin: 18px 0;
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-text);
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.68);
+        }
+        .record-note strong {
+            color: var(--light);
+        }
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+        .legal-grid .apple-card {
+            margin: 0;
+        }
+        .issue-tag {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--accent-text);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+        .court-quote {
+            margin: 20px 0;
+            padding: 18px 20px;
+            border-left: 4px solid var(--accent-text);
+            background: rgba(15, 23, 42, 0.72);
+            color: #e5ecee;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.25rem;
+            line-height: 1.55;
+        }
+        .objection-box {
+            margin: 22px 0;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(2, 6, 23, 0.72);
+        }
+        .objection-box h4 {
+            color: var(--light);
+            margin-top: 0;
+        }
+        .objection-box p {
+            color: #e5ecee !important;
+        }
+        .precision-list li {
+            margin-bottom: 10px;
+        }
+        .authority-list a {
+            color: var(--accent-text);
+            text-decoration: none;
+        }
+        .authority-list a:hover {
+            text-decoration: underline;
+        }
+        .conclusion-emphasis {
+            font-size: 1.08rem;
+            color: #e5ecee !important;
+        }
+</style>
+<style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+<link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+<div aria-label="Project navigation" class="nav-tabs">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
+                    <a role="menuitem" href="timeline.html">Timeline</a>
+                    <a role="menuitem" href="players.html">Players</a>
+                    <a role="menuitem" href="scene.html">Scene Analysis</a>
+                    <a role="menuitem" href="evidence.html">Evidence</a>
+                    <a role="menuitem" href="documentspage.html">Documents</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
+                    <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
+                    <a role="menuitem" href="New_Face.html">New Face</a>
+                    <a role="menuitem" href="general-videos.html">General Videos</a>
+                    <a role="menuitem" href="case-study.html">Case Study</a>
+                    <a role="menuitem" href="data-snapshot.html">Data Snapshot</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-3">Diagrams</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-3" role="menu">
+                    <a role="menuitem" href="connections.html">Connections</a>
+                    <a role="menuitem" href="false-story-diagram.html">False Story</a>
+                    <a role="menuitem" href="misconductandfailure.html">Mindmaps</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-4">Accountability</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-4" role="menu">
+                    <a role="menuitem" href="misconduct.html">Misconduct</a>
+                    <a class="active" role="menuitem" href="prosecutor_allowed.html" aria-current="page">Prosecutor Conduct</a>
+                    <a role="menuitem" href="judicial-duty.html">Judicial Duty</a>
+                    <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
+                </div>
+            </div>
+</div>
+<div class="header">
+<h1>State’s Exhibit 4</h1>
+<h2>“Silence is never neutral; in the presence of wrongdoing, it becomes complicity.”</h2>
+</div>
+<nav aria-label="On this page" class="page-rail">
+<p class="page-rail-title">On this page</p>
+<a href="prosecutor_allowed.html#prosecutor-overview" target="_top">Overview</a>
+<a href="prosecutor_allowed.html#record-summary" target="_top">Record Summary</a>
+<a href="prosecutor_allowed.html#exhibit-4-testimony" target="_top">Exhibit 4 Testimony</a>
+<a href="prosecutor_allowed.html#authentication" target="_top">Authentication</a>
+<a href="prosecutor_allowed.html#judicial-error" target="_top">Judicial Error</a>
+<a href="prosecutor_allowed.html#strongest-objection" target="_top">Strongest Objection</a>
+<a href="prosecutor_allowed.html#prosecutor-rules" target="_top">Rules and Duties</a>
+<a href="prosecutor_allowed.html#prosecutor-bottom-line" target="_top">Bottom Line</a>
+</nav>
+<div class="content-section">
+<h2 class="section-title u-migrated-7a8feb70" id="prosecutor-overview">
+        A Disputed Screenshot, an Unmet Foundation,<br/>and a Court That Told the Jury It Was “Reliable”
+    </h2>
+    <h3 class="u-migrated-8f56b1fd">When the ADA Is More Powerful Than the DA
+
+And
+
+There Is No Judicial Standard</h3>
+<div class="apple-card u-migrated-424943c0">
+<span class="issue-tag">Central Issue</span>
+<h3 class="u-migrated-8f56b1fd">The State Had to Authenticate More Than a Screenshot</h3>
+<p class="u-migrated-e5498228">
+            State’s Exhibit 4 was offered as a Facebook Messenger communication authored by Ben Allen.
+            That required proof of two separate propositions: first, that the screenshot accurately reflected
+            what appeared on Lauren Deal’s phone; and second, that Ben actually authored the specific message
+            attributed to him.
+        </p>
+<p class="u-migrated-7fa0a372">
+            Deal could identify what appeared on her own device. The harder question was authorship. The complete
+            thread showed that another person, “Matt,” used Ben’s phone and identified himself within the same
+            exchange. That fact did not conclusively prove Matt wrote the earlier message, but it defeated any
+            assumption that the display name “Ben Allen” alone established who pressed send.
+        </p>
+<div class="record-note">
+            The State authenticated the image only marginally, did not adequately establish the
+            witness’s personal basis for attributing the disputed message to Ben, failed to satisfy the factual
+            condition imposed by the court, and then obtained a judicial statement to the jury that the evidence
+            was “sufficiently reliable.”
+        </div>
+</div>
+<div class="apple-card" id="record-summary">
+<span class="issue-tag">What the Record Shows</span>
+<h3>The Sequence Matters</h3>
+<ol class="precision-list">
+<li>Deal identified the exhibit as messages on her phone and agreed, through leading questions, that they were messages “between” her and Ben.</li>
+<li>The defense objected that the State had selected only one page even though later pages stated that “Matt” was using Ben’s phone and that Ben later denied possessing it.</li>
+<li>The judge acknowledged the third-party-access problem and required the State to connect the first message to a specific earlier bonfire discussion.</li>
+<li>Bartholomew did not clearly establish when, how, or with whom that prior bonfire discussion occurred.</li>
+<li>The judge nevertheless told the jury that the exhibit was admissible and “sufficiently reliable.”</li>
+<li>When the exhibit was published, the judge further described it as corroborative without explaining its limited purpose or resolving the authorship problem.</li>
+</ol>
+</div>
+<section aria-labelledby="exhibit-4-testimony-heading" class="apple-card exhibit-testimony" id="exhibit-4-testimony">
+<h3 class="u-migrated-a66e8a8e" id="exhibit-4-testimony-heading">Testimony Concerning State’s Exhibit 4</h3>
+<pre class="exhibit-transcript">
+MS. BARTHOLOMEW: Okay. And what social media platform was that?
+
+LAUREN DEAL: Facebook.
+
+MS. BARTHOLOMEW: And did you ever communicate with the defendant through Facebook?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: Your Honor, may I approach the witness?
+
+THE COURT: Yes.
+
+MS. BARTHOLOMEW: Lauren, I’m handing you what has been marked for identification purposes as State’s Exhibit Number 4. Do you recognize State’s Exhibit Number 4?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: What do you recognize State’s Exhibit Number 4 to be?
+
+LAUREN DEAL: Messages between me and Ben.
+
+MS. BARTHOLOMEW: When you were contacting him, or he was contacting you, through Facebook, how did that work? Was that on a laptop, a cell phone, or something else?
+
+LAUREN DEAL: For me?
+
+MS. BARTHOLOMEW: Yes.
+
+LAUREN DEAL: My cell phone.
+
+MS. BARTHOLOMEW: Were you able to retrieve any messages between yourself and Mr. Allen using Facebook?
+
+LAUREN DEAL: Facebook Messenger, yes.
+
+MS. BARTHOLOMEW: Facebook Messenger is an application that allows you to send direct messages to another person?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: State’s Exhibit Number 4 is the beginning of a conversation you had with the defendant in this matter, Mr. Allen?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: Do you know how the State came into possession of State’s Exhibit Number 4?
+
+LAUREN DEAL: I gave them to you.
+
+MS. BARTHOLOMEW: Do you still have the messages on your actual cell phone?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: Is State's Exhibit Number 4 an exact copy of the messages from 2016 between you and the defendant?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: Your Honor, at this time, the State would introduce State's Exhibit Number 4.
+
+MR. WUNSCH: Objection.
+
+THE COURT: What is the basis of your objection?
+
+MR. WUNSCH: In this message, it clearly states—mean, she is picking out part of it—but the message clearly states, "This is not Ben. It's Matt. I'm using his phone."
+The last message later states that Ben said, "I wasn't even—I didn't even have possession of my phone. Matt had my phone."
+So it is not Ben. It is clearly stated in the text that it is not Ben. We are picking out one page.
+
+THE COURT: What are you referring to? Actually, let me see the attorneys first.
+
+MR. WUNSCH: There is a—
+
+THE COURT: Just approach, please.
+
+[An off-the-record discussion was held at the bench.]
+
+THE COURT: All right. Ladies and gentlemen, I’ll ask you to go back into the jury room for just one moment while I sort this out.
+
+[The jury exited the courtroom.]
+
+Argument Outside the Presence of the Jury
+
+THE COURT: Let the record reflect that the jurors are now back in the jury room. The Court is reviewing what appears to be—I guess this is the seven—are there seven total? There are six on these sheets.
+
+MS. BARTHOLOMEW: Yes. Yes, Your Honor.
+
+THE COURT: Okay. What appears to be seven screenshots of purported messages. Anything further that the defense wants to say?
+
+MR. WUNSCH: It also lacks foundation, Your Honor. We just know that we have a screenshot of a Facebook message. My real problem, though, Your Honor, is that it identifies another person as conducting the conversation. At the very end, Ben comes on, identifies himself, and says, "I didn't have my phone. I'm sorry." So it is clearly not—we have someone else identifying himself. We do not have that person here. Therefore, Your Honor, we object to this page of Facebook screenshots being entered into evidence.
+
+THE COURT: All right. The Court has reviewed State's Exhibit Number 4.
+It is a screenshot that this witness indicated came from her phone. She has identified it. It says "Ben Allen" and contains the date December 3, 2016, at 1:49 p.m. It references a discussion they purportedly had about a bonfire.
+If she testifies that they had a discussion before December 3, 2016, at 1:49 p.m., that would give this particular page context.
+It is true that the remaining pages, beginning on page two, suggest that another individual was using his phone. However, that occurs later in the evening, at 7:42 p.m.
+There is no reason to believe that the first message was not from Ben Allen, particularly if it refers to an earlier conversation about a bonfire.
+If the defense wants some of the other pages admitted under the rule of completeness, I will allow that. Even the State concedes that those later messages appear to have been sent by another individual.
+The State is not attempting to introduce statements purportedly made by Matt while using Ben's phone. The State is simply attempting to introduce the first page.
+Again, the State will need to link this exhibit to a conversation that occurred before December 3, 2016.
+I believe you had that. I'll pass these back to the State.
+
+MR. WUNSCH: Your Honor, we would just note our objection for the record.
+
+THE COURT: All right. You can bring them back in.
+
+[The jury entered the courtroom and was seated in the jury box.]
+
+Court's Ruling
+
+THE COURT: Ladies and gentlemen, in my discretion, I have overruled the objection and found proposed State's Exhibit Number 4 to be admissible and sufficiently reliable to be admitted.
+
+Testimony Regarding the Contents of State's Exhibit 4
+
+MS. BARTHOLOMEW: Lauren, is there a date associated with the messages in State's Exhibit Number 4?
+
+LAUREN DEAL: December 3, 2016.
+
+MS. BARTHOLOMEW: At what time does the first message appear?
+
+LAUREN DEAL: 1:49 p.m.
+
+MS. BARTHOLOMEW: Who sent the first message in State's Exhibit Number 4?
+
+LAUREN DEAL: Ben.
+
+MS. BARTHOLOMEW: What does it say?
+
+LAUREN DEAL: "Remember when I said I was having that bonfire on the 10th? It is tonight. Sorry for the short notice."
+
+MS. BARTHOLOMEW: Did you reply to that message?
+
+LAUREN DEAL: Yes, about three hours later.
+
+MS. BARTHOLOMEW: Is there a timestamp showing when your reply was made?
+
+LAUREN DEAL: 4:39.
+
+MS. BARTHOLOMEW: Did you reply?
+
+LAUREN DEAL: "I don't have a babysitter."
+
+MS. BARTHOLOMEW: Was there any conversation after that?
+
+LAUREN DEAL: He said, "Dang," then sent a picture of the bonfire. Then I said, "Yeah, I know."
+
+MS. BARTHOLOMEW: Your Honor, at this time, the State asks to publish State's Exhibit Number 4, the Facebook Messenger message, to the jury.
+
+THE COURT: All right.
+
+MR. WUNSCH: We renew our objection.
+
+THE COURT: All right. Again, the Court finds that this is for corroborative purposes.
+
+MR. WUNSCH: Noted for the record.
+
+Additional Testimony Concerning the Exhibit
+
+MS. BARTHOLOMEW: Lauren, we are looking at State's Exhibit Number 4. It may be slightly difficult to read the timestamps from where you are seated. Are you able to see them?
+
+LAUREN DEAL: No.
+
+MS. BARTHOLOMEW: If you moved closer, could you see the timestamps?
+
+LAUREN DEAL: Yes.
+
+MS. BARTHOLOMEW: State's Exhibit Number 4 reflects what you told the jury—that you communicated with the defendant through Facebook Messenger?
+
+LAUREN DEAL: Way prior to this, yes.
+
+MS. BARTHOLOMEW: What year did the conversation shown in State's Exhibit Number 4 take place?
+
+LAUREN DEAL: 2016.
+</pre>
+</section>
+<div class="apple-card" id="authentication">
+<span class="issue-tag">Rules 104(b), 901, and 602</span>
+<h3>Authentication Required Proof of Authorship, Not Merely Account Appearance</h3>
+<p>
+            Rule 901 requires evidence sufficient to support a finding that an exhibit is what its proponent
+            claims. For electronic communications offered as a defendant’s own statements, authentication must
+            address both the accuracy of the captured image and the identity of the author.
+        </p><br/>
+            Deal’s testimony that the screenshot came from her phone could authenticate the appearance of the
+            screenshot. It did not automatically establish that Ben possessed his phone or authored the 1:49 p.m.
+            message. Because the same thread showed another person using the device, the State needed additional
+            circumstantial or direct evidence connecting Ben to that particular message.
+        </p><br/>
+<p>
+            The critical foundation should have included the facts underlying Deal’s conclusion: whether she had
+            previously discussed that exact bonfire with Ben, when and how that discussion occurred, whether the
+            content contained information uniquely known to him, whether he later acknowledged the message, and
+            how she knew who controlled the phone at 1:49 p.m.
+        </p>
+<div class="legal-grid">
+<div class="apple-card">
+<h3>Rule 104(b)</h3>
+<p>
+                    The judge conditioned admission on proof of a prior bonfire conversation. Conditional
+                    relevance permits temporary admission only if the promised foundation is later supplied.
+                    If it is not supplied, the evidence should be excluded or stricken.
+                </p>
+</div>
+<div class="apple-card">
+<h3>Rule 901(a)</h3>
+<p>
+                    A display name and a screenshot from the recipient’s phone are not necessarily enough when
+                    the record affirmatively shows third-party access to the sender’s device or account.
+                </p>
+</div>
+<div class="apple-card">
+<h3>Rule 602</h3>
+<p>
+                    The witness needed a factual basis for knowing who authored the message. A bare answer that
+                    “Ben” sent it states the conclusion without establishing personal knowledge of device
+                    possession or authorship.
+                </p>
+</div>
+</div>
+</div>
+<div class="apple-card">
+<span class="issue-tag">The Unmet Condition</span>
+<h3>Bartholomew Did Not Establish the Link the Judge Required</h3>
+<p>
+            The judge twice stated that the State needed to link the screenshot to a conversation occurring
+            before 1:49 p.m. on December 3, 2016. That condition was not advisory. It was the court’s stated basis
+            for treating the bonfire reference as circumstantial evidence of authorship.
+        </p><br/>
+<p>
+            After the jury returned, Bartholomew established the date, timestamp, displayed sender, content of the
+            message, Deal’s reply, and a later photograph of the bonfire. She did not clearly ask Deal whether she
+            had previously discussed that specific bonfire with Ben, when the conversation occurred, how it
+            occurred, or how she knew the earlier conversation was with him.
+        </p><br/>
+<p>
+            The later answer, “Way prior to this, yes,” concerned Facebook communication generally. It did not
+            clearly establish the specific prior bonfire discussion the court identified as the necessary factual
+            link. The State therefore substituted Deal’s conclusion—“Ben”—for the foundational facts the judge
+            had required.
+        </p><br/>
+</div>
+<div class="apple-card" id="judicial-error">
+<span class="issue-tag">The Strongest Judicial Error</span>
+<h3>The Court Shifted the Burden and Then Vouched for the Exhibit</h3>
+<div class="court-quote">
+            “There is no reason to believe that the first message was not from Ben Allen.”
+        </div>
+<p>
+            That formulation inverted Rule 901. The defense did not bear the burden of proving that Ben did not
+            send the message. The State, as proponent, had to introduce affirmative evidence sufficient to support
+            a finding that he did. The correct question was whether the State produced a factual basis from which
+            a reasonable juror could attribute the message to Ben—not whether the defense disproved authorship.
+        </p>
+<div class="court-quote">
+            “I have overruled the objection and found proposed State’s Exhibit Number 4 to be admissible and
+            sufficiently reliable to be admitted.”
+        </div>
+<p>
+            The court could announce that the exhibit was admitted. It should not have told the jury that disputed
+            evidence was “sufficiently reliable.” Reliability, authorship, credibility, and evidentiary weight were
+            the contested factual questions. By using the court’s institutional authority to characterize the
+            exhibit as reliable, the judge risked endorsing Deal’s attribution and the State’s theory in violation
+            of N.C. Gen. Stat. § 15A-1222.
+        </p><br/>
+<p>
+            The later statement that the exhibit was admitted “for corroborative purposes” compounded the problem.
+            Corroboration cannot substitute for authentication. Nor can the exhibit independently corroborate the
+            witness’s authorship conclusion until authorship has first been adequately established.
+        </p>
+</div>
+<div class="apple-card">
+<span class="issue-tag">Rule 106 and Rule 403</span>
+<h3>The State Presented the Page Most Favorable to Its Theory</h3>
+<p>
+            The defense alerted the court that the State was offering only the first page while later pages
+            disclosed third-party access and Ben’s denial of possession. Those later portions did not necessarily
+            prove that Matt wrote the 1:49 p.m. message, but they were necessary to prevent the jury from treating
+            the account name as proof of exclusive control and authorship.
+        </p><br/>
+<p>
+            Rule 106 permits the adverse party to require contemporaneous introduction of the portions necessary
+            to prevent a misleading impression. Rule 403 separately supports exclusion where the probative value
+            of an isolated page is substantially outweighed by the danger of confusion or misleading the jury.
+        </p><br/>
+<p>
+            The court offered to allow the defense to introduce the remaining pages. That partially recognized the
+            problem, but it placed the burden of correcting the State’s selective presentation on the defense.
+            The stronger request would have required the State to introduce the necessary context at the same time
+            or forego the isolated page.
+        </p><br/>
+</div>
+<div class="apple-card" id="strongest-objection">
+<span class="issue-tag">Best Preserved Objection</span>
+<h3>The Objection That Should Have Been Made Before Admission</h3>
+<div class="objection-box">
+<h4>Authentication, Personal Knowledge, Conditional Relevance, Completeness, and Rule 403</h4>
+<p><br/>
+                Objection under Rules 104(b), 901(a), 602, 106, and 403, and request for voir dire outside the
+                jury’s presence. The witness has authenticated only that these screenshots appeared on her phone.
+                She has not established personal knowledge that Mr. Allen authored the 1:49 p.m. message.
+            </p><br/>
+<p>
+                The complete conversation affirmatively shows that another person used the same phone or account,
+                so the displayed name is not sufficient proof of authorship. The Court has conditioned admission
+                on proof of a specific prior bonfire conversation with Mr. Allen, and the State has not supplied
+                that foundation.
+            </p><br/>
+<p>
+                The State is also attempting to introduce only the first page while omitting the portions showing
+                third-party access and Mr. Allen’s denial of possession. Under Rule 106, the necessary contextual
+                portions must be introduced contemporaneously. Under Rule 403, the isolated page presents a
+                substantial danger of misleading the jury.
+            </p><br/>
+<p>
+                The defense moves to exclude the exhibit. Alternatively, the defense moves to require introduction
+                of the complete relevant exchange with an instruction that neither the account name nor admission
+                of the exhibit establishes who authored any particular message.
+            </p>
+</div>
+<h3>Immediate Objection After the Court’s Reliability Statement</h3>
+<div class="objection-box">
+<h4>N.C. Gen. Stat. § 15A-1222; Curative Instruction; Mistrial if Necessary</h4>
+<p><br/>
+                Objection. The Court’s statement that the exhibit is “sufficiently reliable” expresses an opinion
+                on disputed authorship, credibility, and evidentiary weight, which are questions for the jury under
+                N.C. Gen. Stat. § 15A-1222.
+            </p><br/>
+<p>
+                The defense requests an immediate instruction that admission of the exhibit does not constitute a
+                finding that Mr. Allen authored any message, that the Court expresses no opinion concerning the
+                exhibit’s reliability or credibility, and that authorship and weight remain solely for the jury.
+                If the prejudice cannot be cured, the defense moves for a mistrial under N.C. Gen. Stat.
+                § 15A-1061.
+            </p>
+</div>
+</div>
+<div class="apple-card" id="prosecutor-rules">
+<span class="issue-tag">Rules and Professional Duties</span>
+<h3>Authorities Directly Implicated</h3>
+<div class="legal-grid">
+<div class="apple-card">
+<h3>Evidence and Procedure</h3>
+<ul class="precision-list">
+<li>N.C. Gen. Stat. § 8C-1, Rules 104(a)–(b)</li>
+<li>N.C. Gen. Stat. § 8C-1, Rule 901(a)</li>
+<li>N.C. Gen. Stat. § 8C-1, Rule 602</li>
+<li>N.C. Gen. Stat. § 8C-1, Rule 106</li>
+<li>N.C. Gen. Stat. § 8C-1, Rule 403</li>
+<li>N.C. Gen. Stat. § 8C-1, Rules 105, 611, and 1003</li>
+<li>N.C. Gen. Stat. § 15A-1222</li>
+<li>N.C. Gen. Stat. §§ 15A-1061, 15A-1442, and 15A-1443</li>
+</ul>
+</div>
+<div class="apple-card">
+<h3>Potential Prosecutorial Duties</h3>
+<ul class="precision-list">
+<li>RPC 3.3(a): candor, if false attribution was knowingly presented</li>
+<li>RPC 3.4(c): knowing disobedience of a tribunal obligation</li>
+<li>RPC 3.4(e): alluding to matters unsupported by admissible evidence</li>
+<li>RPC 3.8: prosecutor’s role as a minister of justice</li>
+<li>RPC 8.4(c)–(d): deceit or conduct prejudicial to justice, if knowledge and intent are proved</li>
+</ul>
+</div>
+<div class="apple-card">
+<h3>Judicial Duties</h3>
+<ul class="precision-list">
+<li>Canon 2A: compliance with law and confidence in impartiality</li>
+<li>Canon 3A(1): fidelity to law and professional competence</li>
+<li>Canon 3A(4): full right to be heard according to law</li>
+</ul>
+</div>
+</div>
+<div class="record-note">
+<strong>Necessary distinction: </strong> The transcript supports substantial evidentiary and judicial-error arguments. A disciplinary charge against the prosecutor requires additional proof that she knowingly presented false attribution, knowingly evaded the court’s directive, or intentionally created a misleading presentation. A legal error should not be mislabeled as proven corruption without evidence of knowledge or intent. This should be inferred from prior conduct, not just in this case but others. <br><br>
+
+
+The record reflects an ADA who is allowed to operate without any moral or legal restriction. Even after the North Carolina Bar was warned of her underhanded tactics, she was not reprimanded in any meaningful way. ADA Bartholomew continued her corrupt practices. She withheld video evidence that “exonerates the Defendant” until the day of the trial, and withheld it “after being compelled” to turn it over according to Attorney William Pruden. There was a bench trial, and the unhinged ADA was no longer allowed to torture another citizen, as the judge found the Defendant not guilty. The NC Bar was informed of her behavior, yet they accept that citizens will have to pay for their inaction. For how long and how many have been subjected to her abuse? Is the NC Bar a corrupt organization that protects its own and allows them to continue their misconduct, creating attorneys like Nifong and Bartholomew? <br><br>
+
+
+Allowing an ADA like Bartholomew to continue her misconduct is a travesty of justice. The NC Bar should be held accountable for their inaction, and the public should demand that they be held accountable. The NC Bar is a public service organization that should be protecting the public, not allowing attorneys like Bartholomew to continue their misconduct. The NC Bar should be held accountable for their inaction, and the public should demand that they be held accountable.
+
+        </div>
+</div>
+<div class="apple-card">
+<span class="issue-tag">Authorities</span>
+<h3>Primary North Carolina Sources</h3>
+<ul class="authority-list precision-list">
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_8C.html">North Carolina Rules of Evidence, Chapter 8C</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_15a/GS_15a-1222.html">N.C. Gen. Stat. § 15A-1222 — Judicial expression of opinion</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_15A/GS_15A-1061.html">N.C. Gen. Stat. § 15A-1061 — Mistrial for prejudice to defendant</a></li>
+<li><a href="https://appellate.nccourts.org/opinions/?c=2&amp;pdf=39297">State v. Clemons — authentication of social-media evidence</a></li>
+<li><a href="https://www.ncbar.gov/for-lawyers/ethics-and-governing-rules/rules-of-professional-conduct/">North Carolina Rules of Professional Conduct</a></li>
+<li><a href="https://www.nccourts.gov/assets/inline-files/North%20Carolina%20Code%20of%20Judicial%20Conduct%20-%20Codified%2012%20February%202020.pdf">North Carolina Code of Judicial Conduct</a></li>
+</ul>
+</div>
+<div class="apple-card u-migrated-ae8f2ed9" id="prosecutor-bottom-line">
+<span class="issue-tag">Bottom Line</span>
+<h3 class="u-migrated-8f56b1fd">When The Prosecutor and the Judge Team Up</h3>
+<p class="conclusion-emphasis">
+            The State did not simply offer a screenshot. It offered the screenshot as Ben Allen’s own statement.
+            Yet the complete thread disclosed third-party access; the State did not clearly establish the specific
+            prior conversation the judge required, and the witness was permitted to state the ultimate conclusion
+            of authorship without explaining how she knew it.
+        </p><br>
+<p class="conclusion-emphasis">
+            The judge then shifted the authentication burden by reasoning that there was no reason to believe Ben
+            did not send the message. Most significantly, the judge told the jury that the exhibit was “sufficiently
+            reliable,” placing judicial authority behind evidence whose authorship and weight remained disputed.
+        </p><br>
+<p class="conclusion-emphasis">
+            The strongest preserved issue would have combined Rules 104(b), 901, 602, 106, and 403 at admission,
+            followed by an immediate § 15A-1222 objection, request for a curative instruction, and—if the prejudice
+            could not be cured—a motion for mistrial under § 15A-1061.
+        </p>
+</div>
+<div class="action-grid">
+<div class="card">
+<div class="card-label">Primary Error</div>
+<h3>Judicial Endorsement</h3>
+<p>The court characterized disputed evidence as “sufficiently reliable” in front of the jury.</p>
+</div>
+<div class="card">
+<div class="card-label">Foundation</div>
+<h3>Authorship Not Established</h3>
+<p>The State did not clearly supply the specific prior-conversation link required by the court.</p>
+</div>
+<div class="card">
+<div class="card-label">Best Remedy</div>
+<h3>Exclude, Cure, or Mistrial</h3>
+<p>Exclude the exhibit, issue a precise curative instruction, or declare a mistrial if prejudice is irreparable.</p>
+</div>
+</div>
+</div>
+<script src="shared/card-mapper.js"></script>
+<script src="shared/card-colors.js"></script>
+</div>
+<!-- Image Modal -->
+<div id="imageModal" onclick="closeImageModal()">
+<span class="modal-close" onclick="closeImageModal()">×</span>
+<img alt="Full resolution image" decoding="async" id="modalImage" loading="lazy" src=""/>
+<video controls="" id="modalVideo"></video>
+</div>
+<div id="footer-elements">
+<div class="fab-image u-migrated-8cf502ad">
+<img alt="Lee County Corruption" class="u-migrated-f339e777" decoding="async" loading="lazy" src="content/images/evidence/graphics/icons/stop_corruption%20Clean.webp" style="--image-size: auto"/>
+</div>
+</div>
+<script src="shared/image-modal.js"></script>
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+<script defer="" src="shared/site-search.js"></script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<base href="../../" target="_top"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Structured analysis of internal contradictions, prior inconsistent statements, corroboration gaps, and biomechanical questions in Lauren Deal's trial testimony." name="description"/>
+<meta content="State v. Benjamin Allen — Testimony Issues" property="og:title"/>
+<meta content="A record-focused issue map separating direct contradictions, prior statements, witness conflicts, corroboration gaps, and physical-feasibility questions." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>State v. Benjamin Allen — Testimony Issues</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="shared/styles.css?v=20260718r" rel="stylesheet"/>
+<style>
+        body {
+            color: var(--light);
+        }
+        body .container {
+            max-width: 1800px;
+        }
+        /* Keep the epigraph optically centered even with the page-rail gutter. */
+        .header {
+            text-align: center;
+        }
+        .header h2 {
+            display: block;
+            width: 100%;
+            max-width: 42ch;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-wrap: balance;
+        }
+        .carousel-nav-wrapper {
+            display: none !important;
+        }
+        .page-rail-title,
+        h3[style*="#fbbf24"],
+        h4[style*="#fbbf24"],
+        p[style*="#fbbf24"] {
+            color: var(--accent-text) !important;
+        }
+        .section-title,
+        .apple-card h3,
+        .card h3,
+        h3[style*="text-align: center"] {
+            color: var(--light) !important;
+        }
+        .apple-card,
+        .card,
+        .comparison-table {
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+        }
+        .apple-card,
+        .apple-card p,
+        .apple-card li,
+        .comparison-table td,
+        .comparison-table th,
+        .card p {
+            color: var(--text-muted) !important;
+        }
+        [style*="border-left: 4px solid #fbbf24"],
+        [style*="border-left: 4px solid #60a5fa"],
+        [style*="border-left: 4px solid #fb2424"] {
+            border-left-color: var(--accent-text) !important;
+        }
+        .fab-image img {
+            border: 2px solid rgba(166,206,210,0.7) !important;
+            background: rgba(0,0,0,0.42) !important;
+        }
+        .testimony-card {
+            margin: 24px 0 20px;
+            padding: 22px 24px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-text);
+            border-radius: 14px;
+            background: rgba(15, 23, 42, 0.72);
+        }
+        .testimony-card .testimony-label {
+            margin: 0 0 8px;
+            color: var(--accent-text) !important;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .testimony-card h4 {
+            margin: 0 0 12px;
+            color: var(--light);
+            font-size: 1.15rem;
+        }
+        .testimony-card blockquote {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .testimony-card blockquote p {
+            margin: 0;
+            color: #e5ecee !important;
+            line-height: 1.85;
+        }
+        .testimony-card blockquote p + p {
+            margin-top: 12px;
+        }
+        .exhibit-testimony {
+            margin-top: 28px;
+            padding: 32px;
+        }
+        .exhibit-testimony h3 {
+            margin-bottom: 22px;
+        }
+        .exhibit-transcript {
+            margin: 0;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            color: #e5ecee;
+            font-family: "Manrope", sans-serif;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .scope-banner {
+            margin: 22px 0;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--accent-text);
+            border-radius: 14px;
+            background: rgba(15, 23, 42, 0.76);
+        }
+        .scope-banner strong {
+            color: var(--light);
+        }
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--accent-text);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+        }
+        .issue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+            gap: 18px;
+            margin: 22px 0;
+        }
+        .issue-card {
+            position: relative;
+            margin: 0;
+            padding: 23px;
+            overflow: hidden;
+        }
+        .issue-card h3 {
+            margin-top: 4px;
+        }
+        .issue-card p:last-child {
+            margin-bottom: 0;
+        }
+        .rank-badge,
+        .strength-badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 26px;
+            padding: 4px 9px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .rank-badge {
+            margin-right: 7px;
+            color: var(--light);
+            background: rgba(255,255,255,0.06);
+        }
+        .strength-badge {
+            color: var(--accent-text);
+            background: rgba(166,206,210,0.08);
+        }
+        .issue-type {
+            margin: 12px 0 8px;
+            color: var(--light) !important;
+            font-weight: 700;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .comparison-panel {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: rgba(15, 23, 42, 0.68);
+        }
+        .comparison-panel h4 {
+            margin: 0 0 11px;
+            color: var(--light);
+        }
+        .comparison-panel p:last-child,
+        .comparison-panel ul:last-child {
+            margin-bottom: 0;
+        }
+        .tension-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 14px 0 4px;
+            color: var(--accent-text);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .sequence {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0;
+            counter-reset: sequence;
+        }
+        .sequence-step {
+            position: relative;
+            padding: 15px 16px 15px 54px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.68);
+        }
+        .sequence-step::before {
+            counter-increment: sequence;
+            content: counter(sequence);
+            position: absolute;
+            left: 15px;
+            top: 13px;
+            display: grid;
+            width: 27px;
+            height: 27px;
+            place-items: center;
+            border-radius: 50%;
+            color: #071114;
+            background: var(--accent-text);
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 800;
+        }
+        .geometry-box {
+            margin: 22px 0;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background:
+                linear-gradient(135deg, rgba(166,206,210,0.08), rgba(15,23,42,0.72));
+        }
+        .geometry-diagram {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .geometry-node {
+            min-height: 104px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: rgba(2, 6, 23, 0.66);
+            text-align: center;
+        }
+        .geometry-node strong {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--light);
+        }
+        .geometry-arrow {
+            color: var(--accent-text);
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .evidence-table {
+            width: 100%;
+            margin-top: 18px;
+            border-collapse: collapse;
+        }
+        .evidence-table th,
+        .evidence-table td {
+            padding: 14px 13px;
+            border: 1px solid var(--border);
+            vertical-align: top;
+            text-align: left;
+        }
+        .evidence-table th {
+            color: var(--light);
+            background: rgba(15,23,42,0.88);
+        }
+        .evidence-table td {
+            color: var(--text-muted);
+            background: rgba(15,23,42,0.48);
+        }
+        .classification {
+            white-space: nowrap;
+            color: var(--accent-text);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .caution-card {
+            margin-top: 20px;
+            padding: 20px 22px;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-left: 5px solid #f59e0b;
+            border-radius: 14px;
+            background: rgba(120, 53, 15, 0.12);
+        }
+        .caution-card h4 {
+            margin-top: 0;
+            color: var(--light);
+        }
+        .record-status {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+            margin-top: 18px;
+        }
+        .record-status > div {
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(15,23,42,0.66);
+        }
+        .record-status strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--light);
+        }
+        .quote-block {
+            margin: 18px 0;
+            padding: 18px 21px;
+            border-left: 4px solid var(--accent-text);
+            background: rgba(15,23,42,0.72);
+            color: #e5ecee;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.22rem;
+            line-height: 1.55;
+        }
+        .legal-links a {
+            color: var(--accent-text);
+            text-decoration: none;
+        }
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+        .bottom-line {
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+        details.issue-details {
+            margin-top: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+        }
+        details.issue-details summary {
+            cursor: pointer;
+            color: var(--accent-text);
+            font-weight: 700;
+        }
+        @media (max-width: 820px) {
+            .comparison-grid,
+            .geometry-diagram {
+                grid-template-columns: 1fr;
+            }
+            .geometry-arrow {
+                transform: rotate(90deg);
+                text-align: center;
+            }
+            .evidence-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+</style>
+<style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+<link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css">
+</link></head>
+<body>
+<div class="container">
+<div aria-label="Project navigation" class="nav-tabs">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
+                    <a role="menuitem" href="timeline.html">Timeline</a>
+                    <a role="menuitem" href="players.html">Players</a>
+                    <a role="menuitem" href="scene.html">Scene Analysis</a>
+                    <a role="menuitem" href="evidence.html">Evidence</a>
+                    <a role="menuitem" href="documentspage.html">Documents</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
+                    <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a class="active" role="menuitem" href="Deal's Ever Changing Testimony.html" aria-current="page">Deal's Ever Changing Testimony</a>
+                    <a role="menuitem" href="New_Face.html">New Face</a>
+                    <a role="menuitem" href="general-videos.html">General Videos</a>
+                    <a role="menuitem" href="case-study.html">Case Study</a>
+                    <a role="menuitem" href="data-snapshot.html">Data Snapshot</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-3">Diagrams</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-3" role="menu">
+                    <a role="menuitem" href="connections.html">Connections</a>
+                    <a role="menuitem" href="false-story-diagram.html">False Story</a>
+                    <a role="menuitem" href="misconductandfailure.html">Mindmaps</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-4">Accountability</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-4" role="menu">
+                    <a role="menuitem" href="misconduct.html">Misconduct</a>
+                    <a role="menuitem" href="prosecutor_allowed.html">Prosecutor Conduct</a>
+                    <a role="menuitem" href="judicial-duty.html">Judicial Duty</a>
+                    <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
+                </div>
+            </div>
+</div>
+<div class="header">
+<h1>The Testimony Under Examination</h1>
+<h2>A record-focused map of contradictions, prior statements, corroboration gaps, and physical-feasibility questions.<br><br>
+ADA Bartholomew doesn’t win. She manipulates.<br><br>ADA Bartholomew doesn’t seek justice; she denies it.</h2>
+</div>
+<nav aria-label="On this page" class="page-rail">
+<p class="page-rail-title">On this page</p>
+<a href="#overview" target="_top">Overview</a>
+<a href="#ranked-issues" target="_top">Ranked Issues</a>
+<a href="#direct-conflicts" target="_top">Direct Conflicts</a>
+<a href="#mechanics" target="_top">Mechanics</a>
+<a href="#state-witness" target="_top">State Witness</a>
+<a href="#corroboration" target="_top">Corroboration</a>
+<a href="#relationship" target="_top">Relationship</a>
+<a href="#legal-framework" target="_top">Legal Framework</a>
+<a href="#bottom-line" target="_top">Bottom Line</a>
+</nav>
+<div class="content-section">
+<h2 class="section-title" id="overview">
+        The Account Contains Multiple Independent Tensions—
+        <br/>But They Are Not All the Same Kind of Issue
+    </h2>
+<section class="apple-card">
+<span class="eyebrow">Scope and Method</span>
+<h3>What This Page Does—and Does Not Claim</h3>
+<p>
+            This page reorganizes the supplied testimony analysis into a structured credibility and
+            evidentiary issue map. It distinguishes direct contradictions from prior inconsistent
+            statements, omissions, conflicts with other witnesses, limited corroboration, and
+            biomechanical arguments.
+        </p>
+<div class="scope-banner">
+<strong>Bottom Line:</strong> Any reader examining the record as a whole can clearly see it supports a coherent defense theory: the State’s case was built by selecting, reshaping, and advancing
+a usable story while the contemporaneous and objective evidence pointed in a different direction.
+        </div>
+<p>
+             A direct contradiction can be stated firmly if the transcript and police interviews support both versions.
+             An omission must be described as an omission. Unusual conduct is relevant to weight but is not proof of
+             fabrication. A biomechanical argument can be powerful, but it should be demonstrated rather than asserted as
+             scientific fact without expert or visual support, even when it is obvious, as it is in this case.
+        </p>
+</section>
+<section class="apple-card" id="ranked-issues">
+<span class="eyebrow">Priority Map</span>
+<h3>The Strongest Issues, Ranked by Evidentiary Value</h3>
+<div class="issue-grid">
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 1</span><span class="strength-badge">High</span></div>
+<h3>Bathroom Turn</h3>
+<p class="issue-type">Direct Contradiction On A Concrete Fact</p>
+<p>
+                    Deal testified on direct that Allen did not turn
+                    around, but on cross described him as turning “halfway.” The two versions concern the
+                    same observable act immediately before the alleged assault.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 2</span><span class="strength-badge">High</span></div>
+<h3>Resistance Versus Freeze</h3>
+<p class="issue-type">Prior Inconsistent Statement</p>
+<p>
+                    Early statements described doing “everything” possible to escape and later
+                    kicking free. Trial testimony emphasized freezing, doing nothing, and an inability to
+                    fight, while the early statements contained no freeze description.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 3</span><span class="strength-badge">High, if demonstrated</span></div>
+<h3>One-Handed Sequence</h3>
+<p class="issue-type">Internal Physical-Feasibility Question</p>
+<p>
+                    The account combines continuous one-handed restraint, removal of tight leggings and
+                    shoes, the defendant’s own undressing, repositioning, separation of the thighs, and
+                    penetration within a previously reported one-to-three-minute period.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 4</span><span class="strength-badge">High</span></div>
+<h3>Keys and Invitation</h3>
+<p class="issue-type">Testimony Versus Physical Evidence / Witness Account</p>
+<p>
+                    Deal described giving or throwing the keys to Ben, while
+                    the video shows Deal transfer the keys to DeMarco. Happel
+                    also disputed that any invitation was extended and Carmen Love's
+                    first interview does not mention the Defendant or any bonfire invitation
+                    even though Lauren explicity said she told Carmen that is why she was staying.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 5</span><span class="strength-badge">High</span></div>
+<h3>Conflict With Happel</h3>
+<p class="issue-type">Conflict Inside The State’s Evidence</p>
+<p>
+                    The accounts diverge on the invitation, following the men, intoxication,
+                    erratic behavior, money questions, insults, physical contact in the truck, and
+                    Happel’s own level of intoxication.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 6</span><span class="strength-badge">Moderate–High</span></div>
+<h3>Injury Attribution</h3>
+<p class="issue-type">Limited Independent Corroboration</p>
+<p>
+                    The medical findings centered on foot and knee injuries, and Deal reportedly
+                    attributed nearly all visible injuries to the woods or briars. The assault diagnosis
+                    itself was based on her own account to doctors and nurses.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 7</span><span class="strength-badge">Moderate</span></div>
+<h3>Immediate Help-Seeking</h3>
+<p class="issue-type">Post-event Conduct; Weight Only</p>
+<p>
+                    Lauren claims she ran past two men without asking them to call 911 and later
+                    asked DeMarco to call her mother rather than emergency services. This may be argued,
+                    but trauma responses vary. The real question comes in reviewing the plausibility of
+                    her escape through the woods account. Objectively, it did not occur as she told law
+                    enforcement.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<div><span class="rank-badge">Rank 8</span><span class="strength-badge">Moderate</span></div>
+<h3>New Trial Details</h3>
+<p class="issue-type">Omission or Later Elaboration</p>
+<p>
+                    The neighboring-house attempt, detailed freeze explanation, and “halfway” turn were
+                    absent or less developed in earlier accounts. Their value depends on
+                    whether the omissions concern facts a truthful witness would naturally have mentioned.
+                    The fact that claims to have ran in the direction of an open airfield but claimed it was
+                    dense trees and brush is also concerning.
+                </p>
+</article>
+</div>
+</section>
+<section class="apple-card" id="direct-conflicts">
+<span class="eyebrow">Direct Examination, Cross, Redirect, Recross</span>
+<h3>Where the Testimony Changes on the Same Event</h3>
+<div class="comparison-grid">
+<div class="comparison-panel">
+<h4>Bathroom Turn — Direct</h4>
+<p>
+                    Deal testified that she asked Allen to turn around and that he did not.
+                </p>
+</div>
+<div class="comparison-panel">
+<h4>Bathroom Turn — Cross</h4>
+<p>
+                    She reportedly agreed that he turned, then described the movement as “halfway.”
+                </p>
+</div>
+</div>
+<div class="tension-arrow">Same event → materially different description</div>
+<div class="comparison-grid">
+<div class="comparison-panel">
+<h4>Resistance — Earlier Statements</h4>
+<p>
+                    She reportedly said she did everything she could to get away because he was stronger,
+                    and that she kicked when his grip loosened.
+                </p>
+</div>
+<div class="comparison-panel">
+<h4>Resistance — Trial</h4>
+<p>
+                    She described freezing, doing nothing, and being unable to fight, then later described
+                    trying to escape after approximately a minute.
+                </p>
+</div>
+</div>
+<div class="tension-arrow">Active resistance ↔ prolonged immobility</div>
+<div class="comparison-grid">
+<div class="comparison-panel">
+<h4>Items After Leaving the Truck</h4>
+<p>
+                    A contemporaneous statement indicated she may have left her phone,
+                    cigarettes, or other property in the truck.
+                </p>
+</div>
+<div class="comparison-panel">
+<h4>Trial Description</h4>
+<p>
+                    She insisted the items were in her lap and that she carried them inside.
+                </p>
+</div>
+</div>
+<div class="caution-card">
+<h4>Why these distinctions matter</h4>
+<p>
+                The bathroom-turn point is a direct contradiction in the quoted testimony.
+                The resistance point is a prior-statement and narrative-coherence issue. The items point
+                may involve memory, uncertainty, or trauma - or creation of a false narrative to support
+                an extortion attempt.
+            </p>
+</div>
+</section>
+<section class="apple-card" id="mechanics">
+<span class="eyebrow">Biomechanics and Timing</span>
+<h3>The One-Handed Sequence Requires Several Unexplained Transitions</h3>
+<p>
+            The sequence in which tight leggings were pulled back up, Deal was pushed onto the bed,
+            both arms were held above her head with one hand, her leggings and shoes were removed with
+            the other, Allen undressed, her thighs were separated, and penetration occurred without
+            lubrication—all within a previously reported one-to-three-minute interval.
+
+<div class="sequence">
+<div class="sequence-step">Leggings are pulled back up after urination.</div>
+<div class="sequence-step">Deal is pushed onto the bed (landing on her back) from a side or rear position.</div>
+<div class="sequence-step">Both arms are moved above her head and held with one hand.</div>
+<div class="sequence-step">Tight leggings are removed from both legs with the free hand.</div>
+<div class="sequence-step">Shoes are removed.</div>
+<div class="sequence-step">Allen removes his own belt, pants, and underwear.</div>
+<div class="sequence-step">Body position changes sufficiently to separate the thighs and obtain pelvic alignment.</div>
+<div class="sequence-step">Penetration occurs before the grip loosens.</div>
+</div>
+<div class="geometry-box">
+<h3>The Spatial Question</h3>
+<div class="geometry-diagram">
+<div class="geometry-node">
+<strong>Position Needed for Clothing Removal</strong>
+                    The legs must remain sufficiently accessible for tight leggings to move down and
+                    clear both feet.
+                </div>
+<div class="geometry-arrow">→</div>
+<div class="geometry-node">
+<strong>Position Needed for Penetration</strong>
+                    The actor must move between or across the legs and obtain pelvic alignment while
+                    maintaining the claimed arm restraint.
+                </div>
+</div>
+<p>
+                The testimony summary does not identify the point at which Allen moved from the side or
+                partial-side position into the position required for penetration, whether the arm hold
+                was released during that transition, or how the leggings cleared both legs if his body
+                already occupied the space between them.
+            </p>
+</div>
+<div class="quote-block">
+            The testimony omits the intermediate movements necessary to reconcile continuous one-handed restraint,
+            removal of clothing from both legs, the defendant’s own undressing, repositioning, and penetration within
+            the stated timeframe. Rather than develop the factual mechanics of the alleged event, the ADA avoided
+            questions that might have clarified how the sequence physically occurred. She instead relied on emotion-focused
+            questions concerning how the complainant felt, leaving the material gaps in the physical account unresolved.
+        </div>
+<div class="record-status">
+<div>
+<strong>What the testimony establishes</strong>
+                A compressed sequence containing multiple discrete acts and position changes.
+
+<strong>What demonstrative evidence should test</strong>
+                Reach, body position, mattress height, clothing elasticity, shoe design, and elapsed time.
+            <br><br>
+<section class="apple-card" id="emotion-versus-proof">
+    <span class="eyebrow">Emotion Versus Proof</span>
+
+<h3>The Testimony States the Conclusion but Omits the Physical Sequence</h3>
+
+<p>
+    The direct examination did not establish how the alleged act physically occurred.
+    It established only several endpoints: Deal was pushed onto the bed, her arms were
+    allegedly held above her head with one hand, her leggings were removed, and penetration occurred.
+    The intermediate movements connecting those events were never described.<br><br>
+</p>
+
+<p>
+    When Bartholomew asked what happened after the leggings were removed, Deal answered, “I got raped.”
+    Bartholomew then asked what she meant by rape, and Deal stated that the Defendant’s penis entered her
+    vagina after she said no. That testimony identifies the alleged act, but it does not explain how the act
+    was physically performed under the conditions she described.<br><br>
+</p>
+
+<strong>The examination did not establish:</strong>
+
+<ul>
+    <li>Where the Defendant was positioned when Deal landed on the bed;</li>
+    <li>How both of her arms came to be above her head;</li>
+    <li>Whether the one-handed restraint began before or after the leggings were removed;</li>
+    <li>How tight leggings were pulled down both legs and cleared both feet while both arms remained restrained;</li>
+    <li>Whether her shoes came off before, during, or after the removal of the leggings;</li>
+    <li>How the Defendant removed his own belt, pants, underwear, and any footwear while maintaining the restraint;</li>
+    <li>How he moved from the side or rear position created by the push into the position necessary for penetration;</li>
+    <li>Whether he released, shifted, or reestablished the restraint while repositioning;</li>
+    <li>How her thighs were separated;</li>
+    <li>How long each part of the sequence took; or</li>
+    <li>Whether her hands actually remained restrained throughout the entire sequence.</li>
+</ul>
+<br><br>
+<h3>Emotional Testimony Was Used Where Factual Development Was Required</h3>
+
+<p>
+    Rather than develop the missing physical facts, Bartholomew repeatedly directed the testimony toward Deal’s emotional experience:
+    what was going through her mind, what she felt physically and emotionally, whether she expected the event, why she felt compelled
+    to run, and how terrified she was.<br><br>
+</p>
+
+<p>
+    Those feelings may have been relevant to Deal’s claimed freeze response or her decision to flee. They did not explain the mechanics
+    of the alleged offense. Emotional testimony cannot supply the missing movements, body positions, timing, clothing-removal steps,
+    or actions necessary to determine whether the physical sequence occurred as described.<br><br>
+</p>
+
+<p>
+    The problem was therefore not merely a lack of detail. The prosecutor elicited an emotionally powerful conclusion while leaving the
+    central physical account undeveloped. The jury was asked to accept that the sequence occurred without receiving the factual
+    information necessary to evaluate how it occurred.<br><br>
+</p>
+
+<div class="quote-block">
+    <strong>Emotion was used to reinforce the accusation, but it did not provide the missing proof.</strong>
+</div>
+
+<h3>The Caution Runs Both Ways—but the Burden Does Not</h3>
+
+    It is understood that the defense should not characterize the alleged sequence as definitively or scientifically impossible without testing, demonstrative
+     evidence, or qualified expert analysis. The State, however, should not be permitted to treat the same untested sequence as
+     physically coherent and proven merely because the complainant described it.<br><br>
+    When the alleged mechanics are central to guilt and capable of objective examination, the prosecution should not avoid the factual
+    questions necessary to determine whether the sequence could occur as described. The State may not substitute emotional testimony
+    for proof of the event's physical mechanics and then place the consequences of that evidentiary gap on the Defendant.<br><br>
+    The Defendant was not required to prove that the sequence was impossible. The burden remained on the State to prove the charged
+    conduct beyond a reasonable doubt. If the prosecution did not investigate, test, explain, or meaningfully develop an account
+    containing substantial spatial, timing, and movement problems, that failure properly weighs against the sufficiency and reliability
+    of the State's evidence—not against the accused.<br><br>
+
+<h3>Evidentiary Significance</h3>
+
+    Rule 401 permits evidence that tends to make a consequential fact more or less probable. Emotional testimony may therefore have
+    some relevance to fear, freezing, or flight. But its ability to prove the physical occurrence is limited.<br><br>
+    Rule 403 permits exclusion when the probative value of evidence is substantially outweighed by the danger of unfair prejudice,
+    confusion of the issues, or misleading the jury. Emotional testimony becomes especially problematic when it encourages the jury
+    to treat the intensity of the witness's feelings as proof that an otherwise unexplained physical sequence occurred.<br><br>
+    Rule 611(a) also required the court to control the examination so that the presentation remained effective for determining the
+    truth. That authority supported limiting repetitive emotional questioning and requiring the State to focus on the disputed facts
+    and mechanics of the alleged event.<br><br>
+    It is not that every question concerning emotion was improper. Some of the questions had legitimate relevance. The point is that
+    the emotional testimony had limited probative value regarding the physical occurrence
+    and could not substitute for evidence explaining the charged conduct. ADA Bartholomew knows this and still uses it to her advantage
+    when no one in the system calls her out for her misbehavior. Bartholomew plays a very coercive game. She began with character assassination
+    of the defendant by presenting evidence from a witness she knew would not be allowed into court. Once she had completed that she began
+    a systemic dismantling of the defendant's pretrial rights even making up evidence and threatening when offering a plea.This behavior carries
+    over into trial. When the pretrial behavior is brought to the attention of the court it is dismissed as irrelevant.<br><br>
+    This is real and is happening in Lee County North Carolina. <br><br>
+</p>
+
+<div class="objection-box">
+    <h4>Objection Under Rules 401, 403, and 611(a)</h4>
+            Objection. The witness’s emotional reaction may explain her claimed state of mind, but it does not establish the disputed
+            physical mechanics of the alleged offense. The State has not developed how the clothing was removed, how the Defendant
+            undressed, how the parties repositioned, how the thighs were separated, or whether the restraint remained continuous.<br><br>
+            Continued emotional questioning risks inviting the jury to substitute sympathy for proof and misleading it into treating
+            emotional intensity as evidence that the unexplained physical sequence occurred. <br><br>
+            The defense requests that the Court limit the examination to testimony relevant to the disputed facts and the elements
+            the State is required to prove beyond a reasonable doubt.
+
+</div>
+
+
+</section>
+
+ </div>
+</div>
+</section>
+<section class="apple-card" id="state-witness">
+<span class="eyebrow">Internal Conflict in the Prosecution’s Case</span>
+<h3>Deal and State Witness Steven Happel Reportedly Disagreed on Multiple Observable Facts</h3>
+<table class="evidence-table">
+<thead>
+<tr>
+<th>Issue</th>
+<th>Deal’s Reported Position</th>
+<th>Happel’s Reported Position</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invitation</td>
+<td>Ben invited her to the house or bonfire.</td>
+<td>None of the three men invited her.</td>
+<td class="classification">Core Conflict</td>
+</tr>
+<tr>
+<td>Following the group</td>
+<td>Denied that the men were trying to get away from her.</td>
+<td>The men, especially the Defendant attempted to disengage.</td>
+<td class="classification">Narrative Context</td>
+</tr>
+<tr>
+<td>Intoxication and conduct</td>
+<td>Tipsy, not grossly intoxicated, not erratic.</td>
+<td>Grossly intoxicated, erratic, or possibly “on something." Bounced off a chair while barefoot at the bar.</td>
+<td class="classification">Perception / Memory</td>
+</tr>
+<tr>
+<td>Truck contact</td>
+<td>Hands remained in her lap; chin contact was impossible because of the headrest.</td>
+<td>Rubbing Ben’s head and neck and placing her chin on his shoulder.</td>
+<td class="classification">Concrete Observation</td>
+</tr>
+<tr>
+<td>Questions and insults</td>
+<td>Denied asking income questions or calling the men “assholes.”</td>
+<td>Reported that both occurred.</td>
+<td class="classification">Credibility Pattern</td>
+<br><br>
+</tr>
+</tbody>
+</table>
+<p>
+            Because Happel was called by the State, these are not merely defense-versus-prosecution
+            disputes. They are conflicts within the State’s own evidentiary presentation. The proper
+            argument is that the jury had to choose between materially different State-witness accounts,
+            not that Happel’s testimony automatically resolved every issue.
+        </p>
+</section>
+<section class="apple-card" id="corroboration">
+<span class="eyebrow">Medical Evidence, Injuries, and Post-Event Details</span>
+<h3>What Independently Corroborated the Force Narrative?</h3>
+<p>
+            According to the supplied analysis, the emergency-room findings described a toe laceration
+            with nail damage, a left-knee contusion, and a superficial foreign body in the foot. Deal
+            reportedly attributed nearly all visible injuries to running through the woods or briars.
+            The possible neck or shoulder mark was described as potentially resulting either from a push
+            or from the woods.
+        </p>
+<div class="record-status">
+<div>
+<strong>Documented</strong>
+                Foot and knee injuries consistent with the post-event flight through rough terrain - only because the fall outside the bar was not presented.
+            </div>
+<div>
+<strong>Not Independently Shown</strong>
+                Medical findings that specifically verify the described restraint, undressing sequence,
+                or penetration mechanics.
+            </div>
+<div>
+<strong>Diagnosis Limitation</strong>
+                The 'sexual assault' finding was based on the patient’s narrative, not on a verified determination of responsibility.
+            </div>
+</div>
+<h3>New or Expanded Details at Trial</h3>
+<table class="evidence-table">
+<thead>
+<tr>
+<th>Detail</th>
+<th>Earlier Record as Described</th>
+<th>Trial Account as Described</th>
+<th>Correct Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Freeze response</td>
+<td>No freeze language in two contemporaneous police statements.</td>
+<td>Detailed explanation of a mind-body shutdown on redirect.</td>
+<td class="classification">Material omission / later explanation</td>
+</tr>
+<tr>
+<td>Neighboring house</td>
+<td>No reported mention in police reports.</td>
+<td>Attempt to attract attention from a neighboring residence.</td>
+<td class="classification">First-time detail</td>
+</tr>
+<tr>
+<td>Bathroom turn</td>
+<td>Reportedly not described as a halfway turn.</td>
+<td>Specific “literally halfway” description.</td>
+<td class="classification">Changed detail</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Hospital: 1–2 minutes; law enforcement: 2–3 minutes.</td>
+<td>Accepted both as possible while maintaining the full sequence.</td>
+<td class="classification">Prior time estimates</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="apple-card" id="relationship">
+<span class="eyebrow">Relationship, Trust, Invitation, and State’s Exhibit 4</span>
+<h3>The Evidence of Familiarity Appears Limited and Internally Contested</h3>
+<p>
+            The supplied analysis states that Deal’s closer relationship was with Tiffany Allen, that
+            Deal had not seen Ben for more than a year, and that there had been no contact during that
+            period. She nevertheless described trusting Ben enough to go to the house and to make herself
+            his “responsibility.”
+        </p>
+<div class="comparison-grid">
+<div class="comparison-panel">
+<h4>Claimed Familiarity</h4>
+<ul>
+<li>Prior visits to the home and bonfires through Tiffany.</li>
+<li>Trust sufficient to go to the residence.</li>
+<li>Claim that Ben extended the invitation.</li>
+</ul>
+</div>
+<div class="comparison-panel">
+<h4>Limiting Evidence</h4>
+<ul>
+<li>Closer friendship with Tiffany, not Ben.</li>
+<li>No contact for more than a year.</li>
+<li>Conflict with Happel over whether an invitation occurred.</li>
+<li>State’s Exhibit 4 reportedly showed only an isolated 2016 bonfire invitation. NO OTHER CONTACT IN 3 YEARS.</li>
+</ul>
+</div>
+</div>
+<p>
+            The content described for State’s Exhibit 4 establishes some prior contact. Standing alone,
+            it does not establish a close, ongoing, dependent, supervisory, or trust-based relationship
+            at the time of the charged event.
+        </p>
+<div class="caution-card">
+<h4>External Facts Developed on Other Pages</h4>
+<p>
+The analysis on this page is limited to the transcript of State’s Exhibit 4 and the related evidentiary rulings.
+The following objective and record-based facts, developed elsewhere in the project, supply independent context that
+bears directly on credibility, authentication, and the feasibility of the State’s narrative:<br><br>
+</p>
+<ul>
+  <li><strong>Key exchange video</strong> — Footage shows Deal handing her keys to DeMarco, not to Allen, contradicting the trial claim that she tossed the keys to Allen and declared herself “Ben Allen’s responsibility.”</li>
+  <li><strong>Departure timeline video</strong> — Carmen Love and James Morrison exit Schooly’s at 12:41 a.m., before Deal approached the Allen group and well before the 2:00 a.m. conversation claimed in the affidavit and elicited at trial.</li>
+  <li><strong>Escape feasibility</strong> — Terrain, distance, Deal’s physical limitations, and moon-illumination data (approximately 75 percent) conflict with the “pitch black” description and the claimed path and duration of the escape.</li>
+  <li><strong>Spatial sequence of the alleged assault</strong> — Continuous one-handed control of both arms above the head, simultaneous removal of tight leggings, and subsequent penetration present an unresolved geometric problem under the constraints the witness herself accepted.</li>
+  <li><strong>Contemporaneous recorded interviews</strong> — DeMarco and Happel never mention Carmen, James, Peter, or any invitation; their accounts describe an unwanted intrusion rather than a mutual plan.</li>
+</ul><br>
+<p>
+These external facts do not appear in detail on this page. They are collected and analyzed on the Timeline, Scene Analysis, Evidence, and Contradictions pages.
+</p>
+</div>
+</section>
+<section class="apple-card" id="legal-framework">
+<span class="eyebrow">North Carolina Evidence Framework</span>
+<h3>How the Issues Should Be Characterized Legally</h3>
+<div class="issue-grid">
+<article class="apple-card issue-card">
+<h3>Rule 607</h3>
+<p>
+                    Any party may attack a witness’s credibility, including the party that called the
+                    witness. This matters when the State’s own witnesses conflict.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<h3>Rule 613</h3>
+<p>
+                    Prior statements may be used to confront a witness with inconsistent accounts,
+                    subject to the rule’s procedural requirements and the distinction between impeachment
+                    and substantive use.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<h3>Rule 602</h3>
+<p>
+                    A witness must have personal knowledge of the matters described. The rule does not
+                    resolve credibility, but it limits testimony based only on inference or assumption.
+                </p>
+</article>
+<article class="apple-card issue-card">
+<h3>Rules 401 and 403</h3>
+<p>
+                    Contradictions and omissions are relevant when they bear on consequential facts, but
+                    the court retains authority to prevent confusion, unfair prejudice, or misleading use.
+                </p>
+</article>
+</div>
+<div class="caution-card">
+<h4>The “inherently incredible” doctrine is narrow</h4>
+<p>
+                North Carolina law draws a line between two different claims:<br><br>
+
+<strong>Jury argument / inherent incredibility:</strong><br>
+A fact-finder is entitled to reject testimony that describes a physical sequence that cannot occur as claimed.
+When the witness herself accepts continuous one-handed control of both arms before and during the removal of tight
+leggings, the removal of shoes, the defendant’s undressing, the forced separation of thighs, and penetration, the
+geometric conflict is patent. <br><br>Pants cannot pass through the space occupied by a body that is already between the legs.
+That is a powerful, record-based argument that the account is inherently incredible. It can and should be pressed hard
+in cross-examination, closing, and post-trial motions.<br><br>
+<strong>Claim of legal error requiring exclusion or directed verdict as a matter of law:</strong><br>
+Courts are extremely reluctant to take the issue away from the jury merely because the described sequence appears impossible.
+Absent (a) uncontradicted physical facts or demonstrative evidence that affirmatively disprove the sequence, or
+(b) a clear, contemporaneous objection that forced the trial court to confront the impossibility and rule on it,
+appellate courts treat the problem as one of weight and credibility.
+            </p>
+</div>
+<ul class="legal-links">
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_8C.html">North Carolina Rules of Evidence — Chapter 8C</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_8C/GS_8C-1%2C_Rule_403.html">Rule 403 — prejudice, confusion, or misleading the jury</a></li>
+<li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_8C/GS_8C-1%2C_Rule_602.html">Rule 602 — personal knowledge</a></li>
+<li><a href="https://www.nccourts.gov/documents/appellate-court-opinions/state-v-middleton-3">State v. Middleton — published decision addressing an “inherently incredible” argument</a></li>
+</ul>
+</section>
+<section class="apple-card" id="bottom-line">
+<span class="eyebrow">Bottom Line</span>
+<h3>The Case for Doubt Is Cumulative, As Is The Case Against The ADA</h3>
+<p class="bottom-line">
+            Several independent categories converge:<br>
+            A direct change in the bathroom-turn account; early active-resistance statements that do not
+            contain the later freeze explanation; a compressed one-handed sequence with omitted position
+            changes; repeated conflicts with a witness called by the State; limited medical corroboration
+            of the specific force mechanics; changes in the invitation and key-transfer narrative; and new
+            details appearing only at trial.<br><br>
+        </p>
+<p class="bottom-line">
+            No single point is exaggerated. Post-event behavior is not proof of fabrication.
+Absence of injury does not disprove an assault. A later explanation is not automatically false.<br><br>
+
+That is not what the record in this case presents. <br><br> Here the evidence contains direct contradictions on concrete facts,
+prior inconsistent statements on the central issue of resistance, repeated conflicts with the State’s own witnesses,
+unresolved physical constraints on the core sequence, and material corroboration gaps. When these defects are evaluated
+together, they supply a structured, record-based foundation for challenging the reliability of the accusing testimony and
+for arguing reasonable doubt. The same cumulative record also supplies a substantial basis for contending that probable
+cause for the arrest was lacking.
+        </p>
+        </p>
+
+</div>
+<script src="shared/card-mapper.js"></script>
+<script src="shared/card-colors.js"></script>
+</div>
+<!-- Image Modal -->
+<div id="imageModal" onclick="closeImageModal()">
+<span class="modal-close" onclick="closeImageModal()">×</span>
+<img alt="Full resolution image" decoding="async" id="modalImage" loading="lazy" src=""/>
+<video controls="" id="modalVideo"></video>
+</div>
+<div id="footer-elements">
+<div class="fab-image u-migrated-8cf502ad">
+<img alt="Lee County Corruption" class="u-migrated-f339e777" decoding="async" loading="lazy" src="content/images/evidence/graphics/icons/stop_corruption%20Clean.webp" style="--image-size: auto"/>
+</div>
+</div>
+<script src="shared/image-modal.js"></script>
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+<script defer="" src="shared/site-search.js"></script>
+</body>
+</html>
+
+<!-- Generated from the user-supplied testimony analysis in Pasted text(85).txt. -->

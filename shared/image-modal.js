@@ -11,7 +11,7 @@ function openImageModal(mediaSrc) {
     if (isVideo) {
         modalImg.style.display = 'none';
         modalVideo.style.display = 'block';
-        modalVideo.src = src;
+        modalVideo.src = new URL(src, document.baseURI).href;
         modalVideo.load();
         // Some clips render a black first frame; jump slightly forward on open.
         const startPlayback = async () => {
@@ -33,7 +33,7 @@ function openImageModal(mediaSrc) {
         modalVideo.oncanplay = null;
         modalVideo.style.display = 'none';
         modalImg.style.display = 'block';
-        modalImg.src = src;
+        modalImg.src = new URL(src, document.baseURI).href;
     }
 
     modal.style.display = 'flex';

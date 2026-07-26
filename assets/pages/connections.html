@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../../" target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Relationship diagrams connecting the people and events of State v. Benjamin Allen.">
+  <meta property="og:title" content="Connections Diagram - State v. Benjamin Allen">
+  <meta property="og:description" content="Relationship diagrams connecting the people and events of State v. Benjamin Allen.">
+  <meta property="og:type" content="website">
+    <title>Connections Diagram - State v. Benjamin Allen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared/styles.css?v=20260725-2">
+    <link rel="stylesheet" href="assets/css/connections-tailwind.css">
+    <style>
+        body { font-family: var(--font-body); }
+        .title-font { font-family: var(--font-display); }
+        .pullquote {
+            border-left: 1px solid var(--border);
+            background: transparent;
+            box-shadow: none;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        .accent-text { color: #fbbf24; }
+        .warning-bar { background: linear-gradient(to right, #dc2626, #ef4444); }
+        @media (max-width: 640px) {
+            .pullquote { padding: 1rem 1.25rem; font-size: 1rem !important; }
+        }
+    </style>
+    <style>
+        body.connections-page {
+            color: var(--light);
+        }
+        body.connections-page .container {
+            max-width: 1800px;
+        }
+        body.connections-page .carousel-nav-wrapper {
+            display: none !important;
+        }
+        body.connections-page .connections-sidebar,
+        body.connections-page .connections-viewport,
+        body.connections-page .bg-zinc-900\/50 {
+            background: var(--card-bg) !important;
+            border-color: var(--border) !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+        }
+        body.connections-page .page-rail-title,
+        body.connections-page .accent-text,
+        body.connections-page .text-red-400,
+        body.connections-page .text-yellow-400 {
+            color: var(--accent-text) !important;
+        }
+        body.connections-page .warning-bar,
+        body.connections-page .bg-gradient-to-r.from-\[\#4a3910\]\/60.to-transparent {
+            background: linear-gradient(90deg, rgba(44,90,97,0.22), rgba(44,90,97,0.04)) !important;
+            border-color: rgba(166,206,210,0.3) !important;
+        }
+        body.connections-page .text-zinc-400,
+        body.connections-page .text-zinc-300,
+        body.connections-page p[style*="#94a3b8"] {
+            color: #c2cccd !important;
+        }
+        body.connections-page .text-white,
+        body.connections-page .section-title,
+        body.connections-page .connections-sidebar strong,
+        body.connections-page .connections-help strong {
+            color: var(--light) !important;
+        }
+        body.connections-page .connections-help,
+        body.connections-page .node-item,
+        body.connections-page .connections-sidebar-header button,
+        body.connections-page .connections-sidebar-header .button {
+            background: rgba(23,27,28,0.88);
+            border-color: var(--border);
+            color: var(--light);
+        }
+        body.connections-page .node-item.selected,
+        body.connections-page .connections-sidebar-header button:hover,
+        body.connections-page .connections-sidebar-header .button:hover {
+            background: rgba(44,90,97,0.18);
+            border-color: rgba(166,206,210,0.4);
+        }
+        body.connections-page .fab-image img {
+            border: 2px solid rgba(166,206,210,0.7) !important;
+            background: rgba(0,0,0,0.42) !important;
+        }
+    </style>
+
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+  <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+</head>
+<body class="connections-page">
+    <div class="container">
+        <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
+                    <a role="menuitem" href="timeline.html">Timeline</a>
+                    <a role="menuitem" href="players.html">Players</a>
+                    <a role="menuitem" href="scene.html">Scene Analysis</a>
+                    <a role="menuitem" href="evidence.html">Evidence</a>
+                    <a role="menuitem" href="documentspage.html">Documents</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
+                    <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
+                    <a role="menuitem" href="New_Face.html">New Face</a>
+                    <a role="menuitem" href="general-videos.html">General Videos</a>
+                    <a role="menuitem" href="case-study.html">Case Study</a>
+                    <a role="menuitem" href="data-snapshot.html">Data Snapshot</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-3">Diagrams</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-3" role="menu">
+                    <a class="active" role="menuitem" href="connections.html" aria-current="page">Connections</a>
+                    <a role="menuitem" href="false-story-diagram.html">False Story</a>
+                    <a role="menuitem" href="misconductandfailure.html">Mindmaps</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-4">Accountability</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-4" role="menu">
+                    <a role="menuitem" href="misconduct.html">Misconduct</a>
+                    <a role="menuitem" href="prosecutor_allowed.html">Prosecutor Conduct</a>
+                    <a role="menuitem" href="judicial-duty.html">Judicial Duty</a>
+                    <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+             <h1>An Edifice of Lies</h1>
+            <h2>“Connections reveal the architecture of the setup.”</h2>
+        </div>
+<nav class="page-rail" aria-label="On this page">
+            <p class="page-rail-title">On this page</p>
+            <a href="#connections" target="_top">Diagram</a>
+            <a href="#connections-sidebar" target="_top">Key Nodes</a>
+            <a href="#connections-viewport" target="_top">Viewer</a>
+            <a href="#lady-justice" target="_top">Lady Justice</a>
+            <a href="#erosion-narrative" target="_top">Statement of Indictment</a>
+        </nav>
+
+
+        <!-- Draw.io Connections viewer -->
+        <section id="connections" class="u-migrated-02915e3c">
+            <h2 class="section-title u-migrated-7a8feb70">Connections Diagram</h2>
+            <p class="u-migrated-e1db2c34">
+                Interactive view of the community connections around the case.
+                Click names to focus on nodes in the embedded viewer and analyze how networks of friendships,
+                affiliations, and shared interests can influence accountability, sometimes enabling misconduct
+                to remain unchallenged when those within the network protect one another.
+            </p>
+            <details class="diagram-static-backup">
+                <summary>Open static preview</summary>
+                <figure class="diagram-static-preview">
+                    <img src="content/images/evidence/graphics/drawio/Connections.webp"
+                         alt="Connections relationship diagram"
+                         data-modal-image="content/images/evidence/graphics/drawio/Connections.webp">
+                    <figcaption>Full connections diagram. Click the image to enlarge it.</figcaption>
+                </figure>
+            </details>
+            <details class="diagram-interactive" id="connections-interactive" open>
+                <summary>Interactive draw.io viewer</summary>
+            <div class="connections-wrapper">
+                <div class="connections-sidebar" id="connections-sidebar">
+                    <div class="connections-sidebar-header">
+                        <strong>Nodes</strong>
+                        <div class="u-migrated-01ef7fc9">
+                            <a class="button" id="open-editor" href="documents/connections/For_web.drawio.xml" title="Download/Open XML" target="_top">Download XML</a>
+                            <button id="connections-fit" type="button" title="Fit the full diagram in the viewer">Fit Diagram</button>
+                            <button id="open-defaults" title="Open defaults">Open Defaults</button>
+                        </div>
+                    </div>
+                    <p class="diagram-viewer-status" id="connections-status" data-state="loading" aria-live="polite">Loading interactive diagram…</p>
+                    <div class="connections-controls-help" aria-hidden="false">
+                        <details class="connections-help" role="group" aria-label="Diagram controls" open>
+                            <summary>Controls</summary>
+                            <ul>
+                                <li><strong>Pan</strong>: Middle mouse drag or Space + drag.</li>
+                                <li><strong>Zoom</strong>: Mouse wheel (Ctrl/⌘ for precision).</li>
+                                <li><strong>Select</strong>: Click a name to focus and zoom.</li>
+                                <li><strong>Fit</strong>: Use the viewer toolbar or the Fit button.</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="connections-list" id="connections-list">
+                        <p class="u-migrated-42a7486c">Loading list...</p>
+                    </div>
+                </div>
+            <div id="footer-elements">
+            <div class="fab-image u-migrated-8cf502ad">
+                <img style="--image-size: auto" loading="lazy" decoding="async" src="content/images/evidence/graphics/icons/stop_corruption%20Clean.webp" alt="Lee County Corruption" class="u-migrated-f339e777">
+            </div>
+            </div>
+                <div class="connections-viewport" id="connections-viewport">
+                    <iframe
+                        id="drawio-iframe"
+                        title="Connections diagram"
+                        tabindex="0"
+
+                        data-src="https://embed.diagrams.net/?embed=1&amp;spin=1&amp;proto=json&amp;libraries=0&amp;saveAndExit=0&amp;noSaveBtn=1&amp;noExitBtn=1" class="u-migrated-e5b56740"></iframe>
+                </div>
+            </div>
+            </details>
+        </section>
+    </div>
+
+    <script src="shared/card-mapper.js"></script>
+    <script src="shared/card-colors.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            async function setupDrawioConnections() {
+                const listEl = document.getElementById('connections-list');
+                const iframe = document.getElementById('drawio-iframe');
+                const editorLink = document.getElementById('open-editor');
+                const interactive = document.getElementById('connections-interactive');
+                const fitButton = document.getElementById('connections-fit');
+                const statusEl = document.getElementById('connections-status');
+                const embedOrigin = 'https://embed.diagrams.net';
+
+                const loadInteractiveViewer = () => {
+                    if (interactive?.open && !iframe.getAttribute('src')) {
+                        iframe.setAttribute('src', iframe.dataset.src);
+                    }
+                };
+                interactive?.addEventListener('toggle', loadInteractiveViewer);
+                loadInteractiveViewer();
+
+                const setStatus = (message, state) => {
+                    if (!statusEl) return;
+                    statusEl.textContent = message;
+                    statusEl.dataset.state = state;
+                };
+                const postViewerAction = (action) => {
+                    iframe.contentWindow.postMessage(JSON.stringify(action), embedOrigin);
+                };
+
+                try {
+                    // Handshake state — the message listener must be attached BEFORE any
+                    // await, otherwise the embed's 'init' event can arrive while the XML
+                    // is still downloading/parsing and the load is never posted.
+                    let xmlText = null;
+                    let embedReady = false;
+                    let loadSent = false;
+                    let didFit = false;
+                    const runInitialFit = () => {
+                        // Run fit multiple times to account for async render/layout timing.
+                        [120, 500, 1200].forEach((delay) => {
+                            setTimeout(() => {
+                                try { postViewerAction({ action: 'fit', border: 24, maxScale: 1 }); } catch (e) {}
+                            }, delay);
+                        });
+                    };
+                    const postLoad = () => {
+                        if (!xmlText || !embedReady || loadSent) return;
+                        loadSent = true;
+                        try {
+                            postViewerAction({ action: 'load', xml: xmlText, fit: 1, maxFitScale: 1 });
+                        } catch (e) {}
+                        runInitialFit();
+                    };
+                    window.addEventListener('message', (evt) => {
+                        if (evt.origin !== embedOrigin || evt.source !== iframe.contentWindow) return;
+                        let data = evt.data;
+                        try { data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data)); } catch(e) { data = evt.data; }
+                        if (data && data.event === 'init') {
+                            embedReady = true;
+                            setStatus('Viewer ready. Loading diagram…', 'loading');
+                            postLoad();
+                        }
+                        if (data && data.event === 'load' && !didFit) {
+                            didFit = true;
+                            setStatus('Interactive diagram ready. Pan, zoom, or use Fit Diagram.', 'ready');
+                            runInitialFit();
+                        }
+                    });
+                    fitButton?.addEventListener('click', () => {
+                        try { postViewerAction({ action: 'fit', border: 24, maxScale: 1 }); } catch (e) {}
+                    });
+
+                    const xmlCandidates = [
+                        'documents/connections/For_web.drawio.xml',
+                        'documents/connections/For_web.drawio.xml',
+                        'shared/Connections_20250719_233212.drawio.xml',
+                        './shared/Connections_20250719_233212.drawio.xml'
+                    ];
+                    let xmlPath = null;
+                    let xmlUrl = null;
+                    let res = null;
+                    for (const candidate of xmlCandidates) {
+                        const testUrl = new URL(candidate, document.baseURI).href;
+                        const attempt = await fetch(encodeURI(testUrl));
+                        if (attempt.ok) {
+                            xmlPath = candidate;
+                            xmlUrl = testUrl;
+                            res = attempt;
+                            break;
+                        }
+                    }
+                    if (!res || !res.ok || !xmlPath || !xmlUrl) {
+                        throw new Error('Could not fetch drawio XML from known paths');
+                    }
+                    if (editorLink) editorLink.href = xmlPath;
+                    xmlText = await res.text();
+
+                    // Parse nodes
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(xmlText, 'text/xml');
+                    const cells = Array.from(doc.querySelectorAll('mxCell[vertex="1"]'));
+
+                    // Build list
+                    listEl.innerHTML = '';
+                    const nodes = cells.map(cell => {
+                        const id = cell.getAttribute('id');
+                        let raw = cell.getAttribute('value') || '';
+                        const tmp = document.createElement('div');
+                        tmp.innerHTML = raw;
+                        const label = tmp.textContent.trim() || id;
+                        return { id, label, cell };
+                    });
+
+                    nodes.forEach(n => {
+                        const li = document.createElement('div');
+                        li.className = 'node-item';
+                        li.textContent = n.label;
+                        li.dataset.cellId = n.id;
+                        li.addEventListener('click', () => {
+                            try {
+                                postViewerAction({ action: 'select', ids: [n.id] });
+                                postViewerAction({ action: 'zoom', value: 1.2 });
+                            } catch (e) {
+                                console.warn('postMessage to draw.io failed', e);
+                            }
+                            const prev = listEl.querySelector('.node-item.selected');
+                            if (prev) prev.classList.remove('selected');
+                            li.classList.add('selected');
+                        });
+                        listEl.appendChild(li);
+                    });
+
+                    // If the embed finished initializing while the XML was in flight,
+                    // the handshake completes now; otherwise the 'init' listener does it.
+                    postLoad();
+
+                    const defaultKeywords = ['giglio', 'brady', 'fabricat', 'extortion', 'conceal', 'perjury', 'false', 'withhold'];
+                    document.getElementById('open-defaults').addEventListener('click', () => {
+                        const matches = nodes.filter(n => defaultKeywords.some(k => n.label.toLowerCase().includes(k)));
+                        matches.slice(0, 30).forEach(m => {
+                            try { postViewerAction({ action: 'select', ids: [m.id] }); } catch(e) {}
+                        });
+                    });
+
+                    setTimeout(() => {
+                        if (!didFit) setStatus('The interactive viewer did not finish loading. Use the static preview above or retry the page.', 'error');
+                    }, 20000);
+
+                } catch (err) {
+                    console.error('Failed to initialize connections viewer', err);
+                    setStatus(`Interactive viewer failed: ${err.message}`, 'error');
+                    const protocolHint = window.location.protocol === 'file:'
+                        ? 'Open this page through a local web server (http://localhost...), not file://, so browser security allows loading the XML.'
+                        : '';
+                    listEl.innerHTML = `<p class="u-migrated-291eef4e">Failed to load connections: ${err.message}</p>${protocolHint ? `<p class="u-migrated-130d9ba6">${protocolHint}</p>` : ''}`;
+                }
+            }
+
+            setupDrawioConnections();
+        });
+    </script>
+
+
+    <!-- Image Modal -->
+    <div id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img loading="lazy" decoding="async" id="modalImage" src="" alt="Full resolution image">        <video id="modalVideo" controls></video>
+    </div>
+
+    <script src="shared/image-modal.js"></script>
+
+
+<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.body.addEventListener('click', function(e) {
+      let a = e.target.closest('a');
+      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.top.location.href = a.href;
+      }
+    }, true);
+  });
+</script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+
+
+</html>

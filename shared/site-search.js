@@ -1,39 +1,70 @@
 (() => {
   const currentPath = window.location.pathname;
-  const siteRoot = /\/(?:content|network_analysis)\//.test(currentPath) ? "../" : "./";
+  const isDirectFile = window.location.protocol === "file:";
+  const isCanonicalSource = /\/assets\/pages\/[^/]+\.html$/i.test(currentPath);
+  const siteRoot = isCanonicalSource
+    ? "../../"
+    : /\/(?:content|network_analysis)\//.test(currentPath) ? "../" : "./";
   const indexUrl = new URL(`${siteRoot}assets/search-index.json`, window.location.href).href;
   const cssUrl = new URL(`${siteRoot}shared/site-search.css`, window.location.href).href;
 
-  function addSupplementalNavigation() {
-    const nav = document.querySelector(".nav-tabs[aria-label='Project navigation']");
-    if (!nav || nav.querySelector(".nav-dropdown")) return;
-    const pages = [
-      ["connections.html", "Connections"],
-      ["general-videos.html", "General Videos"],
-      ["data-snapshot.html", "Data Snapshot"],
-      ["judicial-duty.html", "Judicial Duty"],
-      ["prosecutor_allowed.html", "Prosecutor Conduct"],
-      ["scene.html", "Scene Analysis"],
-      ["why-dont-we-have-this-system.html", "System Essay"]
-    ];
-    const dropdown = document.createElement("div");
-    dropdown.className = "nav-dropdown";
-    dropdown.innerHTML = `<button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">More pages</button><div class="nav-dropdown-menu" role="menu">${pages.map(([href, label]) => `<a role="menuitem" href="${href}">${label}</a>`).join("")}</div>`;
-    const button = dropdown.querySelector("button");
-    button.addEventListener("click", () => {
-      const open = dropdown.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(open));
+  function normalizeDirectFilePageLinks() {
+    if (!isDirectFile) return;
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const rawHref = link.getAttribute("href") || "";
+      const match = rawHref.match(/^([^/?#]+\.html)([?#].*)?$/i);
+      if (!match || match[1].toLowerCase() === "index.html") return;
+      const prefix = isCanonicalSource ? "assets/pages/" : "assets/pages/";
+      link.setAttribute("href", `${prefix}${match[1]}${match[2] || ""}`);
     });
-    document.addEventListener("click", (event) => {
-      if (!dropdown.contains(event.target)) {
-        dropdown.classList.remove("is-open");
-        button.setAttribute("aria-expanded", "false");
-      }
-    });
-    nav.appendChild(dropdown);
   }
 
-  addSupplementalNavigation();
+  normalizeDirectFilePageLinks();
+
+  function initializeNavigation() {
+    const nav = document.querySelector(".nav-tabs[aria-label='Project navigation']");
+    if (!nav) return;
+
+    const dropdowns = [...nav.querySelectorAll(".nav-dropdown")];
+    const closeDropdown = (dropdown) => {
+      dropdown.classList.remove("is-open");
+      dropdown.querySelector(".nav-dropdown-toggle")?.setAttribute("aria-expanded", "false");
+    };
+
+    dropdowns.forEach((dropdown) => {
+      const button = dropdown.querySelector(".nav-dropdown-toggle");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        const willOpen = !dropdown.classList.contains("is-open");
+        dropdowns.forEach(closeDropdown);
+        dropdown.classList.toggle("is-open", willOpen);
+        button.setAttribute("aria-expanded", String(willOpen));
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeDropdown(dropdown);
+          button.focus();
+        }
+      });
+
+      dropdown.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeDropdown(dropdown);
+            button.focus();
+          }
+        });
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.contains(event.target)) dropdowns.forEach(closeDropdown);
+    });
+  }
+
+  initializeNavigation();
 
   if (!document.querySelector(`link[data-site-search-css]`)) {
     const link = document.createElement("link");
@@ -251,7 +282,11 @@
   }
 
   function buildResultHref(record, rawQuery) {
-    const destination = new URL(`${siteRoot}${record.path}`, window.location.href);
+    const isRootPage = /^[^/]+\.html$/i.test(record.path);
+    const directFilePath = isDirectFile && isRootPage && record.path.toLowerCase() !== "index.html"
+      ? `${siteRoot}assets/pages/${record.path}`
+      : `${siteRoot}${record.path}`;
+    const destination = new URL(directFilePath, window.location.href);
     destination.searchParams.set("searchText", rawQuery);
     if (record.anchor) destination.hash = record.anchor;
     return destination.href;

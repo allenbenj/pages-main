@@ -25,7 +25,7 @@ import sys
 from datetime import datetime, UTC
 from pathlib import Path
 
-PAGE_PATH = Path("documentspage.html")
+PAGE_PATH = Path("assets/pages/documentspage.html")
 DATA_PATH = Path("documents/data/contradictions.json")
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}

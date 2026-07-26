@@ -641,14 +641,99 @@
     - webclip.png  → iOS home-screen icon (rel=apple-touch-icon)
     No CSS/JS on this page styles these; browser only.
   -->
-  <link href="assets/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-  <link href="assets/icons/webclip.png" rel="apple-touch-icon"/>
+  <link href="content/images/site/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="content/images/site/icons/webclip.webp" rel="apple-touch-icon"/>
 
   <style class="force-hide-webflow">
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <style>
     /* P1-3 · unified quiet button + flat gold-underline nav (mirrors shared/styles.css) */
+    body > .nav {
+      display: none;
+    }
+    .home-nav-shell {
+      position: relative;
+      z-index: 100;
+      padding: 0 clamp(16px, 3vw, 44px);
+      background: #0b1114;
+    }
+    .home-nav-shell .nav-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px 22px;
+      max-width: 1880px;
+      margin: 0 auto;
+      padding: 10px 0 0;
+      border-bottom: 1px solid rgba(218,228,229,0.14);
+    }
+    .home-nav-shell .nav-tab {
+      display: inline-block;
+      margin-bottom: -1px;
+      padding: 9px 2px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      background: none;
+      color: rgba(218,228,229,0.75);
+      font: inherit;
+      font-size: 0.98em;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .home-nav-shell .nav-tab:hover,
+    .home-nav-shell .nav-tab:focus-visible {
+      color: #dae4e5;
+      outline: none;
+    }
+    .home-nav-shell .nav-tab.active {
+      color: #d4b85c;
+      border-bottom-color: #c9a84c;
+    }
+    .home-nav-shell .nav-dropdown {
+      position: relative;
+    }
+    .home-nav-shell .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      z-index: 110;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 240px;
+      max-width: calc(100vw - 24px);
+      padding: 8px;
+      border: 1px solid rgba(218,228,229,0.14);
+      border-radius: 14px;
+      background: #142126;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.55);
+    }
+    .home-nav-shell .nav-dropdown.is-open .nav-dropdown-menu {
+      display: grid;
+      gap: 4px;
+    }
+    .home-nav-shell .nav-dropdown-menu a {
+      padding: 9px 12px;
+      border-radius: 9px;
+      color: #dae4e5;
+      text-decoration: none;
+    }
+    .home-nav-shell .nav-dropdown-menu a:hover,
+    .home-nav-shell .nav-dropdown-menu a:focus-visible {
+      background: rgba(93,152,162,0.22);
+      outline: none;
+    }
+    @media screen and (max-width: 767px) {
+      .home-nav-shell .nav-tabs {
+        gap: 2px 14px;
+      }
+      .home-nav-shell .nav-tab {
+        font-size: 0.88em;
+      }
+    }
     .button {
       border-radius: 8px !important;
       background-color: rgba(44,90,97,0.14) !important;
@@ -689,6 +774,52 @@
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+  <!-- PROJECT_NAV_START -->
+  <div class="home-nav-shell">
+    <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab active" href="index.html" aria-current="page">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
+                    <a role="menuitem" href="timeline.html">Timeline</a>
+                    <a role="menuitem" href="players.html">Players</a>
+                    <a role="menuitem" href="scene.html">Scene Analysis</a>
+                    <a role="menuitem" href="evidence.html">Evidence</a>
+                    <a role="menuitem" href="documentspage.html">Documents</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
+                    <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
+                    <a role="menuitem" href="New_Face.html">New Face</a>
+                    <a role="menuitem" href="general-videos.html">General Videos</a>
+                    <a role="menuitem" href="case-study.html">Case Study</a>
+                    <a role="menuitem" href="data-snapshot.html">Data Snapshot</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-3">Diagrams</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-3" role="menu">
+                    <a role="menuitem" href="connections.html">Connections</a>
+                    <a role="menuitem" href="false-story-diagram.html">False Story</a>
+                    <a role="menuitem" href="misconductandfailure.html">Mindmaps</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-4">Accountability</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-4" role="menu">
+                    <a role="menuitem" href="misconduct.html">Misconduct</a>
+                    <a role="menuitem" href="prosecutor_allowed.html">Prosecutor Conduct</a>
+                    <a role="menuitem" href="judicial-duty.html">Judicial Duty</a>
+                    <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
+                </div>
+            </div>
+    </div>
+  </div>
+  <!-- PROJECT_NAV_END -->
   <div class="nav">
     <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-no-scroll="1" class="nav_container w-nav">
       <div class="nav_left">
@@ -790,7 +921,7 @@
     <div class="hero-overlay">
       <!--
         IMAGE 1 — Hero INJUSTICE panel (decorative, NOT modal-clickable)
-        File: documents/graphics/icons/InJustice_80_percent.webp
+        File: content/images/evidence/graphics/icons/InJustice_80_percent.webp
         Layout (inline <style> in this file <head>):
           - .hero-overlay: full-bleed black stage, centers the panel
           - Change only --image-size on .hero_back; the image and frame resize together
@@ -800,7 +931,7 @@
         To swap art → change src= on this <img>.
       -->
       <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" tabindex="-1" aria-hidden="true" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d" data-image-frame style="--image-size: 70rem; --image-ratio: 4 / 3; --image-viewport-limit: 96vw; --image-overflow: hidden">
-        <img width="1158" height="869" alt="Lady Justice illustration" src="documents/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice" data-image-fill/>
+        <img width="1158" height="869" alt="Lady Justice illustration" src="content/images/evidence/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice" data-image-fill/>
         <div class="hero-quote-smoke">
           <p class="hero-quote-smoke_text">"What I fear most is power with impunity. I fear abuse of power, and the power to abuse." — Isabel Allende</p>
           <div class="elapsed-clock" aria-labelledby="elapsed-clock-title">
@@ -896,11 +1027,11 @@
   <section class="section is-secondary corruption-bleed" aria-label="Corruption of Justice">
     <!-- Change only --image-size; the complete poster and its section resize together. --><div class="corruption-bleed_frame" data-image-frame style="--image-size: 80rem; --image-ratio: 1 / 1">
       <img
-        src="documents/graphics/Corruption%20of%20Justice.webp"
+        src="content/images/evidence/graphics/Corruption%20of%20Justice.webp"
         alt="Corruption of Justice — click to view full size"
         loading="lazy"
         decoding="async"
-        data-modal-image="documents/graphics/Corruption of Justice.webp"
+        data-modal-image="content/images/evidence/graphics/Corruption of Justice.webp"
         class="corruption-bleed_image" data-image-fill
         title="Click to view original size"
       />
@@ -976,7 +1107,7 @@
       </div>
       <!--
         IMAGES 3–8 — Section card thumbnails (link cards, NOT modal-clickable)
-        Files (assets/images/):
+        Files (content/images/):
           case-study.avif | investigative-breakdown.avif | expert-commentary.avif
           policy-review.avif | data-snapshot.avif | resource-spotlight.avif
         Markup pattern (each card):
@@ -995,16 +1126,16 @@
         Unused leftover in head <style> (not used by these cards):
           .record-gallery-card / .record-gallery-image (object-fit:cover; min-height)
         To swap a thumb → change that card's img src=.
-        To make a thumb open the lightbox instead → add data-modal-image="…"
+        To make a thumb open the lightbox instead → add a data-modal-image attribute
           and ensure shared/image-modal.js + #imageModal are present (they are).
       -->
       <div class="w-layout-grid grid_3-col gap-medium">
-        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="assets/images/case-study.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case Study: Wrongful Accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
-        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="assets/images/investigative-breakdown.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative Breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
-        <div class="ix-link-wrapper"><a href="prosecutor_allowed.html" class="content-block-link w-inline-block"><div id="w-node-b3c8fbea-0f17-c1d7-4d80-d640361590e6-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b3f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of digital legal document on mobile device" src="assets/images/expert-commentary.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Commentary on ADA Corruption</h3><p class="margin-bottom_none">Legal perspectives on recent developments.</p></a></div>
-        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="assets/images/policy-review.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy Review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
-        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="assets/images/data-snapshot.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data Snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
-        <div class="ix-link-wrapper"><a href="judicial-duty.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of university campus" src="assets/images/resource-spotlight.avif" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource Spotlight</h3><p class="margin-bottom_none">Read as a warning - legal professionals who may go to Lee County NC to practice.</p></a></div>
+        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="content/images/site/case-study.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case Study: Wrongful Accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
+        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="content/images/site/investigative-breakdown.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative Breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
+        <div class="ix-link-wrapper"><a href="prosecutor_allowed.html" class="content-block-link w-inline-block"><div id="w-node-b3c8fbea-0f17-c1d7-4d80-d640361590e6-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b3f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of digital legal document on mobile device" src="content/images/site/expert-commentary.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Commentary on ADA Corruption</h3><p class="margin-bottom_none">Legal perspectives on recent developments.</p></a></div>
+        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="content/images/site/policy-review.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy Review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
+        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="content/images/site/data-snapshot.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data Snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
+        <div class="ix-link-wrapper"><a href="judicial-duty.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of university campus" src="content/images/site/resource-spotlight.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource Spotlight</h3><p class="margin-bottom_none">Read as a warning - legal professionals who may go to Lee County NC to practice.</p></a></div>
       </div>
     </div>
   </section>

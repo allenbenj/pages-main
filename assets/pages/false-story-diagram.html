@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../../" target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive False Story draw.io diagram for State v. Benjamin Allen.">
+  <meta property="og:title" content="False Story Diagram - State v. Benjamin Allen">
+  <meta property="og:description" content="Interactive False Story draw.io diagram for State v. Benjamin Allen.">
+  <meta property="og:type" content="website">
+  <title>False Story Diagram - State v. Benjamin Allen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/styles.css?v=20260725-2">
+  <style>
+    body.diagram-page {
+      color: var(--light);
+      font-family: var(--font-body);
+    }
+    body.diagram-page .container {
+      max-width: 1800px;
+    }
+    body.diagram-page .carousel-nav-wrapper {
+      display: none !important;
+    }
+    body.diagram-page .connections-sidebar,
+    body.diagram-page .connections-viewport {
+      background: var(--card-bg) !important;
+      border-color: var(--border) !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+    }
+    body.diagram-page .connections-help,
+    body.diagram-page .node-item,
+    body.diagram-page .connections-sidebar-header .button {
+      background: rgba(23,27,28,0.88);
+      border-color: var(--border);
+      color: var(--light);
+    }
+    body.diagram-page .node-item.selected,
+    body.diagram-page .connections-sidebar-header .button:hover {
+      background: rgba(44,90,97,0.18);
+      border-color: rgba(166,206,210,0.4);
+    }
+    body.diagram-page .connections-help,
+    body.diagram-page .connections-help li,
+    body.diagram-page .connections-list p {
+      color: var(--text-muted);
+    }
+    .diagram-intro {
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0 auto 1.5rem;
+      max-width: 900px;
+      text-align: center;
+    }
+    .diagram-back-link {
+      margin: 0 auto 1rem;
+      text-align: center;
+    }
+  </style>
+  <style class="force-hide-webflow">
+    .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+  </style>
+  <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css">
+</head>
+<body class="diagram-page">
+  <div class="container">
+    <div class="nav-tabs" aria-label="Project navigation">
+            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-tab" href="overview.html">Project Map</a>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
+                    <a role="menuitem" href="timeline.html">Timeline</a>
+                    <a role="menuitem" href="players.html">Players</a>
+                    <a role="menuitem" href="scene.html">Scene Analysis</a>
+                    <a role="menuitem" href="evidence.html">Evidence</a>
+                    <a role="menuitem" href="documentspage.html">Documents</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
+                    <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
+                    <a role="menuitem" href="New_Face.html">New Face</a>
+                    <a role="menuitem" href="general-videos.html">General Videos</a>
+                    <a role="menuitem" href="case-study.html">Case Study</a>
+                    <a role="menuitem" href="data-snapshot.html">Data Snapshot</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-3">Diagrams</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-3" role="menu">
+                    <a role="menuitem" href="connections.html">Connections</a>
+                    <a class="active" role="menuitem" href="false-story-diagram.html" aria-current="page">False Story</a>
+                    <a role="menuitem" href="misconductandfailure.html">Mindmaps</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-4">Accountability</button>
+                <div class="nav-dropdown-menu" id="project-nav-group-4" role="menu">
+                    <a role="menuitem" href="misconduct.html">Misconduct</a>
+                    <a role="menuitem" href="prosecutor_allowed.html">Prosecutor Conduct</a>
+                    <a role="menuitem" href="judicial-duty.html">Judicial Duty</a>
+                    <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
+                </div>
+            </div>
+    </div>
+
+    <div class="header">
+      <h1>An Edifice of Lies</h1>
+      <h2>False Story Diagram</h2>
+    </div>
+
+    <nav class="page-rail" aria-label="On this page">
+      <p class="page-rail-title">On this page</p>
+      <a href="#false-story" target="_top">Diagram</a>
+      <a href="#false-story-sidebar" target="_top">Nodes</a>
+      <a href="#false-story-viewport" target="_top">Viewer</a>
+      <a href="contradictions.html#false-story-diagram" target="_top">Back to Contradictions</a>
+    </nav>
+
+    <main>
+      <section id="false-story" class="u-migrated-02915e3c">
+        <h2 class="section-title u-migrated-7a8feb70">False Story Diagram</h2>
+        <p class="diagram-intro">
+          Interactive view of the False Story diagram. Select a labeled node to focus it in the viewer.
+        </p>
+        <p class="diagram-back-link">
+          <a class="button" href="contradictions.html#false-story-diagram" target="_top">Return to Contradictions</a>
+        </p>
+
+        <details class="diagram-static-backup">
+          <summary>Open static preview</summary>
+          <figure class="diagram-static-preview">
+            <img src="content/images/evidence/graphics/house-area/False%20Story.webp"
+                 alt="False Story relationship diagram"
+                 data-modal-image="content/images/evidence/graphics/house-area/False Story.webp">
+            <figcaption>Full diagram preview. Click the image to enlarge it.</figcaption>
+          </figure>
+        </details>
+
+        <details class="diagram-interactive" id="false-story-interactive" open>
+          <summary>Interactive draw.io viewer</summary>
+        <div class="connections-wrapper">
+          <aside class="connections-sidebar" id="false-story-sidebar">
+            <div class="connections-sidebar-header">
+              <strong>Nodes</strong>
+              <div class="u-migrated-06307df0">
+                <a class="button" id="false-story-open-editor" href="documents/connections/False%20Story.web.drawio.xml" title="Download/Open web XML" target="_top">Download XML</a>
+                <button id="false-story-fit" type="button" title="Fit the full diagram in the viewer">Fit Diagram</button>
+                <a class="button u-migrated-17dc7330" href="content/images/evidence/graphics/house-area/False%20Story.webp" title="View diagram image" target="_top">View Image</a>
+              </div>
+            </div>
+            <p class="diagram-viewer-status" id="false-story-status" data-state="loading" aria-live="polite">Loading interactive diagram…</p>
+            <div class="connections-controls-help" aria-hidden="false">
+              <details class="connections-help" role="group" aria-label="Diagram controls" open>
+                <summary>Controls</summary>
+                <ul>
+                  <li><strong>Pan</strong>: Middle mouse drag or Space + drag.</li>
+                  <li><strong>Zoom</strong>: Mouse wheel (Ctrl/⌘ for precision).</li>
+                  <li><strong>Select</strong>: Click a name to focus and zoom.</li>
+                  <li><strong>Fit</strong>: Use the viewer toolbar or the Fit button.</li>
+                </ul>
+              </details>
+            </div>
+            <div class="connections-list" id="false-story-list">
+              <p class="u-migrated-42a7486c">Loading list...</p>
+            </div>
+          </aside>
+
+          <div class="connections-viewport" id="false-story-viewport">
+            <iframe
+              id="false-story-iframe"
+              title="False Story diagram"
+              tabindex="0"
+              data-src="https://embed.diagrams.net/?embed=1&amp;spin=1&amp;proto=json&amp;libraries=0&amp;saveAndExit=0&amp;noSaveBtn=1&amp;noExitBtn=1"
+              class="u-migrated-e5b56740"></iframe>
+          </div>
+        </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      const listEl = document.getElementById('false-story-list');
+      const iframe = document.getElementById('false-story-iframe');
+      const editorLink = document.getElementById('false-story-open-editor');
+      const interactive = document.getElementById('false-story-interactive');
+      const fitButton = document.getElementById('false-story-fit');
+      const statusEl = document.getElementById('false-story-status');
+      const embedOrigin = 'https://embed.diagrams.net';
+
+      if (!listEl || !iframe) return;
+
+      const loadInteractiveViewer = () => {
+        if (interactive?.open && !iframe.getAttribute('src')) {
+          iframe.setAttribute('src', iframe.dataset.src);
+        }
+      };
+      interactive?.addEventListener('toggle', loadInteractiveViewer);
+      loadInteractiveViewer();
+
+      let viewerReady = false;
+      let xmlText = null;
+      let didLoadDiagram = false;
+      let didFit = false;
+
+      const setStatus = (message, state) => {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+        statusEl.dataset.state = state;
+      };
+
+      const postViewerAction = (action) => {
+        iframe.contentWindow.postMessage(JSON.stringify(action), embedOrigin);
+      };
+
+      const runInitialFit = () => {
+        [120, 500, 1200].forEach((delay) => {
+          setTimeout(() => {
+            try {
+              postViewerAction({ action: 'fit', border: 24, maxScale: 1 });
+            } catch (error) {}
+          }, delay);
+        });
+      };
+
+      const loadDiagram = () => {
+        if (!viewerReady || !xmlText || didLoadDiagram) return;
+        didLoadDiagram = true;
+        postViewerAction({ action: 'load', xml: xmlText, fit: 1, maxFitScale: 1 });
+      };
+
+      window.addEventListener('message', (event) => {
+        if (event.origin !== embedOrigin || event.source !== iframe.contentWindow) return;
+
+        let data = event.data;
+        try {
+          data = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data));
+        } catch (error) {
+          return;
+        }
+
+        if (data && data.event === 'init') {
+          viewerReady = true;
+          setStatus('Viewer ready. Loading diagram…', 'loading');
+          loadDiagram();
+        }
+
+        if (data && data.event === 'load' && !didFit) {
+          didFit = true;
+          setStatus('Interactive diagram ready. Pan, zoom, or use Fit Diagram.', 'ready');
+          runInitialFit();
+        }
+      });
+
+      fitButton?.addEventListener('click', () => {
+        try { postViewerAction({ action: 'fit', border: 24, maxScale: 1 }); } catch (error) {}
+      });
+
+      const showImageFallback = (message) => {
+        const viewport = document.getElementById('false-story-viewport');
+        if (viewport) {
+          viewport.innerHTML = `
+            <figure style="margin:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;box-sizing:border-box;">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="content/images/evidence/graphics/house-area/False%20Story.webp"
+                alt="False Story diagram"
+                data-modal-image="content/images/evidence/graphics/house-area/False Story.webp"
+                style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:8px;">
+              <figcaption style="color:#cbd5e1;font-size:0.9rem;text-align:center;">${message}</figcaption>
+            </figure>`;
+        }
+        listEl.innerHTML = `<p class="u-migrated-291eef4e">${message}</p><p class="u-migrated-130d9ba6">Showing the static diagram image instead.</p>`;
+      };
+
+      try {
+        const drawioCandidates = [
+          'documents/connections/False Story.web.drawio.xml',
+          'documents/connections/False%20Story.web.drawio.xml',
+          'documents/connections/False Story.drawio.xml',
+          'documents/connections/False%20Story.drawio.xml'
+        ];
+        let filePath = null;
+        let response = null;
+
+        for (const candidate of drawioCandidates) {
+          const attempt = await fetch(new URL(candidate, document.baseURI).href);
+          if (attempt.ok) {
+            filePath = candidate;
+            response = attempt;
+            break;
+          }
+        }
+
+        if (!response || !filePath) {
+          throw new Error('Could not fetch False Story draw.io XML from known paths');
+        }
+
+        if (editorLink) editorLink.href = filePath;
+
+        xmlText = await response.text();
+        if (!xmlText || xmlText.length < 100) {
+          throw new Error('False Story draw.io XML was empty');
+        }
+
+        const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+        if (doc.querySelector('parsererror')) {
+          throw new Error('False Story draw.io XML could not be parsed');
+        }
+
+        const nodes = Array.from(doc.querySelectorAll('mxCell[vertex="1"]'))
+          .map((cell) => {
+            const id = cell.getAttribute('id');
+            const labelContainer = document.createElement('div');
+            labelContainer.innerHTML = cell.getAttribute('value') || '';
+            return { id, label: labelContainer.textContent.trim() };
+          })
+          .filter((node) => node.id && node.label);
+
+        listEl.innerHTML = '';
+        if (!nodes.length) {
+          listEl.innerHTML = '<p class="u-migrated-42a7486c">No labeled nodes found.</p>';
+        } else {
+          nodes.forEach((node) => {
+            const item = document.createElement('button');
+            item.type = 'button';
+            item.className = 'node-item';
+            item.textContent = node.label;
+            item.dataset.cellId = node.id;
+            item.addEventListener('click', () => {
+              try {
+                postViewerAction({ action: 'select', ids: [node.id] });
+                postViewerAction({ action: 'zoom', value: 1.2 });
+              } catch (error) {
+                console.warn('postMessage to draw.io failed', error);
+              }
+
+              const previous = listEl.querySelector('.node-item.selected');
+              if (previous) previous.classList.remove('selected');
+              item.classList.add('selected');
+            });
+            listEl.appendChild(item);
+          });
+        }
+
+        loadDiagram();
+        setTimeout(() => {
+          if (!didFit) {
+            setStatus('The interactive viewer timed out. The static diagram is shown instead.', 'error');
+            showImageFallback('Interactive viewer timed out. Static diagram is shown below.');
+          }
+        }, 20000);
+      } catch (error) {
+        console.error('Failed to initialize False Story viewer', error);
+        setStatus(`Interactive viewer failed: ${error.message}`, 'error');
+        const protocolHint = window.location.protocol === 'file:'
+          ? 'Open this page through a local web server so the local XML file can be loaded from the project archive.'
+          : error.message;
+        showImageFallback(`Failed to load interactive False Story diagram: ${protocolHint}`);
+      }
+    });
+  </script>
+
+  <div id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img loading="lazy" decoding="async" id="modalImage" src="" alt="Full resolution image">
+    <video id="modalVideo" controls></video>
+  </div>
+  <script src="shared/image-modal.js"></script>
+  <script src="shared/site-search.js" defer></script>
+</body>
+</html>

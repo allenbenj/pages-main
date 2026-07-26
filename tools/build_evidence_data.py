@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build the canonical evidence inventory for the site.
 
-Scans the shipped evidence directories (documents/, video/, audio/) and writes
-documents/data/evidence-export.json. Every record is verified against the
-working tree, so the export can never reference a file that does not exist —
-run it after adding, renaming, or removing evidence files.
+Scans the shipped evidence directories (documents/, content/images/evidence/,
+video/, audio/) and writes documents/data/evidence-export.json. Every record is
+verified against the working tree, so the export can never reference a file
+that does not exist — run it after adding, renaming, or removing evidence files.
 
 The output keeps the established schema (evidence / cards / facts / quotes /
 chronology / contradictions / motions / referenceStandards) so existing
@@ -25,7 +25,7 @@ import re
 from datetime import datetime, UTC
 from pathlib import Path
 
-EVIDENCE_DIRS = ("documents", "video", "audio")
+EVIDENCE_DIRS = (Path("documents"), Path("content/images/evidence"), Path("video"), Path("audio"))
 OUTPUT_PATH = Path("documents/data/evidence-export.json")
 
 FILE_TYPE_BY_SUFFIX = {
@@ -74,6 +74,8 @@ def humanize_title(path: Path) -> str:
 
 def collection_for(root: Path, path: Path) -> str:
     rel = path.relative_to(root)
+    if rel.parts[:3] == ("content", "images", "evidence"):
+        return "/".join(rel.parts[3:-1]) or "evidence"
     if len(rel.parts) > 1:
         return "/".join(rel.parts[1:-1]) or rel.parts[0]
     return rel.parts[0]
@@ -81,8 +83,8 @@ def collection_for(root: Path, path: Path) -> str:
 
 def iter_evidence_files(root: Path) -> list[Path]:
     files: list[Path] = []
-    for name in EVIDENCE_DIRS:
-        base = root / name
+    for relative in EVIDENCE_DIRS:
+        base = root / relative
         if not base.is_dir():
             continue
         for path in base.rglob("*"):
