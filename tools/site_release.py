@@ -27,7 +27,7 @@ HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 CSS_COMMENT_RE = re.compile(r"/\*.*?\*/", re.DOTALL)
 IMAGE_TAG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 SOURCE_BASE_RE = re.compile(
-    r'<base\s+href=["\']\.\./\.\./["\']\s+target=["\']_top["\']\s*>',
+    r'<base\s+href=["\']\.\./\.\./["\']\s+target=["\']_top["\']\s*/?>',
     re.IGNORECASE,
 )
 SKIPPED_SCHEMES = ("data:", "http:", "https:", "javascript:", "mailto:", "tel:", "//")
