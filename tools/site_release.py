@@ -34,7 +34,6 @@ SKIPPED_SCHEMES = ("data:", "http:", "https:", "javascript:", "mailto:", "tel:",
 # Preserve the public URL while producing a web-optimized delivery copy in the
 # disposable release artifact. The original evidence file remains untouched.
 VIDEO_TRANSCODES = (
-    "video/O Deals Last Blowup Every Stares At Her Compressed.mp4",
 )
 
 
