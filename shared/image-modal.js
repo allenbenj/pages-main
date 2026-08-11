@@ -7,6 +7,10 @@ function openImageModal(mediaSrc) {
 
     const src = encodeURI(mediaSrc);
     const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(mediaSrc);
+    modal.classList.remove('is-zoomed');
+    modalImg.setAttribute('aria-pressed', 'false');
+    modal.scrollTop = 0;
+    modal.scrollLeft = 0;
 
     if (isVideo) {
         modalImg.style.display = 'none';
@@ -46,6 +50,7 @@ function closeImageModal() {
     if (!modal) return;
 
     modal.style.display = 'none';
+    modal.classList.remove('is-zoomed');
     document.body.style.overflow = 'auto';
 
     if (modalVideo) {
@@ -65,6 +70,7 @@ function openModalFromElement(el) {
 
 function initImageModal() {
     const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
     // Ensure modal is a direct body child so position: fixed isn't trapped by transformed/filtered ancestors.
     if (modal && modal.parentElement !== document.body) {
         document.body.appendChild(modal);
@@ -88,6 +94,27 @@ function initImageModal() {
                 closeImageModal();
             });
         }
+    }
+
+    if (modal && modalImg) {
+        const toggleZoom = (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            modal.classList.toggle('is-zoomed');
+            modalImg.setAttribute('aria-pressed', String(modal.classList.contains('is-zoomed')));
+            if (!modal.classList.contains('is-zoomed')) {
+                modal.scrollTop = 0;
+                modal.scrollLeft = 0;
+            }
+        };
+        modalImg.setAttribute('role', 'button');
+        modalImg.setAttribute('tabindex', '0');
+        modalImg.setAttribute('aria-label', 'Toggle full-resolution image zoom');
+        modalImg.setAttribute('aria-pressed', 'false');
+        modalImg.addEventListener('click', toggleZoom);
+        modalImg.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') toggleZoom(event);
+        });
     }
 
     document.addEventListener('keydown', function (event) {

@@ -2001,10 +2001,12 @@ body.timeline-page .fab-fixed img {
 @media (max-width: 900px) { .connections-wrapper { flex-direction: column; height: auto; } .connections-sidebar { width: 100%; max-height: 220px; } .connections-viewport { height: 60vh; min-height: 400px; } }
 
 /* --- Image Modal Overlay --- */
-#imageModal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
-#imageModal .modal-close { position: absolute; top: 12px; right: 12px; color: #fff; font-size: 44px; font-weight: bold; cursor: pointer; z-index: 10000; transition: color 0.2s ease; min-width: 48px; min-height: 48px; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+#imageModal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
+#imageModal .modal-close { position: fixed; top: 12px; right: 12px; color: #fff; font-size: 44px; font-weight: bold; cursor: pointer; z-index: 10000; transition: color 0.2s ease; min-width: 48px; min-height: 48px; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
 #imageModal .modal-close:hover { color: var(--accent-text); }
-#imageModal img { max-width: 95vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 0 50px rgba(255,255,255,0.2); }
+#imageModal img { max-width: 95vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 0 50px rgba(255,255,255,0.2); cursor: zoom-in; touch-action: pan-x pan-y; }
+#imageModal.is-zoomed { justify-content: flex-start; align-items: flex-start; }
+#imageModal.is-zoomed img { max-width: none; max-height: none; margin: 64px 24px 24px; object-fit: none; cursor: zoom-out; }
 #imageModal video { max-width: 95vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 0 50px rgba(255,255,255,0.2); display: none; }
 
 /* Hide connections node list */

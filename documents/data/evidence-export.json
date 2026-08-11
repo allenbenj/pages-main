@@ -1,16 +1,16 @@
 {
- "generatedAt": "2026-07-25T23:36:16Z",
+ "generatedAt": "2026-07-26T11:44:13Z",
  "generator": "tools/build_evidence_data.py",
  "counts": {
-  "evidence": 441,
+  "evidence": 400,
   "evidenceByType": {
    "audio": 99,
-   "image": 277,
+   "image": 236,
    "document": 23,
    "pdf": 19,
    "video": 23
   },
-  "evidenceBytes": 761035607,
+  "evidenceBytes": 756103819,
   "cards": 0,
   "facts": 0,
   "quotes": 0,
@@ -1394,218 +1394,8 @@
   },
   {
    "id": 99,
-   "title": "19cr051799-520(1).tif",
-   "filePath": "content/images/evidence/court-files/19cr051799-520(1).tif.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 43704,
-   "sha256": "0f2182392ace6424ff5a9f1b1e8c9e952058cb67a92235a880100ebecbf5cb8a"
-  },
-  {
-   "id": 100,
-   "title": "19cr051799-520-1.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-1.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 75030,
-   "sha256": "03bde880d38d88956fa6ee21c613ac5c526263caa96c4ed615571e24061d4cf7"
-  },
-  {
-   "id": 101,
-   "title": "19cr051799-520-11.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-11.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 28278,
-   "sha256": "887e7338328b4d5b55a0633d5b121067e921e5a9c4fb91a1dfdaad6dcd1edbc3"
-  },
-  {
-   "id": 102,
-   "title": "19cr051799-520-12.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-12.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 21680,
-   "sha256": "dd9e1a83a16e8b249860c5951ea4a92a73843bf8833389dcdc9f15b9eed56c50"
-  },
-  {
-   "id": 103,
-   "title": "19cr051799-520-3.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-3.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 36020,
-   "sha256": "156704185ff4fdcf51fed89cad4c646f0fd6285bc67fca863771df9b2ed0b42a"
-  },
-  {
-   "id": 104,
-   "title": "19cr051799-520-4.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-4.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 22424,
-   "sha256": "f176b137f68b06e2a8ca0a5b0963d5e99c03db66f1ce8624e3d22ffb3ecc4cf0"
-  },
-  {
-   "id": 105,
-   "title": "19cr051799-520-7.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-7.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 45594,
-   "sha256": "b41d3631b5e5d76ebf27c1ab56c3a8f352c18042dc93697c036fe65ce1b8da81"
-  },
-  {
-   "id": 106,
-   "title": "19cr051799-520-9.pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520-9.pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 31664,
-   "sha256": "d77b76118a89d74bc10d05de23540c2f25f72cddd4ad894054b2ec2931f37d99"
-  },
-  {
-   "id": 107,
-   "title": "19cr051799-520 (2).pdf",
-   "filePath": "content/images/evidence/court-files/19cr051799-520_(2).pdf.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 45804,
-   "sha256": "2632797984e6a25caf332ff317d94314931c10c3114bdc0518b8e514b8aa044e"
-  },
-  {
-   "id": 108,
-   "title": "030401-0000027 peter west father",
-   "filePath": "content/images/evidence/court-files/20240802-030401-0000027_peter_west_father.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 207298,
-   "sha256": "4343d459c6c38fed8fd2ab5427c780f5c38ff833623f0a6dc8feb0432d9fb5d2"
-  },
-  {
-   "id": 109,
-   "title": "ADA submission",
-   "filePath": "content/images/evidence/court-files/ADA_submission.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 7014,
-   "sha256": "e8156447fc0e140bf37ae026f7f6f4e40f84b3fa0b42f4cda5058af21bf3075d"
-  },
-  {
-   "id": 110,
-   "title": "aggravating factor",
-   "filePath": "content/images/evidence/court-files/aggravating_factor.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 790206,
-   "sha256": "75b2955bb1c0f03501761a77e5f7e4140c54daf833eefb4844b2db135e1ef7cd"
-  },
-  {
-   "id": 111,
-   "title": "bond 1",
-   "filePath": "content/images/evidence/court-files/bond_1.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 719112,
-   "sha256": "906cce90955f7afaf12524de1fb374c3ff8744cd2ff3bf6bc819fccd8c22c3a2"
-  },
-  {
-   "id": 112,
-   "title": "Charlie DeVore ADA Misconduct Claim 1",
-   "filePath": "content/images/evidence/court-files/Charlie_DeVore_ADA_Misconduct_Claim 1.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 24262,
-   "sha256": "f5195914ae3059bc610857992bd4165f22d8fecb5d5be5e8e9036bfb9eae74e1"
-  },
-  {
-   "id": 113,
-   "title": "Charlie DeVore ADA Misconduct Claim 3",
-   "filePath": "content/images/evidence/court-files/Charlie_DeVore_ADA_Misconduct_Claim 3.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 124668,
-   "sha256": "e2b0b01d1d273d31f30579ca399dbb8c2964b9689f3219ca3950b83004fcbdf0"
-  },
-  {
-   "id": 114,
-   "title": "Charlie DeVore ADA Misconduct Claim 5",
-   "filePath": "content/images/evidence/court-files/Charlie_DeVore_ADA_Misconduct_Claim 5.webp",
+   "title": "ADA Rush Request for Sperm Confirmation",
+   "filePath": "content/images/evidence/court-files/ADA Rush Request for Sperm Confirmation.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1617,7 +1407,161 @@
    "sha256": "b71a6af1e7ef2ca7066400bd55daaf815d955cf8f49f6ad29c39c504273724ec"
   },
   {
-   "id": 115,
+   "id": 100,
+   "title": "Aggravating Factor",
+   "filePath": "content/images/evidence/court-files/Aggravating Factor.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 790206,
+   "sha256": "75b2955bb1c0f03501761a77e5f7e4140c54daf833eefb4844b2db135e1ef7cd"
+  },
+  {
+   "id": 101,
+   "title": "Allen Conditions of Release",
+   "filePath": "content/images/evidence/court-files/Allen Conditions of Release.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 346652,
+   "sha256": "88af74d043476d0f302a2912ecf0a9ff6eb0d6106c05fbc942784ad28e3209d5"
+  },
+  {
+   "id": 102,
+   "title": "Ben Allen Voluntary Dismissal",
+   "filePath": "content/images/evidence/court-files/Ben Allen Voluntary Dismissal.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 107518,
+   "sha256": "83f94339e58dcabeb8b750c67369f1709085cbc23e1cfdb94c083c81cb76651c"
+  },
+  {
+   "id": 103,
+   "title": "Bill of Indictment",
+   "filePath": "content/images/evidence/court-files/Bill of Indictment.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 276624,
+   "sha256": "387596409b859fab5ebd6da45ee219633b876e319b6a6f06ea63dafa0830b60e"
+  },
+  {
+   "id": 104,
+   "title": "Bond Payment",
+   "filePath": "content/images/evidence/court-files/Bond Payment.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 719112,
+   "sha256": "906cce90955f7afaf12524de1fb374c3ff8744cd2ff3bf6bc819fccd8c22c3a2"
+  },
+  {
+   "id": 105,
+   "title": "Bond Release Form",
+   "filePath": "content/images/evidence/court-files/Bond Release Form.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 493376,
+   "sha256": "24cc482c6a29850257cad86507c13a12114eeaddfcb0466b8dcc761d74f03a6e"
+  },
+  {
+   "id": 106,
+   "title": "Bond Release",
+   "filePath": "content/images/evidence/court-files/Bond Release.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 352556,
+   "sha256": "adc313141ed6097a9663d9d30190a9f942dc73e93f53039d357851c8032031a6"
+  },
+  {
+   "id": 107,
+   "title": "Carmen Love Judgement 1",
+   "filePath": "content/images/evidence/court-files/Carmen Love Judgement 1.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 4646,
+   "sha256": "bc48aa68ee73bb061432ec9c8009a4b234dd869fdcfd9324e15babb3d71867df"
+  },
+  {
+   "id": 108,
+   "title": "Carmen Love Judgement 2",
+   "filePath": "content/images/evidence/court-files/Carmen Love Judgement 2.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 4826,
+   "sha256": "1b0774fe993887d78d8bcc58ae70e02ed5c5c5607e287fd34253de9b02427fac"
+  },
+  {
+   "id": 109,
+   "title": "Carmen Love Judgement 3",
+   "filePath": "content/images/evidence/court-files/Carmen Love Judgement 3.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 5064,
+   "sha256": "49397ff00789185aee56698df35cf2720aea15c465d5ae6f3284ca782a99422f"
+  },
+  {
+   "id": 110,
+   "title": "Certificate of Arraingment",
+   "filePath": "content/images/evidence/court-files/Certificate of Arraingment.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 266878,
+   "sha256": "af312c6900b6f596f3ce2add11850e41cfa576e19e22c84b8f8db67322df546b"
+  },
+  {
+   "id": 111,
    "title": "Charlie DeVore ADA Misconduct Claim",
    "filePath": "content/images/evidence/court-files/Charlie_DeVore_ADA_Misconduct_Claim.webp",
    "fileType": "image",
@@ -1631,7 +1575,21 @@
    "sha256": "b91f8983172c3755de5da723e438c240d7658a6aacdf1a28777b5cd05a2c0b23"
   },
   {
-   "id": 116,
+   "id": 112,
+   "title": "Conditions of Release Signed By West",
+   "filePath": "content/images/evidence/court-files/Conditions of Release Signed By West.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 506194,
+   "sha256": "727973f1ce4288e0b3e6661dcea370546da775d3a2707dcadff9fc732f8e28c8"
+  },
+  {
+   "id": 113,
    "title": "continue trial",
    "filePath": "content/images/evidence/court-files/continue trial.webp",
    "fileType": "image",
@@ -1645,7 +1603,7 @@
    "sha256": "345538b5ce594482707c1c2fb3313334767aa8665f7f573523590a5e40402f05"
   },
   {
-   "id": 117,
+   "id": 114,
    "title": "Court Case Evidence Review Draft",
    "filePath": "content/images/evidence/court-files/Court_Case_Evidence_Review_Draft.webp",
    "fileType": "image",
@@ -1657,6 +1615,48 @@
    "relatedEvidence": [],
    "sizeBytes": 36020,
    "sha256": "4b830a66b269b58fc0cb6a1f388cee3d6c0e01fa481aad2b8f6d5ca5fc1f22ac"
+  },
+  {
+   "id": 115,
+   "title": "Defense Continuance 1",
+   "filePath": "content/images/evidence/court-files/Defense Continuance 1.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 182834,
+   "sha256": "99c1b19d6b3526a8662cf75ee6d40bf2d55e0ffd72b7c8db85cd3c745c00d93f"
+  },
+  {
+   "id": 116,
+   "title": "Defense Continuance 2",
+   "filePath": "content/images/evidence/court-files/Defense Continuance 2.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 130490,
+   "sha256": "a8417043dc2bfc4642dabd4d0c8e449bffe28ba28ae6008fbfe3098313d272c4"
+  },
+  {
+   "id": 117,
+   "title": "Defense Continuance",
+   "filePath": "content/images/evidence/court-files/Defense Continuance.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 155848,
+   "sha256": "5b754e185802d4d89181de1033d2883f2bcbb7a3e0b188d249a6a770e6835eae"
   },
   {
    "id": 118,
@@ -1674,6 +1674,34 @@
   },
   {
    "id": 119,
+   "title": "Evidence - No Chain of Custody",
+   "filePath": "content/images/evidence/court-files/Evidence  - No Chain of Custody.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 24262,
+   "sha256": "f5195914ae3059bc610857992bd4165f22d8fecb5d5be5e8e9036bfb9eae74e1"
+  },
+  {
+   "id": 120,
+   "title": "Evidence Form",
+   "filePath": "content/images/evidence/court-files/Evidence Form.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 328882,
+   "sha256": "b6cd279b300b10f1f76b82c316e26ea3a7af2ae3e7b6e25e7822aa64349a58fa"
+  },
+  {
+   "id": 121,
    "title": "Evidence Returned From Lab to Sheriffs Office 0",
    "filePath": "content/images/evidence/court-files/Evidence Returned From Lab to Sheriffs Office 0.webp",
    "fileType": "image",
@@ -1687,7 +1715,7 @@
    "sha256": "a2a9f0daa387610ff9f5a34d3fd6ffff24e6b95bf281fc5743bd43c149e4c412"
   },
   {
-   "id": 120,
+   "id": 122,
    "title": "Evidence Returned From Lab to Sheriffs Office 1",
    "filePath": "content/images/evidence/court-files/Evidence Returned From Lab to Sheriffs Office 1.webp",
    "fileType": "image",
@@ -1701,7 +1729,7 @@
    "sha256": "e650ee0a37f1618c93a45dd1301c620aa26cec027f51c9a95281d5337371ebe7"
   },
   {
-   "id": 121,
+   "id": 123,
    "title": "Evidence Returned From Lab to Sheriffs Office1",
    "filePath": "content/images/evidence/court-files/Evidence Returned From Lab to Sheriffs Office1_.webp",
    "fileType": "image",
@@ -1715,7 +1743,7 @@
    "sha256": "7a1445d5ad6b179deefffc5889ace327fd56385857d378a901e620c849b5366a"
   },
   {
-   "id": 122,
+   "id": 124,
    "title": "Evidence Submitted to Lab 11 5 2019 9 10 53",
    "filePath": "content/images/evidence/court-files/Evidence Submitted to Lab 11_5_2019 9_10_53.webp",
    "fileType": "image",
@@ -1729,7 +1757,7 @@
    "sha256": "6dd2bca72bd29415dd5ef7c25942589c148a1a5cb3957965b99832fab51f3864"
   },
   {
-   "id": 123,
+   "id": 125,
    "title": "Evidence Submitted to Lab 1 06 2023",
    "filePath": "content/images/evidence/court-files/Evidence Submitted to Lab 1_06_2023.webp",
    "fileType": "image",
@@ -1743,7 +1771,7 @@
    "sha256": "5a07025c27959030268320479ba2f4aa98bd9a6e98512004a2a5919a3ff76396"
   },
   {
-   "id": 124,
+   "id": 126,
    "title": "first dna none",
    "filePath": "content/images/evidence/court-files/first_dna_none.webp",
    "fileType": "image",
@@ -1757,9 +1785,9 @@
    "sha256": "303380a7424f57ba4f7a358165509042f742ee1da6a3806f9ae2268f747577ff"
   },
   {
-   "id": 125,
-   "title": "Freeman affidavit",
-   "filePath": "content/images/evidence/court-files/Freeman_affidavit.webp",
+   "id": 127,
+   "title": "Freeman Affidavit - Carmen",
+   "filePath": "content/images/evidence/court-files/Freeman Affidavit - Carmen.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1771,37 +1799,9 @@
    "sha256": "e9f60a25113bc5bb95fdde21bcda7c639d593125c4cf8de5cbbe77a1022db596"
   },
   {
-   "id": 126,
-   "title": "Freeman Misconduct Investigation Report 10 - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Misconduct_Investigation_Report 10 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 506194,
-   "sha256": "727973f1ce4288e0b3e6661dcea370546da775d3a2707dcadff9fc732f8e28c8"
-  },
-  {
-   "id": 127,
-   "title": "Freeman Misconduct Investigation Report 13 - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Misconduct_Investigation_Report 13 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 185256,
-   "sha256": "f5eed3c964b87874c3547cc2b9004db3d7f66b21a9f89d7859c641bd5e81c98a"
-  },
-  {
    "id": 128,
-   "title": "Freeman Misconduct Investigation Report 14 - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Misconduct_Investigation_Report 14 - Copy.webp",
+   "title": "Full Aggravating Factor Form",
+   "filePath": "content/images/evidence/court-files/Full Aggravating Factor Form.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1809,13 +1809,13 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 338106,
-   "sha256": "926e62348ec4f5fcf442b322f68ec30070758d5b2954363bf5de52aa1fbd0275"
+   "sizeBytes": 592352,
+   "sha256": "f2dbb23d735477be57f819956d1650cebdd55751598af25ef100e950be1227c4"
   },
   {
    "id": 129,
-   "title": "Freeman Misconduct Investigation Report 7 - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Misconduct_Investigation_Report 7 - Copy.webp",
+   "title": "Intake Form Internal Injuries",
+   "filePath": "content/images/evidence/court-files/Intake Form Internal Injuries.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1823,55 +1823,13 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 182176,
-   "sha256": "ddc9bbeb687458f10020eac8ec2155ba3812e14f56dbf403cd20bbd6fcee7859"
+   "sizeBytes": 92322,
+   "sha256": "c31b98b0ac221d415e0775da370299e5c98cd21356c744590c0b5c0fa6256fb3"
   },
   {
    "id": 130,
-   "title": "Freeman Misconduct Investigation Report 8 - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Misconduct_Investigation_Report 8 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 41044,
-   "sha256": "347f3ff7081966ec89e6101a705b0ff2bed16a0aa151d91a933d7566ab4a27f9"
-  },
-  {
-   "id": 131,
-   "title": "Freeman Misconduct Investigation Report 9 - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Misconduct_Investigation_Report 9 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 230112,
-   "sha256": "19ac82dea74fe72a82526cfee4129226e1b87e0ca8e3df4c18a80ff3c3602d2a"
-  },
-  {
-   "id": 132,
-   "title": "Freeman Rape Allegation Transcript - Copy",
-   "filePath": "content/images/evidence/court-files/Freeman_Rape_Allegation_Transcript - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 308150,
-   "sha256": "8761e0d64fc20be9d6d2190b977b9b2cefec35c382b4ba9a31132f765c1461b0"
-  },
-  {
-   "id": 133,
-   "title": "Incedent Report - Allen brown eyes",
-   "filePath": "content/images/evidence/court-files/Incedent Report - Allen brown eyes.webp",
+   "title": "Intake Report - Allen brown eyes",
+   "filePath": "content/images/evidence/court-files/Intake Report - Allen brown eyes.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1883,9 +1841,9 @@
    "sha256": "ac191e774daf3b407a4f59a650aa17fbfb663dd0909efb68a8df39e0de4998ac"
   },
   {
-   "id": 134,
-   "title": "Incedent Report - Deal no drugs or alcohol",
-   "filePath": "content/images/evidence/court-files/Incedent Report - Deal no drugs or alcohol.webp",
+   "id": 131,
+   "title": "Intake Report - Deal no drugs or alcohol",
+   "filePath": "content/images/evidence/court-files/Intake Report - Deal no drugs or alcohol.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1897,23 +1855,9 @@
    "sha256": "0c0d6b9eb9aea93d74998dcc000895e54e1760d43ec263389ad8755d86fa037b"
   },
   {
-   "id": 135,
-   "title": "Incedent Report - internal - no mention of exte",
-   "filePath": "content/images/evidence/court-files/Incedent Report - internal - no mention of exte.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 346162,
-   "sha256": "21be31b1b0e3b5859c547aea3efd952b1aed7f6bcf9956ec0189608a65d6581a"
-  },
-  {
-   "id": 136,
-   "title": "Incedent Report - mine marked as alcohol not he",
-   "filePath": "content/images/evidence/court-files/Incedent Report - mine marked as alcohol not he.webp",
+   "id": 132,
+   "title": "Intake Report - Defendant marked as alcohol Not Deal",
+   "filePath": "content/images/evidence/court-files/Intake Report - Defendant marked as alcohol Not Deal.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1925,7 +1869,91 @@
    "sha256": "af5682b8f73635f8d7dcb5cbb0a98208bf2b579b1d429b23d7a9194440629503"
   },
   {
+   "id": 133,
+   "title": "Intake Report - internal - no mention of exte",
+   "filePath": "content/images/evidence/court-files/Intake Report - internal - no mention of exte.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 346162,
+   "sha256": "21be31b1b0e3b5859c547aea3efd952b1aed7f6bcf9956ec0189608a65d6581a"
+  },
+  {
+   "id": 134,
+   "title": "Intake report Demarco",
+   "filePath": "content/images/evidence/court-files/Intake report Demarco.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 124596,
+   "sha256": "2e4d784d0ae860a052553937192ebab8099db24113afe49c5ab37d32136aebda"
+  },
+  {
+   "id": 135,
+   "title": "Intake Report for Deal",
+   "filePath": "content/images/evidence/court-files/Intake Report for Deal.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 338106,
+   "sha256": "926e62348ec4f5fcf442b322f68ec30070758d5b2954363bf5de52aa1fbd0275"
+  },
+  {
+   "id": 136,
+   "title": "Intake Report for Defendant",
+   "filePath": "content/images/evidence/court-files/Intake Report for Defendant.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 185256,
+   "sha256": "f5eed3c964b87874c3547cc2b9004db3d7f66b21a9f89d7859c641bd5e81c98a"
+  },
+  {
    "id": 137,
+   "title": "Intake Report Freeman",
+   "filePath": "content/images/evidence/court-files/Intake Report Freeman.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 102356,
+   "sha256": "066b3f1e6e478232a33ba26ff51b0488ed42bf31d269adca6cdce30995240bfa"
+  },
+  {
+   "id": 138,
+   "title": "Intake Report Teresa Deal",
+   "filePath": "content/images/evidence/court-files/Intake Report Teresa Deal.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 81954,
+   "sha256": "e49634ba019f7c9ae423f36a792bf0be486c868b6dc815bd43ce35253d161cd8"
+  },
+  {
+   "id": 139,
    "title": "Deal internal injuries and no alcohol",
    "filePath": "content/images/evidence/court-files/intake/Deal internal injuries and no alcohol.webp",
    "fileType": "image",
@@ -1939,7 +1967,7 @@
    "sha256": "813b3271fc3d31ddd2a5c6d553cd84152f23f2a4f6b86807055e3c4f396b115d"
   },
   {
-   "id": 138,
+   "id": 140,
    "title": "Intake Deal",
    "filePath": "content/images/evidence/court-files/intake/Intake Deal.webp",
    "fileType": "image",
@@ -1953,9 +1981,107 @@
    "sha256": "120ab542b2bea018b37c0bb7387c32ba1899917d05124e815ec3db1bf7112c91"
   },
   {
-   "id": 139,
-   "title": "mag order freeman - Copy",
-   "filePath": "content/images/evidence/court-files/mag_order_freeman - Copy.webp",
+   "id": 141,
+   "title": "Lab Order",
+   "filePath": "content/images/evidence/court-files/Lab Order.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 101592,
+   "sha256": "d93db90e49acad58b39cf7e943235c723716931567c34c0dac6037784cc86d66"
+  },
+  {
+   "id": 142,
+   "title": "Lab Report Failed to Show Sperm",
+   "filePath": "content/images/evidence/court-files/Lab Report Failed to Show Sperm.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 230112,
+   "sha256": "19ac82dea74fe72a82526cfee4129226e1b87e0ca8e3df4c18a80ff3c3602d2a"
+  },
+  {
+   "id": 143,
+   "title": "Lab Report No Sperm 2",
+   "filePath": "content/images/evidence/court-files/Lab Report No Sperm 2.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 81324,
+   "sha256": "99e043f0125a1be40845dfac77279e4296d28199c8735641dee22e56f89c3920"
+  },
+  {
+   "id": 144,
+   "title": "Lab Report No Sperm",
+   "filePath": "content/images/evidence/court-files/Lab Report No Sperm.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 40004,
+   "sha256": "ad558b5e2ad48734f0c9185f854b3a46e0a4d62cc0e4eac2a350fb20bfee1e20"
+  },
+  {
+   "id": 145,
+   "title": "Lab Report",
+   "filePath": "content/images/evidence/court-files/Lab Report.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 61994,
+   "sha256": "bf89cd1a1c9b6c8851dbc031a50b2e8d7afd88aeef4bd700d2d2c41ab54adc03"
+  },
+  {
+   "id": 146,
+   "title": "Lab results",
+   "filePath": "content/images/evidence/court-files/Lab results.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 199352,
+   "sha256": "187e552cd939b1c931bfdb599e987f59dd48b795167909845285a74cab5f8c2b"
+  },
+  {
+   "id": 147,
+   "title": "Lab Submission",
+   "filePath": "content/images/evidence/court-files/Lab Submission.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 153610,
+   "sha256": "4436ce2c0134a76983e3e8757ef89e99b4adaa347bf6fc5682f2d9684823dc3f"
+  },
+  {
+   "id": 148,
+   "title": "Magistrates Order With Asessment",
+   "filePath": "content/images/evidence/court-files/Magistrates Order With Asessment.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1967,7 +2093,7 @@
    "sha256": "a8157fef329a56a2b11c89419d73ed1660065e9efd5151879bac69a7016ecf83"
   },
   {
-   "id": 140,
+   "id": 149,
    "title": "Magistrates Order",
    "filePath": "content/images/evidence/court-files/Magistrates Order.webp",
    "fileType": "image",
@@ -1981,9 +2107,9 @@
    "sha256": "753d860abe204e9dea931d9c33d40a8187bb23f46512402f7098c375e101f37d"
   },
   {
-   "id": 141,
-   "title": "magistrates order2",
-   "filePath": "content/images/evidence/court-files/magistrates_order2.webp",
+   "id": 150,
+   "title": "Magistrates Warrant - Without a Warrant",
+   "filePath": "content/images/evidence/court-files/Magistrates Warrant - Without a Warrant.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -1991,11 +2117,11 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 327874,
-   "sha256": "8d24114027aaf6181ac55ba6bafba42180460d8e5e4bfe9382fe74ca72d08bad"
+   "sizeBytes": 308150,
+   "sha256": "8761e0d64fc20be9d6d2190b977b9b2cefec35c382b4ba9a31132f765c1461b0"
   },
   {
-   "id": 142,
+   "id": 151,
    "title": "May 11, 2020 No significant amount of male DNA",
    "filePath": "content/images/evidence/court-files/May 11, 2020 No significant amount of male DNA .webp",
    "fileType": "image",
@@ -2009,7 +2135,35 @@
    "sha256": "c0303fbb92a714c5a67bf87949527a5df922b67dcaa2456ef6b2460b9b53fb68"
   },
   {
-   "id": 143,
+   "id": 152,
+   "title": "No significant Male DNA",
+   "filePath": "content/images/evidence/court-files/No significant Male DNA.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 93716,
+   "sha256": "619b3c55c2903138fd135595a514dff993ca150d9c6b37b3b1e86d0cb2eaa762"
+  },
+  {
+   "id": 153,
+   "title": "No Sperm Present",
+   "filePath": "content/images/evidence/court-files/No Sperm Present.webp",
+   "fileType": "image",
+   "collection": "court-files",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 166562,
+   "sha256": "7eae8d4c367a1af332e9d39974447d9e5e21dc6d2a55bfa81cbe15e82ff705c0"
+  },
+  {
+   "id": 154,
    "title": "Magistrates Order",
    "filePath": "content/images/evidence/court-files/no-warrant/Magistrates Order.webp",
    "fileType": "image",
@@ -2023,7 +2177,7 @@
    "sha256": "b5281b21f46f74834f808530396144f37160425cfb480b79674e767e9f71915c"
   },
   {
-   "id": 144,
+   "id": 155,
    "title": "Screenshot 2024-11-08 202024",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 202024.webp",
    "fileType": "image",
@@ -2037,7 +2191,7 @@
    "sha256": "165bda2baf73dda5c45a813202b0531c6b8782314edf4ca4e96136bff9d0769a"
   },
   {
-   "id": 145,
+   "id": 156,
    "title": "Screenshot 2024-11-08 205956",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 205956.webp",
    "fileType": "image",
@@ -2051,7 +2205,7 @@
    "sha256": "fc3f01ec5f441c4611c7c8177d25adb10a8e7b2baee45dce6bc258ed1f891189"
   },
   {
-   "id": 146,
+   "id": 157,
    "title": "Screenshot 2024-11-08 210008",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 210008.webp",
    "fileType": "image",
@@ -2065,7 +2219,7 @@
    "sha256": "ddc94a52d6adbd5b1a049ca87f2e026d785e9ca551ab2c45f65ff84ea3e72cbc"
   },
   {
-   "id": 147,
+   "id": 158,
    "title": "Screenshot 2024-11-08 210142",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 210142.webp",
    "fileType": "image",
@@ -2079,7 +2233,7 @@
    "sha256": "342dafaf2b3634bd6d4cc70573e729a963dc28099ea63b7a44d213abfa02c37d"
   },
   {
-   "id": 148,
+   "id": 159,
    "title": "Screenshot 2024-11-08 212108",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 212108.webp",
    "fileType": "image",
@@ -2093,7 +2247,7 @@
    "sha256": "9485b18e95db31533309b156bb42fbb9620bd729d5f59595a0aba0e32ba83152"
   },
   {
-   "id": 149,
+   "id": 160,
    "title": "Screenshot 2024-11-08 212151",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 212151.webp",
    "fileType": "image",
@@ -2107,7 +2261,7 @@
    "sha256": "5d7eb68e0a17a4a8279cfa1c16624e781559ec2228ae2030287d056a41dd0095"
   },
   {
-   "id": 150,
+   "id": 161,
    "title": "Screenshot 2024-11-08 212401",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 212401.webp",
    "fileType": "image",
@@ -2121,7 +2275,7 @@
    "sha256": "0fa4c834319948ec1fde54c13269583badb6bb592a7ba4b60c545068b7921830"
   },
   {
-   "id": 151,
+   "id": 162,
    "title": "With warrant",
    "filePath": "content/images/evidence/court-files/no-warrant/With warrant.webp",
    "fileType": "image",
@@ -2135,9 +2289,9 @@
    "sha256": "2fe13f91b439edfcafd8788583a0444c8ccc48b3e03564f769d6b605d77ed63a"
   },
   {
-   "id": 152,
-   "title": "No sperm",
-   "filePath": "content/images/evidence/court-files/No_sperm.webp",
+   "id": 163,
+   "title": "Offender Intake Form",
+   "filePath": "content/images/evidence/court-files/Offender Intake Form.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2145,25 +2299,11 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 166562,
-   "sha256": "7eae8d4c367a1af332e9d39974447d9e5e21dc6d2a55bfa81cbe15e82ff705c0"
+   "sizeBytes": 124668,
+   "sha256": "e2b0b01d1d273d31f30579ca399dbb8c2964b9689f3219ca3950b83004fcbdf0"
   },
   {
-   "id": 153,
-   "title": "Peter West father",
-   "filePath": "content/images/evidence/court-files/Peter_West_father.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 24214,
-   "sha256": "ce6d006e185f5b63c8c680eb22ff8a6a9a6de5644ab227b40a0c26be43bd16fc"
-  },
-  {
-   "id": 154,
+   "id": 164,
    "title": "Screenshot 2025-08-08 014521",
    "filePath": "content/images/evidence/court-files/phone/Screenshot 2025-08-08 014521.webp",
    "fileType": "image",
@@ -2177,401 +2317,9 @@
    "sha256": "ee42735e029f54786da13806fb4dd98804b369949e5afa16f515861fc30415ae"
   },
   {
-   "id": 155,
-   "title": "Review and Commentary of Steve Freeman 1 - Copy",
-   "filePath": "content/images/evidence/court-files/Review and Commentary of Steve Freeman 1 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 4646,
-   "sha256": "bc48aa68ee73bb061432ec9c8009a4b234dd869fdcfd9324e15babb3d71867df"
-  },
-  {
-   "id": 156,
-   "title": "Review and Commentary of Steve Freeman 2 - Copy",
-   "filePath": "content/images/evidence/court-files/Review and Commentary of Steve Freeman 2 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 4826,
-   "sha256": "1b0774fe993887d78d8bcc58ae70e02ed5c5c5607e287fd34253de9b02427fac"
-  },
-  {
-   "id": 157,
-   "title": "Review and Commentary of Steve Freeman 22 - Copy",
-   "filePath": "content/images/evidence/court-files/Review and Commentary of Steve Freeman 22 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 107518,
-   "sha256": "83f94339e58dcabeb8b750c67369f1709085cbc23e1cfdb94c083c81cb76651c"
-  },
-  {
-   "id": 158,
-   "title": "Review and Commentary of Steve Freeman 3 - Copy",
-   "filePath": "content/images/evidence/court-files/Review and Commentary of Steve Freeman 3 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 5064,
-   "sha256": "49397ff00789185aee56698df35cf2720aea15c465d5ae6f3284ca782a99422f"
-  },
-  {
-   "id": 159,
-   "title": "Review and Commentary of Steve Freeman 4 - Copy",
-   "filePath": "content/images/evidence/court-files/Review and Commentary of Steve Freeman 4 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 2652,
-   "sha256": "1a324551b0280f653b982d04485f7e14590d343ce49cf21943af151b3c70da65"
-  },
-  {
-   "id": 160,
-   "title": "Review and Commentary of Steve Freeman 5 - Copy",
-   "filePath": "content/images/evidence/court-files/Review and Commentary of Steve Freeman 5 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 92322,
-   "sha256": "c31b98b0ac221d415e0775da370299e5c98cd21356c744590c0b5c0fa6256fb3"
-  },
-  {
-   "id": 161,
-   "title": "says that i was mandated to give dna when i alr",
-   "filePath": "content/images/evidence/court-files/says_that_i_was_mandated_to_give_dna_when_i_alr.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 346652,
-   "sha256": "88af74d043476d0f302a2912ecf0a9ff6eb0d6106c05fbc942784ad28e3209d5"
-  },
-  {
-   "id": 162,
-   "title": "Screenshot 2024-02-14 011755",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-02-14 011755.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 319336,
-   "sha256": "ea00cc936d2960aa15c0b636df1a4bd1afccc588b10ebc416deef851060a909c"
-  },
-  {
-   "id": 163,
-   "title": "Screenshot 2024-02-19 080106",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-02-19 080106.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 29828,
-   "sha256": "f7338fa05dc84e9ef4015725f6c2239a35d52e7eabfc276b2d72d487d2d69c25"
-  },
-  {
-   "id": 164,
-   "title": "Screenshot 2024-03-011",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-011.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 128150,
-   "sha256": "005295916588793364933acd30b651ad18f8741579d12f3bcc13347a737926ce"
-  },
-  {
    "id": 165,
-   "title": "Screenshot 2024-03-013",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-013.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 342710,
-   "sha256": "efd3edebd17d5f81d195982204750ebb23dca702402f640b132fd4c4b9da8e32"
-  },
-  {
-   "id": 166,
-   "title": "Screenshot 2024-03-017",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-017.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 328882,
-   "sha256": "b6cd279b300b10f1f76b82c316e26ea3a7af2ae3e7b6e25e7822aa64349a58fa"
-  },
-  {
-   "id": 167,
-   "title": "Screenshot 2024-03-03 110304",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-03 110304.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 102356,
-   "sha256": "066b3f1e6e478232a33ba26ff51b0488ed42bf31d269adca6cdce30995240bfa"
-  },
-  {
-   "id": 168,
-   "title": "Screenshot 2024-03-03 110524",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-03 110524.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 81954,
-   "sha256": "e49634ba019f7c9ae423f36a792bf0be486c868b6dc815bd43ce35253d161cd8"
-  },
-  {
-   "id": 169,
-   "title": "Screenshot 2024-03-03 110532",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-03 110532.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 124596,
-   "sha256": "2e4d784d0ae860a052553937192ebab8099db24113afe49c5ab37d32136aebda"
-  },
-  {
-   "id": 170,
-   "title": "Screenshot 2024-03-03 111552",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-03 111552.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 148184,
-   "sha256": "fc109cc9dee9986d5a4229332508704c883cc6bfce0ed5e71a0322db64213756"
-  },
-  {
-   "id": 171,
-   "title": "Screenshot 2024-03-03 111735",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-03 111735.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 139248,
-   "sha256": "608503a17cfce5348de3b4ff062948d0c24bbdf603b7653369020617c2107b65"
-  },
-  {
-   "id": 172,
-   "title": "Screenshot 2024-03-03 112115",
-   "filePath": "content/images/evidence/court-files/Screenshot 2024-03-03 112115.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 183516,
-   "sha256": "94202919e98cdf3aa74d608b83efc6c18736b1072a7543e79cc4e1cd968e4641"
-  },
-  {
-   "id": 173,
-   "title": "Screenshot 2025-04-11 183147",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-04-11 183147.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 40004,
-   "sha256": "ad558b5e2ad48734f0c9185f854b3a46e0a4d62cc0e4eac2a350fb20bfee1e20"
-  },
-  {
-   "id": 174,
-   "title": "Screenshot 2025-04-11 183316",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-04-11 183316.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 81324,
-   "sha256": "99e043f0125a1be40845dfac77279e4296d28199c8735641dee22e56f89c3920"
-  },
-  {
-   "id": 175,
-   "title": "Screenshot 2025-04-11 183459",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-04-11 183459.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 93716,
-   "sha256": "619b3c55c2903138fd135595a514dff993ca150d9c6b37b3b1e86d0cb2eaa762"
-  },
-  {
-   "id": 176,
-   "title": "Screenshot 2025-04-11 183551",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-04-11 183551.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 592352,
-   "sha256": "f2dbb23d735477be57f819956d1650cebdd55751598af25ef100e950be1227c4"
-  },
-  {
-   "id": 177,
-   "title": "Screenshot 2025-08-28 233951",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-28 233951.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 251202,
-   "sha256": "67eb5a78a40f1680cc0a7b844301cf7112a4cedda7f4a66df7505b8562c9b4e8"
-  },
-  {
-   "id": 178,
-   "title": "Screenshot 2025-08-28 234041",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-28 234041.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 126250,
-   "sha256": "5ff068870e2bcd955cab777d57da13d1884fdeabcb571b64b9ffa3052459f881"
-  },
-  {
-   "id": 179,
-   "title": "Screenshot 2025-08-28 234113",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-28 234113.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 90898,
-   "sha256": "40236360073c4aba2e0c471bb6f005413f7885142206de2e52b1424ef01ec847"
-  },
-  {
-   "id": 180,
-   "title": "Screenshot 2025-08-28 235049",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-28 235049.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 6890,
-   "sha256": "e605ebcc7bcb4887f5378d2efc18198d45d8bddc5f6f7dcee507960e3a835518"
-  },
-  {
-   "id": 181,
-   "title": "Screenshot 2025-08-30 123915",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 123915.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 97914,
-   "sha256": "58af3ae93ce1d1e906a74e68603a73e2cec96e075a8f00b0d28a2de952119bda"
-  },
-  {
-   "id": 182,
-   "title": "Screenshot 2025-08-30 124002",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124002.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 109464,
-   "sha256": "9b8bef6d59ff307c95b895a882a01df162ee5ceda69475689330ca2655490b22"
-  },
-  {
-   "id": 183,
-   "title": "Screenshot 2025-08-30 124143",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124143.webp",
+   "title": "Release Order",
+   "filePath": "content/images/evidence/court-files/Release Order.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2583,93 +2331,9 @@
    "sha256": "69ef241a5154db5cefd49db652783b52eb4faf00aa42a093b61d1f708b2c7093"
   },
   {
-   "id": 184,
-   "title": "Screenshot 2025-08-30 124227",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124227.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 63664,
-   "sha256": "cc51cb18a618398c930872c59cad1b7f3f00b978c33cf671830f0a0de551fd2f"
-  },
-  {
-   "id": 185,
-   "title": "Screenshot 2025-08-30 124247",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124247.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 104106,
-   "sha256": "c5dc3bcc7315464a08c9435665f2758631d0e68f2fbd1ebda4a5071fbe42b7a1"
-  },
-  {
-   "id": 186,
-   "title": "Screenshot 2025-08-30 124314",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124314.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 102764,
-   "sha256": "2fb8a48d500046b3445e60cb587073836e69fe78f95473b79bec0c75a8fd98f1"
-  },
-  {
-   "id": 187,
-   "title": "Screenshot 2025-08-30 124807",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124807.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 93740,
-   "sha256": "3cbd297316e61bffd16dc263ce917bb1b82a72b5675f8a8008ea5cc311cc54ac"
-  },
-  {
-   "id": 188,
-   "title": "Screenshot 2025-08-30 124824",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-08-30 124824.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 47646,
-   "sha256": "4fc8d590c102cd6e396c97642b4e9fbb18ec0baec8691f2e1f6b25a2958ac338"
-  },
-  {
-   "id": 189,
-   "title": "Screenshot 2025-09-01 230340",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-01 230340.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 47974,
-   "sha256": "6cc5a1e61e4beacc471d3e8874fdfb11273bdefd77fbfc03b3b7f7ffbbe0d38b"
-  },
-  {
-   "id": 190,
-   "title": "Screenshot 2025-09-02 062725",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-02 062725.webp",
+   "id": 166,
+   "title": "Request For Medical Records",
+   "filePath": "content/images/evidence/court-files/Request For Medical Records.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2681,9 +2345,9 @@
    "sha256": "7ec392be4edc34cbc82c0153649b66d1c85630f39aa97898705aeec6cffaf04a"
   },
   {
-   "id": 191,
-   "title": "Screenshot 2025-09-02 063138",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-02 063138.webp",
+   "id": 167,
+   "title": "Roger Voluntary Statement",
+   "filePath": "content/images/evidence/court-files/Roger Voluntary Statement.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2691,13 +2355,13 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 155848,
-   "sha256": "5b754e185802d4d89181de1033d2883f2bcbb7a3e0b188d249a6a770e6835eae"
+   "sizeBytes": 139248,
+   "sha256": "608503a17cfce5348de3b4ff062948d0c24bbdf603b7653369020617c2107b65"
   },
   {
-   "id": 192,
-   "title": "Screenshot 2025-09-02 063217",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-02 063217.webp",
+   "id": 168,
+   "title": "Screenign 2",
+   "filePath": "content/images/evidence/court-files/Screenign 2.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2705,13 +2369,13 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 182834,
-   "sha256": "99c1b19d6b3526a8662cf75ee6d40bf2d55e0ffd72b7c8db85cd3c745c00d93f"
+   "sizeBytes": 90898,
+   "sha256": "40236360073c4aba2e0c471bb6f005413f7885142206de2e52b1424ef01ec847"
   },
   {
-   "id": 193,
-   "title": "Screenshot 2025-09-02 063235",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-02 063235.webp",
+   "id": 169,
+   "title": "Screening 1",
+   "filePath": "content/images/evidence/court-files/Screening 1.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2719,13 +2383,13 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 130490,
-   "sha256": "a8417043dc2bfc4642dabd4d0c8e449bffe28ba28ae6008fbfe3098313d272c4"
+   "sizeBytes": 126250,
+   "sha256": "5ff068870e2bcd955cab777d57da13d1884fdeabcb571b64b9ffa3052459f881"
   },
   {
-   "id": 194,
-   "title": "Screenshot 2025-09-02 063328",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-02 063328.webp",
+   "id": 170,
+   "title": "Screening",
+   "filePath": "content/images/evidence/court-files/Screening.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2733,111 +2397,13 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 188892,
-   "sha256": "d00e5abfac705a55cdab86c13d00e22aaec72bbef216f1e5decb7cf411ca78d9"
+   "sizeBytes": 251202,
+   "sha256": "67eb5a78a40f1680cc0a7b844301cf7112a4cedda7f4a66df7505b8562c9b4e8"
   },
   {
-   "id": 195,
-   "title": "Screenshot 2025-09-08 054740",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-08 054740.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 352556,
-   "sha256": "adc313141ed6097a9663d9d30190a9f942dc73e93f53039d357851c8032031a6"
-  },
-  {
-   "id": 196,
-   "title": "Screenshot 2025-09-08 054817",
-   "filePath": "content/images/evidence/court-files/Screenshot 2025-09-08 054817.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 298960,
-   "sha256": "7343e866a5cab33b9c5c79ee28ea6f513d57e075b7c0d5668c19263d2968c63d"
-  },
-  {
-   "id": 197,
-   "title": "screenshot 2024-04-026",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-026.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 493376,
-   "sha256": "24cc482c6a29850257cad86507c13a12114eeaddfcb0466b8dcc761d74f03a6e"
-  },
-  {
-   "id": 198,
-   "title": "screenshot 2024-04-027",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-027.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 276624,
-   "sha256": "387596409b859fab5ebd6da45ee219633b876e319b6a6f06ea63dafa0830b60e"
-  },
-  {
-   "id": 199,
-   "title": "screenshot 2024-04-030",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-030.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 199352,
-   "sha256": "187e552cd939b1c931bfdb599e987f59dd48b795167909845285a74cab5f8c2b"
-  },
-  {
-   "id": 200,
-   "title": "screenshot 2024-04-031",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-031.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 131366,
-   "sha256": "0d6061d876a1c2c4ba28a13b6c3dd5f8b346ab3d1600883a5c55e98b4347a00d"
-  },
-  {
-   "id": 201,
-   "title": "screenshot 2024-04-21 053158 1",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-21_053158_1.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 266878,
-   "sha256": "af312c6900b6f596f3ce2add11850e41cfa576e19e22c84b8f8db67322df546b"
-  },
-  {
-   "id": 202,
-   "title": "screenshot 2024-04-21 054031 (1)",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-21_054031_(1).webp",
+   "id": 171,
+   "title": "Search Warrant",
+   "filePath": "content/images/evidence/court-files/Search Warrant.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2849,63 +2415,7 @@
    "sha256": "f2ee40fdab912480af5873a9d43e8550f9c3c45b8cdc8b27a4a3bcdd0ae62664"
   },
   {
-   "id": 203,
-   "title": "screenshot 2024-04-28 041640 (1)",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-28_041640_(1).webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 61994,
-   "sha256": "bf89cd1a1c9b6c8851dbc031a50b2e8d7afd88aeef4bd700d2d2c41ab54adc03"
-  },
-  {
-   "id": 204,
-   "title": "screenshot 2024-04-28 042140 1",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-28_042140_1.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 100610,
-   "sha256": "216610a739a54dff38c7c589a7a6406131e754b13d6d7250dd1de49a77ee5072"
-  },
-  {
-   "id": 205,
-   "title": "screenshot 2024-04-28 042541 1",
-   "filePath": "content/images/evidence/court-files/screenshot_2024-04-28_042541_1.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 101592,
-   "sha256": "d93db90e49acad58b39cf7e943235c723716931567c34c0dac6037784cc86d66"
-  },
-  {
-   "id": 206,
-   "title": "screenshot 2 0 1 2-001",
-   "filePath": "content/images/evidence/court-files/screenshot_2____0__1__2-001.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 12462,
-   "sha256": "0a20c7402f3d9d5347c9ff2c8b4e645fb82c1b39e7e63fb51530314d726bf36d"
-  },
-  {
-   "id": 207,
+   "id": 172,
    "title": "bond 2 (1)",
    "filePath": "content/images/evidence/court-files/sheriffs-office/bond 2 (1).webp",
    "fileType": "image",
@@ -2919,7 +2429,7 @@
    "sha256": "e965be1a332637973a4a06772407f498719109a90df285d265cff601c1ec4e78"
   },
   {
-   "id": 208,
+   "id": 173,
    "title": "father of witness works with detective",
    "filePath": "content/images/evidence/court-files/sheriffs-office/father_of_witness_works_with_detective.webp",
    "fileType": "image",
@@ -2933,7 +2443,7 @@
    "sha256": "da90c9068dcc60035dd259e242b604647778fa2e1df32d8cb183ee692185a5c2"
   },
   {
-   "id": 209,
+   "id": 174,
    "title": "search warrant 1",
    "filePath": "content/images/evidence/court-files/sheriffs-office/search_warrant_1.webp",
    "fileType": "image",
@@ -2947,9 +2457,9 @@
    "sha256": "8f4e77f4336964e103ef2d88f7a7c4809fa59970549b89be1d6f5d69d4ac90f8"
   },
   {
-   "id": 210,
-   "title": "Steve Freeman Corruption Report 11 - Copy",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Corruption_Report 11 - Copy.webp",
+   "id": 175,
+   "title": "Teresa Deal Judgements",
+   "filePath": "content/images/evidence/court-files/Teresa Deal Judgements.webp",
    "fileType": "image",
    "collection": "court-files",
    "sourceKind": "local_file",
@@ -2957,95 +2467,11 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 109250,
-   "sha256": "9bba4c89ff57bb56e01ab9b213f5593386ef1a78827bdaa98b6d86a7d14e39f4"
+   "sizeBytes": 2652,
+   "sha256": "1a324551b0280f653b982d04485f7e14590d343ce49cf21943af151b3c70da65"
   },
   {
-   "id": 211,
-   "title": "Steve Freeman Corruption Report 12",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Corruption_Report 12.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 116640,
-   "sha256": "3f0c755c74acf3b2af209af844ec419c7dcdb2cc26a4994c9d26a8cf728254b9"
-  },
-  {
-   "id": 212,
-   "title": "Steve Freeman Corruption Report 15 - Copy",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Corruption_Report 15 - Copy.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 214568,
-   "sha256": "e36bfcdd245bac1ebc900a3df779074f80bf409d8a81d62a2a06f56e7335129a"
-  },
-  {
-   "id": 213,
-   "title": "Steve Freeman Corruption Report 17",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Corruption_Report 17.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 449710,
-   "sha256": "4595e93facdf30707ddaa6a5f80ae365c32891cd1d5ddd4cf7a8ca89a8843310"
-  },
-  {
-   "id": 214,
-   "title": "Steve Freeman Misconduct Report 1 12",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Misconduct_Report_1 12.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 342078,
-   "sha256": "cf5d1974c3a0c5446fbe72ad20bec525318a13cffd1e8c363e245ea41e8614ac"
-  },
-  {
-   "id": 215,
-   "title": "Steve Freeman Misconduct Report 1 13",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Misconduct_Report_1 13.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 153610,
-   "sha256": "4436ce2c0134a76983e3e8757ef89e99b4adaa347bf6fc5682f2d9684823dc3f"
-  },
-  {
-   "id": 216,
-   "title": "Steve Freeman Misconduct Report 1",
-   "filePath": "content/images/evidence/court-files/Steve_Freeman_Misconduct_Report_1.webp",
-   "fileType": "image",
-   "collection": "court-files",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 6492,
-   "sha256": "8ff49b1785262204109f053dae6fb28bc7e7f9e06d1f672e49b1896ca8f600b5"
-  },
-  {
-   "id": 217,
+   "id": 176,
    "title": "Timeline of injustice",
    "filePath": "content/images/evidence/court-files/Timeline of injustice.webp",
    "fileType": "image",
@@ -3059,7 +2485,7 @@
    "sha256": "da635bfdea5452964bdbf33075a11b5168fe0790892073cf08bf882c75d4a47a"
   },
   {
-   "id": 218,
+   "id": 177,
    "title": "Additional Associates",
    "filePath": "content/images/evidence/exhibits/photos/Additional Associates.webp",
    "fileType": "image",
@@ -3073,7 +2499,7 @@
    "sha256": "62cee6d914d4296f1549c5fc7aec74f59fc078b5d1336cd53f472a2dd786f910"
   },
   {
-   "id": 219,
+   "id": 178,
    "title": "Carmen Love and James Patterson",
    "filePath": "content/images/evidence/exhibits/photos/Carmen Love and James Patterson.webp",
    "fileType": "image",
@@ -3087,7 +2513,7 @@
    "sha256": "c7abe648e2adc26007f4a4a134d3c0f6d1032df55c468a14b1aac7d50843aaf4"
   },
   {
-   "id": 220,
+   "id": 179,
    "title": "Carmen Love Facebook Post about Christmas",
    "filePath": "content/images/evidence/exhibits/photos/Carmen Love Facebook Post about  Christmas.webp",
    "fileType": "image",
@@ -3101,7 +2527,7 @@
    "sha256": "e9466b622ab5edb7709e7e6e71be2c48a1a25facfc0dd68af73132290ff64de8"
   },
   {
-   "id": 221,
+   "id": 180,
    "title": "Deal giving a hug and Allen keeping hand in his pocket",
    "filePath": "content/images/evidence/exhibits/photos/Deal giving a hug and Allen keeping hand in his pocket.webp",
    "fileType": "image",
@@ -3115,7 +2541,7 @@
    "sha256": "35cecfcc468afcf93392302e99f2d39f36c707db66a67cf9c2b24be43e166a41"
   },
   {
-   "id": 222,
+   "id": 181,
    "title": "Direction she claims to have ran",
    "filePath": "content/images/evidence/exhibits/photos/Direction she claims to have ran.webp",
    "fileType": "image",
@@ -3129,7 +2555,7 @@
    "sha256": "677cf942ae673c027ef7b69c5cb302420c51ca5ef56e1ad12d61a92176aba9e9"
   },
   {
-   "id": 223,
+   "id": 182,
    "title": "Freeman Carmen Christmas",
    "filePath": "content/images/evidence/exhibits/photos/Freeman Carmen Christmas.webp",
    "fileType": "image",
@@ -3143,7 +2569,7 @@
    "sha256": "c4287fecfe03928027be11ae528db41eb17414c7fafd8b46f39727abca19173d"
   },
   {
-   "id": 224,
+   "id": 183,
    "title": "joel kelly 1",
    "filePath": "content/images/evidence/exhibits/photos/joel_kelly_1.webp",
    "fileType": "image",
@@ -3157,7 +2583,7 @@
    "sha256": "d15b2d08d9d7caed87bde29e68887ba2c5d4cdc541f1a6ec31d60f59acfbfc80"
   },
   {
-   "id": 225,
+   "id": 184,
    "title": "Reference Image",
    "filePath": "content/images/evidence/exhibits/photos/Reference Image.webp",
    "fileType": "image",
@@ -3171,7 +2597,7 @@
    "sha256": "f703d38d18243b7fb8ca760f31a99820bf27391284a08c0be9c4781556f6f175"
   },
   {
-   "id": 226,
+   "id": 185,
    "title": "Steve Freeman and Wife",
    "filePath": "content/images/evidence/exhibits/photos/Steve Freeman and Wife.webp",
    "fileType": "image",
@@ -3185,7 +2611,7 @@
    "sha256": "f2dee62190459c2c154c33a46e2d41c84b550977d57dcd483071f15f4e524f79"
   },
   {
-   "id": 227,
+   "id": 186,
    "title": "Steve Freeman at Table",
    "filePath": "content/images/evidence/exhibits/photos/Steve Freeman at Table.webp",
    "fileType": "image",
@@ -3199,7 +2625,7 @@
    "sha256": "a0412895b6ecfad60e753b65ed09cb9c0b9af78efeb19c1fb299274e2d263ac0"
   },
   {
-   "id": 228,
+   "id": 187,
    "title": "Thanksgiving - Freeman and wife and Carmen Loves brother at table",
    "filePath": "content/images/evidence/exhibits/photos/Thanksgiving - Freeman and wife and Carmen Loves brother at table.webp",
    "fileType": "image",
@@ -3213,7 +2639,7 @@
    "sha256": "106391e8097ec0152b7ca87f14b4a9ee7fba3489cfbf6023f6f7b891d4751e3e"
   },
   {
-   "id": 229,
+   "id": 188,
    "title": "939440261630504 448280553906794011 n",
    "filePath": "content/images/evidence/graphics/481209055_939440261630504_448280553906794011_n.webp",
    "fileType": "image",
@@ -3227,7 +2653,7 @@
    "sha256": "5fc143b2fcb7aed4951d67b38550a35d28dc7f4a945d1fb7e38b28363a3f7441"
   },
   {
-   "id": 230,
+   "id": 189,
    "title": "10237421064288056 8196268695258276326 n",
    "filePath": "content/images/evidence/graphics/542756821_10237421064288056_8196268695258276326_n.webp",
    "fileType": "image",
@@ -3241,7 +2667,7 @@
    "sha256": "dda2cfe35a7448452b48f04b6df7bbd793b3d89bad7a5e7c5867ec471d91a616"
   },
   {
-   "id": 231,
+   "id": 190,
    "title": "attach money 24dp E8EAED FILL0 wght400 GRAD0 opsz24",
    "filePath": "content/images/evidence/graphics/attach_money_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.webp",
    "fileType": "image",
@@ -3255,7 +2681,7 @@
    "sha256": "7b81af4939476984043248267c60594802d6163bf9730900af85601bb0482275"
   },
   {
-   "id": 232,
+   "id": 191,
    "title": "Hug not returned",
    "filePath": "content/images/evidence/graphics/bar/Hug not returned.webp",
    "fileType": "image",
@@ -3269,7 +2695,7 @@
    "sha256": "b91f0361c3a4282748c03b0aa87190555c3c99aa152f3b95aac572adeaf6cd37"
   },
   {
-   "id": 233,
+   "id": 192,
    "title": "brick",
    "filePath": "content/images/evidence/graphics/brick.webp",
    "fileType": "image",
@@ -3283,7 +2709,7 @@
    "sha256": "eef03b7d86ac2fbdf3ee3992494003cfcb3711daf7024b2a3b6ea8c45a4c88c3"
   },
   {
-   "id": 234,
+   "id": 193,
    "title": "Corruption of Justice",
    "filePath": "content/images/evidence/graphics/Corruption of Justice.webp",
    "fileType": "image",
@@ -3297,7 +2723,7 @@
    "sha256": "1c00e994248d8bc6e31f471c88d29579c8edc634ef3fbecf0d190c524080565d"
   },
   {
-   "id": 235,
+   "id": 194,
    "title": "create a photorealistic, professional image of lady justice police badges scattered at her 2",
    "filePath": "content/images/evidence/graphics/create_a_photorealistic,_professional_image_of_lady_justice__police_badges_scattered_at_her_2.webp",
    "fileType": "image",
@@ -3311,7 +2737,7 @@
    "sha256": "fe529f6e636cc275c10345d999f6d6f74bf1eeafffc4a9d5ddde455e15d21950"
   },
   {
-   "id": 236,
+   "id": 195,
    "title": "Screenshot 2025-08-14 060351",
    "filePath": "content/images/evidence/graphics/deal/Screenshot 2025-08-14 060351.webp",
    "fileType": "image",
@@ -3325,7 +2751,7 @@
    "sha256": "3101a5f7faee6769e6341811c80a19fd67d90504b720b7dd783024a75e282ed3"
   },
   {
-   "id": 237,
+   "id": 196,
    "title": "Connections",
    "filePath": "content/images/evidence/graphics/drawio/Connections.webp",
    "fileType": "image",
@@ -3339,7 +2765,7 @@
    "sha256": "ab9fea891d2be9c624a9e9a951e57548f5c53cc4c9ebefa6ea63c99f561b04c2"
   },
   {
-   "id": 238,
+   "id": 197,
    "title": "Imagery",
    "filePath": "content/images/evidence/graphics/drawio/Imagery.webp",
    "fileType": "image",
@@ -3353,7 +2779,7 @@
    "sha256": "327bfcacdabc2090d2f68a37ec203941e45fcbae87d45b9dda1a22ba2a4bf687"
   },
   {
-   "id": 239,
+   "id": 198,
    "title": "dual loyalties",
    "filePath": "content/images/evidence/graphics/dual_loyalties.webp",
    "fileType": "image",
@@ -3367,7 +2793,7 @@
    "sha256": "1a3bfb103a47b23da50bcb33493bfe7e53f7aaceb2d0baf4d08e0309544de1aa"
   },
   {
-   "id": 240,
+   "id": 199,
    "title": "Joel Kelly 2",
    "filePath": "content/images/evidence/graphics/extortion-messages/Joel Kelly 2.webp",
    "fileType": "image",
@@ -3381,7 +2807,7 @@
    "sha256": "45e0a3941db7d8ec3d660c6cd2c79314961bd4c1a33cd666709a674a3c6a81d4"
   },
   {
-   "id": 241,
+   "id": 200,
    "title": "Joel Kelly 3",
    "filePath": "content/images/evidence/graphics/extortion-messages/Joel Kelly 3.webp",
    "fileType": "image",
@@ -3395,7 +2821,7 @@
    "sha256": "62672f5380b53f67ba2b4b760d826cdd00306a1f5228f9037dc59a824612c50b"
   },
   {
-   "id": 242,
+   "id": 201,
    "title": "Joel Kelly",
    "filePath": "content/images/evidence/graphics/extortion-messages/Joel Kelly.webp",
    "fileType": "image",
@@ -3409,7 +2835,7 @@
    "sha256": "89c9e37c258b4f9f9da65787b08bd45d66b39f7ab7375d8e9c1af0a63c47be4f"
   },
   {
-   "id": 243,
+   "id": 202,
    "title": "Freeman Corruption",
    "filePath": "content/images/evidence/graphics/Freeman Corruption.webp",
    "fileType": "image",
@@ -3423,7 +2849,7 @@
    "sha256": "8d8349036cb4a32378ed3a9d98cdc137d3d2b3a66a647d178e3dbdd0872c5d2e"
   },
   {
-   "id": 244,
+   "id": 203,
    "title": "10-27 13-05-52 000 Happel 06",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27_13-05-52_000_Happel_06.webp",
    "fileType": "image",
@@ -3437,7 +2863,7 @@
    "sha256": "d21afec1484b1ce77988e479e0ffeed9117f4eef8caa64bd184a64f18d27d848"
   },
   {
-   "id": 245,
+   "id": 204,
    "title": "10-27 13-06-26 000 Happel 03",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27_13-06-26_000_Happel_03.webp",
    "fileType": "image",
@@ -3451,7 +2877,7 @@
    "sha256": "a1fa9ed5e1681d8a438da704efbfa8e2a272c86d5146d08651ca14796cbb7c5d"
   },
   {
-   "id": 246,
+   "id": 205,
    "title": "10-27 13-06-34 000 Happel 02",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27_13-06-34_000_Happel_02.webp",
    "fileType": "image",
@@ -3465,7 +2891,7 @@
    "sha256": "74e7ac31d02a4d4b325efb26cf767072c7e634872e99e97ecd6c67670a09e134"
   },
   {
-   "id": 247,
+   "id": 206,
    "title": "10-27 13-06-43 000 Happel 01",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27_13-06-43_000_Happel_01.webp",
    "fileType": "image",
@@ -3479,7 +2905,7 @@
    "sha256": "298d26d99b0f1730783285525df78a3ef4250589c796fde58797e17fd06be9c5"
   },
   {
-   "id": 248,
+   "id": 207,
    "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0485",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0485.webp",
    "fileType": "image",
@@ -3493,7 +2919,7 @@
    "sha256": "60d56431425dbace199e0bc7b5ebf04c52deb72757c783a3e01151c240a65ef2"
   },
   {
-   "id": 249,
+   "id": 208,
    "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0486",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0486.webp",
    "fileType": "image",
@@ -3507,7 +2933,7 @@
    "sha256": "df5e8c2173ce7b1d1d341a35ab03fca48c6722405df0a54ed0eea6e234fd3f13"
   },
   {
-   "id": 250,
+   "id": 209,
    "title": "10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0487",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0487.webp",
    "fileType": "image",
@@ -3521,7 +2947,7 @@
    "sha256": "7e01c15694b2e867c8dcff6b9fe2a9d8dead6171e1a0cfd64772e863ddc68b58"
   },
   {
-   "id": 251,
+   "id": 210,
    "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0488",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0488.webp",
    "fileType": "image",
@@ -3535,7 +2961,7 @@
    "sha256": "2ff6da939a02ab6ee4232c0c7d52cc2eb2d6c194d1f978d6fdaed9e484792696"
   },
   {
-   "id": 252,
+   "id": 211,
    "title": "10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0489",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0489.webp",
    "fileType": "image",
@@ -3549,7 +2975,7 @@
    "sha256": "ab0facd44742cc17901e2b5d3f9832e4459f33dbb3307e4d658945b7601d8a4f"
   },
   {
-   "id": 253,
+   "id": 212,
    "title": "Happel And I",
    "filePath": "content/images/evidence/graphics/happel/Happel_And_I.webp",
    "fileType": "image",
@@ -3563,7 +2989,7 @@
    "sha256": "1a0bd08c03d162d1f9c415002265e1e34667e37b583ad4623a2e21fadf576fa6"
   },
   {
-   "id": 254,
+   "id": 213,
    "title": "House Overview",
    "filePath": "content/images/evidence/graphics/House Overview.webp",
    "fileType": "image",
@@ -3577,7 +3003,7 @@
    "sha256": "5f74666ebf731b1bf6012b1a63402da916837437e88f16b50f8bb33478ec287d"
   },
   {
-   "id": 255,
+   "id": 214,
    "title": "airfield grass",
    "filePath": "content/images/evidence/graphics/house-area/airfield_grass.webp",
    "fileType": "image",
@@ -3591,7 +3017,7 @@
    "sha256": "0cbb2112e42c2ecdd84eeaf93aea6a8979a7531287c9a6209f19ed68a5e63665"
   },
   {
-   "id": 256,
+   "id": 215,
    "title": "basement",
    "filePath": "content/images/evidence/graphics/house-area/basement.webp",
    "fileType": "image",
@@ -3605,7 +3031,7 @@
    "sha256": "0c195f8d3f6988f3c9766c8a2e7b468c82201435217f09ae3a77010c6159f536"
   },
   {
-   "id": 257,
+   "id": 216,
    "title": "Detective Freeman Misconduct Analysis 7",
    "filePath": "content/images/evidence/graphics/house-area/Detective_Freeman_Misconduct_Analysis 7.webp",
    "fileType": "image",
@@ -3619,7 +3045,7 @@
    "sha256": "22a7cbdce771882b931c53f765a0767ff1f7037bf5677135e7acbe6165168bce"
   },
   {
-   "id": 258,
+   "id": 217,
    "title": "driveway",
    "filePath": "content/images/evidence/graphics/house-area/driveway.webp",
    "fileType": "image",
@@ -3633,7 +3059,7 @@
    "sha256": "a5df46fc5b7677363193e91d943529a6352ffbd0cd398ffe7b694678a01f7de4"
   },
   {
-   "id": 259,
+   "id": 218,
    "title": "exit location",
    "filePath": "content/images/evidence/graphics/house-area/exit location.webp",
    "fileType": "image",
@@ -3647,7 +3073,7 @@
    "sha256": "04f69fff711fb5286da5274383b7413f39838598d67ab12bf8d169732ed070b3"
   },
   {
-   "id": 260,
+   "id": 219,
    "title": "False Story",
    "filePath": "content/images/evidence/graphics/house-area/False Story.webp",
    "fileType": "image",
@@ -3661,7 +3087,7 @@
    "sha256": "3cd1b02708d45728998c949ad3b5b22c912edcd99b141a6db7e7bce550fc17da"
   },
   {
-   "id": 261,
+   "id": 220,
    "title": "Fence",
    "filePath": "content/images/evidence/graphics/house-area/Fence.webp",
    "fileType": "image",
@@ -3675,7 +3101,7 @@
    "sha256": "d1920bc74bdf88e4e5c39fd55b90af97fb8d6b16f6be9116d19a70a9688991f7"
   },
   {
-   "id": 262,
+   "id": 221,
    "title": "Good overview",
    "filePath": "content/images/evidence/graphics/house-area/Good overview.webp",
    "fileType": "image",
@@ -3689,7 +3115,7 @@
    "sha256": "b66a9b06099c7e134dec183612ddb2195e5aeb83b560d546381882e16f7124c9"
   },
   {
-   "id": 263,
+   "id": 222,
    "title": "guest bath",
    "filePath": "content/images/evidence/graphics/house-area/guest bath.webp",
    "fileType": "image",
@@ -3703,7 +3129,7 @@
    "sha256": "7a1e576c8b9187d5cb0517887e7546c45a0d8ebfb3006303bf17d45b10fee0c7"
   },
   {
-   "id": 264,
+   "id": 223,
    "title": "house from air",
    "filePath": "content/images/evidence/graphics/house-area/house from air.webp",
    "fileType": "image",
@@ -3717,7 +3143,7 @@
    "sha256": "e1e8c4e009a561f1f3083e892d220ccd3ab092ecc4e6cb26eab2f75c555e0a17"
   },
   {
-   "id": 265,
+   "id": 224,
    "title": "house",
    "filePath": "content/images/evidence/graphics/house-area/house.webp",
    "fileType": "image",
@@ -3731,7 +3157,7 @@
    "sha256": "62de77c87e7f7d2fd9607c404960fff24835d1b6d89cd37feadf55a12ed4318a"
   },
   {
-   "id": 266,
+   "id": 225,
    "title": "House and Airfield",
    "filePath": "content/images/evidence/graphics/house-area/House_and_Airfield.webp",
    "fileType": "image",
@@ -3745,7 +3171,7 @@
    "sha256": "46680f8e8e6e1797d03acc5381fa3425259682b4df8c64d74564bae405afa104"
   },
   {
-   "id": 267,
+   "id": 226,
    "title": "jan19",
    "filePath": "content/images/evidence/graphics/house-area/jan19.webp",
    "fileType": "image",
@@ -3759,7 +3185,7 @@
    "sha256": "cd9d9a5233322b6eec32206f6cff61b82ceb07e276020eb2a66c5e9fa10f1c95"
   },
   {
-   "id": 268,
+   "id": 227,
    "title": "Lukes room",
    "filePath": "content/images/evidence/graphics/house-area/Lukes room.webp",
    "fileType": "image",
@@ -3773,7 +3199,7 @@
    "sha256": "fcc59cf34e55bbfc010b2ea7ff39331aa6a1fb47b1cc75f5ad6e4408f754d060"
   },
   {
-   "id": 269,
+   "id": 228,
    "title": "Overview of property",
    "filePath": "content/images/evidence/graphics/house-area/Overview of property.webp",
    "fileType": "image",
@@ -3787,7 +3213,7 @@
    "sha256": "19e50b9b6ce448904b6a81abd302362b51f9b665deb95c06605259e93044aa93"
   },
   {
-   "id": 270,
+   "id": 229,
    "title": "overview",
    "filePath": "content/images/evidence/graphics/house-area/overview.webp",
    "fileType": "image",
@@ -3801,7 +3227,7 @@
    "sha256": "b77dd0042ac90a0d45bd0a65b255da9bd476670044ef1653a64a103010ceb0f7"
   },
   {
-   "id": 271,
+   "id": 230,
    "title": "overview of house compressed",
    "filePath": "content/images/evidence/graphics/house-area/overview_of_house_compressed.webp",
    "fileType": "image",
@@ -3815,7 +3241,7 @@
    "sha256": "c03eadbe8dbd05946fe64b37a49bd469d4a7f572f3a676feff07f460b5f47bf2"
   },
   {
-   "id": 272,
+   "id": 231,
    "title": "Tiffany's House",
    "filePath": "content/images/evidence/graphics/house-area/Tiffany's House.webp",
    "fileType": "image",
@@ -3829,7 +3255,7 @@
    "sha256": "0029e1a04235169b90a56ac8ff9584c103b62be3340e59ea54561dfed7f08fdb"
   },
   {
-   "id": 273,
+   "id": 232,
    "title": "woods",
    "filePath": "content/images/evidence/graphics/house-area/woods.webp",
    "fileType": "image",
@@ -3843,7 +3269,7 @@
    "sha256": "b2364aac529630096ac946d55d4fff598a85fbb4514851c2116b10ca3e55a3b3"
   },
   {
-   "id": 274,
+   "id": 233,
    "title": "to-10-numbers-png-16091",
    "filePath": "content/images/evidence/graphics/icons/1-to-10-numbers-png-16091.webp",
    "fileType": "image",
@@ -3857,7 +3283,7 @@
    "sha256": "0b76c10412f2a39a7f9d0aa4fd587c20b98ac45cd1d13f80dcc70bfc6c8b2169"
   },
   {
-   "id": 275,
+   "id": 234,
    "title": "1024313080",
    "filePath": "content/images/evidence/graphics/icons/1024313080.webp",
    "fileType": "image",
@@ -3871,7 +3297,7 @@
    "sha256": "b42b64cab9a285eb8e1aa0aa312ebd326ba80c66d6f3f72e6ea0c04aeb518044"
   },
   {
-   "id": 276,
+   "id": 235,
    "title": "document icon",
    "filePath": "content/images/evidence/graphics/icons/document_icon.webp",
    "fileType": "image",
@@ -3885,7 +3311,7 @@
    "sha256": "706bdfc2a58bf59b0fe09f73bbc47fd70482c9ec1dcac0d8a31b3e91796ed102"
   },
   {
-   "id": 277,
+   "id": 236,
    "title": "False",
    "filePath": "content/images/evidence/graphics/icons/False.webp",
    "fileType": "image",
@@ -3899,7 +3325,7 @@
    "sha256": "74da51d7d9774d55d388972fa052619e283678e2f4b8ca59dc0faedbb6da0ccd"
   },
   {
-   "id": 278,
+   "id": 237,
    "title": "Grey",
    "filePath": "content/images/evidence/graphics/icons/Grey_20250719_234716.webp",
    "fileType": "image",
@@ -3913,7 +3339,7 @@
    "sha256": "ebc25af02b67380f44582759a6c73b129f39f553ef642d66e3b474e9b6e0ff31"
   },
   {
-   "id": 279,
+   "id": 238,
    "title": "InJustice",
    "filePath": "content/images/evidence/graphics/icons/InJustice.webp",
    "fileType": "image",
@@ -3927,7 +3353,7 @@
    "sha256": "888a81f6229827222c61b311047bff408dd543a00c41af025eddd34e404c24e9"
   },
   {
-   "id": 280,
+   "id": 239,
    "title": "InJustice 75 percent",
    "filePath": "content/images/evidence/graphics/icons/InJustice_75_percent.webp",
    "fileType": "image",
@@ -3941,7 +3367,7 @@
    "sha256": "5db0ff38fe213ca625af9f83e5201e1546e0234c61f762b6a3e9de4d041771f3"
   },
   {
-   "id": 281,
+   "id": 240,
    "title": "InJustice 80 percent",
    "filePath": "content/images/evidence/graphics/icons/InJustice_80_percent.webp",
    "fileType": "image",
@@ -3955,7 +3381,7 @@
    "sha256": "0877caa5be45f789e4ac5413ef6e92bcc4307f18f170f6a60fcd9cb31bb972fd"
   },
   {
-   "id": 282,
+   "id": 241,
    "title": "liar",
    "filePath": "content/images/evidence/graphics/icons/liar.webp",
    "fileType": "image",
@@ -3969,7 +3395,7 @@
    "sha256": "c58ff928ed594e4c27d02ad6b12028f771a28013189bb720c1c056c4638180d4"
   },
   {
-   "id": 283,
+   "id": 242,
    "title": "lie-001",
    "filePath": "content/images/evidence/graphics/icons/lie-001.webp",
    "fileType": "image",
@@ -3983,7 +3409,7 @@
    "sha256": "663052dda5a1275ce59cbe49b9c893be0bb638ec81dffa36d3abc2d71868dcf8"
   },
   {
-   "id": 284,
+   "id": 243,
    "title": "loc1",
    "filePath": "content/images/evidence/graphics/icons/loc1.webp",
    "fileType": "image",
@@ -3997,7 +3423,7 @@
    "sha256": "a0e26c3640fadb99ca928c30a57443ac14a1222910c1e29893e79bdace2a4bf4"
   },
   {
-   "id": 285,
+   "id": 244,
    "title": "loc2",
    "filePath": "content/images/evidence/graphics/icons/loc2.webp",
    "fileType": "image",
@@ -4011,7 +3437,7 @@
    "sha256": "11b2744ad97d291d3020446c9889808b7697bdb64156c42c629461b9057d8594"
   },
   {
-   "id": 286,
+   "id": 245,
    "title": "stop corruption Clean",
    "filePath": "content/images/evidence/graphics/icons/stop_corruption Clean.webp",
    "fileType": "image",
@@ -4025,7 +3451,7 @@
    "sha256": "6ca4be479cb23e7685d70ddea4fc003b62ca89833a404aefc8a0cdacd6917638"
   },
   {
-   "id": 287,
+   "id": 246,
    "title": "stop corruption",
    "filePath": "content/images/evidence/graphics/icons/stop_corruption.webp",
    "fileType": "image",
@@ -4039,7 +3465,7 @@
    "sha256": "46c700de87644d324dfb629651be852a21b6fe20bc8bcd40a901fe0a6cc9b99e"
   },
   {
-   "id": 288,
+   "id": 247,
    "title": "symbol help",
    "filePath": "content/images/evidence/graphics/icons/symbol_help.webp",
    "fileType": "image",
@@ -4053,7 +3479,7 @@
    "sha256": "30c5e5ba851c056aad862d8603913214e09b5742ec64b3d35d5d64c2bc6399c7"
   },
   {
-   "id": 289,
+   "id": 248,
    "title": "Blank",
    "filePath": "content/images/evidence/graphics/inserts/Blank.webp",
    "fileType": "image",
@@ -4067,7 +3493,7 @@
    "sha256": "90c7cb928ea04660b53c904b519e6824ef3b9215ac5fc34767614e64c56a9388"
   },
   {
-   "id": 290,
+   "id": 249,
    "title": "creating a scene",
    "filePath": "content/images/evidence/graphics/inserts/creating a scene.webp",
    "fileType": "image",
@@ -4081,7 +3507,7 @@
    "sha256": "960df6870cda3b688d79025f1573c7fd1e3bed75237ce208e52d54eb672a7e85"
   },
   {
-   "id": 291,
+   "id": 250,
    "title": "Deal Approaches Allen",
    "filePath": "content/images/evidence/graphics/inserts/Deal_Approaches_Allen.webp",
    "fileType": "image",
@@ -4095,7 +3521,7 @@
    "sha256": "07de2c045b8264911154d583c2d9f6b23dbfaf8cc70a9eb1c5b4876434093173"
   },
   {
-   "id": 292,
+   "id": 251,
    "title": "Deal argues over refusal",
    "filePath": "content/images/evidence/graphics/inserts/Deal_argues_over_refusal.webp",
    "fileType": "image",
@@ -4109,7 +3535,7 @@
    "sha256": "4cfa0c40733401988a9d848e9f2c589bdf2d8b38c385b59a3442cdb7d3b9aa52"
   },
   {
-   "id": 293,
+   "id": 252,
    "title": "Deal tries to introduce",
    "filePath": "content/images/evidence/graphics/inserts/Deal_tries_to_introduce.webp",
    "fileType": "image",
@@ -4123,7 +3549,7 @@
    "sha256": "0a9eb6df018a93f48cb659764281250d6e1bbe18775b408bab44ac89533221fb"
   },
   {
-   "id": 294,
+   "id": 253,
    "title": "drunk screaming",
    "filePath": "content/images/evidence/graphics/inserts/drunk_screaming.webp",
    "fileType": "image",
@@ -4137,7 +3563,7 @@
    "sha256": "9bdc844585dafd763e661ea1878056fd7e874148127452c8bf8a633c6b0c8e49"
   },
   {
-   "id": 295,
+   "id": 254,
    "title": "exit at different times",
    "filePath": "content/images/evidence/graphics/inserts/exit at different times.webp",
    "fileType": "image",
@@ -4151,7 +3577,7 @@
    "sha256": "357f7d414c9aaee705362c84ecb4d34e722f4ae65ee8228402097d527cbfd82d"
   },
   {
-   "id": 296,
+   "id": 255,
    "title": "facedownground",
    "filePath": "content/images/evidence/graphics/inserts/facedownground.webp",
    "fileType": "image",
@@ -4165,7 +3591,7 @@
    "sha256": "eb026364107d4e2b29242a89edf41da00c9ee46b7385d3c6055d8f062188f8f1"
   },
   {
-   "id": 297,
+   "id": 256,
    "title": "FAmily Affair Lies",
    "filePath": "content/images/evidence/graphics/inserts/FAmily_Affair_Lies.svg",
    "fileType": "image",
@@ -4179,7 +3605,7 @@
    "sha256": "e5d0783fe8c25d9c62b3e1c848dd099808a96fe95ebc36c3b4ea8defa4903fc9"
   },
   {
-   "id": 298,
+   "id": 257,
    "title": "FAmily Affair Lies",
    "filePath": "content/images/evidence/graphics/inserts/FAmily_Affair_Lies.webp",
    "fileType": "image",
@@ -4193,7 +3619,7 @@
    "sha256": "bd89fa4dada892297e1b7b44e464de504d899abfcb7cd4f503bd5b1d94c87831"
   },
   {
-   "id": 299,
+   "id": 258,
    "title": "Family Affari Lies",
    "filePath": "content/images/evidence/graphics/inserts/Family_Affari_Lies.svg",
    "fileType": "image",
@@ -4207,7 +3633,7 @@
    "sha256": "2e8ef02a208059a6eb75d4c870dbd84052334b87cf7b9172701eb23df70186ea"
   },
   {
-   "id": 300,
+   "id": 259,
    "title": "Family Affari Lies",
    "filePath": "content/images/evidence/graphics/inserts/Family_Affari_Lies.webp",
    "fileType": "image",
@@ -4221,7 +3647,7 @@
    "sha256": "72b8cb6c793f3a312b360ea5e31531c0d597576edb742c03a0654cf9b3871903"
   },
   {
-   "id": 301,
+   "id": 260,
    "title": "Freeman Testimony",
    "filePath": "content/images/evidence/graphics/inserts/Freeman Testimony.webp",
    "fileType": "image",
@@ -4235,7 +3661,7 @@
    "sha256": "9ce0451aa70be78cb3b27b47d64d1c7ea793a2bd40982144aa7d0f760f014c11"
   },
   {
-   "id": 302,
+   "id": 261,
    "title": "hangingout",
    "filePath": "content/images/evidence/graphics/inserts/hangingout.webp",
    "fileType": "image",
@@ -4249,7 +3675,7 @@
    "sha256": "d0eeab26f687bfa8b54ceafa078bcbbf50c177d51f8c0774c58533d74d931e8f"
   },
   {
-   "id": 303,
+   "id": 262,
    "title": "hug lie",
    "filePath": "content/images/evidence/graphics/inserts/hug_lie.svg",
    "fileType": "image",
@@ -4263,7 +3689,7 @@
    "sha256": "61c85d86961d4ab93c2e4b94b4341cde6d71a1585a85cc1ed6dd1c3f40482505"
   },
   {
-   "id": 304,
+   "id": 263,
    "title": "hug lie",
    "filePath": "content/images/evidence/graphics/inserts/hug_lie.webp",
    "fileType": "image",
@@ -4277,7 +3703,7 @@
    "sha256": "98e54043f0a51230849c03a514d1334a8418bc1af7f0ae6d562cb8caaf7a42ad"
   },
   {
-   "id": 305,
+   "id": 264,
    "title": "hug lie comes back",
    "filePath": "content/images/evidence/graphics/inserts/hug_lie_comes_back.webp",
    "fileType": "image",
@@ -4291,7 +3717,7 @@
    "sha256": "14ef88882821673bb8f34deb8143548e5ec480614907d8eeec7d0bf093ac4ece"
   },
   {
-   "id": 306,
+   "id": 265,
    "title": "Keys to allen",
    "filePath": "content/images/evidence/graphics/inserts/Keys_to_allen.webp",
    "fileType": "image",
@@ -4305,7 +3731,7 @@
    "sha256": "dc0a7d13079796959066c607d21c18c51328fd23fdc191b5439c94bacb7d9c8f"
   },
   {
-   "id": 307,
+   "id": 266,
    "title": "lies",
    "filePath": "content/images/evidence/graphics/inserts/lies.svg",
    "fileType": "image",
@@ -4319,7 +3745,7 @@
    "sha256": "68a0cfa5026037d703adcf8ff80578c74f5b16ace0179f09431294ee8bb1eb47"
   },
   {
-   "id": 308,
+   "id": 267,
    "title": "lies",
    "filePath": "content/images/evidence/graphics/inserts/lies.webp",
    "fileType": "image",
@@ -4333,7 +3759,7 @@
    "sha256": "e269c4797b536cd60115fd64de0c512bd0ddee32e504de5561b605034ed9b453"
   },
   {
-   "id": 309,
+   "id": 268,
    "title": "liesblank",
    "filePath": "content/images/evidence/graphics/inserts/liesblank.svg",
    "fileType": "image",
@@ -4347,7 +3773,7 @@
    "sha256": "33f0c2a2a00e52efe7e706e9a3d4b2f88350e65dffbb91a0e46982f076ea55d5"
   },
   {
-   "id": 310,
+   "id": 269,
    "title": "liesblank",
    "filePath": "content/images/evidence/graphics/inserts/liesblank.webp",
    "fileType": "image",
@@ -4361,7 +3787,7 @@
    "sha256": "ff2b4f1dc6879be0b14e73dbd08259dfb0abfc1c191e2db8a3eaef82982a8e3c"
   },
   {
-   "id": 311,
+   "id": 270,
    "title": "logo for the abused",
    "filePath": "content/images/evidence/graphics/inserts/logo_for_the_abused.svg",
    "fileType": "image",
@@ -4375,7 +3801,7 @@
    "sha256": "2e2913ddd9406390fe6ad5c4ea2f83b36da4372be31892c518b31408f7d68773"
   },
   {
-   "id": 312,
+   "id": 271,
    "title": "logo for the abused",
    "filePath": "content/images/evidence/graphics/inserts/logo_for_the_abused.webp",
    "fileType": "image",
@@ -4389,7 +3815,7 @@
    "sha256": "5b65f1b3e49fc8798c5f6623af77509aeccf1fb248aa346c329ace52b27be160"
   },
   {
-   "id": 313,
+   "id": 272,
    "title": "moon phase",
    "filePath": "content/images/evidence/graphics/inserts/moon phase.webp",
    "fileType": "image",
@@ -4403,7 +3829,7 @@
    "sha256": "5833140bdcd2c29256eed2a23e2518671b683bd2c8c6895f0846300f1aeb7927"
   },
   {
-   "id": 314,
+   "id": 273,
    "title": "No one wants her around",
    "filePath": "content/images/evidence/graphics/inserts/No one wants her around.webp",
    "fileType": "image",
@@ -4417,7 +3843,7 @@
    "sha256": "2ea109484f1cd1e44ed5698d6fc5118e1812e4a42b51cdb6f9ff0e3ecdac985f"
   },
   {
-   "id": 315,
+   "id": 274,
    "title": "payoff-001",
    "filePath": "content/images/evidence/graphics/inserts/payoff-001.webp",
    "fileType": "image",
@@ -4431,7 +3857,7 @@
    "sha256": "cb590adf103856714d20fbb66618e64c5a0e0efe7dfe1eb96ee43e2ce31158fa"
   },
   {
-   "id": 316,
+   "id": 275,
    "title": "Peter West Leaves Alone",
    "filePath": "content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp",
    "fileType": "image",
@@ -4445,7 +3871,7 @@
    "sha256": "733f481a2a58992aae1508b374fca4761d584dd5301ffb8fc0c71429818a1590"
   },
   {
-   "id": 317,
+   "id": 276,
    "title": "whilebarefoot",
    "filePath": "content/images/evidence/graphics/inserts/whilebarefoot.webp",
    "fileType": "image",
@@ -4459,7 +3885,7 @@
    "sha256": "7e718e04dd837c2a740d68dc7a415b52c712b9ffe2e674a075ad9e9045e5c123"
   },
   {
-   "id": 318,
+   "id": 277,
    "title": "Lady Justice LCSO",
    "filePath": "content/images/evidence/graphics/Lady Justice LCSO.webp",
    "fileType": "image",
@@ -4473,7 +3899,7 @@
    "sha256": "f824938096dd84bf2ef4f765601840cc9d6dde1af9cac5ad2e6c4921d80c47d6"
   },
   {
-   "id": 319,
+   "id": 278,
    "title": "logo for the abused",
    "filePath": "content/images/evidence/graphics/logo_for_the_abused.webp",
    "fileType": "image",
@@ -4487,7 +3913,7 @@
    "sha256": "5f768f834381b7ff4fabbf4929c4753a95a04db1cd1471f166a9c3e0101e6e93"
   },
   {
-   "id": 320,
+   "id": 279,
    "title": "logo for the abused large",
    "filePath": "content/images/evidence/graphics/logo_for_the_abused_large.webp",
    "fileType": "image",
@@ -4501,7 +3927,7 @@
    "sha256": "ffc6e3977123e6ab54db812035b24eab52c392d7cbba93c1e442ecd352e89f06"
   },
   {
-   "id": 321,
+   "id": 280,
    "title": "Report - Detective Steve Freeman Misconduct",
    "filePath": "content/images/evidence/graphics/people/2025-04-07 - Report - Detective Steve Freeman Misconduct.webp",
    "fileType": "image",
@@ -4515,7 +3941,7 @@
    "sha256": "5c1fccafab91cfa05c1348b46b14fd86a29b473e32b835ec112727509071f1f5"
   },
   {
-   "id": 322,
+   "id": 281,
    "title": "Detective Freeman at Christmas with Carmen Love",
    "filePath": "content/images/evidence/graphics/people/Detective Freeman at Christmas with Carmen Love.webp",
    "fileType": "image",
@@ -4529,7 +3955,7 @@
    "sha256": "cabc40af843e99748b1bf5743f1367d807441bf82b50a67cef074d1ba9d76814"
   },
   {
-   "id": 323,
+   "id": 282,
    "title": "estes",
    "filePath": "content/images/evidence/graphics/people/estes.webp",
    "fileType": "image",
@@ -4543,7 +3969,7 @@
    "sha256": "8e245524c988b0a39c0dcecf95265152dda259a399001471a1e735d458d84478"
   },
   {
-   "id": 324,
+   "id": 283,
    "title": "Freeman and friends at Family Christmas",
    "filePath": "content/images/evidence/graphics/people/Freeman and friends at Family Christmas.webp",
    "fileType": "image",
@@ -4557,7 +3983,7 @@
    "sha256": "bed287a1ea1cce3f472335caefdd5eb9a1e552c2287342c1d53586ab35347a29"
   },
   {
-   "id": 325,
+   "id": 284,
    "title": "Freeman At Table",
    "filePath": "content/images/evidence/graphics/people/Freeman At Table.webp",
    "fileType": "image",
@@ -4571,7 +3997,7 @@
    "sha256": "0927e78c38a6526115a106e70960732ef223597aa19b30811a0e2c4b5097ec33"
   },
   {
-   "id": 326,
+   "id": 285,
    "title": "Freeman Wife",
    "filePath": "content/images/evidence/graphics/people/Freeman Wife.webp",
    "fileType": "image",
@@ -4585,7 +4011,7 @@
    "sha256": "a0288012bda63df08a29a008da327f1b4f0c22542cc9cf742b27acf2a3404304"
   },
   {
-   "id": 327,
+   "id": 286,
    "title": "freeman",
    "filePath": "content/images/evidence/graphics/people/freeman.webp",
    "fileType": "image",
@@ -4599,7 +4025,7 @@
    "sha256": "80e35281301cd0404660e6fb3d8515e9050529510baf3f2c422dfa0ac7ff2f11"
   },
   {
-   "id": 328,
+   "id": 287,
    "title": "Freeman Case 19CR051799 Analysis",
    "filePath": "content/images/evidence/graphics/people/Freeman_Case_19CR051799_Analysis.webp",
    "fileType": "image",
@@ -4613,7 +4039,7 @@
    "sha256": "07c7b4e4c0ae8c2ec3fb2fe6506a4afcf46462df66f83ea90f9b61980dc4b325"
   },
   {
-   "id": 329,
+   "id": 288,
    "title": "Freeman Misconduct Investigation Report 19",
    "filePath": "content/images/evidence/graphics/people/Freeman_Misconduct_Investigation_Report 19.webp",
    "fileType": "image",
@@ -4627,7 +4053,7 @@
    "sha256": "6ef7c436ec593ecee7b20ee163f967e6c721673ab396d88afbbb4c79effdbefb"
   },
   {
-   "id": 330,
+   "id": 289,
    "title": "friends of corruption",
    "filePath": "content/images/evidence/graphics/people/friends_of_corruption.webp",
    "fileType": "image",
@@ -4641,7 +4067,7 @@
    "sha256": "cb68cf8a2560888dd7fc6d169c5e16c4e4b8c69a4df6ec2d57e815f39bd56e6a"
   },
   {
-   "id": 331,
+   "id": 290,
    "title": "James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years 2",
    "filePath": "content/images/evidence/graphics/people/James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years 2.webp",
    "fileType": "image",
@@ -4655,7 +4081,7 @@
    "sha256": "21609f9628312a794dabaa13c5edd31b04299ce3de205eafc936a8d7165e5639"
   },
   {
-   "id": 332,
+   "id": 291,
    "title": "James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years",
    "filePath": "content/images/evidence/graphics/people/James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years.webp",
    "fileType": "image",
@@ -4669,7 +4095,7 @@
    "sha256": "16bd1ed8ce235cbdb66ecf129b8b3977907b87e3e9f2ba09db6094ba378f202a"
   },
   {
-   "id": 333,
+   "id": 292,
    "title": "relationship wasn't private (Medium)",
    "filePath": "content/images/evidence/graphics/people/relationship_wasn't_private (Medium).webp",
    "fileType": "image",
@@ -4683,7 +4109,7 @@
    "sha256": "600417a7b3feda3a65d6a8ad8f91b76f57cf5a821940ac3f80064b1a22d13c85"
   },
   {
-   "id": 334,
+   "id": 293,
    "title": "Review And Commentary Of Steve Freeman 18",
    "filePath": "content/images/evidence/graphics/people/Review And Commentary Of Steve Freeman 18.webp",
    "fileType": "image",
@@ -4697,7 +4123,7 @@
    "sha256": "cbd1c36b2c0788120e6d8f0a7ca4a9858f10f40a10509efc027187d02cd24ae1"
   },
   {
-   "id": 335,
+   "id": 294,
    "title": "who pays the price",
    "filePath": "content/images/evidence/graphics/people/who_pays the price.webp",
    "fileType": "image",
@@ -4711,7 +4137,7 @@
    "sha256": "566bc172ac9f7e3eca79d642aa4b43e20a7b1572b3e9443d8f2d3edd3cf6806a"
   },
   {
-   "id": 336,
+   "id": 295,
    "title": "Probable Cause",
    "filePath": "content/images/evidence/graphics/Probable Cause.webp",
    "fileType": "image",
@@ -4725,7 +4151,7 @@
    "sha256": "3473f3fa7b4f0344dc45f181d292b0a845917cab8e6a50639ce06cb66580e9a5"
   },
   {
-   "id": 337,
+   "id": 296,
    "title": "bed push",
    "filePath": "content/images/evidence/graphics/products/bed_push.webp",
    "fileType": "image",
@@ -4739,7 +4165,7 @@
    "sha256": "ac5c50dcd07d92875b78c51088c168c255c076b84339bd40699b09ad54416a3e"
   },
   {
-   "id": 338,
+   "id": 297,
    "title": "Crime Board",
    "filePath": "content/images/evidence/graphics/products/Crime Board.webp",
    "fileType": "image",
@@ -4753,7 +4179,7 @@
    "sha256": "f877d36490dc28d2cd5bd0af42d41bb8e24de4463c656653bc1a2567c9a0c29c"
   },
   {
-   "id": 339,
+   "id": 298,
    "title": "doorway people",
    "filePath": "content/images/evidence/graphics/products/doorway_people.webp",
    "fileType": "image",
@@ -4767,7 +4193,7 @@
    "sha256": "d298ed90717dcf2bbd8157c1834ddaeff1067ac82cbf513b46af0c598cea51e6"
   },
   {
-   "id": 340,
+   "id": 299,
    "title": "Doorway represenation",
    "filePath": "content/images/evidence/graphics/products/Doorway_represenation.webp",
    "fileType": "image",
@@ -4781,7 +4207,7 @@
    "sha256": "b5c8558be89ad07286835b0cdfbba524365ca8e49f53603830cb804559ce8c27"
   },
   {
-   "id": 341,
+   "id": 300,
    "title": "FAmily",
    "filePath": "content/images/evidence/graphics/products/FAmily.webp",
    "fileType": "image",
@@ -4795,7 +4221,7 @@
    "sha256": "27a6ff4fa6c1882ed54afe3f7e44a0eacddde1aef112515427f04816a84894e1"
   },
   {
-   "id": 342,
+   "id": 301,
    "title": "FAmily",
    "filePath": "content/images/evidence/graphics/products/FAmily_.webp",
    "fileType": "image",
@@ -4809,7 +4235,7 @@
    "sha256": "b5137d327a0ed703dd12f7d91996709d7e0cfdc5442e1c641f0f9b785b4259f5"
   },
   {
-   "id": 343,
+   "id": 302,
    "title": "ladyjustice use 2 2",
    "filePath": "content/images/evidence/graphics/products/ladyjustice_use_2_2.webp",
    "fileType": "image",
@@ -4823,7 +4249,7 @@
    "sha256": "99cbdb3596c62daeb25c1dc907269a3ab421b5fc5d55189c047ec2cc73270c96"
   },
   {
-   "id": 344,
+   "id": 303,
    "title": "Oversite-diagram",
    "filePath": "content/images/evidence/graphics/products/Oversite-diagram.webp",
    "fileType": "image",
@@ -4837,7 +4263,7 @@
    "sha256": "5d92b6f7e6a29b856c01a267c8b32d73b2692c3a987869a16930843e37c729b2"
   },
   {
-   "id": 345,
+   "id": 304,
    "title": "Oversite-photo",
    "filePath": "content/images/evidence/graphics/products/Oversite-photo.webp",
    "fileType": "image",
@@ -4851,7 +4277,7 @@
    "sha256": "6cfb497c9e92cf74ac00cbca15299b21554f55ce05c3c6024f09bb3f5de3e1b3"
   },
   {
-   "id": 346,
+   "id": 305,
    "title": "Picture1",
    "filePath": "content/images/evidence/graphics/products/Picture1.webp",
    "fileType": "image",
@@ -4865,7 +4291,7 @@
    "sha256": "b97330f7ed5638cd8809ba4e9de8f8b9f91f84bb587e656da751f2941c1dc98f"
   },
   {
-   "id": 347,
+   "id": 306,
    "title": "Picture12 (2)",
    "filePath": "content/images/evidence/graphics/products/Picture12 (2).webp",
    "fileType": "image",
@@ -4879,7 +4305,7 @@
    "sha256": "cc41973ed1faed38e06a9fb8e9e9400172af3f062efa7d742b4905b534a30cc7"
   },
   {
-   "id": 348,
+   "id": 307,
    "title": "Picture9-001",
    "filePath": "content/images/evidence/graphics/products/Picture9-001.webp",
    "fileType": "image",
@@ -4893,7 +4319,7 @@
    "sha256": "71c4b5d9b891ab2e44109017d9819b519db3949ddb71b29dce4f9afe417e4708"
   },
   {
-   "id": 349,
+   "id": 308,
    "title": "Screenshot 2025-08-10 073134",
    "filePath": "content/images/evidence/graphics/products/Screenshot 2025-08-10 073134.webp",
    "fileType": "image",
@@ -4907,7 +4333,7 @@
    "sha256": "406e86b41dbae5c28d647527cd4df8ba214648585e0c9b58bfa541dc031baaf2"
   },
   {
-   "id": 350,
+   "id": 309,
    "title": "screenshot 2024-10-31 004656",
    "filePath": "content/images/evidence/graphics/products/screenshot_2024-10-31_004656.webp",
    "fileType": "image",
@@ -4921,7 +4347,7 @@
    "sha256": "88563f1adaa61dad290f49a7da615363a1161a942cc6fe833da516d2eecb0ba2"
   },
   {
-   "id": 351,
+   "id": 310,
    "title": "The crooks",
    "filePath": "content/images/evidence/graphics/products/The crooks.webp",
    "fileType": "image",
@@ -4935,7 +4361,7 @@
    "sha256": "f3157f638bfe203ca0d3eec964533d43f430a4b59bc86798c319f80a4f249d7e"
   },
   {
-   "id": 352,
+   "id": 311,
    "title": "when you betray the institution you are entrusted to uphold",
    "filePath": "content/images/evidence/graphics/products/when_you_betray_the_institution_you_are_entrusted_to_uphold.webp",
    "fileType": "image",
@@ -4949,7 +4375,7 @@
    "sha256": "0b5b87c43014761fb0abfb745eef1bc8ba177f791fb1fcc0bd9e862397b7f123"
   },
   {
-   "id": 353,
+   "id": 312,
    "title": "Screenshot 2024-10-21 090634",
    "filePath": "content/images/evidence/graphics/Screenshot 2024-10-21 090634.webp",
    "fileType": "image",
@@ -4963,7 +4389,7 @@
    "sha256": "f0ebd594e6f5eba11c4917d8f827002f157163e08ec8865fc7834a064b6af388"
   },
   {
-   "id": 354,
+   "id": 313,
    "title": "Shakedown",
    "filePath": "content/images/evidence/graphics/Shakedown.webp",
    "fileType": "image",
@@ -4977,7 +4403,7 @@
    "sha256": "a622d9aaf5aca6546d5fee9b12a982ece7cb777416e767df03866d30f1d3206d"
   },
   {
-   "id": 355,
+   "id": 314,
    "title": "video-icon-8035",
    "filePath": "content/images/evidence/graphics/video-icon-8035.webp",
    "fileType": "image",
@@ -4991,7 +4417,7 @@
    "sha256": "e02a0b52664aaaca749a5dbe8ad7caa2719466dc2587ad65c69df49103a34ada"
   },
   {
-   "id": 356,
+   "id": 315,
    "title": "Which police officer had that in there car",
    "filePath": "content/images/evidence/graphics/Which police officer had that in there car.webp",
    "fileType": "image",
@@ -5005,7 +4431,7 @@
    "sha256": "c601e7843a65ecf4a86e78789bd28bf1558be79b4c730f74aa80ca655e8ebc7d"
   },
   {
-   "id": 357,
+   "id": 316,
    "title": "wdwhts",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts.webp",
    "fileType": "image",
@@ -5019,7 +4445,7 @@
    "sha256": "8b08d56f63f3e5235d593d5d2252f60c9a4696639fdbb99ab8c8095a5227bc2e"
   },
   {
-   "id": 358,
+   "id": 317,
    "title": "wdwhts1",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts1.webp",
    "fileType": "image",
@@ -5033,7 +4459,7 @@
    "sha256": "5517006ad96297473dbc6abc7be585efee14f8ff51436da2bf176d1db51553bf"
   },
   {
-   "id": 359,
+   "id": 318,
    "title": "wdwhts10",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts10.webp",
    "fileType": "image",
@@ -5047,7 +4473,7 @@
    "sha256": "fcf9a68f956f0510d6d84d722cfc0450cfa8eedcc372dfa5ac90428a548b5ddd"
   },
   {
-   "id": 360,
+   "id": 319,
    "title": "wdwhts11",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts11.webp",
    "fileType": "image",
@@ -5061,7 +4487,7 @@
    "sha256": "c92d68aa080937b640ca069be9939f1f27bb8fe75a4b3e9b187192cd99bcf345"
   },
   {
-   "id": 361,
+   "id": 320,
    "title": "wdwhts12",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts12.webp",
    "fileType": "image",
@@ -5075,7 +4501,7 @@
    "sha256": "c416096910615c8e976a5a47537411136f561a6bfd0e20532fcc0169d665ac03"
   },
   {
-   "id": 362,
+   "id": 321,
    "title": "wdwhts13",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts13.webp",
    "fileType": "image",
@@ -5089,7 +4515,7 @@
    "sha256": "7cc3ac31f67a9c215cd977a9c6a2b8bc5afb2b1a417b671424cd756302e61fad"
   },
   {
-   "id": 363,
+   "id": 322,
    "title": "wdwhts14",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts14.webp",
    "fileType": "image",
@@ -5103,7 +4529,7 @@
    "sha256": "c533ee14bb5a21e7e3af5f4217c867af1dd9eae24a015a8c9ee3f0c3af114269"
   },
   {
-   "id": 364,
+   "id": 323,
    "title": "wdwhts2",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts2.webp",
    "fileType": "image",
@@ -5117,7 +4543,7 @@
    "sha256": "9026929f5fe56e61b97302d3d3010da63769f6f074e2b6936e2c02c87dfadc54"
   },
   {
-   "id": 365,
+   "id": 324,
    "title": "wdwhts3",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts3.webp",
    "fileType": "image",
@@ -5131,7 +4557,7 @@
    "sha256": "a32d7a9a2c68db93db44c28077f9cbf3f3457b477be35087dda191a10af0f6e1"
   },
   {
-   "id": 366,
+   "id": 325,
    "title": "wdwhts4",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts4.webp",
    "fileType": "image",
@@ -5145,7 +4571,7 @@
    "sha256": "cc77a38c7cdc08073ab9b459eb6a7a50ba28bcc697482d59da0ee3cbb6312390"
   },
   {
-   "id": 367,
+   "id": 326,
    "title": "wdwhts5",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts5.webp",
    "fileType": "image",
@@ -5159,7 +4585,7 @@
    "sha256": "11eb1ebc163a1001edd6c0ed0ccc7763f8db3b916cc5af3f8fe7d54b2faa3408"
   },
   {
-   "id": 368,
+   "id": 327,
    "title": "wdwhts6",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts6.webp",
    "fileType": "image",
@@ -5173,7 +4599,7 @@
    "sha256": "ec86dcc1e2d444cd856617a6d4f5edaf77d39af62d76c9784cf8a3cc5d95a1ca"
   },
   {
-   "id": 369,
+   "id": 328,
    "title": "wdwhts7",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts7.webp",
    "fileType": "image",
@@ -5187,7 +4613,7 @@
    "sha256": "a13c099aefab2a383447b41b60d4e4bbbb4bc819709b2a371b8ec06244af4c54"
   },
   {
-   "id": 370,
+   "id": 329,
    "title": "wdwhts8",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts8.webp",
    "fileType": "image",
@@ -5201,7 +4627,7 @@
    "sha256": "32e1c83a12202c5739344eb0acdc8bccc470d3d46355fca979dc83157d061c9f"
   },
   {
-   "id": 371,
+   "id": 330,
    "title": "wdwhts9",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts9.webp",
    "fileType": "image",
@@ -5215,7 +4641,7 @@
    "sha256": "04e86a4099892fd25cf9cda4bc8669813e681855f940c514c3c3e2826038314c"
   },
   {
-   "id": 372,
+   "id": 331,
    "title": "Witness grid",
    "filePath": "content/images/evidence/graphics/Witness_grid.webp",
    "fileType": "image",
@@ -5229,7 +4655,7 @@
    "sha256": "402f9f6c72a2d285b50da239842c3553c63de7fd308f2b0a995c36cd90d6f6c6"
   },
   {
-   "id": 373,
+   "id": 332,
    "title": "evidence mindmap",
    "filePath": "content/images/evidence/mindmaps/evidence_mindmap.webp",
    "fileType": "image",
@@ -5243,7 +4669,7 @@
    "sha256": "939ea9ca196d8a065048be55912c82c96c5ece73b9e83bcec1f08782fb9223c5"
   },
   {
-   "id": 374,
+   "id": 333,
    "title": "Info BrokenSystem",
    "filePath": "content/images/evidence/mindmaps/Info_BrokenSystem.webp",
    "fileType": "image",
@@ -5257,7 +4683,7 @@
    "sha256": "87afa71eb5ed41ca7ff91c436b2e0320bfa282e48cf3eb4bb2f50811caf2017c"
   },
   {
-   "id": 375,
+   "id": 334,
    "title": "Lauren Deal Escape Narrative",
    "filePath": "content/images/evidence/mindmaps/Lauren Deal Escape Narrative.webp",
    "fileType": "image",
@@ -5271,7 +4697,7 @@
    "sha256": "2bddd3179b065e50c305cd1a9f048a4ad0cab03dd7e67e880b8ff800bda7c338"
   },
   {
-   "id": 376,
+   "id": 335,
    "title": "Transmittal Cover Letter",
    "filePath": "documents/00_Transmittal_Cover_Letter.docx",
    "fileType": "document",
@@ -5285,7 +4711,7 @@
    "sha256": "daf6662b824e66107323c19ed8ea8cc8a17eb7616f0ad744d6693b4c702e4ba3"
   },
   {
-   "id": 377,
+   "id": 336,
    "title": "Comprehensive Administrative Standards Complaint",
    "filePath": "documents/01_Comprehensive_Administrative_Standards_Complaint.docx",
    "fileType": "document",
@@ -5299,7 +4725,7 @@
    "sha256": "4425d4b345515343ee79b89f28b9073369af6723a56383a4882f0d8d4077d33f"
   },
   {
-   "id": 378,
+   "id": 337,
    "title": "Appendix G Regulatory Authority Crosswalk",
    "filePath": "documents/02_Appendix_G_Regulatory_Authority_Crosswalk.docx",
    "fileType": "document",
@@ -5313,7 +4739,7 @@
    "sha256": "fcdb74bdb7b0762beee2fa2924cfb49e7aa536da92a30da38c521361e0c6be9b"
   },
   {
-   "id": 379,
+   "id": 338,
    "title": "Case Evidence Inconsistencies Notes",
    "filePath": "documents/Case_Evidence_Inconsistencies_Notes_20260201_195025.docx",
    "fileType": "document",
@@ -5327,7 +4753,7 @@
    "sha256": "b63002bcf4df9106ecde6991f55aecf92c93193e77aba38ad6e3a230b03799df"
   },
   {
-   "id": 380,
+   "id": 339,
    "title": ".$For web.drawio.xml",
    "filePath": "documents/connections/.$For_web.drawio.xml.bkp",
    "fileType": "document",
@@ -5341,7 +4767,7 @@
    "sha256": "a7ac1913ba7538a734b08dc38396d94fcb44e0277e45d3c92cfed22a4f878aa0"
   },
   {
-   "id": 381,
+   "id": 340,
    "title": "Connections 20250719 233212.drawio",
    "filePath": "documents/connections/Connections_20250719_233212.drawio.xml",
    "fileType": "document",
@@ -5355,7 +4781,7 @@
    "sha256": "90f769aa6d01d2ff797b4192dc4d558a1e1904a224575c755030f4ee7a0db8cf"
   },
   {
-   "id": 382,
+   "id": 341,
    "title": "deconstructing-the-lauren-deal-narrative-2026-03-29T05-14",
    "filePath": "documents/connections/deconstructing-the-lauren-deal-narrative-2026-03-29T05-14.xml",
    "fileType": "document",
@@ -5369,7 +4795,7 @@
    "sha256": "646ab31138d7fdbaf1dd659c60ddce708338b736b600dc2fec78b5e762540cf8"
   },
   {
-   "id": 383,
+   "id": 342,
    "title": "False Story.drawio",
    "filePath": "documents/connections/False Story.drawio.xml",
    "fileType": "document",
@@ -5383,7 +4809,7 @@
    "sha256": "1761e58ba5106ea3ab001e757eaecd4282a19ea0f4672eacd0bd547f0a0c6c68"
   },
   {
-   "id": 384,
+   "id": 343,
    "title": "False Story.web.drawio",
    "filePath": "documents/connections/False Story.web.drawio.xml",
    "fileType": "document",
@@ -5397,7 +4823,7 @@
    "sha256": "127fa22b7a77b13456d5072a36bb60058a0f3fbb804a4e2a6c87793de00ef354"
   },
   {
-   "id": 385,
+   "id": 344,
    "title": "For web.drawio",
    "filePath": "documents/connections/For_web.drawio.xml",
    "fileType": "document",
@@ -5411,7 +4837,7 @@
    "sha256": "11ea6953f65417bc47571eb2ac8319cd3e6c3fcd82559d7cb3e784e10f5cd78f"
   },
   {
-   "id": 386,
+   "id": 345,
    "title": "Court Transcript",
    "filePath": "documents/Court Transcript.docx",
    "fileType": "document",
@@ -5425,7 +4851,7 @@
    "sha256": "ca7518f2b5b5822ad8e3c4c233fcfe1db10f69c6152532e6cccc2185ceb47e03"
   },
   {
-   "id": 387,
+   "id": 346,
    "title": "contradictions",
    "filePath": "documents/data/contradictions.json",
    "fileType": "document",
@@ -5435,11 +4861,11 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 149947,
-   "sha256": "5bc2f8622111703acdbb6860e39978a90f3037224c198771692f0cc2f9a656c7"
+   "sizeBytes": 154938,
+   "sha256": "c64fe77bbcdd17b8418d3d9a483054068f8f431ee507575e6861c745e3829147"
   },
   {
-   "id": 388,
+   "id": 347,
    "title": "timeline",
    "filePath": "documents/data/timeline.json",
    "fileType": "document",
@@ -5449,11 +4875,11 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 31146,
-   "sha256": "332c58e0f4b0ff192fca05520e0a390642bf3faa80d95b2a941c135263a84f24"
+   "sizeBytes": 31099,
+   "sha256": "36a5199b1e7a47212229f7728b585f59cd11b73e539a747e26841022c01fb5a9"
   },
   {
-   "id": 389,
+   "id": 348,
    "title": "Exhibit A 12 NCAC 09A .0204",
    "filePath": "documents/Exhibits/Exhibit A 12 NCAC 09A .0204.pdf",
    "fileType": "pdf",
@@ -5467,7 +4893,7 @@
    "sha256": "f6377600fe659bb67ce7d2a8ae1676dea9f334c9bd69387dbe43470f8a25b6ad"
   },
   {
-   "id": 390,
+   "id": 349,
    "title": "Exhibit B Magistrates Order",
    "filePath": "documents/Exhibits/Exhibit B Magistrates Order.pdf",
    "fileType": "pdf",
@@ -5481,7 +4907,7 @@
    "sha256": "42b3924ce9ff76596faf0bd62959d126c720102c8bc22f08331d2a1db0d6cad0"
   },
   {
-   "id": 391,
+   "id": 350,
    "title": "Exhibit C Supplemental Analysis of Arrest Sequence",
    "filePath": "documents/Exhibits/Exhibit C Supplemental Analysis of Arrest Sequence.pdf",
    "fileType": "pdf",
@@ -5495,7 +4921,7 @@
    "sha256": "33f9c52e20aabb58d3ec50625fe97107001131e8cfe46a8440379b6139516751"
   },
   {
-   "id": 392,
+   "id": 351,
    "title": "Exhibit D Trial Transcript - State v. Allen",
    "filePath": "documents/Exhibits/Exhibit D Trial Transcript - State v. Allen.pdf",
    "fileType": "pdf",
@@ -5509,7 +4935,7 @@
    "sha256": "7ea534956dbe810e05f405b0d99ea5b07b67b90aad286971cccf1787ef6bafaf"
   },
   {
-   "id": 393,
+   "id": 352,
    "title": "Exhibit E Discovery - Ben Allen Detective Papers.",
    "filePath": "documents/Exhibits/Exhibit E Discovery - Ben Allen Detective Papers..pdf",
    "fileType": "pdf",
@@ -5523,7 +4949,7 @@
    "sha256": "e49df69a166d09bbc981d3c20a862144a2d54e49d29f815c3271f8854abd6543"
   },
   {
-   "id": 394,
+   "id": 353,
    "title": "Exhibit F Lee County Sheriffs Office Policies 2",
    "filePath": "documents/Exhibits/Exhibit F Lee County Sheriffs Office Policies 2.pdf",
    "fileType": "pdf",
@@ -5537,7 +4963,7 @@
    "sha256": "53d009fdc370185054eb9cd147a2d93b4a350787819e1fd2d753b49bc0923aa5"
   },
   {
-   "id": 395,
+   "id": 354,
    "title": "Exhibit G Lee County Sheriffs Office Policies 1",
    "filePath": "documents/Exhibits/Exhibit G Lee County Sheriffs Office Policies 1.pdf",
    "fileType": "pdf",
@@ -5551,7 +4977,7 @@
    "sha256": "3ace03f28bc23e009be8d875e616114ff0f8d070c27233ea8f81af7aff1a053a"
   },
   {
-   "id": 396,
+   "id": 355,
    "title": "Exhibit H Carmen Love Freeman Interview",
    "filePath": "documents/Exhibits/Exhibit H Carmen Love Freeman Interview.pdf",
    "fileType": "pdf",
@@ -5565,7 +4991,7 @@
    "sha256": "07c31f3f4c376910ea4ffa10358a1ed9cc325e5261610708a10be73f7b64af6b"
   },
   {
-   "id": 397,
+   "id": 356,
    "title": "Exhibit Inventory List",
    "filePath": "documents/Exhibits/Exhibit Inventory List.pdf",
    "fileType": "pdf",
@@ -5579,7 +5005,7 @@
    "sha256": "ee44c6c916adedca761837ec72deeba77097b250f1ee2ef6f880d71bd125cf67"
   },
   {
-   "id": 398,
+   "id": 357,
    "title": "Brief Administrative Standards Investigation Major Donnie Steve Freem",
    "filePath": "documents/Exhibits/Media/Media_Packet/Brief_Administrative_Standards_Investigation_Major_Donnie_Steve_Freem.pdf",
    "fileType": "pdf",
@@ -5593,7 +5019,7 @@
    "sha256": "e74fbd66cd49e9d9620587d41c64e0212057c97cbe2d5c2e9dc38496054f3d79"
   },
   {
-   "id": 399,
+   "id": 358,
    "title": "Integrity in Uniform The Case for a Standards Investigation",
    "filePath": "documents/Exhibits/Media/Media_Packet/Integrity in Uniform The Case for a Standards Investigation.pdf",
    "fileType": "pdf",
@@ -5607,7 +5033,7 @@
    "sha256": "ab5cafd86b5f7e7ecff67e7d988491f37d22db620d5e3850f54e8cd71fecb620"
   },
   {
-   "id": 400,
+   "id": 359,
    "title": "Integrity on Trial",
    "filePath": "documents/Exhibits/Media/Media_Packet/Integrity on Trial.pdf",
    "fileType": "pdf",
@@ -5621,7 +5047,7 @@
    "sha256": "7cc468da252b662d18b4e4466d5ce98396125a2bd179ccd57eaedd7e508a9285"
   },
   {
-   "id": 401,
+   "id": 360,
    "title": "Mindmap Administrative Standards Complaint Donnie Steve Freeman",
    "filePath": "documents/Exhibits/Media/Media_Packet/Mindmap_Administrative_Standards_Complaint_Donnie_Steve_Freeman.pdf",
    "fileType": "pdf",
@@ -5635,7 +5061,7 @@
    "sha256": "fa12f0adcc5abdd3700bd4e215a7082dd254e0dcac1c05ed3fcecee21ba9a4da"
   },
   {
-   "id": 402,
+   "id": 361,
    "title": "Mindmap Standards Basic",
    "filePath": "documents/Exhibits/Media/Media_Packet/Mindmap_Standards_Basic.pdf",
    "fileType": "pdf",
@@ -5649,7 +5075,7 @@
    "sha256": "fe6adf5aa56a8e3f04e18aee612c9e2a2b32413eaa7898cff9232aeb399cd69e"
   },
   {
-   "id": 403,
+   "id": 362,
    "title": "Secret Family Ties and Fabricated Police Evidence",
    "filePath": "documents/Exhibits/Media/Secret_Family_Ties_and_Fabricated_Police_Evidence.mp3",
    "fileType": "audio",
@@ -5663,7 +5089,7 @@
    "sha256": "1002316646389a7b6053c0455757b4b1214e72bd0c5a1a0139f2538f9a747138"
   },
   {
-   "id": 404,
+   "id": 363,
    "title": "Gmail - Public Records Request",
    "filePath": "documents/Gmail - Public Records Request.pdf",
    "fileType": "pdf",
@@ -5677,7 +5103,7 @@
    "sha256": "987a9618e08482ebf77bb404abf9f9e04fbfb5abb083b4a930c95f83d4411050"
   },
   {
-   "id": 405,
+   "id": 364,
    "title": "Happel Coaching No Remedial Action Updated",
    "filePath": "documents/Happel_Coaching_No_Remedial_Action_Updated.docx",
    "fileType": "document",
@@ -5691,7 +5117,7 @@
    "sha256": "238cc484b09b6d1e683a0a4940cf4ebd8608eb6696d66d8b66c9e059ef2f8afa"
   },
   {
-   "id": 406,
+   "id": 365,
    "title": "Institutional Familiarity To Judgeshop",
    "filePath": "documents/Institutional Familiarity To Judgeshop.docx",
    "fileType": "document",
@@ -5705,7 +5131,7 @@
    "sha256": "d85140edec5d8f43f76f41478d7c64c3d7fae80c28706c355d5ef933500dd793"
   },
   {
-   "id": 407,
+   "id": 366,
    "title": "Integrated Narrative Findings - Reformatted and Polished",
    "filePath": "documents/Integrated Narrative Findings - Reformatted and Polished.pdf",
    "fileType": "pdf",
@@ -5719,7 +5145,7 @@
    "sha256": "568276cea520b098757147fd47e3b125186fd712ee6939f422f6d3f31a1729c5"
   },
   {
-   "id": 408,
+   "id": 367,
    "title": "Integrated Narrative Findings",
    "filePath": "documents/Integrated Narrative Findings.docx",
    "fileType": "document",
@@ -5733,7 +5159,7 @@
    "sha256": "cdf333e3b3ccbffade8d314db84c2bd02704cd48d92b1e862d8b73fa83a18bac"
   },
   {
-   "id": 409,
+   "id": 368,
    "title": "deconstructing-the-lauren-deal-narrative-2026-03-29T05-13",
    "filePath": "documents/mindmaps/deconstructing-the-lauren-deal-narrative-2026-03-29T05-13.mm",
    "fileType": "document",
@@ -5747,7 +5173,7 @@
    "sha256": "1875f0634d50dfaebdb8affba4fce88d90ecc304857ebdf881d07666286406a2"
   },
   {
-   "id": 410,
+   "id": 369,
    "title": "deconstructing-the-lauren-deal-narrative-2026-03-29T05-14",
    "filePath": "documents/mindmaps/deconstructing-the-lauren-deal-narrative-2026-03-29T05-14.opml",
    "fileType": "document",
@@ -5761,7 +5187,7 @@
    "sha256": "e513e1acfe10bfd07897d61c713cff3014ff52977512344d4b610f97d570e5db"
   },
   {
-   "id": 411,
+   "id": 370,
    "title": "deconstructing-the-lauren-deal-narrative-2026-03-30T21-57",
    "filePath": "documents/mindmaps/deconstructing-the-lauren-deal-narrative-2026-03-30T21-57.mm",
    "fileType": "document",
@@ -5775,7 +5201,7 @@
    "sha256": "6c1c2b5da4eca2cabbc3d64d82b6effc412e7abde9361851788ebc90d35e600c"
   },
   {
-   "id": 412,
+   "id": 371,
    "title": "evidence-network-analysis-benjamin-allen-2026-04-05T23-13",
    "filePath": "documents/mindmaps/evidence-network-analysis-benjamin-allen-2026-04-05T23-13.mm",
    "fileType": "document",
@@ -5789,7 +5215,7 @@
    "sha256": "fa16639d63366c043563f7df80d9433b51c42dedbd52c502278f31133471af00"
   },
   {
-   "id": 413,
+   "id": 372,
    "title": "evidence-network-analysis-benjamin-allen-2026-04-11T07-53",
    "filePath": "documents/mindmaps/evidence-network-analysis-benjamin-allen-2026-04-11T07-53.opml",
    "fileType": "document",
@@ -5803,7 +5229,7 @@
    "sha256": "805939b8eecc5c8f30b3432a3189cb075143a267095180ef410340dd72ea8325"
   },
   {
-   "id": 414,
+   "id": 373,
    "title": "state-vs-ben-allen-perjury-and-misconduc-2026-03-30T21-59",
    "filePath": "documents/mindmaps/state-vs-ben-allen-perjury-and-misconduc-2026-03-30T21-59.mm",
    "fileType": "document",
@@ -5817,7 +5243,7 @@
    "sha256": "441372f026de61ab6b125fcf581b5cd63d2c94055697dab9cd7b3b8cf4445123"
   },
   {
-   "id": 415,
+   "id": 374,
    "title": "No Remedial Action After Alleged ADA Witness Coaching",
    "filePath": "documents/No Remedial Action After Alleged ADA Witness Coaching.docx",
    "fileType": "document",
@@ -5831,7 +5257,7 @@
    "sha256": "012fec9a618574e252fe8bf427179d299553e3c5d4ef4bbe84a477fed1eab0e8"
   },
   {
-   "id": 416,
+   "id": 375,
    "title": "No Remedial Action After Alleged ADA Witness Coaching",
    "filePath": "documents/No Remedial Action After Alleged ADA Witness Coaching.pdf",
    "fileType": "pdf",
@@ -5845,7 +5271,7 @@
    "sha256": "1dda986db24e3d489cba8635ffa684427c418dc0b2542ab2de13f0273d42c65d"
   },
   {
-   "id": 417,
+   "id": 376,
    "title": "Public Records Request",
    "filePath": "documents/Public_Records_Request.pdf",
    "fileType": "pdf",
@@ -5859,7 +5285,7 @@
    "sha256": "57e97c48606e7a9ce549529bd982b0bd117123324bdeec61f4b795ff4efb1bbc"
   },
   {
-   "id": 418,
+   "id": 377,
    "title": "Writeup From Freeman",
    "filePath": "documents/Writeup From Freeman_20260201_194033.pdf",
    "fileType": "pdf",
@@ -5873,7 +5299,7 @@
    "sha256": "8993f22c8a89a64c923627d7ba293a4ecb6854157d24eaf176fbb71aa2cc5275"
   },
   {
-   "id": 419,
+   "id": 378,
    "title": "A Arrival",
    "filePath": "video/A Arrival.mp4",
    "fileType": "video",
@@ -5887,7 +5313,7 @@
    "sha256": "b74182aa7dc19968511a7c91e87b5aed5b79425b6e5eb54f27186cc0b825ce5a"
   },
   {
-   "id": 420,
+   "id": 379,
    "title": "B Peter West Leaves Alone Compressed",
    "filePath": "video/B Peter West Leaves Alone Compressed.mp4",
    "fileType": "video",
@@ -5901,7 +5327,7 @@
    "sha256": "e6d360969a340c029d0b9b2b9281c1dbf2bc46470d18cf140182e2aaa7689fe9"
   },
   {
-   "id": 421,
+   "id": 380,
    "title": "C Carmen And James Leave Compressed",
    "filePath": "video/C Carmen And James Leave Compressed.mp4",
    "fileType": "video",
@@ -5915,7 +5341,7 @@
    "sha256": "b7ad4022d23051570a7f844a1123d12ad5a137a50c4bc4fe5ee13fba7c66538d"
   },
   {
-   "id": 422,
+   "id": 381,
    "title": "D Deal Makes Contact With Allen Compressed",
    "filePath": "video/D Deal Makes Contact With Allen Compressed.mp4",
    "fileType": "video",
@@ -5929,7 +5355,7 @@
    "sha256": "330bcbd19f3f7038e8899a3b98e7a5f2b9f6284e8ead56616df6a1d513bf2b0a"
   },
   {
-   "id": 423,
+   "id": 382,
    "title": "E Allen Leaves Deal After Introduction And She Tracks Him Back Down Compressed",
    "filePath": "video/E Allen Leaves Deal After Introduction And She Tracks Him Back Down Compressed.mp4",
    "fileType": "video",
@@ -5943,7 +5369,7 @@
    "sha256": "0b769a4fbf567c3bd34d99cb57b36b9cd7cb04ded2dd344d178f780ef895d092"
   },
   {
-   "id": 424,
+   "id": 383,
    "title": "F Deal Gives Keys To Demarco Compressed",
    "filePath": "video/F Deal Gives Keys To Demarco Compressed.mp4",
    "fileType": "video",
@@ -5957,7 +5383,7 @@
    "sha256": "d69bbb580c76c208aa22957dfec31264293caed870135063b0083e0e90351a17"
   },
   {
-   "id": 425,
+   "id": 384,
    "title": "G Deal Gets Upset That Allen Told Her She Cant Just Invite Herself To His House And Yells At Him Compressed",
    "filePath": "video/G Deal Gets Upset That Allen Told Her She Cant Just Invite Herself To His House And Yells At Him Compressed.mp4",
    "fileType": "video",
@@ -5971,7 +5397,7 @@
    "sha256": "667f13ba00e7609d717e48f928702fc27b2034548f18f520d90544e526689307"
   },
   {
-   "id": 426,
+   "id": 385,
    "title": "H Still Arguing Lauren Hugs Allen And He Keeps His Hands In His Pocket Compressed",
    "filePath": "video/H Still Arguing Lauren Hugs Allen And He Keeps His Hands In His Pocket Compressed.mp4",
    "fileType": "video",
@@ -5985,7 +5411,7 @@
    "sha256": "86192c73385e5c64aac9c899a888b4d6857ec7c34fb9d25301442d2a5d940cf4"
   },
   {
-   "id": 427,
+   "id": 386,
    "title": "I Laurens Behavior That Eventually Leads To Them Leaving The Bar Area Also But She Follows Them Compressed",
    "filePath": "video/I Laurens Behavior That Eventually Leads To Them Leaving The Bar Area Also But She Follows Them Compressed.mp4",
    "fileType": "video",
@@ -5999,7 +5425,7 @@
    "sha256": "a1325d4ff2ccd53ed7d162b72b91de5a295152ace5106596e635f305cd91cc14"
   },
   {
-   "id": 428,
+   "id": 387,
    "title": "K Lauren Follows Them To The Far Table So Allen Goes Back To The Bar Area Makes Joke About Lauren Not Going Away Compressed",
    "filePath": "video/K Lauren Follows Them To The Far Table So Allen Goes Back To The Bar Area Makes Joke About Lauren Not Going Away Compressed.mp4",
    "fileType": "video",
@@ -6013,7 +5439,7 @@
    "sha256": "bc039d352eddf31aed86161878e448824a227e28036a938b82245249653cbd1d"
   },
   {
-   "id": 429,
+   "id": 388,
    "title": "L First Time Lauren Comes To Allen To Bother Him Compressed",
    "filePath": "video/L First Time Lauren Comes To Allen To Bother Him Compressed.mp4",
    "fileType": "video",
@@ -6027,7 +5453,7 @@
    "sha256": "b1464d76fc11702c6051d006c5ccdde77fccde3904ebf40c202596f602a06856"
   },
   {
-   "id": 430,
+   "id": 389,
    "title": "Changing Stories Compressed",
    "filePath": "video/long_view/Changing Stories Compressed.mp4",
    "fileType": "video",
@@ -6041,7 +5467,7 @@
    "sha256": "601d0eb286d9ea486691d641eed456f1165f5d415c061205cedbd75178c79496"
   },
   {
-   "id": 431,
+   "id": 390,
    "title": "Lady Justice Raising",
    "filePath": "video/long_view/Lady Justice Raising.mp4",
    "fileType": "video",
@@ -6055,7 +5481,7 @@
    "sha256": "72e1a0cc34531d8746599c0571a90ed23f1a0a608fcfc139fc97105411ffe77a"
   },
   {
-   "id": 432,
+   "id": 391,
    "title": "Lady Justice Slow",
    "filePath": "video/long_view/Lady Justice Slow.mp4",
    "fileType": "video",
@@ -6069,7 +5495,7 @@
    "sha256": "0f2541b2edefd363e5b524f751055a1290ea67b9ad58fe0de2f93327644c36a0"
   },
   {
-   "id": 433,
+   "id": 392,
    "title": "Subscription service",
    "filePath": "video/long_view/Subscription service.mp4",
    "fileType": "video",
@@ -6083,7 +5509,7 @@
    "sha256": "c7ee6179011c9477a8149f21f2441374f2f7835c6199267440c1500f142c83e1"
   },
   {
-   "id": 434,
+   "id": 393,
    "title": "Subscription Service 1",
    "filePath": "video/long_view/Subscription Service_1.mkv",
    "fileType": "video",
@@ -6097,7 +5523,7 @@
    "sha256": "2ab8abaa1591c5aba77cdd49be98c05ec9f2c7436b8b87bf75bdd48c8b8eac17"
   },
   {
-   "id": 435,
+   "id": 394,
    "title": "Where are the briars",
    "filePath": "video/long_view/Where are the briars.mp4",
    "fileType": "video",
@@ -6111,7 +5537,7 @@
    "sha256": "37c72d916ffa868d3a8d89fcbf281677e11cdedd5daf0a828e11d7da264a5cd5"
   },
   {
-   "id": 436,
+   "id": 395,
    "title": "M Second Time Lauren Bounces Off Chair Compressed",
    "filePath": "video/M Second Time Lauren Bounces Off Chair Compressed.mp4",
    "fileType": "video",
@@ -6125,7 +5551,7 @@
    "sha256": "9caffa0158208c0826de7f5affaf5ca03e66859f348f162e5fa20d8f8c734a8f"
   },
   {
-   "id": 437,
+   "id": 396,
    "title": "O Deals Last Blowup Every Stares At Her Compressed",
    "filePath": "video/O Deals Last Blowup Every Stares At Her Compressed.mp4",
    "fileType": "video",
@@ -6139,7 +5565,7 @@
    "sha256": "bba49216fd8b727e95a1bf3e4d5e6c922b82ee224ba3d04f1255f00b79b3b7f5"
   },
   {
-   "id": 438,
+   "id": 397,
    "title": "P Allen Goes To To Check On Drunk Lauren",
    "filePath": "video/P Allen Goes To To Check On Drunk Lauren.mp4",
    "fileType": "video",
@@ -6153,7 +5579,7 @@
    "sha256": "7f3a71603bfee6b3275ae029b9e4eae51a3dcaeac26ce27e5198bb0d742fe1c8"
   },
   {
-   "id": 439,
+   "id": 398,
    "title": "Q We All Exit At Different Times",
    "filePath": "video/Q We All Exit At Different Times.mp4",
    "fileType": "video",
@@ -6167,7 +5593,7 @@
    "sha256": "b49498fbab02345edf664875a85c47a498d868536ef2a5c4aca79c27b857355f"
   },
   {
-   "id": 440,
+   "id": 399,
    "title": "grok-video-0c28ce4a-869c-4b82-949e-7779bb551281",
    "filePath": "video/various/grok-video-0c28ce4a-869c-4b82-949e-7779bb551281.mp4",
    "fileType": "video",
@@ -6181,7 +5607,7 @@
    "sha256": "ef931dcbcdc3f528c085ffdde8d34d77fe70150cb6e9c0067d166c58593c60d2"
   },
   {
-   "id": 441,
+   "id": 400,
    "title": "Lies In Lee County 20250719 234514(1)",
    "filePath": "video/various/Lies In Lee County 20250719 234514(1).mp4",
    "fileType": "video",

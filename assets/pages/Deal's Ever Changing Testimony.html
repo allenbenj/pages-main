@@ -326,6 +326,32 @@
             margin-top: 0;
             color: var(--light);
         }
+        .still-review-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 7px;
+            padding: 2px 7px;
+            border: 1px solid rgba(166, 206, 210, 0.24);
+            border-radius: 999px;
+            color: var(--accent-text);
+            background: rgba(166, 206, 210, 0.05);
+            font: 600 0.72rem/1.45 "Manrope", sans-serif;
+            vertical-align: 0.08em;
+            cursor: zoom-in;
+            opacity: 0.82;
+        }
+        .still-review-link:hover,
+        .still-review-link:focus-visible {
+            border-color: rgba(166, 206, 210, 0.52);
+            background: rgba(166, 206, 210, 0.12);
+            opacity: 1;
+        }
+        .still-review-link svg {
+            width: 13px;
+            height: 13px;
+            flex: 0 0 auto;
+        }
         .record-status {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -473,10 +499,60 @@
 a usable story while the contemporaneous and objective evidence pointed in a different direction.
         </div>
 <p>
-             A direct contradiction can be stated firmly if the transcript and police interviews support both versions.
-             An omission must be described as an omission. Unusual conduct is relevant to weight but is not proof of
-             fabrication. A biomechanical argument can be powerful, but it should be demonstrated rather than asserted as
-             scientific fact without expert or visual support, even when it is obvious, as it is in this case.
+            A direct contradiction can be stated firmly if the transcript and police interviews support both versions.
+            An omission must be described as an omission. Unusual conduct is relevant to weight but is not proof of
+            fabrication. A biomechanical argument can be powerful, but it should be demonstrated rather than asserted as
+            scientific fact without expert or visual support, even when it is obvious, as it is in this case.<br><br>
+             Here is an example from the record:<br><br>
+Trial Testimony:<br>             
+Mr. Wunsch: Okay. So you are walking to the front door, and your testimony was Ben came with you? <br>
+
+Lauren Deal: Yes. <br><br>
+
+
+What Deal told police initially before the ADA and Freeman edited her story:<br>
+
+Officer Haines Interview:<br>
+Lauren Deal: “I told Ben I needed to use the bathroom. So he takes me inside.”<br><br>
+
+Freeman Interview:<br>
+Lauren Deal: “"So we get to his house, and we all get out of the truck and the two boys, Joseph and Steve, yeah. Joseph, Steve started getting firewood to put onto the fire, and I looked at Ben and I told him that I had to pee, so he walked me inside."<br>
+
+<br>
+<strong>The first evidence that the story would change is in Freeman's official reports:</strong><br><br>
+
+Freeman Affidavit:<br>
+“Upon arrival, they started a fire, and after several minutes, Mrs. Deal stated she needed to use the restroom and went inside. She stated that she was familiar with the residence because she had been there before with his ex-wife. When she went inside she stated that Ben walked inside with her and followed her to the bathroom.”<br><br>
+
+“Upon arrival at the house, they were sitting around the fire, The victim stated that they requested to use the restroom and was followed in the residence of 94 Beacon Circle by the owner Ben Allen.”
+<br><br>
+Those characterizations had not appeared any where in the record until Freeman entered them into it. 
+
+<br><br>
+The ADA avoids the arrival sequence of events entirely. She was aware of the inconsistent nature of the statements:<br><br>
+
+MS. BARTHOLOMEW: Now, you had been in this house several times before. Can you sort of just describe just very generally the layout of the house for the jury?<br>
+LAUREN DEAL: You walk up the stairs into the front door. There is a living room that you walk into. Their bedroom door --the living room is here, and the bedroom door is here. There is a set of stairs that go down. There is a banister around the stairs. There is a bathroom behind the banister of the stairs. To the right, there is a kitchen, and then beside of that is a dining room. When you go downstairs, there is some bedrooms, and then at the very end of the hallway is a bathroom.<br>
+MS. BARTHOLOMEW: Now, had you ever spent the night at that residence?<br>
+LAUREN DEAL: Yes, in the downstairs bedroom.<br>
+MS. BARTHOLOMEW: Ever use the bathroom in that residence before?<br>
+LAUREN DEAL: Yes, in the downstairs and the guest bathroom upstairs.<br>
+----------------<br>
+
+MS. BARTHOLOMEW: Thank you, your Honor. Ms. Deal, you were telling the jury, what entrance did you use to go inside of the defendant's residence?<br>
+LAUREN DEAL: The front door.<br>
+MS. BARTHOLOMEW: And what happened when you went inside of the residence?<br>
+LAUREN DEAL: He knew outside that I had to use the bathroom, and as we went into the house, he said, I don't have any toilet paper in my guest bathroom, so come use mine.<br>
+MS. BARTHOLOMEW: And earlier you had stated that you had used the guest bathroom in the house before, or let me just ask, where is the guest bathroom located?<br>
+LAUREN DEAL: There is two. There is one behind the bannister of the stairs, and then one downstairs at the end of the hallway.<br>
+MS. BARTHOLOMEW: Okay. So after he said that there was no toilet paper in the guest bathroom, what happened?<br>
+LAUREN DEAL: I followed him into his room because he has a bathroom inside of his bedroom.<br>
+MS. BARTHOLOMEW: And where is that bathroom located? You said you had to go into his bedroom to get to it. So is it connected to his room?<br>
+
+------------------<br>
+
+MS. BARTHOLOMEW: Now, up to that point, you had gotten back to his house. You're going to the bathroom. In that interaction, had you had any type of physical contact with the defendant? So when he pushed you onto the bed, how did you fall onto the bed?<br>
+LAUREN DEAL: My back.
         </p>
 </section>
 <section class="apple-card" id="ranked-issues">
@@ -954,9 +1030,9 @@ The following objective and record-based facts, developed elsewhere in the proje
 bears directly on credibility, authentication, and the feasibility of the State’s narrative:<br><br>
 </p>
 <ul>
-  <li><strong>Key exchange video</strong> — Footage shows Deal handing her keys to DeMarco, not to Allen, contradicting the trial claim that she tossed the keys to Allen and declared herself “Ben Allen’s responsibility.”</li>
+  <li><strong>Key exchange video</strong> — Footage shows Deal handing her keys to DeMarco, not to Allen, contradicting the trial claim that she tossed the keys to Allen and declared herself “Ben Allen’s responsibility.” <button aria-label="Review the full-resolution key-exchange still image with testimony overlaid" class="still-review-link" data-modal-image="content/images/site/fullres/keys-to-demarco.webp" title="Optional full-resolution still review; click the opened image to zoom" type="button"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><rect height="16" rx="2" stroke="currentColor" stroke-width="1.7" width="18" x="3" y="4"></rect><circle cx="8.5" cy="9" fill="currentColor" r="1.5"></circle><path d="m5.5 17 4.2-4.1 3.1 2.8 2.6-2.5 3.1 3.8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path></svg><span>Review full-res still · testimony overlaid</span></button></li>
   <li><strong>Departure timeline video</strong> — Carmen Love and James Morrison exit Schooly’s at 12:41 a.m., before Deal approached the Allen group and well before the 2:00 a.m. conversation claimed in the affidavit and elicited at trial.</li>
-  <li><strong>Escape feasibility</strong> — Terrain, distance, Deal’s physical limitations, and moon-illumination data (approximately 75 percent) conflict with the “pitch black” description and the claimed path and duration of the escape.</li>
+  <li><strong>Escape feasibility</strong> — Terrain, distance, Deal’s physical limitations, and moon-illumination data (approximately 75 percent) conflict with the “pitch black” description and the claimed path and duration of the escape. <button aria-label="Review the full-resolution Freeman misconduct still image" class="still-review-link" data-modal-image="content/images/site/fullres/freeman-misconduct.webp" title="Full-resolution still; click the opened image to zoom" type="button"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><rect height="16" rx="2" stroke="currentColor" stroke-width="1.7" width="18" x="3" y="4"></rect><circle cx="8.5" cy="9" fill="currentColor" r="1.5"></circle><path d="m5.5 17 4.2-4.1 3.1 2.8 2.6-2.5 3.1 3.8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path></svg><span>Freeman misconduct · full-res</span></button> <button aria-label="Review the full-resolution property overview still image" class="still-review-link" data-modal-image="content/images/site/fullres/property-overview.webp" title="Full-resolution still; click the opened image to zoom" type="button"><svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><rect height="16" rx="2" stroke="currentColor" stroke-width="1.7" width="18" x="3" y="4"></rect><circle cx="8.5" cy="9" fill="currentColor" r="1.5"></circle><path d="m5.5 17 4.2-4.1 3.1 2.8 2.6-2.5 3.1 3.8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path></svg><span>Property overview · full-res</span></button></li>
   <li><strong>Spatial sequence of the alleged assault</strong> — Continuous one-handed control of both arms above the head, simultaneous removal of tight leggings, and subsequent penetration present an unresolved geometric problem under the constraints the witness herself accepted.</li>
   <li><strong>Contemporaneous recorded interviews</strong> — DeMarco and Happel never mention Carmen, James, Peter, or any invitation; their accounts describe an unwanted intrusion rather than a mutual plan.</li>
 </ul><br>
@@ -1054,8 +1130,8 @@ cause for the arrest was lacking.
 <script src="shared/card-colors.js"></script>
 </div>
 <!-- Image Modal -->
-<div id="imageModal" onclick="closeImageModal()">
-<span class="modal-close" onclick="closeImageModal()">×</span>
+<div id="imageModal">
+<span class="modal-close">×</span>
 <img alt="Full resolution image" decoding="async" id="modalImage" loading="lazy" src=""/>
 <video controls="" id="modalVideo"></video>
 </div>
