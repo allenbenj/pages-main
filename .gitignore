@@ -49,3 +49,9 @@ network_analysis/dist/
 # Local browser verification artifacts
 .playwright-cli/
 output/
+vision/
+
+# Local vision GUI launcher + runtime tag manifests (never publish)
+run_vision_gui.py
+**/vision_manifest.json
+**/vision_previews/

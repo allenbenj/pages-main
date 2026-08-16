@@ -54,7 +54,7 @@
     .person-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 22px;
+      gap: 20px;
       margin-top: 30px;
       align-items: stretch;
     }
@@ -62,40 +62,55 @@
       display: flex;
       flex-direction: column;
       min-height: 100%;
-      padding: 22px;
+      padding: 24px;
       gap: 0;
+      border-radius: 16px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .person-grid > .person-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
     }
     .person-grid > .person-card .card-label {
-      margin-bottom: 10px !important;
+      margin-bottom: 12px !important;
+      letter-spacing: 0.08em;
     }
     .person-grid > .person-card .person-header {
       margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     .person-grid > .person-card .person-heading h4 {
-      margin: 0 0 4px 0;
+      margin: 0 0 6px 0;
       line-height: 1.25;
+      font-size: 1.18rem;
     }
     .person-grid > .person-card .person-role {
       margin: 0;
       font-weight: 600;
-      color: #60a5fa;
-      font-size: 0.95em;
+      color: var(--accent-text);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
     .person-grid > .person-card .person-body {
       flex: 1 1 auto;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .person-grid > .person-card .person-body p {
       margin: 0;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.7;
       font-size: 0.95rem;
+    }
+    .person-grid > .person-card .person-body p strong {
+      color: var(--light);
     }
     .person-grid > .person-card .person-tags {
       margin-top: auto;
-      padding-top: 14px;
+      padding-top: 16px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       flex-wrap: wrap;
@@ -106,31 +121,109 @@
     }
     .person-grid > .person-media {
       grid-column: 1 / -1;
-      margin-top: 8px;
+      margin-top: 10px;
+      padding: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.34);
     }
     .person-grid > .person-media img {
       display: block;
-      width: 50%;
-      max-width: 920px;
+      width: 100%;
+      max-width: 520px;
       margin: 0 auto;
       border-radius: 12px;
+      cursor: zoom-in;
     }
+    /* Intro heading: break the dense wall of text into a scannable lead */
+    #players-overview {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+    .status-investigated,
+    .status-interviewed,
+    .status-protected {
+      display: inline-block;
+      padding: 0 6px;
+      border-radius: 6px;
+    }
+    .status-investigated { color: #f3f7f7; }
+    .status-interviewed { color: var(--accent-text); }
+    .status-protected { color: #f0d071; }
 
-    /* Center titles and images in the bottom relationship cards.
-       Use .grid... selectors so these beat the un-card chrome margin:0 rule. */
+    /* Relationships section: reflow as a balanced grid of list + image cards */
+    .grid.u-migrated-6c96158c {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+    .grid.u-migrated-6c96158c .card,
+    .grid.u-migrated-6c96158c .apple-card {
+      background: var(--card-bg) !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.34) !important;
+      border-radius: 16px !important;
+      margin: 0;
+      padding: 24px;
+    }
+    .grid.u-migrated-6c96158c .card-label {
+      margin-bottom: 10px !important;
+      letter-spacing: 0.08em;
+    }
+    .grid.u-migrated-6c96158c .card-title {
+      color: var(--light) !important;
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+    .grid.u-migrated-6c96158c ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .grid.u-migrated-6c96158c ul li {
+      position: relative;
+      padding: 6px 0 6px 18px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.93rem;
+    }
+    .grid.u-migrated-6c96158c ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-text);
+    }
+    .grid.u-migrated-6c96158c ul li.u-migrated-33db4bec {
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--light);
+      font-weight: 600;
+    }
+    .grid.u-migrated-6c96158c ul li.u-migrated-33db4bec::before {
+      content: "";
+    }
+    /* Image cards: consistent framing, hover zoom */
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      width: 100%;
-      max-width: 1000px;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      gap: 12px;
     }
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-e89830bd {
       text-align: center;
       width: 100%;
+      color: var(--light);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
     }
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-aed120d1 {
       display: flex;
@@ -141,22 +234,29 @@
     }
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-5bf284ef {
       display: block;
-      width: fit-content;
+      width: 100%;
       max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
     }
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 .u-migrated-64cb2393 {
       text-align: center;
       width: 100%;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 0;
     }
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 img.u-migrated-fe557550,
     .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 img {
       display: block;
+      width: auto;
       max-width: 100%;
       height: auto;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+    .grid.u-migrated-6c96158c > .apple-card.u-migrated-8d2a8823 img:hover {
+      transform: scale(1.015);
     }
   </style>
   
@@ -288,7 +388,7 @@
                         <p><strong>Perjury &amp; Fabrication</strong> — Altered witness statements in official documents, contradicting recorded conversations available to the defense and giving the impression of guilt while misleading the court.</p>
                         <p><strong>False Probable Cause</strong> — Recast Carmen Love's initial exculpatory statement into one supporting probable cause, directly contradicting witness LD's account.</p>
                         <p><strong>Undisclosed Conflict of Interest</strong> — Failed to disclose a familial relationship with Love, a key witness who accompanied Deal to the bar that night.</p>
-                        <p><strong>Suppression of Evidence</strong> — Claimed not to know other witnesses despite existing relationships and failed to do any crime scene analysis. An officer whose career spans over 27 years, holds advanced law enforcement certifications, instructor at a local college teaching criminal investigations, and was an instructor on FORENSIC EVIDENCE. His exploitation at the supposed crime scene was only taking pictures.</p><br>
+                        <p><strong>Suppression of Evidence</strong> — Claimed not to know other witnesses despite existing relationships and failed to do any crime scene analysis. An officer whose career spans over 27 years, holds advanced law enforcement certifications, instructor at a local college teaching criminal investigations, and was an instructor on FORENSIC EVIDENCE. His exploitation at the supposed crime scene was only taking pictures.</p>
                     </div>
                     <div class="person-tags">
                         <span class="u-migrated-84ff5b03">Conflict of Interest</span>
@@ -462,9 +562,9 @@
                     <div class="card-label">Conflict</div>
                     <div class="card-title">Concealed Relationships</div>
                     <ul class="u-migrated-916099ae">
-                        <li>• Detective Freeman ↔ Carmen Love (Family)</li>
-                        <li>• Detective Freeman ↔ James Morrison (Love's boyfriend)</li>
-                        <li>• Detective Freeman ↔ Peter West III (Colleague's son)</li><br>
+                        <li>Detective Freeman ↔ Carmen Love (Family)</li>
+                        <li>Detective Freeman ↔ James Morrison (Love's boyfriend)</li>
+                        <li>Detective Freeman ↔ Peter West III (Colleague's son)</li>
                         <li class="u-migrated-33db4bec">These relationships were hidden from the defense and the court.</li>
                     </ul>
                 </div>
@@ -473,9 +573,10 @@
                     <div class="card-label">Suppression</div>
                     <div class="card-title">Witnesses Not Interviewed</div>
                     <ul class="u-migrated-916099ae">
-                        <li>• James Morrison (Love's boyfriend)</li>
-                        <li>• Peter West III - Father works in the Sheriff's Office</li>
-                        <li>• Neutral bartenders</li><br>
+                        <li>James Morrison (Love's boyfriend)</li>
+                        <li>Peter West III — Father works in the Sheriff's Office</li>
+                        <li>Neutral bartenders</li>
+                        <li>Patrons present that evening</li>
                         <li class="u-migrated-33db4bec">Their evidence would correspond to the video which is the opposite of the official narrative.</li>
                     </ul>
                 </div>
