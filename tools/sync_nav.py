@@ -19,8 +19,9 @@ import re
 from pathlib import Path
 
 NAV_TABS: list[tuple[str, str]] = [
-    ("index.html", "Landing"),
+    ("index.html", "Home"),
     ("overview.html", "Project Map"),
+    ("evidence-viewer.html", "Evidence Viewer"),
 ]
 
 NAV_GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
@@ -67,9 +68,17 @@ HOME_NAV_BLOCK_RE = re.compile(
 )
 
 
-def render_tabs(page_name: str) -> str:
+def render_tabs(page_name: str, *, home: bool = False) -> str:
     lines: list[str] = []
+    # The wordmark is the home link on every page. A separate Home tab is not added.
+    current_home = home or page_name.casefold() == "index.html"
+    home_current = ' aria-current="page"' if current_home else ""
+    lines.append(
+        f'            <a class="nav-brand" href="index.html"{home_current}>Edifice of Lies</a>'
+    )
     for href, label in NAV_TABS:
+        if href.casefold() == "index.html":
+            continue
         is_current = href.casefold() == page_name.casefold()
         active = " active" if is_current else ""
         current = ' aria-current="page"' if is_current else ""
@@ -93,6 +102,12 @@ def render_tabs(page_name: str) -> str:
             "                </div>",
             "            </div>",
         ])
+    lines.extend([
+        '            <div class="nav-tools">',
+        '                <button type="button" class="nav-tool" data-site-search-mount>Search</button>',
+        '                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>',
+        '            </div>',
+    ])
     return "\n".join(lines)
 
 
@@ -147,7 +162,7 @@ def sync_home_page(path: Path) -> bool:
     replacement = (
         '\n  <div class="home-nav-shell">\n'
         '    <div class="nav-tabs" aria-label="Project navigation">\n'
-        f"{render_tabs(path.name)}\n"
+        f"{render_tabs(path.name, home=True)}\n"
         "    </div>\n"
         "  </div>\n  "
     )

@@ -12,7 +12,7 @@
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="Webflow" name="generator"/>
-  <link href="assets/css/webflow-shared.css" rel="stylesheet" type="text/css"/>
+  <link href="shared/styles.css?v=20261003k" rel="stylesheet" type="text/css"/>
   <style>
     html.w-mod-js:not(.w-mod-ix3) :is([class^="image-ratio"] img:not(:where(
       .content-block *,
@@ -904,13 +904,17 @@
     }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
+<link rel="stylesheet" href="shared/reader-preview.css?v=20261003l">
 </head>
-<body>
+<body class="reader-pilot reader-home">
+<a class="reader-skip" href="#reader-intro">Skip to content</a>
   <!-- PROJECT_NAV_START -->
   <div class="home-nav-shell">
     <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab active" href="index.html" aria-current="page">Landing</a>
+            <a class="nav-brand" href="index.html" aria-current="page">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -948,6 +952,10 @@
                     <a role="menuitem" href="judicial-duty.html">Judicial Duty</a>
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
+            </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
             </div>
     </div>
   </div>
@@ -1051,44 +1059,39 @@
 
   <header class="section">
     <div class="hero-overlay">
-      <!--
-        IMAGE 1 — Hero INJUSTICE panel (decorative, NOT modal-clickable)
-        File: content/images/evidence/graphics/icons/InJustice_80_percent.webp
-        Layout (inline <style> in this file <head>):
-          - .hero-overlay: full-bleed black stage, centers the panel
-          - Change only --image-size on .hero_back; the image and frame resize together
-          - .hero-quote-smoke_text: static Isabel quote in upper band of panel
-          - .elapsed-clock: absolute, below the INJUSTICE word (~64% down)
-        NO data-modal-image → does not open #imageModal
-        To swap art → change src= on this <img>.
-      -->
-      <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" tabindex="-1" aria-hidden="true" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d" data-image-frame style="--image-size: 70rem; --image-ratio: 4 / 3; --image-viewport-limit: 96vw; --image-overflow: hidden">
-        <img width="1158" height="869" alt="Lady Justice illustration" src="content/images/evidence/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice" data-image-fill/>
-        <div class="hero-quote-smoke">
-          <p class="hero-quote-smoke_text">"What I fear most is power with impunity. I fear abuse of power, and the power to abuse." — Isabel Allende</p>
-          <div class="elapsed-clock" aria-labelledby="elapsed-clock-title">
-            <div class="elapsed-clock_inner">
-              <p class="eyebrow elapsed-clock_eyebrow">And Counting</p>
-              <h2 id="elapsed-clock-title" class="elapsed-clock_title">Time Since Arrest</h2>
-              <div class="elapsed-clock_grid" id="elapsedClock">
-                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="years">&ndash;</span><span class="elapsed-clock_label">Years</span></div>
-                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="months">&ndash;</span><span class="elapsed-clock_label">Months</span></div>
-                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="days">&ndash;</span><span class="elapsed-clock_label">Days</span></div>
-                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="hours">&ndash;</span><span class="elapsed-clock_label">Hours</span></div>
-                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="minutes">&ndash;</span><span class="elapsed-clock_label">Minutes</span></div>
-                <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="seconds">&ndash;</span><span class="elapsed-clock_label">Seconds</span></div>
-              </div>
-              <p class="elapsed-clock_note">Elapsed since the arrest of Benjamin Allen <br><br> October 19, 2019.</p>
+      <div class="reader-intro" id="reader-intro" tabindex="-1">
+        <p class="reader-kicker">State v. Benjamin Allen</p>
+        <h1>An Edifice<br>of Lies</h1>
+        <p>A military veteran and father was accused of sexual assault in Lee County, North Carolina in October 2019.</p>
+        <blockquote class="home-epigraph">
+          <p>"What I fear most is power with impunity. I fear abuse of power, and the power to abuse."</p>
+          <cite>Isabel Allende</cite>
+        </blockquote>
+        <div class="reader-actions"><a href="timeline.html">Start with the timeline <span aria-hidden="true">&nbsp;&rarr;</span></a></div>
+      </div>
+      <div id="w-node-_83130efd-cc89-3e63-e012-238651cb9c90-51cb9c8e" class="hero_back w-node-f341100a-c68b-eb7c-0218-9b7a60e649f0-e51ccb9d" data-image-frame style="--image-size: 100%; --image-ratio: 4 / 3; --image-viewport-limit: 100%; --image-overflow: hidden">
+        <img width="1158" height="869" alt="Lady Justice illustration lettered INJUSTICE" src="content/images/evidence/graphics/icons/InJustice_80_percent.webp" loading="eager" fetchpriority="high" class="image_cover position_absolute radius_none hero-lady-justice" data-image-fill/>
+        <div class="elapsed-clock" id="elapsed-clock" aria-labelledby="elapsed-clock-title">
+          <div class="elapsed-clock_inner">
+            <p class="eyebrow elapsed-clock_eyebrow">And Counting</p>
+            <h2 id="elapsed-clock-title" class="elapsed-clock_title">Time Since Arrest</h2>
+            <div class="elapsed-clock_grid" id="elapsedClock">
+              <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="years">&ndash;</span><span class="elapsed-clock_label">Years</span></div>
+              <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="months">&ndash;</span><span class="elapsed-clock_label">Months</span></div>
+              <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="days">&ndash;</span><span class="elapsed-clock_label">Days</span></div>
+              <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="hours">&ndash;</span><span class="elapsed-clock_label">Hours</span></div>
+              <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="minutes">&ndash;</span><span class="elapsed-clock_label">Minutes</span></div>
+              <div class="elapsed-clock_cell"><span class="elapsed-clock_value" data-unit="seconds">&ndash;</span><span class="elapsed-clock_label">Seconds</span></div>
             </div>
+            <p class="elapsed-clock_note">Elapsed since the arrest of Benjamin Allen on October 19, 2019.</p>
           </div>
         </div>
-        <div class="overlay_opacity-middle mask_fade-top events_none"></div>
       </div>
     </div>
   </header>
   <script>
     (function () {
-      var ARREST_DATE = new Date(2019, 9, 19, 0, 0, 0); // Oct 19, 2019
+      var ARREST_DATE = new Date(2019, 9, 19, 0, 0, 0);
       var root = document.getElementById('elapsedClock');
       if (!root) return;
       var els = {};
@@ -1123,203 +1126,104 @@
     })();
   </script>
 
-  <section class="section case-examples" aria-labelledby="case-examples-title">
-    <div class="container">
-      <div class="case-examples_inner">
-        <p class="eyebrow case-examples_eyebrow">Compare the Record</p>
-        <h2 id="case-examples-title" class="case-examples_title">How Long Can the Justice System disrupt the life of an  Innocent Man?</h2>
-        <div class="case-examples_sub">Two men, one Georgia jail, and more than a decade without a conviction.</div>
-
-        <article class="case-example">
-          <h3 class="case-example_title">The Maurice Jimmerson Case <span class="case-example_duration">(10 Years, 10 Months)</span></h3>
-          <dl class="case-example_facts">
-            <div class="case-example_fact">
-              <dt>The Arrest</dt>
-              <dd>Maurice Jimmerson was arrested in Dougherty County, Georgia, in May 2013 on murder charges.</dd>
-            </div>
-            <div class="case-example_fact">
-              <dt>The Stagnation</dt>
-              <dd>He was held continuously in a local jail awaiting his day in court. His case was delayed for nearly eleven years due to systemic bureaucratic failures, a courthouse flood, the COVID-19 pandemic, and an eight-month stretch where the court completely forgot to assign him an attorney.</dd>
-            </div>
-            <div class="case-example_fact">
-              <dt>The Zero-Conviction Conclusion</dt>
-              <dd>He finally went to trial in July 2023, which resulted in a mistrial (hung jury) rather than a conviction. Because he had spent over a decade locked up as a legally innocent man, his defense attorney successfully argued that a retrial would heavily violate his Sixth Amendment rights. To secure his immediate release without a conviction on his record, he accepted a non-custodial probation plea deal for lesser charges and was released in March 2024.</dd>
-            </div>
-          </dl>
-        </article>
-
-        <article class="case-example">
-          <h3 class="case-example_title">Longest Awaiting Trial to an Acquittal <span class="case-example_duration">Condell Benyard (8 Years)</span></h3>
-          <p class="case-example_lead">If you require the trial process to end specifically in a not-guilty verdict (acquittal) rather than a hung jury or a plea deal, the record belongs to Jimmerson's co-defendant, Condell Benyard.</p>
-          <dl class="case-example_facts">
-            <div class="case-example_fact">
-              <dt>The Timeline</dt>
-              <dd>Benyard was arrested alongside Jimmerson in May 2013.</dd>
-            </div>
-            <div class="case-example_fact">
-              <dt>The Outcome</dt>
-              <dd>He remained locked in the exact same Georgia jail without a conviction until his case finally went to a jury in July 2023. The jury found him not guilty on all counts, ending his 8-year pretrial detention with a total, unblemished acquittal.</dd>
-            </div>
-          </dl>
-        </article>
-
-        <p class="case-examples_emphasis">Lee County, North Carolina, may soon strip this Georgia jail of its infamous title. The Allen case, with its growing record of alleged corruption, collusion, conspiracy, and cronyism, is rapidly becoming a case study in institutional failure.</p>
-      </div>
-    </div>
-  </section>
-
-    
-  <section class="section is-secondary corruption-bleed" aria-label="Corruption of Justice">
-    <!-- Change only --image-size; the complete poster and its section resize together. --><div class="corruption-bleed_frame" data-image-frame style="--image-size: 80rem; --image-ratio: 1 / 1">
-      <img
-        src="content/images/evidence/graphics/Corruption%20of%20Justice.webp"
-        alt="Corruption of Justice — click to view full size"
-        loading="lazy"
-        decoding="async"
-        data-modal-image="content/images/evidence/graphics/Corruption of Justice.webp"
-        class="corruption-bleed_image" data-image-fill
-        title="Click to view original size"
-      />
-      <blockquote class="corruption-quote is-l1" tabindex="0" aria-label="Quote by Justice Sonia Sotomayor">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"We must not pretend that the countless people who are routinely targeted by police are isolated. They are the canaries in the coal mine whose deaths, civil and literal, warn us that no one can breathe in this atmosphere… Until their voices matter too, our justice system will continue to be anything but."</span>
-          <cite class="corruption-quote_cite">— Justice Sonia Sotomayor, Dissenting Opinion in Utah v. Strieff (2016)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-l2" tabindex="0" aria-label="Quote by Justice Harry Blackmun">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"The requirement that a warrant not issue 'but upon probable cause, supported by Oath or affirmation,' would be reduced to a nullity if a police officer was able to use deliberately falsified allegations to demonstrate probable cause, and, having misled the magistrate, then was able to remain confident that the ploy was worthwhile."</span>
-          <cite class="corruption-quote_cite">— Justice Harry Blackmun, Majority Opinion in Franks v. Delaware (1978)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-l3" tabindex="0" aria-label="Quote by Judge Bruce Selya">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"If any concept is fundamental to our American system of justice, it is that those charged with upholding the law are prohibited from deliberately fabricating evidence and framing individuals for crimes they did not commit… Actions taken in contravention of this prohibition necessarily violate due process."</span>
-          <cite class="corruption-quote_cite">— Judge Bruce Selya, Limone v. Condon (1st Cir. 2004)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-l4" tabindex="0" aria-label="Quote by Justice Louis D. Brandeis">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"Crime is contagious. If the Government becomes a lawbreaker, it breeds contempt for law; it invites every man to become a law unto himself; it invites anarchy. To declare that in the administration of the criminal law the end justifies the means—to declare that the Government may commit crimes in order to secure the conviction of a private criminal—would bring terrible retribution."</span>
-          <cite class="corruption-quote_cite">— Justice Louis D. Brandeis, Dissenting Opinion in Olmstead v. United States (1928)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-r1" tabindex="0" aria-label="Quote by Charles de Montesquieu">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"There is no crueler tyranny than that which is perpetuated under the shield of law and in the name of justice."</span>
-          <cite class="corruption-quote_cite">— Charles de Montesquieu, The Spirit of the Laws (1748)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-r2" tabindex="0" aria-label="Quote by Justice William Brennan">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"The true danger inherent in this type of police misconduct is that it subverts the factfinding process itself… The system's ability to objectively evaluate the evidence is fatally compromised when those charged with gathering it actively manipulate the outcome."</span>
-          <cite class="corruption-quote_cite">— Justice William Brennan, Dissenting in Colorado v. Connelly (1986)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-r3" tabindex="0" aria-label="Quote by Justice Tom C. Clark">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"The ignoble shortcut to conviction left open to the State tends to destroy the entire system of constitutional restraints on which the liberties of the people rest… Nothing can destroy a government more quickly than its failure to observe its own laws, or worse, its disregard of the charter of its own existence."</span>
-          <cite class="corruption-quote_cite">— Justice Tom C. Clark, Majority Opinion in Mapp v. Ohio (1961)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-r4" tabindex="0" aria-label="Quote by Justice Robert H. Jackson">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"The prosecutor has more control over life, liberty, and reputation than any other person in America. His discretion is tremendous… While the prosecutor at his best is one of the most beneficent forces in our society, when he acts from malice or other base motives, he is one of the worst."</span>
-          <cite class="corruption-quote_cite">— Justice Robert H. Jackson, The Federal Prosecutor (1940)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-c1" tabindex="0" aria-label="Quote by Justice George Sutherland">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"The United States Attorney is the representative not of an ordinary party to a controversy, but of a sovereignty whose obligation to govern impartially is as compelling as its obligation to govern at all; and whose interest, therefore, in a criminal prosecution is not that it shall win a case, but that justice shall be done… It is as much his duty to refrain from improper methods calculated to produce a wrongful conviction as it is to use every legitimate means to bring about a just one."</span>
-          <cite class="corruption-quote_cite">— Justice George Sutherland, Majority Opinion in Berger v. United States (1935)</cite>
-        </span>
-      </blockquote>
-      <blockquote class="corruption-quote is-c2" tabindex="0" aria-label="Quote by Chief Justice Earl Warren">
-        <span class="corruption-quote_body">
-          <span class="corruption-quote_text">"The principle that a State may not knowingly use false evidence, including false testimony, to obtain a tainted conviction, implicit in any concept of ordered liberty, does not cease to apply merely because the false testimony goes only to the credibility of the witness. The jury's estimate of the truthfulness and reliability of a given witness may well be determinative of guilt or innocence, and it is upon such subtle factors as the possible interest of the witness in testifying falsely that a defendant's life or liberty may depend."</span>
-          <cite class="corruption-quote_cite">— Chief Justice Earl Warren, Majority Opinion in Napue v. Illinois (1959)</cite>
-        </span>
-      </blockquote>
-    </div>
-  </section>
-
-  <section class="section is-secondary">
-    <div class="container">
-      <div class="header is-align-center">
-        <div class="eyebrow">Analysis, Data, and Case Files</div>
-        <h2 class="heading_primary">The Record, Examined.</h2>
-        <div class="rich-text subheading w-richtext"><p>Case studies, data, and commentary tracing how each safeguard in this case was dismantled — and what accountability would require.</p></div>
-      </div>
-      <!--
-        IMAGES 3–8 — Section card thumbnails (link cards, NOT modal-clickable)
-        Files (content/images/):
-          case-study.avif | investigative-breakdown.avif | expert-commentary.avif
-          policy-review.avif | data-snapshot.avif | resource-spotlight.avif
-        Markup pattern (each card):
-          .ix-link-wrapper > a.content-block-link[href=page]
-            > .image-ratio_2x3.margin-bottom_xsmall.ratio_1x1_mobile-l
-              > img.image_cover  (NO data-modal-image)
-        Behavior: entire card is a page link (case-study, misconduct, etc.).
-          Clicking the image navigates — it does NOT open #imageModal.
-        Size / crop controls:
-          - .image-ratio_2x3 / .ratio_1x1_mobile-l → aspect box from Webflow CSS
-            (assets/css/webflow-shared.css); forces 2:3 (1:1 on small mobile)
-          - .image_cover → object-fit cover fill of the ratio box (Webflow CSS)
-          - head rule hides [class^="image-ratio"] img until Webflow IX ready
-            (html.w-mod-js:not(.w-mod-ix3) … visibility:hidden)
-          - grid: .w-layout-grid.grid_3-col.gap-medium
-        Unused leftover in head <style> (not used by these cards):
-          .record-gallery-card / .record-gallery-image (object-fit:cover; min-height)
-        To swap a thumb → change that card's img src=.
-        To make a thumb open the lightbox instead → add a data-modal-image attribute
-          and ensure shared/image-modal.js + #imageModal are present (they are).
-      -->
-      <div class="w-layout-grid grid_3-col gap-medium">
-        <div class="ix-link-wrapper"><a href="case-study.html" class="content-block-link w-inline-block"><div id="w-node-b8794177-b26e-4ea1-b396-5aec97576761-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b2f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="background image of financial documents, graphs (for a financial advisor)" src="content/images/site/case-study.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Case Study: Wrongful Accusation</h3><p class="margin-bottom_none">Dissecting the facts behind a tragic case.</p></a></div>
-        <div class="ix-link-wrapper"><a href="misconduct.html" class="content-block-link w-inline-block"><div id="w-node-b489b972-bcc4-a8aa-ecbc-2a13069b2eb3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b37-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of an office collaboration scene (for a mobility and transportation)" src="content/images/site/investigative-breakdown.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Investigative Breakdown</h3><p class="margin-bottom_none">Examining patterns in flawed procedures.</p></a></div>
-        <div class="ix-link-wrapper"><a href="prosecutor_allowed.html" class="content-block-link w-inline-block"><div id="w-node-b3c8fbea-0f17-c1d7-4d80-d640361590e6-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b3f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of digital legal document on mobile device" src="content/images/site/expert-commentary.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Commentary on ADA Corruption</h3><p class="margin-bottom_none">Legal perspectives on recent developments.</p></a></div>
-        <div class="ix-link-wrapper"><a href="why-dont-we-have-this-system.html" class="content-block-link w-inline-block"><div id="w-node-f60f31b0-e459-2ad6-ccf3-f47f0565c409-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b47-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of bookshelves with legal books (for a legal tech)" src="content/images/site/policy-review.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Policy Review</h3><p class="margin-bottom_none">Assessing new frameworks and guidelines.</p></a></div>
-        <div class="ix-link-wrapper"><a href="data-snapshot.html" class="content-block-link w-inline-block"><div id="w-node-_7b81172a-a43a-f83b-2022-0b2e0127af46-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b4f-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of health program (for a nonprofit &amp; charity)" src="content/images/site/data-snapshot.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Data Snapshot</h3><p class="margin-bottom_none">Key statistics on false allegations.</p></a></div>
-        <div class="ix-link-wrapper"><a href="judicial-duty.html" class="content-block-link w-inline-block"><div id="w-node-_7eadecc9-d0e2-1f38-3e1d-d65db477cdc3-9757675c" class="image-ratio_2x3 margin-bottom_xsmall ratio_1x1_mobile-l w-node-f341100a-c68b-eb7c-0218-9b7a60e64b57-e51ccb9d"><img style="--image-size: auto" width="1216" height="832" alt="image of university campus" src="content/images/site/resource-spotlight.webp" loading="lazy" class="image_cover"/></div><h3 class="heading_tertiary">Resource Spotlight</h3><p class="margin-bottom_none">Read as a warning - legal professionals who may go to Lee County NC to practice.</p></a></div>
-      </div>
-    </div>
-  </section>
-
-
   <section class="section seven-factors" id="seven-factors" aria-labelledby="seven-factors-title">
     <div class="container">
-      <div class="hero-content">
-        <h2 id="seven-factors-title" class="heading_primary margin-bottom_none">Seven Factors</h2>
-        <div class="subheading rich-text w-richtext"><p>State v. Allen presents seven factors that are recognizable patterns in the wrongful-conviction research literature. This case is not a unique outlier and not a borderline evidentiary dispute.</p></div>
-        <ul class="hero-factors" role="list">
-          <li class="hero-factor_item">Complainant with institutional access to law enforcement</li>
-          <li class="hero-factor_item">Investigator with a personal relationship to the complainant's circle</li>
-          <li class="hero-factor_item">Suppression or re-framing of exculpatory material at the investigation stage</li>
-          <li class="hero-factor_item">Prosecutorial charging decision treating investigative momentum as a substitute for independent evidence review</li>
-          <li class="hero-factor_item">Video evidence contradicting the narrative</li>
-          <li class="hero-factor_item">Physical impossibility in the complainant's narrative</li>
-          <li class="hero-factor_item">Uninvestigated financial motive</li>
-        </ul>
-        <p class="hero-context">The information on this website provides the population-level context for understanding why a case with this profile exists and how it survives. It does not require special cynicism or conspiracy thinking. It requires only that the documented facts be held against the documented research, and the result observed.</p>
-        <div class="button-group">
-          <div class="ix-link-wrapper"><a href="documentspage.html" class="button w-button">Open documents</a></div>
-          <div class="ix-link-wrapper"><a href="overview.html" class="button is-secondary w-button">Project map</a></div>
-        </div>
-      </div>
+      <p class="reader-kicker">The case profile</p>
+      <h2 id="seven-factors-title" class="home-section-title">Seven Factors</h2>
+      <p class="home-lede">State v. Allen presents seven factors that are recognizable patterns in the wrongful-conviction research literature. This case is not a unique outlier and not a borderline evidentiary dispute.</p>
+      <ol class="factor-list">
+        <li>Complainant with institutional access to law enforcement</li>
+        <li>Investigator with a personal relationship to the complainant's circle</li>
+        <li>Suppression or re-framing of exculpatory material at the investigation stage</li>
+        <li>Prosecutorial charging decision treating investigative momentum as a substitute for independent evidence review</li>
+        <li>Video evidence contradicting the narrative</li>
+        <li>Physical impossibility in the complainant's narrative</li>
+        <li>Uninvestigated financial motive</li>
+      </ol>
+      <p class="home-context">The information on this website provides the population-level context for understanding why a case with this profile exists and how it survives. It does not require special cynicism or conspiracy thinking. It requires only that the documented facts be held against the documented research, and the result observed.</p>
     </div>
   </section>
 
-  <section class="section">
+  <nav class="reader-routes" aria-label="Reading routes">
+    <p class="reader-kicker">Three ways into the record</p>
+    <ol class="reader-route-list">
+      <li><a href="timeline.html"><img src="content/images/evidence/graphics/bar/Hug%20not%20returned.webp" alt="Bar surveillance frames timestamped October 19, 2019" width="1200" height="300" loading="lazy" decoding="async"><span class="reader-route-number">01</span><span><strong>Follow the chronology</strong><small>Move through the events in the timeline.</small></span></a></li>
+      <li><a href="contradictions.html"><img src="content/images/evidence/graphics/inserts/hug_lie.webp" alt="Hug claim labeled as a lie" width="640" height="400" loading="lazy" decoding="async"><span class="reader-route-number">02</span><span><strong>Compare the accounts</strong><small>Explore the contradiction pages and linked material.</small></span></a></li>
+      <li><a href="evidence-viewer.html"><img src="content/images/evidence/court-files/Intake%20Report%20-%20Allen%20brown%20eyes.webp" alt="Incident Report - Allen brown eyes" width="640" height="400" loading="lazy" decoding="async"><span class="reader-route-number">03</span><span><strong>Open the sources</strong><small>Browse documents and the evidence inventory.</small></span></a></li>
+    </ol>
+  </nav>
+
+  <section class="section home-compare" aria-labelledby="compare-title">
     <div class="container">
-      <div class="header">
-        <div class="eyebrow">Share what you know</div>
-        <h2 class="heading_primary">Have information about this case?</h2>
-        <div class="subheading rich-text w-richtext"><p>If you have information, documents, or firsthand knowledge relevant to <br>
-           State v. Benjamin Allen, submit it confidentially. <br>Tips can directly support the record.</p></div>
+      <p class="reader-kicker">Measured the same way</p>
+      <h2 id="compare-title" class="home-section-title">How long can a case run without a conviction?</h2>
+      <ol class="compare-row">
+        <li><a href="case-study.html#jimmerson"><span class="compare-figure">10 years, 10 months</span><strong>Maurice Jimmerson</strong><small>Arrested May 2013 in Dougherty County, Georgia. Released March 2024 without a conviction on the original charge.</small></a></li>
+        <li><a href="case-study.html#benyard"><span class="compare-figure">8 years</span><strong>Condell Benyard</strong><small>Arrested May 2013. Acquitted on all counts in July 2023.</small></a></li>
+        <li><a href="timeline.html"><span class="compare-figure">Since October 19, 2019</span><strong>Benjamin Allen</strong><small>This case. The clock above is still running.</small></a></li>
+      </ol>
+      <a class="home-more" href="case-study.html#other-pretrial-detentions">Read the comparison</a>
+    </div>
+  </section>
+
+  <section class="section home-quotes" aria-labelledby="quotes-title">
+    <div class="container">
+      <p class="reader-kicker">From the opinions</p>
+      <h2 id="quotes-title" class="home-section-title">What the law already requires</h2>
+      <div class="quote-pair">
+        <blockquote>
+          <p>"The United States Attorney is the representative not of an ordinary party to a controversy, but of a sovereignty whose obligation to govern impartially is as compelling as its obligation to govern at all; and whose interest, therefore, in a criminal prosecution is not that it shall win a case, but that justice shall be done. It is as much his duty to refrain from improper methods calculated to produce a wrongful conviction as it is to use every legitimate means to bring about a just one."</p>
+          <cite>Justice George Sutherland, Majority Opinion in Berger v. United States (1935)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The principle that a State may not knowingly use false evidence, including false testimony, to obtain a tainted conviction, implicit in any concept of ordered liberty, does not cease to apply merely because the false testimony goes only to the credibility of the witness. The jury's estimate of the truthfulness and reliability of a given witness may well be determinative of guilt or innocence, and it is upon such subtle factors as the possible interest of the witness in testifying falsely that a defendant's life or liberty may depend."</p>
+          <cite>Chief Justice Earl Warren, Majority Opinion in Napue v. Illinois (1959)</cite>
+        </blockquote>
       </div>
-      <ul role="list" class="grid_2-col gap-medium w-list-unstyled">
-        <li class="content-block"><div class="flex_vertical"><div class="icon is-large is-background margin-bottom_xsmall"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"><path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></div><h3 class="heading_small">Email</h3><p class="text-color_secondary">Submit tips, documents, or outreach confidentially.</p><a href="mailto:Leecountycorruptiontips@proton.me" class="text-link is-secondary">Leecountycorruptiontips@proton.me</a></div></li>
-      </ul>
+      <details>
+        <summary>Eight more opinions cited on this site</summary>
+        <blockquote>
+          <p>"We must not pretend that the countless people who are routinely targeted by police are isolated. They are the canaries in the coal mine whose deaths, civil and literal, warn us that no one can breathe in this atmosphere… Until their voices matter too, our justice system will continue to be anything but."</p>
+          <cite>Justice Sonia Sotomayor, Dissenting Opinion in Utah v. Strieff (2016)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The requirement that a warrant not issue 'but upon probable cause, supported by Oath or affirmation,' would be reduced to a nullity if a police officer was able to use deliberately falsified allegations to demonstrate probable cause, and, having misled the magistrate, then was able to remain confident that the ploy was worthwhile."</p>
+          <cite>Justice Harry Blackmun, Majority Opinion in Franks v. Delaware (1978)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"If any concept is fundamental to our American system of justice, it is that those charged with upholding the law are prohibited from deliberately fabricating evidence and framing individuals for crimes they did not commit… Actions taken in contravention of this prohibition necessarily violate due process."</p>
+          <cite>Judge Bruce Selya, Limone v. Condon (1st Cir. 2004)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Crime is contagious. If the Government becomes a lawbreaker, it breeds contempt for law; it invites every man to become a law unto himself; it invites anarchy. To declare that in the administration of the criminal law the end justifies the means—to declare that the Government may commit crimes in order to secure the conviction of a private criminal—would bring terrible retribution."</p>
+          <cite>Justice Louis D. Brandeis, Dissenting Opinion in Olmstead v. United States (1928)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"There is no crueler tyranny than that which is perpetuated under the shield of law and in the name of justice."</p>
+          <cite>Charles de Montesquieu, The Spirit of the Laws (1748)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The true danger inherent in this type of police misconduct is that it subverts the factfinding process itself… The system's ability to objectively evaluate the evidence is fatally compromised when those charged with gathering it actively manipulate the outcome."</p>
+          <cite>Justice William Brennan, Dissenting in Colorado v. Connelly (1986)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The ignoble shortcut to conviction left open to the State tends to destroy the entire system of constitutional restraints on which the liberties of the people rest… Nothing can destroy a government more quickly than its failure to observe its own laws, or worse, its disregard of the charter of its own existence."</p>
+          <cite>Justice Tom C. Clark, Majority Opinion in Mapp v. Ohio (1961)</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The prosecutor has more control over life, liberty, and reputation than any other person in America. His discretion is tremendous… While the prosecutor at his best is one of the most beneficent forces in our society, when he acts from malice or other base motives, he is one of the worst."</p>
+          <cite>Justice Robert H. Jackson, The Federal Prosecutor (1940)</cite>
+        </blockquote>
+      </details>
+    </div>
+  </section>
+
+  <section class="section home-contact" aria-labelledby="contact-title">
+    <div class="container">
+      <p class="reader-kicker">Share what you know</p>
+      <h2 id="contact-title" class="home-section-title">Have information about this case?</h2>
+      <p class="home-lede">If you have information, documents, or firsthand knowledge relevant to State v. Benjamin Allen, submit it confidentially. Tips can directly support the record.</p>
+      <a class="home-email" href="mailto:Leecountycorruptiontips@proton.me">Leecountycorruptiontips@proton.me</a>
     </div>
   </section>
 
@@ -1327,7 +1231,7 @@
     <div class="container">
       <nav class="grid_4-col gap-small" aria-label="Footer navigation">
         <div class="grid-item-manual">
-          <div class="flex_vertical gap-small">
+          <div class="flex_vertical">
             <div class="ix-link-wrapper"><a href="index.html" class="logo-link w-inline-block"><div class="nav_logo-icon"><svg width="100%" height="100%" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet"><path d="M28,0H5C2.24,0,0,2.24,0,5v23c0,2.76,2.24,5,5,5h23c2.76,0,5-2.24,5-5V5c0-2.76-2.24-5-5-5ZM29,17c-6.63,0-12,5.37-12,12h-1c0-6.63-5.37-12-12-12v-1c6.63,0,12-5.37,12-12h1c0,6.63,5.37,12,12,12v1Z" fill="currentColor"></path></svg></div><div data-brand-name="true" class="paragraph_xlarge margin-bottom_none text_all-caps">Edifice of Lies</div></a></div>
             <p class="text-color_secondary margin_top-auto">A documented public record of the evidence, chronology, contradictions, and institutional failures in State v. Benjamin Allen.</p>
           </div>
@@ -1368,7 +1272,7 @@
       </nav>
     </div>
   </footer>
-  -->
+
   <div id="imageModal">
     <span class="modal-close" role="button" tabindex="0" aria-label="Close full-size image">&times;</span>
     <img id="modalImage" src="" alt="Full resolution image"/>
@@ -1380,6 +1284,8 @@
   <script src="assets/js/webflow-main.js" type="text/javascript" defer></script>
   <script src="assets/js/gsap.min.js" type="text/javascript" defer></script>
   <script src="shared/image-modal.js" defer></script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/reader-preview.js?v=20261002b" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 </html>

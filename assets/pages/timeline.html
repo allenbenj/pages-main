@@ -12,18 +12,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
 
   <style class="force-hide-webflow">
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
 <body class="timeline-page">
     <div id="top" class="container page">
         <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -62,9 +64,13 @@
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
         </div>
         <div class="header">
-          <h1>An Edifice of Lies</h1>
+          <h1 class="page-title">Timeline of Injustice</h1>
           <h2>"Justice must satisfy the appearance of justice." — Offutt v. United States</h2>
         </div>
 <nav class="page-rail" aria-label="On this page">
@@ -77,10 +83,7 @@
 </nav>
 
 
-        <div class="content-section">
-            <h2 id="timeline-overview" class="section-title u-migrated-7a8feb70">Timeline of Injustice<br>The appearance cannot be found.</h2>
-
-
+        <div id="timeline-overview" class="content-section">
             <div id="timeline-events" class="timeline-container">
                 <div class="timeline">
                     <div class="timeline-items">
@@ -115,7 +118,7 @@
                    <div class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp" alt="Still from video: Peter West leaves the bar alone" data-modal-image="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp" alt="Statement graphic: Peter West leaves the bar alone" data-modal-image="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -141,7 +144,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp" alt="Still from video: Love and Morrison leave Schooly's without speaking to the defendant or friends" data-modal-image="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp" alt="Statement graphic: Love and Morrison leave Schooly's without speaking to the defendant or friends" data-modal-image="content/images/evidence/graphics/inserts/Peter_West_Leaves_Alone.webp">
                             </div>
                         </div>
                     </div>
@@ -149,7 +152,7 @@
                     <div class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Deal_Approaches_Allen.webp" alt="Still from video: Deal makes contact with Allen as Carmen and James walk out" data-modal-image="content/images/evidence/graphics/inserts/Deal_Approaches_Allen.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Deal_Approaches_Allen.webp" alt="Statement graphic: Deal makes contact with Allen as Carmen and James walk out" data-modal-image="content/images/evidence/graphics/inserts/Deal_Approaches_Allen.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -175,7 +178,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Deal_tries_to_introduce.webp" alt="Still from video: Deal tries to introduce Allen to a group of people and Allen walks off" data-modal-image="content/images/evidence/graphics/inserts/Deal_tries_to_introduce.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Deal_tries_to_introduce.webp" alt="Statement graphic: Deal tries to introduce Allen to a group of people and Allen walks off" data-modal-image="content/images/evidence/graphics/inserts/Deal_tries_to_introduce.webp">
                             </div>
                         </div>
                     </div>
@@ -183,7 +186,7 @@
                   <div class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Keys_to_allen.webp" alt="Still from video: Deal gives her keys to DeMarco after Allen refuses them" data-modal-image="content/images/evidence/graphics/inserts/Keys_to_allen.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Keys_to_allen.webp" alt="Statement graphic: Deal gives her keys to DeMarco after Allen refuses them" data-modal-image="content/images/evidence/graphics/inserts/Keys_to_allen.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -209,7 +212,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Deal_argues_over_refusal.webp" alt="Still from video: Deal and Allen continue to argue over Deal joining his night" data-modal-image="content/images/evidence/graphics/inserts/Deal_argues_over_refusal.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/Deal_argues_over_refusal.webp" alt="Statement graphic: Deal and Allen continue to argue over Deal joining his night" data-modal-image="content/images/evidence/graphics/inserts/Deal_argues_over_refusal.webp">
                             </div>
                         </div>
                     </div>
@@ -217,7 +220,7 @@
                     <div class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/hug_lie_comes_back.webp" alt="Still from video: Deal hugs Allen while Allen keeps his hands in his pocket" data-modal-image="content/images/evidence/graphics/inserts/hug_lie_comes_back.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/hug_lie_comes_back.webp" alt="Statement graphic: Deal hugs Allen while Allen keeps his hands in his pocket" data-modal-image="content/images/evidence/graphics/inserts/hug_lie_comes_back.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -243,7 +246,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/No one wants her around.webp" alt="Still from video: Deal hanging all over DeMarco and Happel before they leave the bar area" data-modal-image="content/images/evidence/graphics/inserts/No one wants her around.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/No one wants her around.webp" alt="Statement graphic: Deal hanging all over DeMarco and Happel before they leave the bar area" data-modal-image="content/images/evidence/graphics/inserts/No one wants her around.webp">
                             </div>
                         </div>
                     </div>
@@ -251,7 +254,7 @@
                     <div class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/hangingout.webp" alt="Still from video: Allen returns to the bar area after Deal ends up at the table" data-modal-image="content/images/evidence/graphics/inserts/hangingout.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/hangingout.webp" alt="Statement graphic: Allen returns to the bar area after Deal ends up at the table" data-modal-image="content/images/evidence/graphics/inserts/hangingout.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -277,7 +280,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/whilebarefoot.webp" alt="Still from video: Deal approaches Allen and almost trips while barefoot" data-modal-image="content/images/evidence/graphics/inserts/whilebarefoot.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/whilebarefoot.webp" alt="Statement graphic: Deal approaches Allen and almost trips while barefoot" data-modal-image="content/images/evidence/graphics/inserts/whilebarefoot.webp">
                             </div>
                         </div>
                     </div>
@@ -285,7 +288,7 @@
                     <div class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/drunk_screaming.webp" alt="Still from video: Deal approaches Allen again and almost knocks over a stool at the bar" data-modal-image="content/images/evidence/graphics/inserts/drunk_screaming.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/drunk_screaming.webp" alt="Statement graphic: Deal approaches Allen again and almost knocks over a stool at the bar" data-modal-image="content/images/evidence/graphics/inserts/drunk_screaming.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -311,7 +314,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/creating a scene.webp" alt="Still from video: Deal approaches Allen a third time before leaving the bar at 01:52" data-modal-image="content/images/evidence/graphics/inserts/creating a scene.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/creating a scene.webp" alt="Statement graphic: Deal approaches Allen a third time before leaving the bar at 01:52" data-modal-image="content/images/evidence/graphics/inserts/creating a scene.webp">
                             </div>
                         </div>
                     </div>
@@ -319,7 +322,7 @@
                     <div id="event-0158" class="timeline-pair reverse">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/facedownground.webp" alt="Still from video: Allen goes out to check on Deal and finds her on the concrete outside" data-modal-image="content/images/evidence/graphics/inserts/facedownground.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/facedownground.webp" alt="Statement graphic: Allen goes out to check on Deal and finds her on the concrete outside" data-modal-image="content/images/evidence/graphics/inserts/facedownground.webp">
                             </div>
                         </div>
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
@@ -345,7 +348,7 @@
                         <img style="--image-size: auto" loading="lazy" decoding="async" class="liar-stamp" src="content/images/evidence/graphics/icons/False.webp" alt="">
                         <div class="timeline-callout">
                             <div class="hug-lie-frame">
-                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/exit at different times.webp" alt="Still from video: Happel and DeMarco exit at different times" data-modal-image="content/images/evidence/graphics/inserts/exit at different times.webp">
+                                <img style="--image-size: auto" loading="lazy" decoding="async" class="hug-lie-image" src="content/images/evidence/graphics/inserts/exit at different times.webp" alt="Statement graphic: Happel and DeMarco exit at different times" data-modal-image="content/images/evidence/graphics/inserts/exit at different times.webp">
                             </div>
                         </div>
                     </div>
@@ -426,7 +429,8 @@
     }, true);
   });
 </script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 
 

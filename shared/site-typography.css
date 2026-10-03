@@ -1,0 +1,34 @@
+/* Shared typography matching the Connections page. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+:root { --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; --font-body: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --font-mono: 'JetBrains Mono', monospace; --light: #dae4e5; --gold-text: #d4b85c; }
+body { font-family: var(--font-body) !important; color: #94a3b8; font-size: 16px; line-height: 1.5; }
+body h1, body h2, body h3, body h4, body h5, body h6,
+body .section-title, body .title-font { font-family: var(--font-display) !important; color: #dae4e5 !important; font-weight: 600; letter-spacing: .01em; line-height: 1.5; }
+body p, body li, body dd, body dt, body label, body input, body select, body textarea, body button,
+body nav, body .page-rail, body .description, body .subtitle { font-family: var(--font-body) !important; }
+body p { color: #94a3b8 !important; line-height: 1.5; }
+body a:link, body a:visited { color: #d4b85c; text-underline-offset: 3px; }
+body a:hover, body a:focus-visible { color: #f0dc96; }
+body .section-title { font-size: clamp(1.5rem,4vw,2.2rem); text-align: center; }
+body .section-title.is-left { text-align: left; }
+body .section-title::before { font-family: var(--font-mono) !important; color: #d4b85c; }
+body .section-title::after { background: linear-gradient(90deg,transparent,#c9a84c,transparent); }
+body .content-block-link:link, body .content-block-link:visited { color: #dae4e5; text-decoration: none; }
+body .content-block-link:hover h3 { color: #d4b85c !important; }
+body .reader-actions a:first-child { color: #121516; }
+body .evidence-viewer-entry a:link, body .evidence-viewer-entry a:visited { color: #dae4e5; }
+body pre, body code, body .t-mono, body .pill { font-family: var(--font-mono) !important; }
+
+/* Complete reference heading: gold folio above, centered title, gold rule below. */
+body { counter-reset: reference-section; }
+body .section-title { counter-increment: reference-section; position: relative; text-align: left !important; padding-top: 0; padding-bottom: 16px !important; margin-bottom: 24px; }
+body .section-title::before { content: "§ " counter(reference-section, decimal-leading-zero) !important; display: block; position: static; font-family: var(--font-mono) !important; font-size: .72rem; font-weight: 500; line-height: 1.5; letter-spacing: .22em; color: #d4b85c !important; margin-bottom: 10px; }
+body .section-title::after { content: ""; display: block; position: absolute; top: auto; bottom: 0; left: 0 !important; transform: none !important; width: 60px; height: 2px; background: linear-gradient(90deg,#c9a84c,transparent) !important; border-radius: 1px; }
+body h1.page-title,
+body .header h1 { display: block !important; font-size: clamp(2.6rem, 5vw, 4.4rem) !important; line-height: 0.98 !important; text-align: center !important; text-wrap: balance; letter-spacing: -0.03em; }
+body h1.page-title::before,
+body h1.page-title::after,
+body .header h1::before,
+body .header h1::after { content: none !important; display: none !important; }
+body .header h2 { font-size: clamp(1.7rem, 2.7vw, 2.35rem) !important; font-weight: 500 !important; font-style: italic; line-height: 1.28 !important; width: 100% !important; max-width: none !important; margin: 14px 0 0 !important; text-align: center !important; text-wrap: balance; color: #c9d4d6 !important; }
+body .page-dek { font-size: 1.35rem !important; font-style: italic; color: #b7c4c6 !important; text-align: center !important; }

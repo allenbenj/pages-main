@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
   <style>
       body {
           color: var(--light);
@@ -111,13 +111,15 @@
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
 <body>
   <div class="container page">
 
     <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -156,12 +158,15 @@
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
 
     </div>
 
     <div class="header">
-      <h1 class="u-migrated-6b99de8b">An Edifice of Lies</h1>
-      <h2 class="u-migrated-daadcf94">Data Snapshot: State v. Benjamin Allen</h2>
+      <h1 class="page-title">Data Snapshot: State v. Benjamin Allen</h1>
       <p class="u-migrated-8beef3a8">Key statistics on false allegations, prosecutorial discretion, misconduct outcomes, and where this case sits within those numbers. All external figures are cited to named sources. Case-specific figures pending full court-file review are marked TBD. Last updated April 2026.</p>
     </div>
 
@@ -180,17 +185,6 @@
       <a href="#lee-county" class="u-migrated-b7bb3f33">Lee County — Public Records Queue</a>
       <a href="#citations" class="u-migrated-b7bb3f33">Full Citations</a>
     </nav>
-
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- METHODOLOGY NOTE                                                -->
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section id="methodology" class="content-section">
-      <h2 class="section-title u-migrated-2eeb22cf">Methodology Note</h2>
-      <div class="card u-migrated-56a7fe46">
-        <p class="u-migrated-bbd4abd5">False allegation statistics exist on a spectrum from 2% to 40% depending entirely on how "false" is defined, whose determination counts, and what methodological standard the study applied. Most high-end estimates rely on police officer judgment, which research shows is unreliable. This page uses the conservative end of peer-reviewed estimates — studies that applied rigorous, documented criteria for classifying an allegation as false rather than merely unsubstantiated or withdrawn. The point is not to minimize genuine harm from real crimes. It is to establish that a case with the physical and evidentiary contradictions present in State v. Allen is an outlier even under the most generous prosecution-favoring assumptions about base rate.</p>
-        <p class="u-migrated-604bb0a3">This page separates three distinct categories that are frequently conflated in public discussion: <strong class="u-migrated-547e413d">false allegations</strong> (a complaint known or determined to be fabricated), <strong class="u-migrated-547e413d">unsubstantiated allegations</strong> (a complaint that did not result in a finding, not necessarily false), and <strong class="u-migrated-547e413d">unfounded reports</strong> (the FBI UCR category, which historically included cases detectives declined without independent review). The literature and this archive use narrow definitions throughout.</p>
-      </div>
-    </section>
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- THIS CASE — KEY NUMBERS                                         -->
@@ -241,6 +235,16 @@
           <span class="stat-note">Source: pending court-file review</span>
         </div>
 
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- METHODOLOGY NOTE                                                -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="methodology" class="content-section">
+      <h2 class="section-title u-migrated-2eeb22cf">Methodology Note</h2>
+      <div class="card u-migrated-56a7fe46">
+        <p class="u-migrated-bbd4abd5">False allegation statistics exist on a spectrum from 2% to 40% depending entirely on how "false" is defined, whose determination counts, and what methodological standard the study applied. Most high-end estimates rely on police officer judgment, which research shows is unreliable. This page uses the conservative end of peer-reviewed estimates — studies that applied rigorous, documented criteria for classifying an allegation as false rather than merely unsubstantiated or withdrawn. The point is not to minimize genuine harm from real crimes. It is to establish that a case with the physical and evidentiary contradictions present in State v. Allen is an outlier even under the most generous prosecution-favoring assumptions about base rate.</p>
+        <p class="u-migrated-604bb0a3">This page separates three distinct categories that are frequently conflated in public discussion: <strong class="u-migrated-547e413d">false allegations</strong> (a complaint known or determined to be fabricated), <strong class="u-migrated-547e413d">unsubstantiated allegations</strong> (a complaint that did not result in a finding, not necessarily false), and <strong class="u-migrated-547e413d">unfounded reports</strong> (the FBI UCR category, which historically included cases detectives declined without independent review). The literature and this archive use narrow definitions throughout.</p>
       </div>
     </section>
 
@@ -591,6 +595,7 @@
     });
   });
 </script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 </html>

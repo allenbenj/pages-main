@@ -1,16 +1,16 @@
 {
- "generatedAt": "2026-08-11T08:10:23Z",
+ "generatedAt": "2026-10-03T07:38:41Z",
  "generator": "tools/build_evidence_data.py",
  "counts": {
-  "evidence": 402,
+  "evidence": 411,
   "evidenceByType": {
    "audio": 112,
-   "image": 237,
-   "document": 23,
+   "image": 236,
+   "document": 24,
    "pdf": 19,
-   "video": 11
+   "video": 20
   },
-  "evidenceBytes": 347976430,
+  "evidenceBytes": 590155892,
   "cards": 0,
   "facts": 0,
   "quotes": 0,
@@ -274,7 +274,7 @@
   },
   {
    "id": 19,
-   "title": "Happel Bonfire and Activities",
+   "title": "Happel Bonfire And Activities",
    "filePath": "audio/Happel_Bonfire_and_Activities.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -302,7 +302,7 @@
   },
   {
    "id": 21,
-   "title": "Happel Events at Schooleys",
+   "title": "Happel Events At Schooleys",
    "filePath": "audio/Happel_Events_at_Schooleys.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -330,7 +330,7 @@
   },
   {
    "id": 23,
-   "title": "Happel How She Ended Up at House",
+   "title": "Happel How She Ended Up At House",
    "filePath": "audio/Happel_How_She_Ended_Up_at_House.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -358,7 +358,7 @@
   },
   {
    "id": 25,
-   "title": "Happel Interaction at Bar",
+   "title": "Happel Interaction At Bar",
    "filePath": "audio/Happel_Interaction_at_Bar.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -400,7 +400,7 @@
   },
   {
    "id": 28,
-   "title": "Happel Opening Request for Account",
+   "title": "Happel Opening Request For Account",
    "filePath": "audio/Happel_Opening_Request_for_Account.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -442,7 +442,7 @@
   },
   {
    "id": 31,
-   "title": "Lauren Interview A Detective Comes out",
+   "title": "Lauren Interview A Detective Comes Out",
    "filePath": "audio/Lauren_Interview_A_Detective_Comes out.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -456,7 +456,7 @@
   },
   {
    "id": 32,
-   "title": "Lauren Interview Again No Mention of Ben",
+   "title": "Lauren Interview Again No Mention Of Ben",
    "filePath": "audio/Lauren_Interview_Again_No_Mention of Ben.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -484,7 +484,7 @@
   },
   {
    "id": 34,
-   "title": "Lauren Interview ALOT Of People Knowing",
+   "title": "Lauren Interview Alot Of People Knowing",
    "filePath": "audio/Lauren_Interview_ALOT_Of_People_Knowing.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -610,7 +610,7 @@
   },
   {
    "id": 43,
-   "title": "Lauren Interview Didn't want to do this",
+   "title": "Lauren Interview Didn't Want To Do This",
    "filePath": "audio/Lauren_Interview_Didn't want to do this.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -624,7 +624,7 @@
   },
   {
    "id": 44,
-   "title": "Lauren Interview Dont Remember where she put her items",
+   "title": "Lauren Interview Dont Remember Where She Put Her Items",
    "filePath": "audio/Lauren_Interview_Dont Remember where she put her items.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -666,7 +666,7 @@
   },
   {
    "id": 47,
-   "title": "Lauren Interview FI Hands Above Head",
+   "title": "Lauren Interview Fi Hands Above Head",
    "filePath": "audio/Lauren_Interview_FI_Hands_Above_Head.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -904,7 +904,7 @@
   },
   {
    "id": 64,
-   "title": "Lauren Interview First Tried to Find Me",
+   "title": "Lauren Interview First Tried To Find Me",
    "filePath": "audio/Lauren_Interview_First_Tried to Find Me.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -1002,7 +1002,7 @@
   },
   {
    "id": 71,
-   "title": "Lauren Interview Freeman Fifteen minutes out",
+   "title": "Lauren Interview Freeman Fifteen Minutes Out",
    "filePath": "audio/Lauren_Interview_Freeman_Fifteen_minutes_out.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -1506,7 +1506,7 @@
   },
   {
    "id": 107,
-   "title": "Lauren Interview Thats Shit and He Agrees",
+   "title": "Lauren Interview Thats Shit And He Agrees",
    "filePath": "audio/Lauren_Interview_Thats_Shit_and_He_Agrees.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -1576,7 +1576,7 @@
   },
   {
    "id": 112,
-   "title": "Secret Family Ties and Fabricated Police Evidence",
+   "title": "Secret Family Ties And Fabricated Police Evidence",
    "filePath": "audio/Secret_Family_Ties_and_Fabricated_Police_Evidence.mp3",
    "fileType": "audio",
    "collection": "audio",
@@ -1590,7 +1590,7 @@
   },
   {
    "id": 113,
-   "title": "ADA Rush Request for Sperm Confirmation",
+   "title": "ADA Rush Request For Sperm Confirmation",
    "filePath": "content/images/evidence/court-files/ADA Rush Request for Sperm Confirmation.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1618,7 +1618,7 @@
   },
   {
    "id": 115,
-   "title": "Allen Conditions of Release",
+   "title": "Allen Conditions Of Release",
    "filePath": "content/images/evidence/court-files/Allen Conditions of Release.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1646,7 +1646,7 @@
   },
   {
    "id": 117,
-   "title": "Bill of Indictment",
+   "title": "Bill Of Indictment",
    "filePath": "content/images/evidence/court-files/Bill of Indictment.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1744,7 +1744,7 @@
   },
   {
    "id": 124,
-   "title": "Certificate of Arraingment",
+   "title": "Certificate Of Arraingment",
    "filePath": "content/images/evidence/court-files/Certificate of Arraingment.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1758,7 +1758,7 @@
   },
   {
    "id": 125,
-   "title": "Charlie DeVore ADA Misconduct Claim",
+   "title": "Charlie Devore ADA Misconduct Claim",
    "filePath": "content/images/evidence/court-files/Charlie_DeVore_ADA_Misconduct_Claim.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1772,7 +1772,7 @@
   },
   {
    "id": 126,
-   "title": "Conditions of Release Signed By West",
+   "title": "Conditions Of Release Signed By West",
    "filePath": "content/images/evidence/court-files/Conditions of Release Signed By West.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1786,7 +1786,7 @@
   },
   {
    "id": 127,
-   "title": "continue trial",
+   "title": "Continue Trial",
    "filePath": "content/images/evidence/court-files/continue trial.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1870,7 +1870,7 @@
   },
   {
    "id": 133,
-   "title": "Evidence - No Chain of Custody",
+   "title": "Evidence - No Chain Of Custody",
    "filePath": "content/images/evidence/court-files/Evidence  - No Chain of Custody.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1898,7 +1898,7 @@
   },
   {
    "id": 135,
-   "title": "Evidence Returned From Lab to Sheriffs Office 0",
+   "title": "Evidence Returned From Lab To Sheriffs Office 0",
    "filePath": "content/images/evidence/court-files/Evidence Returned From Lab to Sheriffs Office 0.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1912,7 +1912,7 @@
   },
   {
    "id": 136,
-   "title": "Evidence Returned From Lab to Sheriffs Office 1",
+   "title": "Evidence Returned From Lab To Sheriffs Office 1",
    "filePath": "content/images/evidence/court-files/Evidence Returned From Lab to Sheriffs Office 1.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1926,7 +1926,7 @@
   },
   {
    "id": 137,
-   "title": "Evidence Returned From Lab to Sheriffs Office1",
+   "title": "Evidence Returned From Lab To Sheriffs Office1",
    "filePath": "content/images/evidence/court-files/Evidence Returned From Lab to Sheriffs Office1_.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1940,7 +1940,7 @@
   },
   {
    "id": 138,
-   "title": "Evidence Submitted to Lab 11 5 2019 9 10 53",
+   "title": "Evidence Submitted To Lab 11 5 2019 9 10 53",
    "filePath": "content/images/evidence/court-files/Evidence Submitted to Lab 11_5_2019 9_10_53.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1954,7 +1954,7 @@
   },
   {
    "id": 139,
-   "title": "Evidence Submitted to Lab 1 06 2023",
+   "title": "Evidence Submitted To Lab 1 06 2023",
    "filePath": "content/images/evidence/court-files/Evidence Submitted to Lab 1_06_2023.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -1968,7 +1968,7 @@
   },
   {
    "id": 140,
-   "title": "first dna none",
+   "title": "First DNA None",
    "filePath": "content/images/evidence/court-files/first_dna_none.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2024,7 +2024,7 @@
   },
   {
    "id": 144,
-   "title": "Intake Report - Allen brown eyes",
+   "title": "Intake Report - Allen Brown Eyes",
    "filePath": "content/images/evidence/court-files/Intake Report - Allen brown eyes.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2038,7 +2038,7 @@
   },
   {
    "id": 145,
-   "title": "Intake Report - Deal no drugs or alcohol",
+   "title": "Intake Report - Deal No Drugs Or Alcohol",
    "filePath": "content/images/evidence/court-files/Intake Report - Deal no drugs or alcohol.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2052,7 +2052,7 @@
   },
   {
    "id": 146,
-   "title": "Intake Report - Defendant marked as alcohol Not Deal",
+   "title": "Intake Report - Defendant Marked As Alcohol Not Deal",
    "filePath": "content/images/evidence/court-files/Intake Report - Defendant marked as alcohol Not Deal.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2066,7 +2066,7 @@
   },
   {
    "id": 147,
-   "title": "Intake Report - internal - no mention of exte",
+   "title": "Intake Report - Internal - No Mention Of Exte",
    "filePath": "content/images/evidence/court-files/Intake Report - internal - no mention of exte.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2080,7 +2080,7 @@
   },
   {
    "id": 148,
-   "title": "Intake report Demarco",
+   "title": "Intake Report Demarco",
    "filePath": "content/images/evidence/court-files/Intake report Demarco.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2094,7 +2094,7 @@
   },
   {
    "id": 149,
-   "title": "Intake Report for Deal",
+   "title": "Intake Report For Deal",
    "filePath": "content/images/evidence/court-files/Intake Report for Deal.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2108,7 +2108,7 @@
   },
   {
    "id": 150,
-   "title": "Intake Report for Defendant",
+   "title": "Intake Report For Defendant",
    "filePath": "content/images/evidence/court-files/Intake Report for Defendant.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2150,7 +2150,7 @@
   },
   {
    "id": 153,
-   "title": "Deal internal injuries and no alcohol",
+   "title": "Deal Internal Injuries And No Alcohol",
    "filePath": "content/images/evidence/court-files/intake/Deal internal injuries and no alcohol.webp",
    "fileType": "image",
    "collection": "court-files/intake",
@@ -2192,7 +2192,7 @@
   },
   {
    "id": 156,
-   "title": "Lab Report Failed to Show Sperm",
+   "title": "Lab Report Failed To Show Sperm",
    "filePath": "content/images/evidence/court-files/Lab Report Failed to Show Sperm.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2248,7 +2248,7 @@
   },
   {
    "id": 160,
-   "title": "Lab results",
+   "title": "Lab Results",
    "filePath": "content/images/evidence/court-files/Lab results.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2304,7 +2304,7 @@
   },
   {
    "id": 164,
-   "title": "Magistrates Warrant - Without a Warrant",
+   "title": "Magistrates Warrant - Without A Warrant",
    "filePath": "content/images/evidence/court-files/Magistrates Warrant - Without a Warrant.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2318,7 +2318,7 @@
   },
   {
    "id": 165,
-   "title": "May 11, 2020 No significant amount of male DNA",
+   "title": "May 11, 2020 No Significant Amount Of Male DNA",
    "filePath": "content/images/evidence/court-files/May 11, 2020 No significant amount of male DNA .webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2332,7 +2332,7 @@
   },
   {
    "id": 166,
-   "title": "No significant Male DNA",
+   "title": "No Significant Male DNA",
    "filePath": "content/images/evidence/court-files/No significant Male DNA.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2360,20 +2360,6 @@
   },
   {
    "id": 168,
-   "title": "Magistrates Order",
-   "filePath": "content/images/evidence/court-files/no-warrant/Magistrates Order.webp",
-   "fileType": "image",
-   "collection": "court-files/no-warrant",
-   "sourceKind": "local_file",
-   "note": null,
-   "tags": [],
-   "cards": [],
-   "relatedEvidence": [],
-   "sizeBytes": 268188,
-   "sha256": "b5281b21f46f74834f808530396144f37160425cfb480b79674e767e9f71915c"
-  },
-  {
-   "id": 169,
    "title": "Screenshot 2024-11-08 202024",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 202024.webp",
    "fileType": "image",
@@ -2387,7 +2373,7 @@
    "sha256": "165bda2baf73dda5c45a813202b0531c6b8782314edf4ca4e96136bff9d0769a"
   },
   {
-   "id": 170,
+   "id": 169,
    "title": "Screenshot 2024-11-08 205956",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 205956.webp",
    "fileType": "image",
@@ -2401,7 +2387,7 @@
    "sha256": "fc3f01ec5f441c4611c7c8177d25adb10a8e7b2baee45dce6bc258ed1f891189"
   },
   {
-   "id": 171,
+   "id": 170,
    "title": "Screenshot 2024-11-08 210008",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 210008.webp",
    "fileType": "image",
@@ -2415,7 +2401,7 @@
    "sha256": "ddc94a52d6adbd5b1a049ca87f2e026d785e9ca551ab2c45f65ff84ea3e72cbc"
   },
   {
-   "id": 172,
+   "id": 171,
    "title": "Screenshot 2024-11-08 210142",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 210142.webp",
    "fileType": "image",
@@ -2429,7 +2415,7 @@
    "sha256": "342dafaf2b3634bd6d4cc70573e729a963dc28099ea63b7a44d213abfa02c37d"
   },
   {
-   "id": 173,
+   "id": 172,
    "title": "Screenshot 2024-11-08 212108",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 212108.webp",
    "fileType": "image",
@@ -2443,7 +2429,7 @@
    "sha256": "9485b18e95db31533309b156bb42fbb9620bd729d5f59595a0aba0e32ba83152"
   },
   {
-   "id": 174,
+   "id": 173,
    "title": "Screenshot 2024-11-08 212151",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 212151.webp",
    "fileType": "image",
@@ -2457,7 +2443,7 @@
    "sha256": "5d7eb68e0a17a4a8279cfa1c16624e781559ec2228ae2030287d056a41dd0095"
   },
   {
-   "id": 175,
+   "id": 174,
    "title": "Screenshot 2024-11-08 212401",
    "filePath": "content/images/evidence/court-files/no-warrant/Screenshot 2024-11-08 212401.webp",
    "fileType": "image",
@@ -2471,8 +2457,22 @@
    "sha256": "0fa4c834319948ec1fde54c13269583badb6bb592a7ba4b60c545068b7921830"
   },
   {
+   "id": 175,
+   "title": "Vision Manifest",
+   "filePath": "content/images/evidence/court-files/no-warrant/vision_manifest.json",
+   "fileType": "document",
+   "collection": "court-files/no-warrant",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 3685,
+   "sha256": "f2e077e77d05a9521976db0d2481d9494a0aae50abf0470a49fd42e3df16de51"
+  },
+  {
    "id": 176,
-   "title": "With warrant",
+   "title": "With Warrant",
    "filePath": "content/images/evidence/court-files/no-warrant/With warrant.webp",
    "fileType": "image",
    "collection": "court-files/no-warrant",
@@ -2612,7 +2612,7 @@
   },
   {
    "id": 186,
-   "title": "bond 2 (1)",
+   "title": "Bond 2 (1)",
    "filePath": "content/images/evidence/court-files/sheriffs-office/bond 2 (1).webp",
    "fileType": "image",
    "collection": "court-files/sheriffs-office",
@@ -2626,7 +2626,7 @@
   },
   {
    "id": 187,
-   "title": "father of witness works with detective",
+   "title": "Father Of Witness Works With Detective",
    "filePath": "content/images/evidence/court-files/sheriffs-office/father_of_witness_works_with_detective.webp",
    "fileType": "image",
    "collection": "court-files/sheriffs-office",
@@ -2640,7 +2640,7 @@
   },
   {
    "id": 188,
-   "title": "search warrant 1",
+   "title": "Search Warrant 1",
    "filePath": "content/images/evidence/court-files/sheriffs-office/search_warrant_1.webp",
    "fileType": "image",
    "collection": "court-files/sheriffs-office",
@@ -2668,7 +2668,7 @@
   },
   {
    "id": 190,
-   "title": "Timeline of injustice",
+   "title": "Timeline Of Injustice",
    "filePath": "content/images/evidence/court-files/Timeline of injustice.webp",
    "fileType": "image",
    "collection": "court-files",
@@ -2682,7 +2682,7 @@
   },
   {
    "id": 191,
-   "title": "missed house locations Deal",
+   "title": "Missed House Locations Deal",
    "filePath": "content/images/evidence/exhibits/missed house locations Deal.webp",
    "fileType": "image",
    "collection": "exhibits",
@@ -2710,7 +2710,7 @@
   },
   {
    "id": 193,
-   "title": "Carmen Love and James Patterson",
+   "title": "Carmen Love And James Patterson",
    "filePath": "content/images/evidence/exhibits/photos/Carmen Love and James Patterson.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2724,7 +2724,7 @@
   },
   {
    "id": 194,
-   "title": "Carmen Love Facebook Post about Christmas",
+   "title": "Carmen Love Facebook Post About Christmas",
    "filePath": "content/images/evidence/exhibits/photos/Carmen Love Facebook Post about  Christmas.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2738,7 +2738,7 @@
   },
   {
    "id": 195,
-   "title": "Deal giving a hug and Allen keeping hand in his pocket",
+   "title": "Deal Giving A Hug And Allen Keeping Hand In His Pocket",
    "filePath": "content/images/evidence/exhibits/photos/Deal giving a hug and Allen keeping hand in his pocket.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2752,7 +2752,7 @@
   },
   {
    "id": 196,
-   "title": "Direction she claims to have ran",
+   "title": "Direction She Claims To Have Ran",
    "filePath": "content/images/evidence/exhibits/photos/Direction she claims to have ran.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2780,7 +2780,7 @@
   },
   {
    "id": 198,
-   "title": "joel kelly 1",
+   "title": "Joel Kelly 1",
    "filePath": "content/images/evidence/exhibits/photos/joel_kelly_1.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2808,7 +2808,7 @@
   },
   {
    "id": 200,
-   "title": "Steve Freeman and Wife",
+   "title": "Steve Freeman And Wife",
    "filePath": "content/images/evidence/exhibits/photos/Steve Freeman and Wife.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2822,7 +2822,7 @@
   },
   {
    "id": 201,
-   "title": "Steve Freeman at Table",
+   "title": "Steve Freeman At Table",
    "filePath": "content/images/evidence/exhibits/photos/Steve Freeman at Table.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2836,7 +2836,7 @@
   },
   {
    "id": 202,
-   "title": "Thanksgiving - Freeman and wife and Carmen Loves brother at table",
+   "title": "Thanksgiving - Freeman And Wife And Carmen Loves Brother At Table",
    "filePath": "content/images/evidence/exhibits/photos/Thanksgiving - Freeman and wife and Carmen Loves brother at table.webp",
    "fileType": "image",
    "collection": "exhibits/photos",
@@ -2850,7 +2850,7 @@
   },
   {
    "id": 203,
-   "title": "939440261630504 448280553906794011 n",
+   "title": "939440261630504 448280553906794011 N",
    "filePath": "content/images/evidence/graphics/481209055_939440261630504_448280553906794011_n.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -2864,7 +2864,7 @@
   },
   {
    "id": 204,
-   "title": "10237421064288056 8196268695258276326 n",
+   "title": "10237421064288056 8196268695258276326 N",
    "filePath": "content/images/evidence/graphics/542756821_10237421064288056_8196268695258276326_n.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -2878,7 +2878,7 @@
   },
   {
    "id": 205,
-   "title": "attach money 24dp E8EAED FILL0 wght400 GRAD0 opsz24",
+   "title": "Attach Money 24dp E8EAED FILL0 wght400 GRAD0 opsz24",
    "filePath": "content/images/evidence/graphics/attach_money_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -2892,7 +2892,7 @@
   },
   {
    "id": 206,
-   "title": "Hug not returned",
+   "title": "Hug Not Returned",
    "filePath": "content/images/evidence/graphics/bar/Hug not returned.webp",
    "fileType": "image",
    "collection": "graphics/bar",
@@ -2906,7 +2906,7 @@
   },
   {
    "id": 207,
-   "title": "brick",
+   "title": "Brick",
    "filePath": "content/images/evidence/graphics/brick.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -2920,7 +2920,7 @@
   },
   {
    "id": 208,
-   "title": "Corruption of Justice",
+   "title": "Corruption Of Justice",
    "filePath": "content/images/evidence/graphics/Corruption of Justice.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -2934,7 +2934,7 @@
   },
   {
    "id": 209,
-   "title": "create a photorealistic, professional image of lady justice police badges scattered at her 2",
+   "title": "Create A Photorealistic, Professional Image Of Lady Justice Police Badges Scattered At Her 2",
    "filePath": "content/images/evidence/graphics/create_a_photorealistic,_professional_image_of_lady_justice__police_badges_scattered_at_her_2.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -2990,7 +2990,7 @@
   },
   {
    "id": 213,
-   "title": "dual loyalties",
+   "title": "Dual Loyalties",
    "filePath": "content/images/evidence/graphics/dual_loyalties.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -3116,7 +3116,7 @@
   },
   {
    "id": 222,
-   "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0485",
+   "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - IMG-0485",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0485.webp",
    "fileType": "image",
    "collection": "graphics/happel",
@@ -3130,7 +3130,7 @@
   },
   {
    "id": 223,
-   "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0486",
+   "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - IMG-0486",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0486.webp",
    "fileType": "image",
    "collection": "graphics/happel",
@@ -3144,7 +3144,7 @@
   },
   {
    "id": 224,
-   "title": "10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0487",
+   "title": "10-27T12-11 [allenbenjamins1@gmail.com] Conversation With Happel - IMG-0487",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0487.webp",
    "fileType": "image",
    "collection": "graphics/happel",
@@ -3158,7 +3158,7 @@
   },
   {
    "id": 225,
-   "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0488",
+   "title": "10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - IMG-0488",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27t12-11 [Allenbenjamins1@Gmail.Com] Conversation With Happel - Img-0488.webp",
    "fileType": "image",
    "collection": "graphics/happel",
@@ -3172,7 +3172,7 @@
   },
   {
    "id": 226,
-   "title": "10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0489",
+   "title": "10-27T12-11 [allenbenjamins1@gmail.com] Conversation With Happel - IMG-0489",
    "filePath": "content/images/evidence/graphics/happel/2019-10-27T12-11 [allenbenjamins1@gmail.com] Conversation with Happel - IMG-0489.webp",
    "fileType": "image",
    "collection": "graphics/happel",
@@ -3214,7 +3214,7 @@
   },
   {
    "id": 229,
-   "title": "airfield grass",
+   "title": "Airfield Grass",
    "filePath": "content/images/evidence/graphics/house-area/airfield_grass.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3228,7 +3228,7 @@
   },
   {
    "id": 230,
-   "title": "basement",
+   "title": "Basement",
    "filePath": "content/images/evidence/graphics/house-area/basement.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3256,7 +3256,7 @@
   },
   {
    "id": 232,
-   "title": "driveway",
+   "title": "Driveway",
    "filePath": "content/images/evidence/graphics/house-area/driveway.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3270,7 +3270,7 @@
   },
   {
    "id": 233,
-   "title": "exit location",
+   "title": "Exit Location",
    "filePath": "content/images/evidence/graphics/house-area/exit location.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3312,7 +3312,7 @@
   },
   {
    "id": 236,
-   "title": "Good overview",
+   "title": "Good Overview",
    "filePath": "content/images/evidence/graphics/house-area/Good overview.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3326,7 +3326,7 @@
   },
   {
    "id": 237,
-   "title": "guest bath",
+   "title": "Guest Bath",
    "filePath": "content/images/evidence/graphics/house-area/guest bath.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3340,7 +3340,7 @@
   },
   {
    "id": 238,
-   "title": "house from air",
+   "title": "House From Air",
    "filePath": "content/images/evidence/graphics/house-area/house from air.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3354,7 +3354,7 @@
   },
   {
    "id": 239,
-   "title": "house",
+   "title": "House",
    "filePath": "content/images/evidence/graphics/house-area/house.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3368,7 +3368,7 @@
   },
   {
    "id": 240,
-   "title": "House and Airfield",
+   "title": "House And Airfield",
    "filePath": "content/images/evidence/graphics/house-area/House_and_Airfield.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3396,7 +3396,7 @@
   },
   {
    "id": 242,
-   "title": "Lukes room",
+   "title": "Lukes Room",
    "filePath": "content/images/evidence/graphics/house-area/Lukes room.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3410,7 +3410,7 @@
   },
   {
    "id": 243,
-   "title": "Overview of property",
+   "title": "Overview Of Property",
    "filePath": "content/images/evidence/graphics/house-area/Overview of property.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3424,7 +3424,7 @@
   },
   {
    "id": 244,
-   "title": "overview",
+   "title": "Overview",
    "filePath": "content/images/evidence/graphics/house-area/overview.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3438,7 +3438,7 @@
   },
   {
    "id": 245,
-   "title": "overview of house compressed",
+   "title": "Overview Of House Compressed",
    "filePath": "content/images/evidence/graphics/house-area/overview_of_house_compressed.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3466,7 +3466,7 @@
   },
   {
    "id": 247,
-   "title": "woods",
+   "title": "Woods",
    "filePath": "content/images/evidence/graphics/house-area/woods.webp",
    "fileType": "image",
    "collection": "graphics/house-area",
@@ -3480,7 +3480,7 @@
   },
   {
    "id": 248,
-   "title": "to-10-numbers-png-16091",
+   "title": "To-10-Numbers-Png-16091",
    "filePath": "content/images/evidence/graphics/icons/1-to-10-numbers-png-16091.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3508,7 +3508,7 @@
   },
   {
    "id": 250,
-   "title": "document icon",
+   "title": "Document Icon",
    "filePath": "content/images/evidence/graphics/icons/document_icon.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3550,7 +3550,7 @@
   },
   {
    "id": 253,
-   "title": "InJustice",
+   "title": "Injustice",
    "filePath": "content/images/evidence/graphics/icons/InJustice.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3564,7 +3564,7 @@
   },
   {
    "id": 254,
-   "title": "InJustice 75 percent",
+   "title": "Injustice 75 Percent",
    "filePath": "content/images/evidence/graphics/icons/InJustice_75_percent.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3578,7 +3578,7 @@
   },
   {
    "id": 255,
-   "title": "InJustice 80 percent",
+   "title": "Injustice 80 Percent",
    "filePath": "content/images/evidence/graphics/icons/InJustice_80_percent.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3592,7 +3592,7 @@
   },
   {
    "id": 256,
-   "title": "liar",
+   "title": "Liar",
    "filePath": "content/images/evidence/graphics/icons/liar.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3606,7 +3606,7 @@
   },
   {
    "id": 257,
-   "title": "lie-001",
+   "title": "Lie-001",
    "filePath": "content/images/evidence/graphics/icons/lie-001.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3648,7 +3648,7 @@
   },
   {
    "id": 260,
-   "title": "stop corruption Clean",
+   "title": "Stop Corruption Clean",
    "filePath": "content/images/evidence/graphics/icons/stop_corruption Clean.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3662,7 +3662,7 @@
   },
   {
    "id": 261,
-   "title": "stop corruption",
+   "title": "Stop Corruption",
    "filePath": "content/images/evidence/graphics/icons/stop_corruption.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3676,7 +3676,7 @@
   },
   {
    "id": 262,
-   "title": "symbol help",
+   "title": "Symbol Help",
    "filePath": "content/images/evidence/graphics/icons/symbol_help.webp",
    "fileType": "image",
    "collection": "graphics/icons",
@@ -3704,7 +3704,7 @@
   },
   {
    "id": 264,
-   "title": "creating a scene",
+   "title": "Creating A Scene",
    "filePath": "content/images/evidence/graphics/inserts/creating a scene.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3732,7 +3732,7 @@
   },
   {
    "id": 266,
-   "title": "Deal argues over refusal",
+   "title": "Deal Argues Over Refusal",
    "filePath": "content/images/evidence/graphics/inserts/Deal_argues_over_refusal.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3746,7 +3746,7 @@
   },
   {
    "id": 267,
-   "title": "Deal tries to introduce",
+   "title": "Deal Tries To Introduce",
    "filePath": "content/images/evidence/graphics/inserts/Deal_tries_to_introduce.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3760,7 +3760,7 @@
   },
   {
    "id": 268,
-   "title": "drunk screaming",
+   "title": "Drunk Screaming",
    "filePath": "content/images/evidence/graphics/inserts/drunk_screaming.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3774,7 +3774,7 @@
   },
   {
    "id": 269,
-   "title": "exit at different times",
+   "title": "Exit At Different Times",
    "filePath": "content/images/evidence/graphics/inserts/exit at different times.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3788,7 +3788,7 @@
   },
   {
    "id": 270,
-   "title": "facedownground",
+   "title": "Facedownground",
    "filePath": "content/images/evidence/graphics/inserts/facedownground.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3802,7 +3802,7 @@
   },
   {
    "id": 271,
-   "title": "FAmily Affair Lies",
+   "title": "Family Affair Lies",
    "filePath": "content/images/evidence/graphics/inserts/FAmily_Affair_Lies.svg",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3816,7 +3816,7 @@
   },
   {
    "id": 272,
-   "title": "FAmily Affair Lies",
+   "title": "Family Affair Lies",
    "filePath": "content/images/evidence/graphics/inserts/FAmily_Affair_Lies.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3858,7 +3858,7 @@
   },
   {
    "id": 275,
-   "title": "hangingout",
+   "title": "Hangingout",
    "filePath": "content/images/evidence/graphics/inserts/hangingout.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3872,7 +3872,7 @@
   },
   {
    "id": 276,
-   "title": "hug lie",
+   "title": "Hug Lie",
    "filePath": "content/images/evidence/graphics/inserts/hug_lie.svg",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3886,7 +3886,7 @@
   },
   {
    "id": 277,
-   "title": "hug lie",
+   "title": "Hug Lie",
    "filePath": "content/images/evidence/graphics/inserts/hug_lie.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3900,7 +3900,7 @@
   },
   {
    "id": 278,
-   "title": "hug lie comes back",
+   "title": "Hug Lie Comes Back",
    "filePath": "content/images/evidence/graphics/inserts/hug_lie_comes_back.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3914,7 +3914,7 @@
   },
   {
    "id": 279,
-   "title": "Keys to allen",
+   "title": "Keys To Allen",
    "filePath": "content/images/evidence/graphics/inserts/Keys_to_allen.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3928,7 +3928,7 @@
   },
   {
    "id": 280,
-   "title": "lies",
+   "title": "Lies",
    "filePath": "content/images/evidence/graphics/inserts/lies.svg",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3942,7 +3942,7 @@
   },
   {
    "id": 281,
-   "title": "lies",
+   "title": "Lies",
    "filePath": "content/images/evidence/graphics/inserts/lies.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3956,7 +3956,7 @@
   },
   {
    "id": 282,
-   "title": "liesblank",
+   "title": "Liesblank",
    "filePath": "content/images/evidence/graphics/inserts/liesblank.svg",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3970,7 +3970,7 @@
   },
   {
    "id": 283,
-   "title": "liesblank",
+   "title": "Liesblank",
    "filePath": "content/images/evidence/graphics/inserts/liesblank.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3984,7 +3984,7 @@
   },
   {
    "id": 284,
-   "title": "logo for the abused",
+   "title": "Logo For The Abused",
    "filePath": "content/images/evidence/graphics/inserts/logo_for_the_abused.svg",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -3998,7 +3998,7 @@
   },
   {
    "id": 285,
-   "title": "logo for the abused",
+   "title": "Logo For The Abused",
    "filePath": "content/images/evidence/graphics/inserts/logo_for_the_abused.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -4012,7 +4012,7 @@
   },
   {
    "id": 286,
-   "title": "moon phase",
+   "title": "Moon Phase",
    "filePath": "content/images/evidence/graphics/inserts/moon phase.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -4026,7 +4026,7 @@
   },
   {
    "id": 287,
-   "title": "No one wants her around",
+   "title": "No One Wants Her Around",
    "filePath": "content/images/evidence/graphics/inserts/No one wants her around.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -4040,7 +4040,7 @@
   },
   {
    "id": 288,
-   "title": "payoff-001",
+   "title": "Payoff-001",
    "filePath": "content/images/evidence/graphics/inserts/payoff-001.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -4068,7 +4068,7 @@
   },
   {
    "id": 290,
-   "title": "whilebarefoot",
+   "title": "Whilebarefoot",
    "filePath": "content/images/evidence/graphics/inserts/whilebarefoot.webp",
    "fileType": "image",
    "collection": "graphics/inserts",
@@ -4096,7 +4096,7 @@
   },
   {
    "id": 292,
-   "title": "logo for the abused",
+   "title": "Logo For The Abused",
    "filePath": "content/images/evidence/graphics/logo_for_the_abused.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -4110,7 +4110,7 @@
   },
   {
    "id": 293,
-   "title": "logo for the abused large",
+   "title": "Logo For The Abused Large",
    "filePath": "content/images/evidence/graphics/logo_for_the_abused_large.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -4138,7 +4138,7 @@
   },
   {
    "id": 295,
-   "title": "Detective Freeman at Christmas with Carmen Love",
+   "title": "Detective Freeman At Christmas With Carmen Love",
    "filePath": "content/images/evidence/graphics/people/Detective Freeman at Christmas with Carmen Love.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4152,7 +4152,7 @@
   },
   {
    "id": 296,
-   "title": "estes",
+   "title": "Estes",
    "filePath": "content/images/evidence/graphics/people/estes.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4166,7 +4166,7 @@
   },
   {
    "id": 297,
-   "title": "Freeman and friends at Family Christmas",
+   "title": "Freeman And Friends At Family Christmas",
    "filePath": "content/images/evidence/graphics/people/Freeman and friends at Family Christmas.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4208,7 +4208,7 @@
   },
   {
    "id": 300,
-   "title": "freeman",
+   "title": "Freeman",
    "filePath": "content/images/evidence/graphics/people/freeman.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4250,7 +4250,7 @@
   },
   {
    "id": 303,
-   "title": "friends of corruption",
+   "title": "Friends Of Corruption",
    "filePath": "content/images/evidence/graphics/people/friends_of_corruption.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4264,7 +4264,7 @@
   },
   {
    "id": 304,
-   "title": "James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years 2",
+   "title": "James Morrison And Carmen Love Dating - Freeman Claimed He Didn't Know Him - Also Worked For The City For Years 2",
    "filePath": "content/images/evidence/graphics/people/James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years 2.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4278,7 +4278,7 @@
   },
   {
    "id": 305,
-   "title": "James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years",
+   "title": "James Morrison And Carmen Love Dating - Freeman Claimed He Didn't Know Him - Also Worked For The City For Years",
    "filePath": "content/images/evidence/graphics/people/James Morrison and Carmen Love Dating - Freeman Claimed he didn't know him - also worked for the city for years.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4292,7 +4292,7 @@
   },
   {
    "id": 306,
-   "title": "relationship wasn't private (Medium)",
+   "title": "Relationship Wasn't Private (Medium)",
    "filePath": "content/images/evidence/graphics/people/relationship_wasn't_private (Medium).webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4320,7 +4320,7 @@
   },
   {
    "id": 308,
-   "title": "who pays the price",
+   "title": "Who Pays The Price",
    "filePath": "content/images/evidence/graphics/people/who_pays the price.webp",
    "fileType": "image",
    "collection": "graphics/people",
@@ -4348,7 +4348,7 @@
   },
   {
    "id": 310,
-   "title": "bed push",
+   "title": "Bed Push",
    "filePath": "content/images/evidence/graphics/products/bed_push.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4376,7 +4376,7 @@
   },
   {
    "id": 312,
-   "title": "doorway people",
+   "title": "Doorway People",
    "filePath": "content/images/evidence/graphics/products/doorway_people.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4390,7 +4390,7 @@
   },
   {
    "id": 313,
-   "title": "Doorway represenation",
+   "title": "Doorway Represenation",
    "filePath": "content/images/evidence/graphics/products/Doorway_represenation.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4404,7 +4404,7 @@
   },
   {
    "id": 314,
-   "title": "FAmily",
+   "title": "Family",
    "filePath": "content/images/evidence/graphics/products/FAmily.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4418,7 +4418,7 @@
   },
   {
    "id": 315,
-   "title": "FAmily",
+   "title": "Family",
    "filePath": "content/images/evidence/graphics/products/FAmily_.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4432,7 +4432,7 @@
   },
   {
    "id": 316,
-   "title": "ladyjustice use 2 2",
+   "title": "Ladyjustice Use 2 2",
    "filePath": "content/images/evidence/graphics/products/ladyjustice_use_2_2.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4446,7 +4446,7 @@
   },
   {
    "id": 317,
-   "title": "Oversite-diagram",
+   "title": "Oversite-Diagram",
    "filePath": "content/images/evidence/graphics/products/Oversite-diagram.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4460,7 +4460,7 @@
   },
   {
    "id": 318,
-   "title": "Oversite-photo",
+   "title": "Oversite-Photo",
    "filePath": "content/images/evidence/graphics/products/Oversite-photo.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4530,7 +4530,7 @@
   },
   {
    "id": 323,
-   "title": "screenshot 2024-10-31 004656",
+   "title": "Screenshot 2024-10-31 004656",
    "filePath": "content/images/evidence/graphics/products/screenshot_2024-10-31_004656.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4544,7 +4544,7 @@
   },
   {
    "id": 324,
-   "title": "The crooks",
+   "title": "The Crooks",
    "filePath": "content/images/evidence/graphics/products/The crooks.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4558,7 +4558,7 @@
   },
   {
    "id": 325,
-   "title": "when you betray the institution you are entrusted to uphold",
+   "title": "When You Betray The Institution You Are Entrusted To Uphold",
    "filePath": "content/images/evidence/graphics/products/when_you_betray_the_institution_you_are_entrusted_to_uphold.webp",
    "fileType": "image",
    "collection": "graphics/products",
@@ -4600,7 +4600,7 @@
   },
   {
    "id": 328,
-   "title": "video-icon-8035",
+   "title": "Video-Icon-8035",
    "filePath": "content/images/evidence/graphics/video-icon-8035.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -4614,7 +4614,7 @@
   },
   {
    "id": 329,
-   "title": "Which police officer had that in there car",
+   "title": "Which Police Officer Had That In There Car",
    "filePath": "content/images/evidence/graphics/Which police officer had that in there car.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -4628,7 +4628,7 @@
   },
   {
    "id": 330,
-   "title": "wdwhts",
+   "title": "Wdwhts",
    "filePath": "content/images/evidence/graphics/why-not-this-system/wdwhts.webp",
    "fileType": "image",
    "collection": "graphics/why-not-this-system",
@@ -4838,7 +4838,7 @@
   },
   {
    "id": 345,
-   "title": "Witness grid",
+   "title": "Witness Grid",
    "filePath": "content/images/evidence/graphics/Witness_grid.webp",
    "fileType": "image",
    "collection": "graphics",
@@ -4852,7 +4852,7 @@
   },
   {
    "id": 346,
-   "title": "evidence mindmap",
+   "title": "Evidence Mindmap",
    "filePath": "content/images/evidence/mindmaps/evidence_mindmap.webp",
    "fileType": "image",
    "collection": "mindmaps",
@@ -4866,7 +4866,7 @@
   },
   {
    "id": 347,
-   "title": "Info BrokenSystem",
+   "title": "Info Brokensystem",
    "filePath": "content/images/evidence/mindmaps/Info_BrokenSystem.webp",
    "fileType": "image",
    "collection": "mindmaps",
@@ -4950,7 +4950,7 @@
   },
   {
    "id": 353,
-   "title": ".$For web.drawio.xml",
+   "title": ".$For Web.Drawio.XML",
    "filePath": "documents/connections/.$For_web.drawio.xml.bkp",
    "fileType": "document",
    "collection": "connections",
@@ -4964,7 +4964,7 @@
   },
   {
    "id": 354,
-   "title": "Connections 20250719 233212.drawio",
+   "title": "Connections 20250719 233212.Drawio",
    "filePath": "documents/connections/Connections_20250719_233212.drawio.xml",
    "fileType": "document",
    "collection": "connections",
@@ -4978,7 +4978,7 @@
   },
   {
    "id": 355,
-   "title": "deconstructing-the-lauren-deal-narrative-2026-03-29T05-14",
+   "title": "Deconstructing-The-Lauren-Deal-Narrative-2026-03-29T05-14",
    "filePath": "documents/connections/deconstructing-the-lauren-deal-narrative-2026-03-29T05-14.xml",
    "fileType": "document",
    "collection": "connections",
@@ -4992,7 +4992,7 @@
   },
   {
    "id": 356,
-   "title": "False Story.drawio",
+   "title": "False Story.Drawio",
    "filePath": "documents/connections/False Story.drawio.xml",
    "fileType": "document",
    "collection": "connections",
@@ -5006,7 +5006,7 @@
   },
   {
    "id": 357,
-   "title": "False Story.web.drawio",
+   "title": "False Story.Web.Drawio",
    "filePath": "documents/connections/False Story.web.drawio.xml",
    "fileType": "document",
    "collection": "connections",
@@ -5020,7 +5020,7 @@
   },
   {
    "id": 358,
-   "title": "For web.drawio",
+   "title": "For Web.Drawio",
    "filePath": "documents/connections/For_web.drawio.xml",
    "fileType": "document",
    "collection": "connections",
@@ -5048,7 +5048,7 @@
   },
   {
    "id": 360,
-   "title": "contradictions",
+   "title": "Contradictions",
    "filePath": "documents/data/contradictions.json",
    "fileType": "document",
    "collection": "data",
@@ -5057,12 +5057,12 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 135971,
-   "sha256": "7dac10d4b0a85b93e49456eb257a0ee7038d79d0d09df6bd5b5a9740a0059c9d"
+   "sizeBytes": 135386,
+   "sha256": "02c3618b95dce92305f0d7d6a81e632627fcea92b4caa82392e969b5ada42316"
   },
   {
-   "id": 361,
-   "title": "timeline",
+   "id": 362,
+   "title": "Timeline",
    "filePath": "documents/data/timeline.json",
    "fileType": "document",
    "collection": "data",
@@ -5071,11 +5071,11 @@
    "tags": [],
    "cards": [],
    "relatedEvidence": [],
-   "sizeBytes": 31099,
-   "sha256": "36a5199b1e7a47212229f7728b585f59cd11b73e539a747e26841022c01fb5a9"
+   "sizeBytes": 30636,
+   "sha256": "a2d7dcc96af5c88ed3b35599a5e9d5fd0cff32b2fc0cd5da2a10af51e5ab11a7"
   },
   {
-   "id": 362,
+   "id": 363,
    "title": "E07 Family Reunification Report 7.30.15(Joy Jones)",
    "filePath": "documents/Exhibits/E07_Family Reunification Report 7.30.15(Joy Jones).pdf",
    "fileType": "pdf",
@@ -5089,7 +5089,7 @@
    "sha256": "6a11d620c0d1280b823764cd177ee1f3d53904944cfd2222a7d6c55819ecc9ad"
   },
   {
-   "id": 363,
+   "id": 364,
    "title": "Exhibit A 12 NCAC 09A .0204",
    "filePath": "documents/Exhibits/Exhibit A 12 NCAC 09A .0204.pdf",
    "fileType": "pdf",
@@ -5103,7 +5103,7 @@
    "sha256": "f6377600fe659bb67ce7d2a8ae1676dea9f334c9bd69387dbe43470f8a25b6ad"
   },
   {
-   "id": 364,
+   "id": 365,
    "title": "Exhibit B Magistrates Order",
    "filePath": "documents/Exhibits/Exhibit B Magistrates Order.pdf",
    "fileType": "pdf",
@@ -5117,8 +5117,8 @@
    "sha256": "42b3924ce9ff76596faf0bd62959d126c720102c8bc22f08331d2a1db0d6cad0"
   },
   {
-   "id": 365,
-   "title": "Exhibit C Supplemental Analysis of Arrest Sequence",
+   "id": 366,
+   "title": "Exhibit C Supplemental Analysis Of Arrest Sequence",
    "filePath": "documents/Exhibits/Exhibit C Supplemental Analysis of Arrest Sequence.pdf",
    "fileType": "pdf",
    "collection": "Exhibits",
@@ -5131,8 +5131,8 @@
    "sha256": "33f9c52e20aabb58d3ec50625fe97107001131e8cfe46a8440379b6139516751"
   },
   {
-   "id": 366,
-   "title": "Exhibit D Trial Transcript - State v. Allen",
+   "id": 367,
+   "title": "Exhibit D Trial Transcript - State V. Allen",
    "filePath": "documents/Exhibits/Exhibit D Trial Transcript - State v. Allen.pdf",
    "fileType": "pdf",
    "collection": "Exhibits",
@@ -5145,7 +5145,7 @@
    "sha256": "7ea534956dbe810e05f405b0d99ea5b07b67b90aad286971cccf1787ef6bafaf"
   },
   {
-   "id": 367,
+   "id": 368,
    "title": "Exhibit E Discovery - Ben Allen Detective Papers.",
    "filePath": "documents/Exhibits/Exhibit E Discovery - Ben Allen Detective Papers..pdf",
    "fileType": "pdf",
@@ -5159,7 +5159,7 @@
    "sha256": "e49df69a166d09bbc981d3c20a862144a2d54e49d29f815c3271f8854abd6543"
   },
   {
-   "id": 368,
+   "id": 369,
    "title": "Exhibit F Lee County Sheriffs Office Policies 2",
    "filePath": "documents/Exhibits/Exhibit F Lee County Sheriffs Office Policies 2.pdf",
    "fileType": "pdf",
@@ -5173,7 +5173,7 @@
    "sha256": "53d009fdc370185054eb9cd147a2d93b4a350787819e1fd2d753b49bc0923aa5"
   },
   {
-   "id": 369,
+   "id": 370,
    "title": "Exhibit G Lee County Sheriffs Office Policies 1",
    "filePath": "documents/Exhibits/Exhibit G Lee County Sheriffs Office Policies 1.pdf",
    "fileType": "pdf",
@@ -5187,7 +5187,7 @@
    "sha256": "3ace03f28bc23e009be8d875e616114ff0f8d070c27233ea8f81af7aff1a053a"
   },
   {
-   "id": 370,
+   "id": 371,
    "title": "Exhibit H Carmen Love Freeman Interview",
    "filePath": "documents/Exhibits/Exhibit H Carmen Love Freeman Interview.pdf",
    "fileType": "pdf",
@@ -5201,7 +5201,7 @@
    "sha256": "07c31f3f4c376910ea4ffa10358a1ed9cc325e5261610708a10be73f7b64af6b"
   },
   {
-   "id": 371,
+   "id": 372,
    "title": "Exhibit Inventory List",
    "filePath": "documents/Exhibits/Exhibit Inventory List.pdf",
    "fileType": "pdf",
@@ -5215,7 +5215,7 @@
    "sha256": "ee44c6c916adedca761837ec72deeba77097b250f1ee2ef6f880d71bd125cf67"
   },
   {
-   "id": 372,
+   "id": 373,
    "title": "Brief Administrative Standards Investigation Major Donnie Steve Freem",
    "filePath": "documents/Exhibits/Media/Media_Packet/Brief_Administrative_Standards_Investigation_Major_Donnie_Steve_Freem.pdf",
    "fileType": "pdf",
@@ -5229,8 +5229,8 @@
    "sha256": "e74fbd66cd49e9d9620587d41c64e0212057c97cbe2d5c2e9dc38496054f3d79"
   },
   {
-   "id": 373,
-   "title": "Integrity in Uniform The Case for a Standards Investigation",
+   "id": 374,
+   "title": "Integrity In Uniform The Case For A Standards Investigation",
    "filePath": "documents/Exhibits/Media/Media_Packet/Integrity in Uniform The Case for a Standards Investigation.pdf",
    "fileType": "pdf",
    "collection": "Exhibits/Media/Media_Packet",
@@ -5243,8 +5243,8 @@
    "sha256": "ab5cafd86b5f7e7ecff67e7d988491f37d22db620d5e3850f54e8cd71fecb620"
   },
   {
-   "id": 374,
-   "title": "Integrity on Trial",
+   "id": 375,
+   "title": "Integrity On Trial",
    "filePath": "documents/Exhibits/Media/Media_Packet/Integrity on Trial.pdf",
    "fileType": "pdf",
    "collection": "Exhibits/Media/Media_Packet",
@@ -5257,7 +5257,7 @@
    "sha256": "7cc468da252b662d18b4e4466d5ce98396125a2bd179ccd57eaedd7e508a9285"
   },
   {
-   "id": 375,
+   "id": 376,
    "title": "Mindmap Administrative Standards Complaint Donnie Steve Freeman",
    "filePath": "documents/Exhibits/Media/Media_Packet/Mindmap_Administrative_Standards_Complaint_Donnie_Steve_Freeman.pdf",
    "fileType": "pdf",
@@ -5271,7 +5271,7 @@
    "sha256": "fa12f0adcc5abdd3700bd4e215a7082dd254e0dcac1c05ed3fcecee21ba9a4da"
   },
   {
-   "id": 376,
+   "id": 377,
    "title": "Mindmap Standards Basic",
    "filePath": "documents/Exhibits/Media/Media_Packet/Mindmap_Standards_Basic.pdf",
    "fileType": "pdf",
@@ -5285,8 +5285,8 @@
    "sha256": "fe6adf5aa56a8e3f04e18aee612c9e2a2b32413eaa7898cff9232aeb399cd69e"
   },
   {
-   "id": 377,
-   "title": "Tiffany carter Explanation",
+   "id": 378,
+   "title": "Tiffany Carter Explanation",
    "filePath": "documents/Exhibits/Tiffany_carter_Explanation.png",
    "fileType": "image",
    "collection": "Exhibits",
@@ -5299,7 +5299,7 @@
    "sha256": "af8882b8da532ad56fea78bcf6dfce195d858a745e1cb2265ae72640dc763bdf"
   },
   {
-   "id": 378,
+   "id": 379,
    "title": "Happel Coaching No Remedial Action Updated",
    "filePath": "documents/Happel_Coaching_No_Remedial_Action_Updated.docx",
    "fileType": "document",
@@ -5313,7 +5313,7 @@
    "sha256": "238cc484b09b6d1e683a0a4940cf4ebd8608eb6696d66d8b66c9e059ef2f8afa"
   },
   {
-   "id": 379,
+   "id": 380,
    "title": "Institutional Familiarity To Judgeshop",
    "filePath": "documents/Institutional Familiarity To Judgeshop.docx",
    "fileType": "document",
@@ -5327,8 +5327,8 @@
    "sha256": "d85140edec5d8f43f76f41478d7c64c3d7fae80c28706c355d5ef933500dd793"
   },
   {
-   "id": 380,
-   "title": "Integrated Narrative Findings - Reformatted and Polished",
+   "id": 381,
+   "title": "Integrated Narrative Findings - Reformatted And Polished",
    "filePath": "documents/Integrated Narrative Findings - Reformatted and Polished.pdf",
    "fileType": "pdf",
    "collection": "documents",
@@ -5341,7 +5341,7 @@
    "sha256": "568276cea520b098757147fd47e3b125186fd712ee6939f422f6d3f31a1729c5"
   },
   {
-   "id": 381,
+   "id": 382,
    "title": "Integrated Narrative Findings",
    "filePath": "documents/Integrated Narrative Findings.docx",
    "fileType": "document",
@@ -5355,8 +5355,8 @@
    "sha256": "cdf333e3b3ccbffade8d314db84c2bd02704cd48d92b1e862d8b73fa83a18bac"
   },
   {
-   "id": 382,
-   "title": "deconstructing-the-lauren-deal-narrative-2026-03-29T05-13",
+   "id": 383,
+   "title": "Deconstructing-The-Lauren-Deal-Narrative-2026-03-29T05-13",
    "filePath": "documents/mindmaps/deconstructing-the-lauren-deal-narrative-2026-03-29T05-13.mm",
    "fileType": "document",
    "collection": "mindmaps",
@@ -5369,8 +5369,8 @@
    "sha256": "1875f0634d50dfaebdb8affba4fce88d90ecc304857ebdf881d07666286406a2"
   },
   {
-   "id": 383,
-   "title": "deconstructing-the-lauren-deal-narrative-2026-03-29T05-14",
+   "id": 384,
+   "title": "Deconstructing-The-Lauren-Deal-Narrative-2026-03-29T05-14",
    "filePath": "documents/mindmaps/deconstructing-the-lauren-deal-narrative-2026-03-29T05-14.opml",
    "fileType": "document",
    "collection": "mindmaps",
@@ -5383,8 +5383,8 @@
    "sha256": "e513e1acfe10bfd07897d61c713cff3014ff52977512344d4b610f97d570e5db"
   },
   {
-   "id": 384,
-   "title": "deconstructing-the-lauren-deal-narrative-2026-03-30T21-57",
+   "id": 385,
+   "title": "Deconstructing-The-Lauren-Deal-Narrative-2026-03-30T21-57",
    "filePath": "documents/mindmaps/deconstructing-the-lauren-deal-narrative-2026-03-30T21-57.mm",
    "fileType": "document",
    "collection": "mindmaps",
@@ -5397,8 +5397,8 @@
    "sha256": "6c1c2b5da4eca2cabbc3d64d82b6effc412e7abde9361851788ebc90d35e600c"
   },
   {
-   "id": 385,
-   "title": "evidence-network-analysis-benjamin-allen-2026-04-05T23-13",
+   "id": 386,
+   "title": "Evidence-Network-Analysis-Benjamin-Allen-2026-04-05T23-13",
    "filePath": "documents/mindmaps/evidence-network-analysis-benjamin-allen-2026-04-05T23-13.mm",
    "fileType": "document",
    "collection": "mindmaps",
@@ -5411,8 +5411,8 @@
    "sha256": "fa16639d63366c043563f7df80d9433b51c42dedbd52c502278f31133471af00"
   },
   {
-   "id": 386,
-   "title": "evidence-network-analysis-benjamin-allen-2026-04-11T07-53",
+   "id": 387,
+   "title": "Evidence-Network-Analysis-Benjamin-Allen-2026-04-11T07-53",
    "filePath": "documents/mindmaps/evidence-network-analysis-benjamin-allen-2026-04-11T07-53.opml",
    "fileType": "document",
    "collection": "mindmaps",
@@ -5425,8 +5425,8 @@
    "sha256": "805939b8eecc5c8f30b3432a3189cb075143a267095180ef410340dd72ea8325"
   },
   {
-   "id": 387,
-   "title": "state-vs-ben-allen-perjury-and-misconduc-2026-03-30T21-59",
+   "id": 388,
+   "title": "State-Vs-Ben-Allen-Perjury-And-Misconduc-2026-03-30T21-59",
    "filePath": "documents/mindmaps/state-vs-ben-allen-perjury-and-misconduc-2026-03-30T21-59.mm",
    "fileType": "document",
    "collection": "mindmaps",
@@ -5439,7 +5439,7 @@
    "sha256": "441372f026de61ab6b125fcf581b5cd63d2c94055697dab9cd7b3b8cf4445123"
   },
   {
-   "id": 388,
+   "id": 389,
    "title": "No Remedial Action After Alleged ADA Witness Coaching",
    "filePath": "documents/No Remedial Action After Alleged ADA Witness Coaching.docx",
    "fileType": "document",
@@ -5453,7 +5453,7 @@
    "sha256": "012fec9a618574e252fe8bf427179d299553e3c5d4ef4bbe84a477fed1eab0e8"
   },
   {
-   "id": 389,
+   "id": 390,
    "title": "No Remedial Action After Alleged ADA Witness Coaching",
    "filePath": "documents/No Remedial Action After Alleged ADA Witness Coaching.pdf",
    "fileType": "pdf",
@@ -5467,7 +5467,7 @@
    "sha256": "1dda986db24e3d489cba8635ffa684427c418dc0b2542ab2de13f0273d42c65d"
   },
   {
-   "id": 390,
+   "id": 391,
    "title": "Public Records Request",
    "filePath": "documents/Public_Records_Request.pdf",
    "fileType": "pdf",
@@ -5481,7 +5481,7 @@
    "sha256": "57e97c48606e7a9ce549529bd982b0bd117123324bdeec61f4b795ff4efb1bbc"
   },
   {
-   "id": 391,
+   "id": 392,
    "title": "Writeup From Freeman",
    "filePath": "documents/Writeup From Freeman_20260201_194033.pdf",
    "fileType": "pdf",
@@ -5495,7 +5495,7 @@
    "sha256": "8993f22c8a89a64c923627d7ba293a4ecb6854157d24eaf176fbb71aa2cc5275"
   },
   {
-   "id": 392,
+   "id": 393,
    "title": "A Arrival",
    "filePath": "video/A Arrival.mp4",
    "fileType": "video",
@@ -5509,8 +5509,36 @@
    "sha256": "b74182aa7dc19968511a7c91e87b5aed5b79425b6e5eb54f27186cc0b825ce5a"
   },
   {
-   "id": 393,
-   "title": "Carter and Tiffany",
+   "id": 394,
+   "title": "B Peter West Leaves Alone Compressed",
+   "filePath": "video/B Peter West Leaves Alone Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 19037383,
+   "sha256": "e6d360969a340c029d0b9b2b9281c1dbf2bc46470d18cf140182e2aaa7689fe9"
+  },
+  {
+   "id": 395,
+   "title": "C Carmen And James Leave Compressed",
+   "filePath": "video/C Carmen And James Leave Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 15529926,
+   "sha256": "b7ad4022d23051570a7f844a1123d12ad5a137a50c4bc4fe5ee13fba7c66538d"
+  },
+  {
+   "id": 396,
+   "title": "Carter And Tiffany",
    "filePath": "video/Carter and Tiffany.MOV",
    "fileType": "video",
    "collection": "video",
@@ -5523,7 +5551,7 @@
    "sha256": "cd35f7699b0b9f1c54266f3ee4e49f5531a519b86246b88f168428cc9ab107ce"
   },
   {
-   "id": 394,
+   "id": 397,
    "title": "D Deal Makes Contact With Allen Compressed",
    "filePath": "video/D Deal Makes Contact With Allen Compressed.mp4",
    "fileType": "video",
@@ -5537,7 +5565,35 @@
    "sha256": "330bcbd19f3f7038e8899a3b98e7a5f2b9f6284e8ead56616df6a1d513bf2b0a"
   },
   {
-   "id": 395,
+   "id": 398,
+   "title": "E Allen Leaves Deal After Introduction And She Tracks Him Back Down Compressed",
+   "filePath": "video/E Allen Leaves Deal After Introduction And She Tracks Him Back Down Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 15252035,
+   "sha256": "0b769a4fbf567c3bd34d99cb57b36b9cd7cb04ded2dd344d178f780ef895d092"
+  },
+  {
+   "id": 399,
+   "title": "F Deal Gives Keys To Demarco Compressed",
+   "filePath": "video/F Deal Gives Keys To Demarco Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 23420997,
+   "sha256": "d69bbb580c76c208aa22957dfec31264293caed870135063b0083e0e90351a17"
+  },
+  {
+   "id": 400,
    "title": "G Deal Gets Upset That Allen Told Her She Cant Just Invite Herself To His House And Yells At Him Compressed",
    "filePath": "video/G Deal Gets Upset That Allen Told Her She Cant Just Invite Herself To His House And Yells At Him Compressed.mp4",
    "fileType": "video",
@@ -5551,7 +5607,7 @@
    "sha256": "667f13ba00e7609d717e48f928702fc27b2034548f18f520d90544e526689307"
   },
   {
-   "id": 396,
+   "id": 401,
    "title": "H Still Arguing Lauren Hugs Allen And He Keeps His Hands In His Pocket Compressed",
    "filePath": "video/H Still Arguing Lauren Hugs Allen And He Keeps His Hands In His Pocket Compressed.mp4",
    "fileType": "video",
@@ -5565,7 +5621,35 @@
    "sha256": "86192c73385e5c64aac9c899a888b4d6857ec7c34fb9d25301442d2a5d940cf4"
   },
   {
-   "id": 397,
+   "id": 402,
+   "title": "I Laurens Behavior That Eventually Leads To Them Leaving The Bar Area Also But She Follows Them Compressed",
+   "filePath": "video/I Laurens Behavior That Eventually Leads To Them Leaving The Bar Area Also But She Follows Them Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 34895874,
+   "sha256": "a1325d4ff2ccd53ed7d162b72b91de5a295152ace5106596e635f305cd91cc14"
+  },
+  {
+   "id": 403,
+   "title": "L First Time Lauren Comes To Allen To Bother Him Compressed",
+   "filePath": "video/L First Time Lauren Comes To Allen To Bother Him Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 12769457,
+   "sha256": "b1464d76fc11702c6051d006c5ccdde77fccde3904ebf40c202596f602a06856"
+  },
+  {
+   "id": 404,
    "title": "Changing Stories Compressed",
    "filePath": "video/long_view/Changing Stories Compressed.mp4",
    "fileType": "video",
@@ -5579,7 +5663,7 @@
    "sha256": "601d0eb286d9ea486691d641eed456f1165f5d415c061205cedbd75178c79496"
   },
   {
-   "id": 398,
+   "id": 405,
    "title": "Lady Justice Raising",
    "filePath": "video/long_view/Lady Justice Raising.mp4",
    "fileType": "video",
@@ -5593,7 +5677,7 @@
    "sha256": "72e1a0cc34531d8746599c0571a90ed23f1a0a608fcfc139fc97105411ffe77a"
   },
   {
-   "id": 399,
+   "id": 406,
    "title": "Lady Justice Slow",
    "filePath": "video/long_view/Lady Justice Slow.mp4",
    "fileType": "video",
@@ -5607,7 +5691,7 @@
    "sha256": "0f2541b2edefd363e5b524f751055a1290ea67b9ad58fe0de2f93327644c36a0"
   },
   {
-   "id": 400,
+   "id": 407,
    "title": "Subscription Service 1",
    "filePath": "video/long_view/Subscription Service_1.mkv",
    "fileType": "video",
@@ -5621,8 +5705,8 @@
    "sha256": "2ab8abaa1591c5aba77cdd49be98c05ec9f2c7436b8b87bf75bdd48c8b8eac17"
   },
   {
-   "id": 401,
-   "title": "Where are the briars",
+   "id": 408,
+   "title": "Where Are The Briars",
    "filePath": "video/long_view/Where are the briars.mp4",
    "fileType": "video",
    "collection": "long_view",
@@ -5635,7 +5719,49 @@
    "sha256": "37c72d916ffa868d3a8d89fcbf281677e11cdedd5daf0a828e11d7da264a5cd5"
   },
   {
-   "id": 402,
+   "id": 409,
+   "title": "M Second Time Lauren Bounces Off Chair Compressed",
+   "filePath": "video/M Second Time Lauren Bounces Off Chair Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 27246464,
+   "sha256": "9caffa0158208c0826de7f5affaf5ca03e66859f348f162e5fa20d8f8c734a8f"
+  },
+  {
+   "id": 410,
+   "title": "O Deals Last Blowup Every Stares At Her Compressed",
+   "filePath": "video/O Deals Last Blowup Every Stares At Her Compressed.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 80952999,
+   "sha256": "bba49216fd8b727e95a1bf3e4d5e6c922b82ee224ba3d04f1255f00b79b3b7f5"
+  },
+  {
+   "id": 411,
+   "title": "P Allen Goes To To Check On Drunk Lauren",
+   "filePath": "video/P Allen Goes To To Check On Drunk Lauren.mp4",
+   "fileType": "video",
+   "collection": "video",
+   "sourceKind": "local_file",
+   "note": null,
+   "tags": [],
+   "cards": [],
+   "relatedEvidence": [],
+   "sizeBytes": 13339878,
+   "sha256": "7f3a71603bfee6b3275ae029b9e4eae51a3dcaeac26ce27e5198bb0d742fe1c8"
+  },
+  {
+   "id": 412,
    "title": "Q We All Exit At Different Times",
    "filePath": "video/Q We All Exit At Different Times.mp4",
    "fileType": "video",

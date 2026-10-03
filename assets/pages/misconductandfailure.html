@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+    <link rel="stylesheet" href="shared/styles.css?v=20261003k">
 <style>
         body.mindmap-page {
             color: var(--light);
@@ -60,12 +60,14 @@
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
 <body class="mindmap-page">
     <div id="top" class="container">
         <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -104,9 +106,13 @@
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
         </div>
         <div class="header">
-            <h1>An Edifice of Lies</h1>
+            <h1 class="page-title">Mindmaps</h1>
             <h2>A gavel is just a small hammer used to nail shut the coffin of due process.</h2>
         </div>
         <nav class="page-rail" aria-label="On this page">
@@ -878,7 +884,8 @@
     }, true);
   });
 </script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 
 

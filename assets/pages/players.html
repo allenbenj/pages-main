@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+    <link rel="stylesheet" href="shared/styles.css?v=20261003k">
 
   <!-- P1-2 · un-card the chrome: the relationships section uses ruled blocks, not nested cards -->
   <style>
@@ -264,12 +264,14 @@
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
 <body>
     <div class="container">
         <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -308,20 +310,16 @@
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
         </div>
         <div class="header">
-             <h1>An Edifice of Lies</h1>
+             <h1 class="page-title">Key Players &amp; Roles</h1>
             <h2>“A good prosecutor can make an innocent man look guilty. A great prosecutor never has to.”</h2>
         </div>
         
-        <div class="u-migrated-a7fd9f34">
-              <img style="--image-size: auto" loading="lazy" decoding="async" src="content/images/evidence/graphics/products/Crime%20Board.webp"
-                 alt="Crime Board"
-                 class="apple-img u-migrated-e926664b"
-                  data-modal-image="content/images/evidence/graphics/products/Crime Board.webp"
-                >
-        </div>
-
         <nav class="page-rail" aria-label="On this page">
             <p class="page-rail-title">On this page</p>
             <a href="#players-overview" >Key Players</a>
@@ -330,9 +328,8 @@
         </nav>
 
 
-        <div class="content-section">
-            <h2 id="players-overview" class="section-title u-migrated-7a8feb70">Key Players & Roles</h2>
-            <h3 class="u-migrated-7a8feb70">The people at the center of this case did not meet as strangers. Several relationships existed before the accusation was made, and those pre-existing connections shaped <span class="status-investigated">who was investigated</span>, <span class="status-interviewed">who was interviewed</span>, and <span class="status-protected">who was protected</span>. They used a previous allegation that was investigated by experts and the court to turn opinion agaisnt the defendant while never giving him the oppurtunity to defend against it. </h3>
+        <div id="players-overview" class="content-section">
+            <h3 class="u-migrated-7a8feb70">The people at the center of this case did not meet as strangers. Several relationships existed before the accusation was made, and those pre-existing connections shaped <span class="status-investigated">who was investigated</span>, <span class="status-interviewed">who was interviewed</span>, and <span class="status-protected">who was protected</span>. They used a previous allegation that was investigated by experts and the court to turn opinion against the defendant while never giving him the opportunity to defend against it. </h3>
             
             <div class="person-grid">
                 <div class="card person-card">
@@ -551,6 +548,14 @@
             </div>
         </div>
       
+        <div class="u-migrated-a7fd9f34">
+              <img style="--image-size: auto" loading="lazy" decoding="async" src="content/images/evidence/graphics/products/Crime%20Board.webp"
+                 alt="Crime Board"
+                 class="apple-img u-migrated-e926664b"
+                  data-modal-image="content/images/evidence/graphics/products/Crime Board.webp"
+                >
+        </div>
+
              <div class="content-section">
             <h2 id="players-relationships" class="section-title u-migrated-7a8feb70">Key Relationships & Hidden Connections</h2>
             
@@ -676,7 +681,8 @@
     }, true);
   });
 </script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 
 

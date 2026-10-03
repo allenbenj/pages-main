@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
   <style>
     body {
       color: var(--light);
@@ -60,6 +60,7 @@
       border-radius: 24px;
       padding: 34px;
       margin-bottom: 24px;
+      text-align: center;
     }
 
     .hero h1 {
@@ -75,7 +76,11 @@
       color: var(--text-muted);
       font-size: 1.02rem;
       line-height: 1.8;
-      margin-bottom: 0;
+      margin: 0 auto;
+    }
+
+    .hero .hero-actions {
+      justify-content: center;
     }
 
     .content-section {
@@ -482,13 +487,17 @@
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/reader-preview.css?v=20261003l">
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
-<body>
+<body class="reader-pilot reader-map">
+<a class="reader-skip" href="#reader-main">Skip to content</a>
   <div class="container page">
 
     <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab active" href="overview.html" aria-current="page">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -527,21 +536,24 @@
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
 
     </div>
 
-    <section class="hero">
-      <h1 class="t-display">Site Map</h1>
+    <section class="hero" id="reader-main" tabindex="-1">
+      <h1 class="page-title">Site Map</h1>
       <p>
         Orientation hub for the case archive. Use the tabs below to switch between three views:
         the section-by-section project map, a clean page index, and the visual connectivity diagram.
       </p>
       <div class="hero-actions">
-        <a class="primary" href="index.html">Back to landing</a>
+        <a class="primary" href="index.html">Home</a>
         <a href="timeline.html">Start with the timeline</a>
         <a href="evidence.html">Review evidence record</a>
         <a href="documentspage.html">Open document archive</a>
-        <a href="network_analysis/index.html">Network analysis app</a>
       </div>
     </section>
 
@@ -573,14 +585,14 @@
         <div class="route-grid">
           <article class="route-card">
             <div class="route-kicker">Orientation</div>
-            <h3>Landing Page</h3>
+            <h3>Home</h3>
             <p>The presentation layer for the project. Use it for high-level framing, graphics, and quick entry into the strongest sections.</p>
             <ul>
-              <li>Carved-stone hero, corruption quotes, and the smoke-quote reveal</li>
+              <li>The elapsed-arrest clock on the INJUSTICE panel, the seven factors, and three routes into the timeline, the contradictions, and the evidence viewer</li>
               <li>The seven-factor summary placing this case inside known wrongful-conviction patterns</li>
               <li>Best for first-time visitors — every main section is one click away</li>
             </ul>
-            <a href="index.html">Open landing page</a>
+            <a href="index.html">Open home</a>
           </article>
 
           <article class="route-card">
@@ -646,7 +658,7 @@
               <li><a href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a> — structured review of contradictions, prior statements, corroboration gaps, and physical-feasibility questions</li>
               <li><a href="case-study.html">Case study</a> — Wrongful Accusation: the record read as a single narrative</li>
               <li><a href="data-snapshot.html">Data snapshot</a> — the record reduced to its key figures and comparisons</li>
-              <li><a href="network_analysis/index.html">Network analysis app</a> — interactive graph of entities and relationships built from the case data</li>
+              <li><a href="network_analysis/index.html">Network analysis app</a> — graph of entities and relationships, included when the site is built and deployed</li>
             </ul>
           </article>
         </div>
@@ -664,7 +676,7 @@
           <div class="index-card">
             <h3>Starting Points</h3>
             <ul class="page-index-list">
-              <li><a href="index.html">Landing page</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="overview.html">Site map (this page)</a></li>
             </ul>
           </div>
@@ -734,7 +746,7 @@
         </article>
         <article class="summary-card">
           <strong>12</strong>
-          <p>Pages linked directly from the landing page.</p>
+          <p>Pages linked directly from the home page.</p>
         </article>
         <article class="summary-card">
           <strong>0</strong>
@@ -754,7 +766,7 @@
             <p class="column-label">Entry Points</p>
             <article class="map-node hub">
               <code>Main hub</code>
-              <h3>Landing</h3>
+              <h3>Home</h3>
               <p><a href="index.html">index.html</a> is the front door and the broadest launch point into the archive.</p>
             </article>
             <div class="map-connector vertical" aria-hidden="true"></div>
@@ -822,7 +834,7 @@
             <article class="map-node">
               <code>Tools</code>
               <h3>Editor and Network Analysis</h3>
-              <p>The operator-only evidence editor is archived; <a href="network_analysis/index.html">network_analysis/index.html</a> remains the public working tool.</p>
+              <p>The operator-only evidence editor is archived. <a href="network_analysis/index.html">Network analysis</a> is included when the site is built and deployed.</p>
             </article>
           </div>
         </div>
@@ -835,7 +847,7 @@
         <div class="matrix-grid">
           <article class="matrix-card">
             <h3>index.html</h3>
-            <p><code>Landing hub — 12 outbound pages</code></p>
+            <p><code>Home hub — 12 outbound pages</code></p>
             <div class="node-links">
               <a href="overview.html">site map</a>
               <a href="timeline.html">timeline</a>
@@ -856,7 +868,7 @@
             <h3>overview.html</h3>
             <p><code>Site map hub — covers every destination page</code></p>
             <div class="node-links">
-              <a href="index.html">landing</a>
+              <a href="index.html">home</a>
               <a href="timeline.html">timeline</a>
               <a href="players.html">players</a>
               <a href="connections.html">connections</a>
@@ -965,6 +977,8 @@
       });
     })();
   </script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/reader-preview.js?v=20261002b" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     ? "../../"
     : /\/(?:content|network_analysis)\//.test(currentPath) ? "../" : "./";
   const indexUrl = new URL(`${siteRoot}assets/search-index.json`, window.location.href).href;
-  const cssUrl = new URL(`${siteRoot}shared/site-search.css`, window.location.href).href;
+  const cssUrl = new URL(`${siteRoot}shared/reader-search.css`, window.location.href).href;
 
   function normalizeDirectFilePageLinks() {
     if (!isDirectFile) return;
@@ -66,6 +66,38 @@
 
   initializeNavigation();
 
+  function preparePageRail() {
+    const rail = document.querySelector(".page-rail");
+    if (!rail || rail.querySelector(".page-rail-details")) return;
+    const details = document.createElement("details");
+    details.className = "page-rail-details";
+    const summary = document.createElement("summary");
+    summary.textContent = "On this page";
+    const title = rail.querySelector(".page-rail-title");
+    if (title) title.hidden = true;
+    details.append(summary, ...rail.childNodes);
+    rail.append(details);
+    const wide = window.matchMedia("(min-width: 1301px)");
+    const syncRail = () => { details.open = wide.matches; };
+    syncRail();
+    wide.addEventListener("change", syncRail);
+
+    const placeHashTarget = () => {
+      if (!location.hash || location.hash.length < 2) return;
+      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      const railBottom = rail.getBoundingClientRect().bottom;
+      const top = target.getBoundingClientRect().top;
+      if (top < railBottom + 16) {
+        window.scrollTo(0, Math.max(0, window.scrollY + top - railBottom - 16));
+      }
+    };
+    requestAnimationFrame(placeHashTarget);
+    window.addEventListener("hashchange", () => requestAnimationFrame(placeHashTarget));
+  }
+
+  preparePageRail();
+
   if (!document.querySelector(`link[data-site-search-css]`)) {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -80,12 +112,14 @@
 
   const overlay = document.createElement("div");
   overlay.className = "site-search-overlay";
+  overlay.inert = true;
+  overlay.setAttribute("aria-hidden", "true");
   overlay.innerHTML = `
     <div class="site-search-panel" role="dialog" aria-modal="true" aria-label="Search the project">
       <div class="site-search-header">
         <label class="site-search-input-wrap">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0a7 7 0 0114 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <input type="search" placeholder="Search every page, document, PDF, and linked file..." autocomplete="off" spellcheck="false" />
+          <input type="search" aria-label="Search the project" placeholder="Search pages, documents, and media..." autocomplete="off" spellcheck="false" />
         </label>
         <button type="button" class="site-search-close" aria-label="Close search">Close</button>
       </div>
@@ -98,7 +132,7 @@
           <button class="site-search-filter" data-filter="media" type="button">Media</button>
           <button class="site-search-filter" data-filter="image" type="button">Images</button>
         </div>
-        <div class="site-search-meta">Press Ctrl/Cmd+K to search</div>
+        <div class="site-search-meta" role="status" aria-live="polite">Press Ctrl/Cmd+K to search</div>
       </div>
       <div class="site-search-results">
         <div class="site-search-empty">Start typing to search the full project.</div>
@@ -107,30 +141,52 @@
   `;
   document.body.appendChild(overlay);
 
-  const launcher = document.createElement("button");
+  const searchMount = document.querySelector("[data-site-search-mount]");
+  const launcher = searchMount || document.createElement("button");
   launcher.type = "button";
-  launcher.className = "site-search-launcher";
-  launcher.innerHTML = `<strong>Search Project</strong><span>Ctrl/Cmd+K</span>`;
-  document.body.appendChild(launcher);
+  launcher.classList.add("site-search-launcher");
+  launcher.innerHTML = searchMount
+    ? `<strong>Search</strong><span>Ctrl/Cmd+K</span>`
+    : `<strong>Search Project</strong><span>Ctrl/Cmd+K</span>`;
+  if (searchMount) launcher.classList.add("is-inline");
+  else document.body.appendChild(launcher);
 
   const input = overlay.querySelector("input");
   const closeButton = overlay.querySelector(".site-search-close");
   const resultsNode = overlay.querySelector(".site-search-results");
   const metaNode = overlay.querySelector(".site-search-meta");
   const filterButtons = [...overlay.querySelectorAll(".site-search-filter")];
+  filterButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.classList.contains("is-active"))));
+  let previousFocus = null;
+  let previousOverflow = "";
+  let backgroundElements = [];
+  let searchVersion = 0;
+  let searchTimer = null;
 
   function openSearch() {
+    if (overlay.classList.contains("is-open")) return;
+    previousFocus = document.activeElement;
+    previousOverflow = document.body.style.overflow;
+    overlay.inert = false;
+    overlay.setAttribute("aria-hidden", "false");
     overlay.classList.add("is-open");
+    backgroundElements = [...document.body.children]
+      .filter((element) => element !== overlay && element instanceof HTMLElement)
+      .map((element) => [element, element.inert]);
+    backgroundElements.forEach(([element]) => { element.inert = true; });
     document.body.style.overflow = "hidden";
-    ensureIndexLoaded().then(() => {
-      input.focus();
-      runSearch(input.value);
-    });
+    input.focus();
+    runSearch(input.value);
   }
 
   function closeSearch() {
     overlay.classList.remove("is-open");
-    document.body.style.overflow = "";
+    overlay.inert = true;
+    overlay.setAttribute("aria-hidden", "true");
+    backgroundElements.forEach(([element, wasInert]) => { element.inert = wasInert; });
+    backgroundElements = [];
+    document.body.style.overflow = previousOverflow;
+    previousFocus?.focus();
   }
 
   launcher.addEventListener("click", openSearch);
@@ -150,32 +206,59 @@
     if (event.key === "Escape" && overlay.classList.contains("is-open")) {
       closeSearch();
     }
+    if (event.key === "Tab" && overlay.classList.contains("is-open")) {
+      const focusable = [...overlay.querySelectorAll('input, button, a[href]')]
+        .filter((element) => !element.disabled && element.getClientRects().length);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
+    }
   });
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       activeFilter = button.dataset.filter || "all";
-      filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      filterButtons.forEach((item) => {
+        item.classList.toggle("is-active", item === button);
+        item.setAttribute("aria-pressed", String(item === button));
+      });
       runSearch(input.value);
     });
   });
 
-  input.addEventListener("input", () => runSearch(input.value));
+  input.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => runSearch(input.value), 160);
+  });
+  resultsNode.addEventListener("click", (event) => {
+    if (event.target.closest('.site-search-retry')) {
+      input.focus();
+      runSearch(input.value);
+    }
+  });
 
   async function ensureIndexLoaded() {
     if (indexPayload) return indexPayload;
     if (!loadPromise) {
       metaNode.textContent = "Loading search index...";
       loadPromise = fetch(indexUrl, { cache: "no-store" })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
         .then((data) => {
           indexPayload = data;
           metaNode.textContent = `${data.recordCount.toLocaleString()} indexed sections from ${data.indexedFileCount.toLocaleString()} files`;
           return data;
         })
         .catch((error) => {
+          loadPromise = null;
           metaNode.textContent = "Search index failed to load";
-          resultsNode.innerHTML = `<div class="site-search-empty">Search index failed to load: ${escapeHtml(error.message || String(error))}</div>`;
+          resultsNode.innerHTML = `<div class="site-search-empty">Search is temporarily unavailable. <button type="button" class="site-search-close site-search-retry">Try again</button></div>`;
           throw error;
         });
     }
@@ -249,7 +332,7 @@
       score += Math.round(fuzzyTokenScore(token, text) * 5);
     }
 
-    if (record.kind === "page") score += 3;
+    if (score > 0 && record.kind === "page") score += 3;
     return score;
   }
 
@@ -320,10 +403,15 @@
   }
 
   async function runSearch(rawQuery) {
-    const payload = await ensureIndexLoaded();
+    const version = ++searchVersion;
+    let payload;
+    try { payload = await ensureIndexLoaded(); }
+    catch { return; }
+    if (version !== searchVersion) return;
     const query = normalize(rawQuery);
     const queryTokens = tokenize(rawQuery);
     if (!queryTokens.length) {
+      metaNode.textContent = `${payload.recordCount.toLocaleString()} indexed sections from ${payload.indexedFileCount.toLocaleString()} files`;
       renderResults([], rawQuery, queryTokens);
       return;
     }

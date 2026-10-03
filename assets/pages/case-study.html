@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
   <style>
       body {
           color: var(--light);
@@ -92,13 +92,15 @@
     .cs-chart-wrap { position: relative; width: 100%; height: 300px; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
 <body>
   <div class="container page">
 
     <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -137,12 +139,15 @@
                     <a role="menuitem" href="why-dont-we-have-this-system.html">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
 
     </div>
 
     <div class="header">
-      <h1 class="u-migrated-6b99de8b">An Edifice of Lies</h1>
-      <h2 class="u-migrated-daadcf94">Case Study: State v. Benjamin Allen</h2>
+      <h1 class="page-title">Case Study: State v. Benjamin Allen</h1>
       <p class="u-migrated-8beef3a8">A military veteran and father was accused of sexual assault in Lee County, North Carolina in October 2019. The prosecution that followed lasted more than six years. This page documents what the record actually shows, and how the case continued in the face of evidence that contradicted the charge at every structural level. Profiles of the people involved are on the <a class="case-study-profile-link" href="players.html">Players</a> page.</p>
     </div>
 
@@ -188,6 +193,7 @@
       <a href="#arc" class="u-migrated-b7bb3f33">6. The Arc of Prosecution</a>
       <a href="#harms" class="u-migrated-b7bb3f33">7. Downstream Harms</a>
       <a href="#baserates" class="u-migrated-b7bb3f33">8. Comparison to Base Rates</a>
+      <a href="#other-pretrial-detentions" class="u-migrated-b7bb3f33">Other pretrial detentions</a>
       <a href="#constructed" class="u-migrated-b7bb3f33">9. The Constructed Defendant</a>
       <a href="#sources" class="u-migrated-b7bb3f33">Related Sources</a>
       <a href="players.html" class="u-migrated-b7bb3f33">Key Players &#8599;</a>
@@ -840,6 +846,27 @@
       </div>
     </section>
 
+    <section id="other-pretrial-detentions" class="content-section">
+      <h2 class="section-title">How Long Can the Justice System Disrupt the Life of an Innocent Man?</h2>
+      <p>Two men, one Georgia jail, and more than a decade without a conviction.</p>
+
+      <div class="card" id="jimmerson">
+        <h3>The Maurice Jimmerson Case (10 Years, 10 Months)</h3>
+        <p><strong>The Arrest.</strong> Maurice Jimmerson was arrested in Dougherty County, Georgia, in May 2013 on murder charges.</p>
+        <p><strong>The Stagnation.</strong> He was held continuously in a local jail awaiting his day in court. His case was delayed for nearly eleven years due to systemic bureaucratic failures, a courthouse flood, the COVID-19 pandemic, and an eight-month stretch where the court completely forgot to assign him an attorney.</p>
+        <p><strong>The Zero-Conviction Conclusion.</strong> He finally went to trial in July 2023, which resulted in a mistrial (hung jury) rather than a conviction. Because he had spent over a decade locked up as a legally innocent man, his defense attorney successfully argued that a retrial would heavily violate his Sixth Amendment rights. To secure his immediate release without a conviction on his record, he accepted a non-custodial probation plea deal for lesser charges and was released in March 2024.</p>
+      </div>
+
+      <div class="card" id="benyard">
+        <h3>Longest Awaiting Trial to an Acquittal: Condell Benyard (8 Years)</h3>
+        <p>If you require the trial process to end specifically in a not-guilty verdict (acquittal) rather than a hung jury or a plea deal, the record belongs to Jimmerson's co-defendant, Condell Benyard.</p>
+        <p><strong>The Timeline.</strong> Benyard was arrested alongside Jimmerson in May 2013.</p>
+        <p><strong>The Outcome.</strong> He remained locked in the exact same Georgia jail without a conviction until his case finally went to a jury in July 2023. The jury found him not guilty on all counts, ending his 8-year pretrial detention with a total, unblemished acquittal.</p>
+      </div>
+
+      <p>Lee County, North Carolina, may soon strip this Georgia jail of its infamous title. The Allen case, with its growing record of alleged corruption, collusion, conspiracy, and cronyism, is rapidly becoming a case study in institutional failure.</p>
+    </section>
+
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- 9. THE CONSTRUCTED DEFENDANT                                    -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -913,6 +940,7 @@
     });
   });
 </script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 </html>

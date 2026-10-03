@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=639006186749527765">
+  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
   <style>
     body {
       color: var(--light);
@@ -236,12 +236,14 @@
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
   <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
 <body>
   <div class="container page">
         <div class="nav-tabs" aria-label="Project navigation">
-            <a class="nav-tab" href="index.html">Landing</a>
+            <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
+            <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
             <div class="nav-dropdown">
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-1">Case Record</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-1" role="menu">
@@ -280,11 +282,15 @@
                     <a class="active" role="menuitem" href="why-dont-we-have-this-system.html" aria-current="page">System Essay</a>
                 </div>
             </div>
+            <div class="nav-tools">
+                <button type="button" class="nav-tool" data-site-search-mount>Search</button>
+                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+            </div>
         </div>
     <section class="hero-grid">
       <div class="hero-copy">
         <div class="eyebrow">A Better Standard</div>
-        <h1>The Failure of the American Justice System</h1>
+        <h1 class="page-title">The Failure of the American Justice System</h1>
         <p>
           A just system must do two things at once: shield those who are truly in danger and prevent an accusation from becoming punishment before a single fact has been tested.
           That is not controversial. That is the absolute minimum.
@@ -298,9 +304,9 @@
           By the time facts finally matter, the damage is already catastrophic and often irreversible.
         </p>
         <div class="hero-actions">
-          <a class="primary" href="document-unavailable.html">Source PDF unavailable</a>
+          <a class="primary" href="misconduct.html">How It Applies To This Case</a>
           <a href="overview.html">Project Map</a>
-          <a href="misconduct.html">How It Applies To This Case</a>
+          <a href="document-unavailable.html">Source PDF unavailable</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -525,6 +531,7 @@
     <video id="modalVideo" controls></video>
   </div>
   <script src="shared/image-modal.js"></script>
-  <script src="shared/site-search.js" defer></script>
+  <script src="shared/site-search.js?v=20261003g" defer></script>
+<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 </html>
