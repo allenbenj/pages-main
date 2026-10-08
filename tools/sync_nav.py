@@ -37,6 +37,7 @@ NAV_GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
         ("Deal's Ever Changing Testimony.html", "Deal's Ever Changing Testimony"),
         ("New_Face.html", "New Face"),
         ("general-videos.html", "General Videos"),
+        ("index.html#songs", "Inspired Digital Media"),
         ("case-study.html", "Case Study"),
         ("data-snapshot.html", "Data Snapshot"),
     ]),
@@ -105,7 +106,7 @@ def render_tabs(page_name: str, *, home: bool = False) -> str:
     lines.extend([
         '            <div class="nav-tools">',
         '                <button type="button" class="nav-tool" data-site-search-mount>Search</button>',
-        '                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>',
+        '                <button type="button" class="nav-tool" data-soundtrack-mount aria-pressed="false">Soundtrack</button>',
         '            </div>',
     ])
     return "\n".join(lines)
