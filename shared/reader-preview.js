@@ -49,4 +49,12 @@
       tabs[next].focus();
     });
   }
+
+  document.querySelectorAll('.home-songs audio').forEach((player) => {
+    player.addEventListener('play', () => {
+      document.querySelectorAll('.home-songs audio').forEach((other) => {
+        if (other !== player) other.pause();
+      });
+    });
+  });
 })();

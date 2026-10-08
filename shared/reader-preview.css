@@ -147,8 +147,26 @@
 .reader-home .home-quotes details blockquote { padding: 8px 0 22px; border-bottom: 1px solid #293337; max-width: 72ch; }
 .reader-home .home-email { display: inline-block; margin-top: 8px; color: #f0dc96 !important; font: 500 clamp(1.05rem, 2vw, 1.45rem)/1.4 var(--font-mono, monospace); text-decoration: none; overflow-wrap: anywhere; }
 .reader-home .home-email:hover { text-decoration: underline; text-underline-offset: 5px; }
+.reader-home .song-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; margin: 32px 0 0; padding: 0; list-style: none; }
+.reader-home .song-card { display: flex; flex-direction: column; min-width: 0; }
+.reader-home .song-cover { margin: 0; background: #0c1011; border: 1px solid #394347; border-radius: 4px; overflow: hidden; }
+.reader-home .song-cover img { display: block; width: 100%; height: auto; }
+.reader-home .song-card h3 { margin: 14px 0 0; color: #f2eee4 !important; font-size: 1.45rem !important; font-weight: 500 !important; line-height: 1.25 !important; text-align: left; text-wrap: balance; }
+.reader-home .song-time { margin: 6px 0 0; color: #d4b85c !important; font: 500 13px/1 var(--font-mono, monospace) !important; letter-spacing: .08em; }
+.reader-home .song-card audio { width: 100%; margin-top: 14px; color-scheme: dark; }
+.reader-home .podcast-block { margin-top: 48px; }
+.reader-home .podcast-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.reader-home .podcast-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 18px 0; border-top: 1px solid #394347; }
+.reader-home .podcast-row.has-cover { grid-template-columns: 88px minmax(0, 1fr); column-gap: 16px; align-items: center; }
+.reader-home .podcast-row.has-cover img { width: 88px; height: 88px; object-fit: cover; border: 1px solid #394347; border-radius: 4px; grid-row: 1 / span 2; }
+.reader-home .podcast-row h3 { margin: 0; color: #f2eee4 !important; font-size: 1.35rem !important; font-weight: 500 !important; line-height: 1.25 !important; text-align: left; text-wrap: balance; }
+.reader-home .podcast-row .song-time { margin: 4px 0 0; }
+.reader-home .podcast-row audio { width: 100%; margin-top: 8px; color-scheme: dark; }
+.reader-home .podcast-row.has-cover audio { grid-column: 1 / -1; }
 @media (max-width: 800px) {
-  .reader-home .compare-row, .reader-home .quote-pair { grid-template-columns: 1fr; }
+  .reader-home .compare-row, .reader-home .quote-pair, .reader-home .song-list { grid-template-columns: 1fr; }
   .reader-home .compare-row li { border-right: 0; border-bottom: 1px solid #394347; }
   .reader-home .compare-row a, .reader-home .compare-row li + li a { padding: 18px 0; }
+  .reader-home .podcast-row.has-cover { grid-template-columns: 72px minmax(0, 1fr); }
+  .reader-home .podcast-row.has-cover img { width: 72px; height: 72px; }
 }

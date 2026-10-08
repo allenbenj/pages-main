@@ -28,6 +28,25 @@
             border-color: rgba(255,255,255,0.14) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34) !important;
         }
+        .video-entry h2 {
+            margin: 28px 0 14px;
+            color: #f2eee4 !important;
+            font-size: clamp(1.7rem, 2.6vw, 2.2rem) !important;
+            font-weight: 500 !important;
+            line-height: 1.2 !important;
+            text-align: center;
+        }
+        .archive-video {
+            display: block;
+            width: min(960px, 100%);
+            height: auto;
+            margin: 0 auto 8px;
+            background: #0c1011;
+            border-radius: 12px;
+        }
+        .video-lead .archive-video {
+            width: min(520px, 72%);
+        }
     </style>
   
   <style class="force-hide-webflow">
@@ -59,6 +78,7 @@
                     <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
                     <a role="menuitem" href="New_Face.html">New Face</a>
                     <a class="active" role="menuitem" href="general-videos.html" aria-current="page">General Videos</a>
+                    <a role="menuitem" href="index.html#songs">Inspired Digital Media</a>
                     <a role="menuitem" href="case-study.html">Case Study</a>
                     <a role="menuitem" href="data-snapshot.html">Data Snapshot</a>
                 </div>
@@ -83,14 +103,29 @@
             <div class="nav-tools">
                 <button type="button" class="nav-tool" data-site-search-mount>Search</button>
                 <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
+                <button type="button" class="nav-tool" data-soundtrack-mount aria-pressed="false">Soundtrack</button>
             </div>
         </div>
+        <section id="lady-justice" class="video-entry video-lead">
+            <div class="u-migrated-8302caf7">
+                <h2>Lady Justice Raising</h2>
+                <video controls preload="metadata" class="archive-video">
+                    <source src="video/long_view/Lady%20Justice%20Raising.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
         <div class="header">
              <h1 class="page-title">Changing Stories Create Concern</h1>
         </div>
 <nav class="page-rail" aria-label="On this page">
             <p class="page-rail-title">On this page</p>
+            <a href="#lady-justice" target="_top">Lady Justice Raising</a>
             <a href="#grouped-video" target="_top">Changing Stories</a>
+            <a href="#lies-part-1" target="_top">Lies In Lee County Part 1</a>
+            <a href="#lies-part-2" target="_top">Lies In Lee County Part 2</a>
+            <a href="#lies-part-3" target="_top">Lies In Lee County Part 3</a>
+            <a href="#subscription-service" target="_top">Subscription Service</a>
+            <a href="#where-are-the-briars" target="_top">Where are the briars</a>
             <a href="#top" target="_top">Back to Top</a>
         </nav>
 
@@ -101,6 +136,46 @@
                     <video controls preload="metadata" class="u-migrated-41dc949e">
                         <source src="video/long_view/Changing%20Stories%20Compressed.mp4" type="video/mp4">
                         Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+            <section id="lies-part-1" class="video-entry">
+                <div class="u-migrated-8302caf7">
+                    <h2>Lies In Lee County Part 1</h2>
+                    <video controls preload="metadata" class="archive-video">
+                        <source src="video/various/Lies%20In%20Lee%20County%20Part%201.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section id="lies-part-2" class="video-entry">
+                <div class="u-migrated-8302caf7">
+                    <h2>Lies In Lee County Part 2</h2>
+                    <video controls preload="metadata" class="archive-video">
+                        <source src="video/various/Lies%20In%20Lee%20County%20Part%202.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section id="lies-part-3" class="video-entry">
+                <div class="u-migrated-8302caf7">
+                    <h2>Lies In Lee County Part 3</h2>
+                    <video controls preload="metadata" class="archive-video">
+                        <source src="video/various/Lies%20In%20Lee%20County%20Part%203.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section id="subscription-service" class="video-entry">
+                <div class="u-migrated-8302caf7">
+                    <h2>Subscription Service</h2>
+                    <video controls preload="metadata" class="archive-video">
+                        <source src="video/long_view/Subscription%20Service.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+            <section id="where-are-the-briars" class="video-entry">
+                <div class="u-migrated-8302caf7">
+                    <h2>Where are the briars</h2>
+                    <video controls preload="metadata" class="archive-video">
+                        <source src="video/long_view/Where%20are%20the%20briars.mp4" type="video/mp4">
                     </video>
                 </div>
             </section>
@@ -121,6 +196,13 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
+    document.querySelectorAll('main video').forEach(function(player) {
+      player.addEventListener('play', function() {
+        document.querySelectorAll('main video').forEach(function(other) {
+          if (other !== player) other.pause();
+        });
+      });
+    });
     document.body.addEventListener('click', function(e) {
       let a = e.target.closest('a');
       if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
@@ -132,6 +214,7 @@
   });
 </script>
   <script src="shared/site-search.js?v=20261003g" defer></script>
+  <script src="shared/soundtrack.js?v=20261008media" defer></script>
 <script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 
