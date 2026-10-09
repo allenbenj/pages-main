@@ -1,7 +1,7 @@
 // card-content.js: Apply approved card labels, titles, strength labels, tags, and
 // audio/evidence button labels from documents/data/card-labels.json to the cards on
-// documentspage.html. The JSON is written by tools/evidence-review.html and is the
-// source of truth for these fields; this script only renders it.
+// documentspage.html. The JSON is the source of truth for these fields; this script
+// only renders it.
 (async () => {
   let approved = {};
   try {

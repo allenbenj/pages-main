@@ -19,9 +19,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import json
 import re
-import threading
-from datetime import datetime, UTC
-import hashlib
+import socket
 
 
 SITE_EDITOR_SCRIPT_TAG = '<script src="/__site_editor__.js" defer></script>'
@@ -131,11 +129,23 @@ def check_overlaps(replacements: list[tuple[int, int, str]]) -> None:
             raise ValueError("Two edits overlap. Save them one at a time.")
 
 
+def port_is_in_use(host: str, port: int) -> bool:
+    """True when something already accepts connections on host:port.
+
+    Python's HTTP server sets SO_REUSEADDR, so on Windows a second copy of this
+    script binds the same port without complaint and the OS then splits requests
+    between both instances. Pages then load unpredictably and a stale copy can
+    silently serve old code, so refuse to start instead of duplicating.
+    """
+    probe_host = "127.0.0.1" if host in {"0.0.0.0", "::"} else host
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+        probe.settimeout(0.3)
+        return probe.connect_ex((probe_host, port)) == 0
+
+
 class CanonicalPageHandler(SimpleHTTPRequestHandler):
     """Map missing root HTML routes to canonical assets/pages sources."""
 
-    history_root = Path(r'D:\Court_Data\.local\webpage-importance-history')
-    importance_lock = threading.Lock()
     canonical_pages: Path
 
     def canonical_root_page(self) -> Path | None:
@@ -281,12 +291,6 @@ class CanonicalPageHandler(SimpleHTTPRequestHandler):
             self.json_response(400, {'message': str(exc)})
 
     def do_POST(self) -> None:
-        if urlsplit(self.path).path == '/__evidence_review__':
-            self.review_importance()
-            return
-        if urlsplit(self.path).path == '/__evidence_importance__':
-            self.save_importance()
-            return
         if urlsplit(self.path).path == '/__site_edit__':
             self.save_site_edit()
             return
@@ -306,103 +310,6 @@ class CanonicalPageHandler(SimpleHTTPRequestHandler):
         self.send_header('Content-Length', str(len(payload)))
         self.end_headers()
         self.wfile.write(payload)
-
-    def save_importance(self) -> None:
-        if not self.editor_is_local() or self.headers.get('Origin') != 'http://' + self.headers.get('Host', ''):
-            self.json_response(403, {'message': 'Saving is available only from this local editor.'})
-            return
-        try:
-            length = int(self.headers.get('Content-Length', '0'))
-            if not 0 < length <= 150000 or self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
-                raise ValueError('Invalid request size or format')
-            payload = json.loads(self.rfile.read(length))
-            root = Path(self.directory)
-            known = {f['filePath'] for f in json.loads((root / 'documents/data/evidence-export.json').read_text(encoding='utf-8'))['evidence']}
-            from bs4 import BeautifulSoup
-            cards = BeautifulSoup((root / 'assets/pages/documentspage.html').read_text(encoding='utf-8'), 'html.parser').select('article.card[id]')
-            known.update('card:' + card['id'] for card in cards)
-            file = payload.get('filePath')
-            text = payload.get('text')
-            if isinstance(file, str) and file.startswith('card:') and text is not None:
-                fields = json.loads(text)
-                if not isinstance(fields, dict) or not {'label', 'title', 'strength', 'tags'}.issubset(fields) or set(fields) - {'label', 'title', 'strength', 'tags', 'discussion', 'actionLabels'}:
-                    raise ValueError('Invalid card fields')
-                if not isinstance(fields.get('discussion', ''), str) or len(fields.get('discussion', '')) > 24000:
-                    raise ValueError('Invalid discussion length')
-                action_labels = fields.get('actionLabels', [])
-                if not isinstance(action_labels, list) or len(action_labels) > 50 or any(not isinstance(item, dict) or set(item) != {'href', 'label'} or not isinstance(item['href'], str) or len(item['href']) > 1000 or not isinstance(item['label'], str) or not item['label'].strip() or len(item['label']) > 250 for item in action_labels):
-                    raise ValueError('Invalid audio or evidence button labels')
-                action_labels = fields.get('actionLabels', [])
-                if not isinstance(action_labels, list) or len(action_labels) > 50 or any(not isinstance(item, dict) or set(item) != {'href', 'label'} or not isinstance(item['href'], str) or len(item['href']) > 1000 or not isinstance(item['label'], str) or not item['label'].strip() or len(item['label']) > 250 for item in action_labels):
-                    raise ValueError('Invalid audio or evidence button labels')
-                for field in ['label', 'title', 'strength']:
-                    if not isinstance(fields[field], str) or len(fields[field]) > 250:
-                        raise ValueError('Invalid label length')
-                if not fields['title'].strip() or not isinstance(fields['tags'], list) or len(fields['tags']) > 20 or any(not isinstance(t, str) or len(t) > 100 for t in fields['tags']):
-                    raise ValueError('Invalid title or tags')
-            if file not in known or (text is not None and (not isinstance(text, str) or not text.strip() or len(text) > 30000)):
-                raise ValueError('Select a valid evidence file and enter an explanation')
-            with self.importance_lock:
-                destination = root / ('documents/data/card-labels.json' if file.startswith('card:') else 'documents/data/evidence-importance.json')
-                data = json.loads(destination.read_text(encoding='utf-8')) if destination.exists() else {'format': 'evidence-importance-v1', 'explanations': {}}
-                existing = data['explanations'].get(file)
-                if payload.get('expectedUpdated') != (existing or {}).get('updated'):
-                    self.json_response(409, {'message': 'This explanation changed since it was loaded. Reload before saving.'})
-                    return
-                stamp = datetime.now(UTC).isoformat()
-                queue_path = self.history_root / 'pending.json'
-                queue_path.parent.mkdir(parents=True, exist_ok=True)
-                queue = json.loads(queue_path.read_text(encoding='utf-8')) if queue_path.exists() else {}
-                queue[file] = {'filePath': file, 'text': text.strip() if text is not None else None, 'submitted': stamp, 'expectedUpdated': (existing or {}).get('updated')}
-                temp = queue_path.with_suffix('.writing')
-                temp.write_text(json.dumps(queue, indent=2, ensure_ascii=False), encoding='utf-8')
-                temp.replace(queue_path)
-            self.json_response(200, {'status': 'pending', 'message': 'Saved to the review queue. Approve it to update the website.'})
-        except (ValueError, OSError, KeyError) as exc:
-            self.json_response(400, {'message': str(exc)})
-
-    def review_importance(self) -> None:
-        if not self.editor_is_local() or self.headers.get('Origin') != 'http://' + self.headers.get('Host', ''):
-            self.json_response(403, {'message': 'Local editor required'})
-            return
-        try:
-            length = int(self.headers.get('Content-Length', '0'))
-            if not 0 < length <= 10000 or self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
-                raise ValueError('Invalid request')
-            payload = json.loads(self.rfile.read(length))
-            with self.importance_lock:
-                queue_path = self.history_root / 'pending.json'
-                queue = json.loads(queue_path.read_text(encoding='utf-8'))
-                file = payload['filePath']
-                draft = queue[file]
-                if payload.get('submitted') != draft['submitted']:
-                    raise ValueError('Draft changed. Reload review queue.')
-                action = payload.get('action')
-                if action not in {'approve', 'reject'}:
-                    raise ValueError('Invalid action')
-                destination = Path(self.directory) / ('documents/data/card-labels.json' if file.startswith('card:') else 'documents/data/evidence-importance.json')
-                data = json.loads(destination.read_text(encoding='utf-8'))
-                existing = data['explanations'].get(file)
-                if action == 'approve' and draft.get('expectedUpdated') != (existing or {}).get('updated'):
-                    raise ValueError('Website explanation changed. Resubmit this edit before approval.')
-                stamp = datetime.now(UTC).isoformat()
-                record = {'action': action, 'draft': draft, 'previous': existing, 'reviewedAt': stamp}
-                (queue_path.parent / (stamp.replace(':', '-') + '.json')).write_text(json.dumps(record, indent=2), encoding='utf-8')
-                if action == 'approve':
-                    if draft['text'] is None:
-                        data['explanations'].pop(file, None)
-                    else:
-                        data['explanations'][file] = {'text': draft['text'], 'updated': stamp, 'source': 'editor-approved'}
-                    temp = destination.with_suffix('.writing')
-                    temp.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding='utf-8')
-                    temp.replace(destination)
-                del queue[file]
-                temp = queue_path.with_suffix('.writing')
-                temp.write_text(json.dumps(queue, indent=2), encoding='utf-8')
-                temp.replace(queue_path)
-            self.json_response(200, {'status': action})
-        except (ValueError, OSError, KeyError) as exc:
-            self.json_response(400, {'message': str(exc)})
 
     def handle_editor_commit(self) -> None:
         try:
@@ -518,16 +425,6 @@ class CanonicalPageHandler(SimpleHTTPRequestHandler):
         if route == '/__site_editor__.js':
             self.serve_site_editor_script()
             return
-        if route == '/__evidence_pending__':
-            if not self.editor_is_local():
-                self.json_response(403, {'message': 'Local editor required'})
-                return
-            path = self.history_root / 'pending.json'
-            self.json_response(200, {'drafts': json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}})
-            return
-        if route == '/__evidence_editor__':
-            self.json_response(200 if self.editor_is_local() else 403, {'editable': self.editor_is_local()})
-            return
         if self.editor_is_local():
             source = self.source_file_for_public_path(route)
             if source is not None and self.serve_html(source, include_body=True):
@@ -565,6 +462,12 @@ def main() -> int:
     canonical_pages = root / "assets" / "pages"
     if not (root / "index.html").is_file() or not canonical_pages.is_dir():
         parser.error(f"not a site source root: {root}")
+
+    if port_is_in_use(args.host, args.port):
+        parser.error(
+            f"{args.host}:{args.port} is already serving something. Stop that server first, "
+            f"or start this one on a free port (for example --port 8001)."
+        )
 
     CanonicalPageHandler.canonical_pages = canonical_pages
 

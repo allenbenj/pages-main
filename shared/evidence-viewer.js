@@ -1,10 +1,7 @@
 (() => {
   const $ = id => document.getElementById(id);
   let files = [], visible = [], selected = null, comparing = false, contexts = {}, contextReady = false;
-  const IMPORTANCE_KEY = 'edifice-evidence-importance-v1';
   let importance = {};
-  let editable = false, previousBrowserDrafts = {};
-  try { previousBrowserDrafts = JSON.parse(localStorage.getItem(IMPORTANCE_KEY) || '{}'); } catch {}
   const allowed = ['audio/', 'video/', 'documents/', 'content/images/evidence/'];
   function url(file) {
     const p = file.filePath;
@@ -75,33 +72,6 @@
     }
     controls();
   }
-  const editor = document.createElement('div'); editor.className = 'importance-editor';
-  editor.innerHTML = '<button type="button" id="edit-importance">Edit Importance To The Case</button><form id="importance-form" hidden><label for="importance-text">Importance To The Case</label><textarea id="importance-text" rows="7" maxlength="30000" required placeholder="Explain why this evidence matters…"></textarea><div class="viewer-toolbar"><button type="submit">Submit for approval</button><button type="button" id="cancel-importance">Cancel</button><button type="button" id="restore-importance">Restore website discussion</button><button type="button" id="export-importance">Export explanations</button><a href="tools/evidence-review.html">Review pending edits →</a></div></form><p id="importance-status" role="status"></p>';
-  $('case-context').append(editor);
-  $('edit-importance').hidden = true;
-  $('edit-importance').addEventListener('click', () => {
-    if (!selected) { $('importance-status').textContent = 'Select an evidence file first.'; return; }
-    $('importance-text').value = importance[selected.filePath]?.text || previousBrowserDrafts[selected.filePath]?.text || (contexts[selected.filePath] || []).flatMap(c => [c.heading, ...c.excerpts]).join('\n\n');
-    $('importance-form').hidden = false; $('importance-text').focus(); $('importance-status').textContent = '';
-  });
-  $('cancel-importance').addEventListener('click', () => { $('importance-form').hidden = true; });
-  async function submitImportance(text) {
-    if (!selected || !editable) return;
-    const filePath = selected.filePath;
-    $('importance-status').textContent = 'Saving edit to review queue…';
-    try {
-      const response = await fetch('/__evidence_importance__', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({filePath,text,expectedUpdated:importance[filePath]?.updated || null})});
-      const result = await response.json(); if (!response.ok) throw Error(result.message);
-      $('importance-form').hidden = true; $('importance-status').textContent = result.message;
-    } catch (error) { $('importance-status').textContent = error.message || 'Could not save. Keep your text and try again.'; }
-  }
-  $('importance-form').addEventListener('submit', e => { e.preventDefault(); const text = $('importance-text').value.trim(); if(text)submitImportance(text); });
-  $('restore-importance').addEventListener('click', () => submitImportance(null));
-  $('export-importance').addEventListener('click', () => {
-    const blob = new Blob([JSON.stringify({format: 'evidence-importance-v1', explanations: importance}, null, 2)], {type:'application/json'});
-    const src = URL.createObjectURL(blob), a = document.createElement('a'); a.href = src; a.download = 'evidence-importance.json'; a.click(); setTimeout(() => URL.revokeObjectURL(src), 1000);
-  });
-  document.addEventListener('evidence-file-selected', () => { $('importance-form').hidden = true; $('importance-status').textContent = ''; });
   $('search').addEventListener('input',render);
   for(const id of ['type','collection','sort']) $(id).addEventListener('change',render);
   $('reset').addEventListener('click',()=>{$('search').value=$('type').value=$('collection').value='';render();});
@@ -110,7 +80,6 @@
   $('close-comparison').addEventListener('click',()=>{$('comparison').hidden=true;$('comparison-display').replaceChildren();$('panels').classList.remove('comparing');});
   $('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);$('feedback').textContent='File link copied.';}catch{$('feedback').textContent='Copy the address from the browser to share this file selection.';}});
   fetch('documents/data/evidence-importance.json', {cache:'no-store'}).then(r=>r.json()).then(data=>{importance=data.explanations||{};if(selected)caseContext(selected);}).catch(()=>{});
-  fetch('/__evidence_editor__',{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(data=>{editable=data.editable===true;$('edit-importance').hidden=!editable;}).catch(()=>{});
   fetch('documents/data/evidence-context.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{contexts=data.files;contextReady=true;if(selected)caseContext(selected);}).catch(()=>{$('context-status').textContent='The case discussion could not be loaded. Reload to try again.';});
   fetch('documents/data/evidence-export.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
     files=data.evidence.filter(f=>{try{url(f);return true;}catch{return false;}});
