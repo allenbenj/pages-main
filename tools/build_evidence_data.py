@@ -47,7 +47,20 @@ FILE_TYPE_BY_SUFFIX = {
 }
 
 # Files that are site infrastructure rather than evidence content.
-EXCLUDED_PATHS = {"documents/data/evidence-export.json"}
+EXCLUDED_PATHS = {
+    "documents/data/evidence-export.json",
+    "documents/data/evidence-context.json",
+    "documents/data/evidence-importance.json",
+    "documents/data/card-labels.json",
+    # Owner removed this entry from the viewer; retain file for existing page links.
+    "content/images/evidence/court-files/no-warrant/Magistrates Order.webp",
+}
+
+# Site recordings. A later inventory rebuild must not list them as case exhibits.
+EXCLUDED_PREFIXES = (
+    "audio/Music/",
+    "audio/Podcast/",
+)
 
 DATE_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}\s*-\s*")
 ORDINAL_PREFIX_RE = re.compile(r"^\d+[_\s-]+")
@@ -62,6 +75,25 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+TITLE_ACRONYMS = {word.lower(): word for word in (
+    "DNA", "ADA", "PDF", "LCSO", "NC", "NCAC", "SBI", "FBI", "USA",
+    "HTML", "XML", "JSON", "CSS", "AI", "OPML", "IMG", "ID", "DOJ",
+)}
+
+
+def consistent_title(text: str) -> str:
+    """Normalize display labels without changing file paths or evidence bytes."""
+    def word(match: re.Match[str]) -> str:
+        value = match.group(0)
+        if "@" in value or any(char.isdigit() for char in value):
+            return value
+        acronym = TITLE_ACRONYMS.get(value.lower())
+        if acronym:
+            return acronym
+        return value[:1].upper() + value[1:].lower()
+    return re.sub(r"[A-Za-z0-9]+(?:['’][A-Za-z]+)?(?:@[A-Za-z0-9.]+)?", word, text)
+
+
 def humanize_title(path: Path) -> str:
     stem = path.stem
     stem = TIMESTAMP_SUFFIX_RE.sub("", stem)
@@ -69,7 +101,7 @@ def humanize_title(path: Path) -> str:
     stem = ORDINAL_PREFIX_RE.sub("", stem)
     stem = stem.replace("_", " ").replace("[1]", "").strip()
     stem = re.sub(r"\s{2,}", " ", stem)
-    return stem or path.name
+    return consistent_title(stem or path.name)
 
 
 def collection_for(root: Path, path: Path) -> str:
@@ -91,7 +123,7 @@ def iter_evidence_files(root: Path) -> list[Path]:
             if not path.is_file():
                 continue
             rel = path.relative_to(root).as_posix()
-            if rel in EXCLUDED_PATHS or path.name.startswith("~$"):
+            if rel in EXCLUDED_PATHS or rel.startswith(EXCLUDED_PREFIXES) or path.name.startswith("~$"):
                 continue
             files.append(path)
     return sorted(files, key=lambda p: p.relative_to(root).as_posix().lower())
