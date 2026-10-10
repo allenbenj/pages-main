@@ -1322,6 +1322,15 @@ body.timeline-page .fab-fixed img {
 /* Conflict/Legal Issues - Red (#b32424) */
 .card { border-left: 4px solid rgba(255,255,255,0.05); } /* default subtle border */
 
+/* A card holding only text has no footer to pin, so the space-between above
+   merely shoves its paragraph to the bottom of a stretched row and leaves dead
+   space under the heading - worse the shorter the text. Cards that genuinely do
+   have something to pin to the bottom (action rows, pill rows, or a scrolling
+   body) keep the space-between behaviour. */
+.card:not(:has(.card-actions)):not(:has(.pill-row)):not(:has(.card-body)) {
+    justify-content: flex-start;
+}
+
 /* Red border for conflicts, violations, contradictions, constitutional issues, prosecutorial */
 [class*="conflict" i] .card,
 [class*="violation" i] .card,
