@@ -2,5 +2,5 @@
 
 #case-context{padding:22px 0;margin:20px 0;border-top:1px solid #596866;border-bottom:1px solid #596866}#case-context h2{font-size:1.8rem}#context-status{font-size:.88rem}.case-context-item{padding:18px 0}.case-context-item+.case-context-item{border-top:1px solid #405254}.case-context-item h3{font-size:1.5rem;margin:0 0 12px}.case-context-item p{line-height:1.7;margin:10px 0}.case-context-item a{display:inline-block;margin-top:8px}
 
-.importance-editor{margin-top:18px}.importance-editor button{width:auto;background:#263234;color:#dae4e5;border:1px solid #d4b85c;padding:10px 14px;border-radius:4px}.importance-editor textarea{width:100%;box-sizing:border-box;background:#101718;color:#dae4e5;border:1px solid #71898b;padding:12px;font:16px/1.6 Manrope,system-ui,sans-serif;resize:vertical}.importance-explanation{white-space:pre-wrap;overflow-wrap:anywhere}.importance-editor form[hidden]{display:none}main{align-items:start}#preview{align-self:start}@media(max-width:900px){main{grid-template-columns:1fr}#files{max-height:40vh}}
+.importance-explanation{white-space:pre-wrap;overflow-wrap:anywhere}main{align-items:start}#preview{align-self:start}@media(max-width:900px){main{grid-template-columns:1fr}#files{max-height:40vh}}
 header > h1.page-title + p{text-align:center;margin-left:auto;margin-right:auto}

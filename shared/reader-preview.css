@@ -61,12 +61,15 @@
 .reader-map .hero h1 { font-family: Georgia, serif; letter-spacing: -.035em; }
 .reader-map .view-switcher { position: sticky; top: 0; z-index: 30; background: #15191a; padding: 10px 0; border-bottom: 1px solid #394347; }
 .reader-map .view-tab { min-height: 44px; }
-.reader-evidence .container.narrative-page { max-width: 1380px; padding: 0 24px 96px; }
+.reader-evidence .container.narrative-page { max-width: 1800px; padding: 0 24px 96px; }
 .reader-evidence .header { padding: 28px 0; margin: 0; text-align: center; }
 .reader-evidence .header h2 { max-width: none; width: 100%; font-size: clamp(1.7rem, 2.7vw, 2.35rem); line-height: 1.28; text-align: center; margin: 14px 0 0; }
 .reader-evidence section[id] { scroll-margin-top: 140px; }
+/* The fixed page rail sits on the right, so this page only needs a gutter there.
+   Reserving a matching gutter on the left as well cost ~200px of width; the
+   column now runs from the left margin to a 20px gap before the rail. */
 @media (min-width: 1301px) {
-  .reader-evidence .container.narrative-page { padding-left: 230px; padding-right: 230px; }
+  .reader-evidence .container.narrative-page { padding-left: 24px; padding-right: 230px; }
 }
 .reader-evidence .section-shell { border-radius: 8px; box-shadow: none; }
 .reader-evidence .section-dek, .reader-evidence .hero-subtitle { max-width: 76ch; }

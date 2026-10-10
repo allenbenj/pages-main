@@ -216,7 +216,10 @@
         .flow-track {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            /* Five steps in one row need roughly 1300px of track to stay readable;
+               this column tops out well below that, so the steps wrap 3 + 2
+               instead of being crushed into 150px slivers. */
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 18px;
             margin-top: 26px;
         }
@@ -267,7 +270,9 @@
 
         .node-board {
             display: grid;
-            grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            /* The two right-hand columns carry nine cards between them; the left
+               column carries two, so it does not need the widest track. */
+            grid-template-columns: 1fr 1.2fr 1.2fr;
             gap: 22px;
             align-items: start;
         }
@@ -396,7 +401,8 @@
 
         .lane-steps {
             display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            /* Must match .flow-track: three readable columns, wrapping 3 + 2. */
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
             align-items: stretch;
         }
@@ -420,6 +426,17 @@
             font-size: 1.22rem;
             font-weight: 800;
             z-index: 2;
+        }
+
+        /* The connector belongs between two steps sitting in the same row. Once
+           the five steps wrap, drop the one at the end of the first row so it
+           does not dangle into the gap. Below 1200px every connector is removed
+           by the media query further down. */
+        @media (min-width: 1201px) {
+            .lane-steps > .lane-box:nth-child(3)::after,
+            .flow-track > .flow-card:nth-child(3)::after {
+                content: none;
+            }
         }
 
         .lane-box.source {
@@ -479,6 +496,31 @@
             font-size: 0.9rem;
             line-height: 1.55;
         }
+
+        .quote-source {
+            display: inline-block;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid var(--line);
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+
+        .quote-source:hover,
+        .quote-source:focus-visible { text-decoration: underline; }
+
+        .section-sources {
+            margin: 20px 0 0;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .section-sources a { color: var(--gold); font-weight: 700; }
 
         .process-grid {
             display: grid;
@@ -874,7 +916,6 @@
             </div>
             <div class="nav-tools">
                 <button type="button" class="nav-tool" data-site-search-mount>Search</button>
-                <button type="button" class="nav-tool" data-site-notes-mount>Notes</button>
                 <button type="button" class="nav-tool" data-soundtrack-mount aria-pressed="false">Soundtrack</button>
             </div>
         </div>
@@ -896,7 +937,7 @@
         <section id="hero-theory" class="hero-panel">
             <div class="eyebrow">Narrative Construction</div>
             <p class="hero-subtitle">
-                This page is not organized as a list of accusations. It is organized as a chain of transformation. The central question is not merely whether the investigation contained errors, but how recorded statements, omissions, scene failures, and later testimony shifts combined to produce a prosecution narrative stronger than the underlying record.
+                This page is not organized as a list of accusations. It is organized as a chain of transformation. The central question is not merely whether the investigation contained errors, but how recorded statements, omissions, scene failures, and later shifts in testimony combined to produce a prosecution narrative stronger than the underlying record.
             </p>
 
             <div class="hero-summary-grid">
@@ -969,7 +1010,7 @@
                 <div>
                     <h3 class="section-title-strong">Witness and influence map</h3>
                     <p class="section-dek">
-                        Freeman sits at the center because his role was not limited to hearing information. He became the funnel through which raw statements were filtered, summarized, translated into probable-cause language, and carried forward into the formal case narrative.
+                        Freeman sits at the center because his role was not limited to hearing information. He became the funnel through which he filtered raw statements, summarized them, translated them into probable-cause language, and carried them forward into the formal case narrative.
                     </p>
                 </div>
             </div>
@@ -980,7 +1021,7 @@
                         <div class="node-label">Central actor</div>
                         <div class="node-title">Detective D.S. Freeman</div>
                         <div class="node-copy">
-                            The core issue is not simply that Freeman interviewed witnesses. It is that the formal narrative repeatedly tracks his restatement of what witnesses supposedly meant, rather than what the witnesses actually said in the earliest preserved versions.
+                            The core issue is not simply that Freeman interviewed witnesses. The formal narrative repeatedly tracks his restatement of what witnesses supposedly meant, rather than what they actually said in the earliest preserved versions.
                         </div>
                     </div>
 
@@ -1000,7 +1041,7 @@
                         <div class="arrow-link"><strong>Carmen Love</strong><span>Did not recognize Ben Allen by name; no recorded pre-arrest bonfire narrative in the form later attributed to her.</span></div>
                         <div class="arrow-link"><strong>Steve Happel</strong><span>Placed Lauren going in and back out, described “hysterical” conduct, and gave a short-duration account rather than a developed force narrative.</span></div>
                         <div class="arrow-link"><strong>Joseph DeMarco</strong><span>Provided road / field / rescue details that do not sit neatly with later terrain and chase portrayals.</span></div>
-                        <div class="arrow-link"><strong>Lauren Deal</strong><span>Early versions leaned on event and location details; later versions increasingly emphasized force, fear, and emotional consequence.</span></div>
+                        <div class="arrow-link"><strong>Lauren Deal</strong><span>Early versions leaned on details of events and locations; later versions increasingly emphasized force, fear, and emotional consequences.</span></div>
                         <div class="arrow-link"><strong>Ben Allen</strong><span>Denied sex, denied body fluids, placed Lauren in the bedroom only for bathroom use, and described finding her face-down outside Schooly’s.</span></div>
                     </div>
                 </div>
@@ -1010,7 +1051,7 @@
                     <div class="node-title">What the Filtered Narrative Did</div>
                     <div class="node-arrow-list">
                         <div class="arrow-link"><strong>Probable Cause</strong><span>Used summary language that made the case appear more corroborated than the preserved calls actually show.</span></div>
-                        <div class="arrow-link"><strong>Affidavit Support</strong><span>Presented transformed witness accounts as a factual base for arrest and search steps.</span></div>
+                        <div class="arrow-link"><strong>Affidavit Support</strong><span>Presented transformed witness accounts as a factual basis for arrest and search steps.</span></div>
                         <div class="arrow-link"><strong>Trial Coherence</strong><span>Created a cleaner storyline for the jury by reducing ambiguity and foregrounding the prosecution-friendly arc.</span></div>
                         <div class="arrow-link"><strong>Defense Burden</strong><span>Forced the defense to unwind drift, omissions, and changed wording issue by issue, instead of confronting a stable record.</span></div>
                     </div>
@@ -1020,7 +1061,7 @@
 
         <section id="statement-lanes" class="section-shell">
             <div class="subtle-note u-migrated-5b9a8967">
-                The strongest proof points on this page are not broad accusations. They are directional conversions. Across multiple witnesses, Freeman's sworn narrative does not merely summarize what people said. It upgrades, sanitizes, redirects, and supplies missing connective tissue in ways that repeatedly strengthen probable cause and reduce ambiguity.
+                The strongest proof points on this page are not broad accusations. They are directional conversions. Across multiple witnesses, Freeman’s sworn narrative does not merely summarize what people said. It upgrades, sanitizes, redirects, and supplies missing connective tissue in ways that repeatedly strengthen probable cause and reduce ambiguity.
             </div>
             <div class="section-heading">
                 <div>
@@ -1035,7 +1076,7 @@
                 <div>
                     <h3 class="section-title-strong">Affidavit by substitution: when the witness's words stop being the witness's words</h3>
                     <p class="section-dek">
-                        The problem is not merely omission. It is conversion. These affidavit fabrications show the mechanism directly: affidavit claim, actual recorded statement, what changed, and why the change mattered.
+                        The problem is not merely omission. It is conversion. These affidavit fabrications show the mechanism directly: the affidavit claim, the actual recorded statement, what changed, and why the change mattered.
                     </p>
                 </div>
             </div>
@@ -1055,7 +1096,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Actual recorded statement</span>
                             <h4>DeMarco only said they went inside</h4>
-                            <div class="quote-box">"We were collecting firewood, getting a fire going again. Lauren and Ben then went inside."</div>
+                            <div class="quote-box">"We were collecting firewood, getting a fire going again. Lauren and Ben then went inside."<a class="quote-source" href="misconduct.html#misconduct-investigative">Also quoted in Investigative Misconduct →</a></div>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">What changed</span>
@@ -1084,12 +1125,12 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Affidavit claim</span>
                             <h4>DeMarco deliberately drove out to locate her on Old US 1</h4>
-                            <div class="quote-box">"Mr. DeMarco made the decision to get his vehicle and ride in an attempt to locate her and did so on the roadway, which was later identified as Old US 1."</div>
+                            <div class="quote-box">"Mr. DeMarco made the decision to get his vehicle and ride in an attempt to locate her and did so on the roadway, which was later identified as Old US 1."<a class="quote-source" href="misconduct.html#misconduct-investigative">Also quoted in Investigative Misconduct →</a></div>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Actual recorded statement</span>
                             <h4>He said he got afraid, left, and then saw her while driving</h4>
-                            <div class="quote-box">"I was like... I woke up, I was just about to call the police, and then I get afraid and leave. Then, when I leave, I'm driving down the road near Route 1, and I see her running through a field."</div>
+                            <div class="quote-box">"I was like... I woke up, I was just about to call the police, and then I get afraid and leave. Then, when I leave, I'm driving down the road near Route 1, and I see her running through a field."<a class="quote-source" href="misconduct.html#misconduct-investigative">Also quoted in Investigative Misconduct →</a></div>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">What changed</span>
@@ -1118,7 +1159,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Affidavit claim</span>
                             <h4>Carmen became worried because she had tried to contact Lauren all day</h4>
-                            <div class="quote-box">"Mrs. Love stated that she became worried because she had been attempting to contact her all day."</div>
+                            <div class="quote-box">"Mrs. Love stated that she became worried because she had been attempting to contact her all day."<a class="quote-source" href="misconduct.html#misconduct-investigative">Also quoted in Investigative Misconduct →</a></div>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Actual recorded statement</span>
@@ -1186,7 +1227,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Affidavit claim</span>
                             <h4>The house entry is framed as Ben following Lauren to the bathroom</h4>
-                            <div class="quote-box">"Upon getting to the house, they started to build a fire, and he walked inside the house behind Lauren while she went to the bathroom."</div>
+                            <div class="quote-box">"Upon getting to the house, they started to build a fire, and he walked inside the house behind Lauren while she went to the bathroom."<a class="quote-source" href="misconduct.html#misconduct-investigative">Also quoted in Investigative Misconduct →</a></div>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Actual recorded statement</span>
@@ -1262,12 +1303,12 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Missing from source</span>
                             <h4>No developed bedroom corroboration</h4>
-                            <p>His call placed her in and out of the house. It did not independently confirm the internal mechanics later emphasized by the State.</p>
+                            <p>His call placed her in and out of the house. It did not independently confirm the internal mechanics that the State later emphasized.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Affidavit version</span>
                             <h4>“Acting crazy” and “after a short time”</h4>
-                            <p>The affidavit compresses and sanitizes. The distinctive details that cut in multiple directions are reduced to a simpler prosecution-compatible arc.</p>
+                            <p>The affidavit compresses and sanitizes. The distinctive details that cut in multiple directions are reduced to a simpler, prosecution-compatible arc.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Structural issue</span>
@@ -1291,12 +1332,12 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Recorded call</span>
                             <h4>Roadside / field / vehicle recovery</h4>
-                            <p>DeMarco described seeing her later near the road and through a field context, after leaving and then locating her while driving.</p>
+                            <p>DeMarco described seeing her later near the road, in a field, after leaving, and then locating her while driving.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Source tension</span>
                             <h4>Not a seamless woods narrative</h4>
-                            <p>His account already introduces complications about path, location, timing, and the exact route from the property to where he found her.</p>
+                            <p>His account already raises complications regarding the path, location, timing, and exact route from the property to where he found her.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Later framing</span>
@@ -1311,7 +1352,7 @@
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
                             <h4>Rescue testimony and scene theory diverge</h4>
-                            <p>The more polished the chase story becomes, the more it strains against route evidence, terrain interpretation, and DeMarco’s own wording.</p>
+                            <p>The more polished the chase story becomes, the more it strains against the evidence of the route, interpretations of the terrain, and DeMarco’s own wording.</p>
                         </div>
                     </div>
                 </article>
@@ -1325,22 +1366,22 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Early interviews</span>
                             <h4>Concrete, situational vocabulary</h4>
-                            <p>Truck. Bathroom. Keys. Firewood. Running. Road. Those early accounts are more location- and event-oriented, with hedges and fragmented structure.</p>
+                            <p>Truck. Bathroom. Keys. Firewood. Running. Road. Those early accounts are more location- and event-oriented, with hedges and a fragmented structure.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Speech profile</span>
                             <h4>Messy recall style</h4>
-                            <p>Longer wandering sentences, uncertainty, and incomplete chronology. The sound is less polished and more interview-like.</p>
+                            <p>Longer, wandering sentences, uncertainty, and an incomplete chronology. The sound is less polished and more like an interview.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Trial profile</span>
                             <h4>Force, fear, trust, freezing, triggers</h4>
-                            <p>Trial vocabulary becomes shorter, sharper, and more element-laden. The rhetorical focus moves from what happened to what the jury should infer.</p>
+                            <p>Trial vocabulary becomes shorter, sharper, and more loaded with meaning. The rhetorical focus moves from what happened to what the jury should infer.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why it matters</span>
                             <h4>Same speaker, different substantive center</h4>
-                            <p>The issue is not whether she still sounds like herself. It is whether the content-language is now more aligned with prosecutorial need than with raw recall.</p>
+                            <p>The issue is not whether she still sounds like herself. It is whether the content language is now more aligned with prosecutorial need than with raw recall.</p>
                         </div>
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
@@ -1364,12 +1405,12 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Key omission</span>
                             <h4>No evidentiary baseline</h4>
-                            <p>Without competent collection from the relevant room, there is no reliable before-and-after comparison from which destruction can be inferred.</p>
+                            <p>Without competent collection from the relevant room, no reliable before-and-after comparison exists to infer destruction.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Later suggestion</span>
                             <h4>Cleanup is framed as guilty behavior</h4>
-                            <p>The investigator later suggested that cleaning behavior was consistent with destruction of evidence, even though he had not processed the scene to know what, if anything, had been there.</p>
+                            <p>The investigator later suggested that the cleaning behavior was consistent with evidence destruction, even though he had not processed the scene to determine what, if anything, had been there.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Analytical weakness</span>
@@ -1398,12 +1439,12 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Objective contradiction</span>
                             <h4>Surveillance places Carmen out of the bar by 12:41 AM</h4>
-                            <p>If Carmen had already left, the supposed 2:00 AM conversation could not have happened as described. The conflict is not interpretive; it is chronological.</p>
+                            <p>If Carmen had already left, the supposed 2:00 a.m. conversation could not have happened as described. The conflict is not interpretive; it is chronological.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Narrative utility</span>
                             <h4>The false timing supplies social linkage</h4>
-                            <p>The impossible conversation fills a gap by making it seem that Carmen personally knew Lauren was leaving with Ben’s group at closing time.</p>
+                            <p>The impossible conversation fills a gap by making it seem as though Carmen personally knew that Lauren was leaving with Ben’s group at closing time.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Analytical consequence</span>
@@ -1428,7 +1469,7 @@
                             <span class="lane-kicker">Actual statement</span>
                             <h4>He said he got scared, left, and then saw her while driving</h4>
                             <div class="quote-box">“I get afraid and I leave. When I leave, I’m driving down the road near Route 1 and I see her running through a field.”</div>
-                            <p>That wording reads like departure followed by chance observation, not a purposeful organized search.</p>
+                            <p>That wording reads like departure followed by chance observation, not a purposeful, organized search.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Additional conflict</span>
@@ -1460,7 +1501,7 @@
                 <div>
                     <h3 class="section-title-strong">Witness contradictions and investigative bias</h3>
                     <p class="section-dek">
-                        Carmen's account matters not because it resolves every factual dispute by itself, but because it anchors agency, chronology, and witness selection at a critical moment. Once her statement is read alongside the omissions that followed, the investigation looks less like neutral evidence gathering and more like selective narrative construction.
+                        Carmen’s account matters not because it resolves every factual dispute on its own, but because it anchors agency, chronology, and witness selection at a critical moment. Once her statement is read alongside the omissions that followed, the investigation looks less like neutral evidence gathering and more like selective narrative construction.
                     </p>
                 </div>
             </div>
@@ -1475,7 +1516,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>Carmen's statement shows Lauren staying by choice</h4>
-                            <p>Carmen's account places Lauren in an independent posture, saying she would call later and remaining of her own accord rather than under visible pressure, confusion, or trust-based reliance on the defendant.</p>
+                            <p>Carmen’s account places Lauren in an independent posture, stating that she would call later and that she would do so of her own accord, rather than under visible pressure, confusion, or reliance on the defendant's trust.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
@@ -1495,7 +1536,7 @@
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
                             <h4>Credibility impeachment starts before the house sequence</h4>
-                            <p>Carmen's statement does not just contradict a detail. It impeaches the emotional trajectory later used to make the case feel coherent.</p>
+                            <p>Carmen’s statement does not just contradict a detail. It impeaches the emotional trajectory later used to make the case feel coherent.</p>
                         </div>
                     </div>
                 </article>
@@ -1509,7 +1550,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>Carmen did not place Lauren with Ben before her departure</h4>
-                            <p>She was present across multiple venues, recalled smaller details, and still did not describe meaningful interaction with the defendant before she left.</p>
+                            <p>She was present at multiple venues, recalled minor details, yet did not describe any meaningful interaction with the defendant before leaving.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
@@ -1519,12 +1560,12 @@
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why the contradiction matters</span>
                             <h4>The omission is substantive, not trivial</h4>
-                            <p>Carmen might not have seen every second, but silence from a witness detailed enough to remember surrounding circumstances is meaningful when the omitted interaction would have been central.</p>
+                            <p>Carmen might not have seen every second, but a witness's silence, when detailed enough to recall the surrounding circumstances, is meaningful if the omitted interaction would have been central.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Investigative bias concern</span>
                             <h4>Freeman treats absence like ambiguity rather than contradiction</h4>
-                            <p>That move lets the State preserve a more connected social narrative than the detailed witness account comfortably supports.</p>
+                            <p>That move allows the State to preserve a more cohesive social narrative than the detailed witness account can comfortably support.</p>
                         </div>
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
@@ -1543,27 +1584,27 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>Carmen's time estimate tracks the footage</h4>
-                            <p>Her description that they stayed roughly an hour and a half to two hours fits the surveillance-based chronology more naturally than a claim that they simply hung out all night.</p>
+                            <p>Her description, that they stayed roughly 1.5 to 2 hours, fits the surveillance-based chronology more naturally than a claim that they simply hung out all night.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
                             <h4>Lauren's later account implies a different social dynamic</h4>
-                            <p>The discrepancy is not just a few minutes. It changes the feel of the night from intermittent contact into a much more continuous relational sequence.</p>
+                            <p>The discrepancy is not just a few minutes. It changes the night's feel from intermittent contact to a much more continuous relational sequence.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why the contradiction matters</span>
                             <h4>Objective footage favors Carmen's structure</h4>
-                            <p>Time estimates are never perfect, but when the overall chronology lines up better with the video on one side than the later story on the other, the conflict becomes material.</p>
+                            <p>Time estimates are never perfect, but when the overall chronology aligns better with the video on one side and with the later story on the other, the conflict becomes material.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Investigative bias concern</span>
                             <h4>The account closer to objective chronology loses influence</h4>
-                            <p>That is a red flag. Neutral investigation should elevate the version most consistent with the fixed timeline, not the version most useful at trial.</p>
+                            <p>That is a red flag. A neutral investigation should elevate the version most consistent with the fixed timeline, not the version most useful at trial.</p>
                         </div>
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
                             <h4>The credibility problem is evidentiary, not stylistic</h4>
-                            <p>Where video supports the witness the State sidelines, later narrative confidence becomes much harder to credit under an ordinary sufficiency lens.</p>
+                            <p>Where video supports the witness, the State sidelines; later, narrative confidence becomes much harder to credit under an ordinary sufficiency lens.</p>
                         </div>
                     </div>
                 </article>
@@ -1582,7 +1623,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
                             <h4>The affidavit and later case theory do not preserve that exculpatory force</h4>
-                            <p>Investigators need not transcribe every word, but material exculpatory features cannot be converted into something weaker or omitted without consequence.</p>
+                            <p>Investigators need not transcribe every word, but exculpatory material cannot be weakened or omitted without consequence.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why the contradiction matters</span>
@@ -1611,7 +1652,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>No bonfire plan appears before Carmen leaves</h4>
-                            <p>Carmen's statement does not place that plan in the conversation before her departure, even though later versions treat the progression as more socially settled.</p>
+                            <p>Carmen’s statement does not bring that plan into the conversation before her departure, even though later versions present the progression as more socially settled.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
@@ -1621,7 +1662,7 @@
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why the contradiction matters</span>
                             <h4>This looks less like normal memory drift than narrative upgrading</h4>
-                            <p>Carmen's account was closer in time and richer in detail, while later versions emerged after the case had stronger incentives to refine the social path.</p>
+                            <p>Carmen’s account was more timely and more detailed, while later versions emerged after the case had stronger incentives to refine its social path.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Investigative bias concern</span>
@@ -1631,7 +1672,7 @@
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
                             <h4>The story acquires a connective step the early witness did not honestly provide</h4>
-                            <p>That matters because the prosecution theory depends on continuity, and continuity is exactly what Carmen fails to supply.</p>
+                            <p>That matters because the prosecution’s theory depends on continuity, and Carmen fails to provide it.</p>
                         </div>
                     </div>
                 </article>
@@ -1645,7 +1686,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>Carmen identified other people who could have clarified the night</h4>
-                            <p>James, Peter, and another passenger were potential witnesses to chronology, social contact, movement, and whether the evolving narrative held together.</p>
+                            <p>James, Peter, and another passenger were potential witnesses to the chronology, social contact, and movement, and to whether the evolving narrative held together.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
@@ -1679,7 +1720,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>Freeman's relative supplied material information that cut against the case theory</h4>
-                            <p>Carmen's position is not peripheral. She was tied both to the facts and to the investigator through family relationship.</p>
+                            <p>Carmen’s position is not peripheral. She was tied to both the facts and the investigator through a family relationship.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
@@ -1689,12 +1730,12 @@
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why the contradiction matters</span>
                             <h4>Bias is inferred from conduct, not admission</h4>
-                            <p>When a relative's exculpatory account is softened, omitted, or converted, the appearance of bias becomes more than theoretical.</p>
+                            <p>When a relative’s exculpatory account is softened, omitted, or converted, the appearance of bias becomes more than theoretical.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Investigative bias concern</span>
                             <h4>The relationship creates motive for self-protective filtering</h4>
-                            <p>That is especially troubling where the same investigator controls how the witness is translated into probable-cause language.</p>
+                            <p>That is especially troubling when the same investigator controls how the witness is translated into probable-cause language.</p>
                         </div>
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
@@ -1713,7 +1754,7 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Witness contradiction</span>
                             <h4>Neutral or less-aligned witnesses were ignored while a fragile narrative was elevated</h4>
-                            <p>The result is a record dominated by an impeached and evolving account rather than a balanced witness set.</p>
+                            <p>The result is a record dominated by an impeached, evolving account rather than a balanced set of witnesses.</p>
                         </div>
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing narrative</span>
@@ -1808,22 +1849,22 @@
                         <div class="lane-box source">
                             <span class="lane-kicker">Competing source statements</span>
                             <h4>Field, tree, and open terrain point in different directions</h4>
-                            <p>DeMarco said field. Lauren said she hid behind a tree. The physical layout evidence points toward more open terrain, limited concealment, and instability in the dramatic chase framing.</p>
+                            <p>DeMarco said, "field." Lauren said she hid behind a tree. The physical layout evidence points toward more open terrain, limited concealment, and instability in the dramatic chase framing.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">What changed</span>
                             <h4>The terrain is adapted to fit the emotional story</h4>
-                            <p>Open ground, a field, a tree, and dense woods do not create the same visual or physical sequence. Yet the narrative drifts toward the version that sounds most dramatic.</p>
+                            <p>Open ground, a field, a tree, and dense woods do not create the same visual or physical sequence. Yet the narrative drifts toward the most dramatic version.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why it mattered</span>
                             <h4>Terrain drives visibility, pace, endurance, and concealment</h4>
-                            <p>If the ground was more open, the theories built on darkness, underbrush, hiding, and an extended frantic run become much harder to sustain mechanically.</p>
+                            <p>If the ground were more open, the theories built on darkness, underbrush, hiding, and an extended frantic run would become much harder to sustain mechanically.</p>
                         </div>
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
                             <h4>The escape story looks adaptive rather than stable</h4>
-                            <p>The more the route story shifts between woods, field, tree, and open ground, the less satisfying "mistake" becomes as an explanation for the final dramatic version.</p>
+                            <p>The more the route story shifts among woods, fields, trees, and open ground, the less satisfying “mistake” becomes as an explanation for the final dramatic version.</p>
                         </div>
                     </div>
                 </article>
@@ -1836,7 +1877,7 @@
                         <div class="process-item">Secure and document the actual claimed assault area before narrative contamination.</div>
                         <div class="process-item">Photograph and collect bedding, bathroom-adjacent items, trash, possible transfer surfaces, and clothing pathways.</div>
                         <div class="process-item">Establish route geometry from bedroom to exit and from exit to alleged recovery point.</div>
-                        <div class="process-item">Test scene assumptions against lighting, terrain, visibility, and witness placement.</div>
+                        <div class="process-item">Test the scene assumptions against lighting, terrain, visibility, and the placement of witnesses.</div>
                         <div class="process-item">Send relevant clothing for DNA testing where the investigator himself admitted DNA might be present.</div>
                     </div>
                 </div>
@@ -1845,7 +1886,7 @@
                     <h4>What the record instead suggests</h4>
                     <div class="process-list">
                         <div class="process-item">The record suggests an investigation that focused heavily on selected narrative support rather than full-scene evidentiary discipline.</div>
-                        <div class="process-item">The pants became a focal object, but the broader mechanics of the alleged bedroom event did not receive comparable testing.</div>
+                        <div class="process-item">The pants became the focus, but the broader mechanics of the alleged bedroom event did not receive comparable scrutiny.</div>
                         <div class="process-item">Investigators did not process the scene in a manner that could reliably support a later destruction-of-evidence theory.</div>
                         <div class="process-item">Despite that gap, Freeman later floated cleanup behavior as consistent with destruction of evidence.</div>
                         <div class="process-item">That suggestion reached beyond what the actual forensic foundation could honestly carry.</div>
@@ -1861,10 +1902,10 @@
                     A separate but related process failure concerns detention itself. The record described here reflects a setting in which Allen sent contemporaneous messages suggesting he believed he needed bail and expected to be charged, while Freeman later testified in ways that obscured when custody actually began. If a reasonable person in Allen's position would not have felt free to leave, the encounter functioned as custody whether or not officers used handcuffs.
                 </p>
                 <p class="u-migrated-2a956da2">
-                    That custody question matters because Freeman's own testimony places Allen under officer supervision while Freeman went to the magistrate. Freeman testified that he left Allen with another officer, that the officer was standing outside the door, and that Freeman then presented the case to the magistrate. He also admitted that he had no word-for-word account and no notes documenting what he told the magistrate.
+                    That custody question matters because Freeman’s own testimony places Allen under officer supervision while Freeman went to the magistrate. Freeman testified that he left Allen with another officer, who was standing outside the door, and then presented the case to the magistrate. He also admitted that he had no word-for-word account and no notes documenting what he told the magistrate.
                 </p>
                 <p class="u-migrated-2a956da2">
-                    The resulting problem is not merely semantic. Freeman appears to have documented certain categories of evidence, including DNA collection, while failing to generate a contemporaneous written probable-cause foundation for the detention itself. That asymmetry matters. When an experienced investigator carefully documents lower-risk procedural steps but leaves the constitutional hinge point undocumented, the omission reads less like oversight and more like procedural evasion.
+                    The resulting problem is not merely semantic. Freeman appears to have documented certain categories of evidence, including DNA collection, but failed to create a contemporaneous written probable-cause foundation for the detention. That asymmetry matters. When an experienced investigator carefully documents lower-risk procedural steps but leaves the constitutional hinge point undocumented, the omission reads less like oversight and more like procedural evasion.
                 </p>
                 <p class="u-migrated-2a956da2">
                     The documentation gap also prevents meaningful timing review. A reviewing authority cannot determine from a written probable-cause narrative whether probable cause existed before custody began, whether it developed only after interrogation, or whether the magistrate received a materially complete account. Without that record, later testimony becomes a substitute for contemporaneous documentation. That is precisely the problem: constitutional review should not depend on reconstruction after the fact.
@@ -1877,7 +1918,7 @@
                     Suggesting destruction of evidence without first establishing what evidence existed, where it existed, and whether the relevant room was competently processed is not a neutral inference. It is an accusation by atmosphere.
                 </p>
                 <p class="u-migrated-2a956da2">
-                    The problem grows more severe when the supposed cleanup occurred in a different room than the room where the assault was alleged to have happened. That kind of insinuation invites guilt through mood rather than proof through method. It allows an investigator to imply consciousness of guilt without first doing the investigative work necessary to prove that any relevant evidence existed, that it was destroyed, or that the alleged conduct affected the charged event.
+                    The problem grows more severe when the supposed cleanup occurred in a different room than the room where the assault was alleged to have happened. That kind of insinuation invites guilt through mood rather than proof through method. It lets an investigator imply consciousness of guilt without first doing the investigative work needed to prove that any relevant evidence existed, that it was destroyed, or that the alleged conduct affected the charged event.
                 </p>
                 <p class="u-migrated-2a956da2">
                     The custody documentation problem compounds the same concern. The record does not merely show aggressive investigation. It shows a pattern: strong documentation where the step was easy to defend, weak or missing documentation where the constitutional stakes were highest, and later testimony used to fill the gaps. That is not how a reliable investigation should operate.
@@ -1903,7 +1944,7 @@
                             Freeman moved toward arrest on a record that was conflicting, undocumented, and already internally unstable.
                         </h4>
                         <p class="section-dek u-migrated-6a818467">
-                            Carmen Love's interview did not corroborate Lauren Deal's later version in any stable way. It undercut key themes instead: familiarity with the defendant, the social continuity between the groups, and the supposed decision to leave with Ben Allen and his friends. That matters because Freeman later told the jury Carmen's statement was part of what helped form probable cause.
+                            Carmen Love’s interview did not corroborate Lauren Deal’s later version in any stable way. Instead, it undercut key themes: familiarity with the defendant, the social continuity between the groups, and the supposed decision to leave with Ben Allen and his friends. That matters because Freeman later told the jury that Carmen’s statement helped form probable cause.
                         </p>
                         <div class="pill-row-soft">
                             <span class="pill-soft">Conflicting hearsay</span>
@@ -1961,7 +2002,7 @@
                 <div>
                     <h3 class="section-title-strong">How the narrative was built</h3>
                     <p class="section-dek">
-                        The move from Carmen's actual interview to the later probable-cause story is not a single leap. It is a sequence: weak familiarity, late-added social glue, then a much cleaner invitation-and-continuity narrative.
+                        The move from Carmen’s actual interview to the later probable-cause story is not a single leap. It is a sequence: weak familiarity, late-added social glue, then a much cleaner invitation-and-continuity narrative.
                     </p>
                 </div>
             </div>
@@ -1970,7 +2011,7 @@
                 <article class="feature-mini-card" target="_top">
                     <div class="eyebrow">Step 1</div>
                     <h4>Carmen does not confirm the defendant</h4>
-                    <p>Carmen described two younger men she did not know. The name Ben Allen did not ring a bell. She did not clearly explain why Lauren stayed, and she did not say Lauren accepted a bonfire invitation from Ben.</p>
+                    <p>Carmen described two younger men she did not know. The name Ben Allen did not ring a bell. She didn’t clearly explain why Lauren stayed, and she didn't say that Ben invited Lauren to a bonfire.</p>
                     <p class="u-migrated-d2c171b1">Her account is hesitant, partial, and unhelpful on motive.</p>
                 </article>
 
@@ -1984,7 +2025,7 @@
                 <article class="feature-mini-card" target="_top">
                     <div class="eyebrow">Step 3</div>
                     <h4>The account evolves into invitation and familiarity</h4>
-                    <p>Lauren later tells Freeman and then the jury that she had been hanging out with Ben, Jay, and Steve, that Ben mentioned a bonfire, and that Carmen left because Lauren had chosen to continue the evening with them.</p>
+                    <p>Lauren later tells Freeman and the jury that she had been hanging out with Ben, Jay, and Steve; that Ben mentioned a bonfire; and that Carmen left because Lauren chose to stay with them.</p>
                     <p class="u-migrated-d2c171b1">That is materially cleaner and more inculpatory than Carmen's actual interview.</p>
                 </article>
             </div>
@@ -1999,7 +2040,7 @@
                 <article class="feature-mini-card" target="_top">
                     <div class="eyebrow">Contradiction 1</div>
                     <h4>No stable familiarity narrative</h4>
-                    <p>Lauren's later versions depend on shared social time, comfort, invitation, and a voluntary decision to stay with Ben and his friends.</p>
+                    <p>Lauren’s later versions depend on shared social time, comfort, invitation, and a voluntary decision to stay with Ben and his friends.</p>
                     <ul>
                         <li>Carmen does <strong class="u-migrated-7b83a912">not</strong> identify Ben by name.</li>
                         <li>Carmen describes only <strong class="u-migrated-7b83a912">two younger men</strong>.</li>
@@ -2011,7 +2052,7 @@
                 <article class="feature-mini-card" target="_top">
                     <div class="eyebrow">Contradiction 2</div>
                     <h4>No clear bonfire explanation from Carmen</h4>
-                    <p>Freeman pressed Carmen on why Lauren stayed. Carmen did not answer with a bonfire invitation, did not say Lauren was leaving with Ben, and did not explain the decision with clear factual detail.</p>
+                    <p>Freeman pressed Carmen on why Lauren stayed. Carmen didn't answer with a bonfire invitation, say Lauren was leaving with Ben, or explain the decision with clear, factual detail.</p>
                     <ul>
                         <li>She says Lauren wanted to stay.</li>
                         <li>She says Lauren said she was fine.</li>
@@ -2023,7 +2064,7 @@
                 <article class="feature-mini-card" target="_top">
                     <div class="eyebrow">Contradiction 3</div>
                     <h4>The Joseph problem</h4>
-                    <p>The "mutual friend Joseph" appears only after conversational development and prompting. The defense theory is that this is not independent recall but retrofitted familiarity.</p>
+                    <p>The “mutual friend Joseph” appears only after conversational development and prompting. The defense theory is that this is not independent recall but retrofitted familiarity.</p>
                     <ul>
                         <li>Carmen initially describes unfamiliar men.</li>
                         <li>Later Joseph appears as socially connected.</li>
@@ -2035,7 +2076,7 @@
                 <article class="feature-mini-card" target="_top">
                     <div class="eyebrow">Contradiction 4</div>
                     <h4>Freeman never documented how he reconciled the conflict</h4>
-                    <p>Freeman told the jury he did not have enough after talking to Lauren alone. He then claimed Carmen's statement helped form probable cause. But the record never shows how he resolved the contradictions.</p>
+                    <p>Freeman told the jury he didn't have enough after speaking with Lauren alone. He then claimed Carmen’s statement helped form probable cause. But the record never shows how he resolved the contradictions.</p>
                     <ul>
                         <li>He kept <strong class="u-migrated-7b83a912">no notes</strong> of what he told the magistrate.</li>
                         <li>He had <strong class="u-migrated-7b83a912">no recorded probable-cause summary</strong>.</li>
@@ -2126,17 +2167,17 @@
                         <div class="lane-box shift">
                             <span class="lane-kicker">What the retelling does</span>
                             <h4>The sequence is made to sound cleaner than it was</h4>
-                            <p>By narrating warrant and review in front-loaded fashion, the testimony softens the constitutional significance of a warrantless arrest and retrospective approval.</p>
+                            <p>By front-loading the warrant and review, the testimony softens the constitutional significance of a warrantless arrest and its retrospective approval.</p>
                         </div>
                         <div class="lane-box shift">
                             <span class="lane-kicker">Why this matters</span>
                             <h4>Sequence is substance here, not detail</h4>
-                            <p>When liberty is restrained first and judicial review comes later, the Fourth Amendment and prompt-magistrate protections become central rather than collateral.</p>
+                            <p>When liberty is restrained first, and judicial review comes later, the Fourth Amendment and prompt-magistrate protections become central rather than collateral.</p>
                         </div>
                         <div class="lane-box effect">
                             <span class="lane-kicker">Effect</span>
                             <h4>The legality of detention becomes independently contestable</h4>
-                            <p>This is not just impeachment material. It bears directly on seizure lawfulness, process integrity, and the reliability of everything built on that custody event.</p>
+                            <p>This is not just impeachment material. It bears directly on the lawfulness of the seizure, the integrity of the process, and the reliability of everything built on that custody event.</p>
                         </div>
                     </div>
                 </article>
@@ -2175,6 +2216,7 @@
                     </div>
                 </article>
             </div>
+            <p class="section-sources">Primary exhibit: <a href="evidence-viewer.html#file=content%2Fimages%2Fevidence%2Fgraphics%2Finserts%2FFreeman%20Testimony.webp">Freeman Testimony</a></p>
         </section>
 
         <section id="consequence-matrix" class="section-shell">
@@ -2182,7 +2224,7 @@
                 <div>
                     <h3 class="section-title-strong">Consequences Matrix</h3>
                     <p class="section-dek">
-                        The distortions above are not isolated defects. They compound. Each one increases the likelihood that formal legal process rested on a more coherent narrative than the underlying record warranted.
+                        The distortions above are not isolated defects. They compound. Each one increases the likelihood that the formal legal process rested on a more coherent narrative than the underlying record warranted.
                     </p>
                 </div>
             </div>
@@ -2190,7 +2232,7 @@
             <div class="process-outcome u-migrated-70687260">
                 <h4 class="u-migrated-ddbaa46c">Why these fabrication points matter legally</h4>
                 <p class="u-migrated-9c6a2482">
-                    The significance of these shifts is not exhausted by rhetoric. If probable cause was built on altered witness language, the reliability of the affidavit itself becomes contestable.
+                    The significance of these shifts is not exhausted by rhetoric. If probable cause rested on altered witness language, the affidavit's reliability becomes contestable.
                 </p>
                 <ul class="u-migrated-d16f89c8">
                     <li><strong>Franks issue:</strong> the strongest and most direct problem arises where affidavit phrasing adds false or recklessly unsupported detail that the witness did not provide.</li>
@@ -2256,10 +2298,6 @@
                     </ul>
                 </article>
             </div>
-
-            <div class="subtle-note">
-                To Do: Link every major visual claim ensuring it is tied, elsewhere on the site, to the underlying transcript, call excerpt, affidavit language, or exhibit. The page itself should orient and connect. The companion pages should prove and quote.
-            </div>
         </section>
 
         <div id="footer-elements">
@@ -2287,7 +2325,6 @@
   <script src="shared/site-search.js?v=20261003g" defer></script>
   <script src="shared/soundtrack.js?v=20261008media" defer></script>
 <script src="shared/reader-preview.js?v=20261004a" defer></script>
-<script src="shared/site-notes.js?v=20261003k" defer></script>
 </body>
 
 

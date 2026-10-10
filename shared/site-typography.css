@@ -21,9 +21,9 @@ body pre, body code, body .t-mono, body .pill { font-family: var(--font-mono) !i
 
 /* Complete reference heading: gold folio above, centered title, gold rule below. */
 body { counter-reset: reference-section; }
-body .section-title { counter-increment: reference-section; position: relative; text-align: left !important; padding-top: 0; padding-bottom: 16px !important; margin-bottom: 24px; }
+body .section-title { counter-increment: reference-section; position: relative; text-align: center; padding-top: 0; padding-bottom: 16px !important; margin-bottom: 24px; }
 body .section-title::before { content: "§ " counter(reference-section, decimal-leading-zero) !important; display: block; position: static; font-family: var(--font-mono) !important; font-size: .72rem; font-weight: 500; line-height: 1.5; letter-spacing: .22em; color: #d4b85c !important; margin-bottom: 10px; }
-body .section-title::after { content: ""; display: block; position: absolute; top: auto; bottom: 0; left: 0 !important; transform: none !important; width: 60px; height: 2px; background: linear-gradient(90deg,#c9a84c,transparent) !important; border-radius: 1px; }
+body .section-title::after { content: ""; display: block; position: absolute; top: auto; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: linear-gradient(90deg,transparent,#c9a84c,transparent) !important; border-radius: 1px; }
 body h1.page-title,
 body .header h1 { display: block !important; font-size: clamp(2.6rem, 5vw, 4.4rem) !important; line-height: 0.98 !important; text-align: center !important; text-wrap: balance; letter-spacing: -0.03em; }
 body h1.page-title::before,
