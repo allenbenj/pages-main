@@ -183,33 +183,30 @@
   };
 
   const rememberTime = () => {
+    if (advancing) return;
     if (Number.isFinite(audio.currentTime) && audio.currentTime >= 0.25) {
-      sessionStorage.setItem(timeKey, String(audio.currentTime));
+      sessionStorage.setItem(timeKey, JSON.stringify({ track: trackIndex, time: audio.currentTime }));
     }
   };
 
-  const seekToSaved = () => {
-    if (!Number.isFinite(savedTime) || savedTime <= 0) return;
+  const loadTrack = (index, time) => {
+    trackIndex = Math.min(Math.max(index, 0), playlist.length - 1);
+    const track = playlist[trackIndex];
+    audio.src = track.src;
+    button.title = track.label;
+    if (floatingBtn) floatingBtn.title = track.label;
+    if (!(time > 0)) return;
     const seek = () => {
-      if (Number.isFinite(audio.duration) && savedTime < audio.duration && audio.currentTime < 0.25) {
-        audio.currentTime = savedTime;
-      }
+      if (Number.isFinite(audio.duration) && time < audio.duration) audio.currentTime = time;
     };
     if (audio.readyState >= 1) seek();
     else audio.addEventListener("loadedmetadata", seek, { once: true });
   };
 
-  const start = () => {
-    want = true;
+  const playAudio = () => {
     starting = true;
-    localStorage.setItem(preferenceKey, "on");
-    delete audio.dataset.ducked;
-    document.querySelectorAll("audio, video").forEach((element) => {
-      if (!element.paused) element.pause();
-    });
-    seekToSaved();
-    const pending = audio.play();
     paint();
+    const pending = audio.play();
     if (pending) {
       pending.then(() => {
         starting = false;
@@ -222,6 +219,17 @@
       starting = false;
       paint();
     }
+  };
+
+  const start = () => {
+    want = true;
+    localStorage.setItem(preferenceKey, "on");
+    delete audio.dataset.ducked;
+    document.querySelectorAll("audio, video").forEach((element) => {
+      if (!element.paused) element.pause();
+    });
+    if (!audio.src) loadTrack(saved.track, saved.time);
+    playAudio();
   };
 
   const stop = () => {
@@ -275,6 +283,21 @@
   audio.addEventListener("pause", () => {
     if (audio.dataset.ducked !== "1") starting = false;
     paint();
+  });
+  audio.addEventListener("ended", () => {
+    if (!want) return;
+    advancing = true;
+    sessionStorage.removeItem(timeKey);
+    if (trackIndex + 1 < playlist.length) {
+      loadTrack(trackIndex + 1, 0);
+      advancing = false;
+      playAudio();
+      return;
+    }
+    // End of the queue: stay silent until the visitor starts it again.
+    stop();
+    loadTrack(0, 0);
+    advancing = false;
   });
   let lastSave = 0;
   audio.addEventListener("timeupdate", () => {
