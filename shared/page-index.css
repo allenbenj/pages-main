@@ -298,22 +298,23 @@
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.95);
     }
     /* Left column */
-    .corruption-quote.is-l1 { top: 11%; left: 1.5%; width: 27%; height: 12%; transform-origin: top left; }
-    .corruption-quote.is-l2 { top: 28%; left: 1.5%; width: 27%; height: 15%; transform-origin: left center; }
-    .corruption-quote.is-l3 { top: 48%; left: 1.5%; width: 27%; height: 14%; transform-origin: left center; }
-    .corruption-quote.is-l4 { top: 68%; left: 1.5%; width: 27%; height: 16%; transform-origin: bottom left; }
+    .corruption-quote.is-l1 { top: 11%; left: 1.5%; --quote-width: 27%; width: var(--quote-width); height: 12%; transform-origin: top left; }
+    .corruption-quote.is-l2 { top: 28%; left: 1.5%; --quote-width: 27%; width: var(--quote-width); height: 15%; transform-origin: left center; }
+    .corruption-quote.is-l3 { top: 48%; left: 1.5%; --quote-width: 27%; width: var(--quote-width); height: 14%; transform-origin: left center; }
+    .corruption-quote.is-l4 { top: 68%; left: 1.5%; --quote-width: 27%; width: var(--quote-width); height: 16%; transform-origin: bottom left; }
     /* Right column */
-    .corruption-quote.is-r1 { top: 14%; right: 1.5%; width: 24%; height: 10%; transform-origin: top right; }
-    .corruption-quote.is-r2 { top: 30%; right: 1.5%; width: 25%; height: 13%; transform-origin: right center; }
-    .corruption-quote.is-r3 { top: 50%; right: 1.5%; width: 25%; height: 13%; transform-origin: right center; }
-    .corruption-quote.is-r4 { top: 70%; right: 1.5%; width: 25%; height: 14%; transform-origin: bottom right; }
+    .corruption-quote.is-r1 { top: 14%; right: 1.5%; --quote-width: 24%; width: var(--quote-width); height: 10%; transform-origin: top right; }
+    .corruption-quote.is-r2 { top: 30%; right: 1.5%; --quote-width: 25%; width: var(--quote-width); height: 13%; transform-origin: right center; }
+    .corruption-quote.is-r3 { top: 50%; right: 1.5%; --quote-width: 25%; width: var(--quote-width); height: 13%; transform-origin: right center; }
+    .corruption-quote.is-r4 { top: 70%; right: 1.5%; --quote-width: 25%; width: var(--quote-width); height: 14%; transform-origin: bottom right; }
     /* Center column */
-    .corruption-quote.is-c1 { top: 8.5%; left: 31%; width: 38%; height: 14%; transform-origin: top center; }
-    .corruption-quote.is-c2 { bottom: 4%; left: 28%; width: 44%; height: 12%; transform-origin: bottom center; }
+    .corruption-quote.is-c1 { top: 8.5%; left: 31%; --quote-width: 38%; width: var(--quote-width); height: 14%; transform-origin: top center; }
+    .corruption-quote.is-c2 { bottom: 4%; left: 28%; --quote-width: 44%; width: var(--quote-width); height: 12%; transform-origin: bottom center; }
     .corruption-quote:hover,
     .corruption-quote:focus-visible {
       z-index: 6;
       transform: scale(1.22);
+      width: calc(var(--quote-width, 25%) * 1.2);
       background: rgba(0, 0, 0, 0.9);
       box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
       color: #fff;

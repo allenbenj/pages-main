@@ -158,6 +158,19 @@
 .reader-home .home-quotes details { margin-top: 28px; border-top: 1px solid #394347; }
 .reader-home .home-quotes summary { padding: 16px 0; color: #a6ced2; cursor: pointer; font-size: 15px; }
 .reader-home .home-quotes details blockquote { padding: 8px 0 22px; border-bottom: 1px solid #293337; max-width: 72ch; }
+.reader-home .home-quotes .corruption-figure { margin: 36px auto 44px; max-width: min(908px, 100%); }
+.reader-home .home-quotes .corruption-bleed {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+.reader-home .home-quotes .corruption-bleed_image { display: block; width: 100%; height: auto; border: 1px solid #394347; border-radius: 4px; cursor: default; }
+.reader-home .home-quotes .corruption-quote { cursor: default; }
+.reader-home .home-quotes .corruption-figure figcaption { margin: 16px auto 0; max-width: 54ch; color: #b7c3c4; font-size: 14px; line-height: 1.6; text-align: center; }
 .reader-home .home-email { display: inline-block; margin-top: 8px; color: #f0dc96 !important; font: 500 clamp(1.05rem, 2vw, 1.45rem)/1.4 var(--font-mono, monospace); text-decoration: none; overflow-wrap: anywhere; }
 .reader-home .home-email:hover { text-decoration: underline; text-underline-offset: 5px; }
 .reader-home .song-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; margin: 32px 0 0; padding: 0; list-style: none; }

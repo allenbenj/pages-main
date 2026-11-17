@@ -4,6 +4,7 @@
 
   const currentPath = window.location.pathname;
   const isCanonicalSource = /\/assets\/pages\/[^/]+\.html$/i.test(currentPath);
+  const isHomePage = !isCanonicalSource && (/(?:^|\/)index\.html?$/i.test(currentPath) || /\/$/.test(currentPath));
   const siteRoot = isCanonicalSource
     ? "../../"
     : /\/(?:content|network_analysis)\//.test(currentPath) ? "../" : "./";
@@ -35,7 +36,7 @@
   const preferenceKey = "edifice-soundtrack";
   const timeKey = "edifice-soundtrack-time";
   const audio = new Audio();
-  audio.preload = "none";
+  audio.preload = "auto";
   let trackIndex = 0;
   let advancing = false;
 
@@ -46,7 +47,9 @@
   `;
   document.head.appendChild(style);
 
-  let want = localStorage.getItem(preferenceKey) !== "off";
+  // The home page always tries to start the soundtrack on arrival; elsewhere the
+  // visitor's saved pause preference is honoured.
+  let want = isHomePage || localStorage.getItem(preferenceKey) !== "off";
   const readSaved = () => {
     const empty = { track: 0, time: 0 };
     const raw = sessionStorage.getItem(timeKey);
@@ -60,7 +63,7 @@
     if (parsed && typeof parsed === "object") {
       const track = Number(parsed.track);
       const time = Number(parsed.time);
-      if (Number.isInteger(track) && track >= 0 && track < playlist.length && Number.isFinite(time) && time > 0) {
+      if (Number.isInteger(track) && track >= 0 && track < playlist.length && Number.isFinite(time) && time >= 0) {
         return { track, time };
       }
       return empty;
@@ -82,7 +85,7 @@
 
   const rememberTime = () => {
     if (advancing) return;
-    if (Number.isFinite(audio.currentTime) && audio.currentTime >= 0.25) {
+    if (Number.isFinite(audio.currentTime) && audio.currentTime >= 0) {
       sessionStorage.setItem(timeKey, JSON.stringify({ track: trackIndex, time: audio.currentTime }));
     }
   };
@@ -92,7 +95,11 @@
     const track = playlist[trackIndex];
     audio.src = track.src;
     button.title = track.label;
-    if (!(time > 0)) return;
+    if (!(time > 0)) {
+      // Keep the queue position across page loads even when the track just started.
+      if (!advancing) sessionStorage.setItem(timeKey, JSON.stringify({ track: trackIndex, time: 0 }));
+      return;
+    }
     const seek = () => {
       if (Number.isFinite(audio.duration) && time < audio.duration) audio.currentTime = time;
     };
@@ -149,6 +156,8 @@
 
   audio.addEventListener("play", () => {
     starting = false;
+    // Playback started, so the soundtrack should follow the visitor across pages.
+    localStorage.setItem(preferenceKey, "on");
     paint();
   });
   audio.addEventListener("pause", () => {
@@ -173,11 +182,19 @@
   let lastSave = 0;
   audio.addEventListener("timeupdate", () => {
     const now = Date.now();
-    if (now - lastSave < 1000) return;
+    if (now - lastSave < 250) return;
     lastSave = now;
     rememberTime();
   });
+  // Carry the queue position across every page transition.
   window.addEventListener("pagehide", rememberTime);
+  window.addEventListener("beforeunload", rememberTime);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") rememberTime();
+  });
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted && want) playAudio();
+  });
 
   // Media takes priority; the soundtrack stays off until explicitly enabled.
   // Muted playback carries no audio, so silent exhibit loops (such as an
@@ -200,13 +217,23 @@
   if (want) {
     loadTrack(saved.track, saved.time);
     const pending = audio.play();
+    // Browsers only allow audible playback after a gesture. Until one lands,
+    // every pointer/key event is a chance to start the soundtrack.
     const armGesture = () => {
-      const resume = (event) => {
-        if (button.contains(event.target) || !want) return;
-        audio.play().then(paint).catch(() => {});
+      const detach = () => {
+        document.removeEventListener("pointerdown", resume, true);
+        document.removeEventListener("keydown", resume, true);
       };
-      document.addEventListener("pointerdown", resume, { capture: true, once: true });
-      document.addEventListener("keydown", resume, { capture: true, once: true });
+      const resume = (event) => {
+        if (!want || (event.target instanceof Node && button.contains(event.target))) return;
+        audio.play().then(() => {
+          detach();
+          paint();
+        }).catch(() => {});
+      };
+      document.addEventListener("pointerdown", resume, true);
+      document.addEventListener("keydown", resume, true);
+      audio.addEventListener("play", detach, { once: true });
     };
     if (pending) pending.then(paint).catch(armGesture);
     else armGesture();
