@@ -1,0 +1,251 @@
+- generic [active] [ref=e1]:
+  - generic "Project navigation" [ref=e3]:
+    - link "Landing" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+    - link "Project Map" [ref=e5] [cursor=pointer]:
+      - /url: overview.html
+    - button "Case Record" [ref=e7] [cursor=pointer]
+    - button "Analysis" [ref=e9] [cursor=pointer]
+    - button "Diagrams" [ref=e11] [cursor=pointer]
+    - button "Accountability" [ref=e13] [cursor=pointer]
+  - text:  
+  - banner [ref=e14]:
+    - generic [ref=e16]:
+      - generic:
+        - paragraph: "\"What I fear most is power with impunity. I fear abuse of power, and the power to abuse.\" — Isabel Allende"
+        - generic:
+          - generic:
+            - paragraph: And Counting
+            - heading [level=2]: Time Since Arrest
+            - generic:
+              - generic:
+                - generic: "6"
+                - generic: Years
+              - generic:
+                - generic: "10"
+                - generic: Months
+              - generic:
+                - generic: "2"
+                - generic: Days
+              - generic:
+                - generic: "18"
+                - generic: Hours
+              - generic:
+                - generic: "9"
+                - generic: Minutes
+              - generic:
+                - generic: "16"
+                - generic: Seconds
+            - paragraph: Elapsed since the arrest of Benjamin Allen October 19, 2019.
+  - region [ref=e18]:
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: Compare the Record
+      - heading "How Long Can the Justice System disrupt the life of an Innocent Man?" [level=2] [ref=e22]
+      - generic [ref=e23]: Two men, one Georgia jail, and more than a decade without a conviction.
+      - article [ref=e24]:
+        - heading "The Maurice Jimmerson Case (10 Years, 10 Months)" [level=3] [ref=e25]:
+          - text: The Maurice Jimmerson Case
+          - generic [ref=e26]: (10 Years, 10 Months)
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - term [ref=e29]: The Arrest
+            - definition [ref=e30]: Maurice Jimmerson was arrested in Dougherty County, Georgia, in May 2013 on murder charges.
+          - generic [ref=e31]:
+            - term [ref=e32]: The Stagnation
+            - definition [ref=e33]: He was held continuously in a local jail awaiting his day in court. His case was delayed for nearly eleven years due to systemic bureaucratic failures, a courthouse flood, the COVID-19 pandemic, and an eight-month stretch where the court completely forgot to assign him an attorney.
+          - generic [ref=e34]:
+            - term [ref=e35]: The Zero-Conviction Conclusion
+            - definition [ref=e36]: He finally went to trial in July 2023, which resulted in a mistrial (hung jury) rather than a conviction. Because he had spent over a decade locked up as a legally innocent man, his defense attorney successfully argued that a retrial would heavily violate his Sixth Amendment rights. To secure his immediate release without a conviction on his record, he accepted a non-custodial probation plea deal for lesser charges and was released in March 2024.
+      - article [ref=e37]:
+        - heading "Longest Awaiting Trial to an Acquittal Condell Benyard (8 Years)" [level=3] [ref=e38]:
+          - text: Longest Awaiting Trial to an Acquittal
+          - generic [ref=e39]: Condell Benyard (8 Years)
+        - paragraph [ref=e40]: If you require the trial process to end specifically in a not-guilty verdict (acquittal) rather than a hung jury or a plea deal, the record belongs to Jimmerson's co-defendant, Condell Benyard.
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - term [ref=e43]: The Timeline
+            - definition [ref=e44]: Benyard was arrested alongside Jimmerson in May 2013.
+          - generic [ref=e45]:
+            - term [ref=e46]: The Outcome
+            - definition [ref=e47]: He remained locked in the exact same Georgia jail without a conviction until his case finally went to a jury in July 2023. The jury found him not guilty on all counts, ending his 8-year pretrial detention with a total, unblemished acquittal.
+      - paragraph [ref=e48]: Lee County, North Carolina, may soon strip this Georgia jail of its infamous title. The Allen case, with its growing record of alleged corruption, collusion, conspiracy, and cronyism, is rapidly becoming a case study in institutional failure.
+  - region "Corruption of Justice" [ref=e49]:
+    - generic [ref=e50]:
+      - img "Corruption of Justice — click to view full size" [ref=e51]
+      - blockquote "Quote by Justice Sonia Sotomayor" [ref=e52]:
+        - generic:
+          - generic: "\"We must not pretend that the countless people who are routinely targeted by police are isolated. They are the canaries in the coal mine whose deaths, civil and literal, warn us that no one can breathe in this atmosphere… Until their voices matter too, our justice system will continue to be anything but.\""
+          - generic: — Justice Sonia Sotomayor, Dissenting Opinion in Utah v. Strieff (2016)
+      - blockquote "Quote by Justice Harry Blackmun" [ref=e53]:
+        - generic:
+          - generic: "\"The requirement that a warrant not issue 'but upon probable cause, supported by Oath or affirmation,' would be reduced to a nullity if a police officer was able to use deliberately falsified allegations to demonstrate probable cause, and, having misled the magistrate, then was able to remain confident that the ploy was worthwhile.\""
+          - generic: — Justice Harry Blackmun, Majority Opinion in Franks v. Delaware (1978)
+      - blockquote "Quote by Judge Bruce Selya" [ref=e54]:
+        - generic:
+          - generic: "\"If any concept is fundamental to our American system of justice, it is that those charged with upholding the law are prohibited from deliberately fabricating evidence and framing individuals for crimes they did not commit… Actions taken in contravention of this prohibition necessarily violate due process.\""
+          - generic: — Judge Bruce Selya, Limone v. Condon (1st Cir. 2004)
+      - blockquote "Quote by Justice Louis D. Brandeis" [ref=e55]:
+        - generic:
+          - generic: "\"Crime is contagious. If the Government becomes a lawbreaker, it breeds contempt for law; it invites every man to become a law unto himself; it invites anarchy. To declare that in the administration of the criminal law the end justifies the means—to declare that the Government may commit crimes in order to secure the conviction of a private criminal—would bring terrible retribution.\""
+          - generic: — Justice Louis D. Brandeis, Dissenting Opinion in Olmstead v. United States (1928)
+      - blockquote "Quote by Charles de Montesquieu" [ref=e56]:
+        - generic:
+          - generic: "\"There is no crueler tyranny than that which is perpetuated under the shield of law and in the name of justice.\""
+          - generic: — Charles de Montesquieu, The Spirit of the Laws (1748)
+      - blockquote "Quote by Justice William Brennan" [ref=e57]:
+        - generic:
+          - generic: "\"The true danger inherent in this type of police misconduct is that it subverts the factfinding process itself… The system's ability to objectively evaluate the evidence is fatally compromised when those charged with gathering it actively manipulate the outcome.\""
+          - generic: — Justice William Brennan, Dissenting in Colorado v. Connelly (1986)
+      - blockquote "Quote by Justice Tom C. Clark" [ref=e58]:
+        - generic:
+          - generic: "\"The ignoble shortcut to conviction left open to the State tends to destroy the entire system of constitutional restraints on which the liberties of the people rest… Nothing can destroy a government more quickly than its failure to observe its own laws, or worse, its disregard of the charter of its own existence.\""
+          - generic: — Justice Tom C. Clark, Majority Opinion in Mapp v. Ohio (1961)
+      - blockquote "Quote by Justice Robert H. Jackson" [ref=e59]:
+        - generic:
+          - generic: "\"The prosecutor has more control over life, liberty, and reputation than any other person in America. His discretion is tremendous… While the prosecutor at his best is one of the most beneficent forces in our society, when he acts from malice or other base motives, he is one of the worst.\""
+          - generic: — Justice Robert H. Jackson, The Federal Prosecutor (1940)
+      - blockquote "Quote by Justice George Sutherland" [ref=e60]:
+        - generic:
+          - generic: "\"The United States Attorney is the representative not of an ordinary party to a controversy, but of a sovereignty whose obligation to govern impartially is as compelling as its obligation to govern at all; and whose interest, therefore, in a criminal prosecution is not that it shall win a case, but that justice shall be done… It is as much his duty to refrain from improper methods calculated to produce a wrongful conviction as it is to use every legitimate means to bring about a just one.\""
+          - generic: — Justice George Sutherland, Majority Opinion in Berger v. United States (1935)
+      - blockquote "Quote by Chief Justice Earl Warren" [ref=e61]:
+        - generic:
+          - generic: "\"The principle that a State may not knowingly use false evidence, including false testimony, to obtain a tainted conviction, implicit in any concept of ordered liberty, does not cease to apply merely because the false testimony goes only to the credibility of the witness. The jury's estimate of the truthfulness and reliability of a given witness may well be determinative of guilt or innocence, and it is upon such subtle factors as the possible interest of the witness in testifying falsely that a defendant's life or liberty may depend.\""
+          - generic: — Chief Justice Earl Warren, Majority Opinion in Napue v. Illinois (1959)
+  - generic [ref=e63]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: Analysis, Data, and Case Files
+      - heading "The Record, Examined." [level=2] [ref=e66]
+      - paragraph [ref=e68]: Case studies, data, and commentary tracing how each safeguard in this case was dismantled — and what accountability would require.
+    - generic [ref=e69]:
+      - 'link "Case Study: Wrongful Accusation Dissecting the facts behind a tragic case." [ref=e71] [cursor=pointer]':
+        - /url: case-study.html
+        - 'heading "Case Study: Wrongful Accusation" [level=3] [ref=e73]'
+        - paragraph [ref=e74]: Dissecting the facts behind a tragic case.
+      - link "Investigative Breakdown Examining patterns in flawed procedures." [ref=e76] [cursor=pointer]:
+        - /url: misconduct.html
+        - heading "Investigative Breakdown" [level=3] [ref=e78]
+        - paragraph [ref=e79]: Examining patterns in flawed procedures.
+      - link "Commentary on ADA Corruption Legal perspectives on recent developments." [ref=e81] [cursor=pointer]:
+        - /url: prosecutor_allowed.html
+        - heading "Commentary on ADA Corruption" [level=3] [ref=e83]
+        - paragraph [ref=e84]: Legal perspectives on recent developments.
+      - link "Policy Review Assessing new frameworks and guidelines." [ref=e86] [cursor=pointer]:
+        - /url: why-dont-we-have-this-system.html
+        - heading "Policy Review" [level=3] [ref=e88]
+        - paragraph [ref=e89]: Assessing new frameworks and guidelines.
+      - link "Data Snapshot Key statistics on false allegations." [ref=e91] [cursor=pointer]:
+        - /url: data-snapshot.html
+        - heading "Data Snapshot" [level=3] [ref=e93]
+        - paragraph [ref=e94]: Key statistics on false allegations.
+      - link "Resource Spotlight Read as a warning - legal professionals who may go to Lee County NC to practice." [ref=e96] [cursor=pointer]:
+        - /url: judicial-duty.html
+        - heading "Resource Spotlight" [level=3] [ref=e98]
+        - paragraph [ref=e99]: Read as a warning - legal professionals who may go to Lee County NC to practice.
+  - region [ref=e100]:
+    - generic [ref=e102]:
+      - heading "Seven Factors" [level=2] [ref=e103]
+      - paragraph [ref=e105]: State v. Allen presents seven factors that are recognizable patterns in the wrongful-conviction research literature. This case is not a unique outlier and not a borderline evidentiary dispute.
+      - list [ref=e106]:
+        - listitem [ref=e107]: • Complainant with institutional access to law enforcement
+        - listitem [ref=e108]: • Investigator with a personal relationship to the complainant's circle
+        - listitem [ref=e109]: • Suppression or re-framing of exculpatory material at the investigation stage
+        - listitem [ref=e110]: • Prosecutorial charging decision treating investigative momentum as a substitute for independent evidence review
+        - listitem [ref=e111]: • Video evidence contradicting the narrative
+        - listitem [ref=e112]: • Physical impossibility in the complainant's narrative
+        - listitem [ref=e113]: • Uninvestigated financial motive
+      - paragraph [ref=e114]: The information on this website provides the population-level context for understanding why a case with this profile exists and how it survives. It does not require special cynicism or conspiracy thinking. It requires only that the documented facts be held against the documented research, and the result observed.
+      - generic [ref=e115]:
+        - link "Open documents" [ref=e117] [cursor=pointer]:
+          - /url: documentspage.html
+        - link "Project map" [ref=e119] [cursor=pointer]:
+          - /url: overview.html
+  - generic [ref=e121]:
+    - generic [ref=e122]:
+      - generic [ref=e123]: Share what you know
+      - heading "Have information about this case?" [level=2] [ref=e124]
+      - paragraph [ref=e126]: If you have information, documents, or firsthand knowledge relevant to State v. Benjamin Allen, submit it confidentially. Tips can directly support the record.
+    - list [ref=e127]:
+      - listitem [ref=e128]:
+        - generic [ref=e129]:
+          - heading "Email" [level=3] [ref=e134]
+          - paragraph [ref=e135]: Submit tips, documents, or outreach confidentially.
+          - link "Leecountycorruptiontips@proton.me" [ref=e136] [cursor=pointer]:
+            - /url: mailto:Leecountycorruptiontips@proton.me
+  - contentinfo [ref=e137]:
+    - generic [ref=e138]:
+      - navigation "Footer navigation" [ref=e139]:
+        - generic [ref=e141]:
+          - link "Edifice of Lies" [ref=e143] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=e148]: A documented public record of the evidence, chronology, contradictions, and institutional failures in State v. Benjamin Allen.
+        - list [ref=e149]:
+          - listitem [ref=e150]:
+            - heading "Case Record" [level=2] [ref=e151]
+          - listitem [ref=e152]:
+            - link "Project Map" [ref=e153] [cursor=pointer]:
+              - /url: overview.html
+          - listitem [ref=e155]:
+            - link "Timeline" [ref=e156] [cursor=pointer]:
+              - /url: timeline.html
+          - listitem [ref=e158]:
+            - link "People" [ref=e159] [cursor=pointer]:
+              - /url: players.html
+          - listitem [ref=e161]:
+            - link "Connections" [ref=e162] [cursor=pointer]:
+              - /url: connections.html
+          - listitem [ref=e164]:
+            - link "Scene" [ref=e165] [cursor=pointer]:
+              - /url: scene.html
+        - list [ref=e167]:
+          - listitem [ref=e168]:
+            - heading "Evidence & Analysis" [level=2] [ref=e169]
+          - listitem [ref=e170]:
+            - link "Evidence" [ref=e171] [cursor=pointer]:
+              - /url: evidence.html
+          - listitem [ref=e173]:
+            - link "Contradictions" [ref=e174] [cursor=pointer]:
+              - /url: contradictions.html
+          - listitem [ref=e176]:
+            - link "Source Documents" [ref=e177] [cursor=pointer]:
+              - /url: documentspage.html
+          - listitem [ref=e179]:
+            - link "Misconduct" [ref=e180] [cursor=pointer]:
+              - /url: misconduct.html
+          - listitem [ref=e182]:
+            - link "Judicial Duty" [ref=e183] [cursor=pointer]:
+              - /url: judicial-duty.html
+        - list [ref=e185]:
+          - listitem [ref=e186]:
+            - heading "Research & Context" [level=2] [ref=e187]
+          - listitem [ref=e188]:
+            - link "Case Study" [ref=e189] [cursor=pointer]:
+              - /url: case-study.html
+          - listitem [ref=e191]:
+            - link "Data Snapshot" [ref=e192] [cursor=pointer]:
+              - /url: data-snapshot.html
+          - listitem [ref=e194]:
+            - link "Policy Review" [ref=e195] [cursor=pointer]:
+              - /url: why-dont-we-have-this-system.html
+          - listitem [ref=e197]:
+            - link "Prosecutorial Accountability" [ref=e198] [cursor=pointer]:
+              - /url: prosecutor_allowed.html
+          - listitem [ref=e200]:
+            - link "Video Archive" [ref=e201] [cursor=pointer]:
+              - /url: general-videos.html
+      - navigation "Footer utilities" [ref=e204]:
+        - generic [ref=e205]: State v. Benjamin Allen Project - False Crime = True Corruption
+        - list [ref=e207]:
+          - listitem [ref=e208]:
+            - link "Project Map" [ref=e209] [cursor=pointer]:
+              - /url: overview.html
+          - listitem [ref=e211]:
+            - link "Source Documents" [ref=e212] [cursor=pointer]:
+              - /url: documentspage.html
+          - listitem [ref=e214]:
+            - link "Confidential Contact" [ref=e215] [cursor=pointer]:
+              - /url: mailto:Leecountycorruptiontips@proton.me
+  - text: "-->"
+  - button "Search Project Ctrl/Cmd+K" [ref=e217] [cursor=pointer]:
+    - strong [ref=e218]: Search Project
+    - generic [ref=e219]: Ctrl/Cmd+K

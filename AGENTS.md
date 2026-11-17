@@ -75,6 +75,16 @@ python tools/serve_site.py     # then open http://127.0.0.1:8000/index.html
 Use `tools/site_release.py stage` and serve the staged directory when checking
 the exact deployable artifact.
 
+While `tools/serve_site.py` is running, every page it serves also carries a
+local-only click-to-edit overlay (`tools/site_editor.js`). Turn edit mode on with
+the **Edit mode** button or `Ctrl+E`, click any text on the page, change it, and
+**Save changes** writes the new text back into the backing source file —
+`assets/pages/<page>.html` for canonical pages, or the root `index.html`. The
+overlay is injected at serve time and is never added to the source tree or the
+release artifact. Editing is text-only: markup, attributes, and structure are
+untouched, and the server refuses any change it cannot match against the source
+file. Reload the page after saving to confirm the file on disk.
+
 ### network_analysis app
 
 ```bash
