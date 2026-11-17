@@ -1,0 +1,292 @@
+{
+  "bundle_note": "Container for V040-08 objects. It is not a schema. Validate each object with controller.schemas.validate. Synthetic Example County facts only.",
+  "matter_context": {
+    "matter_id": "SYN-EXAMPLE-MARKET-001",
+    "profile_path": "skills/defense-framing/examples/synthetic/NOT_A_LIVE_MATTER_PROFILE.txt",
+    "jurisdiction": "Example State",
+    "court": "Example County District Court",
+    "procedural_posture": "pretrial investigation; no filing is authorized by this packet",
+    "charges_or_claims": [
+      "Fictional allegation: misdemeanor theft, taking store property with intent to deprive the owner"
+    ],
+    "deadlines": [
+      {
+        "label": "no deadline is asserted in this synthetic example",
+        "date_or_unverified": "unverified"
+      }
+    ],
+    "requested_document": "attorney_note",
+    "audience": "defense counsel reviewing a synthetic demonstration",
+    "confidentiality": "internal"
+  },
+  "evidence_records": [
+    {
+      "evidence_id": "E-SYN-INTERVIEW-A",
+      "source_path": "skills/defense-framing/examples/synthetic/interview-a.txt",
+      "source_hash_sha256": "5318744f8234c9a0255f7ea4b781c154b97ceb157a8f327f034cad30f6d0b27a",
+      "locator": {"kind": "page_line", "page": 2, "line": 5, "value": "page 2, line 5"},
+      "speaker_or_author": "Jordan Hale",
+      "exact_quote": "The person I know as Riley Quinn walked out the front door.",
+      "relevant_content": "Hale also said a closed paper bag was in Riley Quinn's hand and that Hale did not see what was inside the bag (same page, lines 6 and 7).",
+      "provenance": "Synthetic demonstration file written for V040-14. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-SYN-TRANSCRIPT-SIDE"]
+    },
+    {
+      "evidence_id": "E-SYN-TRANSCRIPT-SIDE",
+      "source_path": "skills/defense-framing/examples/synthetic/transcript-b.txt",
+      "source_hash_sha256": "13cae2ad919c8bdb4d5d41bb9510078afbc88cc70e66c4d31429098214477e7a",
+      "locator": {"kind": "page_line", "page": 14, "line": 6, "value": "page 14, line 6"},
+      "speaker_or_author": "Jordan Hale",
+      "exact_quote": "I saw Riley Quinn go out the side door.",
+      "relevant_content": "Later lines on the same page say the bag was open and looked empty.",
+      "provenance": "Synthetic demonstration file written for V040-14. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-SYN-INTERVIEW-A"]
+    },
+    {
+      "evidence_id": "E-SYN-TRANSCRIPT-EMPTY",
+      "source_path": "skills/defense-framing/examples/synthetic/transcript-b.txt",
+      "source_hash_sha256": "13cae2ad919c8bdb4d5d41bb9510078afbc88cc70e66c4d31429098214477e7a",
+      "locator": {"kind": "page_line", "page": 14, "line": 9, "value": "page 14, line 9"},
+      "speaker_or_author": "Jordan Hale",
+      "exact_quote": "The bag looked empty to me.",
+      "relevant_content": "Hale also said Hale does not know why the two answers differ (page 14, line 11).",
+      "provenance": "Synthetic demonstration file written for V040-14. Same file as E-SYN-TRANSCRIPT-SIDE. Not a court original.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-SYN-INTERVIEW-A", "E-SYN-CHARGE"]
+    },
+    {
+      "evidence_id": "E-SYN-VIDEO",
+      "source_path": "skills/defense-framing/examples/synthetic/video-log.txt",
+      "source_hash_sha256": "b6eaec9f94d739817e042b20203cc0c14f1a6db31bf18c40ecd6fe686e3b3e2a",
+      "locator": {"kind": "timestamp", "value": "14:02:00 store clock; offset against the interview was not checked"},
+      "speaker_or_author": "demonstration video log",
+      "exact_quote": "The image does not show the contents of any bag.",
+      "relevant_content": "The log places a person at the front door at store clock 14:02:00. It does not identify the person and it does not show bag contents.",
+      "provenance": "Synthetic demonstration file written for V040-14. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-SYN-TRANSCRIPT-SIDE"]
+    },
+    {
+      "evidence_id": "E-SYN-OFFICER",
+      "source_path": "skills/defense-framing/examples/synthetic/officer-note.txt",
+      "source_hash_sha256": "6023ee1b91bc183012b40ebba977d8ae6923c7eca9ee69691496dedc85782c4e",
+      "locator": {"kind": "paragraph", "value": "paragraph 1: I did not inventory the paper bag"},
+      "speaker_or_author": "demonstration officer note",
+      "exact_quote": "I did not inventory the paper bag.",
+      "relevant_content": "The note does not state a policy that required an inventory, and it does not state that the bag was lost, destroyed, or withheld.",
+      "provenance": "Synthetic demonstration file written for V040-14. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-SYN-CHARGE"]
+    },
+    {
+      "evidence_id": "E-SYN-CHARGE",
+      "source_path": "skills/defense-framing/examples/synthetic/charge-sheet.txt",
+      "source_hash_sha256": "87d84b59f253783e8d4124d4355d28ff994511f97c45a9fa301fe7bfc7418f60",
+      "locator": {"kind": "paragraph", "value": "paragraph 1: the State alleges the taking"},
+      "speaker_or_author": "demonstration charge sheet",
+      "exact_quote": "The State alleges that Riley Quinn took store property from Example Market with intent to deprive the owner of it.",
+      "relevant_content": "The sheet states that it states the allegation and does not prove the allegation.",
+      "provenance": "Synthetic demonstration file written for V040-14. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-SYN-TRANSCRIPT-EMPTY", "E-SYN-OFFICER"]
+    }
+  ],
+  "proposition_records": [
+    {
+      "proposition_id": "P-SYN-FRONT",
+      "assertion": "Jordan Hale said the person Hale knows as Riley Quinn walked out the front door carrying a closed paper bag, and Hale did not see the contents.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-SYN-INTERVIEW-A"],
+      "contradictory_evidence_ids": ["E-SYN-TRANSCRIPT-SIDE"],
+      "confidence_rationale": "The sentence is in the demonstration interview at page 2, line 5, with the bag sentences on lines 6 and 7.",
+      "limitations": "The statement is Hale's account. It does not independently identify Quinn, and it does not show what the bag held.",
+      "legal_significance": "Supports a State presence-and-bag account. It does not prove the taking element.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#exit-accounts"]
+    },
+    {
+      "proposition_id": "P-SYN-SIDE",
+      "assertion": "Jordan Hale said Riley Quinn went out the side door.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-SYN-TRANSCRIPT-SIDE"],
+      "contradictory_evidence_ids": ["E-SYN-INTERVIEW-A"],
+      "confidence_rationale": "The sentence is in the demonstration transcript at page 14, line 6.",
+      "limitations": "The record does not show whether this was the same moment as the front-door statement.",
+      "legal_significance": "Adverse to a single-exit story. Usable for impeachment preparation only after the questions and the timing are compared.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#exit-accounts"]
+    },
+    {
+      "proposition_id": "P-SYN-EMPTY",
+      "assertion": "Jordan Hale said the bag looked empty.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-SYN-TRANSCRIPT-EMPTY"],
+      "contradictory_evidence_ids": ["E-SYN-INTERVIEW-A"],
+      "confidence_rationale": "The sentence is in the demonstration transcript at page 14, line 9.",
+      "limitations": "Hale described an appearance. The statement is not an inventory and it is not proof the bag was empty at the front door.",
+      "legal_significance": "Qualifies the taking allegation. It is contrary evidence the defense theory must keep.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#contents"]
+    },
+    {
+      "proposition_id": "P-SYN-VIDEO",
+      "assertion": "The video log states that a person was at the front door at store-clock 14:02:00 and that the image does not show bag contents. The clock offset was not checked.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-SYN-VIDEO"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The sentences are in the demonstration video log. The timestamp value is 14:02:00 store clock.",
+      "limitations": "The log does not name the person. An unchecked clock cannot be matched to either witness statement.",
+      "legal_significance": "Corroborates presence at the front door only at the level of an unidentified person. It does not prove contents or intent.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#contents"]
+    },
+    {
+      "proposition_id": "P-SYN-NO-INVENTORY",
+      "assertion": "The officer note states that the bag was not inventoried. It does not state a required policy, and it does not state that the bag was lost, destroyed, or withheld.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-SYN-OFFICER"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The sentences are in the demonstration officer note, paragraph 1.",
+      "limitations": "Absence of an inventory is not absence of the property. No duty is established in this note.",
+      "legal_significance": "The contents proposition is untested. A destruction or withholding theory is not available on this note.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#contents"]
+    },
+    {
+      "proposition_id": "P-SYN-CHARGE",
+      "assertion": "The charge sheet alleges that Riley Quinn took store property with intent to deprive the owner. The sheet says the allegation is not proof.",
+      "classification": "allegation",
+      "supporting_evidence_ids": ["E-SYN-CHARGE"],
+      "contradictory_evidence_ids": ["E-SYN-TRANSCRIPT-EMPTY", "E-SYN-OFFICER"],
+      "confidence_rationale": "The allegation sentence is in the demonstration charge sheet, paragraph 1.",
+      "limitations": "An allegation is not an established record fact.",
+      "legal_significance": "This is the element the State must prove. The defense packet does not adopt it as a fact.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#element"]
+    },
+    {
+      "proposition_id": "P-SYN-ONE-EXIT",
+      "assertion": "The packet does not establish whether Hale's front-door and side-door accounts describe the same departure or different moments.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-SYN-INTERVIEW-A", "E-SYN-TRANSCRIPT-SIDE"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "E-SYN-INTERVIEW-A describes a front-door departure. E-SYN-TRANSCRIPT-SIDE describes a side-door departure. Neither source says Hale used only one exit, and neither source times the two descriptions as the same departure or as different moments.",
+      "limitations": "Contradiction class is contingent on same-event identity, which this packet does not establish. If that identity is later shown, the class is unresolved between chronology and an irreconcilable account. The class is not deliberate deception. Interview-versus-transcript order is not occurrence order. The front-door and side-door statements remain contrary to each other as attributed accounts on P-SYN-FRONT and P-SYN-SIDE. Neither account contradicts this inference. Hale said Hale does not know why the answers differ, which is not a finding about Hale's purpose.",
+      "legal_significance": "If the accounts concern the same departure, the difference can matter to reliability and impeachment. This packet does not establish that premise. The difference is not, by itself, an admissibility ruling or an intent finding.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#exit-accounts"]
+    },
+    {
+      "proposition_id": "P-SYN-CONTENTS-UNKNOWN",
+      "assertion": "The record supplied here does not establish what the paper bag held.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-SYN-INTERVIEW-A", "E-SYN-VIDEO", "E-SYN-OFFICER"],
+      "contradictory_evidence_ids": ["E-SYN-TRANSCRIPT-EMPTY"],
+      "confidence_rationale": "Hale did not see inside the closed bag, the video log says contents are not shown, and the officer did not inventory the bag. The empty-bag statement is an appearance, not an inventory.",
+      "limitations": "This inference fails if a later inventory, a clearer video frame, or a receipt shows the contents. The empty-bag statement is kept as qualifying evidence, not ignored.",
+      "legal_significance": "The taking element is untested on this packet. The inference is not a finding that the bag was empty and not a finding that anyone hid evidence.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#contents"]
+    },
+    {
+      "proposition_id": "P-SYN-NO-DECEPTION-FINDING",
+      "assertion": "The exit-route difference is not proof that Jordan Hale intended to deceive.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-SYN-INTERVIEW-A", "E-SYN-TRANSCRIPT-SIDE", "E-SYN-TRANSCRIPT-EMPTY"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The two accounts differ. Hale said Hale does not know why. No statement in the packet describes Hale's knowledge, motive, or plan.",
+      "limitations": "Intent gradation is an unresolved alternative. The packet does not assign negligence, error, confirmation bias, recklessness, or deliberate misconduct. A later recording could support a narrower grade, and that grade would still need evidence proportionate to the accusation.",
+      "legal_significance": "Counsel may use the difference to test reliability. Counsel may not plead deliberate falsehood from the difference alone.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#intent"]
+    },
+    {
+      "proposition_id": "P-SYN-RULE-UNVERIFIED",
+      "assertion": "Working description only: the State must prove the charged taking and the required intent with admissible evidence. This sentence is not a citation and it is not reliance_approved.",
+      "classification": "legal_rule",
+      "supporting_evidence_ids": [],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "No statute or opinion was opened for this synthetic example.",
+      "limitations": "Status is research_pending. A filing that needs the rule must go through legal-research-verification.",
+      "legal_significance": "Holds the legal hinge open without inventing a reporter citation.",
+      "draft_locations": ["examples/v04014_analytical_paragraphs.md#element"]
+    }
+  ],
+  "legal_argument_record": {
+    "argument_id": "A-SYN-EXIT-ROUTE",
+    "issue": "The State must prove a taking of store property. The precise challenge is that the packet shows an allegation, two exit accounts, a video that does not show bag contents, and an officer note that no inventory was made.",
+    "legal_standard": "Working description tied to P-SYN-RULE-UNVERIFIED. No reliance_approved authority is cited. Do not file on this standard.",
+    "material_fact_proposition_ids": [
+      "P-SYN-FRONT",
+      "P-SYN-SIDE",
+      "P-SYN-EMPTY",
+      "P-SYN-VIDEO",
+      "P-SYN-NO-INVENTORY",
+      "P-SYN-CHARGE",
+      "P-SYN-ONE-EXIT",
+      "P-SYN-CONTENTS-UNKNOWN",
+      "P-SYN-NO-DECEPTION-FINDING",
+      "P-SYN-RULE-UNVERIFIED"
+    ],
+    "supporting_authorities": [
+      {
+        "citation": "No reporter citation. Element description is research_pending.",
+        "pin": "none",
+        "proposition": "Do not cite this row as law. See P-SYN-RULE-UNVERIFIED.",
+        "status": "research_pending",
+        "verified_on": "",
+        "verification_method": "not run; synthetic example forbids a fabricated citation"
+      }
+    ],
+    "adverse_authorities": [],
+    "defense_reasoning": "Principal proposition P-SYN-CONTENTS-UNKNOWN: on this packet the bag contents are untested. Supporting record: E-SYN-INTERVIEW-A (closed bag, contents unseen), E-SYN-VIDEO (image does not show contents), E-SYN-OFFICER (no inventory). Adverse record kept in the theory: E-SYN-TRANSCRIPT-SIDE and E-SYN-TRANSCRIPT-EMPTY, and the charge allegation E-SYN-CHARGE. P-SYN-ONE-EXIT is a bounded inference: the packet does not establish whether the front-door and side-door accounts describe the same departure or different moments. It does not find that Hale described only one exit. Permissible inference P-SYN-NO-DECEPTION-FINDING: the exit difference supports reliability testing, not a deception finding. Alternative explanations, neither found as fact: the two descriptions are parts of one departure, or the questions asked about different moments. Opposing argument and answer are in the fields below. Material consequence: the taking element stays unproved on this packet. This packet does not support requesting a misconduct remedy; legal availability remains unverified. Investigative action is the requested remedy. Draft paragraphs: examples/v04014_analytical_paragraphs.md.",
+    "strongest_opposing_argument": "The State can say Hale saw Quinn leave the front door with a closed bag (P-SYN-FRONT, E-SYN-INTERVIEW-A), the video log places a person at that door at 14:02:00 (P-SYN-VIDEO, E-SYN-VIDEO), and the side-door and empty-bag lines (P-SYN-SIDE, P-SYN-EMPTY) are a later detail or Hale's impression rather than a second event. On that account the charge allegation (P-SYN-CHARGE) is still the theory the State will try to prove with more evidence.",
+    "defense_rebuttal": "The opposing account still does not identify the bag's contents. Hale's front-door statement says the bag was closed and the contents were unseen. The video log says the image does not show contents. The officer note says there was no inventory and does not say the bag was lost, destroyed, or withheld (P-SYN-NO-INVENTORY). The side-door statement remains in the theory. P-SYN-ONE-EXIT does not resolve the two accounts into the same departure or into different moments, and the State's 'later detail' account is not a timing finding. Using that difference to accuse Hale of deliberate deception would outrun P-SYN-NO-DECEPTION-FINDING.",
+    "preservation_requirements": [
+      "Keep E-SYN-TRANSCRIPT-SIDE, E-SYN-TRANSCRIPT-EMPTY, and E-SYN-OFFICER in any later draft. Do not drop them to strengthen the frame.",
+      "Do not convert P-SYN-CHARGE from allegation to established_record_fact.",
+      "Do not cite P-SYN-RULE-UNVERIFIED as reliance_approved."
+    ],
+    "requested_remedy": "Investigate. Obtain the interview recording, the transcript pages around page 14, the video file with clock documentation, and any written inventory policy. This packet does not support requesting a suppression or misconduct remedy. Legal availability of either remedy remains unverified.",
+    "required_additional_proof": [
+      "Full interview recording corresponding to interview-a.txt page 2",
+      "Transcript context around page 14, lines 6 through 11",
+      "Video file and a checked clock offset for 14:02:00",
+      "Inventory policy, if any exists; the officer note does not contain one"
+    ],
+    "open_research_questions": [
+      "Verified elements and impeachment rule for Example State; none are reliance_approved here",
+      "Whether any inventory duty exists; the officer note does not state one",
+      "Adverse authority was not researched"
+    ],
+    "recommendation": "investigate"
+  },
+  "agent_handoff": {
+    "handoff_id": "H-SYN-V04014",
+    "producing_agent": "defense-framing",
+    "agent_version": "0.4.0-v04014",
+    "task_id": "V040-14",
+    "inputs_received": [
+      "V040-08 schemas: matter_context, evidence_record, proposition_record, legal_argument_record, agent_handoff",
+      "Reviewer_Schemas_20261015.md findings RS-01, RS-02, and RS-03",
+      "Synthetic files under skills/defense-framing/examples/synthetic/"
+    ],
+    "work_performed": "Built one synthetic argument packet and the draft-ready paragraphs in examples/v04014_analytical_paragraphs.md. Each evidence locator carries a page and line or a timestamp or paragraph value. Evidence identifiers and handoff findings are non-blank. No real matter facts were used. After V040-R14, reframed P-SYN-ONE-EXIT as an inference that the packet does not establish whether the two exit accounts are the same departure or different moments, refreshed the present-tense validator statements, and narrowed the misconduct sentence so legal availability stays unverified.",
+    "findings": [
+      "The taking allegation P-SYN-CHARGE is not an established fact.",
+      "P-SYN-FRONT describes a front-door departure and P-SYN-SIDE describes a side-door departure. P-SYN-ONE-EXIT holds that the packet does not establish whether they are the same departure or different moments. The difference is not classified as deliberate deception.",
+      "Bag contents are untested: E-SYN-INTERVIEW-A, E-SYN-VIDEO, and E-SYN-OFFICER.",
+      "Recommendation is investigate. This packet does not support requesting a misconduct remedy; legal availability remains unverified."
+    ],
+    "artifacts": [
+      "skills/defense-framing/examples/v04014_argument_packet.json",
+      "skills/defense-framing/examples/v04014_analytical_paragraphs.md"
+    ],
+    "verification_results": [
+      "2026-10-15: py -3.14 -B, cwd Legal_Kit, imported controller.schemas.validate. matter_context, six evidence_record objects, ten proposition_record objects, legal_argument_record A-SYN-EXIT-ROUTE, and agent_handoff H-SYN-V04014 each returned zero defects. Each exact_quote is a substring of its named file, and each source_hash_sha256 matched hashlib.sha256 of that file. This is local schema validation. It is not the Phase 1 exit.",
+      "2026-10-15 recheck after V040-R14: the same 19 objects again returned zero defects. P-SYN-ONE-EXIT is an inference supported by E-SYN-INTERVIEW-A and E-SYN-TRANSCRIPT-SIDE, with no contradictory evidence id. Six evidence hashes and exact quotes still match five source files. Synthetic sources were not edited. This recheck is not a controller run of the packet."
+    ],
+    "unresolved_issues": [
+      "No recorded controller run has traversed this framing packet. V040-R07 and V040-R08 are done: reviewer-manager accepted those corrections after a focused 24-test recheck. V040-23 routing is done. Those closures do not establish a controller run of this packet. This handoff stays partial.",
+      "Schema RS-01 through RS-04 were corrected and accepted on V040-R08. Adequate locators, identifiers, and handoff text remain mandatory. The earlier verification line is history from the first validation. It is not a statement that those defects remain open.",
+      "Contradiction class and intent gradation have no schema fields. They are written in proposition limitations. See the CONTRACT-QUESTION on V040-08.",
+      "Authority is research_pending. Adverse authority was not researched.",
+      "scripts/audit_defense_framing.py still audits the legacy packet shape. V040-15 owns that script. This handoff does not claim that audit as V040-08 validation."
+    ],
+    "dependencies": ["V040-08", "V040-16"],
+    "status": "partial"
+  }
+}

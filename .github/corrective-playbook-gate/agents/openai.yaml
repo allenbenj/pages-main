@@ -1,0 +1,3 @@
+interface:
+  display_name: "Corrective Playbook Gate"
+  short_description: "Run the Corrective Playbook pre-delivery gate before any legal work product is released"

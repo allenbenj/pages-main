@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "objective": "Assess the evidentiary impact of two competing witness accounts in a fictional criminal case",
+  "stage": "internal-strategy",
+  "audience": "defense-counsel",
+  "sources": [
+    {
+      "id": "S1",
+      "path": "fictional/interview-A.txt",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "witness-interview",
+      "status": "demonstration-only"
+    },
+    {
+      "id": "S2",
+      "path": "fictional/interview-B.txt",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "trial-transcript",
+      "status": "demonstration-only"
+    }
+  ],
+  "authorities": [
+    {
+      "id": "L1",
+      "citation": "[INSERT VERIFIED GOVERNING ELEMENT AUTHORITY]",
+      "status": "unverified",
+      "verified_as_of": "",
+      "jurisdiction": "[jurisdiction]",
+      "proposition": "Element requiring proof"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Witness described leaving by the front entrance in interview A.",
+      "kind": "attributed_statement",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "p. 2, lines 4-7"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Witness described leaving by a side entrance at trial.",
+      "kind": "attributed_statement",
+      "source_refs": [
+        {
+          "source_id": "S2",
+          "locator": "Tr. 35:6-11"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The exit account appears inconsistent on its face, subject to context review.",
+      "kind": "inference",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "p.2"
+        },
+        {
+          "source_id": "S2",
+          "locator": "Tr.35"
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "id": "D1",
+      "theory_type": "witness-reliability",
+      "thesis": "Test whether the exit-route variance bears on the witness’s opportunity to observe.",
+      "state_best_case": "The two accounts describe different portions of one route; both can be true.",
+      "element": "[verify affected element / credibility issue]",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "adverse_claim_ids": [
+        "C2"
+      ],
+      "authority_ids": [],
+      "inferences": [
+        {
+          "from_claim_ids": [
+            "C1",
+            "C2"
+          ],
+          "to_claim_id": "C3",
+          "warrant": "The accounts name potentially different passages; context determines materiality.",
+          "alternative": "Both routes may have been used or questions differed."
+        }
+      ],
+      "next_proof_step": "Obtain full recordings and building plan; compare questions and context.",
+      "remedy": "Further investigation; make no unsupported legal remedy claim.",
+      "risk": "Difference may be immaterial after viewing context.",
+      "weakest_link": "Full contextual sequence not yet reviewed.",
+      "falsifier": "Complete record shows the two routes are sequential and compatible."
+    }
+  ],
+  "review": {
+    "conflicts_open": [
+      "R-C01"
+    ],
+    "reviewer": "UNASSIGNED",
+    "playbook_status": "NOT_RUN",
+    "qc_status": "NOT_RUN",
+    "law_currency_status": "UNVERIFIED"
+  }
+}

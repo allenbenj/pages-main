@@ -1,0 +1,3 @@
+interface:
+  display_name: "Sentencing and Mitigation"
+  short_description: "Build sourced sentencing memoranda and mitigation packets"

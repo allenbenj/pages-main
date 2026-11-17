@@ -1,0 +1,3 @@
+interface:
+  display_name: "Redaction Planning"
+  short_description: "Map proposed redactions to source versions and review decisions"

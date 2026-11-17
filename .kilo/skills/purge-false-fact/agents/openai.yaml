@@ -1,0 +1,3 @@
+interface:
+  display_name: "Purge False Fact"
+  short_description: "Find and correct an owner-confirmed false fact in every matter document, database, and index"

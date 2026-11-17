@@ -1,0 +1,3 @@
+interface:
+  display_name: "Privilege Log Generator"
+  short_description: "Build structured privilege logs from a document review set"

@@ -127,10 +127,42 @@
         <div class="site-search-filters">
           <button class="site-search-filter is-active" data-filter="all" type="button">All</button>
           <button class="site-search-filter" data-filter="page" type="button">Pages</button>
+          <button class="site-search-filter" data-filter="card" type="button">Cards</button>
+          <button class="site-search-filter" data-filter="timeline" type="button">Timeline</button>
           <button class="site-search-filter" data-filter="pdf" type="button">PDFs</button>
           <button class="site-search-filter" data-filter="document" type="button">Docs</button>
           <button class="site-search-filter" data-filter="media" type="button">Media</button>
           <button class="site-search-filter" data-filter="image" type="button">Images</button>
+        </div>
+        <div class="site-search-facets">
+          <select class="site-search-facet" id="searchFacetPlayer" aria-label="Filter by Player">
+            <option value="">All Players</option>
+            <option value="allen">Benjamin Allen</option>
+            <option value="deal">Lauren Deal</option>
+            <option value="love">Carmen Love</option>
+            <option value="morrison">James Morrison</option>
+            <option value="west">Peter West</option>
+            <option value="happel">Brad Happel</option>
+            <option value="demarco">DeMarco</option>
+            <option value="freeman">Steve Freeman</option>
+            <option value="mcneill">Sheriff McNeill</option>
+          </select>
+          <select class="site-search-facet" id="searchFacetIssue" aria-label="Filter by Issue">
+            <option value="">All Issues</option>
+            <option value="contradiction">Contradiction</option>
+            <option value="impossibility">Physical Impossibility</option>
+            <option value="timeline">Timeline</option>
+            <option value="medical">Medical / Forensic</option>
+            <option value="witness">Witness Conflict</option>
+            <option value="misconduct">Official Misconduct</option>
+          </select>
+          <select class="site-search-facet" id="searchFacetPhase" aria-label="Filter by Timeline Phase">
+            <option value="">All Phases</option>
+            <option value="phase-1">Phase 1: Arrival</option>
+            <option value="phase-2">Phase 2: Escalation</option>
+            <option value="phase-3">Phase 3: Disruption</option>
+            <option value="phase-4">Phase 4: Impossible Window</option>
+          </select>
         </div>
         <div class="site-search-meta" role="status" aria-live="polite">Press Ctrl/Cmd+K to search</div>
       </div>
@@ -228,6 +260,16 @@
       });
       runSearch(input.value);
     });
+  });
+
+  const playerSelect = overlay.querySelector("#searchFacetPlayer");
+  const issueSelect = overlay.querySelector("#searchFacetIssue");
+  const phaseSelect = overlay.querySelector("#searchFacetPhase");
+
+  [playerSelect, issueSelect, phaseSelect].forEach((sel) => {
+    if (sel) {
+      sel.addEventListener("change", () => runSearch(input.value));
+    }
   });
 
   input.addEventListener("input", () => {
@@ -415,8 +457,28 @@
       renderResults([], rawQuery, queryTokens);
       return;
     }
+    const playerFacet = (playerSelect?.value || "").toLowerCase();
+    const issueFacet = (issueSelect?.value || "").toLowerCase();
+    const phaseFacet = (phaseSelect?.value || "").toLowerCase();
+
     const results = payload.records
-      .filter((record) => activeFilter === "all" || record.kind === activeFilter)
+      .filter((record) => {
+        if (activeFilter !== "all" && record.kind !== activeFilter) return false;
+        if (playerFacet) {
+          const players = (record.players || []).map((p) => p.toLowerCase());
+          const inText = (record.text || "").toLowerCase().includes(playerFacet);
+          if (!players.includes(playerFacet) && !inText) return false;
+        }
+        if (issueFacet) {
+          const issues = (record.issues || []).map((i) => i.toLowerCase());
+          const inText = (record.text || "").toLowerCase().includes(issueFacet);
+          if (!issues.includes(issueFacet) && !inText) return false;
+        }
+        if (phaseFacet) {
+          if ((record.phase || "").toLowerCase() !== phaseFacet) return false;
+        }
+        return true;
+      })
       .map((record) => ({ record, score: scoreRecord(record, query, queryTokens) }))
       .filter((item) => item.score > 0)
       .sort((a, b) => b.score - a.score)

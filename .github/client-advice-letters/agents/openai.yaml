@@ -1,0 +1,3 @@
+interface:
+  display_name: "Client Advice Letters"
+  short_description: "Drafts client advice, engagement scope, and a conflicts check for counsel to send or decline"

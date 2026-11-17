@@ -60,19 +60,83 @@ def event_metadata(inner_html: str) -> list[dict]:
         time_node = node.select_one(".event-time")
         desc_node = node.select_one(".event-description")
         video_btn = node.select_one(".video-btn")
+        claim_node = node.select_one(".event-claim-body") or node.select_one(".event-claim")
+        graphic_btn = node.select_one(".graphic-btn") or node.select_one(".hug-lie-image")
+
         desc_text = desc_node.get_text(" ", strip=True) if desc_node else ""
         desc_text = re.sub(r"\s*WATCH VIDEO\s*$", "", desc_text).strip()
+        claim_text = claim_node.get_text(" ", strip=True) if claim_node else ""
+
+        event_id = node.get("id") or f"event-{index:02d}"
+        phase = node.get("data-phase")
+        exhibit = node.get("data-exhibit") or (video_btn.get("data-exhibit") if video_btn else None)
+        video_src = video_btn.get("data-modal-image") if video_btn else None
+        if not video_src:
+            video_tag = node.select_one("video")
+            if video_tag:
+                video_src = video_tag.get("src")
+        graphic_src = (
+            graphic_btn.get("data-modal-image") or graphic_btn.get("src")
+            if graphic_btn
+            else None
+        )
+
         events.append(
             {
-                "id": f"event-{index:02d}",
+                "id": event_id,
                 "side": "left" if "left" in classes else ("right" if "right" in classes else None),
                 "standalone": "standalone" in classes,
+                "phase": phase,
+                "exhibit": exhibit,
                 "time": time_node.get_text(" ", strip=True) if time_node else None,
                 "description": desc_text,
-                "video": video_btn.get("data-modal-image") if video_btn else None,
+                "claim": claim_text,
+                "video": video_src,
+                "graphic": graphic_src,
             }
         )
     return events
+
+
+FIXTURE_HTML = """
+<div class="timeline-events">
+    <article class="timeline-event" id="event-03" data-phase="phase-1" data-exhibit="A">
+        <div class="event-meta">
+            <div class="event-time">Oct 19 2019 12:08 AM</div>
+            <span class="event-phase-badge">Phase 1</span>
+            <span class="event-exhibit-badge">Exhibit A</span>
+        </div>
+        <div class="event-record">
+            <div class="event-description">Benjamin Allen and Friends Arrive at Schooly's</div>
+            <div class="event-media-player">
+                <video class="timeline-inline-video" preload="none" controls src="video/A Arrival.mp4"></video>
+                <a class="video-btn" data-exhibit="A" data-modal-image="video/A Arrival.mp4">WATCH VIDEO</a>
+            </div>
+        </div>
+        <div class="event-claim">
+            <div class="event-claim-body">Deal claimed she hugged Allen upon arrival.</div>
+            <a class="graphic-btn" data-modal-image="content/images/evidence/graphics/inserts/hug_lie.webp">View Insert Graphic</a>
+        </div>
+    </article>
+</div>
+"""
+
+
+def run_self_test() -> bool:
+    open_start, open_end, close_start, close_end = find_container_span(FIXTURE_HTML)
+    inner = FIXTURE_HTML[open_end:close_start]
+    events = event_metadata(inner)
+    assert len(events) == 1, f"Expected 1 event, got {len(events)}"
+    ev = events[0]
+    assert ev["id"] == "event-03", f"Expected event-03, got {ev['id']}"
+    assert ev["time"] == "Oct 19 2019 12:08 AM", f"Unexpected time {ev['time']}"
+    assert ev["phase"] == "phase-1", f"Unexpected phase {ev['phase']}"
+    assert ev["exhibit"] == "A", f"Unexpected exhibit {ev['exhibit']}"
+    assert "Benjamin Allen" in ev["description"], f"Unexpected description {ev['description']}"
+    assert ev["video"] == "video/A Arrival.mp4", f"Unexpected video {ev['video']}"
+    assert "hugged Allen" in ev["claim"], f"Unexpected claim {ev['claim']}"
+    assert ev["graphic"] == "content/images/evidence/graphics/inserts/hug_lie.webp", f"Unexpected graphic {ev['graphic']}"
+    return True
 
 
 def extract(root: Path) -> dict:
@@ -112,9 +176,18 @@ def render(root: Path, check: bool = False) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("extract", "render", "verify"))
+    parser.add_argument("command", nargs="?", choices=("extract", "render", "verify"), default=None)
     parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument("--self-test", action="store_true", help="Run contract test on sample 3-column markup")
     args = parser.parse_args()
+
+    if args.self_test:
+        run_self_test()
+        print(json.dumps({"selfTest": "passed"}, indent=2))
+        return 0
+
+    if not args.command:
+        parser.error("the following arguments are required: command")
 
     root = args.root.resolve()
     if args.command == "extract":

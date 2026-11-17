@@ -1,0 +1,3 @@
+interface:
+  display_name: "Legal Document Governance"
+  short_description: "Control legal document intake and model claims"

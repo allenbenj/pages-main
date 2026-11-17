@@ -1,0 +1,18 @@
+{
+  "evidence_id": "EV-001",
+  "remaining_quantity": "UNVERIFIED",
+  "condition": "UNVERIFIED",
+  "storage_location": "UNVERIFIED",
+  "proposed_procedure": "UNVERIFIED",
+  "destructive": true,
+  "scientific_question": "UNVERIFIED",
+  "alternatives": [],
+  "sample_allocation": "UNVERIFIED",
+  "approvals": [],
+  "expected_impact": "UNVERIFIED",
+  "requests_or_orders": [],
+  "preservation_review_status": "not_ready",
+  "reviewer": "",
+  "last_checked": "UNVERIFIED",
+  "notes": "Template; replace every UNVERIFIED field and complete the ready gate before use."
+}

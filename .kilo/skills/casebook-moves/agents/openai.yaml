@@ -1,0 +1,3 @@
+interface:
+  display_name: "Casebook Moves"
+  short_description: "Hash-verified file moves with manifest, Casebook DB path update and QMD/Anytxt index refresh"

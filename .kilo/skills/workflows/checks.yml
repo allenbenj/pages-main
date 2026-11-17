@@ -1,0 +1,65 @@
+name: Validate site
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: network_analysis/package-lock.json
+
+      - name: Install dependencies
+        working-directory: network_analysis
+        run: npm ci
+
+      - name: Audit dependencies
+        working-directory: network_analysis
+        run: npm audit --audit-level=high
+
+      - name: Build network analysis
+        working-directory: network_analysis
+        run: npm run build
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Stage site
+        run: |
+          python tools/site_release.py stage \
+            --source . \
+            --output "$RUNNER_TEMP/site"
+
+      - name: Validate staged site
+        run: |
+          python tools/site_release.py validate \
+            --root "$RUNNER_TEMP/site"

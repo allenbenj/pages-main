@@ -1,0 +1,3 @@
+interface:
+  display_name: "Motion Exhibit Index"
+  short_description: "Reference-only, DB-resolved exhibit/expert source index per motion with verify_quotes gate"

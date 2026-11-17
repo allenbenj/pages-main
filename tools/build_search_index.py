@@ -23,6 +23,7 @@ ROOT_PAGE_PATHS = [
     "assets/pages/players.html",
     "assets/pages/evidence.html",
     "assets/pages/contradictions.html",
+    "assets/pages/impeachment.html",
     "assets/pages/general-videos.html",
     "assets/pages/misconduct.html",
     "assets/pages/misconductandfailure.html",
@@ -42,12 +43,43 @@ ROOT_PAGE_PATHS = [
 
 # Non-public working areas are never indexed. The public content/ tree contains
 # only the consolidated content/images delivery hierarchy.
-EXCLUDED_DIR_PARTS = {"archive", "tmp", "tools", "reports", "node_modules", ".git"}
+EXCLUDED_DIR_PARTS = {"archive", "tmp", "tools", "reports", "node_modules", ".git", "docs"}
 
 TEXT_EXTENSIONS = {".txt", ".md"}
 PAGE_EXTENSIONS = {".html", ".htm"}
 MEDIA_EXTENSIONS = {".mp3", ".wav", ".ogg", ".mp4", ".webm", ".mov"}
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif", ".bmp", ".ico"}
+
+
+from dataclasses import dataclass, field
+
+KNOWN_PLAYERS: dict[str, str] = {
+    "allen": "Benjamin Allen",
+    "deal": "Lauren Deal",
+    "love": "Carmen Love",
+    "morrison": "James Morrison",
+    "west": "Peter West",
+    "happel": "Brad Happel",
+    "demarco": "DeMarco",
+    "freeman": "Steve Freeman",
+    "mcneill": "Sheriff McNeill",
+}
+
+KNOWN_ISSUES: dict[str, str] = {
+    "contradiction": "Contradiction",
+    "impossibility": "Physical Impossibility",
+    "timeline": "Timeline",
+    "medical": "Medical",
+    "witness": "Witness Conflict",
+    "misconduct": "Official Misconduct",
+}
+
+
+def detect_facets(text: str) -> tuple[list[str], list[str]]:
+    t = text.lower()
+    players = [k for k, name in KNOWN_PLAYERS.items() if k in t or name.lower() in t]
+    issues = [k for k in KNOWN_ISSUES if k in t]
+    return players, issues
 
 
 @dataclass
@@ -61,6 +93,9 @@ class SearchRecord:
     anchor: str | None
     text: str
     keywords: list[str]
+    players: list[str] = field(default_factory=list)
+    issues: list[str] = field(default_factory=list)
+    phase: str = ""
 
 
 def normalize_space(value: str) -> str:
@@ -191,6 +226,7 @@ def html_records(root: Path, path: Path) -> tuple[list[SearchRecord], list[Path]
                 continue
             anchor = heading.get("id") or nearest_anchor(heading)
             record_id = f"{rel_path}::heading::{index}"
+            players, issues = detect_facets(combined)
             records.append(
                 SearchRecord(
                     id=record_id,
@@ -202,6 +238,75 @@ def html_records(root: Path, path: Path) -> tuple[list[SearchRecord], list[Path]
                     anchor=anchor,
                     text=combined,
                     keywords=[heading_text, page_title, Path(rel_path).name],
+                    players=players,
+                    issues=issues,
+                )
+            )
+
+    if rel_path == "timeline.html":
+        for index, event in enumerate(soup.select(".timeline-event"), start=1):
+            anchor = event.get("id") or f"event-{index:02d}"
+            phase = event.get("data-phase") or ""
+            exhibit = event.get("data-exhibit") or ""
+            time_node = event.select_one(".event-time")
+            desc_node = event.select_one(".event-description")
+            claim_node = event.select_one(".event-claim-body")
+            time_text = normalize_space(time_node.get_text(" ", strip=True)) if time_node else ""
+            desc_text = normalize_space(desc_node.get_text(" ", strip=True)) if desc_node else ""
+            claim_text = normalize_space(claim_node.get_text(" ", strip=True)) if claim_node else ""
+            combined = normalize_space(f"{time_text} {desc_text} {claim_text}")
+            players, issues = detect_facets(combined)
+            if "timeline" not in issues:
+                issues.append("timeline")
+            section_title = f"Phase {phase.replace('phase-', '')} · Exhibit {exhibit}" if exhibit else f"Phase {phase.replace('phase-', '')}"
+            records.append(
+                SearchRecord(
+                    id=f"{rel_path}::{anchor}",
+                    path=rel_path,
+                    url_path=f"{rel_path}#{anchor}",
+                    title=f"Timeline: {time_text}",
+                    section=section_title,
+                    kind="timeline",
+                    anchor=anchor,
+                    text=combined,
+                    keywords=[time_text, phase, exhibit, "timeline", "surveillance"],
+                    players=players,
+                    issues=issues,
+                    phase=phase,
+                )
+            )
+
+    if rel_path == "impeachment.html":
+        for card in soup.select("article.card, article.matrix-card, div.card, div.matrix-card"):
+            anchor = card.get("id")
+            if not anchor:
+                continue
+            title_node = card.select_one(".card-title")
+            label_node = card.select_one(".card-label")
+            body_node = card.select_one(".card-body")
+            title_text = normalize_space(title_node.get_text(" ", strip=True)) if title_node else ""
+            label_text = normalize_space(label_node.get_text(" ", strip=True)) if label_node else ""
+            body_text = normalize_space(body_node.get_text(" ", strip=True)) if body_node else ""
+            pills = [normalize_space(p.get_text(strip=True)) for p in card.select(".pill")]
+            combined = normalize_space(f"{label_text} {title_text} {body_text} {' '.join(pills)}")
+            players, issues = detect_facets(combined)
+            for p in pills:
+                for k in KNOWN_ISSUES:
+                    if k in p.lower() and k not in issues:
+                        issues.append(k)
+            records.append(
+                SearchRecord(
+                    id=f"{rel_path}::{anchor}",
+                    path=rel_path,
+                    url_path=f"{rel_path}#{anchor}",
+                    title=title_text or label_text,
+                    section=label_text,
+                    kind="card",
+                    anchor=anchor,
+                    text=combined,
+                    keywords=[label_text, title_text] + pills,
+                    players=players,
+                    issues=issues,
                 )
             )
     else:
@@ -412,6 +517,9 @@ def write_index(root: Path, output: Path) -> dict:
                     "anchor": record.anchor,
                     "text": record.text,
                     "keywords": record.keywords,
+                    "players": record.players,
+                    "issues": record.issues,
+                    "phase": record.phase,
                 }
             )
 

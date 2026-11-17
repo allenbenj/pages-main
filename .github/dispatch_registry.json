@@ -1,0 +1,1433 @@
+{
+  "registry_version": "1.0",
+  "generated_at": "2026-10-25T17:19:44.689875+00:00",
+  "kit_version": "0.4.0",
+  "scope": "Live v0.4.0 tree. Categories follow the W01 dispatchability contract; observed booleans are baseline state, not the contract.",
+  "counts": {
+    "total": 52,
+    "dispatchable": 44,
+    "non_dispatchable": 8,
+    "by_category": {
+      "optional_integration": 2,
+      "dispatchable_skill": 36,
+      "mandatory_gate": 6,
+      "shared_service": 4,
+      "reference_only": 4
+    },
+    "missing_expected_wrappers": [],
+    "missing_local_agent_config": []
+  },
+  "components": [
+    {
+      "component_id": "anytxt-search",
+      "category": "optional_integration",
+      "source_path": "Legal_Kit/integrations/anytxt-search",
+      "registry_entry": "integrations/anytxt-search",
+      "dispatchable": true,
+      "route": [],
+      "wrapper_root": "agents/anytxt-search.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/anytxt-search.agent.md",
+      "local_agent_config": null,
+      "execution_entrypoint": "Legal_Kit/integrations/anytxt-search/scripts/anytxt_rpc.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Optional local retrieval integration invoked by the retrieval layer."
+    },
+    {
+      "component_id": "appellate-brief-drafting",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/appellate-brief-drafting",
+      "registry_entry": "skills/appellate-brief-drafting",
+      "dispatchable": true,
+      "route": [
+        "appellate_brief"
+      ],
+      "wrapper_root": "Legal_Kit/agents/appellate-brief-drafting.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/appellate-brief-drafting.agent.md",
+      "local_agent_config": "Legal_Kit/skills/appellate-brief-drafting/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::AppellateBriefDispatchTest::test_appellate_brief_drafting_dispatchable",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill. Wrapper and local agent config verified 2026-10-29. Smoke test tests/test_dispatch_registry.py."
+    },
+    {
+      "component_id": "appellate-preservation",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/appellate-preservation",
+      "registry_entry": "skills/appellate-preservation",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "judicial_procedural_review",
+        "sentencing_mitigation",
+        "appellate_brief"
+      ],
+      "wrapper_root": "agents/appellate-preservation.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/appellate-preservation.agent.md",
+      "local_agent_config": "Legal_Kit/skills/appellate-preservation/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "artifact-template-legal-memorandum",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/artifact-template-legal-memorandum",
+      "registry_entry": "skills/artifact-template-legal-memorandum",
+      "dispatchable": true,
+      "route": [
+        "memorandum_template"
+      ],
+      "wrapper_root": "agents/artifact-template-legal-memorandum.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/artifact-template-legal-memorandum.agent.md",
+      "local_agent_config": "Legal_Kit/skills/artifact-template-legal-memorandum/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "bail-pretrial-release",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/bail-pretrial-release",
+      "registry_entry": "skills/bail-pretrial-release",
+      "dispatchable": true,
+      "route": [
+        "bail_pretrial_release"
+      ],
+      "wrapper_root": "agents/bail-pretrial-release.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/bail-pretrial-release.agent.md",
+      "local_agent_config": "Legal_Kit/skills/bail-pretrial-release/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; registered 2026-10-29 after routing.py began selecting it (K2 follow-on)."
+    },
+    {
+      "component_id": "case-analysis-repository",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/case-analysis-repository",
+      "registry_entry": "skills/case-analysis-repository",
+      "dispatchable": true,
+      "route": [
+        "matter_repository"
+      ],
+      "wrapper_root": "agents/case-analysis-repository.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/case-analysis-repository.agent.md",
+      "local_agent_config": "Legal_Kit/skills/case-analysis-repository/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "case-theory-storytelling",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/case-theory-storytelling",
+      "registry_entry": "skills/case-theory-storytelling",
+      "dispatchable": true,
+      "route": [
+        "case_theory"
+      ],
+      "wrapper_root": "agents/case-theory-storytelling.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/case-theory-storytelling.agent.md",
+      "local_agent_config": "Legal_Kit/skills/case-theory-storytelling/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "casebook-moves",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/casebook-moves",
+      "registry_entry": "skills/casebook-moves",
+      "dispatchable": true,
+      "route": [
+        "file_moves"
+      ],
+      "wrapper_root": "agents/casebook-moves.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/casebook-moves.agent.md",
+      "local_agent_config": "Legal_Kit/skills/casebook-moves/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "chronology-timeline-builder",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/chronology-timeline-builder",
+      "registry_entry": "skills/chronology-timeline-builder",
+      "dispatchable": true,
+      "route": [
+        "contradiction_attorney_note"
+      ],
+      "wrapper_root": "agents/chronology-timeline-builder.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/chronology-timeline-builder.agent.md",
+      "local_agent_config": "Legal_Kit/skills/chronology-timeline-builder/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "civil-rights-1983-strategy",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/civil-rights-1983-strategy",
+      "registry_entry": "skills/civil-rights-1983-strategy",
+      "dispatchable": true,
+      "route": [
+        "civil_rights_claim"
+      ],
+      "wrapper_root": "agents/civil-rights-1983-strategy.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/civil-rights-1983-strategy.agent.md",
+      "local_agent_config": "Legal_Kit/skills/civil-rights-1983-strategy/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "client-advice-letters",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/client-advice-letters",
+      "registry_entry": "skills/client-advice-letters",
+      "dispatchable": true,
+      "route": [
+        "client_letter"
+      ],
+      "wrapper_root": "agents/client-advice-letters.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/client-advice-letters.agent.md",
+      "local_agent_config": "Legal_Kit/skills/client-advice-letters/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_client_advice_letters.py",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; registered 2026-10-29 after routing.py began selecting it (K2 follow-on)."
+    },
+    {
+      "component_id": "controller-gate-completeness",
+      "category": "mandatory_gate",
+      "source_path": "Legal_Kit/controller/gates/completeness.py",
+      "registry_entry": "Legal_Kit/controller/gates/completeness.py",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": "Legal_Kit/controller/gates/completeness.py",
+      "nondispatch_reason": "Invoked by the controller pipeline as a gate, not dispatched as an agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Non-dispatchable by design; a missing wrapper is not a defect."
+    },
+    {
+      "component_id": "controller-gate-qc",
+      "category": "mandatory_gate",
+      "source_path": "Legal_Kit/controller/gates/qc.py",
+      "registry_entry": "Legal_Kit/controller/gates/qc.py",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": "Legal_Kit/controller/gates/qc.py",
+      "nondispatch_reason": "Invoked by the controller pipeline as a gate, not dispatched as an agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Non-dispatchable by design; a missing wrapper is not a defect."
+    },
+    {
+      "component_id": "controller-qc-runtime",
+      "category": "shared_service",
+      "source_path": "Legal_Kit/controller/qc_runtime/engine.py",
+      "registry_entry": "Legal_Kit/controller/qc_runtime/engine.py",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": "Legal_Kit/controller/qc_runtime/engine.py",
+      "nondispatch_reason": "Controller runtime service consumed by the QC gate; it has no agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Non-dispatchable by design; a missing wrapper is not a defect."
+    },
+    {
+      "component_id": "controller-writing-engine",
+      "category": "shared_service",
+      "source_path": "Legal_Kit/controller/writing_engine.py",
+      "registry_entry": "Legal_Kit/controller/writing_engine.py",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": "Legal_Kit/controller/writing_engine.py",
+      "nondispatch_reason": "Controller writing service consumed by drafting routes; it has no agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Non-dispatchable by design; a missing wrapper is not a defect."
+    },
+    {
+      "component_id": "corrective-playbook-gate",
+      "category": "mandatory_gate",
+      "source_path": "Legal_Kit/skills/corrective-playbook-gate",
+      "registry_entry": "skills/corrective-playbook-gate",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "existing_document_rewrite",
+        "expert_report_review",
+        "judicial_procedural_review",
+        "forensic_claim_review",
+        "records_request",
+        "civil_rights_claim",
+        "purge_false_fact",
+        "matter_repository",
+        "memorandum_template",
+        "sentencing_mitigation",
+        "bail_pretrial_release",
+        "appellate_brief",
+        "client_letter",
+        "production_review",
+        "redaction_plan"
+      ],
+      "wrapper_root": "agents/corrective-playbook-gate.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/corrective-playbook-gate.agent.md",
+      "local_agent_config": "Legal_Kit/skills/corrective-playbook-gate/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "criminal-defense-strategy",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/criminal-defense-strategy",
+      "registry_entry": "skills/criminal-defense-strategy",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "settlement_strategy",
+        "case_theory",
+        "civil_rights_claim",
+        "sentencing_mitigation"
+      ],
+      "wrapper_root": "agents/criminal-defense-strategy.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/criminal-defense-strategy.agent.md",
+      "local_agent_config": "Legal_Kit/skills/criminal-defense-strategy/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "defense-framing",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/defense-framing",
+      "registry_entry": "skills/defense-framing",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "contradiction_attorney_note",
+        "comprehensive_defense_memorandum",
+        "existing_document_rewrite",
+        "expert_report_review",
+        "forensic_claim_review",
+        "civil_rights_claim"
+      ],
+      "wrapper_root": "agents/defense-framing.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/defense-framing.agent.md",
+      "local_agent_config": "Legal_Kit/skills/defense-framing/agents/openai.yaml",
+      "execution_entrypoint": "Legal_Kit/skills/defense-framing/scripts/audit_defense_framing.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "defense-writing-studio",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/defense-writing-studio",
+      "registry_entry": "skills/defense-writing-studio",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "contradiction_attorney_note",
+        "comprehensive_defense_memorandum",
+        "existing_document_rewrite",
+        "expert_report_review",
+        "judicial_procedural_review",
+        "forensic_claim_review",
+        "civil_rights_claim",
+        "memorandum_template",
+        "sentencing_mitigation",
+        "bail_pretrial_release",
+        "appellate_brief"
+      ],
+      "wrapper_root": "agents/defense-writing-studio.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/defense-writing-studio.agent.md",
+      "local_agent_config": "Legal_Kit/skills/defense-writing-studio/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "discovery-brady-giglio",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/discovery-brady-giglio",
+      "registry_entry": "skills/discovery-brady-giglio",
+      "dispatchable": true,
+      "route": [
+        "privilege_log_review",
+        "records_request",
+        "production_review"
+      ],
+      "wrapper_root": "agents/discovery-brady-giglio.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/discovery-brady-giglio.agent.md",
+      "local_agent_config": "Legal_Kit/skills/discovery-brady-giglio/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "document-consolidation",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/document-consolidation",
+      "registry_entry": "skills/document-consolidation",
+      "dispatchable": true,
+      "route": [
+        "consolidate_versions"
+      ],
+      "wrapper_root": "agents/document-consolidation.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/document-consolidation.agent.md",
+      "local_agent_config": "Legal_Kit/skills/document-consolidation/agents/openai.yaml",
+      "execution_entrypoint": "Legal_Kit/skills/document-consolidation/scripts/consolidation_check.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "ethics-privilege-guardrails",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/ethics-privilege-guardrails",
+      "registry_entry": "skills/ethics-privilege-guardrails",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "contradiction_attorney_note",
+        "comprehensive_defense_memorandum",
+        "existing_document_rewrite",
+        "expert_report_review",
+        "judicial_procedural_review",
+        "privilege_log_review",
+        "forensic_claim_review",
+        "witness_examination",
+        "settlement_strategy",
+        "records_request",
+        "case_theory",
+        "civil_rights_claim",
+        "purge_false_fact",
+        "matter_repository",
+        "memorandum_template",
+        "sentencing_mitigation",
+        "bail_pretrial_release",
+        "appellate_brief",
+        "client_letter",
+        "production_review",
+        "redaction_plan"
+      ],
+      "wrapper_root": "agents/ethics-privilege-guardrails.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/ethics-privilege-guardrails.agent.md",
+      "local_agent_config": "Legal_Kit/skills/ethics-privilege-guardrails/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "evidence-matrix-admissibility",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/evidence-matrix-admissibility",
+      "registry_entry": "skills/evidence-matrix-admissibility",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "expert_report_review",
+        "forensic_claim_review",
+        "witness_examination",
+        "exhibit_index",
+        "case_theory"
+      ],
+      "wrapper_root": "agents/evidence-matrix-admissibility.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/evidence-matrix-admissibility.agent.md",
+      "local_agent_config": "Legal_Kit/skills/evidence-matrix-admissibility/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "expert-report-validator",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/expert-report-validator",
+      "registry_entry": "skills/expert-report-validator",
+      "dispatchable": true,
+      "route": [
+        "expert_report_review"
+      ],
+      "wrapper_root": "agents/expert-report-validator.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/expert-report-validator.agent.md",
+      "local_agent_config": "Legal_Kit/skills/expert-report-validator/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "forensic-defense-frames",
+      "category": "mandatory_gate",
+      "source_path": "Legal_Kit/skills/forensic-defense-frames",
+      "registry_entry": "skills/forensic-defense-frames",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "expert_report_review",
+        "forensic_claim_review"
+      ],
+      "wrapper_root": "agents/forensic-defense-frames.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/forensic-defense-frames.agent.md",
+      "local_agent_config": "Legal_Kit/skills/forensic-defense-frames/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "forensic-evidence-evaluation",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/forensic-evidence-evaluation",
+      "registry_entry": "skills/forensic-evidence-evaluation",
+      "dispatchable": true,
+      "route": [
+        "forensic_claim_review"
+      ],
+      "wrapper_root": "agents/forensic-evidence-evaluation.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/forensic-evidence-evaluation.agent.md",
+      "local_agent_config": "Legal_Kit/skills/forensic-evidence-evaluation/agents/openai.yaml",
+      "execution_entrypoint": "Legal_Kit/skills/forensic-evidence-evaluation/scripts/validate_claims.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "jev-system-one",
+      "category": "optional_integration",
+      "source_path": "Legal_Kit/integrations/jev-system-one",
+      "registry_entry": "integrations/jev-system-one",
+      "dispatchable": true,
+      "route": [],
+      "wrapper_root": "agents/jev-system-one.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/jev-system-one.agent.md",
+      "local_agent_config": null,
+      "execution_entrypoint": "Legal_Kit/integrations/jev-system-one/scripts/analyze_batch.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Optional companion analysis integration invoked by the reasoning layer."
+    },
+    {
+      "component_id": "judicial-procedural-review",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/judicial-procedural-review",
+      "registry_entry": "skills/judicial-procedural-review",
+      "dispatchable": true,
+      "route": [
+        "judicial_procedural_review"
+      ],
+      "wrapper_root": "agents/judicial-procedural-review.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/judicial-procedural-review.agent.md",
+      "local_agent_config": "Legal_Kit/skills/judicial-procedural-review/agents/openai.yaml",
+      "execution_entrypoint": "Legal_Kit/skills/judicial-procedural-review/judicial_review.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "legal-citation-formatter",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/legal-citation-formatter",
+      "registry_entry": "skills/legal-citation-formatter",
+      "dispatchable": true,
+      "route": [
+        "citation_format_check"
+      ],
+      "wrapper_root": "agents/legal-citation-formatter.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/legal-citation-formatter.agent.md",
+      "local_agent_config": "Legal_Kit/skills/legal-citation-formatter/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "legal-document-governance",
+      "category": "mandatory_gate",
+      "source_path": "Legal_Kit/skills/legal-document-governance",
+      "registry_entry": "skills/legal-document-governance",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "existing_document_rewrite",
+        "consolidate_versions",
+        "purge_false_fact",
+        "file_moves",
+        "matter_repository",
+        "production_review",
+        "redaction_plan"
+      ],
+      "wrapper_root": "agents/legal-document-governance.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/legal-document-governance.agent.md",
+      "local_agent_config": "Legal_Kit/skills/legal-document-governance/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "legal-quality-control",
+      "category": "mandatory_gate",
+      "source_path": "Legal_Kit/skills/legal-quality-control",
+      "registry_entry": "skills/legal-quality-control",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "contradiction_attorney_note",
+        "comprehensive_defense_memorandum",
+        "existing_document_rewrite",
+        "expert_report_review",
+        "judicial_procedural_review",
+        "citation_format_check",
+        "privilege_log_review",
+        "forensic_claim_review",
+        "witness_examination",
+        "settlement_strategy",
+        "records_request",
+        "exhibit_index",
+        "case_theory",
+        "civil_rights_claim",
+        "consolidate_versions",
+        "purge_false_fact",
+        "file_moves",
+        "matter_repository",
+        "memorandum_template",
+        "sentencing_mitigation",
+        "bail_pretrial_release",
+        "appellate_brief",
+        "client_letter",
+        "production_review",
+        "redaction_plan"
+      ],
+      "wrapper_root": "agents/legal-quality-control.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/legal-quality-control.agent.md",
+      "local_agent_config": "Legal_Kit/skills/legal-quality-control/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "legal-reasoning-framework",
+      "category": "shared_service",
+      "source_path": "Legal_Kit/skills/legal-reasoning-framework",
+      "registry_entry": "skills/legal-reasoning-framework",
+      "dispatchable": true,
+      "route": [],
+      "wrapper_root": "agents/legal-reasoning-framework.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/legal-reasoning-framework.agent.md",
+      "local_agent_config": "Legal_Kit/skills/legal-reasoning-framework/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "legal-research-verification",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/legal-research-verification",
+      "registry_entry": "skills/legal-research-verification",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "expert_report_review",
+        "judicial_procedural_review",
+        "citation_format_check",
+        "privilege_log_review",
+        "forensic_claim_review",
+        "civil_rights_claim",
+        "sentencing_mitigation",
+        "appellate_brief"
+      ],
+      "wrapper_root": "agents/legal-research-verification.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/legal-research-verification.agent.md",
+      "local_agent_config": "Legal_Kit/skills/legal-research-verification/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "legal-team-orchestrator",
+      "category": "shared_service",
+      "source_path": "Legal_Kit/skills/legal-team-orchestrator",
+      "registry_entry": "skills/legal-team-orchestrator",
+      "dispatchable": true,
+      "route": [],
+      "wrapper_root": "agents/legal-team-orchestrator.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/legal-team-orchestrator.agent.md",
+      "local_agent_config": "Legal_Kit/skills/legal-team-orchestrator/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "local-rules-deadlines",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/local-rules-deadlines",
+      "registry_entry": "skills/local-rules-deadlines",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "records_request",
+        "sentencing_mitigation",
+        "bail_pretrial_release"
+      ],
+      "wrapper_root": "agents/local-rules-deadlines.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/local-rules-deadlines.agent.md",
+      "local_agent_config": "Legal_Kit/skills/local-rules-deadlines/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "motion-brief-drafting",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/motion-brief-drafting",
+      "registry_entry": "skills/motion-brief-drafting",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "existing_document_rewrite",
+        "sentencing_mitigation",
+        "appellate_brief"
+      ],
+      "wrapper_root": "agents/motion-brief-drafting.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/motion-brief-drafting.agent.md",
+      "local_agent_config": "Legal_Kit/skills/motion-brief-drafting/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "motion-exhibit-index",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/motion-exhibit-index",
+      "registry_entry": "skills/motion-exhibit-index",
+      "dispatchable": true,
+      "route": [
+        "exhibit_index"
+      ],
+      "wrapper_root": "agents/motion-exhibit-index.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/motion-exhibit-index.agent.md",
+      "local_agent_config": "Legal_Kit/skills/motion-exhibit-index/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "motion-fact-verification",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/motion-fact-verification",
+      "registry_entry": "skills/motion-fact-verification",
+      "dispatchable": true,
+      "route": [
+        "contradiction_attorney_note",
+        "existing_document_rewrite",
+        "expert_report_review",
+        "judicial_procedural_review",
+        "forensic_claim_review",
+        "exhibit_index",
+        "consolidate_versions",
+        "purge_false_fact",
+        "sentencing_mitigation",
+        "bail_pretrial_release",
+        "client_letter"
+      ],
+      "wrapper_root": "agents/motion-fact-verification.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/motion-fact-verification.agent.md",
+      "local_agent_config": "Legal_Kit/skills/motion-fact-verification/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "privilege-log-generator",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/privilege-log-generator",
+      "registry_entry": "skills/privilege-log-generator",
+      "dispatchable": true,
+      "route": [
+        "privilege_log_review",
+        "redaction_plan"
+      ],
+      "wrapper_root": "agents/privilege-log-generator.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/privilege-log-generator.agent.md",
+      "local_agent_config": "Legal_Kit/skills/privilege-log-generator/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "production-document-review",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/production-document-review",
+      "registry_entry": "skills/production-document-review",
+      "dispatchable": true,
+      "route": [
+        "production_review"
+      ],
+      "wrapper_root": "agents/production-document-review.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/production-document-review.agent.md",
+      "local_agent_config": "Legal_Kit/skills/production-document-review/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_production_review_skill.py",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; registered 2026-10-29 after routing.py began selecting it (K2 follow-on)."
+    },
+    {
+      "component_id": "prosecution-case-review",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/prosecution-case-review",
+      "registry_entry": "skills/prosecution-case-review",
+      "dispatchable": true,
+      "route": [
+        "motion_to_suppress",
+        "comprehensive_defense_memorandum",
+        "case_theory"
+      ],
+      "wrapper_root": "agents/prosecution-case-review.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/prosecution-case-review.agent.md",
+      "local_agent_config": "Legal_Kit/skills/prosecution-case-review/agents/openai.yaml",
+      "execution_entrypoint": "Legal_Kit/skills/prosecution-case-review/prosecution_review.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "purge-false-fact",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/purge-false-fact",
+      "registry_entry": "skills/purge-false-fact",
+      "dispatchable": true,
+      "route": [
+        "purge_false_fact"
+      ],
+      "wrapper_root": "agents/purge-false-fact.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/purge-false-fact.agent.md",
+      "local_agent_config": "Legal_Kit/skills/purge-false-fact/agents/openai.yaml",
+      "execution_entrypoint": "Legal_Kit/skills/purge-false-fact/scripts/annotate_resolution.py",
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": true
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "records-requests-subpoenas",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/records-requests-subpoenas",
+      "registry_entry": "skills/records-requests-subpoenas",
+      "dispatchable": true,
+      "route": [
+        "records_request"
+      ],
+      "wrapper_root": "agents/records-requests-subpoenas.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/records-requests-subpoenas.agent.md",
+      "local_agent_config": "Legal_Kit/skills/records-requests-subpoenas/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "redaction",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/redaction",
+      "registry_entry": "skills/redaction",
+      "dispatchable": true,
+      "route": [
+        "redaction_plan"
+      ],
+      "wrapper_root": "agents/redaction.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/redaction.agent.md",
+      "local_agent_config": "Legal_Kit/skills/redaction/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_redaction_skill.py",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; registered 2026-10-29 after routing.py began selecting it (K2 follow-on)."
+    },
+    {
+      "component_id": "reference-forensic-frame-rules",
+      "category": "reference_only",
+      "source_path": "Legal_Kit/skills/forensic-defense-frames/references",
+      "registry_entry": "Legal_Kit/skills/forensic-defense-frames/references",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": null,
+      "nondispatch_reason": "Owner forensic frame rules consumed by the scanner gate; not an agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Reference-only; no wrapper is required or expected."
+    },
+    {
+      "component_id": "reference-legal-reasoning",
+      "category": "reference_only",
+      "source_path": "Legal_Kit/skills/legal-reasoning-framework/references",
+      "registry_entry": "Legal_Kit/skills/legal-reasoning-framework/references",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": null,
+      "nondispatch_reason": "Reference material consumed by the reasoning skill; it is not an agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Reference-only; no wrapper is required or expected."
+    },
+    {
+      "component_id": "reference-nc-jurisdictions",
+      "category": "reference_only",
+      "source_path": "Legal_Kit/skills/local-rules-deadlines/references/jurisdictions",
+      "registry_entry": "Legal_Kit/skills/local-rules-deadlines/references/jurisdictions",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": null,
+      "nondispatch_reason": "Jurisdiction reference data consumed by the procedure skill; not an agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Reference-only; no wrapper is required or expected."
+    },
+    {
+      "component_id": "reference-qc-contract",
+      "category": "reference_only",
+      "source_path": "Legal_Kit/controller/qc_runtime/assets",
+      "registry_entry": "Legal_Kit/controller/qc_runtime/assets",
+      "dispatchable": false,
+      "route": [],
+      "wrapper_root": null,
+      "wrapper_kit": null,
+      "local_agent_config": null,
+      "execution_entrypoint": null,
+      "nondispatch_reason": "QC contract and wrapper assets consumed by the QC runtime; not an agent role.",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": false,
+        "wrapper_kit_present": false,
+        "local_agent_config_present": false,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Reference-only; no wrapper is required or expected."
+    },
+    {
+      "component_id": "sentencing-mitigation",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/sentencing-mitigation",
+      "registry_entry": "skills/sentencing-mitigation",
+      "dispatchable": true,
+      "route": [
+        "sentencing_mitigation"
+      ],
+      "wrapper_root": "agents/sentencing-mitigation.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/sentencing-mitigation.agent.md",
+      "local_agent_config": "Legal_Kit/skills/sentencing-mitigation/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_sentencing_skill.py",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; registered 2026-10-29 after routing.py began selecting it (K2 follow-on)."
+    },
+    {
+      "component_id": "settlement-negotiation",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/settlement-negotiation",
+      "registry_entry": "skills/settlement-negotiation",
+      "dispatchable": true,
+      "route": [
+        "settlement_strategy"
+      ],
+      "wrapper_root": "agents/settlement-negotiation.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/settlement-negotiation.agent.md",
+      "local_agent_config": "Legal_Kit/skills/settlement-negotiation/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "transcript-impeachment",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/transcript-impeachment",
+      "registry_entry": "skills/transcript-impeachment",
+      "dispatchable": true,
+      "route": [
+        "witness_examination"
+      ],
+      "wrapper_root": "agents/transcript-impeachment.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/transcript-impeachment.agent.md",
+      "local_agent_config": "Legal_Kit/skills/transcript-impeachment/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    },
+    {
+      "component_id": "witness-examination",
+      "category": "dispatchable_skill",
+      "source_path": "Legal_Kit/skills/witness-examination",
+      "registry_entry": "skills/witness-examination",
+      "dispatchable": true,
+      "route": [
+        "witness_examination"
+      ],
+      "wrapper_root": "agents/witness-examination.agent.md",
+      "wrapper_kit": "Legal_Kit/agents/witness-examination.agent.md",
+      "local_agent_config": "Legal_Kit/skills/witness-examination/agents/openai.yaml",
+      "execution_entrypoint": null,
+      "nondispatch_reason": "",
+      "smoke_test": "Legal_Kit/tests/test_dispatch_registry.py::DispatchRegistryContract::test_registered_component_surfaces",
+      "status": "active",
+      "observed": {
+        "source_present": true,
+        "wrapper_root_present": true,
+        "wrapper_kit_present": true,
+        "local_agent_config_present": true,
+        "execution_entrypoint_present": false
+      },
+      "notes": "Dispatchable skill; wrapper and local agent config are part of the dispatch contract."
+    }
+  ]
+}

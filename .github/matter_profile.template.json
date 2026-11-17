@@ -1,0 +1,76 @@
+{
+  "_comment": "PER-MATTER PROFILE (TEMPLATE). This is the only place matter-specific values belong. Copy it OUTSIDE the kit into a live configuration folder that is never archived or moved (for example <MATTER_ROOT>\\.codex\\legal_matter\\), fill every <...> value, and select the copy with the LEGAL_MATTER_PROFILE environment variable or `legal_hooks.py --matter-profile <path>`. Never save a filled copy inside the kit.",
+  "profile_version": 1,
+  "matter_name": "<case caption, e.g. State v. <client>>",
+  "matter_type": "<criminal | civil | postconviction | ...>",
+  "client": "<the client, as named in the court file>",
+  "client_role": "<defendant | plaintiff | petitioner | ...>",
+  "jurisdiction": "<state or federal district>",
+  "court": "<court and division>",
+  "county": "<county>",
+  "file_number": "<court file number>",
+  "posture": "<current procedural posture>",
+  "matter_root": "<absolute path of the matter's top folder>",
+  "casebook_root": "<absolute path of the matter's casebook or record folder>",
+  "control_folder": "<absolute path of the matter's control documents>",
+  "work_root": "<working folder for analysis outputs, outside the kit>",
+  "court_profile_path": "<filled copy of Legal_Kit/skills/local-rules-deadlines/references/court-profile-template.md>",
+  "jurisdiction_reference": "<Legal_Kit/skills/local-rules-deadlines/references/jurisdictions/<state>.md, if one exists>",
+  "playbook": {
+    "path": "<absolute path of the matter's Corrective Playbook>",
+    "reference_opinion": "<case name, number, court, and date of the opinion the Playbook was written from>",
+    "literal_rules_file": "<optional: literal-mode rules for the reference opinion>",
+    "complaint_gate_path": "<optional: complaint-drafting gate>",
+    "scope_decision_path": "<optional: the owner's dated decision on where the Playbook's literal wording applies (see master-rules.md, Owner scope decision)>"
+  },
+  "tools": {
+    "openrouter_key_file": "<optional: key file outside the kit; export it as JEV_API_KEY_FILE>",
+    "organizer_ledger": "<optional: SQLite organizer ledger; export it as LEGAL_KIT_LEDGER>",
+    "organizer_python": "<optional: organizer tools folder; export it as LEGAL_KIT_ORGANIZER_PYTHON>",
+    "openrouter_server_tools": "<optional: path of _openrouter_server_tools.py>",
+    "anytxt_install": "<optional: Anytxt Searcher install folder>",
+    "fact_purge_systems_map": "<optional: the matter's systems map for purge-false-fact (template: skills/purge-false-fact/references/systems-map-template.md)>",
+    "fact_occurrence_finder": "<optional: read-only helper that searches every store in the systems map>",
+    "anytxt_mcp_url": "<optional: Anytxt's local MCP endpoint (streamable HTTP), e.g. http://127.0.0.1:9924/mcp; register it in each tool as server 'anytxt'>"
+  },
+  "knowledge_roots": {
+    "_comment": "Optional. Reference knowledge for the governing law, read-only for agents. master-rules.md K14 governs use. role: base_secondary | companion_secondary | background_only. law_change_check_before: chapters dated before this need a law-change check.",
+    "root": "<optional: folder holding the knowledge tiers>",
+    "guide": "<optional: agent guide explaining how to search the tiers>",
+    "cross_index": "<optional: topic cross-index between tiers>",
+    "tiers": [
+      {
+        "id": "<tier folder name>",
+        "path": "<absolute path of the tier>",
+        "role": "<base_secondary | companion_secondary | background_only>",
+        "title": "<source title and publisher>",
+        "use": "<how it may be used and cited>",
+        "law_change_check_before": "<optional: YYYY-MM-DD>"
+      }
+    ]
+  },
+  "transmission": {
+    "outside_models_authorized": "<true | false, with date and who decided>",
+    "provider_terms_verified": false
+  },
+  "legal_hooks": {
+    "state_root": "<folder for hook state and audit logs, outside the kit>",
+    "workspaces": [
+      {
+        "name": "<short_name>",
+        "root": "<matter_root>"
+      }
+    ],
+    "protected_evidence_roots": [
+      "<folder holding original source records>"
+    ],
+    "sensitive_path_markers": [
+      "<matter_root>"
+    ],
+    "_case_fact_retrieval_comment": "Optional. Set approved_case_collection to \"\" to retire MemGraphRAG for this matter, and list the ordered retrieval layers in case_fact_retrieval_order. Omit both to keep the policy default (legal-deepseek).",
+    "case_fact_retrieval_order": [
+      "<optional: first retrieval layer for case facts>",
+      "<optional: last layer, e.g. the original file for quotes and pin cites>"
+    ]
+  }
+}

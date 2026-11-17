@@ -1,0 +1,3 @@
+interface:
+  display_name: "Document Consolidation"
+  short_description: "Merge redundant versions into one master that keeps every argument, with a zero-gap source crosswalk"

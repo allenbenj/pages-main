@@ -25,7 +25,9 @@ import sys
 from datetime import datetime, UTC
 from pathlib import Path
 
-PAGE_PATH = Path("assets/pages/documentspage.html")
+PAGE_PATH = Path("assets/pages/impeachment.html")
+OLD_DOCS_PAGE_PATH = Path("assets/pages/documentspage.html")
+OLD_CONTRA_PAGE_PATH = Path("assets/pages/contradictions.html")
 DATA_PATH = Path("documents/data/contradictions.json")
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
@@ -173,9 +175,42 @@ def main() -> int:
         return 0
     result = render(root, check=args.command == "verify")
     print(json.dumps(result, indent=2))
-    if args.command == "verify" and result["changed"]:
-        print("verify FAILED: page and JSON are out of sync", file=sys.stderr)
-        return 1
+    if args.command == "verify":
+        errors: list[str] = []
+        if result["changed"]:
+            errors.append("page and JSON are out of sync")
+        if result["cards"] < 40:
+            errors.append(f"expected at least 40 contradiction cards, got {result['cards']}")
+
+        # Assert documentspage.html and contradictions.html have 0 card grids remaining
+        docs_html = (root / OLD_DOCS_PAGE_PATH).read_text(encoding="utf-8")
+        docs_grids = find_grid_spans(docs_html)
+        if len(docs_grids) != 0:
+            errors.append(f"expected 0 card grids in documentspage.html, found {len(docs_grids)}")
+
+        contra_html = (root / OLD_CONTRA_PAGE_PATH).read_text(encoding="utf-8")
+        contra_grids = find_grid_spans(contra_html)
+        if len(contra_grids) != 0:
+            errors.append(f"expected 0 card grids in contradictions.html, found {len(contra_grids)}")
+
+        # Assert all audio tags in impeachment.html have preload="none"
+        impeach_html = (root / PAGE_PATH).read_text(encoding="utf-8")
+        audio_tags = re.findall(r'<audio\b[^>]*>', impeach_html, flags=re.I)
+        bad_audio = [tag for tag in audio_tags if 'preload="none"' not in tag.lower()]
+        if bad_audio:
+            errors.append(f"found {len(bad_audio)} audio tags without preload=\"none\" in impeachment.html")
+
+        # Assert no documentspage.html?q= links remain in impeachment.html or contradictions.json
+        if "documentspage.html?q=" in impeach_html:
+            errors.append("found unrewritten documentspage.html?q= links in impeachment.html")
+        data_text = (root / DATA_PATH).read_text(encoding="utf-8")
+        if "documentspage.html?q=" in data_text:
+            errors.append("found unrewritten documentspage.html?q= links in contradictions.json")
+
+        if errors:
+            for err in errors:
+                print(f"verify FAILED: {err}", file=sys.stderr)
+            return 1
     return 0
 
 

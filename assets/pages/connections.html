@@ -12,25 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=20261003k">
-    <link rel="stylesheet" href="assets/css/connections-tailwind.css">
-    <style>
-        body { font-family: var(--font-body); }
-        .title-font { font-family: var(--font-display); }
-        .pullquote {
-            border-left: 1px solid var(--border);
-            background: transparent;
-            box-shadow: none;
-            padding: 1.5rem 2rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-        }
-        .accent-text { color: #fbbf24; }
-        .warning-bar { background: linear-gradient(to right, #dc2626, #ef4444); }
-        @media (max-width: 640px) {
-            .pullquote { padding: 1rem 1.25rem; font-size: 1rem !important; }
-        }
-    </style>
+    <link rel="stylesheet" href="shared/styles.css?v=20261102">
     <style>
         body.connections-page {
             color: var(--light);
@@ -42,29 +24,14 @@
             display: none !important;
         }
         body.connections-page .connections-sidebar,
-        body.connections-page .connections-viewport,
-        body.connections-page .bg-zinc-900\/50 {
+        body.connections-page .connections-viewport {
             background: var(--card-bg) !important;
             border-color: var(--border) !important;
             box-shadow: 0 20px 60px rgba(0,0,0,0.34);
         }
-        body.connections-page .page-rail-title,
-        body.connections-page .accent-text,
-        body.connections-page .text-red-400,
-        body.connections-page .text-yellow-400 {
+        body.connections-page .page-rail-title {
             color: var(--accent-text) !important;
         }
-        body.connections-page .warning-bar,
-        body.connections-page .bg-gradient-to-r.from-\[\#4a3910\]\/60.to-transparent {
-            background: linear-gradient(90deg, rgba(44,90,97,0.22), rgba(44,90,97,0.04)) !important;
-            border-color: rgba(166,206,210,0.3) !important;
-        }
-        body.connections-page .text-zinc-400,
-        body.connections-page .text-zinc-300,
-        body.connections-page p[style*="#94a3b8"] {
-            color: #c2cccd !important;
-        }
-        body.connections-page .text-white,
         body.connections-page .section-title,
         body.connections-page .connections-sidebar strong,
         body.connections-page .connections-help strong {
@@ -115,6 +82,7 @@
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
                     <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="impeachment.html">40 Impeachment Cards</a>
                     <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
                     <a role="menuitem" href="New_Face.html">New Face</a>
                     <a role="menuitem" href="general-videos.html">General Videos</a>
@@ -154,8 +122,6 @@
             <a href="#connections" target="_top">Diagram</a>
             <a href="#connections-sidebar" target="_top">Key Nodes</a>
             <a href="#connections-viewport" target="_top">Viewer</a>
-            <a href="#lady-justice" target="_top">Lady Justice</a>
-            <a href="#erosion-narrative" target="_top">Statement of Indictment</a>
         </nav>
 
 

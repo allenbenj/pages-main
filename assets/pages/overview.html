@@ -12,477 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
-  <style>
-    body {
-      color: var(--light);
-    }
-
-    .container.page {
-      max-width: 1880px;
-    }
-
-    /* P1-2: flat chrome — sections and index blocks are ruled, not carded.
-       (.map-node keeps its boxes: nodes are diagram vocabulary, not cards.) */
-    .hero,
-    .content-section,
-    .route-card,
-    .matrix-card,
-    .index-card,
-    .summary-card {
-      background: none !important;
-      border: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
-    }
-
-    .content-section {
-      border-top: 1px solid var(--border) !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .route-card,
-    .matrix-card,
-    .index-card,
-    .summary-card {
-      border-top: 1px solid var(--border) !important;
-      padding-left: 0 !important;
-      padding-right: 14px !important;
-    }
-
-    .hero {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .hero {
-      border-radius: 24px;
-      padding: 34px;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      color: var(--light);
-    }
-
-    .hero > p {
-      max-width: 960px;
-      color: var(--text-muted);
-      font-size: 1.02rem;
-      line-height: 1.8;
-      margin: 0 auto;
-    }
-
-    .hero .hero-actions {
-      justify-content: center;
-    }
-
-    .content-section {
-      border-radius: 24px;
-      padding: 28px;
-      margin-bottom: 24px;
-    }
-
-    .content-section > p {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    /* Hero actions / quick links */
-    .hero-actions,
-    .quick-links,
-    .node-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-actions { margin-top: 22px; }
-    .quick-links  { margin-top: 4px; }
-    .node-links   { margin-top: 14px; }
-
-    .hero-actions a,
-    .quick-links a,
-    .node-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: 1px solid rgba(166,206,210,0.35);
-      background: rgba(44,90,97,0.14);
-      color: var(--light);
-      text-decoration: none;
-      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-    }
-
-    .hero-actions a:hover,
-    .quick-links a:hover,
-    .node-links a:hover {
-      background: rgba(44,90,97,0.24);
-      border-color: rgba(166,206,210,0.55);
-    }
-
-    .hero-actions a.primary {
-      background: rgba(44,90,97,0.24);
-      border-color: rgba(166,206,210,0.55);
-    }
-
-    .node-links a {
-      min-height: 36px;
-      padding: 8px 12px;
-      font-size: 0.94rem;
-    }
-
-    /* Section title */
-    .section-title {
-      color: var(--light);
-      margin: 0 0 14px;
-    }
-
-    /* View switcher tabs — flat ruled tabs matching the nav bar */
-    .view-switcher {
-      display: flex;
-      gap: 22px;
-      margin-bottom: 24px;
-      padding: 0;
-      width: fit-content;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .view-tab {
-      padding: 8px 2px;
-      border: none;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      border-radius: 0;
-      background: transparent;
-      color: var(--text-muted);
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: color 0.16s ease, border-color 0.16s ease;
-      white-space: nowrap;
-    }
-
-    .view-tab:hover {
-      color: var(--light);
-      background: none;
-    }
-
-    .view-tab.active {
-      background: none;
-      color: var(--gold-text);
-      border-bottom-color: var(--gold);
-    }
-
-    .view-panel { display: none; }
-    .view-panel.active { display: contents; }
-
-    /* Summary stats grid */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .summary-card {
-      border-radius: 20px;
-      padding: 22px;
-    }
-
-    .summary-card strong {
-      display: block;
-      color: var(--light);
-      font-size: 2rem;
-      margin-bottom: 6px;
-    }
-
-    .summary-card p { color: var(--text-muted); }
-
-    .summary-card code,
-    .matrix-card code {
-      display: inline-block;
-      color: var(--accent-text);
-      font-size: 0.78rem;
-      font-family: "Manrope", system-ui, sans-serif;
-      background: rgba(44,90,97,0.1);
-      border: 1px solid rgba(166,206,210,0.22);
-      border-radius: 999px;
-      padding: 2px 10px;
-      letter-spacing: 0.04em;
-    }
-
-    /* Visual map */
-    .visual-map {
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr) 320px;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .visual-column {
-      display: grid;
-      gap: 16px;
-    }
-
-    .visual-column.center {
-      padding-top: 84px;
-    }
-
-    .column-label {
-      color: var(--accent-text);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      margin: 0 0 2px;
-    }
-
-    .map-node {
-      position: relative;
-      border-radius: 22px;
-      padding: 18px 18px 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)), rgba(255,255,255,0.02);
-      border: 1px solid var(--border);
-    }
-
-    .map-node.hub {
-      background: linear-gradient(180deg, rgba(44,90,97,0.16), rgba(44,90,97,0.07)), rgba(255,255,255,0.02);
-      border-color: rgba(166,206,210,0.32);
-      box-shadow: 0 16px 44px rgba(0,0,0,0.22);
-    }
-
-    .map-node h3 {
-      margin: 0 0 8px;
-      color: var(--light);
-      font-size: 1.02rem;
-    }
-
-    .map-node p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .map-node code {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--accent-text);
-      font-size: 0.76rem;
-      font-family: "Manrope", system-ui, sans-serif;
-      background: rgba(44,90,97,0.1);
-      border: 1px solid rgba(166,206,210,0.22);
-      border-radius: 999px;
-      padding: 3px 10px;
-      letter-spacing: 0.04em;
-    }
-
-    .map-connector {
-      position: relative;
-      min-height: 94px;
-      margin: 2px 0;
-    }
-
-    .map-connector::before,
-    .map-connector::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .map-connector::before {
-      left: 18px;
-      right: 18px;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(121,185,194,0.72), rgba(121,185,194,0.25));
-    }
-
-    .map-connector::after {
-      right: 10px;
-      width: 0;
-      height: 0;
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      border-left: 10px solid rgba(121,185,194,0.8);
-    }
-
-    .map-connector.vertical::before {
-      left: 50%;
-      right: auto;
-      top: 14px;
-      bottom: 14px;
-      width: 2px;
-      height: auto;
-      transform: none;
-      background: linear-gradient(180deg, rgba(121,185,194,0.75), rgba(121,185,194,0.25));
-    }
-
-    .map-connector.vertical::after {
-      top: auto;
-      bottom: 8px;
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-top: 10px solid rgba(121,185,194,0.8);
-      border-bottom: none;
-    }
-
-    .visual-map-note {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Matrix grid */
-    .matrix-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 18px;
-    }
-
-    .matrix-card {
-      border-radius: 20px;
-      padding: 22px;
-    }
-
-    .matrix-card h3 {
-      color: var(--light);
-      margin: 0 0 8px;
-    }
-
-    .matrix-card > p { color: var(--text-muted); margin-bottom: 0; }
-
-    /* Route cards */
-    .route-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 18px;
-    }
-
-    .route-card {
-      border-radius: 22px;
-      padding: 24px;
-    }
-
-    .route-kicker {
-      color: var(--accent-text);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      margin-bottom: 12px;
-    }
-
-    .route-card h3 {
-      margin: 0 0 10px;
-      color: var(--light);
-      font-size: 1.25rem;
-    }
-
-    .route-card p,
-    .route-card li {
-      color: var(--text-muted);
-    }
-
-    .route-card ul {
-      margin: 12px 0 18px;
-      padding-left: 18px;
-      line-height: 1.8;
-    }
-
-    .route-card a { color: var(--light); }
-
-    /* Page index cards */
-    .page-index-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .index-card {
-      border-radius: 20px;
-      padding: 22px;
-    }
-
-    .index-card h3 {
-      color: var(--light);
-      margin: 0 0 14px;
-      font-size: 1.05rem;
-    }
-
-    .page-index-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .page-index-list li {
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .page-index-list li:last-child { border-bottom: none; }
-
-    .page-index-list a {
-      display: block;
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 8px 0;
-      transition: color 0.16s ease;
-    }
-
-    .page-index-list a:hover { color: var(--accent-text); }
-
-    @media (max-width: 1100px) {
-      .visual-map {
-        grid-template-columns: 1fr;
-      }
-
-      .visual-column.center {
-        padding-top: 0;
-      }
-
-      .map-connector {
-        min-height: 34px;
-      }
-
-      .map-connector::before {
-        left: 50%;
-        right: auto;
-        top: 6px;
-        bottom: 6px;
-        width: 2px;
-        height: auto;
-        transform: none;
-        background: linear-gradient(180deg, rgba(121,185,194,0.75), rgba(121,185,194,0.25));
-      }
-
-      .map-connector::after {
-        top: auto;
-        bottom: 0;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-top: 10px solid rgba(121,185,194,0.8);
-        border-bottom: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="shared/styles.css?v=20261102">
+  <link rel="stylesheet" href="shared/page-overview.css?v=20261012">
   <style class="force-hide-webflow">
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
@@ -512,6 +43,7 @@
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
                     <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="impeachment.html">40 Impeachment Cards</a>
                     <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
                     <a role="menuitem" href="New_Face.html">New Face</a>
                     <a role="menuitem" href="general-videos.html">General Videos</a>
@@ -543,6 +75,32 @@
             </div>
 
     </div>
+
+    <!-- GUIDED_PATH_START -->
+
+    <nav class="guided-path-bar" aria-label="Guided investigation path">
+
+        <div class="guided-path-inner">
+
+            <span class="guided-path-label">Guided Investigation Path:</span>
+
+            <ol class="guided-path-steps">
+
+                <li class="guided-step active" aria-current="step"><a href="overview.html"><span class="step-num">01</span><span class="step-title">Overview & Players</span></a></li>
+
+                <li class="guided-step"><a href="timeline.html"><span class="step-num">02</span><span class="step-title">Forensic Timeline</span></a></li>
+
+                <li class="guided-step"><a href="contradictions.html"><span class="step-num">03</span><span class="step-title">Contradictions Hub</span></a></li>
+
+                <li class="guided-step"><a href="evidence.html"><span class="step-num">04</span><span class="step-title">Evidence & Misconduct</span></a></li>
+
+            </ol>
+
+        </div>
+
+    </nav>
+
+    <!-- GUIDED_PATH_END -->
 
     <section class="hero" id="reader-main" tabindex="-1">
       <h1 class="page-title">Site Map</h1>
@@ -589,7 +147,7 @@
             <h3>Home</h3>
             <p>The presentation layer for the project. Use it for high-level framing, graphics, and quick entry into the strongest sections.</p>
             <ul>
-              <li>The elapsed-arrest clock on the INJUSTICE panel, the seven factors, and three routes into the timeline, the contradictions, and the evidence viewer</li>
+              <li>The elapsed-arrest clock on the INJUSTICE panel, the seven factors, and the four-step guided investigation path</li>
               <li>The seven-factor summary placing this case inside known wrongful-conviction patterns</li>
               <li>Best for first-time visitors — every main section is one click away</li>
               <li><a href="index.html#songs">Inspired Digital Media</a> at the bottom of the home page</li>
@@ -602,7 +160,7 @@
             <h3>Timeline and Scene</h3>
             <p>Use these pages together to test whether the account can physically and chronologically hold together.</p>
             <ul>
-              <li><a href="timeline.html">Timeline</a> — 20 timestamped events from 6:30 PM into the early morning, each pairing the claim with its video exhibit and FALSE-stamped contradictions</li>
+              <li><a href="timeline.html">Timeline</a> — 20 timestamped events across 4 phases comparing video surveillance directly with testified claims in a 3-column forensic matrix</li>
               <li><a href="scene.html">Scene reconstruction</a> — Scene Analysis: the physical geography the timeline and the statements must fit</li>
             </ul>
           </article>
@@ -623,9 +181,10 @@
             <p>These pages are the main review track for exhibits, inconsistencies, and claim testing.</p>
             <ul>
               <li><a href="evidence.html">Evidence record</a> — "How the Narrative Was Built": the exhibits in review order</li>
-              <li><a href="contradictions.html">Contradictions</a> — the flagship claim-testing page: the missing hour, lunar illumination, and geographic impossibility</li>
+              <li><a href="contradictions.html">Contradictions</a> &mdash; the forensic claim-testing hub: the 12:00&ndash;1:00 AM missing hour, lunar illumination physics, and sightline impossibility</li>
+              <li><a href="impeachment.html">40 Impeachment Cards</a> &mdash; the complete witness testimony archive: 40 categorized cross-examination cards with embedded interview audio, contradictory transcripts, and perjury documentation</li>
               <li><a href="false-story-diagram.html">False Story diagram</a> — dedicated interactive draw.io view linked from the contradictions analysis</li>
-              <li><a href="general-videos.html">Catch all</a> — the catch-all roundup of statements the record contradicts</li>
+              <li><a href="general-videos.html">Forensic Videos</a> &mdash; video archive documenting shifting testimony, bar surveillance, and scene forensics</li>
             </ul>
           </article>
 
@@ -646,7 +205,7 @@
             <h3>Documents and Mindmaps</h3>
             <p>Open the source archive when you need the filings and exhibits directly, and use the mindmaps for a compressed structural view.</p>
             <ul>
-              <li><a href="documentspage.html">Document archive</a> — 40 contradiction cards across 9 sections with live search, tag filters, and the full evidence file inventory</li>
+              <li><a href="documentspage.html">Document archive</a> — the primary repository of court filings, official transcripts, and verified SHA-256 evidence inventory</li>
               <li><a href="misconductandfailure.html">Mindmaps</a> — compressed structural views of the case for quick orientation</li>
               <li>Evidence editor (operator-only archive)</li>
             </ul>
@@ -697,7 +256,7 @@
               <li><a href="evidence.html">Evidence record</a></li>
               <li><a href="contradictions.html">Contradictions</a></li>
               <li><a href="false-story-diagram.html">False Story diagram</a></li>
-              <li><a href="general-videos.html">Catch all</a></li>
+              <li><a href="general-videos.html">Forensic Videos</a></li>
               <li><a href="documentspage.html">Document archive</a></li>
             </ul>
           </div>
@@ -878,7 +437,7 @@
               <a href="evidence.html">evidence</a>
               <a href="contradictions.html">contradictions</a>
               <a href="false-story-diagram.html">False Story diagram</a>
-              <a href="general-videos.html">catch all</a>
+              <a href="general-videos.html">video archive</a>
               <a href="misconduct.html">misconduct</a>
               <a href="prosecutor_allowed.html">prosecutor review</a>
               <a href="judicial-duty.html">judicial duty</a>
@@ -912,7 +471,7 @@
             <div class="node-links">
               <a href="connections.html">players &#x2192; connections</a>
               <a href="false-story-diagram.html">contradictions &#x2192; False Story diagram</a>
-              <a href="general-videos.html">overview &#x2192; catch all</a>
+              <a href="general-videos.html">overview &#x2192; video archive</a>
               <a href="prosecutor_allowed.html">overview &#x2192; prosecutor review</a>
               <a href="judicial-duty.html">overview &#x2192; judicial duty</a>
               <a href="why-dont-we-have-this-system.html">judicial duty &#x2194; system page</a>

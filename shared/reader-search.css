@@ -11,7 +11,10 @@
 .site-search-filters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
 .site-search-filter { flex-shrink: 0; font-size: 13px; }
 .site-search-filter.is-active { background: #d4b85c; border-color: #d4b85c; color: #111415; }
-.site-search-meta { margin-top: 4px; color: #b5c0c1; font-size: 12px; }
+.site-search-facets { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+.site-search-facet { background: #101517; color: #dae4e5; border: 1px solid #536367; border-radius: 4px; padding: 6px 10px; font-size: 12px; cursor: pointer; }
+.site-search-facet:focus { border-color: #d4b85c; outline: none; }
+.site-search-meta { margin-top: 8px; color: #b5c0c1; font-size: 12px; }
 .site-search-results { overflow-y: auto; overscroll-behavior: contain; padding: 8px 20px 20px; }
 .site-search-empty { padding: 32px 8px; color: #b5c0c1; }
 .site-search-result { display: block; padding: 18px 8px; border-bottom: 1px solid #394347; color: #dae4e5; text-decoration: none; }

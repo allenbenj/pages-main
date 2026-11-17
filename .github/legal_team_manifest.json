@@ -1,0 +1,886 @@
+{
+  "kit_name": "legal-team-kit",
+  "version": "0.4.0",
+  "generated_date": "2026-10-25",
+  "component_count": 44,
+  "portable_skill_count": 42,
+  "optional_integration_count": 2,
+  "controller": "legal-team-orchestrator",
+  "shared_reasoning_protocol": "legal-reasoning-framework",
+  "principles": [
+    "fact-perception-inference separation",
+    "current authority verification",
+    "IRAC",
+    "Toulmin argument model",
+    "MECE issue trees",
+    "deductive inductive abductive reasoning",
+    "first-principles and second-order thinking",
+    "Socratic questioning",
+    "causal-chain reasoning",
+    "cost-benefit and SWOT strategy review",
+    "Controller review and quality control",
+    "Corrective Playbook pre-delivery gate (always applies)",
+    "Toulmin failure checks and opposing-method audit",
+    "instruction review before kit changes",
+    "substantive-draft-first defense writing with source-to-element and rebuttal traceability"
+  ],
+  "content_exclusions": [
+    "client data",
+    "case evidence",
+    "credentials",
+    "model weights",
+    "legal databases",
+    "commercial citator access",
+    "matter-specific names, captions, file numbers, and folder paths (kept in a per-matter profile outside the kit)",
+    "matter case files remain excluded; project-level source files are never shipped"
+  ],
+  "license_status": "No source license detected; controlled private or internal sharing pending owner licensing decision.",
+  "components": [
+    {
+      "path": "integrations/anytxt-search",
+      "lineage": "workstation-specific integration",
+      "id": "anytxt-search",
+      "default_install": false,
+      "portable": false,
+      "description": "Local file-content retrieval through a localhost Anytxt Searcher service.",
+      "category": "optional-integration"
+    },
+    {
+      "path": "integrations/jev-system-one",
+      "lineage": "supplied companion library plus local workflow implementation",
+      "id": "jev-system-one",
+      "default_install": false,
+      "portable": false,
+      "description": "OpenRouter Jev question packs, source-bound companion analysis, exact-quote checks, read-only ledger scope selection, claim comparison, and catalog handoff.",
+      "category": "optional-integration"
+    },
+    {
+      "id": "appellate-preservation",
+      "category": "core-litigation",
+      "path": "skills/appellate-preservation",
+      "default_install": true,
+      "portable": true,
+      "description": "Identifies appealable issues, preservation defects, standards of review, record needs, and post-judgment options.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "artifact-template-legal-memorandum",
+      "category": "document-template",
+      "path": "skills/artifact-template-legal-memorandum",
+      "default_install": true,
+      "portable": true,
+      "description": "Creates a legal memorandum (issue, brief answer, facts, analysis, conclusion) from the retained Legal Memorandum reference document, preserving its layout. Invoked only when the user selects the template.",
+      "lineage": "Codex Legal Memorandum artifact template adopted by the owner on 2026-09-30; placeholder content only"
+    },
+    {
+      "id": "case-analysis-repository",
+      "category": "core-litigation",
+      "path": "skills/case-analysis-repository",
+      "default_install": true,
+      "portable": true,
+      "description": "Builds a topic-by-topic expert analysis repository for a whole matter: global indexes, eight source-linked files per topic, crosswalks, and prioritized open items. Routes through the Playbook gate and quality control.",
+      "lineage": "new in 0.2.1; derived from the owner's Prompts_and_Workflows review (2026-09-30), genericized; matter items kept outside the kit"
+    },
+    {
+      "id": "case-theory-storytelling",
+      "category": "core-litigation",
+      "path": "skills/case-theory-storytelling",
+      "default_install": true,
+      "portable": true,
+      "description": "Builds a coherent case theory, themes, issue framing, and fact presentation without sacrificing legal accuracy or record support.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "casebook-moves",
+      "category": "core-litigation",
+      "path": "skills/casebook-moves",
+      "default_install": true,
+      "portable": false,
+      "description": "Five-step hash-verified moves (plan, move, manifest, Casebook DB path update, QMD and Anytxt refresh) through scripts/casebook_moves.py; never deletes or overwrites.",
+      "lineage": "new 2026-10-03; workstation-specific (Casebook DB launcher, QMD and Anytxt paths come from the matter profile)"
+    },
+    {
+      "id": "chronology-timeline-builder",
+      "category": "core-litigation",
+      "path": "skills/chronology-timeline-builder",
+      "default_install": true,
+      "portable": true,
+      "description": "Builds source-cited litigation timelines from mixed records.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "civil-rights-1983-strategy",
+      "category": "practice-area",
+      "path": "skills/civil-rights-1983-strategy",
+      "default_install": true,
+      "portable": true,
+      "description": "Evaluates constitutional tort claims, municipal liability, immunity, causation, damages, and litigation strategy.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "corrective-playbook-gate",
+      "category": "core-litigation",
+      "path": "skills/corrective-playbook-gate",
+      "default_install": true,
+      "portable": true,
+      "description": "Runs the owner's Corrective Playbook and the kit master rules as a mandatory pre-delivery gate for any analysis of a court document and any court-facing draft.",
+      "lineage": "new in 0.2.1; derived from the owner's Corrective Playbook and genericized (matter literal-mode rules are kept outside the kit)"
+    },
+    {
+      "id": "criminal-defense-strategy",
+      "category": "practice-area",
+      "path": "skills/criminal-defense-strategy",
+      "default_install": true,
+      "portable": true,
+      "description": "Develops defense theories, probable cause challenges, suppression issues, witness impeachment, trial strategy, and remedy selection.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "defense-framing",
+      "category": "core-litigation",
+      "path": "skills/defense-framing",
+      "default_install": true,
+      "portable": true,
+      "description": "Substantive defense argument architect with evidence-to-element proof mapping, competing-theory analysis, counterargument replies and full draft paragraphs.",
+      "lineage": "new in consolidated v0.3.0"
+    },
+    {
+      "id": "defense-writing-studio",
+      "category": "core-litigation",
+      "path": "skills/defense-writing-studio",
+      "default_install": true,
+      "portable": true,
+      "description": "Produces complete source-grounded attorney notes, litigation memoranda, motions, narrative sections, hearing scripts, and proposed orders.",
+      "lineage": "new in consolidated v0.3.0"
+    },
+    {
+      "id": "discovery-brady-giglio",
+      "category": "core-litigation",
+      "path": "skills/discovery-brady-giglio",
+      "default_install": true,
+      "portable": true,
+      "description": "Reviews discovery compliance, suppressed or late-disclosed evidence, impeachment material, preservation failures, and sanction remedies.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "document-consolidation",
+      "category": "core-litigation",
+      "path": "skills/document-consolidation",
+      "default_install": true,
+      "portable": true,
+      "description": "Merges redundant versions of one work-product document into a master that keeps every argument, shows variants side by side with conflict-register IDs, proves zero unmapped items in a Source Coverage crosswalk, never merges filed or original documents, and retires old versions by hash-verified move.",
+      "lineage": "new 2026-10-03; generalized from the owner's consolidation handoff of 2026-10-02 (kept in the matter control folder)"
+    },
+    {
+      "id": "ethics-privilege-guardrails",
+      "category": "core-litigation",
+      "path": "skills/ethics-privilege-guardrails",
+      "default_install": true,
+      "portable": true,
+      "description": "Flags privilege, confidentiality, unauthorized-practice, conflict, candor, and sensitive-information risks in legal work.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "evidence-matrix-admissibility",
+      "category": "core-litigation",
+      "path": "skills/evidence-matrix-admissibility",
+      "default_install": true,
+      "portable": true,
+      "description": "Analyzes evidence for relevance, admissibility, authentication, hearsay, foundation, chain of custody, and strategic value.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "expert-report-validator",
+      "category": "core-litigation",
+      "path": "skills/expert-report-validator",
+      "default_install": true,
+      "portable": true,
+      "description": "Checks expert reports and proposed expert testimony against Daubert/Kumho Tire reliability factors, methodology requirements, and disclosure rules. Use when reviewing an expert report, preparing a Daubert motion, assessing whether an expert’s methodology is reliable, or preparing to cross-examine an expert.",
+      "lineage": "present in baseline; manifest omission repaired 2026-10-24 (V040-DOCSYNC)"
+    },
+    {
+      "id": "forensic-defense-frames",
+      "category": "core-litigation",
+      "path": "skills/forensic-defense-frames",
+      "default_install": true,
+      "portable": true,
+      "description": "Blocks no-injury, unique-DNA, settled-destruction, consent-as-defense, and pasted-correction frames in forensic and medical analysis deliverables; scripts/scan_defense_frames.py is the gate (F1-F5 blockers, F6 warning).",
+      "lineage": "new 2026-10-12; built from owner corrections to a forensic dossier; owner frame rules kept in the skill's references"
+    },
+    {
+      "id": "forensic-evidence-evaluation",
+      "category": "core-litigation",
+      "path": "skills/forensic-evidence-evaluation",
+      "default_install": true,
+      "portable": true,
+      "description": "Evaluates scientific and professional claims from exact source language to a defensible proposition, with a versioned claim register, method-field applicability, qualified-support checks, and stale propagation on a source revision.",
+      "lineage": "new 2026-10-25; shared evaluator for W06, feeding expert-report-validator, discovery-brady-giglio, and the delivery gates"
+    },
+    {
+      "id": "judicial-procedural-review",
+      "category": "core-litigation",
+      "path": "skills/judicial-procedural-review",
+      "default_install": true,
+      "portable": true,
+      "description": "Evaluates procedural grantability, predicate completeness, court authority, standard and burden, relief fit, and adverse authority compliance for draft motions and pleadings.",
+      "lineage": "present in baseline; manifest omission repaired 2026-10-24 (V040-DOCSYNC)"
+    },
+    {
+      "id": "legal-citation-formatter",
+      "category": "core-litigation",
+      "path": "skills/legal-citation-formatter",
+      "default_install": true,
+      "portable": true,
+      "description": "Formats and validates legal citations in Bluebook (or ALWD) style, checks pin cites, and flags incomplete or non-standard citations. Use when preparing or revising any brief, motion, memorandum, or research note that contains citations, or when the user asks for citation cleanup or Bluebook compliance.",
+      "lineage": "present in baseline; manifest omission repaired 2026-10-24 (V040-DOCSYNC)"
+    },
+    {
+      "path": "skills/legal-document-governance",
+      "lineage": "case-neutral adaptation of supplied Jev memorandum",
+      "id": "legal-document-governance",
+      "default_install": true,
+      "portable": true,
+      "description": "Controls mixed legal-document intake, source provenance, confidentiality review, bounded model questions, and source-linked claims.",
+      "category": "core-litigation"
+    },
+    {
+      "id": "legal-quality-control",
+      "category": "core-litigation",
+      "path": "skills/legal-quality-control",
+      "default_install": true,
+      "portable": true,
+      "description": "Proofreads and audits legal work for accuracy, citations, record support, formatting, local-rule compliance, and strategic coherence.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "legal-reasoning-framework",
+      "category": "foundation",
+      "path": "skills/legal-reasoning-framework",
+      "default_install": true,
+      "portable": true,
+      "description": "Applies rigorous, fact-centered reasoning to legal documents, data, case analysis, strategy, drafting, and quality review. Use whenever legal work requires issue identification, IRAC analysis, evidence-to-claim tracing, argument testing, uncertainty management, or a coordinated investigation plan.",
+      "lineage": "new formal-kit foundation"
+    },
+    {
+      "id": "legal-research-verification",
+      "category": "core-litigation",
+      "path": "skills/legal-research-verification",
+      "default_install": true,
+      "portable": true,
+      "description": "Research and synthesize legal authority with current good-law verification, binding-versus-persuasive classification, full Bluebook or jurisdiction-appropriate citations, adverse-authority analysis, circuit-split identification, and argument frameworks.",
+      "lineage": "consolidated from installed legal research and citation roles"
+    },
+    {
+      "id": "legal-team-orchestrator",
+      "category": "foundation",
+      "path": "skills/legal-team-orchestrator",
+      "default_install": true,
+      "portable": true,
+      "description": "Coordinates the legal kit as a controlled litigation team through staged gates.",
+      "lineage": "upgraded from installed legal_team_orchestrator"
+    },
+    {
+      "id": "local-rules-deadlines",
+      "category": "core-litigation",
+      "path": "skills/local-rules-deadlines",
+      "default_install": true,
+      "portable": true,
+      "description": "Identifies jurisdiction-specific procedural rules, filing deadlines, service requirements, and local-practice constraints from primary sources.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "motion-brief-drafting",
+      "category": "core-litigation",
+      "path": "skills/motion-brief-drafting",
+      "default_install": true,
+      "portable": true,
+      "description": "Drafts legal motions, briefs, memoranda, proposed orders, and factual statements with clean argument structure and authority control.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "motion-exhibit-index",
+      "category": "core-litigation",
+      "path": "skills/motion-exhibit-index",
+      "default_install": true,
+      "portable": true,
+      "description": "Organizes exhibit references and motion support material.",
+      "lineage": "present in baseline; manifest omission repaired"
+    },
+    {
+      "id": "motion-fact-verification",
+      "category": "core-litigation",
+      "path": "skills/motion-fact-verification",
+      "default_install": true,
+      "portable": true,
+      "description": "Verifies each factual proposition in a draft against the record with a question bank, preserved retrieval, context checks, ten review states, and a proposed-corrections ledger; never edits the draft.",
+      "lineage": "new in 0.2.1; derived from the owner's Prompts_and_Workflows review (2026-09-30), genericized; matter items kept outside the kit"
+    },
+    {
+      "id": "privilege-log-generator",
+      "category": "core-litigation",
+      "path": "skills/privilege-log-generator",
+      "default_install": true,
+      "portable": true,
+      "description": "Builds a privilege log from a document review set, identifying claimed privileges, bases, and required log fields. Use when preparing a privilege log for discovery, reviewing documents for privilege, or responding to a request for a privilege log.",
+      "lineage": "present in baseline; manifest omission repaired 2026-10-24 (V040-DOCSYNC)"
+    },
+    {
+      "id": "prosecution-case-review",
+      "category": "practice-area",
+      "path": "skills/prosecution-case-review",
+      "default_install": true,
+      "portable": true,
+      "description": "Stress-tests prosecution theories, charging decisions, evidence sufficiency, witness reliability, and ethical disclosure obligations.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "purge-false-fact",
+      "category": "core-litigation",
+      "path": "skills/purge-false-fact",
+      "default_install": true,
+      "portable": true,
+      "description": "Finds an owner-confirmed false fact in every store a matter's systems map lists, backs up, and deletes or corrects it after explicit approval; never edits source records. Annotate mode (2026-10-03) instead adds dated 'Resolved YYYY-MM-DD (RES-###)' notes in work product and lists third-party and official records unaltered.",
+      "lineage": "new in 0.2.1; generalized 2026-09-30 from a skill a matter session built in the superseded 0.2.0 copy; the matter's systems map and procedure stay in the matter's live configuration folder"
+    },
+    {
+      "id": "records-requests-subpoenas",
+      "category": "core-litigation",
+      "path": "skills/records-requests-subpoenas",
+      "default_install": true,
+      "portable": true,
+      "description": "Plans, drafts, and defends third-party subpoenas, court-ordered production, and public-records requests, with a request checklist, quash-response outline, and tracking.",
+      "lineage": "new in 0.2.1; derived from the owner's Prompts_and_Workflows review (2026-09-30), genericized; matter items kept outside the kit"
+    },
+    {
+      "id": "settlement-negotiation",
+      "category": "practice-area",
+      "path": "skills/settlement-negotiation",
+      "default_install": true,
+      "portable": true,
+      "description": "Prepares settlement positions, demand logic, mediation strategy, qualitative risk assessment, and negotiation communications.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "transcript-impeachment",
+      "category": "core-litigation",
+      "path": "skills/transcript-impeachment",
+      "default_install": true,
+      "portable": true,
+      "description": "Analyzes testimony, interviews, reports, and prior statements for contradictions, omissions, evasions, and impeachment value.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "witness-examination",
+      "category": "practice-area",
+      "path": "skills/witness-examination",
+      "default_install": true,
+      "portable": true,
+      "description": "Creates direct, cross, deposition, and hearing examination plans tied to elements, exhibits, and impeachment material.",
+      "lineage": "normalized copy of installed legal skill"
+    },
+    {
+      "id": "sentencing-mitigation",
+      "category": "practice-area",
+      "path": "skills/sentencing-mitigation",
+      "default_install": true,
+      "portable": true,
+      "description": "Builds a sentencing and mitigation packet from the record: history, conditions, and requested disposition.",
+      "lineage": "added 2026-10-29 for the defense retrial gaps in LEGAL_KIT_TEAM_PLAN.md section 4.4"
+    },
+    {
+      "id": "bail-pretrial-release",
+      "category": "practice-area",
+      "path": "skills/bail-pretrial-release",
+      "default_install": true,
+      "portable": true,
+      "description": "Prepares bail and pretrial-release requests from the charging document, the record, and the governing statute.",
+      "lineage": "added 2026-10-29 for the defense retrial gaps in LEGAL_KIT_TEAM_PLAN.md section 4.4"
+    },
+    {
+      "id": "appellate-brief-drafting",
+      "category": "practice-area",
+      "path": "skills/appellate-brief-drafting",
+      "default_install": true,
+      "portable": true,
+      "description": "Drafts an appellate brief from a preserved issue, the record, and the standard of review.",
+      "lineage": "added 2026-10-29 for the defense retrial gaps in LEGAL_KIT_TEAM_PLAN.md section 4.4"
+    },
+    {
+      "id": "client-advice-letters",
+      "category": "practice-area",
+      "path": "skills/client-advice-letters",
+      "default_install": true,
+      "portable": true,
+      "description": "Drafts client advice, engagement scope, and a conflicts check for counsel to send or decline.",
+      "lineage": "added 2026-10-29 for the defense retrial gaps in LEGAL_KIT_TEAM_PLAN.md section 4.4"
+    },
+    {
+      "id": "production-document-review",
+      "category": "practice-area",
+      "path": "skills/production-document-review",
+      "default_install": true,
+      "portable": true,
+      "description": "Codes a large production into a review set with source, issue, and privilege flags.",
+      "lineage": "added 2026-10-29 for the defense retrial gaps in LEGAL_KIT_TEAM_PLAN.md section 4.4"
+    },
+    {
+      "id": "redaction",
+      "category": "practice-area",
+      "path": "skills/redaction",
+      "default_install": true,
+      "portable": true,
+      "description": "Plans redactions for a production or a filing: what is withheld, the basis, and the page.",
+      "lineage": "added 2026-10-29 for the defense retrial gaps in LEGAL_KIT_TEAM_PLAN.md section 4.4"
+    }
+  ],
+  "document_decision_update": {
+    "original_library": "held outside the kit with the matter's restricted source material",
+    "status": "full Jev and companion analysis workflow tested; owner authorized sending case material to outside models (2026-09-30); provider data-use terms unverified; no calibrated auto-filing",
+    "pipeline_guide": "integrations/jev-system-one/references/LOCAL_DOCUMENT_PIPELINE.md",
+    "installable_library": "integrations/jev-system-one/references/jev_document_management_library.json",
+    "pipeline": "integrations/jev-system-one/scripts/analyze_document.py"
+  },
+  "master_rules": "skills/corrective-playbook-gate/references/master-rules.md",
+  "hash_algorithm": "sha256",
+  "matter_profile_template": "matter_profile.template.json",
+  "transmission_policy": {
+    "outside_models": "authorized by owner decision 2026-09-30 (confirms 2026-09-26); no per-document release gate",
+    "provider_terms_verified": false,
+    "human_channels": "email, chat, file sharing, upload, and publishing tools remain subject to the Legal_Hooks external-transmission check"
+  },
+  "legal_hooks": {
+    "runtime": "../Legal_Hooks/legal_hooks.py",
+    "policy": "../Legal_Hooks/policy.json (universal; no matter paths)",
+    "config_template": "../Legal_Hooks/codex_hooks.template.json",
+    "review": "../../Legal_Team_Kit_DEV_DATA/_Review/Hooks_Review.md",
+    "status": "workflow gates; enabled per workstation through the Codex hooks.json"
+  },
+  "kit_scripts": {
+    "scripts/verify_quotes.py": "quotation and pin-cite verifier; --gate feeds the Legal_Hooks filing gate",
+    "scripts/build_transcript_page_map.py": "builds the transcript page map CSV from the matter's volume table",
+    "scripts/tr_lookup.py": "transcript page lookup (volume, file, line range, text)",
+    "scripts/casebook_moves.py": "hash-verified moves with manifest, Casebook DB update-paths and index refresh",
+    "scripts/casebook_db.py": "Casebook DB (moved from the superseded 0.2.0 copy 2026-10-03; adds update-paths/relocate)",
+    "scripts/find_fact_occurrences.py": "read-only occurrence finder for purge-false-fact",
+    "scripts/build_master_docx.py": "master DOCX builder",
+    "skills/purge-false-fact/scripts/annotate_resolution.py": "annotate mode: dated resolution notes, work product versus third-party classifier",
+    "skills/document-consolidation/scripts/consolidation_check.py": "consolidation crosswalk, variant and filed-document checks",
+    "scripts/scan_defense_frames.py": "forensic/medical framing gate; exit 1 on F1-F5 blockers (skill forensic-defense-frames)"
+  },
+  "guard_coverage": "docs/guard-coverage.md",
+  "consolidation_notes": {
+    "standalone_agent_profiles": 31,
+    "added_skills": [
+      "defense-framing"
+    ],
+    "enhanced_skill_routing": [
+      "criminal-defense-strategy",
+      "forensic-defense-frames",
+      "motion-brief-drafting",
+      "case-theory-storytelling",
+      "legal-team-orchestrator"
+    ],
+    "substantive_drafting_protocol": "skills/defense-framing/references/drafting-engine.md"
+  },
+  "source_packages": [
+    "Legal_Team_Kit_v0.2.1.zip",
+    "criminal-defense-strategy.agent.zip",
+    "scan_defense_frames.py (validated against existing bundled scanner)"
+  ],
+  "agent_files_count": 34,
+  "drafting_protocol": "skills/defense-writing-studio/SKILL.md",
+  "defense_argument_protocol": "skills/defense-framing/SKILL.md",
+  "defense_workbench": "scripts/defense_workbench.py",
+  "controller_runtime": {
+    "documentation": "docs/CONTROLLER_RUNTIME.md",
+    "resolution": "kit-relative; no workstation path and no _Review folder is required at runtime",
+    "note": "0.4.0 release candidate: implemented and accepted per task, pending package verification (V040-28) and independent final review (V040-29). Not released, not approved.",
+    "accepted_repin": "2026-10-29: accepted pins reconciled to the installed, committed bytes after tools/kit_integrity.py gained accepted-block reconciliation. Three records were stale in a way no earlier verifier could see: accepted.revision described 55541 bytes / ff0008d9, accepted.persistence.pipeline described 44173 bytes / 1470bbef, and accepted.persistence.revision repeated the same stale revision record; installed and committed bytes are 54668 / 1b52b554 and 45341 / 2cd52f93. For each file the SHA-256 of the working copy equals the SHA-256 of HEAD, so the records, not the code, were wrong. accepted.judicial_review's second pin was keyed sha256_review_py, which names no file; the value was correct for judicial_review.py, so only the key changed. No accepted byte was restored and no controller code was edited in this change.",
+    "accepted": {
+      "qc_entry": {
+        "path": "controller/gates/qc.py",
+        "sha256": "050c9361efb2fec217f66f5fdafc110b3246c2537a1b06043d81903bbe8fd55a",
+        "bytes": 36275,
+        "production_version": "qc-production/0.3-configured-app-inputs",
+        "ceiling": "AUTOMATED_CHECKS_PASSED",
+        "filing_approval": false
+      },
+      "qc_runtime": {
+        "path": "controller/qc_runtime/",
+        "assets": {
+          "runtime.py": "c8ad555a9e492d3a220fb3f6916bb61bf1ed9be553e58974bdef13dde2866661",
+          "composition.py": "ffb7e78665e1c66d528dce3b84a25a50ee5dc045647a4a1548a0aab6b1177aa2",
+          "engine.py": "8659e9a8a6f42de2227c58f491ed283fd3167fb29e0b0d69f678071a76fa4b20",
+          "__init__.py": "307ba284fe2ec09d7b2e8f72b1473621d1e65ecaef201decfdc7e15db5b37281",
+          "assets/QC_CONTRACT.md": "37091bc8422955255cc661b066c5460fff706b2a854d16000731e362ebe18d7b",
+          "assets/review_wrapper.json": "6b30d6ce00675982bab39f988409b9aa9ae98bff9c10418c6e0a7467bdcedeca",
+          "assets/policy_adoption.json": "43e72241372c953024bdbb58c8429937b0a4c567f7f55b414811055858c14e54"
+        }
+      },
+      "traceability": {
+        "path": "controller/traceability.py",
+        "sha256": "0fa946560babf5812b6e1e01c8df5349924234780b81fa9c7a93aba8e6835eb6",
+        "bytes": 91480,
+        "task": "V040-22"
+      },
+      "revision": {
+        "path": "controller/revision.py",
+        "sha256": "1b52b5548a0193e78c4dfc85bda7c7800aa588bc80b5c7f1cb780c28e56604ed",
+        "bytes": 54668,
+        "task": "V040-20",
+        "extended_by": "V040-FIXRENAMEREV",
+        "note": "bounded transient-PermissionError retry at every persistence site; re-pinned 2026-10-29 to the committed bytes"
+      },
+      "judicial_review": {
+        "path": "skills/judicial-procedural-review/",
+        "sha256_skill_md": "329fdfe861292539d547ee10853f0f6ec08a5b9e6758ca5c48af9fa5d9e74ae9",
+        "sha256_judicial_review_py": "e632567123d72982ff8ccd762d3c80ef3ac10ee8ad2ea01140cbb8481089c12a",
+        "task": "V040-19",
+        "agent_profile_required": false
+      },
+      "interfaces": {
+        "completeness": {
+          "path": "controller/gates/completeness.py",
+          "sha256": "f756438789b28d4f1a17cad796ece9d7f584a597ca245bb1aed41662e4982e2b",
+          "bytes": 84538
+        },
+        "bridge": {
+          "path": "controller/bridges/writing_gate.py",
+          "sha256": "149d0567825ebc8c98c111010f04c2e1ad9de75ca179ba3c9bfae4d28b0ab83d",
+          "bytes": 88379
+        },
+        "rubric": {
+          "path": "controller/gates/rubric.json",
+          "sha256": "bbd6f0523a607c9de08f208e9f167ced2e727d28cadc8d88455b0ebe092b5d9f",
+          "bytes": 11509
+        },
+        "validate_py": {
+          "path": "controller/schemas/validate.py",
+          "sha256": "8ae50660cac00a66484d794c330e3ef860e5ad4233ec3a1a9bfb8c697e92ce5f",
+          "bytes": 7031
+        },
+        "review_finding_schema": {
+          "path": "controller/schemas/review_finding.schema.json",
+          "sha256": "18c82dc5ced4e0190a00174d9f1f63c98d1926327255f290296a33d67f5f72f6",
+          "bytes": 1501
+        }
+      },
+      "export": {
+        "path": "controller/export.py",
+        "sha256": "97cb056a411761061ab14b2c69b710bd528b253df837aafd1c9f4afc0891d370",
+        "bytes": 29011,
+        "task": "V040-24",
+        "formats": [
+          "md",
+          "txt",
+          "json",
+          "docx",
+          "pdf"
+        ],
+        "refusals": [
+          "overwrite",
+          "delimiter",
+          "unsupported_glyph"
+        ],
+        "note": "metadata separated into sidecars; no HTML comments in court drafts"
+      },
+      "persistence": {
+        "pipeline": {
+          "path": "controller/pipeline.py",
+          "sha256": "8eae94edc4b33e559b025c6f89617a97bf25b2ebff54b3c234a146bba40c8953",
+          "bytes": 46322,
+          "task": "V040-WRITERRETRY",
+          "integration_note": "2026-10-29 source-byte reconciliation with focused engineering checks; no independent legal or release approval."
+        },
+        "writing_engine": {
+          "path": "controller/writing_engine.py",
+          "sha256": "a52a475de7914dfd33588642389c20a216ff4e3dfbb78e4d07a8f305b6bca7e8",
+          "bytes": 163798,
+          "task": "V040-WRITERRETRY"
+        },
+        "revision": {
+          "path": "controller/revision.py",
+          "sha256": "1b52b5548a0193e78c4dfc85bda7c7800aa588bc80b5c7f1cb780c28e56604ed",
+          "bytes": 54668,
+          "task": "V040-FIXRENAMEREV"
+        },
+        "policy": {
+          "attempts": 8,
+          "backoff_seconds": 0.01,
+          "backoff_cap_seconds": 0.25,
+          "retries": "PermissionError only",
+          "deletes_destination": false
+        },
+        "coverage": "Pipeline run-state and collected-artifact JSON use unique exclusive sibling staging, flush/fsync and bounded PermissionError-only staging/replacement retries. Revision coverage remains as previously recorded. writing_engine.py plain overwrite writes remain outside this change. No cross-process read/modify/write lock or cross-store dispatch transaction is claimed."
+      },
+      "routing": {
+        "path": "controller/routing.py",
+        "sha256": "84ba24cfeeb9285ec1e1f729dc02f7f567a55f76f7b0b1a9e4f6313bf8844dd5",
+        "bytes": 17907,
+        "task": "V040-23",
+        "note": "2026-10-29: production-review route includes discovery/governance/ethics and Playbook before QC; privilege/redaction are separate handoffs. Integrity pin tracks source bytes without legal release or independent acceptance.",
+        "integration_note": "2026-10-29 source-byte reconciliation with focused engineering checks; no independent legal or release approval."
+      }
+    },
+    "pending_not_accepted": {
+      "release_package": {
+        "task": "V040-28",
+        "status": "in-progress",
+        "note": "release archive and unpacked verification are produced in W18"
+      },
+      "manager_release": {
+        "task": "V040-29",
+        "status": "not-started"
+      },
+      "checksums_regeneration": {
+        "task": "V040-28",
+        "status": "done",
+        "note": "Refreshed from the live tree on 2026-10-28 after adopting QC runtime 1.1 (pinset normalization); kit_integrity.py passes in full mode on both ledgers."
+      }
+    },
+    "configuration_truth": {
+      "ships": {
+        "controller_config": {
+          "path": "controller/controller_config.json",
+          "sha256": "30801aca6b3b57086ff58cc4575c0fdceadcd214cc173b6f384596a8aa7c0311",
+          "bytes": 4480
+        },
+        "note": "declares eleven modules and an ATTORNEY_REVIEW_READY automated ceiling; it is a module declaration, not a QC configuration"
+      },
+      "absent": {
+        "controller_policy": "no controller-owned policy directory ships",
+        "identity_registry": "no identity registry ships",
+        "authority_ledger": "no controller-owned authority ledger ships; the kit-level candidate ledger is authority_ledger/forensic_discovery_candidates.json and is not reliance-approved",
+        "dependency_registry": "controller/dependency_registry.json does not ship"
+      },
+      "consequence": "every shipped-input QC run returns BLOCKED at L1/L2/L3 with typed codes and filing_approval false; refusal is the accepted behaviour and no substantive QC assessment is reachable from the shipped tree",
+      "ceiling": "AUTOMATED_CHECKS_PASSED for QC; ATTORNEY_REVIEW_READY declared for the controller config"
+    },
+    "demo_evidence": {
+      "task": "V040-26",
+      "accepted_attempt": "v004_walkthrough_pins_20261024",
+      "result_path": "D:\\Court_Data\\Legal_Team_Kit_DEV_DATA\\_Review\\v040_demo\\v004_walkthrough_pins_20261024\\RESULT_v004_walkthrough_pins_20261024.json",
+      "result_sha256": "8d3e378b354a166682b64d00012c302e7afca697dc4baf7a15ff08ab2251f835",
+      "decision_path": "D:\\Court_Data\\Agent_Desk\\state\\delegated_decisions\\grok\\V040-26\\v004_walkthrough_pins_20261024\\DECISION.json",
+      "decision_sha256": "7ab33e89cbbb5e87d1d24f46b48b423b3a6fce2cd1655d812b6551d4fde54fab",
+      "decision": "accepted by independent reviewer grok (v004)",
+      "limits": [
+        "real-record demonstration on Source 25 with verbatim quotations",
+        "PDF output size disclosed, not blocking",
+        "no redaction capability"
+      ],
+      "pdf_facts": {
+        "pdfs": 7,
+        "bytes_each_approx": 3570000,
+        "note": "about 3.57 MB per PDF; 35 of 36 export files carry a _v002_ filename stem although the accepted draft is v003"
+      }
+    },
+    "known_gaps": {
+      "pipeline_plain_writes_unretried": {
+        "path": "controller/pipeline.py",
+        "lines": [
+          201,
+          676,
+          1140,
+          1171
+        ],
+        "detail": "plain write_text calls with no transient-PermissionError retry"
+      },
+      "writing_engine_plain_overwrites_unretried": {
+        "path": "controller/writing_engine.py",
+        "accepted_sha256": "a52a475de7914dfd33588642389c20a216ff4e3dfbb78e4d07a8f305b6bca7e8",
+        "detail": "plain overwrite writes are not retried; the manifest carries no writing_engine pin, so the accepted hash is recorded here for reference (V040-FIXLINERANGE)"
+      },
+      "no_redaction_capability": "export can separate metadata but cannot redact content",
+      "qc_not_substantively_runnable": "no controller policy, identity registry, authority ledger or dependency registry ships; QC returns BLOCKED with typed codes"
+    },
+    "release_packaging": {
+      "task": "V040-28",
+      "status": "not-started",
+      "must_exclude": [
+        "__pycache__/",
+        "*.pyc",
+        ".pytest_cache/"
+      ],
+      "reason": "bytecode and test caches are build residue, not shipped material"
+    }
+  },
+  "development_status": {
+    "purpose": "States the candidate/release split so installed-file visibility does not depend on VERSION alone.",
+    "last_released_version": "0.3.0",
+    "current_development": {
+      "label": "0.4.0 release candidate",
+      "state": "candidate; not released",
+      "released": false,
+      "version_file": "0.4.0"
+    },
+    "implemented_and_accepted_by_manager": {
+      "judicial_procedural_review": {
+        "task": "V040-19",
+        "evidence": "skills/judicial-procedural-review/"
+      },
+      "revision_loop": {
+        "task": "V040-20",
+        "evidence": "controller/revision.py"
+      },
+      "qc_contract_binding": {
+        "task": "V040-21",
+        "evidence": "controller/gates/qc.py"
+      },
+      "qc_runtime_portability": {
+        "task": "V040-I21PORT",
+        "evidence": "controller/qc_runtime/"
+      },
+      "traceability": {
+        "task": "V040-22",
+        "evidence": "controller/traceability.py"
+      },
+      "routing": {
+        "task": "V040-23",
+        "evidence": "controller/routing.py"
+      },
+      "export": {
+        "task": "V040-24",
+        "evidence": "controller/export.py"
+      },
+      "acceptance_suite": {
+        "task": "V040-25",
+        "evidence": "controller/tests/test_acceptance_scenarios.py"
+      },
+      "demonstration": {
+        "task": "V040-26",
+        "evidence": "D:\\Court_Data\\Legal_Team_Kit_DEV_DATA\\_Review\\v040_demo\\v004_walkthrough_pins_20261024\\RESULT_v004_walkthrough_pins_20261024.json"
+      },
+      "writing_persistence_retry": {
+        "task": "V040-WRITERRETRY",
+        "evidence": "controller/writing_engine.py"
+      },
+      "manifest_pin": {
+        "task": "V040-MANIFESTPIN",
+        "evidence": "controller/tests/test_writing_engine.py"
+      },
+      "reasoning_foundation": {
+        "task": "V040-RF03",
+        "evidence": "skills/legal-reasoning-framework/"
+      },
+      "locator_pin_inventory": {
+        "task": "V040-LOCATORFIX",
+        "evidence": "D:/Court_Data/Legal_Team_Kit_DEV_DATA/_Review/v040_audit/locator_agent_fix/"
+      },
+      "revision_persistence_retry": {
+        "task": "V040-FIXRENAMEREV",
+        "evidence": "controller/revision.py"
+      },
+      "current_runtime_documentation": {
+        "task": "V040-DOCSYNC",
+        "evidence": "docs/CONTROLLER_RUNTIME.md"
+      },
+      "documentation_links": {
+        "task": "V040-DOCLINKS",
+        "evidence": "docs/"
+      }
+    },
+    "submitted_not_yet_accepted": {
+      "final_documentation": {
+        "task": "V040-27",
+        "evidence": "this pass"
+      }
+    },
+    "pending_not_accepted": {
+      "release_package": {
+        "task": "V040-28",
+        "status": "in-progress",
+        "note": "release archive and unpacked verification are produced in W18"
+      },
+      "manager_release": {
+        "task": "V040-29",
+        "status": "not-started"
+      },
+      "checksums_regeneration": {
+        "task": "V040-28",
+        "status": "done",
+        "note": "Refreshed from the live tree on 2026-10-28 after adopting QC runtime 1.1 (pinset normalization); kit_integrity.py passes in full mode on both ledgers."
+      }
+    },
+    "note": "A registered skill or component proves discovery, not substantive validation."
+  },
+  "inventory_update": {
+    "date": "2026-10-24",
+    "task": "V040-DOCSYNC",
+    "reason": "skills/ contained folders absent from the 2026-10-12 inventory, which made tools/kit_integrity.py report inventory drift",
+    "registered": [
+      "expert-report-validator",
+      "judicial-procedural-review",
+      "legal-citation-formatter",
+      "privilege-log-generator"
+    ],
+    "counts_before": {
+      "component_count": 34,
+      "portable_skill_count": 32
+    },
+    "counts_after": {
+      "component_count": 38,
+      "portable_skill_count": 36
+    },
+    "agent_profiles_created": [],
+    "agent_profiles_created_on_2026_10_25": [
+      "expert-report-validator",
+      "judicial-procedural-review",
+      "legal-citation-formatter",
+      "privilege-log-generator"
+    ],
+    "note": "Corrected 2026-10-25 (W01): the earlier note said judicial-procedural-review had no local agent profile and needed none. That was inaccurate: it had no agents/openai.yaml, and one was added together with wrappers for all four previously unwrapped skills. A skill is discovered from its SKILL.md; a local profile and wrappers are separate dispatch surfaces."
+  },
+  "completion_update": {
+    "date": "2026-10-25",
+    "tasks": "W00-W18 completion build",
+    "new_skill": "forensic-evidence-evaluation",
+    "new_schemas": [
+      "dispatchability",
+      "authority_record",
+      "evidence_availability",
+      "expert_review",
+      "forensic_claim",
+      "forensic_claim_register"
+    ],
+    "new_scripts": [
+      "scripts/check_dispatch.py",
+      "scripts/authority_ledger.py"
+    ],
+    "new_skill_scripts": [
+      "skills/forensic-evidence-evaluation/scripts/validate_claims.py"
+    ],
+    "new_gates": [
+      "forensic_memo",
+      "expert_challenge",
+      "forensic.custody_standard",
+      "forensic.preservation_review",
+      "forensic.missing_vs_withheld",
+      "F9",
+      "F10",
+      "F11"
+    ],
+    "counts": {
+      "component_count": 39,
+      "portable_skill_count": 37
+    },
+    "tests": "204 passed in the DEV_DATA suite; Phase-3, Phase-4, and Phase-5 smoke receipts",
+    "fixtures": "39 synthetic fixtures (22 defects, 17 controls); 39 scored; 0 NOT_RUN",
+    "limitations": "Seven authority rows are VERIFIED; 13 remain UNVERIFIED; no row is RELIANCE_APPROVED; the tests do not establish legal or scientific correctness."
+  },
+  "release_status": {
+    "state": "release-candidate",
+    "packaged": true,
+    "archive": "Legal_Team_Kit_v0.4.0_20261025.zip",
+    "archive_location": "D:\\Court_Data\\Legal_Team_Kit_DEV_DATA\\release",
+    "sha256": "recorded in the release receipt",
+    "released": false,
+    "approved": false,
+    "last_released_version": "0.3.0",
+    "pending": [
+      "unpacked verification and release receipt",
+      "owner release approval"
+    ],
+    "statement": "0.4.0 completion build packaged; unpacked verification and the release receipt are produced in W18."
+  }
+}

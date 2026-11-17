@@ -1,0 +1,3 @@
+interface:
+  display_name: "Motion Fact Verification"
+  short_description: "Check every factual statement in a draft against the record and ledger the corrections"

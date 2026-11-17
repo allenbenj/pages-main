@@ -1,0 +1,403 @@
+{
+  "bundle_note": "Criminal Defense Strategy V040-08 schema bundle for synthetic fixture FX-HARBOR-WHARF-001. Validate each object with controller.schemas.validate. Harbor County synthetic facts only. Directly feeds Defense Writing Studio (V040-16).",
+  "matter_context": {
+    "matter_id": "FX-HARBOR-WHARF-001",
+    "profile_path": "tests/fixtures/v040_shared/NOT_A_LIVE_MATTER_PROFILE.txt",
+    "jurisdiction": "Fixture State",
+    "court": "Harbor County Superior Court",
+    "procedural_posture": "synthetic pretrial exercise; this packet authorizes no filing",
+    "charges_or_claims": [
+      "Fictional allegation: the charging sheet says Morgan Ellis took copper fittings belonging to the North Wharf Cooperative"
+    ],
+    "deadlines": [
+      {
+        "label": "no deadline is asserted in this synthetic fixture",
+        "date_or_unverified": "unverified"
+      }
+    ],
+    "requested_document": "motion",
+    "audience": "defense counsel reviewing a synthetic demonstration",
+    "confidentiality": "internal"
+  },
+  "evidence_records": [
+    {
+      "evidence_id": "E-FX-CHARGE",
+      "source_path": "tests/fixtures/v040_shared/sources/charge-sheet.txt",
+      "source_hash_sha256": "5c40003a1fd024ede9a4339d4b062c2205d35c34dfe87b1f5d685c28fc03652b",
+      "locator": {"kind": "page_line", "page": 1, "line": 2, "value": "page 1, line 2"},
+      "speaker_or_author": "fictional charging sheet",
+      "exact_quote": "The Fixture State charging sheet alleges that Morgan Ellis took copper fittings belonging to the North Wharf Cooperative.",
+      "relevant_content": "Line 3 says the sheet states the allegation and does not prove it. Line 4 names Exhibit S-4. Line 5 says Exhibit S-4 is not included in this pack. Line 6 dates the alleged taking 12 April 2021.",
+      "provenance": "Synthetic fixture file written for V040-30. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-CHEN", "E-FX-PATEL", "E-FX-INVENTORY-MISSING"]
+    },
+    {
+      "evidence_id": "E-FX-CHEN",
+      "source_path": "tests/fixtures/v040_shared/sources/chen-statement.txt",
+      "source_hash_sha256": "6726564647dcef68523ef3374257012b2212b77bea975cec4f7fbdb7c6649098",
+      "locator": {"kind": "page_line", "page": 1, "line": 2, "value": "page 1, line 2"},
+      "speaker_or_author": "Avery Chen",
+      "exact_quote": "I saw Morgan Ellis leave by the north ramp at about 21:10 carrying a crate labeled copper fittings.",
+      "relevant_content": "Line 3 says Chen did not see what was inside the crate. Line 4 says Chen did not describe any other departure. Line 5 dates the account 12 April 2021.",
+      "provenance": "Synthetic fixture file written for V040-30. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-PATEL"]
+    },
+    {
+      "evidence_id": "E-FX-PATEL",
+      "source_path": "tests/fixtures/v040_shared/sources/patel-statement.txt",
+      "source_hash_sha256": "e6e3aac9f5c26780937744c4a2865445d4295111d5a6a14f796fe7b638ab97c5",
+      "locator": {"kind": "page_line", "page": 1, "line": 2, "value": "page 1, line 2"},
+      "speaker_or_author": "Samir Patel",
+      "exact_quote": "I saw Morgan Ellis leave by the south stair at about 21:40 carrying an unmarked canvas bag.",
+      "relevant_content": "Line 3 says Patel did not see a crate. Line 4 says Patel does not know whether anyone left by the north ramp. Line 5 dates the account 12 April 2021.",
+      "provenance": "Synthetic fixture file written for V040-30. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-CHEN", "E-FX-VIDEO"]
+    },
+    {
+      "evidence_id": "E-FX-VIDEO",
+      "source_path": "tests/fixtures/v040_shared/sources/video-log.txt",
+      "source_hash_sha256": "253e54f7517aeac7760c481ed8ae5186161ce1dabda6004df5c5f6156e41c5ab",
+      "locator": {"kind": "page_line", "page": 1, "line": 2, "value": "page 1, line 2"},
+      "speaker_or_author": "camera NW-2 log",
+      "exact_quote": "Camera NW-2 recorded a person in a gray coat at the south stair at 21:41.",
+      "relevant_content": "Line 3 says the log does not name the person. Line 4 says the log does not describe what the person carried. Line 1 dates the log 12 April 2021.",
+      "provenance": "Synthetic fixture file written for V040-30. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-PATEL"]
+    },
+    {
+      "evidence_id": "E-FX-VOSS",
+      "source_path": "tests/fixtures/v040_shared/sources/voss-note.txt",
+      "source_hash_sha256": "1f20655d12c77f9e9dd9e873f27c4754f77c24cf27c7bec32a05d68598273247",
+      "locator": {"kind": "page_line", "page": 1, "line": 3, "value": "page 1, line 3"},
+      "speaker_or_author": "Loren Voss",
+      "exact_quote": "Patel is lying to protect Ellis.",
+      "relevant_content": "Line 2 says Chen told the truth. Line 4 says Voss did not ask Patel why the times differ. Those sentences are Voss's words. They do not independently prove Patel's motive.",
+      "provenance": "Synthetic fixture file written for V040-30. Not a court original. Hash is of this kit file.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-VOSS-LIMIT"]
+    },
+    {
+      "evidence_id": "E-FX-VOSS-LIMIT",
+      "source_path": "tests/fixtures/v040_shared/sources/voss-note.txt",
+      "source_hash_sha256": "1f20655d12c77f9e9dd9e873f27c4754f77c24cf27c7bec32a05d68598273247",
+      "locator": {"kind": "page_line", "page": 1, "line": 5, "value": "page 1, line 5"},
+      "speaker_or_author": "Loren Voss",
+      "exact_quote": "This note does not say that I wrote Chen's statement or that I labeled a crate.",
+      "relevant_content": "The sentence is a limit on what the note itself claims. It is not a finding about Voss's intention.",
+      "provenance": "Synthetic fixture file written for V040-30. Same file as E-FX-VOSS. Not a court original.",
+      "verification_status": "working_copy_only",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-VOSS"]
+    },
+    {
+      "evidence_id": "E-FX-INVENTORY-MISSING",
+      "source_path": "tests/fixtures/v040_shared/sources/NOT_SHIPPED_storeroom-inventory.txt",
+      "locator": {"kind": "other", "value": "file intentionally not shipped; no page exists in this pack"},
+      "speaker_or_author": "",
+      "exact_quote": "",
+      "relevant_content": "The charging sheet names Exhibit S-4. That file is not in this pack. No quotation of its contents was written. A later draft must not supply inventory words.",
+      "provenance": "Absence record for V040-30. The path is named so a test can see the gap. The file is not shipped, so there is no hash and no quote.",
+      "verification_status": "unverified",
+      "contrary_or_qualifying_evidence_ids": ["E-FX-CHARGE"]
+    }
+  ],
+  "proposition_records": [
+    {
+      "proposition_id": "P-FX-CHARGE",
+      "assertion": "The fictional charging sheet alleges that Morgan Ellis took copper fittings belonging to the North Wharf Cooperative on 12 April 2021, and it says the sheet does not prove that allegation.",
+      "classification": "allegation",
+      "supporting_evidence_ids": ["E-FX-CHARGE"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The allegation sentence is line 2 of the charging sheet. Line 3 says the sheet does not prove the allegation. Line 6 gives the date.",
+      "limitations": "The sheet is the allegation. It is not proof that fittings were taken.",
+      "legal_significance": "Identifies the charge a synthetic motion would answer. It does not establish any element.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-CHEN",
+      "assertion": "Avery Chen said Avery Chen saw Morgan Ellis leave by the north ramp at about 21:10 carrying a crate labeled copper fittings, and said Avery Chen did not see what was inside the crate.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-FX-CHEN"],
+      "contradictory_evidence_ids": ["E-FX-PATEL"],
+      "confidence_rationale": "The crate sentence is line 2 of Chen's statement. The contents sentence is line 3.",
+      "limitations": "The account is Chen's. It does not show what the crate held, and it does not describe any other departure.",
+      "legal_significance": "Supplies the crate account as a witness statement. It does not by itself prove a taking.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-PATEL",
+      "assertion": "Samir Patel said Samir Patel saw Morgan Ellis leave by the south stair at about 21:40 carrying an unmarked canvas bag, and said Samir Patel did not see a crate.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-FX-PATEL"],
+      "contradictory_evidence_ids": ["E-FX-CHEN"],
+      "confidence_rationale": "The bag sentence is line 2 of Patel's statement. The crate denial is line 3.",
+      "limitations": "The account is Patel's. Patel does not know whether anyone left by the north ramp. The camera log does not identify the person at the south stair.",
+      "legal_significance": "Supplies a different time, exit, and container. The difference is available for a memorandum on the conflict.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-VIDEO",
+      "assertion": "Camera NW-2's log records a person in a gray coat at the south stair at 21:41, and the same log does not name the person and does not describe what the person carried.",
+      "classification": "established_record_fact",
+      "supporting_evidence_ids": ["E-FX-VIDEO"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "Line 2 records the person, the coat, the place, and the time. Lines 3 and 4 state the two limits.",
+      "limitations": "The fact is what the log records. It is not an identification of Morgan Ellis and it is not a description of a crate or a bag.",
+      "legal_significance": "Qualifies any use of the south-stair time as proof of identity or of a container.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-SAME-DEPARTURE",
+      "assertion": "The packet does not establish whether Chen's north-ramp account and Patel's south-stair account describe the same departure or different moments.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-FX-CHEN", "E-FX-PATEL"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The two statements give different times and exits. Neither statement says the other account is the same moment or a different moment.",
+      "limitations": "The unresolved relationship is this inference. The schema has no contradiction-class field. Contradiction class is an unresolved alternative between chronology and irreconcilable accounts.",
+      "legal_significance": "Blocks a draft from treating one proved departure as established.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#procedural-remedy"]
+    },
+    {
+      "proposition_id": "P-FX-CONTAINER",
+      "assertion": "Morgan Ellis carried away a crate labeled copper fittings.",
+      "classification": "disputed_proposition",
+      "supporting_evidence_ids": ["E-FX-CHEN"],
+      "contradictory_evidence_ids": ["E-FX-PATEL"],
+      "confidence_rationale": "Chen's line 2 is the support for a crate account. Patel's lines 2 and 3 describe a bag and deny seeing a crate.",
+      "limitations": "The dispute is about the event. Chen's words remain Chen's statement in P-FX-CHEN. The packet does not award the dispute to either witness.",
+      "legal_significance": "Whether a taking count needs one identified container is unverified; the pack does not settle which container, if any, was carried.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-VOSS",
+      "assertion": "Loren Voss wrote that Chen told the truth, that Patel is lying to protect Ellis, and that Voss did not ask Patel why the times differ.",
+      "classification": "attributed_statement",
+      "supporting_evidence_ids": ["E-FX-VOSS"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The lying sentence is line 3. Line 2 and line 4 are the other two sentences, recorded in the relevant content of E-FX-VOSS.",
+      "limitations": "The sentences are Voss's words. They do not establish that Patel lied or why. The supported criticism is that the note states that conclusion and states that Voss did not ask about the time difference. The schema has no intent-grade field. Under Test C discipline, intent grade is an unresolved alternative; the record supports at most an unperformed inquiry or confirmation bias, not deliberate misconduct.",
+      "legal_significance": "Preserves a source-tied criticism. It does not support a categorical misconduct accusation.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#intent-gap"]
+    },
+    {
+      "proposition_id": "P-FX-NO-MISCONDUCT",
+      "assertion": "This packet does not support an allegation that Loren Voss intentionally fabricated Avery Chen's statement or planted a label.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-FX-VOSS", "E-FX-VOSS-LIMIT"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "Line 5 of the note says the note does not say that Voss wrote Chen's statement or labeled a crate. No other shipped source records fabrication or a planted label.",
+      "limitations": "Legal availability of a misconduct remedy is unverified. This inference limits what the packet supports. It is not a finding about Voss's mind.",
+      "legal_significance": "A draft may keep the P-FX-VOSS criticism and may not request a misconduct sanction from this packet.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#intent-gap"]
+    },
+    {
+      "proposition_id": "P-FX-MISSING",
+      "assertion": "The storeroom inventory named as Exhibit S-4 is not in this fixture pack, and this pack contains no quotation of its contents.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-FX-INVENTORY-MISSING", "E-FX-CHARGE"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The charging sheet names Exhibit S-4 and says it is not included. The absence record has an empty quote and no hash.",
+      "limitations": "Conclusions that need the inventory contents stay limited by this gap. Manufacturing a quote would add text the pack does not have.",
+      "legal_significance": "Requires a missing-source status. It supplies no inventory fact.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-NO-STATE",
+      "assertion": "No shipped source in this pack states Morgan Ellis's intention, motive, or feelings.",
+      "classification": "inference",
+      "supporting_evidence_ids": ["E-FX-CHARGE", "E-FX-CHEN", "E-FX-PATEL", "E-FX-VIDEO", "E-FX-VOSS"],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The charging sheet, both witness statements, the camera log, and the Voss note were read. None of them states an intention, a motive, or a feeling.",
+      "limitations": "The limit is on this pack. It is not a finding that Ellis had a particular mental state, and it is not a finding that Ellis had none.",
+      "legal_significance": "A narrative may not invent a psychological state to fill the gap. Whether intent to deprive is an element is unverified; the pack has no explicit mental-state statement, and the adverse circumstantial inference from the labeled crate in E-FX-CHEN is contested and unresolved.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-RULE-ADV",
+      "assertion": "ILLUSTRATIVE FIXTURE RULE FX-ADV-1 is not real law and has no reporter citation. Its fixture text says an unexplained departure while carrying a container is enough to submit a taking count.",
+      "classification": "legal_rule",
+      "supporting_evidence_ids": [],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The text is authored as fixture text inside A-FX-RELIEF. No reporter was consulted because none is identified.",
+      "limitations": "Status on the argument is adverse. It is not reliance_approved. A draft must identify it, analyze it, and address it without citing it as law.",
+      "legal_significance": "Supplies the adverse-authority input for Test D.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    },
+    {
+      "proposition_id": "P-FX-RULE-SUP",
+      "assertion": "ILLUSTRATIVE FIXTURE RULE FX-SUP-1 is not real law and has no reporter citation. Its fixture text, for this exercise only, treats a taking count as requiring proof that the accused carried away property the charge identifies.",
+      "classification": "legal_rule",
+      "supporting_evidence_ids": [],
+      "contradictory_evidence_ids": [],
+      "confidence_rationale": "The text is authored as fixture text inside A-FX-RELIEF. It is marked research_pending.",
+      "limitations": "Not reliance_approved. Not a statute. Not a case.",
+      "legal_significance": "Gives the small controlled set a second labeled rule so a draft can discuss an element without inventing a reporter cite.",
+      "draft_locations": ["skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md#element-failure"]
+    }
+  ],
+  "legal_argument_records": [
+    {
+      "argument_id": "A-STRAT-ELEMENT-FAILURE",
+      "issue": "Whether the State's proffered evidence, as supplied in this synthetic pack, is sufficient on the taking alleged in the fictional charge. Whether intent to deprive or any other mental state is an element of the fictional offense is unverified and is an open research question.",
+      "legal_standard": "No real legal standard is adopted. Both fixture rules are fictional fixture text, not law, and neither is reliance_approved. FX-SUP-1 (research_pending) says only that a taking count requires proof that the accused carried away property the charge identifies. FX-ADV-1 (adverse) says an unexplained departure while carrying a container is enough to submit a taking count. Neither supplies a burden of proof, a mental-state element, a corpus delicti rule, or an admissibility rule; those remain unverified research items for the Fixture State. The defense position is tested against FX-ADV-1 as if it applied, and against FX-SUP-1 as if it applied, without treating either as verified.",
+      "material_fact_proposition_ids": [
+        "P-FX-CHARGE",
+        "P-FX-CHEN",
+        "P-FX-PATEL",
+        "P-FX-VIDEO",
+        "P-FX-SAME-DEPARTURE",
+        "P-FX-CONTAINER",
+        "P-FX-MISSING",
+        "P-FX-NO-STATE",
+        "P-FX-RULE-SUP",
+        "P-FX-RULE-ADV"
+      ],
+      "supporting_authorities": [
+        {
+          "citation": "ILLUSTRATIVE FIXTURE RULE FX-SUP-1 (fixture text only; not law)",
+          "pin": "taking proof (fixture text only)",
+          "proposition": "Requires affirmative proof that the accused carried away property identified in the charge.",
+          "status": "research_pending",
+          "verified_on": "",
+          "verification_method": "Synthetic fixture standard; no primary reporter verified."
+        }
+      ],
+      "adverse_authorities": [
+        {
+          "citation": "ILLUSTRATIVE FIXTURE RULE FX-ADV-1 (fixture text only; not law)",
+          "pin": "circumstantial submission (fixture text only)",
+          "proposition": "Purports to allow submission of a taking count based on an unexplained departure while carrying a container.",
+          "status": "adverse",
+          "verified_on": "",
+          "verification_method": "Synthetic adverse fixture rule; flagged for rebuttal."
+        }
+      ],
+      "defense_reasoning": "IRAC / Toulmin Strategy Analysis: 1. Element Breakdown: The fictional charge sheet alleges a taking of copper fittings belonging to the North Wharf Cooperative (P-FX-CHARGE). Fixture rule FX-SUP-1 addresses proof that the accused carried away property the charge identifies; whether intent to deprive or corpus delicti corroboration are elements or requirements is unverified (open research). 2. Evidence-to-Element: (a) Chen states a crate labeled 'copper fittings' and says Chen did not see inside it (P-FX-CHEN). Patel states an unmarked canvas bag at a different time and exit and says Patel did not see a crate (P-FX-PATEL). The record does not establish whether these describe one departure or separate moments (P-FX-SAME-DEPARTURE); either reading is possible, and the State may contend they are compatible. (b) Exhibit S-4 is named on the charge sheet but is not in this fixture pack (P-FX-MISSING, E-FX-INVENTORY-MISSING); its contents and collection or disclosure status are unknown, so this pack cannot show whether an inventory would confirm or undercut a shortfall. (c) Intent: no source in the pack states an intention or motive (P-FX-NO-STATE). The State may argue that carrying a crate labeled 'copper fittings' is adverse circumstantial evidence; its weight is contested and is not resolved by the absence of an explicit mental-state statement. 3. Toulmin: Claim: the pack does not establish which container left or that fittings were taken. Grounds: P-FX-CHEN, P-FX-PATEL, P-FX-VIDEO, P-FX-MISSING. Warrant (candidate, unverified): where observations conflict on container and the relationship between them is unresolved, proof of the charged taking may be incomplete. Backing: none verified. Qualifier: depends on the unverified elements and on any later production of S-4. Rebuttal: FX-ADV-1, if it applied, could allow the count to be submitted on Chen's account alone; the defense would then rely on credibility, event identity, and the limits of Chen's observation. 4. Strategic Risk: Holding the State to its proof has real trade-offs: it leaves the defense dependent on how the unverified standards are resolved, and pretrial discovery or clarification requests can reveal the discrepancy theory (see A-STRAT-INVESTIGATIVE-REMEDY).",
+      "strongest_opposing_argument": "The State may contend, as a possible position and not an established fact, that under fixture rule FX-ADV-1 (adverse; fictional; unverified) Chen's account of Ellis leaving with a crate labeled 'copper fittings' at about 21:10 is an unexplained departure while carrying a container sufficient to submit the count; that Chen's not seeing inside the crate goes to weight; that Patel's and the camera's later observations (P-FX-PATEL, P-FX-VIDEO) concern a different moment and do not contradict Chen; and that a witness who saw only a bag does not undercut a witness who saw a crate. The State may also contend the missing inventory is not required to prove a taking.",
+      "defense_rebuttal": "If FX-ADV-1 applied as written, Chen's account might suffice to submit the count, so the defense does not rest on rejecting that rule as fictional; FX-SUP-1 is equally fictional and unverified and gets the same treatment. On the facts: (1) Chen states the label and says Chen did not see inside the crate, so this witness does not establish the contents; (2) the relationship between Chen's and Patel's observations is unresolved, so the State's compatibility argument is possible but is not shown by the pack; (3) Patel states no knowledge about the north ramp, and the camera log does not name the person or describe what was carried (E-FX-VIDEO), so neither establishes a second departure or identifies Ellis; (4) Exhibit S-4 is not in the pack, so this pack cannot show whether any fittings were missing; (5) the pack holds no explicit statement of intent, but the labeled-crate evidence is adverse circumstantial evidence whose weight remains contested. Burden, mental-state, corpus delicti, and admissibility standards stay open research items.",
+      "preservation_requirements": [
+        "Consider a motion for judgment of acquittal at the close of the State's case and renewal at the close of all evidence, subject to verified Fixture State procedure and timing.",
+        "Research whether a requested instruction on inferring taking or intent from presence or from carrying an uninspected container is available and correctly worded under Fixture State law before requesting it; submit any instruction in writing as local rules require.",
+        "Record that Exhibit S-4 was named and is not in this pack, and research whether an objection to secondary testimony about inventory losses is available under Fixture State evidence rules."
+      ],
+      "requested_remedy": "Candidate requests, each subject to verified vehicle and threshold: a pretrial request for clarification or a bill of particulars exploring the State's departure theory (see A-STRAT-INVESTIGATIVE-REMEDY), and a later motion for judgment of acquittal on failure of proof if the unverified standards support it.",
+      "required_additional_proof": [
+        "Production of Exhibit S-4 storeroom inventory to determine whether any shortfall occurred.",
+        "Clock calibration records for Camera NW-2 to determine exact offset against eyewitness statements.",
+        "Lighting and visibility measurements at north ramp and south stair."
+      ],
+      "open_research_questions": [
+        "Verify the burden of proof, the elements of the fictional offense (including whether intent to deprive is an element), and any corpus delicti corroboration requirement for Fixture State.",
+        "Confirm whether Fixture State requires corroboration of corpus delicti independent of circumstantial departure.",
+        "Verify whether Fixture State pattern jury instructions include an unperformed police investigation instruction."
+      ],
+      "recommendation": "investigate"
+    },
+    {
+      "argument_id": "A-STRAT-INTENT-GAP",
+      "issue": "Whether Loren Voss's investigative note accusing Samir Patel of lying establishes bad faith, deliberate misconduct, or evidence fabrication sufficient to support a motion for sanctions or dismissal.",
+      "legal_standard": "Test C discipline and the kit's five-tier working vocabulary for official conduct (negligence, error, confirmation bias, recklessness, deliberate misconduct), which is not the accused's statutory mens rea. No sanction or dismissal standard is verified for Fixture State; any such standard is an open research item. As evidence discipline, allegations of intentional bad faith should rest on evidence proportionate to the claim and not on suspicion or an investigative omission alone.",
+      "material_fact_proposition_ids": [
+        "P-FX-VOSS",
+        "P-FX-NO-MISCONDUCT"
+      ],
+      "supporting_authorities": [],
+      "adverse_authorities": [],
+      "defense_reasoning": "IRAC / Test C Analysis: 1. Governing Principle: Allegations of deliberate misconduct by investigators need evidence proportionate to the claim; an evidentiary gap is not converted into an unsupported categorical accusation. The sanction standard itself is unverified. 2. Record Scrutiny: Loren Voss wrote that Chen told the truth, that Patel is lying to protect Ellis, and that Voss did not ask Patel why the times differ (P-FX-VOSS). Line 5 of the note states what the note does not say about authorship of Chen's statement or labeling a crate (E-FX-VOSS-LIMIT); that limits the writing and is neither proof nor disproof of what Voss did. 3. Intent Grading: The note supports the criticism that it records a credibility conclusion and records that Voss did not ask Patel about the time difference. Confirmation bias (Tier 3) is a hypothesis for cross-examination, not a finding. The pack contains no evidence of fabrication, tampering, or bad faith (Tier 5), and official intent is unresolved. 4. Strategic Risk: A pretrial sanction or bad-faith motion would lack evidentiary support in this pack, could cost credibility with the tribunal, and could disclose cross-examination themes early. 5. Preserved Criticism: the note states that Voss did not ask Patel why the times differ. Other inquiries Voss or others may have made are not shown in this pack, so no broader claim of an incomplete investigation is made without further records.",
+      "strongest_opposing_argument": "The State may argue, as possible positions and not established facts, that Voss's short note may not record the whole inquiry and may reflect an early or partial impression; that Voss may have had grounds for crediting Chen over Patel that this pack does not show; and that if Chen and Patel observed different moments, Patel's account does not contradict Chen, so not asking Patel about the time difference would be immaterial. The sources do not establish an operational basis, when the note was written, or the completeness of the inquiry.",
+      "defense_rebuttal": "The defense accepts that these are legitimate State hypotheses and does not claim the pack disproves them. The supported point is narrow: the note states that Voss did not ask Patel why the times differ, and it records a credibility conclusion about both witnesses. Whether other inquiries occurred is unknown, so the records and interviews listed below are needed before arguing that the investigation was incomplete. If the observations are compatible, the omission may matter less; that depends on the unresolved question in P-FX-SAME-DEPARTURE. Line 5 of the note (E-FX-VOSS-LIMIT) limits what the note itself says and neither supports nor refutes any fabrication allegation; P-FX-NO-MISCONDUCT records only that this pack does not support such an allegation. The legitimate avenue is cross-examination on the note's contents, not a motion for bad-faith dismissal.",
+      "preservation_requirements": [
+        "Preserve the note's statement that Voss did not ask Patel why the times differ for use in cross-examination at trial.",
+        "Do not plead intentional fabrication in any pretrial motion.",
+        "Consider an objection if the State offers Voss's opinion that Patel is lying, subject to Fixture State evidence rules (see open research question)."
+      ],
+      "requested_remedy": "Reject any motion for dismissal or sanctions for intentional misconduct on this pack; preserve the note's recorded omission and the confirmation-bias hypothesis for cross-examination, subject to verified evidence rules.",
+      "required_additional_proof": [
+        "Deposition or interview of Loren Voss regarding the basis for discounting Patel's account.",
+        "Records showing when the note was written and what other inquiries were made.",
+        "Departmental policy manuals governing investigator notes and witness conflict resolution."
+      ],
+      "open_research_questions": [
+        "Review Fixture State evidentiary rules on admissibility of an investigating officer's opinion testimony regarding witness credibility."
+      ],
+      "recommendation": "reject"
+    },
+    {
+      "argument_id": "A-STRAT-INVESTIGATIVE-REMEDY",
+      "issue": "Whether the defense should seek pretrial clarification or a bill of particulars regarding the differing north-ramp crate and south-stair canvas bag accounts, and investigate disclosure of Exhibit S-4.",
+      "legal_standard": "No verified rule or vehicle for a bill of particulars, election, or notice of charges is adopted, and neither fixture rule supplies one. Where discovery presents differing accounts of departure time, location, or container, a request for clarification may explore which occurrence the State relies on; whether it is available, and on what showing, is unverified.",
+      "material_fact_proposition_ids": [
+        "P-FX-CHARGE",
+        "P-FX-CHEN",
+        "P-FX-PATEL",
+        "P-FX-SAME-DEPARTURE",
+        "P-FX-CONTAINER",
+        "P-FX-MISSING"
+      ],
+      "supporting_authorities": [],
+      "adverse_authorities": [],
+      "defense_reasoning": "IRAC / Procedural Remedy Analysis: 1. Factual Ambiguity: The charge sheet alleges one taking on 12 April 2021 (P-FX-CHARGE). Discovery contains Chen's observation at about 21:10 at the north ramp with a crate labeled 'copper fittings' and Patel's observation at about 21:40 at the south stair with an unmarked canvas bag. 2. Unresolved Event Identity: The record does not establish whether these are the same departure or separate moments (P-FX-SAME-DEPARTURE). Only if the State's evidence actually presents more than one distinct act could a duplicity or unanimity concern arise; whether Fixture State law recognizes it, and on what showing, is unverified. 3. Remedy Selection and Trade-Offs: A request for clarification or a bill of particulars would ask which occurrence the State relies on. The vehicle, the required showing, timing, and the court's discretion are all unverified, and the court could deny or defer the request. Moving pretrial may disclose the defense's discrepancy theory and give the State time to re-interview witnesses or adjust its proof; waiting preserves cross-examination but may forgo clarity. A request for production of Exhibit S-4 is a separate discovery inquiry and should not be combined with any election request. 4. Alternatives: If clarification is denied or deferred, the defense may consider a unanimity instruction, but only if the trial evidence presents more than one act, verified Fixture State law supports it, and local instruction procedure is followed. Recommendation: investigate.",
+      "strongest_opposing_argument": "The State may argue that the two accounts describe one continuous course of conduct or are compatible observations, that it may present both as circumstantial evidence, and that pretrial election is premature and discretionary. These are possible State positions; the pack neither establishes nor rules them out.",
+      "defense_rebuttal": "Seeking particulars tests whether the State relies on one occurrence or two and what container it alleges, without assuming the answer. If the court declines or defers, the defense can reassess at trial, preserving objections and alternatives to the extent verified procedure allows. If the State answers that the accounts are compatible, that answer is informative and may weaken the discrepancy theory, a cost the defense must weigh before moving.",
+      "preservation_requirements": [
+        "Decide, after research on the deadline and vehicle (unverified), whether to file a request for clarification or a bill of particulars before any pretrial deadline, or to hold the discrepancy for trial cross-examination to avoid premature disclosure.",
+        "If a request is made and denied or deferred, research how and when to renew it under Fixture State procedure.",
+        "If the trial evidence presents more than one act and verified law supports it, consider a written request for a unanimity instruction worded to the acts actually in evidence."
+      ],
+      "requested_remedy": "Candidate request, subject to verified vehicle and showing: clarification or bill of particulars asking which occurrence (the 21:10 north-ramp account or the 21:40 south-stair account) and which container the State relies on, handled separately from an inquiry into the production status of Exhibit S-4.",
+      "required_additional_proof": [
+        "Physical layout of the North Wharf Cooperative facility showing distance and travel time between north ramp and south stair."
+      ],
+      "open_research_questions": [
+        "Identify the Fixture State vehicle, required showing, timing, and discretion standard for a bill of particulars or election request.",
+        "Research Fixture State law on duplicitous charging and unanimity instructions for separate acts, and whether the facts here would trigger them."
+      ],
+      "recommendation": "investigate"
+    }
+  ],
+  "agent_handoff": {
+    "handoff_id": "H-STRAT-V04013",
+    "producing_agent": "criminal-defense-strategy",
+    "agent_version": "0.4.0-v04013",
+    "task_id": "V040-13",
+    "inputs_received": [
+      "V040-08 schemas: matter_context, evidence_record, proposition_record, legal_argument_record, agent_handoff",
+      "Shared synthetic fixture FX-HARBOR-WHARF-001 at tests/fixtures/v040_shared/clean/packet.json",
+      "Source documents: charge-sheet.txt, chen-statement.txt, patel-statement.txt, video-log.txt, voss-note.txt",
+      "References: strategy-reasoning-frameworks.md, mens-rea-intent-grading.md, burdens-remedies-preservation.md"
+    ],
+    "work_performed": "Conducted comprehensive 12-point criminal defense strategy evaluation of synthetic matter FX-HARBOR-WHARF-001 under governing precedence and Test C discipline. Built three structured legal argument records: (1) A-STRAT-ELEMENT-FAILURE (taking failure-of-proof under unverified standards, intent element unverified, questions about the unsupplied Exhibit S-4, crate vs bag accounts with unresolved event identity; recommendation: investigate); (2) A-STRAT-INTENT-GAP (strict Test C mens rea examination of Voss note, grading official intent as unresolved with confirmation bias hypothesis, addressing State counterargument, rejecting unsupported bad-faith dismissal, preserving cross-examination criticism; recommendation: reject for sanction, preserve for trial); (3) A-STRAT-INVESTIGATIVE-REMEDY (pretrial motion for bill of particulars / clarification of theory between north ramp and south stair with explicit strategic risk analysis; recommendation: investigate). Authored draft-ready analytical paragraphs in examples/v04013_strategy_paragraphs.md for direct consumption by Defense Writing Studio (V040-16).",
+    "findings": [
+      "On this pack the taking is not established: Chen says Chen did not see inside the crate; Patel states a canvas bag and no crate, and whether the two observations are the same departure is unresolved; Exhibit S-4 is not supplied (contents and collection/disclosure status unknown), so this pack cannot show an inventory loss. Governing standards are unverified.",
+      "Whether intent is an element is unverified. The pack has no explicit statement of intent; the State may rely on adverse circumstantial evidence from the labeled crate, whose weight is contested and unresolved.",
+      "Under Test C discipline, Loren Voss's note states that Voss did not ask Patel why the times differ; confirmation bias is a cross-examination hypothesis, other inquiries are unknown, and official intent is unresolved. The pack contains no evidence of deliberate falsification or bad faith, so a misconduct-sanctions motion is rejected on this pack. The State may respond that the note is incomplete or that the observations are compatible; the answer needs further records.",
+      "Procedural remedy regarding the 21:10 north ramp and 21:40 south stair observations is classified for investigation: whether they describe the same event or separate moments is unresolved; seeking particulars explores the State's theory while carrying the strategic trade-off of alerting the prosecution to the discrepancy before trial; a unanimity jury instruction is a candidate alternative only if the trial evidence presents more than one act and verified law supports it; the vehicle, showing, and court discretion are unverified.",
+      "All 12 proposition records and 3 legal argument records adhere strictly to V040-08 schema rules, disclose honest verification statuses, and contain zero real client data."
+    ],
+    "artifacts": [
+      "skills/criminal-defense-strategy/SKILL.md",
+      "skills/criminal-defense-strategy/references/strategy-reasoning-frameworks.md",
+      "skills/criminal-defense-strategy/references/mens-rea-intent-grading.md",
+      "skills/criminal-defense-strategy/references/burdens-remedies-preservation.md",
+      "skills/criminal-defense-strategy/examples/v04013_strategy_packet.json",
+      "skills/criminal-defense-strategy/examples/v04013_strategy_paragraphs.md"
+    ],
+    "verification_results": [
+      "Local schema validation executed via controller.schemas.validate: zero defects across matter_context, 7 evidence records, 12 proposition records, 3 legal argument records, and agent handoff.",
+      "Exact quotes verified against shared fixture source files in tests/fixtures/v040_shared/sources/ with matching SHA-256 hashes.",
+      "Test C compliance verified: no unsupported intentional misconduct assertions are made; evidentiary gaps are explicitly labeled; intent is graded through the 5-tier hierarchy."
+    ],
+    "unresolved_issues": [
+      "Exhibit S-4 storeroom inventory is absent from the fixture pack; analysis remains bounded by this gap.",
+      "Illustrative rules FX-SUP-1 and FX-ADV-1 are synthetic fixture text and carry no reporter citation; status remains research_pending and adverse.",
+      "Burden of proof, offense elements (including any mental-state element), corpus delicti, admissibility, remedy vehicle, and unanimity-instruction law for Fixture State are unverified.",
+      "These records have not been run through corrective-playbook-gate or legal-quality-control and carry no gate approval.",
+      "Full controller end-to-end execution of this strategy packet will occur in subsequent integration tasks (V040-16 and V040-25)."
+    ],
+    "dependencies": ["V040-08", "V040-30", "V040-16"],
+    "status": "partial"
+  }
+}

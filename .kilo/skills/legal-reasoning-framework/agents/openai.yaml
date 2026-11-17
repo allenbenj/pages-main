@@ -1,0 +1,3 @@
+interface:
+  display_name: "Legal Reasoning Framework"
+  short_description: "Shared IRAC, Toulmin, issue-tree, and argument-testing methods"

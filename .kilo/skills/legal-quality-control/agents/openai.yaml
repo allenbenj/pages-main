@@ -1,0 +1,3 @@
+interface:
+  display_name: "Legal Quality Control"
+  short_description: "Final audit of legal work, claim-by-claim checks, and instruction reviews"

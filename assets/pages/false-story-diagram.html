@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/styles.css?v=20261003k">
+  <link rel="stylesheet" href="shared/styles.css?v=20261102">
   <style>
     body.diagram-page {
       color: var(--light);
@@ -87,6 +87,7 @@
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
                     <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="impeachment.html">40 Impeachment Cards</a>
                     <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
                     <a role="menuitem" href="New_Face.html">New Face</a>
                     <a role="menuitem" href="general-videos.html">General Videos</a>
@@ -139,24 +140,14 @@
           <a class="button" href="contradictions.html#false-story-diagram" target="_top">Return to Contradictions</a>
         </p>
 
-        <details class="diagram-static-backup" open>
-          <summary>Open static preview</summary>
-          <figure class="diagram-static-preview">
-            <img src="content/images/evidence/graphics/house-area/False%20Story.webp"
-                 alt="False Story relationship diagram"
-                 data-modal-image="content/images/evidence/graphics/house-area/False Story.webp">
-            <figcaption>Full diagram preview. Click the image to enlarge it.</figcaption>
-          </figure>
-        </details>
-
-        <details class="diagram-interactive" id="false-story-interactive">
+        <details class="diagram-interactive" id="false-story-interactive" open>
           <summary>Interactive draw.io viewer</summary>
         <div class="connections-wrapper">
           <aside class="connections-sidebar" id="false-story-sidebar">
             <div class="connections-sidebar-header">
               <strong>Nodes</strong>
               <div class="u-migrated-06307df0">
-                <a class="button" id="false-story-open-editor" href="documents/connections/False%20Story.web.drawio.xml" title="Download/Open web XML" target="_top">Download XML</a>
+                <a class="button" id="false-story-open-editor" href="documents/connections/False%20Story.drawio.xml" title="Download/Open XML" target="_top">Download XML</a>
                 <button id="false-story-fit" type="button" title="Fit the full diagram in the viewer">Fit Diagram</button>
                 <a class="button u-migrated-17dc7330" href="content/images/evidence/graphics/house-area/False%20Story.webp" title="View diagram image" target="_top">View Image</a>
               </div>
@@ -183,10 +174,21 @@
               id="false-story-iframe"
               title="False Story diagram"
               tabindex="0"
+              src="https://embed.diagrams.net/?embed=1&amp;spin=1&amp;proto=json&amp;libraries=0&amp;saveAndExit=0&amp;noSaveBtn=1&amp;noExitBtn=1"
               data-src="https://embed.diagrams.net/?embed=1&amp;spin=1&amp;proto=json&amp;libraries=0&amp;saveAndExit=0&amp;noSaveBtn=1&amp;noExitBtn=1"
               class="u-migrated-e5b56740"></iframe>
           </div>
         </div>
+        </details>
+
+        <details class="diagram-static-backup">
+          <summary>Open static preview image</summary>
+          <figure class="diagram-static-preview">
+            <img src="content/images/evidence/graphics/house-area/False%20Story.webp"
+                 alt="False Story relationship diagram"
+                 data-modal-image="content/images/evidence/graphics/house-area/False Story.webp">
+            <figcaption>Full diagram preview. Click the image to enlarge it.</figcaption>
+          </figure>
         </details>
       </section>
     </main>
@@ -290,10 +292,10 @@
 
       try {
         const drawioCandidates = [
-          'documents/connections/False Story.web.drawio.xml',
-          'documents/connections/False%20Story.web.drawio.xml',
           'documents/connections/False Story.drawio.xml',
-          'documents/connections/False%20Story.drawio.xml'
+          'documents/connections/False%20Story.drawio.xml',
+          'documents/connections/False Story.web.drawio.xml',
+          'documents/connections/False%20Story.web.drawio.xml'
         ];
         let filePath = null;
         let response = null;

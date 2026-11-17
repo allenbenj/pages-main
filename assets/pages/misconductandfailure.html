@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=20261003k">
+    <link rel="stylesheet" href="shared/styles.css?v=20261102">
 <style>
         body.mindmap-page {
             color: var(--light);
@@ -82,6 +82,7 @@
                 <button class="nav-tab nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
                     <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="impeachment.html">40 Impeachment Cards</a>
                     <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
                     <a role="menuitem" href="New_Face.html">New Face</a>
                     <a role="menuitem" href="general-videos.html">General Videos</a>
@@ -121,7 +122,6 @@
             <a href="#mindmap" target="_top">Lauren Deal Narrative</a>
             <a href="#mindmap2" target="_top">Perjury and Misconduct</a>
             <a href="#mindmap3" target="_top">Evidence Network Analysis</a>
-            <a href="#top" target="_top">Back to Top</a>
         </nav>
 
         <section id="mindmap" class="mindmap-section">
@@ -344,11 +344,24 @@
             background: rgba(15,23,42,0.72);
             text-decoration: none;
             color: #e2e8f0;
+            transition: all 0.2s ease;
         }
 
         .context-card-link:hover {
             border-color: rgba(212,175,55,0.64);
             background: rgba(30,41,59,0.92);
+            transform: translateX(2px);
+        }
+
+        .context-card-link.direct-loc {
+            border-left: 3px solid var(--gold-text, #d4b85c);
+            background: rgba(22, 29, 32, 0.94);
+            border-color: rgba(212, 184, 92, 0.35);
+        }
+
+        .context-card-link.direct-loc:hover {
+            border-color: rgba(212, 184, 92, 0.7);
+            background: rgba(36, 44, 48, 0.98);
         }
 
         .context-card-label {
@@ -356,6 +369,13 @@
             font-size: 0.72rem;
             color: #93c5fd;
             margin-bottom: 3px;
+        }
+
+        .context-card-label.direct-loc {
+            color: var(--gold-text, #d4b85c);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .context-card-title {
@@ -420,44 +440,273 @@
                     this.root = null;
                     this.cardIndex = [];
                     this.cardIndexPromise = this.loadCardIndex();
+                    this.locationLinkRules = [
+                        // Escape, Flight, Briars, Terrain
+                        {
+                            includesAny: ['terrain', 'briar', 'airfield', 'escape', 'woods', 'brush', 'ground'],
+                            links: [
+                                {
+                                    href: 'contradictions.html#geographic-impossibility',
+                                    label: 'Physical Contradiction',
+                                    title: 'Geographic & Directional Impossibility (Airfield vs. Briars)'
+                                },
+                                {
+                                    href: 'general-videos.html#where-are-the-briars',
+                                    label: 'Forensic Video Exhibit V-05',
+                                    title: 'Where Are the Briars? — Scene Survey'
+                                },
+                                {
+                                    href: 'case-study.html#escape-narrative',
+                                    label: 'Case Record Analysis',
+                                    title: 'The Escape Narrative — Terrain & Light'
+                                },
+                                {
+                                    href: 'Deal\'s Ever Changing Testimony.html#plausibility-escape',
+                                    label: 'Testimony Review',
+                                    title: 'Deal\'s Testimony: Escape Feasibility & Plausibility'
+                                }
+                            ]
+                        },
+                        // Lunar Illumination & Nighttime Darkness
+                        {
+                            includesAny: ['lunar', 'illumination', 'darkness', 'gibbous', 'moonlight', 'lighting'],
+                            links: [
+                                {
+                                    href: 'contradictions.html#lunar-illumination',
+                                    label: 'Forensic Optics & Data',
+                                    title: 'Lunar Illumination & Nighttime Visibility (~70% Moon)'
+                                },
+                                {
+                                    href: 'contradictions.html#darkness-narrative',
+                                    label: 'Narrative Contradiction',
+                                    title: 'Darkness as Selective Narrative Device'
+                                },
+                                {
+                                    href: 'case-study.html#escape-narrative',
+                                    label: 'Case Record Analysis',
+                                    title: 'Astronomical Verification vs. "Pitch-Black" Claim'
+                                }
+                            ]
+                        },
+                        // Directional Errors & Highways
+                        {
+                            includesAny: ['directional', 'route 421', 'route 1', 'pickup point'],
+                            links: [
+                                {
+                                    href: 'contradictions.html#geographic-impossibility',
+                                    label: 'Physical Contradiction',
+                                    title: 'Directional Errors: Route 421 vs. Route 1 Highway Reality'
+                                },
+                                {
+                                    href: 'timeline.html',
+                                    label: 'Chronology Matrix',
+                                    title: 'Case Timeline: The Route 1 Pickup'
+                                }
+                            ]
+                        },
+                        // Witness Conflicts, DeMarco & Identification
+                        {
+                            includesAny: ['demarco', 'identification vs', 'distinguished car', 'mutual visibility', 'joseph'],
+                            links: [
+                                {
+                                    href: 'contradictions.html#witness-claims',
+                                    label: 'Witness Clash',
+                                    title: 'Witness Claims: DeMarco Field Sighting vs. Total Concealment'
+                                },
+                                {
+                                    href: 'impeachment.html?q=Deal%20Gives%20Keys%20to%20Demarco',
+                                    label: 'Evidence Card',
+                                    title: 'Deal Gives Keys to DeMarco (Excluding Trust Aggravator)'
+                                },
+                                {
+                                    href: 'case-study.html#escape-narrative',
+                                    label: 'Case Study',
+                                    title: 'DeMarco vs. Deal Location Contradictions'
+                                }
+                            ]
+                        },
+                        // Physiological Implausibility & Performance
+                        {
+                            includesAny: ['physiological', 'bmi', 'obesity', 'outran', 'stumbling', 'balance', 'performance claim'],
+                            links: [
+                                {
+                                    href: 'contradictions.html#physiological-implausibility',
+                                    label: 'Biomechanical Analysis',
+                                    title: 'Physiological Implausibility: BMI 31.9 & Alcohol Impairment'
+                                },
+                                {
+                                    href: 'general-videos.html#lies-part-3',
+                                    label: 'Forensic Video Exhibit V-04',
+                                    title: 'Bar Video Analysis: Physical Stumbling & Motor Impairment'
+                                },
+                                {
+                                    href: 'case-study.html#five-minute-impossibility',
+                                    label: 'Timeline Impossibility',
+                                    title: 'The Five-Minute Impossibility Sequence'
+                                }
+                            ]
+                        },
+                        // DNA and Lab Reports
+                        {
+                            includesAny: ['dna', 'sperm', 'forensic', 'ystr', 'laboratory result', 'sbi report', 'fluorescence'],
+                            links: [
+                                {
+                                    href: 'impeachment.html?q=DNA%3A%20%E2%80%9CFailed%20to%20Reveal%20Spermatozoa%E2%80%9D',
+                                    label: 'Direct Evidence Card',
+                                    title: 'DNA: “Failed to Reveal Spermatozoa”'
+                                },
+                                {
+                                    href: 'impeachment.html?q=Lab%20Chain%20of%20Custody',
+                                    label: 'Direct Evidence Card',
+                                    title: 'Lab Chain of Custody: Submission, Return, & 3-Year Resubmission'
+                                },
+                                {
+                                    href: 'case-study.html#forensic-disproof',
+                                    label: 'Case Record Analysis',
+                                    title: 'The DNA Misrepresentation: ADA Claim vs. SBI Reality'
+                                },
+                                {
+                                    href: 'documentspage.html',
+                                    label: 'Official Court File',
+                                    title: 'Verified SHA-256 Laboratory Reports & Files'
+                                }
+                            ]
+                        },
+                        // Carmen Love, James Morrison, Bonfire & Affidavits
+                        {
+                            includesAny: ['carmen', 'james', 'bonfire', 'kendall drive'],
+                            links: [
+                                {
+                                    href: 'impeachment.html?q=Freeman%E2%80%99s%20Familial%20Relationship',
+                                    label: 'Direct Evidence Card',
+                                    title: 'Freeman’s Familial Relationship (Concealed Kinship)'
+                                },
+                                {
+                                    href: 'impeachment.html?q=Carmen%E2%80%99s%20Original%20Statements',
+                                    label: 'Direct Evidence Card',
+                                    title: 'Carmen’s Original Statements to Detective Freeman'
+                                },
+                                {
+                                    href: 'general-videos.html#changing-stories',
+                                    label: 'Forensic Video Exhibit V-01',
+                                    title: 'Changing Stories: Freeman\'s Affidavits vs. Recorded Audio'
+                                },
+                                {
+                                    href: 'general-videos.html#lies-part-2',
+                                    label: 'Forensic Video Exhibit V-03',
+                                    title: 'Surveillance Video: Bar Departures Demolish Closing Narrative'
+                                }
+                            ]
+                        },
+                        // Warrants, Magistrate & Arrest
+                        {
+                            includesAny: ['warrant', 'magistrate', 'franks', 'warrantless'],
+                            links: [
+                                {
+                                    href: 'impeachment.html?q=Warrantless%20Arrest%20Posed%20as%20Warrant%20Arrest',
+                                    label: 'Direct Evidence Card',
+                                    title: 'Warrantless Arrest Posed as Warrant Arrest'
+                                },
+                                {
+                                    href: 'misconduct.html',
+                                    label: 'Misconduct Findings',
+                                    title: 'Fourth Amendment Violations & Unlawful Detention'
+                                }
+                            ]
+                        },
+                        // Investigative Failures & Narrative Drift
+                        {
+                            includesAny: ['narrative drift', 'conscious narrative', 'investigative failure', 'tunnel vision'],
+                            links: [
+                                {
+                                    href: 'New_Face.html',
+                                    label: 'Statement of Indictment',
+                                    title: 'The New Face of Injustice: Narrative Construction'
+                                },
+                                {
+                                    href: 'misconduct.html',
+                                    label: 'Accountability Record',
+                                    title: 'Investigative Failures: Selective Witness Interviews'
+                                }
+                            ]
+                        }
+                    ];
+
                     this.nodeLinkRules = [
                         {
                             includesAny: ['carmen', 'james', 'bonfire'],
-                            queries: ['Carmen’s Original Statements', 'Bonfire & Bar Closing: Temporal Impossibility']
+                            queries: ['Carmen’s Original Statements', 'The Alleged Bonfire Invitation', 'Bonfire and Bar Closing: Temporal Impossibility']
                         },
                         {
                             includesAny: ['hug', 'greeting'],
-                            queries: ['The Greeting / Hug', 'Direct Clash With Accuser’s Later Story']
+                            queries: ['Initial Hug / Warmth Narrative', 'Direct Clash With Accuser’s Later Story']
                         },
                         {
-                            includesAny: ['dna', 'sperm', 'forensic'],
-                            queries: ['DNA: “Failed to Reveal Spermatozoa”', 'Exhibit 4 – Facebook Messages']
+                            includesAny: ['dna', 'sperm', 'forensic', 'ystr'],
+                            queries: ['DNA: “Failed to Reveal Spermatozoa”', 'Lab Chain of Custody: Submission, Return, and 3-Year Resubmission']
                         },
                         {
-                            includesAny: ['warrant', 'magistrate', 'franks'],
-                            queries: ['Warrantless Arrest Posed as Warrant Arrest']
+                            includesAny: ['warrant', 'magistrate', 'franks', 'warrantless'],
+                            queries: ['Warrantless Arrest Posed as Warrant Arrest', 'Used as Probable Cause for Arrest']
                         },
                         {
                             includesAny: ['position of trust', 'aggravator'],
-                            queries: ['The Manufactured “Position of Trust”']
+                            queries: ['The Manufactured “Position of Trust”', 'Defendant Not In A Position of Trust']
                         },
                         {
                             includesAny: ['biomechanical', 'bathroom', 'layout'],
-                            queries: ['The Bathroom Paradox', 'House Layout Knowledge']
+                            queries: ['The Bathroom Paradox', 'Bathroom Sequence / Clothing Removal']
+                        },
+                        {
+                            includesAny: ['bruise', 'restraint', 'injury'],
+                            queries: ['The Bruises That Never Existed', 'Bruises from Restraint', 'Freeman Seeing Bruises in Interview']
+                        },
+                        {
+                            includesAny: ['demarco', 'keys'],
+                            queries: ['Deal Gives Keys to Demarco']
+                        },
+                        {
+                            includesAny: ['peter west', 'leave together'],
+                            queries: ['Peter, Carmen, and James Leave Together Claim']
                         }
                     ];
+
                     this.nodeDirectLinks = [
                         {
-                            includesAny: ['undisclosed familial relationship', 'carmen love', 'giglio'],
-                            query: 'Freeman’s Familial Relationship'
+                            includesAny: ['undisclosed familial relationship', 'carmen love', 'giglio', 'concealment of relationship'],
+                            url: 'impeachment.html?q=Freeman%E2%80%99s%20Familial%20Relationship'
                         },
                         {
-                            includesAny: ['concealment of relationship'],
-                            query: 'Freeman’s Familial Relationship'
+                            includesAny: ['dna', 'spermatozoa', 'ystr', 'laboratory result'],
+                            url: 'impeachment.html?q=DNA%3A%20%E2%80%9CFailed%20to%20Reveal%20Spermatozoa%E2%80%9D'
                         },
                         {
-                            includesAny: ['tunnel vision', 'my job is to prove guilt'],
-                            query: '“We Will Reinforce He Committed a Crime”'
+                            includesAny: ['airfield', 'briar', 'terrain', 'woods', 'escape', 'brush'],
+                            url: 'contradictions.html#geographic-impossibility'
+                        },
+                        {
+                            includesAny: ['lunar illumination', '70%', 'moonlight', 'darkness narrative'],
+                            url: 'contradictions.html#lunar-illumination'
+                        },
+                        {
+                            includesAny: ['demarco', 'mutual visibility', 'vehicle'],
+                            url: 'contradictions.html#witness-claims'
+                        },
+                        {
+                            includesAny: ['bmi', 'obesity', 'outran', 'physiological'],
+                            url: 'contradictions.html#physiological-implausibility'
+                        },
+                        {
+                            includesAny: ['warrant', 'magistrate', 'warrantless'],
+                            url: 'impeachment.html?q=Warrantless%20Arrest%20Posed%20as%20Warrant%20Arrest'
+                        },
+                        {
+                            includesAny: ['position of trust', 'aggravator'],
+                            url: 'impeachment.html?q=The%20Manufactured%20%E2%80%9CPosition%20of%20Trust%E2%80%9D'
+                        },
+                        {
+                            includesAny: ['bathroom', 'biomechanical', 'layout'],
+                            url: 'impeachment.html?q=The%20Bathroom%20Paradox'
                         }
                     ];
 
@@ -496,18 +745,16 @@
 
                 async loadCardIndex() {
                     try {
-                        const res = await fetch('documentspage.html', { cache: 'no-store' });
+                        const res = await fetch('documents/data/contradictions.json', { cache: 'no-store' });
                         if (!res.ok) return;
-                        const html = await res.text();
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const cards = Array.from(doc.querySelectorAll('.card'));
-                        this.cardIndex = cards.map((card) => {
-                            const label = (card.querySelector('.card-label')?.textContent || 'Card').trim();
-                            const title = (card.querySelector('.card-title')?.textContent || 'Untitled').trim();
-                            const body = (card.querySelector('.card-body')?.textContent || card.textContent || '').trim();
+                        const data = await res.json();
+                        this.cardIndex = (data.cards || []).map((card) => {
+                            const label = (card.label || 'Card').trim();
+                            const title = (card.title || 'Untitled').trim();
+                            const body = (card.body || '').trim();
+                            const id = card.id || '';
                             const haystack = this.normalize(`${label} ${title} ${body}`);
-                            return { label, title, haystack };
+                            return { id, label, title, haystack };
                         });
                     } catch (error) {
                         this.cardIndex = [];
@@ -527,28 +774,38 @@
                     await this.cardIndexPromise;
 
                     const normalized = this.normalize(nodeText);
-                    const directQueries = this.nodeLinkRules
+                    this.contextNode.textContent = `Node: ${nodeText}`;
+
+                    // 1. Direct location rules (site pages & specific anchors)
+                    const directLocations = this.locationLinkRules
+                        .filter((rule) => rule.includesAny.some((token) => normalized.includes(token)))
+                        .flatMap((rule) => rule.links);
+
+                    // 2. Direct card rules
+                    const directCardQueries = this.nodeLinkRules
                         .filter((rule) => rule.includesAny.some((token) => normalized.includes(token)))
                         .flatMap((rule) => rule.queries);
-                    const directLinks = [];
-                    const seenDirect = new Set();
-                    directQueries.forEach((queryTitle) => {
+
+                    const directCards = [];
+                    const seenDirectCards = new Set();
+                    directCardQueries.forEach((queryTitle) => {
                         const found = this.cardIndex.find((card) => this.normalize(card.title).includes(this.normalize(queryTitle)));
                         if (found) {
                             const key = this.normalize(found.title);
-                            if (!seenDirect.has(key)) {
-                                seenDirect.add(key);
-                                directLinks.push(found);
+                            if (!seenDirectCards.has(key)) {
+                                seenDirectCards.add(key);
+                                directCards.push(found);
                             }
                         }
                     });
 
+                    // 3. Score keyword matches in card index
                     const terms = normalized
                         .split(' ')
                         .filter((term) => term.length > 3)
                         .slice(0, 8);
 
-                    const scored = this.cardIndex.map((card) => {
+                    const scoredCards = this.cardIndex.map((card) => {
                         let score = 0;
                         terms.forEach((term) => {
                             if (card.haystack.includes(term)) {
@@ -559,41 +816,53 @@
                         return { ...card, score };
                     }).filter((card) => card.score > 0)
                       .sort((a, b) => b.score - a.score)
-                      .slice(0, 5);
+                      .slice(0, 4);
 
-                    this.contextNode.textContent = `Node: ${nodeText}`;
-                    const merged = [];
-                    const seen = new Set();
-                    [...directLinks, ...scored].forEach((card) => {
-                        const key = this.normalize(card.title);
-                        if (!seen.has(key) && merged.length < 6) {
-                            seen.add(key);
-                            merged.push(card);
+                    const htmlItems = [];
+
+                    // Render direct location links first
+                    const seenHrefs = new Set();
+                    directLocations.forEach((loc) => {
+                        if (!seenHrefs.has(loc.href)) {
+                            seenHrefs.add(loc.href);
+                            htmlItems.push(`
+                                <a class="context-card-link direct-loc" href="${loc.href}" target="_top" rel="noopener noreferrer">
+                                    <span class="context-card-label direct-loc">${this.escapeXml(loc.label)}</span>
+                                    <span class="context-card-title">${this.escapeXml(loc.title)}</span>
+                                </a>
+                            `);
                         }
                     });
 
-                    if (!merged.length) {
+                    // Render direct card matches and scored matches
+                    const seenCards = new Set();
+                    [...directCards, ...scoredCards].forEach((card) => {
+                        const key = this.normalize(card.title);
+                        if (!seenCards.has(key) && htmlItems.length < 8) {
+                            seenCards.add(key);
+                            const cardHref = card.id ? `impeachment.html#${card.id}` : `impeachment.html?q=${encodeURIComponent(card.title)}`;
+                            const labelText = seenDirectCards.has(key) ? 'Direct Evidence Match' : (card.label || 'Evidence Card');
+                            htmlItems.push(`
+                                <a class="context-card-link" href="${cardHref}" target="_top" rel="noopener noreferrer">
+                                    <span class="context-card-label">${this.escapeXml(labelText)}</span>
+                                    <span class="context-card-title">${this.escapeXml(card.title)}</span>
+                                </a>
+                            `);
+                        }
+                    });
+
+                    if (!htmlItems.length) {
                         const fallbackQuery = encodeURIComponent(nodeText);
                         this.contextResults.innerHTML = `
-                            <a class="context-card-link" href="documentspage.html?q=${fallbackQuery}" target="_top" rel="noopener noreferrer">
-                                <span class="context-card-label">Search Documents</span>
-                                <span class="context-card-title">No direct match indexed yet. Open a search for this node.</span>
+                            <a class="context-card-link" href="impeachment.html?q=${fallbackQuery}" target="_top" rel="noopener noreferrer">
+                                <span class="context-card-label">Search Evidence</span>
+                                <span class="context-card-title">Search 40 Impeachment Cards for "${this.escapeXml(nodeText)}"</span>
                             </a>
                         `;
                         return;
                     }
 
-                    const directTitleKeys = new Set(directLinks.map((card) => this.normalize(card.title)));
-                    this.contextResults.innerHTML = merged.map((card) => {
-                        const query = encodeURIComponent(card.title);
-                        const labelPrefix = directTitleKeys.has(this.normalize(card.title)) ? 'Direct Match' : card.label;
-                        return `
-                            <a class="context-card-link" href="documentspage.html?q=${query}" target="_top" rel="noopener noreferrer">
-                                <span class="context-card-label">${this.escapeXml(labelPrefix)}</span>
-                                <span class="context-card-title">${this.escapeXml(card.title)}</span>
-                            </a>
-                        `;
-                    }).join('');
+                    this.contextResults.innerHTML = htmlItems.join('');
                 }
 
                 parseNode(node, depth, format = 'opml') {
@@ -701,7 +970,7 @@
                     const wrappedLines = this.wrapText(layoutNode.node.text, 37, 3);
                     const h = 18 + (wrappedLines.length * 16) + 10;
                     const directQuery = this.getDirectQueryForNode(layoutNode.node.text);
-                    const encodedQuery = encodeURIComponent(directQuery || '');
+                    const safeNodeLink = this.escapeXml(directQuery || '');
                     const textLines = wrappedLines.map((line, lineIndex) =>
                         `<tspan x="${layoutNode.x + 14}" dy="${lineIndex === 0 ? 0 : 16}">${this.escapeXml(line)}</tspan>`
                     ).join('');
@@ -715,7 +984,7 @@
 
                     if (directQuery) {
                         boxes.push(`
-                            <g data-node-link="${encodedQuery}" class="u-migrated-3b6a3a65">
+                            <g data-node-link="${safeNodeLink}" class="u-migrated-3b6a3a65" style="cursor: pointer;">
                                 <rect x="${layoutNode.x + w - 45}" y="${layoutNode.y + h - 20}" width="30" height="14" rx="7" fill="rgba(37,99,235,0.28)" stroke="rgba(147,197,253,0.9)" stroke-width="1"></rect>
                                 <text x="${layoutNode.x + w - 36}" y="${layoutNode.y + h - 10}" fill="#dbeafe" font-size="9.5">link</text>
                             </g>
@@ -776,7 +1045,14 @@
                     const firstDirect = this.nodeDirectLinks.find((rule) =>
                         rule.includesAny.some((token) => normalized.includes(token))
                     );
-                    if (firstDirect) return firstDirect.query;
+                    if (firstDirect) return firstDirect.url || firstDirect.query;
+
+                    const firstLocation = this.locationLinkRules.find((rule) =>
+                        rule.includesAny.some((token) => normalized.includes(token))
+                    );
+                    if (firstLocation && firstLocation.links.length) {
+                        return firstLocation.links[0].href;
+                    }
 
                     const firstRule = this.nodeLinkRules.find((rule) =>
                         rule.includesAny.some((token) => normalized.includes(token))
@@ -850,9 +1126,11 @@
                     directLinks.forEach((link) => {
                         link.addEventListener('click', (e) => {
                             e.stopPropagation();
-                            const query = link.getAttribute('data-node-link');
-                            if (!query) return;
-                            window.open(`documentspage.html?q=${query}`, '_blank', 'noopener,noreferrer');
+                            const rawTarget = link.getAttribute('data-node-link');
+                            if (!rawTarget) return;
+                            const target = rawTarget.replace(/%23/g, '#');
+                            const url = target.includes('.html') ? target : `impeachment.html?q=${encodeURIComponent(target)}`;
+                            window.top.location.href = url;
                         });
                     });
 

@@ -1,0 +1,2 @@
+This path is a synthetic placeholder for matter_context.profile_path.
+It is not a filled matter profile and it contains no client facts.

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Forensic Evidence Evaluation"
+  short_description: "Evaluate scientific claims from source language to defensible proposition"

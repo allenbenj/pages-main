@@ -1,0 +1,4 @@
+interface:
+  display_name: "Defense Writing Studio"
+  short_description: "Complete defense papers, notes and narratives with evidence-based argument"
+  default_prompt: "Write the full requested legal or attorney-facing draft, grounded in source citations, with a substantive rebuttal and localized unverified items."

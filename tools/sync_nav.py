@@ -34,6 +34,7 @@ NAV_GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
     ]),
     ("Analysis", [
         ("contradictions.html", "Contradictions"),
+        ("impeachment.html", "40 Impeachment Cards"),
         ("Deal's Ever Changing Testimony.html", "Deal's Ever Changing Testimony"),
         ("New_Face.html", "New Face"),
         ("general-videos.html", "General Videos"),
@@ -53,6 +54,26 @@ NAV_GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
         ("why-dont-we-have-this-system.html", "System Essay"),
     ]),
 ]
+
+GUIDED_PATH_PAGES: set[str] = {
+    "overview.html",
+    "timeline.html",
+    "contradictions.html",
+    "impeachment.html",
+    "evidence.html",
+}
+
+GUIDED_PATH_STEPS: list[tuple[str, str, str]] = [
+    ("overview.html", "01", "Overview & Players"),
+    ("timeline.html", "02", "Forensic Timeline"),
+    ("contradictions.html", "03", "Contradictions Hub"),
+    ("evidence.html", "04", "Evidence & Misconduct"),
+]
+
+GUIDED_PATH_FULL_RE = re.compile(
+    r"\s*<!-- GUIDED_PATH_START -->.*?<!-- GUIDED_PATH_END -->",
+    re.S,
+)
 
 NAV_START_RE = re.compile(
     r'<div\b(?=[^>]*\bclass="nav-tabs")(?=[^>]*\baria-label="Project navigation")[^>]*>',
@@ -127,6 +148,29 @@ def find_nav_block(html: str) -> tuple[int, int, str] | None:
     raise ValueError("Unbalanced project navigation div")
 
 
+def render_guided_path_block(page_name: str, indent: str = "    ") -> str:
+    lines = [
+        f"{indent}<!-- GUIDED_PATH_START -->",
+        f'{indent}<nav class="guided-path-bar" aria-label="Guided investigation path">',
+        f'{indent}    <div class="guided-path-inner">',
+        f'{indent}        <span class="guided-path-label">Guided Investigation Path:</span>',
+        f'{indent}        <ol class="guided-path-steps">',
+    ]
+    for href, num, label in GUIDED_PATH_STEPS:
+        is_current = href.casefold() == page_name.casefold()
+        active = ' class="guided-step active" aria-current="step"' if is_current else ' class="guided-step"'
+        lines.append(
+            f'{indent}            <li{active}><a href="{href}"><span class="step-num">{num}</span><span class="step-title">{label}</span></a></li>'
+        )
+    lines.extend([
+        f'{indent}        </ol>',
+        f'{indent}    </div>',
+        f'{indent}</nav>',
+        f"{indent}<!-- GUIDED_PATH_END -->",
+    ])
+    return "\n".join(lines)
+
+
 def sync_page(path: Path) -> bool:
     html = path.read_text(encoding="utf-8")
     block = find_nav_block(html)
@@ -150,6 +194,17 @@ def sync_page(path: Path) -> bool:
     indent = indent_match.group(1) if indent_match else "    "
     replacement = opening_tag + "\n" + render_tabs(path.name) + f"\n{indent}</div>"
     updated = html[:start] + replacement + html[end:]
+
+    if path.name.casefold() in GUIDED_PATH_PAGES:
+        guided_rendered = render_guided_path_block(path.name, indent)
+        if GUIDED_PATH_FULL_RE.search(updated):
+            updated = GUIDED_PATH_FULL_RE.sub("\n" + guided_rendered, updated, count=1)
+        else:
+            insert_pos = start + len(replacement)
+            updated = updated[:insert_pos] + "\n" + guided_rendered + updated[insert_pos:]
+    else:
+        updated = GUIDED_PATH_FULL_RE.sub("", updated)
+
     if updated == html:
         return False
     path.write_text(updated, encoding="utf-8", newline="\n")

@@ -2,62 +2,31 @@
 <html lang="en">
 <head>
   <base href="../../" target="_top">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Categorized list of the false claims presented in State v. Benjamin Allen, grouped by theme.">
-  <meta property="og:title" content="State v. Benjamin Allen - Catch All">
-  <meta property="og:description" content="Categorized list of the false claims presented in State v. Benjamin Allen, grouped by theme.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forensic video archive in State v. Benjamin Allen: comparative testimony breakdowns, bar security footage, scene briar analysis, and the Lies in Lee County documentary series.">
+  <meta property="og:title" content="Forensic Video Archive | State v. Benjamin Allen">
+  <meta property="og:description" content="Empirical video analysis, bar surveillance footage, physical scene surveys, and testimony breakdowns in State v. Benjamin Allen.">
   <meta property="og:type" content="website">
-    <title>State v. Benjamin Allen - Catch All</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared/styles.css?v=20261003k">
-    <style>
-        body {
-            color: var(--light);
-        }
-        .carousel-nav-wrapper {
-            display: none !important;
-        }
-        .page-rail-title,
-        h3[style*="#d4af37"] {
-            color: var(--accent-text) !important;
-        }
-        video {
-            border-color: rgba(255,255,255,0.14) !important;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.34) !important;
-        }
-        .video-entry h2 {
-            margin: 28px 0 14px;
-            color: #f2eee4 !important;
-            font-size: clamp(1.7rem, 2.6vw, 2.2rem) !important;
-            font-weight: 500 !important;
-            line-height: 1.2 !important;
-            text-align: center;
-        }
-        .archive-video {
-            display: block;
-            width: min(960px, 100%);
-            height: auto;
-            margin: 0 auto 8px;
-            background: #0c1011;
-            border-radius: 12px;
-        }
-        .video-lead .archive-video {
-            width: min(520px, 72%);
-        }
-    </style>
-  
+  <title>Forensic Video Archive | State v. Benjamin Allen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared/styles.css?v=20261102">
+  <link rel="stylesheet" href="shared/image-sizing.css?v=20260721">
+  <link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
+  <link rel="stylesheet" href="shared/page-general-videos.css">
+
   <style class="force-hide-webflow">
     .w-webflow-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
   </style>
-  <link href="shared/image-sizing.css?v=20260721" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="shared/site-typography.css?v=20261003k">
 </head>
-<body>
-    <div id="top" class="container u-migrated-63a9e9be">
-        <div class="nav-tabs" aria-label="Project navigation">
+<body class="general-videos-page">
+  <div id="top" class="container page">
+    <!-- NAVIGATION TABS -->
+    <div class="nav-tabs" aria-label="Project navigation">
             <a class="nav-brand" href="index.html">Edifice of Lies</a>
             <a class="nav-tab" href="overview.html">Project Map</a>
             <a class="nav-tab" href="evidence-viewer.html">Evidence Viewer</a>
@@ -75,6 +44,7 @@
                 <button class="nav-tab nav-dropdown-toggle active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="project-nav-group-2">Analysis</button>
                 <div class="nav-dropdown-menu" id="project-nav-group-2" role="menu">
                     <a role="menuitem" href="contradictions.html">Contradictions</a>
+                    <a role="menuitem" href="impeachment.html">40 Impeachment Cards</a>
                     <a role="menuitem" href="Deal's Ever Changing Testimony.html">Deal's Ever Changing Testimony</a>
                     <a role="menuitem" href="New_Face.html">New Face</a>
                     <a class="active" role="menuitem" href="general-videos.html" aria-current="page">General Videos</a>
@@ -104,117 +74,591 @@
                 <button type="button" class="nav-tool" data-site-search-mount>Search</button>
                 <button type="button" class="nav-tool" data-soundtrack-mount aria-pressed="false">Soundtrack</button>
             </div>
+    </div>
+
+    <!-- HERO HEADER -->
+    <header class="gv-hero">
+      <span class="gv-badge">Forensic Video Archive</span>
+      <h1>Forensic Video Evidence &amp; Narrative Analysis</h1>
+      <p class="gv-hero-lead">
+        A curated repository of investigative documentary series, comparative testimony breakdowns, and forensic scene examinations in <em>State v. Benjamin Allen</em>. Each video provides empirical verification of the physical and testimonial contradictions that dismantle the prosecution's narrative.
+      </p>
+
+      <div class="gv-stats-bar">
+        <div class="gv-stat-item">
+          <span class="gv-stat-number">07</span>
+          <span class="gv-stat-label">Video Exhibits</span>
         </div>
-        <section id="lady-justice" class="video-entry video-lead">
-            <div class="u-migrated-8302caf7">
-                <h2>Lady Justice Raising</h2>
-                <video controls preload="metadata" class="archive-video">
-                    <source src="video/long_view/Lady%20Justice%20Raising.mp4" type="video/mp4">
-                </video>
+        <div class="gv-stat-item">
+          <span class="gv-stat-number">3-Part</span>
+          <span class="gv-stat-label">Documentary Series</span>
+        </div>
+        <div class="gv-stat-item">
+          <span class="gv-stat-number">0</span>
+          <span class="gv-stat-label">Briars Found at Scene</span>
+        </div>
+        <div class="gv-stat-item">
+          <span class="gv-stat-number">100%</span>
+          <span class="gv-stat-label">Empirically Verified</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE RAIL JUMP NAVIGATION -->
+    <nav class="page-rail" aria-label="On this page">
+      <p class="page-rail-title">On this page</p>
+      <a href="#changing-stories" target="_top">&#10140; Changing Stories (V-01)</a>
+      <a href="#lies-part-1" target="_top">&#10140; Lies In Lee County: Part 1 (V-02)</a>
+      <a href="#lies-part-2" target="_top">&#10140; Lies In Lee County: Part 2 (V-03)</a>
+      <a href="#lies-part-3" target="_top">&#10140; Lies In Lee County: Part 3 (V-04)</a>
+      <a href="#where-are-the-briars" target="_top">&#10140; Where Are the Briars? (V-05)</a>
+      <a href="#subscription-service" target="_top">&#10140; Subscription for Innocence (V-06)</a>
+      <a href="#lady-justice" target="_top">&#10140; Lady Justice Raising (V-07)</a>
+    </nav>
+
+    <!-- MAIN FORENSIC VIDEO DOSSIER -->
+    <main class="page-content">
+
+      <!-- EXHIBIT V-01: CHANGING STORIES COMPRESSED -->
+      <article id="changing-stories" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-01</span>
+            <span class="video-category-pill">Comparative Testimony Breakdown</span>
+            <span class="video-tech-pill">Runtime: 4:42</span>
+            <span class="video-tech-pill">HD 1262&times;704</span>
+          </div>
+          <h2>Changing Stories Create Concern: Freeman's Affidavits vs. Sworn Witness Audio</h2>
+          <p class="video-card-subtitle">
+            A side-by-side comparative analysis exposing fabricated witness claims, concealed familial relationships, and narrative shifts between Detective Freeman's sworn warrants and the actual recorded interviews.
+          </p>
+        </header>
+
+        <div class="video-player-frame">
+          <video controls preload="metadata">
+            <source src="video/long_view/Changing%20Stories%20Compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box warning">
+              <p>
+                Detective Steve Freeman's sworn Probable Cause Affidavit attributed specific statements to Carmen Love that Love never made. The recorded interview proves Detective Freeman systematically altered witness words to manufacture probable cause while simultaneously concealing that Carmen Love is lifelong kin to the accuser.
+              </p>
             </div>
-        </section>
-        <div class="header">
-             <h1 class="page-title">Changing Stories Create Concern</h1>
+            <p class="dossier-narrative-text">
+              This exhibit provides indisputable documentary evidence of narrative engineering. When Detective Freeman sought arrest warrants, he claimed Carmen Love stated Lauren declined a ride because she was going to a &ldquo;bonfire with the guys.&rdquo; Carmen Love's actual recorded words contain no mention of a bonfire whatsoever; she stated Lauren was merely standing at a table smoking a cigarette alone.
+            </p>
+            <p class="dossier-narrative-text">
+              Furthermore, Freeman swore Love became frantic and contacted law enforcement because she had been &ldquo;attempting to contact her all day.&rdquo; Love's recorded statement reveals she was simply watching television in bed, casually thought of texting, and &ldquo;it just slipped my mind.&rdquo; The affidavit fabricated urgent concern to justify probable cause.
+            </p>
+          </div>
+
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Concealed Familial Relationship</span>
+                <p class="matrix-text">Freeman documented Love as merely &ldquo;friends for a long time.&rdquo; Audio reveals Love stating they are lifelong kin/family living down the street on Kendall Drive.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Invented "Bonfire" Invitation</span>
+                <p class="matrix-text">Affidavit claims Deal announced bonfire plans. Recorded interview demonstrates Love never stated any bonfire was discussed.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Manufactured "All-Day Worry"</span>
+                <p class="matrix-text">Affidavit claims frantic all-day attempts to reach Deal. Audio reveals Love relaxed at home and simply forgot to follow up.</p>
+              </li>
+            </ul>
+
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:05</strong> Affidavit vs Audio</span>
+              <span class="timestamp-chip"><strong>0:30</strong> Actual Recorded Statement</span>
+              <span class="timestamp-chip"><strong>1:30</strong> The Bonfire Fiction</span>
+              <span class="timestamp-chip"><strong>3:15</strong> Kinship &amp; Kendall Drive</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="impeachment.html#editor-freeman-familial-relationship" class="video-ref-btn primary">&#10140; Impeachment Card #02</a>
+              <a href="Deal's Ever Changing Testimony.html" class="video-ref-btn">&#10140; Testimony Analysis</a>
+              <a href="timeline.html" class="video-ref-btn">&#10140; Case Timeline</a>
+            </div>
+          </div>
         </div>
-<nav class="page-rail" aria-label="On this page">
-            <p class="page-rail-title">On this page</p>
-            <a href="#lady-justice" target="_top">Lady Justice Raising</a>
-            <a href="#grouped-video" target="_top">Changing Stories</a>
-            <a href="#lies-part-1" target="_top">Lies In Lee County Part 1</a>
-            <a href="#lies-part-2" target="_top">Lies In Lee County Part 2</a>
-            <a href="#lies-part-3" target="_top">Lies In Lee County Part 3</a>
-            <a href="#subscription-service" target="_top">Subscription Service</a>
-            <a href="#where-are-the-briars" target="_top">Where are the briars</a>
-            <a href="#top" target="_top">Back to Top</a>
-        </nav>
+      </article>
 
+      <!-- EXHIBIT V-02: LIES IN LEE COUNTY PART 1 -->
+      <article id="lies-part-1" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-02</span>
+            <span class="video-category-pill series">Documentary Series: Part 1</span>
+            <span class="video-tech-pill">Runtime: 6:38</span>
+            <span class="video-tech-pill">360p Investigative Master</span>
+          </div>
+          <h2>Lies In Lee County &mdash; Part 1: The Anatomy of a Rushed Prosecution</h2>
+          <p class="video-card-subtitle">
+            An in-depth documentary breakdown of the initial 911 dispatch, the premature arrest, and the investigative failure to verify basic physical claims before charging.
+          </p>
+        </header>
 
-        <main class="page u-migrated-14e1612c">
-            <section id="grouped-video" class="u-migrated-785c4dea">
-                <div id="grouped-video-2" class="u-migrated-8302caf7">
-                    <video controls preload="metadata" class="u-migrated-41dc949e">
-                        <source src="video/long_view/Changing%20Stories%20Compressed.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </section>
-            <section id="lies-part-1" class="video-entry">
-                <div class="u-migrated-8302caf7">
-                    <h2>Lies In Lee County Part 1</h2>
-                    <video controls preload="metadata" class="archive-video">
-                        <source src="video/various/Lies%20In%20Lee%20County%20Part%201.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </section>
-            <section id="lies-part-2" class="video-entry">
-                <div class="u-migrated-8302caf7">
-                    <h2>Lies In Lee County Part 2</h2>
-                    <video controls preload="metadata" class="archive-video">
-                        <source src="video/various/Lies%20In%20Lee%20County%20Part%202.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </section>
-            <section id="lies-part-3" class="video-entry">
-                <div class="u-migrated-8302caf7">
-                    <h2>Lies In Lee County Part 3</h2>
-                    <video controls preload="metadata" class="archive-video">
-                        <source src="video/various/Lies%20In%20Lee%20County%20Part%203.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </section>
-            <section id="subscription-service" class="video-entry">
-                <div class="u-migrated-8302caf7">
-                    <h2>Subscription Service</h2>
-                    <video controls preload="metadata" class="archive-video">
-                        <source src="video/long_view/Subscription%20Service.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </section>
-            <section id="where-are-the-briars" class="video-entry">
-                <div class="u-migrated-8302caf7">
-                    <h2>Where are the briars</h2>
-                    <video controls preload="metadata" class="archive-video">
-                        <source src="video/long_view/Where%20are%20the%20briars.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </section>
-        </main>
-    </div>
-    
+        <div class="video-player-frame">
+          <video controls preload="metadata">
+            <source src="video/various/Lies%20In%20Lee%20County%20Part%201.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-    <!-- Image Modal -->
-    <div id="imageModal">
-        <span class="modal-close">&times;</span>
-        <img loading="lazy" decoding="async" id="modalImage" src="" alt="Full resolution image">        <video id="modalVideo" controls></video>
-    </div>
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box">
+              <p>
+                When law enforcement adopts a conclusion before collecting facts, every subsequent step becomes an exercise in confirmation bias rather than objective truth-seeking.
+              </p>
+            </div>
+            <p class="dossier-narrative-text">
+              Part 1 of the <em>Lies in Lee County</em> series examines the critical first hours of the investigation on October 19, 2019. Detective Steve Freeman and the Lee County Sheriff's Office accepted the initial narrative without conducting standard verification: no immediate examination of the alleged escape route, no canvassing of neutral bar patrons, and no scrutiny of irreconcilable timeline gaps.
+            </p>
+            <p class="dossier-narrative-text">
+              Rather than preserving physical evidence from the rural property or examining the complainant's erratic behavior at Cameron's Bar, the agency built its case upon uncorroborated, shifting statements, establishing an erroneous framework that tainted the entire prosecution.
+            </p>
+          </div>
 
-    <script src="shared/image-modal.js"></script>
-    
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Pretextual Framing</span>
+                <p class="matrix-text">Case 19CR051799-520 initiated upon unverified claims without independent corroborating physical evidence.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Ignored Bar Patrons</span>
+                <p class="matrix-text">Neutral patrons present at Cameron's Bar were never contacted or interviewed regarding Deal's intoxication and conduct.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Premature Warrants</span>
+                <p class="matrix-text">Felony arrest warrants were secured prior to obtaining medical laboratory results or surveillance tapes.</p>
+              </li>
+            </ul>
 
-<!-- FORCE TOP NAVIGATION (Anti-Nesting) -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Intercept clicks on links and force top-level navigation to break Webflow's PJAX
-    document.querySelectorAll('main video').forEach(function(player) {
-      player.addEventListener('play', function() {
-        document.querySelectorAll('main video').forEach(function(other) {
-          if (other !== player) other.pause();
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:05</strong> Indictment 19CR051799-520</span>
+              <span class="timestamp-chip"><strong>0:35</strong> Systemic Accountability Gap</span>
+              <span class="timestamp-chip"><strong>2:10</strong> Initial 911 Dispatch Realities</span>
+              <span class="timestamp-chip"><strong>4:45</strong> Rushed Probable Cause</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="misconduct.html" class="video-ref-btn primary">&#10140; Misconduct Findings</a>
+              <a href="players.html#steve-freeman" class="video-ref-btn">&#10140; Detective Freeman Profile</a>
+              <a href="case-study.html" class="video-ref-btn">&#10140; Case Study Overview</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXHIBIT V-03: LIES IN LEE COUNTY PART 2 -->
+      <article id="lies-part-2" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-03</span>
+            <span class="video-category-pill series">Documentary Series: Part 2</span>
+            <span class="video-tech-pill">Runtime: 7:50</span>
+            <span class="video-tech-pill">360p Surveillance Matrix</span>
+          </div>
+          <h2>Lies In Lee County &mdash; Part 2: Surveillance Video Dismantles the Timeline</h2>
+          <p class="video-card-subtitle">
+            Forensic analysis of the overhead surveillance cameras at Cameron's Bar: Proving zero interaction between the two groups and demolishing sworn departure claims.
+          </p>
+        </header>
+
+        <div class="video-player-frame">
+          <video controls preload="metadata">
+            <source src="video/various/Lies%20In%20Lee%20County%20Part%202.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box warning">
+              <p>
+                Overhead surveillance timecodes from Cameron's Bar establish that Carmen Love, James Morrison, and Peter West departed separately, directly refuting sworn testimony alleging that closing-time group coordination and bonfire arrangements took place.
+              </p>
+            </div>
+            <p class="dossier-narrative-text">
+              Part 2 conducts a meticulous frame-by-frame analysis of the bar's internal camera footage between 12:35 AM and 1:15 AM on October 19, 2019. Lauren Deal claimed she spent substantial time interacting with the defendant and his acquaintances throughout the evening. The overhead recording demonstrates conclusively that zero interaction occurred between the two parties.
+            </p>
+            <p class="dossier-narrative-text">
+              The footage documents the exact minute James Morrison and Carmen Love exited, leaving Deal alone. Her later assertions that the group lingered together to plan their next destination are wholly disproven by objective, time-stamped video evidence.
+            </p>
+          </div>
+
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Zero Group Interaction</span>
+                <p class="matrix-text">Overhead surveillance shows the defendant seated on the opposite side of the bar counter; no socialization took place.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Independent Departures</span>
+                <p class="matrix-text">Peter West, James Morrison, and Carmen Love exited without Deal, contradicting her claimed exit coordination.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Physical Stature &amp; Position</span>
+                <p class="matrix-text">Camera angles reveal exact spatial positioning, disproving claims of intimidating or predatory proximity.</p>
+              </li>
+            </ul>
+
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:30</strong> Morrison &amp; Love Departure</span>
+              <span class="timestamp-chip"><strong>2:15</strong> Zero Inter-Group Contact</span>
+              <span class="timestamp-chip"><strong>4:20</strong> Counter Spatial Positioning</span>
+              <span class="timestamp-chip"><strong>6:10</strong> The Timeline Collapse</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="timeline.html" class="video-ref-btn primary">&#10140; Four-Phase Timeline</a>
+              <a href="contradictions.html" class="video-ref-btn">&#10140; Contradictions Hub</a>
+              <a href="evidence.html" class="video-ref-btn">&#10140; Evidence Archive</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXHIBIT V-04: LIES IN LEE COUNTY PART 3 -->
+      <article id="lies-part-3" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-04</span>
+            <span class="video-category-pill series">Documentary Series: Part 3</span>
+            <span class="video-tech-pill">Runtime: 6:05</span>
+            <span class="video-tech-pill">360p Surveillance Analysis</span>
+          </div>
+          <h2>Lies In Lee County &mdash; Part 3: Bar Video Analysis &amp; The Impeached Prosecution</h2>
+          <p class="video-card-subtitle">
+            Visual verification of extreme intoxication, unprovoked patron confrontations, and the prosecution's suppression of objective surveillance from the jury.
+          </p>
+        </header>
+
+        <div class="video-player-frame">
+          <video controls preload="metadata">
+            <source src="video/various/Lies%20In%20Lee%20County%20Part%203.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box warning">
+              <p>
+                Bystander reactions captured on camera document highly erratic, intoxicated, and aggressive conduct inside Cameron's Bar hours before the alleged incident, disproving the curated &ldquo;vulnerable victim&rdquo; persona manufactured for trial.
+              </p>
+            </div>
+            <p class="dossier-narrative-text">
+              Part 3 investigates the video evidence that the prosecution actively minimized. Security cameras record Lauren Deal physically colliding with bar stools, stumbling through walkways, and aggressively approaching strangers to complain about Happel and DeMarco. Patrons are seen visibly retreating and avoiding her due to her volatile state.
+            </p>
+            <p class="dossier-narrative-text">
+              This footage completely undermines the prosecution's claim that Deal was soberly navigating social dynamics. Her acute level of intoxication directly impacted her cognitive recall, perceptual accuracy, and emotional stability, rendering her uncorroborated allegations fundamentally unreliable.
+            </p>
+          </div>
+
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Severe Physical Impairment</span>
+                <p class="matrix-text">Deal plows directly into a bar stool at Cameron's Bar, demonstrating pronounced motor impairment and intoxication.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Aggressive Complaints</span>
+                <p class="matrix-text">Camera records Deal drunkenly haranguing patrons regarding Happel and DeMarco prior to leaving the bar.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Patron Avoidance Real-Time</span>
+                <p class="matrix-text">Surrounding patrons recognize erratic behavior immediately and pull back, contradicting claims of normal demeanor.</p>
+              </li>
+            </ul>
+
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:05</strong> Stool Collision at Counter</span>
+              <span class="timestamp-chip"><strong>1:15</strong> Unsolicited Patron Harangue</span>
+              <span class="timestamp-chip"><strong>3:30</strong> Bystander Evasion Realized</span>
+              <span class="timestamp-chip"><strong>5:00</strong> Prosecution vs Surveillance</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="New_Face.html" class="video-ref-btn primary">&#10140; The New Face of Injustice</a>
+              <a href="prosecutor_allowed.html" class="video-ref-btn">&#10140; Prosecutor Misconduct</a>
+              <a href="judicial-duty.html" class="video-ref-btn">&#10140; Judicial Duty Breakdown</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXHIBIT V-05: WHERE ARE THE BRIARS -->
+      <article id="where-are-the-briars" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-05</span>
+            <span class="video-category-pill scene">Physical &amp; Geographic Evidence</span>
+            <span class="video-tech-pill">Runtime: 0:06 Loop</span>
+            <span class="video-tech-pill">416p Scene Survey</span>
+          </div>
+          <h2>Forensic Scene Analysis: Where Are the Briars?</h2>
+          <p class="video-card-subtitle">
+            A high-definition visual survey of the alleged flight path: Proving an open manicured lawn and airfield, with the total absence of impenetrable briar thickets.
+          </p>
+        </header>
+
+        <div class="video-player-frame">
+          <video controls preload="metadata">
+            <source src="video/long_view/Where%20are%20the%20briars.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box warning">
+              <p>
+                Deal testified that upon fleeing without shoes or pants, she ran through impenetrable, dense briar thickets in pitch-black darkness for nearly an hour. The physical scene survey reveals an open manicured lawn, scattered shade trees, and an open airfield with zero briars.
+              </p>
+            </div>
+            <p class="dossier-narrative-text">
+              During trial and emergency room intake, Lauren Deal attributed virtually all visible cuts, scratches, and scrapes to running through &ldquo;heavy briars and woods.&rdquo; However, an empirical camera survey of the property directly contradicts this claim. The clearing around the fire pit transitions into an open, well-maintained lawn bordered by tall, mature trees and flat terrain leading directly onto a broad airfield.
+            </p>
+            <p class="dossier-narrative-text">
+              There is no impenetrable thorn barrier anywhere along this route. Furthermore, running through authentic briar brambles barefoot and unclothed produces extensive lacerations, puncture wounds, and heavy bleeding &mdash; none of which were documented in her forensic hospital photos.
+            </p>
+          </div>
+
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Nonexistent Briar Patch</span>
+                <p class="matrix-text">High-resolution pan shows manicured grass, open space, and zero thorn thickets across the entire reported path.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Open Airfield Topography</span>
+                <p class="matrix-text">The trajectory leads directly to a flat, unobstructed airfield, completely disproving dense wilderness concealment.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Astronomical Illumination</span>
+                <p class="matrix-text">Astronomical records prove ~70% lunar illumination on the night in question, refuting claims of total pitch blindness.</p>
+              </li>
+            </ul>
+
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:01</strong> Fire Pit &amp; Open Lawn</span>
+              <span class="timestamp-chip"><strong>0:03</strong> Tree Canopy Clearing</span>
+              <span class="timestamp-chip"><strong>0:05</strong> Airfield Boundary (No Briars)</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="misconductandfailure.html#mindmap" class="video-ref-btn primary">&#129504; Mindmap: Deal Narrative</a>
+              <a href="scene.html" class="video-ref-btn">&#10140; Full Scene Reconstruction</a>
+              <a href="case-study.html#escape-narrative" class="video-ref-btn">&#10140; Geographic Impossibility</a>
+              <a href="evidence.html" class="video-ref-btn">&#10140; Physical Evidence Photos</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXHIBIT V-06: SUBSCRIPTION SERVICE -->
+      <article id="subscription-service" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-06</span>
+            <span class="video-category-pill">Institutional Commentary &amp; Economics</span>
+            <span class="video-tech-pill">Runtime: 2:26</span>
+            <span class="video-tech-pill">HD 1278&times;716</span>
+          </div>
+          <h2>The Subscription Fee for Innocence: The Economics of Wrongful Accusation</h2>
+          <p class="video-card-subtitle">
+            An infographic motion analysis examining the staggering financial imbalance between the state's bottomless public budget and an accused citizen's fight for exoneration.
+          </p>
+        </header>
+
+        <div class="video-player-frame">
+          <video controls preload="metadata">
+            <source src="video/long_view/Subscription%20Service.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box gold">
+              <p>
+                The prosecution operates with unlimited taxpayer-funded resources, state crime laboratories, and immune civil liability. An innocent citizen must pay a continuous $150,000+ &ldquo;subscription fee&rdquo; in expert witnesses, investigators, and video forensics just to challenge false claims.
+              </p>
+            </div>
+            <p class="dossier-narrative-text">
+              This motion-graphic documentary examines the institutional asymmetry of the modern criminal trial. When a district attorney charges a case without conducting basic due diligence, the process itself becomes a financial weapon. The defendant must personally finance forensic audio analysis, scene surveying, surveillance video recovery, and private investigation.
+            </p>
+            <p class="dossier-narrative-text">
+              In small jurisdictions like Lee County, this dynamic creates an environment where the state faces zero financial or professional disincentives for bringing flawed prosecutions, while the accused faces absolute bankruptcy.
+            </p>
+          </div>
+
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Resource Asymmetry</span>
+                <p class="matrix-text">Taxpayer-funded state apparatus vs. self-funded constitutional defense create an inherently coercive disparity.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">The $150,000 Barrier</span>
+                <p class="matrix-text">Exposing routine perjury requires specialized forensic audio, video enhancement, and independent investigators.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Absolute Immunity Shield</span>
+                <p class="matrix-text">Prosecutors face zero personal liability for knowingly advancing false testimony or withholding exculpatory material.</p>
+              </li>
+            </ul>
+
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:05</strong> The Innocence Subscription</span>
+              <span class="timestamp-chip"><strong>0:45</strong> Forensic Verification Costs</span>
+              <span class="timestamp-chip"><strong>1:30</strong> State Immunity &amp; Asymmetry</span>
+              <span class="timestamp-chip"><strong>2:10</strong> The Systemic Reform Need</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="why-dont-we-have-this-system.html" class="video-ref-btn primary">&#10140; System Essay</a>
+              <a href="index.html#songs" class="video-ref-btn">&#10140; Podcast: $150,000 Subscription</a>
+              <a href="data-snapshot.html" class="video-ref-btn">&#10140; Data Snapshot</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EXHIBIT V-07: LADY JUSTICE RAISING -->
+      <article id="lady-justice" class="video-showcase-card">
+        <header class="video-card-header">
+          <div class="video-meta-row">
+            <span class="video-exhibit-pill">Exhibit V-07</span>
+            <span class="video-category-pill">Visual Motif &amp; Symbolic Indictment</span>
+            <span class="video-tech-pill">Runtime: 0:06 Loop</span>
+            <span class="video-tech-pill">Square 560&times;560</span>
+          </div>
+          <h2>Lady Justice Raising: The Corrupted Scales of Lee County</h2>
+          <p class="video-card-subtitle">
+            A cinematic visual motif juxtaposing the sacred ideal of impartial justice with the documented reality of narrative manipulation and institutional bias.
+          </p>
+        </header>
+
+        <div class="video-player-frame compact">
+          <video controls preload="metadata">
+            <source src="video/long_view/Lady%20Justice%20Raising.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-dossier-grid">
+          <div class="dossier-analysis-col">
+            <h3><span aria-hidden="true">&#9888;</span> Investigative Thesis &amp; Core Finding</h3>
+            <div class="dossier-thesis-box gold">
+              <p>
+                Lady Justice is depicted with a blindfold so that wealth, status, and local political connections cannot tilt the scale. In Lee County, the blindfold was stripped away to protect local alliances while the state turned a blind eye to perjury.
+              </p>
+            </div>
+            <p class="dossier-narrative-text">
+              This visual exhibit serves as the symbolic cornerstone of the project. Juxtaposing the altered seal of Lee County against the Constitution of the United States, it illustrates how high constitutional principles were abandoned in favor of prosecutorial expedience and uncritical judicial deference.
+            </p>
+            <p class="dossier-narrative-text">
+              The scales of justice can only balance when both sides possess equal access to objective truth. When exculpatory video is minimized, familial ties are concealed, and false claims go uncorrected, the edifice of justice collapses into an edifice of lies.
+            </p>
+          </div>
+
+          <div class="dossier-evidence-col">
+            <h3><span aria-hidden="true">&#9776;</span> Evidentiary Record &amp; Timestamps</h3>
+            <ul class="evidence-matrix-list">
+              <li class="evidence-matrix-item">
+                <span class="matrix-label corroboration">The Blindfold Principle</span>
+                <p class="matrix-text">Impartiality requires adjudicating evidence without favor toward local law enforcement or familial networks.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label contradiction">Tipped Scales</span>
+                <p class="matrix-text">Unchecked prosecutorial power and judicial deference tipped the scales against an outsider defendant.</p>
+              </li>
+              <li class="evidence-matrix-item">
+                <span class="matrix-label corroboration">Constitutional Baseline</span>
+                <p class="matrix-text">Due process demands that every conviction rest upon empirical fact, not manufactured affidavits.</p>
+              </li>
+            </ul>
+
+            <div class="timestamp-chips-row">
+              <span class="timestamp-chip"><strong>0:01</strong> Impartiality Ideal</span>
+              <span class="timestamp-chip"><strong>0:03</strong> The Compromised Scale</span>
+              <span class="timestamp-chip"><strong>0:05</strong> The Constitutional Oath</span>
+            </div>
+
+            <div class="video-links-row">
+              <a href="New_Face.html" class="video-ref-btn primary">&#10140; The New Face of Injustice</a>
+              <a href="judicial-duty.html" class="video-ref-btn">&#10140; Judicial Duty Review</a>
+              <a href="overview.html" class="video-ref-btn">&#10140; Project Map</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="gv-back-to-top" style="text-align: center; margin: 48px 0 24px;">
+        <a href="#top" class="button" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; font-weight: 600; font-size: 0.95rem;">&uarr; Back to Top</a>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img loading="lazy" decoding="async" id="modalImage" src="" alt="Full resolution image">
+    <video id="modalVideo" controls></video>
+  </div>
+
+  <script src="shared/image-modal.js"></script>
+
+  <!-- SINGLE ACTIVE VIDEO PLAYBACK & ANTI-NESTING NAVIGATION -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Single active video player handler: pause other videos when one starts
+      var allVideos = document.querySelectorAll('video');
+      allVideos.forEach(function(player) {
+        player.addEventListener('play', function() {
+          allVideos.forEach(function(other) {
+            if (other !== player) {
+              other.pause();
+            }
+          });
         });
       });
+
+      // Anti-nesting navigation handler
+      document.body.addEventListener('click', function(e) {
+        var a = e.target.closest('a');
+        if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.top.location.href = a.href;
+        }
+      }, true);
     });
-    document.body.addEventListener('click', function(e) {
-      let a = e.target.closest('a');
-      if (a && a.href && !a.getAttribute('href').startsWith('#') && !a.href.startsWith('mailto:') && !a.href.startsWith('javascript:')) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.top.location.href = a.href;
-      }
-    }, true);
-  });
-</script>
+  </script>
+
   <script src="shared/site-search.js?v=20261003g" defer></script>
   <script src="shared/soundtrack.js?v=20261008media" defer></script>
 </body>
-
-
 </html>

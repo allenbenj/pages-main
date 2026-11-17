@@ -26,14 +26,14 @@ Key facts:
 │       └── evidence/       #   court-file, exhibit, graphic, and mindmap images
 ├── shared/                 # Shared front-end assets used by site pages
 │   ├── styles.css          #   Global stylesheet (~107 KB, the main CSS)
-│   ├── site-search.js/.css #   Site-wide search overlay (loads assets/search-index.json)
+│   ├── site-search.js      #   Site-wide search overlay (loads assets/search-index.json)
 │   ├── image-modal.js      #   Click-to-zoom modal for images
 │   ├── card-mapper.js, card-colors.js   # Card theming helpers
-│   ├── orbital-carousel.js, carousel-nav.css  # 3D carousel nav (legacy)
-│   └── (shell.js, shell.css, site-nav.js were removed in the 2026-07 cleanup —
-│        they were not referenced by any page)
+│   ├── soundtrack.js       #   Global background soundtrack & floating pause/play controller
+│   └── (orbital-carousel.js, carousel-nav.css, site-search.css, shell.* were removed —
+│        they were unreferenced dead code)
 ├── assets/
-│   ├── css/, js/            # Webflow-exported/vendor assets (jQuery, GSAP, webflow js)
+│   ├── js/                 # Webflow-exported/vendor assets (jQuery, GSAP, webflow js)
 │   └── search-index.json   # Generated site-search index (do not hand-edit; see tools/)
 ├── audio/                  # Evidence audio (mp3)
 ├── video/                  # Evidence video (mp4), incl. long_view/ and various/ subfolders
@@ -50,12 +50,12 @@ Key facts:
     └── workflows/               # Pages deployment and pull-request validation
 ```
 
-Notable canonical page sources under `assets/pages/`: `overview.html` (site map hub), `timeline.html`, `players.html`, `connections.html`, `scene.html`, `evidence.html`, `contradictions.html`, `false-story-diagram.html`, `general-videos.html`, `misconduct.html`, `misconductandfailure.html` (mindmaps), `documentspage.html`, `prosecutor_allowed.html`, `judicial-duty.html`, `why-dont-we-have-this-system.html`, `case-study.html`, and `data-snapshot.html`. `document-unavailable.html` is the fallback for unpublished source PDFs. Release staging copies these canonical sources to their established root public URLs; `assets/pages/` itself is excluded from the artifact to prevent duplicate publication.
+Notable canonical page sources under `assets/pages/`: `overview.html` (site map hub), `timeline.html` (4-phase 3-column forensic comparison matrix), `players.html`, `connections.html`, `scene.html`, `evidence.html`, `contradictions.html` (Contradictions Hub holding The Missing Hour and physical impossibility), `impeachment.html` (dedicated 40 Impeachment Cards archive with audio and masonry cards), `false-story-diagram.html`, `general-videos.html`, `misconduct.html`, `misconductandfailure.html` (mindmaps), `documentspage.html` (dedicated Source Documents & Evidence Archive with verified SHA-256 table; redirects ?q= to impeachment.html), `prosecutor_allowed.html`, `judicial-duty.html`, `why-dont-we-have-this-system.html`, `case-study.html`, and `data-snapshot.html`. `document-unavailable.html` is the fallback for unpublished source PDFs. Release staging copies these canonical sources to their established root public URLs; `assets/pages/` itself is excluded from the artifact to prevent duplicate publication.
 
 ## Technology Stack
 
 - **Root site:** HTML5 + CSS3 + vanilla JS. Dark theme. No build step, no lint config, no test framework.
-- **Vendor JS on the landing page:** jQuery, Webflow runtime, GSAP + ScrollTrigger (in `assets/js/`, loaded with `defer`).
+- **Vendor JS on the landing page:** jQuery, Webflow runtime, GSAP (in `assets/js/`, loaded with `defer`).
 - **Search:** client-side overlay (`shared/site-search.js`) reading the pre-generated `assets/search-index.json`.
 - **network_analysis app:** React 19, TypeScript 5.9, Vite 7, Tailwind CSS 4 (`@tailwindcss/vite`), reactflow 11 (graph canvas), zustand, lucide-react, uuid. Built with `vite-plugin-singlefile` into a single-file `dist/` with `base: './'`. Path alias `@` → `src/`. Dev server proxies `/api` to `127.0.0.1:3000`.
 - **Python tools:** Python 3.11+ (code uses `datetime.UTC` and `str | None` syntax). Third-party deps: `beautifulsoup4` and `pypdf` (search indexing), plus `CairoSVG` when generating WebP companions for SVG sources. There is **no requirements file** — install deps manually (`pip install beautifulsoup4 pypdf cairosvg`), preferably in a virtual environment (`.venv/` is gitignored). `ffmpeg` is required by image conversion, media optimization, and release transcoding.
@@ -110,7 +110,7 @@ python tools/consolidate_images.py convert --manifest <conversion-manifest.csv> 
 python tools/consolidate_images.py rewrite --root . --map <reference-map.csv> --report <report.json>
 python tools/consolidate_images.py verify --root . --map <reference-map.csv> --conversion-manifest <conversion-manifest.csv>
 
-# Manage the contradiction card data for documentspage.html
+# Manage the contradiction card data for impeachment.html
 python tools/sync_contradiction_cards.py extract   # page  -> documents/data/contradictions.json
 python tools/sync_contradiction_cards.py render    # JSON  -> page (splices only the grid regions)
 python tools/sync_contradiction_cards.py verify    # fails if page and JSON are out of sync
@@ -118,11 +118,12 @@ python tools/sync_contradiction_cards.py verify    # fails if page and JSON are 
 # HTML per grid + per-card label/title/pills metadata). Edit JSON, render, verify.
 
 # Manage the timeline event data for timeline.html (same pattern)
-python tools/sync_timeline_events.py extract   # page  -> documents/data/timeline.json
-python tools/sync_timeline_events.py render    # JSON  -> page (splices only the event container)
-python tools/sync_timeline_events.py verify    # fails if page and JSON are out of sync
-# Source of truth for the 20 timeline events (exact container HTML + per-event
-# time/side/description/video metadata).
+python tools/sync_timeline_events.py --self-test   # runs contract test on sample 3-column row markup
+python tools/sync_timeline_events.py extract       # page  -> documents/data/timeline.json
+python tools/sync_timeline_events.py render        # JSON  -> page (splices only the event container)
+python tools/sync_timeline_events.py verify        # fails if page and JSON are out of sync
+# Source of truth for the 20 timeline events across 4 phases (exact container HTML + per-event
+# time/phase/exhibit/description/claim/video/graphic metadata).
 
 # Audit links across the site into a SQLite DB + JSON summary
 python tools/audit_links.py --root . --db .local/link_audit/link_audit.sqlite \

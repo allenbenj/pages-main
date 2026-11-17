@@ -1,0 +1,3 @@
+interface:
+  display_name: "Settlement Negotiation"
+  short_description: "Prepare settlement or plea positions and negotiation plans"

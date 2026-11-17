@@ -1,0 +1,32 @@
+{
+  "_comment": "EXAMPLE config for P02 (Franks and derivative suppression). Built 2026-10-12 from Casebook DB inventory rows. Files are REFERENCED in place. Add exact quotations under 'quotes' only after reading the original; each is gated by verify_quotes.",
+  "motion_id": "P02",
+  "title": "P02 Franks and Derivative Suppression - source index",
+  "purpose": "Neutral source index for counsel review of the October 2019 warrant/probable-cause record supporting a Franks hearing request.",
+  "sources": [
+    {"id": "SRC-01", "title": "October 24, 2019 search-warrant application (94 Beacon Circle)", "tier": 1, "locator": {"relative_path": "Legal_Team_Casebook\\01_Sources\\Search_Warrants_and_Probable_Cause\\Warrants_and_Affidavits\\2019-10-24_Lee_County_Sheriff_Search_Warrant_Application_Forcible_Rape_94_Beacon_Circle.pdf"}, "pinpoint": "affidavit narrative", "why": "Statements presented to the issuing official.", "authentication": "Obtain certified complete warrant packet, return and inventory", "confidentiality": "Court record", "restricted": false, "notes": "Filename/face name spelling ('Alien') to be checked against the face of the document."},
+    {"id": "SRC-02", "title": "Magistrate's Order, 10/19/2019 (incident 201913190)", "tier": 1, "locator": {"relative_path": "Legal_Team_Casebook\\01_Sources\\Search_Warrants_and_Probable_Cause\\Warrants_and_Affidavits\\Magistrates-Order-Allen-201913190-20191019.pdf"}, "pinpoint": "", "why": "Warrantless-arrest finding and timing.", "authentication": "Compare to the clerk's certified copy", "confidentiality": "Court record", "restricted": false, "notes": ""},
+    {"id": "SRC-03", "title": "Charging papers (legacy case scan)", "tier": 1, "locator": {"relative_path": "Legal_Team_Casebook\\01_Sources\\Search_Warrants_and_Probable_Cause\\Warrants_and_Affidavits\\Charging_Papers_from_Legacy_Case_Scan_19CR051799.pdf"}, "pinpoint": "", "why": "Date/location stated in the charging instruments (10/19 vs 10/20; Beacon Dr vs Circle).", "authentication": "Compare to certified clerk file", "confidentiality": "Court record", "restricted": false, "notes": ""},
+    {"id": "SRC-04", "title": "Freeman investigative report, 2019-10-19 (text rendering)", "tier": 4, "locator": {"relative_path": "Legal_Team_Casebook\\01_Sources\\Investigation_and_Police_Conduct\\Police_Reports_and_Records\\2019-10-19 Freemans Investigative Report.md"}, "pinpoint": "", "why": "Witness summaries attributed in the report (distinct from the 10/24 affidavit).", "authentication": "Derived text; compare to the agency original export", "confidentiality": "Case-sensitive / attorney review", "restricted": false, "notes": "Locator only until compared to the original."},
+    {"id": "SRC-05", "title": "Trial transcript Volume 7 of 9 (Freeman)", "tier": 2, "locator": {"relative_path": "Legal_Team_Casebook\\01_Sources\\Proceedings\\2024-07-17 Steve Freeman Trial Transcript Volume 7 of 9.txt"}, "pinpoint": "use page map (tr_lookup.py)", "why": "Freeman's sworn account of what was presented to the magistrate.", "authentication": "Certified transcript controls; this is a text copy", "confidentiality": "Court record", "restricted": false, "notes": ""}
+  ],
+  "issues": [
+    {"no": 1, "issue": "What was presented to the issuing official", "sources": "SRC-01, SRC-02, SRC-05", "facts_to_verify": "Exact affidavit statements; any oral supplementation; timing relative to arrest.", "standard": "Franks v. Delaware, 438 U.S. 154 (1978) - counsel to confirm", "analysis_prompt": "Identify each statement and its source; mark omissions.", "classification": ""},
+    {"no": 2, "issue": "Facial record inconsistencies", "sources": "SRC-01, SRC-02, SRC-03", "facts_to_verify": "Offense date 10/19 vs 10/20; Beacon Dr vs Beacon Circle; name spelling.", "standard": "Accuracy of sworn applications", "analysis_prompt": "Pin each inconsistency to page; do not infer intent.", "classification": ""}
+  ],
+  "comparisons": [
+    {"id": "A", "subject": "Report vs affidavit", "a": "SRC-04 witness summaries", "b": "SRC-01 affidavit narrative", "question": "Which statements appear only in the report, and which were sworn to the magistrate?"}
+  ],
+  "records_to_obtain": [
+    {"item": "Certified complete warrant packet (application, affidavit, return, inventory)", "status": "Open", "owner": "Counsel", "method": "Clerk certified copy"},
+    {"item": "Magistrate's notes or recording of the probable-cause presentation", "status": "Open", "owner": "Counsel", "method": "Subpoena / clerk request"}
+  ],
+  "quotes": [],
+  "gate_files": ["01_Current_Draft\\Motion_P02_Revised_for_Counsel_Review_20260923.md"],
+  "limitations": [
+    {"name": "Report/affidavit distinction", "text": "Summaries in the investigative report are not treated as sworn affidavit content."},
+    {"name": "No consent theory", "text": "Defense position: the act did not occur. Consent is never argued."}
+  ],
+  "qc_expected": {"sources": 5, "issues": 2},
+  "guardrails_extra": []
+}

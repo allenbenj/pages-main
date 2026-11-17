@@ -13,7 +13,7 @@
     if (file.fileType === 'pdf') { el = document.createElement('iframe'); el.title = file.title; }
     else if (file.fileType === 'image') { el = document.createElement('img'); el.alt = file.title; }
     else if (['audio', 'video'].includes(file.fileType)) {
-      el = document.createElement(file.fileType); el.controls = true; el.preload = 'metadata';
+      el = document.createElement(file.fileType); el.controls = true; el.preload = 'none';
       el.addEventListener('error', () => { const p = document.createElement('p'); p.textContent = 'This browser could not play this format. Open the original file above.'; box.append(p); });
     } else { el = document.createElement('p'); el.textContent = 'Use the original-file link to open this format in a compatible application.'; }
     if (el.tagName !== 'P') el.src = url(file);
@@ -86,4 +86,10 @@
     for(const c of [...new Set(files.map(f=>f.collection))].sort()){const o=document.createElement('option');o.value=c;o.textContent=c.replaceAll('/',' / ').replaceAll('_',' ');$('collection').append(o);}
     render();const requested=new URLSearchParams(location.hash.slice(1)).get('file');const f=files.find(f=>f.filePath===requested);if(f)select(f);
   }).catch(()=>{$('count').textContent='Inventory unavailable. Reload to try again.';});
+  document.addEventListener('play', (e) => {
+    const active = e.target;
+    document.querySelectorAll('video, audio').forEach((media) => {
+      if (media !== active && !media.paused) media.pause();
+    });
+  }, true);
 })();

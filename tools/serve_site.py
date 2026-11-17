@@ -13,6 +13,15 @@ import json
 import re
 
 
+# Local-only operator tools served at clean top-level URLs by the dev server.
+# They live under archive/, which the release artifact excludes, so they are
+# never published by site_release.py — this only affects local previews.
+LOCAL_TOOL_ROUTES = {
+    "editor.html": "archive/documentspage-editor.html",
+    "documentspage-editor.html": "archive/documentspage-editor.html",
+}
+
+
 class CanonicalPageHandler(SimpleHTTPRequestHandler):
     """Map missing root HTML routes to canonical assets/pages sources."""
 
@@ -24,8 +33,15 @@ class CanonicalPageHandler(SimpleHTTPRequestHandler):
         if not name or "/" in name or not name.lower().endswith(".html"):
             return None
         regular_path = Path(super().translate_path(self.path))
+        if regular_path.is_file():
+            return None
+        tool_relative = LOCAL_TOOL_ROUTES.get(name.lower())
+        if tool_relative is not None:
+            tool_path = self.canonical_pages.parent.parent / tool_relative
+            if tool_path.is_file():
+                return tool_path
         canonical_path = self.canonical_pages / name
-        if not regular_path.is_file() and canonical_path.is_file():
+        if canonical_path.is_file():
             return canonical_path
         return None
 

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Evidence Matrix Admissibility"
+  short_description: "Evidence matrix with foundation, objections, and strategic value"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Ethics Privilege Guardrails"
+  short_description: "Flag privilege, confidentiality, conflict, and candor risks"

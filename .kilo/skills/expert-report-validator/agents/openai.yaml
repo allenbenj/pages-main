@@ -1,0 +1,3 @@
+interface:
+  display_name: "Expert Report Validator"
+  short_description: "Test expert reports against Daubert/Kumho reliability and disclosure rules"

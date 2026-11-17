@@ -1,0 +1,468 @@
+/* shared/page-impeachment.css — Disciplined Forensic Grid & Grouping Architecture */
+
+body.impeachment-page {
+    color: var(--light, #e6f0f2);
+    background-color: var(--dark-bg, #0b0e10);
+    scroll-behavior: smooth;
+}
+
+body.impeachment-page .container {
+    max-width: 1720px;
+}
+
+body.impeachment-page .carousel-nav-wrapper {
+    display: none !important;
+}
+
+/* --- Hero Section --- */
+.impeachment-hero {
+    padding: 32px 0 20px 0;
+    border-bottom: 1px solid rgba(166, 206, 210, 0.14);
+    margin-bottom: 24px;
+}
+
+.impeachment-hero .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent, #a6ced2);
+    background: rgba(44, 90, 97, 0.2);
+    border: 1px solid rgba(166, 206, 210, 0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.impeachment-hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.impeachment-hero p.lead {
+    font-size: 1.05rem;
+    color: var(--text-muted, #94a3b8);
+    max-width: 920px;
+    line-height: 1.6;
+    margin: 0 0 14px 0;
+}
+
+.impeachment-backlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent, #a6ced2);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.impeachment-backlink:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- Overview Stats Strip --- */
+body.impeachment-page .case-glance-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+body.impeachment-page .case-glance-item {
+    background: rgba(18, 24, 27, 0.9) !important;
+    border: 1px solid rgba(166, 206, 210, 0.14) !important;
+    border-radius: 8px !important;
+    padding: 16px 20px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.impeachment-page .case-glance-label {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.72rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--accent, #a6ced2) !important;
+    margin-bottom: 6px !important;
+}
+
+body.impeachment-page .case-glance-value {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+}
+
+body.impeachment-page .case-glance-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted, #839599);
+    margin-top: 4px;
+}
+
+/* --- Filter & Controls Toolbar --- */
+body.impeachment-page .card-toolbar {
+    background: rgba(18, 24, 27, 0.95) !important;
+    border: 1px solid rgba(166, 206, 210, 0.18) !important;
+    border-radius: 8px !important;
+    padding: 16px 20px !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.impeachment-page .card-filter-chip {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    background: rgba(26, 35, 39, 0.8) !important;
+    border: 1px solid rgba(166, 206, 210, 0.2) !important;
+    border-radius: 6px !important;
+    color: #cad8db !important;
+    padding: 6px 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+body.impeachment-page .card-filter-chip:hover {
+    background: rgba(44, 90, 97, 0.25) !important;
+    border-color: rgba(166, 206, 210, 0.4) !important;
+    color: #ffffff !important;
+}
+
+body.impeachment-page .card-filter-chip.is-active {
+    background: rgba(44, 90, 97, 0.4) !important;
+    border-color: var(--accent, #a6ced2) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+body.impeachment-page .card-search-input {
+    background: rgba(12, 16, 18, 0.9) !important;
+    border: 1px solid rgba(166, 206, 210, 0.22) !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    padding: 8px 14px !important;
+}
+
+body.impeachment-page .card-search-input:focus {
+    border-color: var(--accent, #a6ced2) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(166, 206, 210, 0.15) !important;
+}
+
+/* --- STRUCTURED 3-COLUMN CARD GRID (ALIGNED & DISCIPLINED) --- */
+body.impeachment-page section.grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    margin-top: 24px !important;
+    margin-bottom: 48px !important;
+    align-items: stretch !important;
+}
+
+@media (max-width: 1240px) {
+    body.impeachment-page section.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 780px) {
+    body.impeachment-page section.grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Hide legacy manual group containers to keep cards aligned in the main grid */
+body.impeachment-page #documents-manual-groups,
+body.impeachment-page .doc-card-groups,
+body.impeachment-page .doc-card-group {
+    display: none !important;
+}
+
+/* --- UNIFIED CARD TYPOGRAPHY & STRUCTURE (100% MATCHING ACROSS ALL CARDS) --- */
+body.impeachment-page .card,
+body.impeachment-page .matrix-card,
+body.impeachment-page .apple-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0 !important;
+
+    background: linear-gradient(180deg, rgba(23, 31, 35, 0.94) 0%, rgba(15, 21, 24, 0.97) 100%) !important;
+    border: 1px solid rgba(166, 206, 210, 0.16) !important;
+    border-radius: 8px !important;
+    padding: 22px 24px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.38) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+    overflow: visible !important;
+    min-height: auto !important;
+    max-height: none !important;
+
+    /* Base Font Family for ALL Cards */
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* Ensure ALL nested elements inherit the matching card font */
+body.impeachment-page .card *,
+body.impeachment-page .matrix-card *,
+body.impeachment-page .apple-card * {
+    font-family: inherit;
+}
+
+body.impeachment-page .card:hover,
+body.impeachment-page .matrix-card:hover,
+body.impeachment-page .apple-card:hover {
+    transform: translateY(-3px) !important;
+    border-color: rgba(166, 206, 210, 0.38) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Top Row Badge (Label) */
+body.impeachment-page .card-label {
+    display: inline-block !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.70rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    padding: 3px 9px !important;
+    border-radius: 4px !important;
+    background: rgba(44, 90, 97, 0.22) !important;
+    color: #a6ced2 !important;
+    border: 1px solid rgba(166, 206, 210, 0.28) !important;
+    margin-bottom: 12px !important;
+    width: fit-content !important;
+}
+
+/* Card Title: Identical Modern Sans Font on Every Card */
+body.impeachment-page .card-title,
+body.impeachment-page .matrix-card h3,
+body.impeachment-page .card h3 {
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 1.18rem !important;
+    font-weight: 700 !important;
+    color: #f1f7f8 !important;
+    line-height: 1.35 !important;
+    margin: 0 0 14px 0 !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid rgba(166, 206, 210, 0.12) !important;
+    min-height: 2.7em !important;
+}
+
+/* Card Body */
+body.impeachment-page .card-body {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 0.90rem !important;
+    line-height: 1.6 !important;
+    color: #b5c4c7 !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-right: 0 !important;
+    margin-bottom: 16px !important;
+}
+
+body.impeachment-page .card-body p {
+    margin: 0 0 12px 0 !important;
+    color: #b5c4c7 !important;
+    font-size: 0.90rem !important;
+    line-height: 1.6 !important;
+}
+
+body.impeachment-page .card-body p:last-child {
+    margin-bottom: 0 !important;
+}
+
+body.impeachment-page .card-body ul {
+    margin: 0 0 12px 0 !important;
+    padding-left: 20px !important;
+}
+
+body.impeachment-page .card-body li {
+    margin-bottom: 6px !important;
+    color: #b5c4c7 !important;
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+}
+
+body.impeachment-page .card-body strong {
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    color: #e6f0f2 !important;
+    font-size: 0.90rem !important;
+    font-weight: 700 !important;
+}
+
+/* Structured Matrix Rows: Font & Spacing Matches Regular Cards */
+body.impeachment-page .matrix-row {
+    background: rgba(10, 14, 16, 0.6) !important;
+    border-left: 3px solid rgba(212, 184, 92, 0.65) !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    margin: 8px 0 !important;
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+    color: #b5c4c7 !important;
+}
+
+body.impeachment-page .matrix-row strong {
+    display: block !important;
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    color: #d4b85c !important;
+    margin-bottom: 3px !important;
+}
+
+/* Audio Player */
+body.impeachment-page audio {
+    width: 100% !important;
+    height: 38px !important;
+    border-radius: 6px !important;
+    margin: 10px 0 !important;
+    background: #0f1315 !important;
+}
+
+/* Audio clip titles */
+body.impeachment-page .audio-title,
+body.impeachment-page [style*="JetBrains Mono"] {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.74rem !important;
+    color: #a6ced2 !important;
+    margin-bottom: 4px !important;
+}
+
+/* Dialogue quote callouts */
+body.impeachment-page .u-migrated-74840cbb,
+body.impeachment-page .u-migrated-35005f0a,
+body.impeachment-page .u-migrated-74d8a936 {
+    background: rgba(12, 16, 18, 0.65) !important;
+    border-left: 3px solid rgba(166, 206, 210, 0.35) !important;
+    padding: 8px 12px !important;
+    margin: 8px 0 !important;
+    border-radius: 3px !important;
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 0.88rem !important;
+    font-style: italic !important;
+    line-height: 1.55 !important;
+    color: #cad8db !important;
+}
+
+/* Pinned Footer (Pills and Action Buttons) */
+body.impeachment-page .pill-row,
+body.impeachment-page .card-actions {
+    margin-top: auto !important;
+    padding-top: 12px !important;
+    border-top: 1px solid rgba(166, 206, 210, 0.08) !important;
+}
+
+body.impeachment-page .pill-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+}
+
+body.impeachment-page .pill,
+body.impeachment-page .pill-row .pill {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.68rem !important;
+    padding: 2px 8px !important;
+    border-radius: 3px !important;
+    background: rgba(44, 90, 97, 0.15) !important;
+    color: #9ac2c6 !important;
+    border: 1px solid rgba(166, 206, 210, 0.22) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+}
+
+/* Target highlight */
+body.impeachment-page .card-focus-target {
+    border-color: #d4b85c !important;
+    box-shadow: 0 0 0 2px rgba(212, 184, 92, 0.4), 0 12px 32px rgba(0, 0, 0, 0.7) !important;
+    animation: targetPulse 1.5s ease-in-out 2;
+}
+
+@keyframes targetPulse {
+    0%, 100% { border-color: #d4b85c; }
+    50% { border-color: rgba(212, 184, 92, 0.3); }
+}
+
+/* --- FULL-WIDTH MASTER AUDIO ARCHIVE CONSOLES (IN GROUP 02) --- */
+body.impeachment-page #carmen-love-audio,
+body.impeachment-page #lauren-interview-audio {
+    grid-column: 1 / -1 !important;
+    background: linear-gradient(180deg, rgba(20, 27, 30, 0.96) 0%, rgba(12, 17, 19, 0.98) 100%) !important;
+    border: 1px solid rgba(166, 206, 210, 0.28) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+    padding: 28px 32px !important;
+}
+
+body.impeachment-page #carmen-love-audio .card-title,
+body.impeachment-page #lauren-interview-audio .card-title {
+    font-size: 1.6rem !important;
+    min-height: auto !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid rgba(166, 206, 210, 0.18) !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 16px !important;
+}
+
+/* Audio sub-headings inside the archive consoles */
+body.impeachment-page #carmen-love-audio .u-migrated-3d92bdff,
+body.impeachment-page #lauren-interview-audio .u-migrated-3d92bdff,
+body.impeachment-page #lauren-interview-audio .u-migrated-aec5fdf2 {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #d4b85c !important;
+    background: rgba(212, 184, 92, 0.1) !important;
+    border-left: 3px solid #d4b85c !important;
+    border-radius: 4px !important;
+    padding: 8px 14px !important;
+    margin: 20px 0 12px 0 !important;
+}
+
+/* Internal grid for audio clips inside the master consoles */
+body.impeachment-page #carmen-love-audio .u-migrated-2f858604,
+body.impeachment-page #lauren-interview-audio .u-migrated-2f858604 {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 12px !important;
+    margin-top: 12px !important;
+}
+
+body.impeachment-page #carmen-love-audio .u-migrated-5ad53e57,
+body.impeachment-page #lauren-interview-audio .u-migrated-5ad53e57 {
+    background: rgba(14, 19, 22, 0.8) !important;
+    border: 1px solid rgba(166, 206, 210, 0.12) !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+body.impeachment-page #carmen-love-audio .u-migrated-70514dbe,
+body.impeachment-page #lauren-interview-audio .u-migrated-70514dbe {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #e6f0f2 !important;
+    margin-bottom: 6px !important;
+}
