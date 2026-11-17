@@ -12,7 +12,7 @@
     new URL(`${siteRoot}${folder}${encodeURIComponent(file)}`, window.location.href).href;
 
   // Playback queue: the opening soundtrack, then the three songs from the main
-  // page, then the Part 3 podcast. Playback stops when the queue runs out.
+  // page. Playback stops when the queue runs out.
   const playlist = [
     {
       label: "Welcome to Under Color of Law",
@@ -24,13 +24,6 @@
     },
     { label: "I Won't Sign", src: resolveAudio("audio/Music/", "I Won't Sign.mp3") },
     { label: "Who Pays The Price?", src: resolveAudio("audio/Music/", "Who Pays The Price_.mp3") },
-    {
-      label: "Lies, Licentiousness, Lee County - Part 3",
-      src: resolveAudio(
-        "audio/Podcast/",
-        "Lies,_Licentiousness,_Lee_County-_Part_3_-_Sheriff's_Office_Leads,_Sheriff's_Office_Lies_What.mp3"
-      ),
-    },
   ];
 
   const preferenceKey = "edifice-soundtrack";
