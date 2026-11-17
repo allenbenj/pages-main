@@ -143,7 +143,7 @@ python tools/site_release.py validate --root <staged-dir>
 
 `.github/workflows/static.yml` runs on every push to `main` (or manual dispatch):
 
-1. `npm ci && npm audit --audit-level=high && npm run build` inside `network_analysis/` (Node 24).
+1. `npm ci && npm audit --omit=dev --audit-level=high && npm run build` inside `network_analysis/` (Node 24).
 2. Installs `ffmpeg`.
 3. `python tools/site_release.py stage --source . --output $RUNNER_TEMP/site`.
 4. `python tools/site_release.py validate --root $RUNNER_TEMP/site`.
@@ -183,5 +183,5 @@ Regenerate `assets/search-index.json` with `tools/build_search_index.py` wheneve
 
 - The site publishes real court-case material (names, testimony, exhibits). Treat page content as legally sensitive: do not invent, embellish, or "correct" factual claims, quotes, dates, or names. Editorial changes should come from the maintainer.
 - Never commit secrets. Nothing in the release artifact may come from `.env`-style files or the gitignored tool-state directories; `site_release.py validate` enforces the forbidden-path list.
-- `npm audit --audit-level=high` runs in CI for `network_analysis/` — dependency upgrades that introduce high-severity vulnerabilities will fail the deploy.
+- CI audits production dependencies with `npm audit --omit=dev --audit-level=high`. Build-only tooling such as Vite is not shipped with the static site; keep the build and staged-release validation checks enabled.
 - Git mutations (commit/push/rebase) are performed by the maintainer; agents should not run them unless explicitly asked.

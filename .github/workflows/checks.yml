@@ -35,9 +35,9 @@ jobs:
         working-directory: network_analysis
         run: npm ci
 
-      - name: Audit dependencies
+      - name: Audit production dependencies
         working-directory: network_analysis
-        run: npm audit --audit-level=high
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Build network analysis
         working-directory: network_analysis
