@@ -7,16 +7,37 @@
   const siteRoot = isCanonicalSource
     ? "../../"
     : /\/(?:content|network_analysis)\//.test(currentPath) ? "../" : "./";
-  const src = new URL(
-    `${siteRoot}audio/Podcast/${encodeURIComponent("Welcome_to_Under_Color_of_Law_(1).mp3")}`,
-    window.location.href
-  ).href;
+  const resolveAudio = (folder, file) =>
+    new URL(`${siteRoot}${folder}${encodeURIComponent(file)}`, window.location.href).href;
+
+  // Playback queue: the opening soundtrack, then the three songs from the main
+  // page, then the Part 3 podcast. Playback stops when the queue runs out.
+  const playlist = [
+    {
+      label: "Welcome to Under Color of Law",
+      src: resolveAudio("audio/Podcast/", "Welcome_to_Under_Color_of_Law_(1).mp3"),
+    },
+    {
+      label: "Lee County Legalized Gangsters",
+      src: resolveAudio("audio/Music/", "Lee County Legalized Gangsters.mp3"),
+    },
+    { label: "I Won't Sign", src: resolveAudio("audio/Music/", "I Won't Sign.mp3") },
+    { label: "Who Pays The Price?", src: resolveAudio("audio/Music/", "Who Pays The Price_.mp3") },
+    {
+      label: "Lies, Licentiousness, Lee County - Part 3",
+      src: resolveAudio(
+        "audio/Podcast/",
+        "Lies,_Licentiousness,_Lee_County-_Part_3_-_Sheriff's_Office_Leads,_Sheriff's_Office_Lies_What.mp3"
+      ),
+    },
+  ];
 
   const preferenceKey = "edifice-soundtrack";
   const timeKey = "edifice-soundtrack-time";
-  const audio = new Audio(src);
-  audio.loop = true;
+  const audio = new Audio();
   audio.preload = "none";
+  let trackIndex = 0;
+  let advancing = false;
 
   const style = document.createElement("style");
   style.textContent = `
@@ -114,7 +135,29 @@
   document.head.appendChild(style);
 
   let want = localStorage.getItem(preferenceKey) !== "off";
-  const savedTime = Number(sessionStorage.getItem(timeKey));
+  const readSaved = () => {
+    const empty = { track: 0, time: 0 };
+    const raw = sessionStorage.getItem(timeKey);
+    if (!raw) return empty;
+    let parsed = null;
+    try {
+      parsed = JSON.parse(raw);
+    } catch (error) {
+      parsed = null;
+    }
+    if (parsed && typeof parsed === "object") {
+      const track = Number(parsed.track);
+      const time = Number(parsed.time);
+      if (Number.isInteger(track) && track >= 0 && track < playlist.length && Number.isFinite(time) && time > 0) {
+        return { track, time };
+      }
+      return empty;
+    }
+    // Legacy sessions stored a bare opening-track position in seconds.
+    const time = Number(raw);
+    return Number.isFinite(time) && time > 0 ? { track: 0, time } : empty;
+  };
+  const saved = readSaved();
   let starting = false;
   let floatingBtn = null;
 
@@ -243,8 +286,11 @@
   window.addEventListener("pagehide", rememberTime);
 
   // Media takes priority; the soundtrack stays off until explicitly enabled.
+  // Muted playback carries no audio, so silent exhibit loops (such as an
+  // autoplaying visual motif) leave the soundtrack running.
   document.addEventListener("play", (event) => {
-    if (event.target instanceof HTMLMediaElement && event.target !== audio) stop();
+    const element = event.target;
+    if (element instanceof HTMLMediaElement && element !== audio && !element.muted) stop();
   }, true);
   document.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;

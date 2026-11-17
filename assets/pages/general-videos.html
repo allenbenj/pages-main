@@ -561,7 +561,7 @@
         </header>
 
         <div class="video-player-frame compact">
-          <video controls preload="metadata">
+          <video id="ladyJusticeRaisingVideo" controls muted loop playsinline preload="auto">
             <source src="video/long_view/Lady%20Justice%20Raising.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -646,6 +646,57 @@
         });
       });
 
+      // Auto-start the Lady Justice motif when the page opens, and restart it
+      // whenever a browser suspension (hidden tab, offscreen player) stops it.
+      // Browsers only permit muted autoplay; the visitor can unmute or pause
+      // with the player controls, and a manual pause is never overridden.
+      var ladyJusticeVideo = document.getElementById('ladyJusticeRaisingVideo');
+      if (ladyJusticeVideo) {
+        var motifPausedByVisitor = false;
+        var motifInView = false;
+        var motifResumes = 0;
+
+        var anotherVideoPlaying = function() {
+          return Array.prototype.some.call(allVideos, function(other) {
+            return other !== ladyJusticeVideo && !other.paused;
+          });
+        };
+
+        var playMotif = function() {
+          if (motifPausedByVisitor || !ladyJusticeVideo.paused) return;
+          if (document.visibilityState === 'hidden' || anotherVideoPlaying()) return;
+          var request = ladyJusticeVideo.play();
+          if (request && request.catch) {
+            request.catch(function() {});
+          }
+        };
+
+        ladyJusticeVideo.addEventListener('pointerdown', function() {
+          motifPausedByVisitor = true;
+        });
+        ladyJusticeVideo.addEventListener('click', function() {
+          motifPausedByVisitor = true;
+        });
+        ladyJusticeVideo.addEventListener('pause', function() {
+          if (motifPausedByVisitor || !motifInView || motifResumes >= 8) return;
+          motifResumes += 1;
+          window.setTimeout(playMotif, 500);
+        });
+        document.addEventListener('visibilitychange', playMotif);
+        window.addEventListener('focus', playMotif);
+
+        if (window.IntersectionObserver) {
+          new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              motifInView = entry.isIntersecting;
+              if (motifInView) playMotif();
+            });
+          }, { threshold: 0.5 }).observe(ladyJusticeVideo);
+        }
+
+        playMotif();
+      }
+
       // Anti-nesting navigation handler
       document.body.addEventListener('click', function(e) {
         var a = e.target.closest('a');
@@ -659,6 +710,6 @@
   </script>
 
   <script src="shared/site-search.js?v=20261003g" defer></script>
-  <script src="shared/soundtrack.js?v=20261008media" defer></script>
+  <script src="shared/soundtrack.js?v=20261117autoplay" defer></script>
 </body>
 </html>
